@@ -15,6 +15,7 @@
 		A19D09591B7C2DF100094B81 /* touwho_iPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09581B7C2DF100094B81 /* touwho_iPadTests.m */; };
 		A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */; };
 		A19D09761B7C306900094B81 /* programViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09751B7C306900094B81 /* programViewController.m */; };
+		A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09791B7C6E5C00094B81 /* INSSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		A19D09651B7C2DF100094B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A19D09741B7C306900094B81 /* programViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programViewController.h; sourceTree = "<group>"; };
 		A19D09751B7C306900094B81 /* programViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programViewController.m; sourceTree = "<group>"; };
+		A19D09781B7C6E5C00094B81 /* INSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSSearchBar.h; sourceTree = "<group>"; };
+		A19D09791B7C6E5C00094B81 /* INSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSSearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,7 @@
 		A19D09721B7C301300094B81 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				A19D09771B7C6E4D00094B81 /* view */,
 				A19D09731B7C302500094B81 /* controller */,
 			);
 			name = "首页";
@@ -162,6 +166,15 @@
 				A19D09751B7C306900094B81 /* programViewController.m */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		A19D09771B7C6E4D00094B81 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09781B7C6E5C00094B81 /* INSSearchBar.h */,
+				A19D09791B7C6E5C00094B81 /* INSSearchBar.m */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +309,7 @@
 			files = (
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
+				A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +455,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5dd39495-358a-473f-b96e-7ae2b9ac59b2";
 			};
 			name = Debug;
 		};
@@ -452,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5dd39495-358a-473f-b96e-7ae2b9ac59b2";
 			};
 			name = Release;
 		};
@@ -522,6 +538,7 @@
 				A19D096A1B7C2DF100094B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A19D096B1B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPadTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +547,7 @@
 				A19D096D1B7C2DF100094B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A19D096E1B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPadUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +556,7 @@
 				A19D09701B7C2DF100094B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
