@@ -9,13 +9,14 @@
 #import "programViewController.h"
 #import "INSSearchBar.h"
 
-@interface programViewController () <INSSearchBarDelegate>
+@interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *headIcon;
 @property (weak, nonatomic) IBOutlet UIButton *programBtn;
 @property (weak, nonatomic) IBOutlet UIButton *newsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *findBtn;
 @property (weak, nonatomic) IBOutlet UIButton *meBtn;
 @property (weak,nonatomic) INSSearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *pictureCollection;
 
 - (IBAction)program:(UIButton *)sender;
 - (IBAction)news:(UIButton *)sender;
@@ -29,11 +30,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //搜索框
     INSSearchBar *search = [[INSSearchBar alloc] initWithFrame:CGRectMake(744, 42, 44, 30)];
     [self.view addSubview:search];
     self.searchBar = search;
     self.searchBar.delegate = self;
     self.searchBar.backgroundColor = [UIColor redColor];
+    
+    //图片滚动
+    self.pictureCollection.delegate = self;
+    self.pictureCollection.dataSource = self;
     
 }
 
@@ -84,5 +90,20 @@
     // Access the text from the search bar like searchBar.searchField.text
 }
 
+#pragma mark - collection代理
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
 
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
+{
+    return 10;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"picture" forIndexPath:indexPath];
+    
+    return cell;
+}
 @end

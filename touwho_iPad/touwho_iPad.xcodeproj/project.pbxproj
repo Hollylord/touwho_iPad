@@ -16,6 +16,7 @@
 		A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */; };
 		A19D09761B7C306900094B81 /* programViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09751B7C306900094B81 /* programViewController.m */; };
 		A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09791B7C6E5C00094B81 /* INSSearchBar.m */; };
+		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		A19D09751B7C306900094B81 /* programViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programViewController.m; sourceTree = "<group>"; };
 		A19D09781B7C6E5C00094B81 /* INSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSSearchBar.h; sourceTree = "<group>"; };
 		A19D09791B7C6E5C00094B81 /* INSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSSearchBar.m; sourceTree = "<group>"; };
+		A19D097B1B7C835C00094B81 /* myFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myFlowLayout.h; sourceTree = "<group>"; };
+		A19D097C1B7C835C00094B81 /* myFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 			children = (
 				A19D09781B7C6E5C00094B81 /* INSSearchBar.h */,
 				A19D09791B7C6E5C00094B81 /* INSSearchBar.m */,
+				A19D097B1B7C835C00094B81 /* myFlowLayout.h */,
+				A19D097C1B7C835C00094B81 /* myFlowLayout.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
+				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
