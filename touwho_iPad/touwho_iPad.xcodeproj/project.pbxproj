@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
-		A19D09461B7C2DF100094B81 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09451B7C2DF100094B81 /* ViewController.m */; };
 		A19D09491B7C2DF100094B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19D09471B7C2DF100094B81 /* Main.storyboard */; };
 		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
 		A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */; };
 		A19D09591B7C2DF100094B81 /* touwho_iPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09581B7C2DF100094B81 /* touwho_iPadTests.m */; };
 		A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */; };
+		A19D09761B7C306900094B81 /* programViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09751B7C306900094B81 /* programViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A19D09421B7C2DF100094B81 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A19D09441B7C2DF100094B81 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A19D09451B7C2DF100094B81 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A19D09481B7C2DF100094B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A19D094A1B7C2DF100094B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A19D094D1B7C2DF100094B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		A19D095F1B7C2DF100094B81 /* touwho_iPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = touwho_iPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = touwho_iPadUITests.m; sourceTree = "<group>"; };
 		A19D09651B7C2DF100094B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19D09741B7C306900094B81 /* programViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programViewController.h; sourceTree = "<group>"; };
+		A19D09751B7C306900094B81 /* programViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +101,11 @@
 		A19D093D1B7C2DF100094B81 /* touwho_iPad */ = {
 			isa = PBXGroup;
 			children = (
-				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
-				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
-				A19D09441B7C2DF100094B81 /* ViewController.h */,
-				A19D09451B7C2DF100094B81 /* ViewController.m */,
 				A19D09471B7C2DF100094B81 /* Main.storyboard */,
 				A19D094A1B7C2DF100094B81 /* Assets.xcassets */,
 				A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */,
-				A19D094F1B7C2DF100094B81 /* Info.plist */,
+				A19D09721B7C301300094B81 /* 首页 */,
+				A19D09711B7C2F5B00094B81 /* other */,
 				A19D093E1B7C2DF100094B81 /* Supporting Files */,
 			);
 			path = touwho_iPad;
@@ -117,6 +114,7 @@
 		A19D093E1B7C2DF100094B81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A19D094F1B7C2DF100094B81 /* Info.plist */,
 				A19D093F1B7C2DF100094B81 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +136,32 @@
 				A19D09651B7C2DF100094B81 /* Info.plist */,
 			);
 			path = touwho_iPadUITests;
+			sourceTree = "<group>";
+		};
+		A19D09711B7C2F5B00094B81 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
+				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+		A19D09721B7C301300094B81 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09731B7C302500094B81 /* controller */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		A19D09731B7C302500094B81 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09741B7C306900094B81 /* programViewController.h */,
+				A19D09751B7C306900094B81 /* programViewController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A19D09461B7C2DF100094B81 /* ViewController.m in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
+				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

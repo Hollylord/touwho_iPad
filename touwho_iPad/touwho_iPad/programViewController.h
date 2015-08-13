@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  programViewController.h
 //  touwho_iPad
 //
 //  Created by apple on 15/8/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface programViewController : UIViewController
 
 @end
-
