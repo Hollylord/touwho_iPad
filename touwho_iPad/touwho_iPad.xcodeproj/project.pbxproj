@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
+		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
+		A19D09461B7C2DF100094B81 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09451B7C2DF100094B81 /* ViewController.m */; };
+		A19D09491B7C2DF100094B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19D09471B7C2DF100094B81 /* Main.storyboard */; };
+		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
+		A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */; };
+		A19D09591B7C2DF100094B81 /* touwho_iPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09581B7C2DF100094B81 /* touwho_iPadTests.m */; };
+		A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A19D09551B7C2DF100094B81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A19D09331B7C2DF100094B81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A19D093A1B7C2DF100094B81;
+			remoteInfo = touwho_iPad;
+		};
+		A19D09601B7C2DF100094B81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A19D09331B7C2DF100094B81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A19D093A1B7C2DF100094B81;
+			remoteInfo = touwho_iPad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A19D093B1B7C2DF100094B81 /* touwho_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touwho_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A19D09421B7C2DF100094B81 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A19D09441B7C2DF100094B81 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A19D09451B7C2DF100094B81 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A19D09481B7C2DF100094B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A19D094A1B7C2DF100094B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A19D094D1B7C2DF100094B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A19D094F1B7C2DF100094B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19D09541B7C2DF100094B81 /* touwho_iPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = touwho_iPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19D09581B7C2DF100094B81 /* touwho_iPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = touwho_iPadTests.m; sourceTree = "<group>"; };
+		A19D095A1B7C2DF100094B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19D095F1B7C2DF100094B81 /* touwho_iPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = touwho_iPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = touwho_iPadUITests.m; sourceTree = "<group>"; };
+		A19D09651B7C2DF100094B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A19D09381B7C2DF100094B81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A19D09511B7C2DF100094B81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A19D095C1B7C2DF100094B81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A19D09321B7C2DF100094B81 = {
+			isa = PBXGroup;
+			children = (
+				A19D093D1B7C2DF100094B81 /* touwho_iPad */,
+				A19D09571B7C2DF100094B81 /* touwho_iPadTests */,
+				A19D09621B7C2DF100094B81 /* touwho_iPadUITests */,
+				A19D093C1B7C2DF100094B81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A19D093C1B7C2DF100094B81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A19D093B1B7C2DF100094B81 /* touwho_iPad.app */,
+				A19D09541B7C2DF100094B81 /* touwho_iPadTests.xctest */,
+				A19D095F1B7C2DF100094B81 /* touwho_iPadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A19D093D1B7C2DF100094B81 /* touwho_iPad */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
+				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
+				A19D09441B7C2DF100094B81 /* ViewController.h */,
+				A19D09451B7C2DF100094B81 /* ViewController.m */,
+				A19D09471B7C2DF100094B81 /* Main.storyboard */,
+				A19D094A1B7C2DF100094B81 /* Assets.xcassets */,
+				A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */,
+				A19D094F1B7C2DF100094B81 /* Info.plist */,
+				A19D093E1B7C2DF100094B81 /* Supporting Files */,
+			);
+			path = touwho_iPad;
+			sourceTree = "<group>";
+		};
+		A19D093E1B7C2DF100094B81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A19D093F1B7C2DF100094B81 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A19D09571B7C2DF100094B81 /* touwho_iPadTests */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09581B7C2DF100094B81 /* touwho_iPadTests.m */,
+				A19D095A1B7C2DF100094B81 /* Info.plist */,
+			);
+			path = touwho_iPadTests;
+			sourceTree = "<group>";
+		};
+		A19D09621B7C2DF100094B81 /* touwho_iPadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */,
+				A19D09651B7C2DF100094B81 /* Info.plist */,
+			);
+			path = touwho_iPadUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A19D093A1B7C2DF100094B81 /* touwho_iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A19D09681B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPad" */;
+			buildPhases = (
+				A19D09371B7C2DF100094B81 /* Sources */,
+				A19D09381B7C2DF100094B81 /* Frameworks */,
+				A19D09391B7C2DF100094B81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = touwho_iPad;
+			productName = touwho_iPad;
+			productReference = A19D093B1B7C2DF100094B81 /* touwho_iPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A19D09531B7C2DF100094B81 /* touwho_iPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A19D096B1B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPadTests" */;
+			buildPhases = (
+				A19D09501B7C2DF100094B81 /* Sources */,
+				A19D09511B7C2DF100094B81 /* Frameworks */,
+				A19D09521B7C2DF100094B81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A19D09561B7C2DF100094B81 /* PBXTargetDependency */,
+			);
+			name = touwho_iPadTests;
+			productName = touwho_iPadTests;
+			productReference = A19D09541B7C2DF100094B81 /* touwho_iPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A19D095E1B7C2DF100094B81 /* touwho_iPadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A19D096E1B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPadUITests" */;
+			buildPhases = (
+				A19D095B1B7C2DF100094B81 /* Sources */,
+				A19D095C1B7C2DF100094B81 /* Frameworks */,
+				A19D095D1B7C2DF100094B81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A19D09611B7C2DF100094B81 /* PBXTargetDependency */,
+			);
+			name = touwho_iPadUITests;
+			productName = touwho_iPadUITests;
+			productReference = A19D095F1B7C2DF100094B81 /* touwho_iPadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A19D09331B7C2DF100094B81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = touhu.com;
+				TargetAttributes = {
+					A19D093A1B7C2DF100094B81 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					A19D09531B7C2DF100094B81 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = A19D093A1B7C2DF100094B81;
+					};
+					A19D095E1B7C2DF100094B81 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = A19D093A1B7C2DF100094B81;
+					};
+				};
+			};
+			buildConfigurationList = A19D09361B7C2DF100094B81 /* Build configuration list for PBXProject "touwho_iPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A19D09321B7C2DF100094B81;
+			productRefGroup = A19D093C1B7C2DF100094B81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A19D093A1B7C2DF100094B81 /* touwho_iPad */,
+				A19D09531B7C2DF100094B81 /* touwho_iPadTests */,
+				A19D095E1B7C2DF100094B81 /* touwho_iPadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A19D09391B7C2DF100094B81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
+				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
+				A19D09491B7C2DF100094B81 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A19D09521B7C2DF100094B81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A19D095D1B7C2DF100094B81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A19D09371B7C2DF100094B81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A19D09461B7C2DF100094B81 /* ViewController.m in Sources */,
+				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
+				A19D09401B7C2DF100094B81 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A19D09501B7C2DF100094B81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A19D09591B7C2DF100094B81 /* touwho_iPadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A19D095B1B7C2DF100094B81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A19D09561B7C2DF100094B81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A19D093A1B7C2DF100094B81 /* touwho_iPad */;
+			targetProxy = A19D09551B7C2DF100094B81 /* PBXContainerItemProxy */;
+		};
+		A19D09611B7C2DF100094B81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A19D093A1B7C2DF100094B81 /* touwho_iPad */;
+			targetProxy = A19D09601B7C2DF100094B81 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A19D09471B7C2DF100094B81 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A19D09481B7C2DF100094B81 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A19D094D1B7C2DF100094B81 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A19D09661B7C2DF100094B81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A19D09671B7C2DF100094B81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A19D09691B7C2DF100094B81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = touwho_iPad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A19D096A1B7C2DF100094B81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = touwho_iPad/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A19D096C1B7C2DF100094B81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = touwho_iPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/touwho_iPad.app/touwho_iPad";
+			};
+			name = Debug;
+		};
+		A19D096D1B7C2DF100094B81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = touwho_iPadTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/touwho_iPad.app/touwho_iPad";
+			};
+			name = Release;
+		};
+		A19D096F1B7C2DF100094B81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = touwho_iPadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = touwho_iPad;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A19D09701B7C2DF100094B81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = touwho_iPadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = touwho_iPad;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A19D09361B7C2DF100094B81 /* Build configuration list for PBXProject "touwho_iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A19D09661B7C2DF100094B81 /* Debug */,
+				A19D09671B7C2DF100094B81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A19D09681B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A19D09691B7C2DF100094B81 /* Debug */,
+				A19D096A1B7C2DF100094B81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A19D096B1B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A19D096C1B7C2DF100094B81 /* Debug */,
+				A19D096D1B7C2DF100094B81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A19D096E1B7C2DF100094B81 /* Build configuration list for PBXNativeTarget "touwho_iPadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A19D096F1B7C2DF100094B81 /* Debug */,
+				A19D09701B7C2DF100094B81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A19D09331B7C2DF100094B81 /* Project object */;
+}
