@@ -149,23 +149,23 @@
                                             </mask>
                                         </variation>
                                     </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rjw-FK-d5J" userLabel="图片滚动">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YhG-ZB-dhR">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="218" id="CLP-3v-ilU"/>
+                                            <constraint firstAttribute="height" constant="218" id="ogg-pU-e3I"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SPh-D0-HDb" customClass="myFlowLayout">
-                                            <size key="itemSize" width="422" height="181"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="1" id="Abc-IP-I69" customClass="myFlowLayout">
+                                            <size key="itemSize" width="400" height="124"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picture" id="ThT-4H-3yJ">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picture" id="y7n-mU-cqa">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="422" height="181"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="124"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -174,25 +174,25 @@
                                         </cells>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="CLP-3v-ilU"/>
+                                                <exclude reference="ogg-pU-e3I"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
-                                                <include reference="CLP-3v-ilU"/>
+                                                <include reference="ogg-pU-e3I"/>
                                             </mask>
                                         </variation>
                                     </collectionView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Rjw-FK-d5J" firstAttribute="top" secondItem="7bA-Te-4xr" secondAttribute="bottom" constant="20" id="Ldw-Th-9T0"/>
-                                    <constraint firstItem="Rjw-FK-d5J" firstAttribute="leading" secondItem="g1X-k0-Mdr" secondAttribute="leading" constant="30" id="RV8-U1-lbB"/>
+                                    <constraint firstItem="YhG-ZB-dhR" firstAttribute="leading" secondItem="g1X-k0-Mdr" secondAttribute="leading" constant="30" id="8iF-Es-Z8s"/>
+                                    <constraint firstAttribute="trailing" secondItem="YhG-ZB-dhR" secondAttribute="trailing" constant="30" id="LHQ-i5-9D6"/>
                                     <constraint firstItem="7bA-Te-4xr" firstAttribute="top" secondItem="g1X-k0-Mdr" secondAttribute="top" id="So7-l1-FiS"/>
                                     <constraint firstAttribute="trailing" secondItem="7bA-Te-4xr" secondAttribute="trailing" constant="290" id="YJv-me-t6x"/>
                                     <constraint firstItem="Sef-Hs-pXv" firstAttribute="leading" secondItem="g1X-k0-Mdr" secondAttribute="leading" id="aqO-m2-7RT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Rjw-FK-d5J" secondAttribute="trailing" constant="30" id="eMs-fA-yIs"/>
                                     <constraint firstItem="7bA-Te-4xr" firstAttribute="leading" secondItem="g1X-k0-Mdr" secondAttribute="leading" id="f2L-KO-wAV"/>
                                     <constraint firstAttribute="bottom" secondItem="Sef-Hs-pXv" secondAttribute="bottom" constant="373" id="lHM-XG-lLq"/>
+                                    <constraint firstItem="YhG-ZB-dhR" firstAttribute="top" secondItem="7bA-Te-4xr" secondAttribute="bottom" constant="20" id="mOu-2v-owh"/>
                                     <constraint firstAttribute="trailing" secondItem="Sef-Hs-pXv" secondAttribute="trailing" id="qNe-EF-R04"/>
                                     <constraint firstItem="Sef-Hs-pXv" firstAttribute="top" secondItem="g1X-k0-Mdr" secondAttribute="top" constant="62" id="tmr-B8-jhT"/>
                                 </constraints>
@@ -200,38 +200,38 @@
                                     <mask key="subviews">
                                         <exclude reference="Sef-Hs-pXv"/>
                                         <exclude reference="7bA-Te-4xr"/>
-                                        <exclude reference="Rjw-FK-d5J"/>
+                                        <exclude reference="YhG-ZB-dhR"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="Ldw-Th-9T0"/>
-                                        <exclude reference="RV8-U1-lbB"/>
-                                        <exclude reference="eMs-fA-yIs"/>
+                                        <exclude reference="So7-l1-FiS"/>
+                                        <exclude reference="YJv-me-t6x"/>
+                                        <exclude reference="f2L-KO-wAV"/>
                                         <exclude reference="aqO-m2-7RT"/>
                                         <exclude reference="lHM-XG-lLq"/>
                                         <exclude reference="qNe-EF-R04"/>
                                         <exclude reference="tmr-B8-jhT"/>
-                                        <exclude reference="So7-l1-FiS"/>
-                                        <exclude reference="YJv-me-t6x"/>
-                                        <exclude reference="f2L-KO-wAV"/>
+                                        <exclude reference="8iF-Es-Z8s"/>
+                                        <exclude reference="LHQ-i5-9D6"/>
+                                        <exclude reference="mOu-2v-owh"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <include reference="Sef-Hs-pXv"/>
                                         <include reference="7bA-Te-4xr"/>
-                                        <include reference="Rjw-FK-d5J"/>
+                                        <include reference="YhG-ZB-dhR"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="Ldw-Th-9T0"/>
-                                        <include reference="RV8-U1-lbB"/>
-                                        <include reference="eMs-fA-yIs"/>
+                                        <include reference="So7-l1-FiS"/>
+                                        <include reference="YJv-me-t6x"/>
+                                        <include reference="f2L-KO-wAV"/>
                                         <include reference="aqO-m2-7RT"/>
                                         <include reference="lHM-XG-lLq"/>
                                         <include reference="qNe-EF-R04"/>
                                         <include reference="tmr-B8-jhT"/>
-                                        <include reference="So7-l1-FiS"/>
-                                        <include reference="YJv-me-t6x"/>
-                                        <include reference="f2L-KO-wAV"/>
+                                        <include reference="8iF-Es-Z8s"/>
+                                        <include reference="LHQ-i5-9D6"/>
+                                        <include reference="mOu-2v-owh"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -276,13 +276,13 @@
                         <outlet property="headIcon" destination="K2W-ag-bb5" id="tMR-9U-K3l"/>
                         <outlet property="meBtn" destination="IrH-4e-mmv" id="c2Q-5J-oOP"/>
                         <outlet property="newsBtn" destination="vrb-lb-6JY" id="0ir-1G-oTx"/>
-                        <outlet property="pictureCollection" destination="Rjw-FK-d5J" id="lbG-ME-kD8"/>
+                        <outlet property="pictureCollection" destination="YhG-ZB-dhR" id="GxL-Ud-jF8"/>
                         <outlet property="programBtn" destination="iXz-V3-mIH" id="6Fo-kh-bM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="11.25"/>
+            <point key="canvasLocation" x="-579.75" y="57"/>
         </scene>
     </scenes>
 </document>
