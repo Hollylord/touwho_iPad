@@ -103,7 +103,9 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"picture" forIndexPath:indexPath];
-    
+    cell.contentView.layer.shadowColor =  [UIColor whiteColor].CGColor;
+    cell.contentView.layer.shadowOffset = CGSizeMake(-20, 0);
+    cell.contentView.layer.shadowOpacity = 0.5;
     return cell;
 }
 @end
