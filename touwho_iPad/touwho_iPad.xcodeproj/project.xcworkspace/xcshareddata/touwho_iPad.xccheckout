@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B6820DA6-6532-4746-91B6-878D4DBCAFEB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>touwho_iPad</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC30F90B8D57BEED783206D5EE1D32688A5531AE</key>
+		<string>https://github.com/Hollylord/touwho_iPad.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>touwho_iPad/touwho_iPad.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC30F90B8D57BEED783206D5EE1D32688A5531AE</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Hollylord/touwho_iPad.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC30F90B8D57BEED783206D5EE1D32688A5531AE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC30F90B8D57BEED783206D5EE1D32688A5531AE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>touwho_iPad</string>
+		</dict>
+	</array>
+</dict>
+</plist>
