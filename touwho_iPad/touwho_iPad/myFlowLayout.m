@@ -11,7 +11,7 @@
 
 
 #define ACTIVE_DISTANCE 550
-#define CELL_DISTANCE 80
+#define CELL_DISTANCE 200
 
 @implementation myFlowLayout
 
@@ -20,22 +20,11 @@
     if (self) {
 //        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 //        self.sectionInset = UIEdgeInsetsMake(200, 0.0, 200, 0.0);
-        self.minimumLineSpacing = -40.0;
+        self.minimumLineSpacing = -15.0;
     }
     return self;
 }
 
-//-(id)init
-//{
-//    self = [super init];
-//    if (self) {
-//        self.itemSize = CGSizeMake(ITEM_SIZE, 200);
-//        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//        self.sectionInset = UIEdgeInsetsMake(200, 0.0, 200, 0.0);
-//        self.minimumLineSpacing = -400.0;
-//    }
-//    return self;
-//}
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)oldBounds
 {
@@ -53,38 +42,52 @@
         if (CGRectIntersectsRect(attributes.frame, rect)) {
             CGFloat distance = CGRectGetMidX(visibleRect) - attributes.center.x;
             CGFloat normalizedDistance = distance / ACTIVE_DISTANCE;
+            
+            
+
             if (ABS(distance) < ACTIVE_DISTANCE) {
                 
                 CGFloat zoom = 1 - ABS(normalizedDistance);
                 NSLog(@"%f",zoom);
+//                if (attributes.frame.origin.x < 0 || attributes.frame.origin.x > rect.size.width) {
+//                    break;
+//                }
+                //在左半边
                 if (distance > 0) {
-                    CATransform3D rotate = CATransform3DMakeRotation((1-zoom)*M_PI/7, 0, 1, 0);
+//                    //旋转的角度控制(1-zoom)*M_PI/6
+                    CATransform3D rotate = CATransform3DMakeRotation((1-zoom)*M_PI/6, 0, 1, 0);
                     
-                    attributes.transform3D = rotate;
-                    CGFloat zoom2 = zoom +0.8;
-                    if (zoom2 < 1.4) {
+//                    attributes.transform3D = rotate;
+                    CGFloat zoom2 = zoom/2+0.8 ;
+                    if (zoom2 < 1) {
+                        attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1);
+                    }
+                    //在右半边
+                    else {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,zoom2);
                     }
-                    else {
-                        attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1.4);
-                    }
+                    
+                    
                     
                     
                     
                     attributes.zIndex = 1;
                 }
                 else {
-                    CATransform3D rotate = CATransform3DMakeRotation((zoom-1)*M_PI/7, 0, 1, 0);
+                    //(zoom-1)*M_PI/6
+                    CATransform3D rotate = CATransform3DMakeRotation((zoom-1)*M_PI/6, 0, 1, 0);
                     
-                    attributes.transform3D = rotate;
+//                    attributes.transform3D = rotate;
                     
-                    CGFloat zoom2 = zoom +0.8;
-                    if (zoom2 < 1.4) {
-                        attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,zoom2);
+                    CGFloat zoom2 = zoom/2+0.8;
+                    if (zoom2 < 1) {
+                        attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1);
                     }
                     else {
-                        attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1.4);
+                        attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,zoom2);
                     }
+                    
+                    
                     
                     attributes.zIndex = 1;
                 }
