@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
-		A19D09491B7C2DF100094B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19D09471B7C2DF100094B81 /* Main.storyboard */; };
 		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
 		A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */; };
 		A19D09591B7C2DF100094B81 /* touwho_iPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09581B7C2DF100094B81 /* touwho_iPadTests.m */; };
@@ -18,6 +17,7 @@
 		A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09791B7C6E5C00094B81 /* INSSearchBar.m */; };
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
+		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A19D09421B7C2DF100094B81 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A19D09481B7C2DF100094B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A19D094A1B7C2DF100094B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A19D094D1B7C2DF100094B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A19D094F1B7C2DF100094B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		A19D097C1B7C835C00094B81 /* myFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFlowLayout.m; sourceTree = "<group>"; };
 		A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
 		A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
+		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 		A19D093D1B7C2DF100094B81 /* touwho_iPad */ = {
 			isa = PBXGroup;
 			children = (
-				A19D09471B7C2DF100094B81 /* Main.storyboard */,
+				A1C239FC1B81BC41004E6DAC /* Main.storyboard */,
 				A19D094A1B7C2DF100094B81 /* Assets.xcassets */,
 				A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */,
 				A19D09721B7C301300094B81 /* 首页 */,
@@ -290,9 +290,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
-				A19D09491B7C2DF100094B81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,20 +358,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A19D09471B7C2DF100094B81 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A19D09481B7C2DF100094B81 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A19D094D1B7C2DF100094B81 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A1C239FC1B81BC41004E6DAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1C239FD1B81BC41004E6DAC /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

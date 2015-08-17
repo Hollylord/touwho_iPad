@@ -56,15 +56,7 @@
             if (ABS(distance) < ACTIVE_DISTANCE) {
                 
                 CGFloat zoom = 1 - ABS(normalizedDistance);
-<<<<<<< HEAD
 
-//                NSLog(@"%f",zoom);
-//
-                //在左半边
-
-=======
->>>>>>> parent of b4066f9... 图片滚动仿网易云音乐成功
-                NSLog(@"%f",zoom);
                 if (distance > 0) {
                     CATransform3D rotate = CATransform3DMakeRotation((1-zoom)*M_PI/7, 0, 1, 0);
                     
