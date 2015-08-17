@@ -44,8 +44,15 @@
     
     
     for (UICollectionViewLayoutAttributes* attributes in array) {
+        
         if (CGRectIntersectsRect(attributes.frame, rect)) {
             CGFloat distance = CGRectGetMidX(visibleRect) - attributes.center.x;
+            if (ABS(distance) < 300) {
+                attributes.zIndex = 1;
+            }
+            else {
+                attributes.zIndex = -1;
+            }
             CGFloat normalizedDistance = distance / ACTIVE_DISTANCE;
             if (ABS(distance) < ACTIVE_DISTANCE) {
                 
@@ -61,17 +68,14 @@
                     if (zoom2 < 1) {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1);
                     }
-                    //在右半边
+                   
                     else {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,zoom2);
                     }
-                    
-                    
-                    
-                    
-                    
-                    attributes.zIndex = 1;
+   
+//                    attributes.zIndex = -1;
                 }
+                //在右半边
                 else {
                     //(zoom-1)*M_PI/6
                     CATransform3D rotate = CATransform3DMakeRotation((zoom-1)*M_PI/6, 0, 1, 0);
@@ -88,7 +92,7 @@
                     
                     
                     
-                    attributes.zIndex = 1;
+//                    attributes.zIndex = 1;
                 }
                 
             }

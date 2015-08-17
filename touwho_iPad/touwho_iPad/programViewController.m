@@ -149,12 +149,22 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSIndexPath * currentIndexPath = [[self.pictureCollection indexPathsForVisibleItems]lastObject];
-//    NSLog(@"%@",currentIndexPath);
+    NSLog(@"%@",currentIndexPath);
     if (currentIndexPath.item == 499) {
         //indexPath item适用于collectionview
         NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:0 inSection:0];
         [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     }
+    
+//    if (currentIndexPath.item == 1) {
+//        
+//       UICollectionViewLayoutAttributes* attr = [self.pictureCollection layoutAttributesForItemAtIndexPath:currentIndexPath];
+//        attr.zIndex = 1;
+//        
+//    }
+//    else {
+//        attr.zIndex = -1;
+//    }
 }
 
 
