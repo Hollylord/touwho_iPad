@@ -55,8 +55,7 @@
             CGFloat normalizedDistance = distance / ACTIVE_DISTANCE;
             if (ABS(distance) < ACTIVE_DISTANCE) {
                 
-                CGFloat zoom = 1 - ABS(normalizedDistance);
-
+             CGFloat zoom = 1 - ABS(normalizedDistance);
                 if (distance > 0) {
                     CATransform3D rotate = CATransform3DMakeRotation((1-zoom)*M_PI/7, 0, 1, 0);
                     
