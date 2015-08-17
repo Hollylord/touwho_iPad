@@ -60,12 +60,8 @@
 //                NSLog(@"%f",zoom);
 //
                 //在左半边
-=======
+
                 NSLog(@"%f",zoom);
->>>>>>> parent of b4066f9... 图片滚动仿网易云音乐成功
-=======
-                NSLog(@"%f",zoom);
->>>>>>> parent of b4066f9... 图片滚动仿网易云音乐成功
                 if (distance > 0) {
                     CATransform3D rotate = CATransform3DMakeRotation((1-zoom)*M_PI/7, 0, 1, 0);
                     
