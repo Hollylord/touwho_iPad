@@ -40,11 +40,13 @@
     //图片滚动
     self.pictureCollection.delegate = self;
     self.pictureCollection.dataSource = self;
-    [self.pictureCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:250 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    
     
     
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+//    [self.pictureCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:250 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
