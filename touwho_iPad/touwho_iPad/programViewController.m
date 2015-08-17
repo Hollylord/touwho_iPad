@@ -40,6 +40,8 @@
     //图片滚动
     self.pictureCollection.delegate = self;
     self.pictureCollection.dataSource = self;
+    [self.pictureCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:250 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    
     
 }
 
@@ -97,13 +99,45 @@
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    return 10;
+    return 500;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"picture" forIndexPath:indexPath];
-    
+//    UIImageView *image = (UIImageView *)[cell viewWithTag:0];
+//    NSIndexPath *currentIndex = [cv.indexPathsForVisibleItems lastObject];
+//    if (currentIndex.item/5 == 0 ) {
+//        image.backgroundColor = [UIColor redColor];
+//    }
+//    else if (currentIndex.item%5 == 1)
+//    {
+//        image.backgroundColor = [UIColor greenColor];
+//    }
+//    else if (currentIndex.item%5 == 2)
+//    {
+//        image.backgroundColor = [UIColor grayColor];
+//    }
+//    else if (currentIndex.item%5 == 3)
+//    {
+//        image.backgroundColor = [UIColor blackColor];
+//    }
+//    else if (currentIndex.item%5 == 4)
+//    {
+//        image.backgroundColor = [UIColor yellowColor];
+//    }
     return cell;
 }
+
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    NSIndexPath * currentIndexPath = [[self.pictureCollection indexPathsForVisibleItems]lastObject];
+//    NSLog(@"%@",currentIndexPath);
+//    if (currentIndexPath.item == 9) {
+//        //indexPath item适用于collectionview
+//        NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:0 inSection:0];
+//        [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+//    }
+//}
+
+
 @end

@@ -48,10 +48,8 @@
             if (ABS(distance) < ACTIVE_DISTANCE) {
                 
                 CGFloat zoom = 1 - ABS(normalizedDistance);
-                NSLog(@"%f",zoom);
-//                if (attributes.frame.origin.x < 0 || attributes.frame.origin.x > rect.size.width) {
-//                    break;
-//                }
+//                NSLog(@"%f",zoom);
+//
                 //在左半边
                 if (distance > 0) {
 //                    //旋转的角度控制(1-zoom)*M_PI/6
