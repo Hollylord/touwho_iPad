@@ -56,10 +56,13 @@
             if (ABS(distance) < ACTIVE_DISTANCE) {
                 
                 CGFloat zoom = 1 - ABS(normalizedDistance);
-<<<<<<< HEAD
+
 //                NSLog(@"%f",zoom);
 //
                 //在左半边
+=======
+                NSLog(@"%f",zoom);
+>>>>>>> parent of b4066f9... 图片滚动仿网易云音乐成功
 =======
                 NSLog(@"%f",zoom);
 >>>>>>> parent of b4066f9... 图片滚动仿网易云音乐成功
