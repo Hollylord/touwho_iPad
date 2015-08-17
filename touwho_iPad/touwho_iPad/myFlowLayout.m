@@ -77,7 +77,7 @@
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,zoom2);
                     }
    
-//                    attributes.zIndex = -1;
+
                 }
                 //在右半边
                 else {
@@ -96,7 +96,7 @@
                     
                     
                     
-//                    attributes.zIndex = 1;
+
                 }
                 
             }
