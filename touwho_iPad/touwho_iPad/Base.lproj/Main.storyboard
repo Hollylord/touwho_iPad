@@ -152,6 +152,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YhG-ZB-dhR">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="864" id="IOS-GC-H8b"/>
                                             <constraint firstAttribute="height" constant="218" id="ogg-pU-e3I"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="1" id="Abc-IP-I69" customClass="myFlowLayout">
@@ -170,15 +171,18 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <color key="backgroundColor" red="1" green="0.88321738189999999" blue="0.2418502434" alpha="1" colorSpace="calibratedRGB"/>
+                                                <size key="customSize" width="401" height="148"/>
                                             </collectionViewCell>
                                         </cells>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="IOS-GC-H8b"/>
                                                 <exclude reference="ogg-pU-e3I"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
+                                                <include reference="IOS-GC-H8b"/>
                                                 <include reference="ogg-pU-e3I"/>
                                             </mask>
                                         </variation>
@@ -223,7 +227,7 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="8iF-Es-Z8s"/>
-                                        <include reference="LHQ-i5-9D6"/>
+                                        <exclude reference="LHQ-i5-9D6"/>
                                         <include reference="mOu-2v-owh"/>
                                         <include reference="aqO-m2-7RT"/>
                                         <include reference="lHM-XG-lLq"/>
@@ -273,6 +277,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="findBtn" destination="N5h-eR-iEZ" id="4wn-wV-is6"/>
+                        <outlet property="flowLayoutForCollectionView" destination="Abc-IP-I69" id="k5p-CW-Ias"/>
                         <outlet property="headIcon" destination="K2W-ag-bb5" id="tMR-9U-K3l"/>
                         <outlet property="meBtn" destination="IrH-4e-mmv" id="c2Q-5J-oOP"/>
                         <outlet property="newsBtn" destination="vrb-lb-6JY" id="0ir-1G-oTx"/>
@@ -282,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1328.25" y="-18"/>
+            <point key="canvasLocation" x="-1227" y="-37.5"/>
         </scene>
     </scenes>
 </document>

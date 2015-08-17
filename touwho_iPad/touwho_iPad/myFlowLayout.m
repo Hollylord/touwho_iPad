@@ -21,21 +21,13 @@
 //        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 //        self.sectionInset = UIEdgeInsetsMake(200, 0.0, 200, 0.0);
         self.minimumLineSpacing = -20.0;
+//        self.itemSize = CGSizeMake(240, 128);
     }
     return self;
 }
 
-//-(id)init
-//{
-//    self = [super init];
-//    if (self) {
-//        self.itemSize = CGSizeMake(ITEM_SIZE, 200);
-//        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//        self.sectionInset = UIEdgeInsetsMake(200, 0.0, 200, 0.0);
-//        self.minimumLineSpacing = -400.0;
-//    }
-//    return self;
-//}
+
+
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)oldBounds
 {
@@ -49,6 +41,8 @@
     visibleRect.origin = self.collectionView.contentOffset;
     visibleRect.size = self.collectionView.bounds.size;
     
+    
+    
     for (UICollectionViewLayoutAttributes* attributes in array) {
         if (CGRectIntersectsRect(attributes.frame, rect)) {
             CGFloat distance = CGRectGetMidX(visibleRect) - attributes.center.x;
@@ -56,10 +50,7 @@
             if (ABS(distance) < ACTIVE_DISTANCE) {
                 
                 CGFloat zoom = 1 - ABS(normalizedDistance);
-                NSLog(@"%f",zoom);
-                //                if (attributes.frame.origin.x < 0 || attributes.frame.origin.x > rect.size.width) {
-                //                    break;
-                //                }
+              
                 //在左半边
                 if (distance > 0) {
                     //                    //旋转的角度控制(1-zoom)*M_PI/6
@@ -107,7 +98,9 @@
                 }];
             }
         }
+        
     }
+    
     return array;
 }
 

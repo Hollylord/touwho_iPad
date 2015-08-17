@@ -8,6 +8,7 @@
 
 #import "programViewController.h"
 #import "INSSearchBar.h"
+#import "myFlowLayout.h"
 
 @interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *headIcon;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *meBtn;
 @property (weak,nonatomic) INSSearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *pictureCollection;
+@property (weak, nonatomic) IBOutlet myFlowLayout *flowLayoutForCollectionView;
 
 - (IBAction)program:(UIButton *)sender;
 - (IBAction)news:(UIButton *)sender;
@@ -40,12 +42,20 @@
     //图片滚动
     self.pictureCollection.delegate = self;
     self.pictureCollection.dataSource = self;
+    self.pictureCollection.frame = CGRectMake(30, 84, 864, 218);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+//    self.pictureCollection.translatesAutoresizingMaskIntoConstraints = NO;
     
     
     
 }
 - (void)viewWillAppear:(BOOL)animated{
-//    [self.pictureCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:250 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+//    NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
+//    [self.pictureCollection reloadItemsAtIndexPaths:@[index]];
+//    [self.pictureCollection layoutIfNeeded];
+  
+    NSLog(@"%@",NSStringFromCGRect(self.pictureCollection.frame) );
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -106,40 +116,46 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
+    //cv.indexPathsForVisibleItems 是可视范围内的index，而indexPath是所有的index
     UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"picture" forIndexPath:indexPath];
-//    UIImageView *image = (UIImageView *)[cell viewWithTag:0];
-//    NSIndexPath *currentIndex = [cv.indexPathsForVisibleItems lastObject];
-//    if (currentIndex.item/5 == 0 ) {
-//        image.backgroundColor = [UIColor redColor];
-//    }
-//    else if (currentIndex.item%5 == 1)
-//    {
-//        image.backgroundColor = [UIColor greenColor];
-//    }
-//    else if (currentIndex.item%5 == 2)
-//    {
-//        image.backgroundColor = [UIColor grayColor];
-//    }
-//    else if (currentIndex.item%5 == 3)
-//    {
-//        image.backgroundColor = [UIColor blackColor];
-//    }
-//    else if (currentIndex.item%5 == 4)
-//    {
-//        image.backgroundColor = [UIColor yellowColor];
-//    }
+    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.bounds.size.width, cell.contentView.bounds.size.height)];
+    [cell.contentView addSubview:image];
+    NSString *imageName = [NSString stringWithFormat:@"ydy%ld",indexPath.item%5+1];
+    if (indexPath.item%5 == 0) {
+        
+        image.image = [UIImage imageNamed:imageName];
+    }
+    else if (indexPath.item%5 == 1)
+    {
+        image.image = [UIImage imageNamed:imageName];
+    }
+    else if (indexPath.item%5 == 2)
+    {
+        image.image = [UIImage imageNamed:imageName];
+    }
+    else if (indexPath.item%5 == 3)
+    {
+        image.image = [UIImage imageNamed:imageName];
+    }
+    else if (indexPath.item%5 == 4)
+    {
+        image.image = [UIImage imageNamed:imageName];
+    }
+    
     return cell;
 }
 
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    NSIndexPath * currentIndexPath = [[self.pictureCollection indexPathsForVisibleItems]lastObject];
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSIndexPath * currentIndexPath = [[self.pictureCollection indexPathsForVisibleItems]lastObject];
 //    NSLog(@"%@",currentIndexPath);
-//    if (currentIndexPath.item == 9) {
-//        //indexPath item适用于collectionview
-//        NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:0 inSection:0];
-//        [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-//    }
-//}
+    if (currentIndexPath.item == 499) {
+        //indexPath item适用于collectionview
+        NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:0 inSection:0];
+        [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    }
+}
 
 
 @end
