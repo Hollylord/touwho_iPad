@@ -18,24 +18,28 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
-//        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//        self.sectionInset = UIEdgeInsetsMake(200, 0.0, 200, 0.0);
         self.minimumLineSpacing = -20.0;
-//        self.itemSize = CGSizeMake(240, 128);
+        self.itemSize = CGSizeMake(401, 148);
+        
     }
     return self;
 }
 
 
-
+- (void)prepareLayout{
+    
+}
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)oldBounds
 {
     return YES;
 }
 
+
+//rect是scrollview的rect，即它的contentoffset会随着滚动变化，不是0，0
 -(NSArray*)layoutAttributesForElementsInRect:(CGRect)rect
 {
+    
     NSArray* array = [super layoutAttributesForElementsInRect:rect];
     CGRect visibleRect;
     visibleRect.origin = self.collectionView.contentOffset;

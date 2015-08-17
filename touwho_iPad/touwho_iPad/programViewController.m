@@ -42,7 +42,7 @@
     //图片滚动
     self.pictureCollection.delegate = self;
     self.pictureCollection.dataSource = self;
-    self.pictureCollection.frame = CGRectMake(30, 84, 864, 218);
+    [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
 //    self.pictureCollection.translatesAutoresizingMaskIntoConstraints = NO;
@@ -56,6 +56,11 @@
 //    [self.pictureCollection layoutIfNeeded];
   
     NSLog(@"%@",NSStringFromCGRect(self.pictureCollection.frame) );
+}
+- (void)viewDidAppear:(BOOL)animated{
+//        NSIndexPath *index = [NSIndexPath indexPathForItem:20 inSection:0];
+//        [self.pictureCollection reloadItemsAtIndexPaths:@[index]];
+//    [self.pictureCollection scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -118,6 +123,9 @@
 {
     //cv.indexPathsForVisibleItems 是可视范围内的index，而indexPath是所有的index
     UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"picture" forIndexPath:indexPath];
+    
+//    cell.contentView.bounds = CGRectMake(0, 0, 401, 148);
+    NSLog(@"%@",NSStringFromCGRect(cell.contentView.frame));
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.bounds.size.width, cell.contentView.bounds.size.height)];
     [cell.contentView addSubview:image];
     NSString *imageName = [NSString stringWithFormat:@"ydy%ld",indexPath.item%5+1];
@@ -156,16 +164,9 @@
         [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     }
     
-//    if (currentIndexPath.item == 1) {
-//        
-//       UICollectionViewLayoutAttributes* attr = [self.pictureCollection layoutAttributesForItemAtIndexPath:currentIndexPath];
-//        attr.zIndex = 1;
-//        
-//    }
-//    else {
-//        attr.zIndex = -1;
-//    }
+
 }
+
 
 
 @end
