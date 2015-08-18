@@ -14,7 +14,7 @@
 @end
 
 
-@interface programView : UIView
+@interface programView : UIView <ASProgressPopUpViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet ASProgressPopUpView *progressView;

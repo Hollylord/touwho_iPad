@@ -190,12 +190,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="YhG-ZB-dhR" firstAttribute="leading" secondItem="g1X-k0-Mdr" secondAttribute="leading" constant="30" id="8iF-Es-Z8s"/>
-                                    <constraint firstAttribute="trailing" secondItem="YhG-ZB-dhR" secondAttribute="trailing" constant="30" id="LHQ-i5-9D6"/>
                                     <constraint firstItem="7bA-Te-4xr" firstAttribute="top" secondItem="g1X-k0-Mdr" secondAttribute="top" id="So7-l1-FiS"/>
                                     <constraint firstAttribute="trailing" secondItem="7bA-Te-4xr" secondAttribute="trailing" constant="290" id="YJv-me-t6x"/>
                                     <constraint firstItem="Sef-Hs-pXv" firstAttribute="leading" secondItem="g1X-k0-Mdr" secondAttribute="leading" id="aqO-m2-7RT"/>
                                     <constraint firstItem="7bA-Te-4xr" firstAttribute="leading" secondItem="g1X-k0-Mdr" secondAttribute="leading" id="f2L-KO-wAV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Sef-Hs-pXv" secondAttribute="bottom" constant="373" id="lHM-XG-lLq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sef-Hs-pXv" secondAttribute="bottom" constant="373" id="lHM-XG-lLq" userLabel="scroll竖直滚动范围"/>
                                     <constraint firstItem="YhG-ZB-dhR" firstAttribute="top" secondItem="7bA-Te-4xr" secondAttribute="bottom" constant="20" id="mOu-2v-owh"/>
                                     <constraint firstAttribute="trailing" secondItem="Sef-Hs-pXv" secondAttribute="trailing" id="qNe-EF-R04"/>
                                     <constraint firstItem="Sef-Hs-pXv" firstAttribute="top" secondItem="g1X-k0-Mdr" secondAttribute="top" constant="62" id="tmr-B8-jhT"/>
@@ -208,7 +207,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="8iF-Es-Z8s"/>
-                                        <exclude reference="LHQ-i5-9D6"/>
                                         <exclude reference="mOu-2v-owh"/>
                                         <exclude reference="aqO-m2-7RT"/>
                                         <exclude reference="lHM-XG-lLq"/>
@@ -227,7 +225,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="8iF-Es-Z8s"/>
-                                        <exclude reference="LHQ-i5-9D6"/>
                                         <include reference="mOu-2v-owh"/>
                                         <include reference="aqO-m2-7RT"/>
                                         <include reference="lHM-XG-lLq"/>
@@ -284,6 +281,7 @@
                         <outlet property="pictureCollection" destination="YhG-ZB-dhR" id="GxL-Ud-jF8"/>
                         <outlet property="programBtn" destination="iXz-V3-mIH" id="6Fo-kh-bM8"/>
                         <outlet property="scrollView" destination="g1X-k0-Mdr" id="ScR-jG-r51"/>
+                        <outlet property="yOfScrollView" destination="lHM-XG-lLq" id="fHI-Tp-xKC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
