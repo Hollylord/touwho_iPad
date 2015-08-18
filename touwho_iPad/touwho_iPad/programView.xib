@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="programView">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2c-dS-dBV" userLabel="标题">
+                    <rect key="frame" x="186" y="70" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TQK-68-VOU" customClass="ASProgressPopUpView">
+                    <rect key="frame" x="64" y="181" width="286" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="286" id="bvI-AH-Ow5"/>
+                    </constraints>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-Ob-ehJ" userLabel="认筹金额">
+                    <rect key="frame" x="64" y="199" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Jw-222" userLabel="百分比">
+                    <rect key="frame" x="186" y="199" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf7-oi-LTU" userLabel="目标金额">
+                    <rect key="frame" x="308" y="199" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Va0-WO-tjP">
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="250"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="C2c-dS-dBV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="9FV-F4-0p5"/>
+                <constraint firstItem="C2c-dS-dBV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H08-PS-k1f"/>
+                <constraint firstItem="Vbv-Jw-222" firstAttribute="centerY" secondItem="Kc6-Ob-ehJ" secondAttribute="centerY" id="IRG-RF-for"/>
+                <constraint firstAttribute="trailing" secondItem="Va0-WO-tjP" secondAttribute="trailing" id="JPu-WE-uEE"/>
+                <constraint firstItem="Va0-WO-tjP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NQj-NK-CBT"/>
+                <constraint firstItem="Va0-WO-tjP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YfI-b2-O58"/>
+                <constraint firstItem="Kc6-Ob-ehJ" firstAttribute="leading" secondItem="TQK-68-VOU" secondAttribute="leading" id="ZYz-Gt-5vg"/>
+                <constraint firstItem="TQK-68-VOU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="opt-ul-Q5g"/>
+                <constraint firstItem="TQK-68-VOU" firstAttribute="top" secondItem="C2c-dS-dBV" secondAttribute="bottom" constant="90" id="q9k-Hd-xqS"/>
+                <constraint firstAttribute="bottom" secondItem="Va0-WO-tjP" secondAttribute="bottom" id="tdZ-5U-N3x"/>
+                <constraint firstItem="Tf7-oi-LTU" firstAttribute="trailing" secondItem="TQK-68-VOU" secondAttribute="trailing" id="tpZ-zz-LGG"/>
+                <constraint firstItem="Tf7-oi-LTU" firstAttribute="centerY" secondItem="Kc6-Ob-ehJ" secondAttribute="centerY" id="wXN-Yj-YfV"/>
+                <constraint firstItem="Kc6-Ob-ehJ" firstAttribute="top" secondItem="TQK-68-VOU" secondAttribute="bottom" constant="16" id="y2C-Iz-Rdq"/>
+                <constraint firstItem="Vbv-Jw-222" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yTh-Er-wXX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backgroundImage" destination="Va0-WO-tjP" id="1gF-rn-JiQ"/>
+                <outlet property="currentAmount" destination="Kc6-Ob-ehJ" id="uyp-dH-3gV"/>
+                <outlet property="percent" destination="Vbv-Jw-222" id="U8i-yJ-q8q"/>
+                <outlet property="progressView" destination="TQK-68-VOU" id="hht-tx-sKe"/>
+                <outlet property="title" destination="C2c-dS-dBV" id="aAJ-K3-D67"/>
+                <outlet property="totalAmount" destination="Tf7-oi-LTU" id="A7p-lu-Hj1"/>
+                <outletCollection property="gestureRecognizers" destination="Atw-cB-Ipr" appends="YES" id="iUS-UF-jKa"/>
+            </connections>
+            <point key="canvasLocation" x="330.5" y="295"/>
+        </view>
+        <tapGestureRecognizer id="Atw-cB-Ipr">
+            <connections>
+                <action selector="tapProgram:" destination="iN0-l3-epB" id="4hM-M0-34k"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

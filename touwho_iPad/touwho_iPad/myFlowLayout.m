@@ -51,7 +51,7 @@
         
         if (CGRectIntersectsRect(attributes.frame, rect)) {
             CGFloat distance = CGRectGetMidX(visibleRect) - attributes.center.x;
-            NSLog(@"%@",NSStringFromCGRect( attributes.frame));
+            
             if (ABS(distance) < 300) {
                 attributes.zIndex = 1;
             }

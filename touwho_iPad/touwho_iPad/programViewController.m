@@ -9,8 +9,10 @@
 #import "programViewController.h"
 #import "INSSearchBar.h"
 #import "myFlowLayout.h"
+#import "programView.h"
 
-@interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate,programViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *headIcon;
 @property (weak, nonatomic) IBOutlet UIButton *programBtn;
 @property (weak, nonatomic) IBOutlet UIButton *newsBtn;
@@ -19,6 +21,9 @@
 @property (weak,nonatomic) INSSearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *pictureCollection;
 @property (weak, nonatomic) IBOutlet myFlowLayout *flowLayoutForCollectionView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (strong,nonatomic) NSMutableArray* programs;
 
 - (IBAction)program:(UIButton *)sender;
 - (IBAction)news:(UIButton *)sender;
@@ -28,7 +33,15 @@
 @end
 
 @implementation programViewController
+#pragma mark - 懒加载
+- (NSMutableArray *)programs{
+    if (_programs == nil) {
+       _programs = [NSMutableArray array];
+    }
+    return _programs;
+}
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,28 +55,43 @@
     //图片滚动
     self.pictureCollection.delegate = self;
     self.pictureCollection.dataSource = self;
-    
     //还是要先注册一个cell
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
     
+    
+    //添加项目视图
+    programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+    
+    program.delegate = self;
+    [self.scrollView addSubview:program];
+    [self.programs addObject:program];
+    [self layoutForProgramView:self.programs[0]];
+    
+
 
     
     
     
 }
+
+//布局programView
+- (void)layoutForProgramView:(programView *)programView{
+    NSLayoutConstraint* leading = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
+    NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:350];
+    NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
+    NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
+    [self.scrollView addConstraints:@[leading,top]];
+    [programView addConstraints:@[width,height]];
+    programView.translatesAutoresizingMaskIntoConstraints = NO;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
-//    NSIndexPath *index = [NSIndexPath indexPathForItem:0 inSection:0];
-//    [self.pictureCollection reloadItemsAtIndexPaths:@[index]];
-//    [self.pictureCollection layoutIfNeeded];
+    
   
-    NSLog(@"%@",NSStringFromCGRect(self.pictureCollection.frame) );
+    
 }
 - (void)viewDidAppear:(BOOL)animated{
-//        NSIndexPath *index = [NSIndexPath indexPathForItem:20 inSection:0];
-//        [self.pictureCollection reloadItemsAtIndexPaths:@[index]];
-//    [self.pictureCollection scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -127,8 +155,8 @@
     //cv.indexPathsForVisibleItems 是可视范围内的index，而indexPath是所有的index
     UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"picture" forIndexPath:indexPath];
     
-//    cell.contentView.bounds = CGRectMake(0, 0, 401, 148);
-    NSLog(@"%@",NSStringFromCGRect(cell.contentView.frame));
+
+    
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.bounds.size.width, cell.contentView.bounds.size.height)];
     [cell.contentView addSubview:image];
     NSString *imageName = [NSString stringWithFormat:@"ydy%ld",indexPath.item%5+1];
@@ -170,6 +198,9 @@
 
 }
 
+- (void)tap{
+    NSLog(@"123");
+}
 
 
 @end
