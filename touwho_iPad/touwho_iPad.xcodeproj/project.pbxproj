@@ -11,6 +11,7 @@
 		A13259281B82C37B00A327C6 /* programView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13259271B82C37B00A327C6 /* programView.xib */; };
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
 		A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592C1B82C65000A327C6 /* ASProgressPopUpView.m */; };
+		A13259341B83071200A327C6 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259331B83071200A327C6 /* loginViewController.m */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
 		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
@@ -49,6 +50,8 @@
 		A132592A1B82C65000A327C6 /* ASPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopUpView.m; sourceTree = "<group>"; };
 		A132592B1B82C65000A327C6 /* ASProgressPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASProgressPopUpView.h; sourceTree = "<group>"; };
 		A132592C1B82C65000A327C6 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
+		A13259321B83071200A327C6 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		A13259331B83071200A327C6 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		A19D093B1B7C2DF100094B81 /* touwho_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touwho_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +101,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A132592F1B8306CE00A327C6 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A13259321B83071200A327C6 /* loginViewController.h */,
+				A13259331B83071200A327C6 /* loginViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A13259301B8306E100A327C6 /* 我 */ = {
+			isa = PBXGroup;
+			children = (
+				A13259311B8306E900A327C6 /* view */,
+				A132592F1B8306CE00A327C6 /* controller */,
+			);
+			name = "我";
+			sourceTree = "<group>";
+		};
+		A13259311B8306E900A327C6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		A19D09321B7C2DF100094B81 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +152,7 @@
 				A1C239FC1B81BC41004E6DAC /* Main.storyboard */,
 				A19D094A1B7C2DF100094B81 /* Assets.xcassets */,
 				A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */,
+				A13259301B8306E100A327C6 /* 我 */,
 				A19D09721B7C301300094B81 /* 首页 */,
 				A19D09711B7C2F5B00094B81 /* other */,
 				A19D093E1B7C2DF100094B81 /* Supporting Files */,
@@ -342,6 +371,7 @@
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
+				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
