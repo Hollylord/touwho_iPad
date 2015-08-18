@@ -47,8 +47,8 @@
     [super viewDidLoad];
     
     //搜索框
-    INSSearchBar *search = [[INSSearchBar alloc] initWithFrame:CGRectMake(744, 42, 44, 30)];
-    [self.view addSubview:search];
+    INSSearchBar *search = [[INSSearchBar alloc] initWithFrame:CGRectMake(644, 18, 44, 30)];
+    [self.scrollView addSubview:search];
     self.searchBar = search;
     self.searchBar.delegate = self;
     self.searchBar.backgroundColor = [UIColor redColor];
@@ -66,6 +66,7 @@
         
         program.delegate = self;
         [self.scrollView addSubview:program];
+        program.backgroundColor = [UIColor redColor];
         [self.programs addObject:program];
         [self layoutForProgramView:self.programs[i] index:i];
     }
@@ -104,15 +105,13 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-  
-    
-}
+
+
+//在这里才能获得视图的真正frame
 - (void)viewDidAppear:(BOOL)animated{
     programView *lastView =[self.programs lastObject];
     //设置scrollview的滚动范围
-    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) + 20;
+    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -136,7 +135,7 @@
 #pragma mark - 搜索框的代理
 - (CGRect)destinationFrameForSearchBar:(INSSearchBar *)searchBar
 {
-    return CGRectMake(744, 42, 250, 30);
+    return CGRectMake(644, 18, 250, 30);
 }
 
 - (void)searchBar:(INSSearchBar *)searchBar willStartTransitioningToState:(INSSearchBarState)destinationState
