@@ -42,11 +42,13 @@
     //图片滚动
     self.pictureCollection.delegate = self;
     self.pictureCollection.dataSource = self;
+    
     //还是要先注册一个cell
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
     self.automaticallyAdjustsScrollViewInsets = NO;
+
     
-//    self.pictureCollection.translatesAutoresizingMaskIntoConstraints = NO;
+
     
     
     

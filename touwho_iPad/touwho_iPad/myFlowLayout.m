@@ -51,6 +51,7 @@
         
         if (CGRectIntersectsRect(attributes.frame, rect)) {
             CGFloat distance = CGRectGetMidX(visibleRect) - attributes.center.x;
+            NSLog(@"%@",NSStringFromCGRect( attributes.frame));
             if (ABS(distance) < 300) {
                 attributes.zIndex = 1;
             }
@@ -84,7 +85,7 @@
                     //(zoom-1)*M_PI/6
                     CATransform3D rotate = CATransform3DMakeRotation((zoom-1)*M_PI/6, 0, 1, 0);
                     
-                    //                    attributes.transform3D = rotate;
+ 
                     
                     CGFloat zoom2 = zoom/2+0.8;
                     if (zoom2 < 1) {
