@@ -12,6 +12,8 @@
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
 		A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592C1B82C65000A327C6 /* ASProgressPopUpView.m */; };
 		A13259341B83071200A327C6 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259331B83071200A327C6 /* loginViewController.m */; };
+		A13259371B83339300A327C6 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259361B83339300A327C6 /* leftViewController.m */; };
+		A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259391B8336FE00A327C6 /* splitViewController.m */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
 		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
@@ -52,6 +54,10 @@
 		A132592C1B82C65000A327C6 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
 		A13259321B83071200A327C6 /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
 		A13259331B83071200A327C6 /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		A13259351B83339300A327C6 /* leftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewController.h; sourceTree = "<group>"; };
+		A13259361B83339300A327C6 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
+		A13259381B8336FE00A327C6 /* splitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splitViewController.h; sourceTree = "<group>"; };
+		A13259391B8336FE00A327C6 /* splitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splitViewController.m; sourceTree = "<group>"; };
 		A19D093B1B7C2DF100094B81 /* touwho_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touwho_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -208,8 +214,12 @@
 		A19D09731B7C302500094B81 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				A13259381B8336FE00A327C6 /* splitViewController.h */,
+				A13259391B8336FE00A327C6 /* splitViewController.m */,
 				A19D09741B7C306900094B81 /* programViewController.h */,
 				A19D09751B7C306900094B81 /* programViewController.m */,
+				A13259351B83339300A327C6 /* leftViewController.h */,
+				A13259361B83339300A327C6 /* leftViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -367,6 +377,8 @@
 			files = (
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
+				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
+				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,

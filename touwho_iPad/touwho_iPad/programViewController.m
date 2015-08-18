@@ -13,12 +13,8 @@
 #import "loginViewController.h"
 
 @interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate,programViewDelegate>
-//左边栏的按钮
-@property (weak, nonatomic) IBOutlet UIImageView *headIcon;
-@property (weak, nonatomic) IBOutlet UIButton *programBtn;
-@property (weak, nonatomic) IBOutlet UIButton *newsBtn;
-@property (weak, nonatomic) IBOutlet UIButton *findBtn;
-@property (weak, nonatomic) IBOutlet UIButton *meBtn;
+
+
 
 //中间的视图
 @property (weak,nonatomic) INSSearchBar *searchBar;
@@ -30,11 +26,7 @@
 //用来存放所有的项目
 @property (strong,nonatomic) NSMutableArray* programs;
 
-//左侧边栏的按钮点击
-- (IBAction)program:(UIButton *)sender;
-- (IBAction)news:(UIButton *)sender;
-- (IBAction)find:(UIButton *)sender;
-- (IBAction)me:(UIButton *)sender;
+
 
 @end
 
@@ -124,24 +116,7 @@
 }
 
 
-#pragma mark - 按钮点击
-- (IBAction)program:(UIButton *)sender {
-}
 
-- (IBAction)news:(UIButton *)sender {
-}
-
-- (IBAction)find:(UIButton *)sender {
-}
-
-- (IBAction)me:(UIButton *)sender {
-    
-    loginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
-    viewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:viewController animated:YES completion:NULL];
-    viewController.view.superview.frame = CGRectMake(0, 0, 600, 600);
-    viewController.view.superview.center = self.view.center;
-}
 
 #pragma mark - 搜索框的代理
 - (CGRect)destinationFrameForSearchBar:(INSSearchBar *)searchBar
@@ -234,11 +209,7 @@
     NSLog(@"123");
 }
 
-//#pragma mark - 点击空白
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    loginViewController *login = (loginViewController *)self.presentedViewController;
-//    [login dismissViewControllerAnimated:YES completion:NULL];
-//}
+
 
 
 
