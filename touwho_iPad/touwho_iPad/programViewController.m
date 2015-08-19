@@ -44,8 +44,8 @@
     [super viewDidLoad];
     
     //搜索框
-    INSSearchBar *search = [[INSSearchBar alloc] initWithFrame:CGRectMake(644, 18, 44, 30)];
-    [self.scrollView addSubview:search];
+    INSSearchBar *search = [[INSSearchBar alloc] initWithFrame:CGRectMake(644, 33, 44, 30)];
+    [self.view addSubview:search];
     self.searchBar = search;
     self.searchBar.delegate = self;
     self.searchBar.backgroundColor = [UIColor redColor];
@@ -124,7 +124,7 @@
 #pragma mark - 搜索框的代理
 - (CGRect)destinationFrameForSearchBar:(INSSearchBar *)searchBar
 {
-    return CGRectMake(644, 18, 250, 30);
+    return CGRectMake(644, 33, 250, 30);
 }
 
 - (void)searchBar:(INSSearchBar *)searchBar willStartTransitioningToState:(INSSearchBarState)destinationState
