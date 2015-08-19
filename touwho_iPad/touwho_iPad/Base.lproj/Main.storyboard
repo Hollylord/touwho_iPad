@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-pS-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1737.75" y="3"/>
+            <point key="canvasLocation" x="-1601" y="31"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ria-JU-LqW">
@@ -418,7 +418,7 @@
                                         <rect key="frame" x="94" y="10" width="50" height="50"/>
                                         <state key="normal" image="wx"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="96" y="20" width="46" height="30"/>
+                                            <rect key="frame" x="94" y="10" width="50" height="50"/>
                                         </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APM-hD-9wE" userLabel="QQ">
@@ -582,7 +582,104 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGI-xc-1c2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-807" y="3"/>
+            <point key="canvasLocation" x="-1601" y="731"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="lIV-Zr-hEJ">
+            <objects>
+                <viewController storyboardIdentifier="discovery" title="发现" id="Va9-lJ-VSV" customClass="discoveryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a2g-6p-vio"/>
+                        <viewControllerLayoutGuide type="bottom" id="hCj-4H-pVG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hy2-pZ-C2H">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="r1g-ca-zyV">
+                                <rect key="frame" x="100" y="0.0" width="400" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
+                                        <rect key="frame" x="0.0" y="70" width="27" height="30"/>
+                                        <state key="normal" title="投壶活动"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="70" width="60" height="30"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
+                                        <rect key="frame" x="77" y="70" width="60" height="30"/>
+                                        <state key="normal" title="视频路演"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="135" y="70" width="60" height="30"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-or-ygN">
+                                        <rect key="frame" x="187" y="70" width="26" height="30"/>
+                                        <state key="normal" title="机构专题"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="270" y="70" width="60" height="30"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
+                                        <rect key="frame" x="263" y="70" width="60" height="30"/>
+                                        <state key="normal" title="行业讨论"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="405" y="70" width="60" height="30"/>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-HG-tEg">
+                                        <rect key="frame" x="373" y="70" width="27" height="30"/>
+                                        <state key="normal" title="牛人观点"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="540" y="70" width="60" height="30"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7aO-Ts-mB9"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S61-Ex-FFa">
+                                <rect key="frame" x="0.0" y="100" width="600" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="g2k-so-dz6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S61-Ex-FFa" firstAttribute="leading" secondItem="Hy2-pZ-C2H" secondAttribute="leading" id="7U7-Xz-LvC"/>
+                            <constraint firstAttribute="trailing" secondItem="r1g-ca-zyV" secondAttribute="trailing" constant="100" id="YKw-8O-v0T"/>
+                            <constraint firstItem="r1g-ca-zyV" firstAttribute="top" secondItem="Hy2-pZ-C2H" secondAttribute="top" id="axD-sG-lFa"/>
+                            <constraint firstItem="S61-Ex-FFa" firstAttribute="top" secondItem="r1g-ca-zyV" secondAttribute="bottom" id="dky-NQ-Lu3"/>
+                            <constraint firstItem="r1g-ca-zyV" firstAttribute="leading" secondItem="Hy2-pZ-C2H" secondAttribute="leading" constant="100" id="wWz-1z-wGz"/>
+                            <constraint firstAttribute="trailing" secondItem="S61-Ex-FFa" secondAttribute="trailing" id="xz0-fz-5JD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Il-V3-Jrc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bgn-6q-3Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-781" y="1403"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yUn-DC-lOw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PgY-NF-axx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hTC-MY-2dm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Va9-lJ-VSV" kind="relationship" relationship="rootViewController" id="yFj-Ga-kIN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0zi-kn-Xth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1593" y="1403"/>
         </scene>
     </scenes>
     <resources>

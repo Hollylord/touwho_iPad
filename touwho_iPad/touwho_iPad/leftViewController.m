@@ -65,6 +65,7 @@
         self.news.selected = NO;
         self.discovery.selected = YES;
         self.me.selected = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"discoveryNotification" object:nil];
     }
     else {
         //发送被点击的通知

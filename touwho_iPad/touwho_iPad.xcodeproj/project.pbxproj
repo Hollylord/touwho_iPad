@@ -24,6 +24,7 @@
 		A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09791B7C6E5C00094B81 /* INSSearchBar.m */; };
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
+		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		A19D097C1B7C835C00094B81 /* myFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFlowLayout.m; sourceTree = "<group>"; };
 		A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
 		A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
+		A1B868401B842D02005C4A6F /* discoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discoveryViewController.h; sourceTree = "<group>"; };
+		A1B868411B842D02005C4A6F /* discoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = discoveryViewController.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +161,7 @@
 				A1C239FC1B81BC41004E6DAC /* Main.storyboard */,
 				A19D094A1B7C2DF100094B81 /* Assets.xcassets */,
 				A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */,
+				A1B868381B842BEF005C4A6F /* 发现 */,
 				A13259301B8306E100A327C6 /* 我 */,
 				A19D09721B7C301300094B81 /* 首页 */,
 				A19D09711B7C2F5B00094B81 /* other */,
@@ -240,6 +244,31 @@
 				A13259241B82C35A00A327C6 /* programView.h */,
 				A13259251B82C35A00A327C6 /* programView.m */,
 				A13259271B82C37B00A327C6 /* programView.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		A1B868381B842BEF005C4A6F /* 发现 */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8683A1B842C00005C4A6F /* view */,
+				A1B868391B842BFA005C4A6F /* controller */,
+			);
+			name = "发现";
+			sourceTree = "<group>";
+		};
+		A1B868391B842BFA005C4A6F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
+				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A1B8683A1B842C00005C4A6F /* view */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -379,6 +408,7 @@
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
+				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
