@@ -10,8 +10,15 @@
 
 
 @interface leftViewController () <UISplitViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *program;
+@property (weak, nonatomic) IBOutlet UIButton *news;
+@property (weak, nonatomic) IBOutlet UIButton *discovery;
+@property (weak, nonatomic) IBOutlet UIButton *me;
 
-- (IBAction)me:(UIButton *)sender;
+- (IBAction)menuClick:(UIButton *)sender;
+
+
+
 
 @end
 
@@ -19,7 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.program.selected = YES;
+    self.news.selected = NO;
+    self.discovery.selected = NO;
+    self.me.selected = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,11 +41,39 @@
 
 
 
-- (IBAction)me:(UIButton *)sender {
-    //发送被点击的通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotification" object:nil];
+#pragma mark - 按钮点击
+- (IBAction)menuClick:(UIButton *)sender {
+    if (sender.tag == 0 ) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"programNotification" object:nil];
+        self.program.selected = YES;
+        self.news.selected = NO;
+        self.discovery.selected = NO;
+        self.me.selected = NO;
+        
+    }
+    else if (sender.tag == 1 )
+    {
+        self.program.selected = NO;
+        self.news.selected = YES;
+        self.discovery.selected = NO;
+        self.me.selected = NO;
+        
+    }
+    else if (sender.tag == 2 )
+    {
+        self.program.selected = NO;
+        self.news.selected = NO;
+        self.discovery.selected = YES;
+        self.me.selected = NO;
+    }
+    else {
+        //发送被点击的通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotification" object:nil];
+        self.program.selected = NO;
+        self.news.selected = NO;
+        self.discovery.selected = NO;
+        self.me.selected = YES;
+    }
     
 }
-
-
 @end

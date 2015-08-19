@@ -8,7 +8,7 @@
         <!--首页-->
         <scene sceneID="pt6-ro-NX5">
             <objects>
-                <viewController title="首页" id="4hH-uE-Vy4" customClass="programViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shouye" title="首页" id="4hH-uE-Vy4" customClass="programViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jTM-1b-KYt"/>
                         <viewControllerLayoutGuide type="bottom" id="0sk-6n-MDh"/>
@@ -285,23 +285,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aqF-hp-sLO">
                                 <rect key="frame" x="0.0" y="162" width="100" height="200"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Hc-FD0">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Hc-FD0" userLabel="项目">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1d-Pg-Z8E">
-                                        <rect key="frame" x="0.0" y="50" width="100" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-3T-LLd">
-                                        <rect key="frame" x="0.0" y="100" width="100" height="50"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNT-wX-NCf" userLabel="me">
-                                        <rect key="frame" x="0.0" y="150" width="100" height="50"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="项目"/>
                                         <connections>
-                                            <action selector="me:" destination="wbP-kx-f8L" eventType="touchUpInside" id="Ma8-th-f7K"/>
+                                            <action selector="menuClick:" destination="wbP-kx-f8L" eventType="touchUpInside" id="BWK-ac-zKp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1d-Pg-Z8E" userLabel="新闻">
+                                        <rect key="frame" x="0.0" y="50" width="100" height="50"/>
+                                        <state key="normal" title="新闻"/>
+                                        <connections>
+                                            <action selector="menuClick:" destination="wbP-kx-f8L" eventType="touchUpInside" id="PEH-gN-CIi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-3T-LLd" userLabel="发现">
+                                        <rect key="frame" x="0.0" y="100" width="100" height="50"/>
+                                        <state key="normal" title="发现"/>
+                                        <connections>
+                                            <action selector="menuClick:" destination="wbP-kx-f8L" eventType="touchUpInside" id="mQ8-w9-00B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNT-wX-NCf" userLabel="me">
+                                        <rect key="frame" x="0.0" y="150" width="100" height="50"/>
+                                        <state key="normal" title="我"/>
+                                        <connections>
+                                            <action selector="menuClick:" destination="wbP-kx-f8L" eventType="touchUpInside" id="kli-o2-CWX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -346,6 +355,12 @@
                     <navigationItem key="navigationItem" id="tPY-Bj-J8r"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="100" height="800"/>
+                    <connections>
+                        <outlet property="discovery" destination="pBi-3T-LLd" id="cxr-KE-YP8"/>
+                        <outlet property="me" destination="pNT-wX-NCf" id="dfR-4l-qf2"/>
+                        <outlet property="news" destination="N1d-Pg-Z8E" id="B8T-Ql-1AY"/>
+                        <outlet property="program" destination="1da-Hc-FD0" id="Ucw-Pq-ifK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyc-8K-E16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
