@@ -82,14 +82,14 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="TrB-cE-1YE"/>
                                                 <exclude reference="Eew-CY-JJq"/>
+                                                <exclude reference="TrB-cE-1YE"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
-                                                <include reference="TrB-cE-1YE"/>
                                                 <include reference="Eew-CY-JJq"/>
+                                                <include reference="TrB-cE-1YE"/>
                                             </mask>
                                         </variation>
                                     </stackView>
@@ -152,13 +152,13 @@
                                     <mask key="constraints">
                                         <exclude reference="bwS-b6-2kt"/>
                                         <exclude reference="ulQ-6A-4Ih"/>
-                                        <exclude reference="S4c-Gj-ih5"/>
                                         <exclude reference="Gq4-nd-s4d"/>
-                                        <exclude reference="uCB-Oq-Ha6"/>
+                                        <exclude reference="S4c-Gj-ih5"/>
                                         <exclude reference="qtJ-uZ-iJs"/>
-                                        <exclude reference="sp6-zY-Vqu"/>
-                                        <exclude reference="JRu-LT-a2w"/>
+                                        <exclude reference="uCB-Oq-Ha6"/>
                                         <exclude reference="3sZ-1B-G16"/>
+                                        <exclude reference="JRu-LT-a2w"/>
+                                        <exclude reference="sp6-zY-Vqu"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -170,13 +170,13 @@
                                     <mask key="constraints">
                                         <include reference="bwS-b6-2kt"/>
                                         <include reference="ulQ-6A-4Ih"/>
-                                        <include reference="S4c-Gj-ih5"/>
                                         <include reference="Gq4-nd-s4d"/>
-                                        <include reference="uCB-Oq-Ha6"/>
+                                        <include reference="S4c-Gj-ih5"/>
                                         <include reference="qtJ-uZ-iJs"/>
-                                        <include reference="sp6-zY-Vqu"/>
-                                        <include reference="JRu-LT-a2w"/>
+                                        <include reference="uCB-Oq-Ha6"/>
                                         <include reference="3sZ-1B-G16"/>
+                                        <include reference="JRu-LT-a2w"/>
+                                        <include reference="sp6-zY-Vqu"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -193,10 +193,10 @@
                                 <exclude reference="5oI-Iy-8Jl"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Mbc-SR-8Oi"/>
                                 <exclude reference="LpL-6t-937"/>
                                 <exclude reference="dw2-ca-mTX"/>
                                 <exclude reference="tYU-Gd-LMh"/>
-                                <exclude reference="Mbc-SR-8Oi"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -204,10 +204,10 @@
                                 <include reference="5oI-Iy-8Jl"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Mbc-SR-8Oi"/>
                                 <include reference="LpL-6t-937"/>
                                 <include reference="dw2-ca-mTX"/>
                                 <include reference="tYU-Gd-LMh"/>
-                                <include reference="Mbc-SR-8Oi"/>
                             </mask>
                         </variation>
                     </view>
@@ -218,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-pS-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1509" y="41.25"/>
+            <point key="canvasLocation" x="-1601" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ria-JU-LqW">
@@ -261,8 +261,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="100" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-p7-6f8">
-                                <rect key="frame" x="10" y="56" width="81" height="53"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-p7-6f8">
+                                <rect key="frame" x="6" y="56" width="81" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="7Q0-zq-Hmf"/>
                                     <constraint firstAttribute="height" constant="53" id="ad9-JM-VWR"/>
@@ -335,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyc-8K-E16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1182" y="-590"/>
+            <point key="canvasLocation" x="-1182" y="-602"/>
         </scene>
         <!--登录界面-->
         <scene sceneID="3EK-xv-eGS">
@@ -518,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGI-xc-1c2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-744" y="-628.5"/>
+            <point key="canvasLocation" x="-808" y="27"/>
         </scene>
     </scenes>
     <resources>

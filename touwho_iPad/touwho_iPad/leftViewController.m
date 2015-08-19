@@ -7,7 +7,7 @@
 //
 
 #import "leftViewController.h"
-#import "loginViewController.h"
+
 
 @interface leftViewController () <UISplitViewControllerDelegate>
 
@@ -30,10 +30,9 @@
 
 
 - (IBAction)me:(UIButton *)sender {
+    //发送被点击的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotification" object:nil];
     
-    loginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
-    viewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:viewController animated:YES completion:NULL];
 }
 
 

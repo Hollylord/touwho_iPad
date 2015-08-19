@@ -68,7 +68,8 @@
         [self layoutForProgramView:self.programs[i] index:i];
     }
     
-    
+    //注册登录通知的观察者,能弹出登录界面
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentFormSheetView) name:@"loginNotification" object:nil];
     
     
 
@@ -114,7 +115,9 @@
     [super didReceiveMemoryWarning];
     
 }
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 
@@ -209,6 +212,13 @@
     NSLog(@"123");
 }
 
+#pragma mark - 通知
+- (void)presentFormSheetView{
+    loginViewController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+    login.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:login animated:YES completion:NULL];
+}
 
 
 
