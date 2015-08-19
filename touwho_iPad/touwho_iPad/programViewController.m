@@ -76,13 +76,31 @@
     
 }
 
-//布局programView
+
+
+
+//在这里才能获得视图的真正frame
+- (void)viewDidAppear:(BOOL)animated{
+    programView *lastView =[self.programs lastObject];
+    //设置scrollview的滚动范围
+    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - 200;
+  
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
+}
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - 布局programView
 - (void)layoutForProgramView:(programView *)programView index:(int )indexPath{
-   
+    
     //项目视图在左半边
     if (indexPath%2 == 0) {
         NSLayoutConstraint* leading = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
-        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:350 + indexPath/2*(250 + 20)];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:300 + indexPath/2*(250 + 20)];
         NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
         NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
         [self.scrollView addConstraints:@[leading,top]];
@@ -94,7 +112,7 @@
     //在右半边
     else {
         NSLayoutConstraint* trailing = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTrailing multiplier:1 constant:-30];
-        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:350 + (indexPath-1)/2*(250 + 20)];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:300 + (indexPath-1)/2*(250 + 20)];
         NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
         NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
         [self.scrollView addConstraints:@[trailing,top]];
@@ -102,23 +120,6 @@
         programView.translatesAutoresizingMaskIntoConstraints = NO;
     }
 }
-
-
-
-//在这里才能获得视图的真正frame
-- (void)viewDidAppear:(BOOL)animated{
-    programView *lastView =[self.programs lastObject];
-    //设置scrollview的滚动范围
-    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame);
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
-- (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 
 
 #pragma mark - 搜索框的代理
