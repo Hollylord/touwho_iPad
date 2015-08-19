@@ -27,6 +27,8 @@
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
+		A1B8684A1B848112005C4A6F /* popUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868471B848112005C4A6F /* popUpView.m */; };
+		A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868491B848112005C4A6F /* customAnnotationView.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,10 @@
 		A1B868411B842D02005C4A6F /* discoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = discoveryViewController.m; sourceTree = "<group>"; };
 		A1B868431B84768F005C4A6F /* huodongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huodongViewController.h; sourceTree = "<group>"; };
 		A1B868441B84768F005C4A6F /* huodongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huodongViewController.m; sourceTree = "<group>"; };
+		A1B868461B848112005C4A6F /* popUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popUpView.h; sourceTree = "<group>"; };
+		A1B868471B848112005C4A6F /* popUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popUpView.m; sourceTree = "<group>"; };
+		A1B868481B848112005C4A6F /* customAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customAnnotationView.h; sourceTree = "<group>"; };
+		A1B868491B848112005C4A6F /* customAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customAnnotationView.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,8 +284,7 @@
 		A1B868381B842BEF005C4A6F /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
-				A1B8683A1B842C00005C4A6F /* view */,
-				A1B868391B842BFA005C4A6F /* controller */,
+				A1B8684C1B848A4C005C4A6F /* 活动 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -298,8 +303,21 @@
 		A1B8683A1B842C00005C4A6F /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A1B868461B848112005C4A6F /* popUpView.h */,
+				A1B868471B848112005C4A6F /* popUpView.m */,
+				A1B868481B848112005C4A6F /* customAnnotationView.h */,
+				A1B868491B848112005C4A6F /* customAnnotationView.m */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		A1B8684C1B848A4C005C4A6F /* 活动 */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8683A1B842C00005C4A6F /* view */,
+				A1B868391B842BFA005C4A6F /* controller */,
+			);
+			name = "活动";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,12 +488,14 @@
 			files = (
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
+				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
+				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
@@ -623,6 +643,7 @@
 			baseConfigurationReference = 8C84536996CF0BF9A214368E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = touwho_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -637,6 +658,7 @@
 			baseConfigurationReference = 767A21CB34EA456EF48D831C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = touwho_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
