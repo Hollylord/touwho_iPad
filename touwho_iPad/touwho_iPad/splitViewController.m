@@ -37,7 +37,7 @@
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"shouye"] sender:nil];
     }
     else if ([notification.name isEqualToString:@"discoveryNotification"]){
-        [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"discovery"] sender:nil];
+        [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"discoveryNavigation"] sender:nil];
     }
 }
 

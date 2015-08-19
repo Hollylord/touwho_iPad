@@ -25,6 +25,7 @@
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
+		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
 		A1B868401B842D02005C4A6F /* discoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discoveryViewController.h; sourceTree = "<group>"; };
 		A1B868411B842D02005C4A6F /* discoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = discoveryViewController.m; sourceTree = "<group>"; };
+		A1B868431B84768F005C4A6F /* huodongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huodongViewController.h; sourceTree = "<group>"; };
+		A1B868441B84768F005C4A6F /* huodongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huodongViewController.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +265,8 @@
 			children = (
 				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
 				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
+				A1B868431B84768F005C4A6F /* huodongViewController.h */,
+				A1B868441B84768F005C4A6F /* huodongViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
+				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
