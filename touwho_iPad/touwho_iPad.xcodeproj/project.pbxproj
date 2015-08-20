@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		751CFC778842ECC9FA71EE08 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD57436EEF26BB21147271 /* libPods.a */; };
+		A1002B171B8570D5007520AA /* shipinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B161B8570D5007520AA /* shipinViewController.m */; };
+		A1002B1A1B857570007520AA /* shipinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B191B857570007520AA /* shipinView.m */; };
+		A1002B1C1B857581007520AA /* shipinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1002B1B1B857581007520AA /* shipinView.xib */; };
 		A13259261B82C35A00A327C6 /* programView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259251B82C35A00A327C6 /* programView.m */; };
 		A13259281B82C37B00A327C6 /* programView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13259271B82C37B00A327C6 /* programView.xib */; };
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
@@ -53,6 +56,11 @@
 		46FD57436EEF26BB21147271 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		767A21CB34EA456EF48D831C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8C84536996CF0BF9A214368E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A1002B151B8570D5007520AA /* shipinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipinViewController.h; sourceTree = "<group>"; };
+		A1002B161B8570D5007520AA /* shipinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinViewController.m; sourceTree = "<group>"; };
+		A1002B181B857570007520AA /* shipinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipinView.h; sourceTree = "<group>"; };
+		A1002B191B857570007520AA /* shipinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinView.m; sourceTree = "<group>"; };
+		A1002B1B1B857581007520AA /* shipinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinView.xib; sourceTree = "<group>"; };
 		A13259241B82C35A00A327C6 /* programView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programView.h; sourceTree = "<group>"; };
 		A13259251B82C35A00A327C6 /* programView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programView.m; sourceTree = "<group>"; };
 		A13259271B82C37B00A327C6 /* programView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programView.xib; sourceTree = "<group>"; };
@@ -139,6 +147,42 @@
 				46FD57436EEF26BB21147271 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1002B121B856E85007520AA /* 路演视频 */ = {
+			isa = PBXGroup;
+			children = (
+				A1002B141B856F49007520AA /* controller */,
+			);
+			name = "路演视频";
+			sourceTree = "<group>";
+		};
+		A1002B131B856F43007520AA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A1002B181B857570007520AA /* shipinView.h */,
+				A1002B191B857570007520AA /* shipinView.m */,
+				A1002B1B1B857581007520AA /* shipinView.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		A1002B141B856F49007520AA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1002B151B8570D5007520AA /* shipinViewController.h */,
+				A1002B161B8570D5007520AA /* shipinViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A1002B1D1B857797007520AA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
+				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 		A132592F1B8306CE00A327C6 /* controller */ = {
@@ -284,6 +328,9 @@
 		A1B868381B842BEF005C4A6F /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
+				A1002B1D1B857797007520AA /* controller */,
+				A1002B131B856F43007520AA /* view */,
+				A1002B121B856E85007520AA /* 路演视频 */,
 				A1B8684C1B848A4C005C4A6F /* 活动 */,
 			);
 			name = "发现";
@@ -292,8 +339,6 @@
 		A1B868391B842BFA005C4A6F /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
-				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
 				A1B868431B84768F005C4A6F /* huodongViewController.h */,
 				A1B868441B84768F005C4A6F /* huodongViewController.m */,
 			);
@@ -428,6 +473,7 @@
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
+				A1002B1C1B857581007520AA /* shipinView.xib in Resources */,
 				A13259281B82C37B00A327C6 /* programView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +534,8 @@
 			files = (
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
+				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
+				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,

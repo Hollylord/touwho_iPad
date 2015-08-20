@@ -190,16 +190,16 @@
                                 <exclude reference="5oI-Iy-8Jl"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Mbc-SR-8Oi"/>
                                 <exclude reference="LpL-6t-937"/>
                                 <exclude reference="dw2-ca-mTX"/>
                                 <exclude reference="tYU-Gd-LMh"/>
                                 <exclude reference="vcH-mV-hF5"/>
-                                <exclude reference="Wfz-88-hdu"/>
                                 <exclude reference="34d-sh-b0o"/>
                                 <exclude reference="Jve-mR-2tS"/>
                                 <exclude reference="WEf-y4-3U6"/>
                                 <exclude reference="fWd-Nu-3jC"/>
-                                <exclude reference="Mbc-SR-8Oi"/>
+                                <exclude reference="Wfz-88-hdu"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -209,16 +209,16 @@
                                 <include reference="5oI-Iy-8Jl"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Mbc-SR-8Oi"/>
                                 <exclude reference="LpL-6t-937"/>
                                 <include reference="dw2-ca-mTX"/>
                                 <include reference="tYU-Gd-LMh"/>
                                 <include reference="vcH-mV-hF5"/>
-                                <include reference="Wfz-88-hdu"/>
                                 <include reference="34d-sh-b0o"/>
                                 <include reference="Jve-mR-2tS"/>
                                 <include reference="WEf-y4-3U6"/>
                                 <include reference="fWd-Nu-3jC"/>
-                                <include reference="Mbc-SR-8Oi"/>
+                                <include reference="Wfz-88-hdu"/>
                             </mask>
                         </variation>
                     </view>
@@ -233,6 +233,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-pS-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1601" y="31"/>
+        </scene>
+        <!--路演视频-->
+        <scene sceneID="hgE-ij-v2w">
+            <objects>
+                <viewController title="路演视频" id="SsC-1w-ZeR" customClass="shipinViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8oT-6M-VzI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wjh-EI-sCJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="prC-GU-fXV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ooT-kM-RUv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WdK-sq-mlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="2103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ria-JU-LqW">
@@ -609,28 +628,31 @@
                                             <segue destination="CeU-pe-sUb" kind="show" id="CGF-8t-ezn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
                                         <rect key="frame" x="77" y="70" width="60" height="30"/>
                                         <state key="normal" title="视频路演"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="135" y="70" width="60" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="yKX-2j-tkZ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-or-ygN">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-or-ygN">
                                         <rect key="frame" x="187" y="70" width="26" height="30"/>
                                         <state key="normal" title="机构专题"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="270" y="70" width="60" height="30"/>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
                                         <rect key="frame" x="263" y="70" width="60" height="30"/>
                                         <state key="normal" title="行业讨论"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="405" y="70" width="60" height="30"/>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-HG-tEg">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-HG-tEg">
                                         <rect key="frame" x="373" y="70" width="27" height="30"/>
                                         <state key="normal" title="牛人观点"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -642,7 +664,7 @@
                                     <constraint firstAttribute="height" constant="100" id="7aO-Ts-mB9"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S61-Ex-FFa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S61-Ex-FFa" userLabel="横线">
                                 <rect key="frame" x="0.0" y="100" width="600" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -663,6 +685,9 @@
                     <navigationItem key="navigationItem" id="1Il-V3-Jrc">
                         <barButtonItem key="backBarButtonItem" title="返回" id="ofK-NK-NFa"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="line" destination="S61-Ex-FFa" id="a2P-3D-9KT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgn-6q-3Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
