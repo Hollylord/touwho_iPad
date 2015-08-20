@@ -640,24 +640,24 @@
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="yKX-2j-tkZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-or-ygN">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
                                         <rect key="frame" x="187" y="70" width="26" height="30"/>
-                                        <state key="normal" title="机构专题"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="270" y="70" width="60" height="30"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="zV0-nN-ocJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
-                                        <rect key="frame" x="263" y="70" width="60" height="30"/>
                                         <state key="normal" title="行业讨论"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="405" y="70" width="60" height="30"/>
                                         </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-or-ygN">
+                                        <rect key="frame" x="263" y="70" width="60" height="30"/>
+                                        <state key="normal" title="机构专题"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="270" y="70" width="60" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="zV0-nN-ocJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-HG-tEg">
@@ -697,7 +697,11 @@
                         <barButtonItem key="backBarButtonItem" title="返回" id="ofK-NK-NFa"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="discussion" destination="S9R-wC-daW" id="I04-p0-DkE"/>
+                        <outlet property="footage" destination="xdF-cn-FPy" id="mc5-M4-5G6"/>
+                        <outlet property="institutions" destination="3m0-or-ygN" id="iyg-HS-VsC"/>
                         <outlet property="line" destination="S61-Ex-FFa" id="a2P-3D-9KT"/>
+                        <outlet property="reviews" destination="brZ-HG-tEg" id="xAh-5L-7wh"/>
                         <segue destination="SsC-1w-ZeR" kind="show" identifier="discovery2shipinViewController" id="Fq9-rG-GrD"/>
                     </connections>
                 </viewController>
