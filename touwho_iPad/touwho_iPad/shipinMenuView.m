@@ -21,9 +21,6 @@
             shipinView *view = [[[NSBundle mainBundle] loadNibNamed:@"shipinView" owner:nil options:nil] firstObject];
             [self addSubview:view];
         }
-       
-        
-        
     }
     return  self;
 }

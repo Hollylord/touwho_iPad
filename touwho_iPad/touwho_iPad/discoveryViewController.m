@@ -42,7 +42,7 @@
 }
 
 - (void)turn2shipinController{
-    
+    [self performSegueWithIdentifier:@"discovery2shipinViewController" sender:nil];
 }
 
 //视频页面的懒加载

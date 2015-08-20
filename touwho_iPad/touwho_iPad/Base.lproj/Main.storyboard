@@ -239,15 +239,17 @@
             <objects>
                 <viewController title="路演视频" id="SsC-1w-ZeR" customClass="shipinViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8oT-6M-VzI"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wjh-EI-sCJ"/>
+                        <viewControllerLayoutGuide type="top" id="YXC-9r-9rL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hdr-lf-LhN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="prC-GU-fXV">
+                    <view key="view" contentMode="scaleToFill" id="ye0-qk-Jse">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ooT-kM-RUv"/>
+                    <navigationItem key="navigationItem" title="视频" id="3rq-Cc-9xs">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="r2g-pt-mHY"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WdK-sq-mlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -696,6 +698,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="line" destination="S61-Ex-FFa" id="a2P-3D-9KT"/>
+                        <segue destination="SsC-1w-ZeR" kind="show" identifier="discovery2shipinViewController" id="Fq9-rG-GrD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgn-6q-3Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
