@@ -7,9 +7,11 @@
 //
 
 #import "discoveryViewController.h"
+#import "shipinMenuView.h"
 
 @interface discoveryViewController ()
-@property (weak,nonatomic) UIView *contentView;
+
+@property (strong,nonatomic) shipinMenuView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *line;
 
 - (IBAction)buttonClick:(UIButton *)sender;
@@ -29,6 +31,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -41,20 +44,35 @@
 - (void)turn2shipinController{
     
 }
-#pragma mark - 按钮点击
 
+//视频页面的懒加载
+- (UIView *)contentView{
+    if (!_contentView)
+    {
+        shipinMenuView *view = [[shipinMenuView alloc] init];
+        _contentView = view;
+    }
+    return _contentView;
+}
+
+#pragma mark - 按钮点击
 - (IBAction)buttonClick:(UIButton *)sender {
     //点击视频路演按钮
     if (sender.tag == 1) {
-        UIView *view = [[UIView alloc] init];
-        self.contentView = view;
-        [self.view addSubview:view];
+        [self.view addSubview:self.contentView];
         self.contentView.backgroundColor = [UIColor redColor];
         [self layoutForContentView:self.contentView];
         
-
+        
+    }
+    //点击机构专题
+    else if (sender.tag == 2)
+    {
+        [self.contentView removeFromSuperview];
     }
 }
+
+#pragma mark 布局视频页面
 - (void)layoutForContentView:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
     NSLayoutConstraint *leading2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
@@ -63,17 +81,14 @@
     NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
     [self.view addConstraints:@[leading,top,width,bottom]];
     view.translatesAutoresizingMaskIntoConstraints = NO;
-    [view layoutIfNeeded];
+    [self.view layoutIfNeeded];
     
-    NSLog(@"%@",NSStringFromCGRect(view.frame));
-    
-    
+    //动画
     [UIView animateWithDuration:2.0 animations:^{
         [self.view removeConstraint:leading];
         [self.view addConstraint:leading2];
         [self.view layoutIfNeeded];
         
-        NSLog(@"%@",NSStringFromCGRect(view.frame));
     }];
     
     

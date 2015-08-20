@@ -644,6 +644,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="270" y="70" width="60" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="zV0-nN-ocJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
                                         <rect key="frame" x="263" y="70" width="60" height="30"/>
@@ -651,6 +654,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="405" y="70" width="60" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-HG-tEg">
                                         <rect key="frame" x="373" y="70" width="27" height="30"/>
@@ -658,6 +664,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="540" y="70" width="60" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="Wde-gf-9fE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
