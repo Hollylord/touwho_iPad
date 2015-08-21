@@ -11,7 +11,7 @@
 #import "disscussionMenu.h"
 
 #define Width 230
-#define Height 200
+#define Height 170
 #define MarginSide 30
 #define MarginTop 30
 #define Number 3 //每行的话题数
@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *discussion;
 @property (weak, nonatomic) IBOutlet UIButton *institutions;
 @property (weak, nonatomic) IBOutlet UIButton *reviews;
+
+- (IBAction)clickTopic:(UIButton *)sender;
 
 - (IBAction)buttonClick:(UIButton *)sender;
 
@@ -57,7 +59,7 @@
     [self performSegueWithIdentifier:@"discovery2shipinViewController" sender:nil];
 }
 
-//视频页面的懒加载
+#pragma mark - 内容页面懒加载
 - (UIView *)contentView{
     if (!_contentView)
     {
@@ -66,7 +68,7 @@
             _contentView = view;
         }
         else if (self.discussion.selected){
-            disscussionMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"disscussionMenu" owner:nil options:nil] firstObject];
+            disscussionMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"disscussionMenu" owner:self options:nil] firstObject];
             _contentView = view;
         }
         
@@ -75,6 +77,12 @@
 }
 
 #pragma mark - 按钮点击
+//话题按钮
+- (IBAction)clickTopic:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"discovery2themes" sender:nil];
+}
+
+//上面5个按钮
 - (IBAction)buttonClick:(UIButton *)sender {
     //点击视频路演按钮
     if (sender.tag == 1 && sender.selected == NO) {
