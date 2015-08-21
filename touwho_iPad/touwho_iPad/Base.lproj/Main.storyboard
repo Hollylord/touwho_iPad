@@ -264,10 +264,96 @@
                         <viewControllerLayoutGuide type="bottom" id="7UJ-Ay-UZx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tf3-eO-w4z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="923" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J18-NL-ewB" userLabel="新闻">
+                                <rect key="frame" x="0.0" y="64" width="462" height="704"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ksL-tc-iG4">
+                                        <rect key="frame" x="30" y="-40" width="100" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Ems-Qz-mvE"/>
+                                            <constraint firstAttribute="height" constant="100" id="y03-2O-yWg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发文机构" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m59-YM-y30">
+                                        <rect key="frame" x="146" y="28" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCW-6B-K6A">
+                                        <rect key="frame" x="146" y="51" width="34" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vP-fj-NCD">
+                                        <rect key="frame" x="206" y="169" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vFL-KE-6Qu">
+                                        <rect key="frame" x="63" y="80" width="336" height="81"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="81" id="ZO5-mf-wB3"/>
+                                            <constraint firstAttribute="width" constant="336" id="jVo-94-IRd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4g-hF-U2o">
+                                        <rect key="frame" x="31" y="192" width="400" height="256"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="Nho-0S-3D5"/>
+                                            <constraint firstAttribute="height" constant="256" id="Ym9-1p-eEa"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50627164930000002" green="0.63141949070000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="s4g-hF-U2o" secondAttribute="bottom" constant="88" id="5H6-Eg-2Qa" userLabel="竖直"/>
+                                    <constraint firstItem="6vP-fj-NCD" firstAttribute="top" secondItem="nCW-6B-K6A" secondAttribute="bottom" constant="97" id="86y-hd-tjN"/>
+                                    <constraint firstItem="vFL-KE-6Qu" firstAttribute="centerX" secondItem="J18-NL-ewB" secondAttribute="centerX" id="8i7-op-F04"/>
+                                    <constraint firstItem="m59-YM-y30" firstAttribute="leading" secondItem="ksL-tc-iG4" secondAttribute="trailing" constant="16" id="AGG-Vc-lrZ"/>
+                                    <constraint firstItem="vFL-KE-6Qu" firstAttribute="top" secondItem="nCW-6B-K6A" secondAttribute="bottom" constant="8" id="Cd7-H8-DvL"/>
+                                    <constraint firstItem="m59-YM-y30" firstAttribute="top" secondItem="J18-NL-ewB" secondAttribute="top" constant="28" id="EGL-lj-MgY"/>
+                                    <constraint firstItem="nCW-6B-K6A" firstAttribute="top" secondItem="m59-YM-y30" secondAttribute="bottom" constant="2" id="IdC-fp-bSx"/>
+                                    <constraint firstItem="ksL-tc-iG4" firstAttribute="top" secondItem="J18-NL-ewB" secondAttribute="top" constant="-40" id="ImB-aa-dSP"/>
+                                    <constraint firstItem="s4g-hF-U2o" firstAttribute="top" secondItem="6vP-fj-NCD" secondAttribute="bottom" constant="2" id="RNm-SP-iZJ"/>
+                                    <constraint firstItem="ksL-tc-iG4" firstAttribute="leading" secondItem="J18-NL-ewB" secondAttribute="leading" constant="30" id="XIn-pF-ODy"/>
+                                    <constraint firstItem="6vP-fj-NCD" firstAttribute="centerX" secondItem="J18-NL-ewB" secondAttribute="centerX" id="gHE-xY-GYJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="vFL-KE-6Qu" secondAttribute="trailing" constant="30" id="jiK-Xb-YPg" userLabel="水平范围"/>
+                                    <constraint firstItem="s4g-hF-U2o" firstAttribute="centerX" secondItem="J18-NL-ewB" secondAttribute="centerX" id="wcK-E7-6SZ"/>
+                                    <constraint firstItem="nCW-6B-K6A" firstAttribute="leading" secondItem="m59-YM-y30" secondAttribute="leading" id="zvd-jh-JdP"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsE-t7-PkW" userLabel="评论">
+                                <rect key="frame" x="462" y="64" width="461" height="704"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J18-NL-ewB" firstAttribute="top" secondItem="XaC-OE-j0A" secondAttribute="bottom" id="7gR-4U-HuE"/>
+                            <constraint firstItem="FsE-t7-PkW" firstAttribute="leading" secondItem="J18-NL-ewB" secondAttribute="trailing" id="Uwu-wY-V3c"/>
+                            <constraint firstItem="J18-NL-ewB" firstAttribute="leading" secondItem="tf3-eO-w4z" secondAttribute="leading" id="UxW-Nc-CXs"/>
+                            <constraint firstAttribute="trailing" secondItem="FsE-t7-PkW" secondAttribute="trailing" id="iio-Hp-rlR"/>
+                            <constraint firstItem="FsE-t7-PkW" firstAttribute="width" secondItem="J18-NL-ewB" secondAttribute="width" id="k56-Ul-6pq"/>
+                            <constraint firstItem="FsE-t7-PkW" firstAttribute="leading" secondItem="J18-NL-ewB" secondAttribute="trailing" id="m9n-rb-SRQ"/>
+                            <constraint firstItem="7UJ-Ay-UZx" firstAttribute="top" secondItem="J18-NL-ewB" secondAttribute="bottom" id="pSW-aa-U86"/>
+                            <constraint firstItem="7UJ-Ay-UZx" firstAttribute="top" secondItem="FsE-t7-PkW" secondAttribute="bottom" id="uCb-Je-oxQ"/>
+                            <constraint firstItem="FsE-t7-PkW" firstAttribute="top" secondItem="XaC-OE-j0A" secondAttribute="bottom" id="ypT-7D-xaX"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="话题" id="mSF-O8-hRk"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="923" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xb1-yN-CJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
