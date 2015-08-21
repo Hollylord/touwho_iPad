@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WdK-sq-mlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13" y="2103"/>
+            <point key="canvasLocation" x="9" y="2143"/>
         </scene>
         <!--话题-->
         <scene sceneID="UJv-eI-E02">
@@ -491,10 +491,10 @@
             </objects>
             <point key="canvasLocation" x="-1183" y="-608"/>
         </scene>
-        <!--登录界面-->
+        <!--我-->
         <scene sceneID="3EK-xv-eGS">
             <objects>
-                <viewController storyboardIdentifier="login" title="登录界面" id="EhZ-7N-x95" customClass="loginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" title="我" id="EhZ-7N-x95" customClass="loginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2kD-A8-qNB"/>
                         <viewControllerLayoutGuide type="bottom" id="wNo-BI-qeB"/>
@@ -538,17 +538,26 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IH4-jV-PHb" userLabel="微博">
                                         <rect key="frame" x="0.0" y="10" width="50" height="50"/>
                                         <state key="normal" image="wb"/>
+                                        <connections>
+                                            <action selector="quickLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="za2-fU-ZrZ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inK-KU-Ii8" userLabel="微信">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inK-KU-Ii8" userLabel="微信">
                                         <rect key="frame" x="94" y="10" width="50" height="50"/>
                                         <state key="normal" image="wx"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="94" y="10" width="50" height="50"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="quickLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="fzP-Th-V3p"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APM-hD-9wE" userLabel="QQ">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APM-hD-9wE" userLabel="QQ">
                                         <rect key="frame" x="187" y="10" width="50" height="50"/>
                                         <state key="normal" image="qq"/>
+                                        <connections>
+                                            <action selector="quickLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="Yin-2y-NQp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -582,7 +591,7 @@
                                     </attributedString>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-cL-bmW" userLabel="ID">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-cL-bmW" userLabel="ID">
                                 <rect key="frame" x="150" y="93" width="359" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="359" id="Kpe-8W-SjU"/>
@@ -598,12 +607,12 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ydl-uv-Rty" userLabel="password">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ydl-uv-Rty" userLabel="password">
                                 <rect key="frame" x="150" y="162" width="359" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Sl9-aM-RsU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">

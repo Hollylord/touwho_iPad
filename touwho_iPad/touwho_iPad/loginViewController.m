@@ -10,6 +10,8 @@
 
 @interface loginViewController ()
 
+- (IBAction)quickLogin:(UIButton *)sender;
+
 - (IBAction)quit:(UIButton *)sender;
 
 @end
@@ -29,6 +31,9 @@
 
 
 #pragma mark - 退出按钮
+- (IBAction)quickLogin:(UIButton *)sender {
+}
+
 - (IBAction)quit:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }

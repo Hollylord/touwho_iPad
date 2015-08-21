@@ -88,7 +88,7 @@
             
         }
         annotationView.image = [UIImage imageNamed:@"touhu"];
-        //        [annotationView setSelected:YES animated:YES];
+       
         
         return annotationView;
     }
@@ -99,6 +99,7 @@
     
 }
 
+// 当添加annotationview时调用，不要用didselect方法来判断
 - (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views{
     customAnnotationView *annotationView = views[0];
     annotationView.selected = YES;
@@ -125,4 +126,5 @@
     }
     
 }
+
 @end
