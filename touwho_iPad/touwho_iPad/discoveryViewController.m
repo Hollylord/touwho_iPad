@@ -10,6 +10,12 @@
 #import "shipinMenuView.h"
 #import "disscussionMenu.h"
 
+#define Width 230
+#define Height 200
+#define MarginSide 30
+#define MarginTop 30
+#define Number 3 //每行的话题数
+
 @interface discoveryViewController ()
 
 @property (strong,nonatomic) UIView *contentView;
@@ -91,10 +97,14 @@
         self.footage.selected = NO;
         self.institutions.selected = NO;
         self.reviews.selected = NO;
+        
+        //添加discussionMenu
         [self.contentView removeFromSuperview];
         self.contentView = nil;
+        disscussionMenu *menu = (disscussionMenu *)self.contentView;
         [self.view addSubview:self.contentView];
         [self layoutForContentView:self.contentView];
+        [self layoutForDiscussionMenu:menu];
         
         
     }
@@ -120,5 +130,29 @@
     }];
     
     
+}
+
+#pragma mark 布局行业讨论
+- (void)layoutForDiscussionMenu:(disscussionMenu *)menu{
+    for (int i = 0; i < 5; i ++) {
+        UIView *topic = [[[NSBundle mainBundle] loadNibNamed:@"topics" owner:nil options:nil]firstObject];
+        [menu.scrollView addSubview:topic];
+        //列数
+        int column = i%Number;
+                //行数
+        int line = (int)i/Number;
+        
+        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:menu.line attribute:NSLayoutAttributeLeading multiplier:1 constant:column * (Width + MarginSide)];
+        NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:menu.line attribute:NSLayoutAttributeBottom multiplier:1 constant:line * (Height +MarginTop) + MarginTop];
+        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Width];
+        NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Height];
+        
+        topic.translatesAutoresizingMaskIntoConstraints = NO;
+        [menu.scrollView addConstraints:@[leading,top]];
+        [topic addConstraints:@[width,height]];
+//        view.translatesAutoresizingMaskIntoConstraints = NO;
+        
+
+    }
 }
 @end

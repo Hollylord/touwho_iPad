@@ -19,6 +19,7 @@
     if (self) {
         for (int i = 0; i < 5; i ++) {
             shipinView *view = [[[NSBundle mainBundle] loadNibNamed:@"shipinView" owner:nil options:nil] firstObject];
+            //只能在self的基础上添加，不能在self的子视图上添加子控件
             [self addSubview:view];
         }
     }

@@ -6,11 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="disscussionMenu">
             <rect key="frame" x="0.0" y="0.0" width="924" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7YQ-Rf-JHB">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YQ-Rf-JHB">
                     <rect key="frame" x="0.0" y="0.0" width="924" height="768"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKw-XN-Rai">
@@ -59,7 +59,7 @@
                             <rect key="frame" x="570" y="251" width="234" height="104"/>
                             <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ug8-dD-5f9">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ug8-dD-5f9" userLabel="横线">
                             <rect key="frame" x="60" y="485" width="744" height="4"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </imageView>
@@ -104,24 +104,19 @@
                         <constraint firstItem="3G2-Fh-cHb" firstAttribute="top" secondItem="c9l-DL-s5Z" secondAttribute="bottom" constant="8" id="Uib-KR-cWM"/>
                         <constraint firstItem="x3b-hN-KTq" firstAttribute="leading" secondItem="m1G-xO-rIa" secondAttribute="leading" id="Uqn-nV-mqm"/>
                         <constraint firstItem="GKw-XN-Rai" firstAttribute="top" secondItem="7YQ-Rf-JHB" secondAttribute="top" constant="49" id="Utn-ry-wJN"/>
-                        <constraint firstItem="j5O-9a-8Fe" firstAttribute="bottom" secondItem="x3b-hN-KTq" secondAttribute="bottom" id="VTb-Wp-ugW"/>
                         <constraint firstItem="j5O-9a-8Fe" firstAttribute="trailing" secondItem="c9l-DL-s5Z" secondAttribute="trailing" id="a3h-yl-Dgx"/>
                         <constraint firstItem="Gzb-bc-RuG" firstAttribute="leading" secondItem="x3b-hN-KTq" secondAttribute="leading" id="bkd-Ya-gFX"/>
                         <constraint firstItem="m1G-xO-rIa" firstAttribute="top" secondItem="GKw-XN-Rai" secondAttribute="bottom" constant="16" id="d9s-Xi-AwX"/>
                         <constraint firstItem="c9l-DL-s5Z" firstAttribute="trailing" secondItem="m1G-xO-rIa" secondAttribute="trailing" id="dWU-EK-VA4"/>
                         <constraint firstItem="c9l-DL-s5Z" firstAttribute="leading" secondItem="x3b-hN-KTq" secondAttribute="trailing" constant="71" id="fAq-bm-QXQ"/>
                         <constraint firstItem="j5O-9a-8Fe" firstAttribute="top" secondItem="c9l-DL-s5Z" secondAttribute="bottom" constant="37" id="gm1-Hc-B4y"/>
+                        <constraint firstAttribute="bottom" secondItem="Ug8-dD-5f9" secondAttribute="bottom" constant="500" id="ke9-or-Yd2" userLabel="竖直滚动范围"/>
                         <constraint firstItem="GKw-XN-Rai" firstAttribute="leading" secondItem="7YQ-Rf-JHB" secondAttribute="leading" constant="60" id="kuZ-ju-0Nb"/>
                         <constraint firstItem="U4f-WD-Akl" firstAttribute="leading" secondItem="x3b-hN-KTq" secondAttribute="leading" id="qg3-pF-QHQ"/>
                         <constraint firstAttribute="trailing" secondItem="m1G-xO-rIa" secondAttribute="trailing" constant="60" id="ugx-vT-tQA" userLabel="水平滚动范围"/>
                         <constraint firstItem="3G2-Fh-cHb" firstAttribute="leading" secondItem="c9l-DL-s5Z" secondAttribute="leading" id="woC-fW-mh2"/>
                         <constraint firstItem="m1G-xO-rIa" firstAttribute="leading" secondItem="7YQ-Rf-JHB" secondAttribute="leading" constant="60" id="ykx-oB-481"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="VTb-Wp-ugW"/>
-                        </mask>
-                    </variation>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -133,6 +128,10 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="line" destination="Ug8-dD-5f9" id="U14-TV-Iv7"/>
+                <outlet property="scrollView" destination="7YQ-Rf-JHB" id="LVG-Ho-4Cd"/>
+            </connections>
             <point key="canvasLocation" x="203" y="195"/>
         </view>
     </objects>

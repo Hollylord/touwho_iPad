@@ -21,6 +21,7 @@
 		A13259341B83071200A327C6 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259331B83071200A327C6 /* loginViewController.m */; };
 		A13259371B83339300A327C6 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259361B83339300A327C6 /* leftViewController.m */; };
 		A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259391B8336FE00A327C6 /* splitViewController.m */; };
+		A13BA5611B86C1460087DEF0 /* topics.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13BA5601B86C1460087DEF0 /* topics.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
 		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		A13259361B83339300A327C6 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
 		A13259381B8336FE00A327C6 /* splitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splitViewController.h; sourceTree = "<group>"; };
 		A13259391B8336FE00A327C6 /* splitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splitViewController.m; sourceTree = "<group>"; };
+		A13BA5601B86C1460087DEF0 /* topics.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topics.xib; sourceTree = "<group>"; };
 		A19D093B1B7C2DF100094B81 /* touwho_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touwho_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				A1002B601B85CE75007520AA /* disscussionMenu.h */,
 				A1002B611B85CE75007520AA /* disscussionMenu.m */,
 				A1002B631B85CE85007520AA /* disscussionMenu.xib */,
+				A13BA5601B86C1460087DEF0 /* topics.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1002B641B85CE85007520AA /* disscussionMenu.xib in Resources */,
+				A13BA5611B86C1460087DEF0 /* topics.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,

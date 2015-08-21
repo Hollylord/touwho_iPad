@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface disscussionMenu : UIView
+@property (weak, nonatomic) IBOutlet UIImageView *line;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
