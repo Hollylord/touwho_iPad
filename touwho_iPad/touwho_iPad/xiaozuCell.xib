@@ -8,21 +8,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="xiaozuCell" rowHeight="99" id="T0I-nn-79i">
-            <rect key="frame" x="0.0" y="0.0" width="476" height="99"/>
+            <rect key="frame" x="0.0" y="0.0" width="614" height="99"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T0I-nn-79i" id="vCU-BR-3Fa">
-                <rect key="frame" x="0.0" y="0.0" width="476" height="98"/>
+                <rect key="frame" x="0.0" y="0.0" width="614" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-3i-iLX">
-                        <rect key="frame" x="15" y="8" width="75" height="82"/>
+                        <rect key="frame" x="15" y="8" width="50" height="82"/>
                         <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="rAD-7w-RK0"/>
+                            <constraint firstAttribute="width" constant="50" id="rAD-7w-RK0"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小组名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKQ-jZ-WyR">
-                        <rect key="frame" x="111" y="38" width="68" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小组名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKQ-jZ-WyR">
+                        <rect key="frame" x="86" y="38" width="68" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                     <constraint firstItem="oKQ-jZ-WyR" firstAttribute="leading" secondItem="xyf-3i-iLX" secondAttribute="trailing" constant="21" id="xdp-sg-YYa"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="56" y="-107.5"/>
+            <point key="canvasLocation" x="101" y="-106.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -1,18 +1,19 @@
 //
-//  xiaozu.m
+//  topics.m
 //  touwho_iPad
 //
 //  Created by apple on 15/8/25.
 //  Copyright © 2015年 touhu.com. All rights reserved.
+//
 
+#import "topics.h"
 
-#import "xiaozu.h"
+@implementation topics
 
-@implementation xiaozu
 - (void)awakeFromNib{
-    UINib *nib = [UINib nibWithNibName:@"xiaozuCell" bundle:nil];
-    [self.tuijian registerNib:nib forCellReuseIdentifier:@"xiaozuCell"];
-    [self.enrolled registerNib:nib forCellReuseIdentifier:@"xiaozuCell"];
+    UINib *nib = [UINib nibWithNibName:@"topicsCell" bundle:nil];
+    [self.updatedTopics registerNib:nib forCellReuseIdentifier:@"topicsCell"];
+    [self.involvedTopics registerNib:nib forCellReuseIdentifier:@"topicsCell"];
 }
 
 #pragma mark - tableView代理
@@ -27,10 +28,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"xiaozuCell" forIndexPath:indexPath];
-    UILabel *name = (UILabel *)[cell viewWithTag:1];
-    name.text = @"鹏鹏丁满历险记";
-        return cell;
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"topicsCell" forIndexPath:indexPath];
+    
+    return cell;
     
 }
 
@@ -40,7 +40,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 100;
 }
+
 
 @end

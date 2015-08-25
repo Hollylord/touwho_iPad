@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="jLx-KJ-5lj" userLabel="私信">
+        <view contentMode="scaleToFill" id="jLx-KJ-5lj" userLabel="私信" customClass="sixin">
             <rect key="frame" x="0.0" y="0.0" width="923" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -24,13 +24,13 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的讨论" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qao-Zo-7bZ">
-                    <rect key="frame" x="20" y="20" width="68" height="21"/>
+                    <rect key="frame" x="50" y="20" width="68" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的回复" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-cB-1D0">
-                    <rect key="frame" x="510" y="20" width="68" height="21"/>
+                    <rect key="frame" x="540" y="20" width="68" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                 <constraint firstItem="GkH-cB-1D0" firstAttribute="centerY" secondItem="qao-Zo-7bZ" secondAttribute="centerY" id="TTo-cW-1ca"/>
                 <constraint firstAttribute="trailing" secondItem="PBR-YN-uSn" secondAttribute="trailing" id="VZS-Gp-hzg"/>
                 <constraint firstAttribute="bottom" secondItem="PBR-YN-uSn" secondAttribute="bottom" id="ans-RH-rP4"/>
-                <constraint firstItem="qao-Zo-7bZ" firstAttribute="leading" secondItem="jLx-KJ-5lj" secondAttribute="leading" constant="20" id="eg4-Sc-Dos"/>
+                <constraint firstItem="qao-Zo-7bZ" firstAttribute="leading" secondItem="jLx-KJ-5lj" secondAttribute="leading" constant="50" id="eg4-Sc-Dos"/>
                 <constraint firstItem="PBR-YN-uSn" firstAttribute="top" secondItem="jLx-KJ-5lj" secondAttribute="top" constant="50" id="god-B5-4c0"/>
                 <constraint firstItem="qao-Zo-7bZ" firstAttribute="top" secondItem="jLx-KJ-5lj" secondAttribute="top" constant="20" id="nEk-G4-Hec"/>
                 <constraint firstItem="GkH-cB-1D0" firstAttribute="leading" secondItem="qao-Zo-7bZ" secondAttribute="trailing" constant="422" id="wB9-ps-8CP"/>
