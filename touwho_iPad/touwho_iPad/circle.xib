@@ -28,6 +28,9 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="segement" destination="h1c-Ee-d3S" id="thj-yh-pP6"/>
+            </connections>
             <point key="canvasLocation" x="215.5" y="251"/>
         </view>
     </objects>

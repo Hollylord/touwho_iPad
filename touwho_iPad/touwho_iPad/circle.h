@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface circle : UIView
-
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segement;
+@property (strong,nonatomic) NSMutableArray *views;
 @end

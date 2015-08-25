@@ -170,9 +170,9 @@
 				A1002B181B857570007520AA /* shipinView.h */,
 				A1002B191B857570007520AA /* shipinView.m */,
 				A1002B1B1B857581007520AA /* shipinView.xib */,
-				A1DAFAB31B8C1A4300189680 /* circle.xib */,
 				A1DAFAB91B8C37BE00189680 /* circle.h */,
 				A1DAFABA1B8C37BE00189680 /* circle.m */,
+				A1DAFAB31B8C1A4300189680 /* circle.xib */,
 				A1DAFAB71B8C1F9400189680 /* xiaozu.xib */,
 			);
 			name = view;

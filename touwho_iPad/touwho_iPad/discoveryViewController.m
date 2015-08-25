@@ -110,7 +110,6 @@
         [self layoutForContentView:self.contentView];
         
         
-        
     }
 }
 
@@ -136,9 +135,5 @@
     
 }
 
-#pragma mark 布局contentView子页面
-- (void)layoutForSubviewsInContentView:(UIView *)view {
-    
-}
 
 @end
