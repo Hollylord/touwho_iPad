@@ -12,6 +12,10 @@
 		A1002B1A1B857570007520AA /* shipinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B191B857570007520AA /* shipinView.m */; };
 		A1002B1C1B857581007520AA /* shipinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1002B1B1B857581007520AA /* shipinView.xib */; };
 		A1002B201B85B682007520AA /* shipinMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B1F1B85B682007520AA /* shipinMenuView.m */; };
+		A1033BD31B8C487000FC8921 /* topics.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD21B8C487000FC8921 /* topics.xib */; };
+		A1033BD51B8C4CDA00FC8921 /* sixin.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD41B8C4CDA00FC8921 /* sixin.xib */; };
+		A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BD71B8C513800FC8921 /* xiaozu.m */; };
+		A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD91B8C537F00FC8921 /* xiaozuCell.xib */; };
 		A13259261B82C35A00A327C6 /* programView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259251B82C35A00A327C6 /* programView.m */; };
 		A13259281B82C37B00A327C6 /* programView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13259271B82C37B00A327C6 /* programView.xib */; };
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
@@ -68,6 +72,11 @@
 		A1002B1B1B857581007520AA /* shipinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinView.xib; sourceTree = "<group>"; };
 		A1002B1E1B85B682007520AA /* shipinMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipinMenuView.h; sourceTree = "<group>"; };
 		A1002B1F1B85B682007520AA /* shipinMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinMenuView.m; sourceTree = "<group>"; };
+		A1033BD21B8C487000FC8921 /* topics.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topics.xib; sourceTree = "<group>"; };
+		A1033BD41B8C4CDA00FC8921 /* sixin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixin.xib; sourceTree = "<group>"; };
+		A1033BD61B8C513800FC8921 /* xiaozu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xiaozu.h; sourceTree = "<group>"; };
+		A1033BD71B8C513800FC8921 /* xiaozu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xiaozu.m; sourceTree = "<group>"; };
+		A1033BD91B8C537F00FC8921 /* xiaozuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozuCell.xib; sourceTree = "<group>"; };
 		A13259241B82C35A00A327C6 /* programView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programView.h; sourceTree = "<group>"; };
 		A13259251B82C35A00A327C6 /* programView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programView.m; sourceTree = "<group>"; };
 		A13259271B82C37B00A327C6 /* programView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programView.xib; sourceTree = "<group>"; };
@@ -170,10 +179,10 @@
 				A1002B181B857570007520AA /* shipinView.h */,
 				A1002B191B857570007520AA /* shipinView.m */,
 				A1002B1B1B857581007520AA /* shipinView.xib */,
-				A1DAFAB91B8C37BE00189680 /* circle.h */,
-				A1DAFABA1B8C37BE00189680 /* circle.m */,
-				A1DAFAB31B8C1A4300189680 /* circle.xib */,
-				A1DAFAB71B8C1F9400189680 /* xiaozu.xib */,
+				A1033BDC1B8C555900FC8921 /* 圈子 */,
+				A1033BDB1B8C554600FC8921 /* 小组 */,
+				A1033BD21B8C487000FC8921 /* topics.xib */,
+				A1033BD41B8C4CDA00FC8921 /* sixin.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -189,6 +198,27 @@
 				A13BA5661B8712960087DEF0 /* themesViewController.m */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		A1033BDB1B8C554600FC8921 /* 小组 */ = {
+			isa = PBXGroup;
+			children = (
+				A1033BD61B8C513800FC8921 /* xiaozu.h */,
+				A1033BD71B8C513800FC8921 /* xiaozu.m */,
+				A1DAFAB71B8C1F9400189680 /* xiaozu.xib */,
+				A1033BD91B8C537F00FC8921 /* xiaozuCell.xib */,
+			);
+			name = "小组";
+			sourceTree = "<group>";
+		};
+		A1033BDC1B8C555900FC8921 /* 圈子 */ = {
+			isa = PBXGroup;
+			children = (
+				A1DAFAB91B8C37BE00189680 /* circle.h */,
+				A1DAFABA1B8C37BE00189680 /* circle.m */,
+				A1DAFAB31B8C1A4300189680 /* circle.xib */,
+			);
+			name = "圈子";
 			sourceTree = "<group>";
 		};
 		A132592F1B8306CE00A327C6 /* controller */ = {
@@ -476,10 +506,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
+				A1033BD51B8C4CDA00FC8921 /* sixin.xib in Resources */,
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
 				A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
+				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
+				A1033BD31B8C487000FC8921 /* topics.xib in Resources */,
 				A1002B1C1B857581007520AA /* shipinView.xib in Resources */,
 				A13259281B82C37B00A327C6 /* programView.xib in Resources */,
 			);
@@ -544,6 +577,7 @@
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
+				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
