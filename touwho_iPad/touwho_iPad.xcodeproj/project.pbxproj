@@ -12,8 +12,6 @@
 		A1002B1A1B857570007520AA /* shipinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B191B857570007520AA /* shipinView.m */; };
 		A1002B1C1B857581007520AA /* shipinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1002B1B1B857581007520AA /* shipinView.xib */; };
 		A1002B201B85B682007520AA /* shipinMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B1F1B85B682007520AA /* shipinMenuView.m */; };
-		A1002B621B85CE75007520AA /* disscussionMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B611B85CE75007520AA /* disscussionMenu.m */; };
-		A1002B641B85CE85007520AA /* disscussionMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1002B631B85CE85007520AA /* disscussionMenu.xib */; };
 		A13259261B82C35A00A327C6 /* programView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259251B82C35A00A327C6 /* programView.m */; };
 		A13259281B82C37B00A327C6 /* programView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13259271B82C37B00A327C6 /* programView.xib */; };
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
@@ -21,7 +19,6 @@
 		A13259341B83071200A327C6 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259331B83071200A327C6 /* loginViewController.m */; };
 		A13259371B83339300A327C6 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259361B83339300A327C6 /* leftViewController.m */; };
 		A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259391B8336FE00A327C6 /* splitViewController.m */; };
-		A13BA5611B86C1460087DEF0 /* topics.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13BA5601B86C1460087DEF0 /* topics.xib */; };
 		A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BA5661B8712960087DEF0 /* themesViewController.m */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
@@ -38,6 +35,9 @@
 		A1B8684A1B848112005C4A6F /* popUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868471B848112005C4A6F /* popUpView.m */; };
 		A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868491B848112005C4A6F /* customAnnotationView.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
+		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
+		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
+		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +68,6 @@
 		A1002B1B1B857581007520AA /* shipinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinView.xib; sourceTree = "<group>"; };
 		A1002B1E1B85B682007520AA /* shipinMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipinMenuView.h; sourceTree = "<group>"; };
 		A1002B1F1B85B682007520AA /* shipinMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinMenuView.m; sourceTree = "<group>"; };
-		A1002B601B85CE75007520AA /* disscussionMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = disscussionMenu.h; sourceTree = "<group>"; };
-		A1002B611B85CE75007520AA /* disscussionMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = disscussionMenu.m; sourceTree = "<group>"; };
-		A1002B631B85CE85007520AA /* disscussionMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = disscussionMenu.xib; sourceTree = "<group>"; };
 		A13259241B82C35A00A327C6 /* programView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programView.h; sourceTree = "<group>"; };
 		A13259251B82C35A00A327C6 /* programView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programView.m; sourceTree = "<group>"; };
 		A13259271B82C37B00A327C6 /* programView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programView.xib; sourceTree = "<group>"; };
@@ -84,7 +81,6 @@
 		A13259361B83339300A327C6 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
 		A13259381B8336FE00A327C6 /* splitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splitViewController.h; sourceTree = "<group>"; };
 		A13259391B8336FE00A327C6 /* splitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splitViewController.m; sourceTree = "<group>"; };
-		A13BA5601B86C1460087DEF0 /* topics.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topics.xib; sourceTree = "<group>"; };
 		A13BA5651B8712960087DEF0 /* themesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = themesViewController.h; sourceTree = "<group>"; };
 		A13BA5661B8712960087DEF0 /* themesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = themesViewController.m; sourceTree = "<group>"; };
 		A19D093B1B7C2DF100094B81 /* touwho_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touwho_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +113,10 @@
 		A1B868481B848112005C4A6F /* customAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customAnnotationView.h; sourceTree = "<group>"; };
 		A1B868491B848112005C4A6F /* customAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customAnnotationView.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
+		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
+		A1DAFAB91B8C37BE00189680 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
+		A1DAFABA1B8C37BE00189680 /* circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,10 +170,10 @@
 				A1002B181B857570007520AA /* shipinView.h */,
 				A1002B191B857570007520AA /* shipinView.m */,
 				A1002B1B1B857581007520AA /* shipinView.xib */,
-				A1002B601B85CE75007520AA /* disscussionMenu.h */,
-				A1002B611B85CE75007520AA /* disscussionMenu.m */,
-				A1002B631B85CE85007520AA /* disscussionMenu.xib */,
-				A13BA5601B86C1460087DEF0 /* topics.xib */,
+				A1DAFAB31B8C1A4300189680 /* circle.xib */,
+				A1DAFAB91B8C37BE00189680 /* circle.h */,
+				A1DAFABA1B8C37BE00189680 /* circle.m */,
+				A1DAFAB71B8C1F9400189680 /* xiaozu.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -475,9 +475,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1002B641B85CE85007520AA /* disscussionMenu.xib in Resources */,
-				A13BA5611B86C1460087DEF0 /* topics.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
+				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
+				A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
 				A1002B1C1B857581007520AA /* shipinView.xib in Resources */,
@@ -547,10 +547,10 @@
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
-				A1002B621B85CE75007520AA /* disscussionMenu.m in Sources */,
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
+				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,

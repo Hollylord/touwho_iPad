@@ -8,7 +8,7 @@
 
 #import "discoveryViewController.h"
 #import "shipinMenuView.h"
-#import "disscussionMenu.h"
+#import "circle.h"
 
 #define Width 230
 #define Height 170
@@ -22,11 +22,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *line;
 
 @property (weak, nonatomic) IBOutlet UIButton *footage;
-@property (weak, nonatomic) IBOutlet UIButton *discussion;
+@property (weak, nonatomic) IBOutlet UIButton *discussion;//圈子
 @property (weak, nonatomic) IBOutlet UIButton *institutions;
 @property (weak, nonatomic) IBOutlet UIButton *reviews;
 
-- (IBAction)clickTopic:(UIButton *)sender;
+
 
 - (IBAction)buttonClick:(UIButton *)sender;
 
@@ -68,7 +68,7 @@
             _contentView = view;
         }
         else if (self.discussion.selected){
-            disscussionMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"disscussionMenu" owner:self options:nil] firstObject];
+            circle *view = [[[NSBundle mainBundle] loadNibNamed:@"circle" owner:nil options:nil]firstObject];
             _contentView = view;
         }
         
@@ -77,10 +77,7 @@
 }
 
 #pragma mark - 按钮点击
-//话题按钮
-- (IBAction)clickTopic:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"discovery2themes" sender:nil];
-}
+
 
 //上面5个按钮
 - (IBAction)buttonClick:(UIButton *)sender {
@@ -98,7 +95,7 @@
         
         
     }
-    //点击行业讨论
+    //圈子
     else if (sender.tag == 2 && sender.selected == NO)
     {
         sender.selected = YES;
@@ -106,19 +103,18 @@
         self.institutions.selected = NO;
         self.reviews.selected = NO;
         
-        //添加discussionMenu
+        //添加圈子
         [self.contentView removeFromSuperview];
         self.contentView = nil;
-        disscussionMenu *menu = (disscussionMenu *)self.contentView;
         [self.view addSubview:self.contentView];
         [self layoutForContentView:self.contentView];
-        [self layoutForDiscussionMenu:menu];
+        
         
         
     }
 }
 
-#pragma mark 布局视频页面
+#pragma mark 布局contentView页面
 - (void)layoutForContentView:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
     NSLayoutConstraint *leading2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
@@ -140,27 +136,9 @@
     
 }
 
-#pragma mark 布局行业讨论
-- (void)layoutForDiscussionMenu:(disscussionMenu *)menu{
-    for (int i = 0; i < 5; i ++) {
-        UIView *topic = [[[NSBundle mainBundle] loadNibNamed:@"topics" owner:nil options:nil]firstObject];
-        [menu.scrollView addSubview:topic];
-        //列数
-        int column = i%Number;
-                //行数
-        int line = (int)i/Number;
-        
-        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:menu.line attribute:NSLayoutAttributeLeading multiplier:1 constant:column * (Width + MarginSide)];
-        NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:menu.line attribute:NSLayoutAttributeBottom multiplier:1 constant:line * (Height +MarginTop) + MarginTop];
-        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Width];
-        NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:topic attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Height];
-        
-        topic.translatesAutoresizingMaskIntoConstraints = NO;
-        [menu.scrollView addConstraints:@[leading,top]];
-        [topic addConstraints:@[width,height]];
-//        view.translatesAutoresizingMaskIntoConstraints = NO;
-        
-
-    }
+#pragma mark 布局contentView子页面
+- (void)layoutForSubviewsInContentView:(UIView *)view {
+    
 }
+
 @end
