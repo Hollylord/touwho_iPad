@@ -74,6 +74,7 @@
 		A1BE7F3F1B8D5DA100E76711 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */; };
 		A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F401B8D90F300E76711 /* meLeft.xib */; };
 		A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F421B8D962100E76711 /* meLeftCell.xib */; };
+		A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F451B8DA5CE00E76711 /* meLeft.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
@@ -207,6 +208,8 @@
 		A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		A1BE7F401B8D90F300E76711 /* meLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = meLeft.xib; sourceTree = "<group>"; };
 		A1BE7F421B8D962100E76711 /* meLeftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = meLeftCell.xib; sourceTree = "<group>"; };
+		A1BE7F441B8DA5CE00E76711 /* meLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meLeft.h; sourceTree = "<group>"; };
+		A1BE7F451B8DA5CE00E76711 /* meLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meLeft.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 		A13259311B8306E900A327C6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE7F441B8DA5CE00E76711 /* meLeft.h */,
+				A1BE7F451B8DA5CE00E76711 /* meLeft.m */,
 				A1BE7F401B8D90F300E76711 /* meLeft.xib */,
 				A1BE7F421B8D962100E76711 /* meLeftCell.xib */,
 			);
@@ -815,6 +820,7 @@
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
+				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,

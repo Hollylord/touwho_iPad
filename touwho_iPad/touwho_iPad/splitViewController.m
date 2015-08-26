@@ -7,6 +7,7 @@
 //
 
 #import "splitViewController.h"
+#import "loginViewController.h"
 
 @interface splitViewController ()
 
@@ -25,9 +26,7 @@
     self.maximumPrimaryColumnWidth = 100;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
-    
-   
-    
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +43,11 @@
     }
     else if ([notification.name isEqualToString:@"discoveryNotification"]){
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"discoveryNavigation"] sender:nil];
+    }
+    else if ([notification.name isEqualToString:@"loginNotification"]){
+        loginViewController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+        login.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:login animated:YES completion:NULL];
     }
 }
 
