@@ -8,6 +8,8 @@
 
 #import "splitViewController.h"
 #import "loginViewController.h"
+#import "meRight.h"
+#import "meLeft.h"
 
 @interface splitViewController ()
 
@@ -54,16 +56,18 @@
 //展开me的视图
 - (void)extentMeView{
     //添加左边view
-    UIView *me = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
+    meLeft *me = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
     [self.view addSubview:me];
     [self layoutForMe:me];
     
     //添加右边view
-    UIView *meRight = [[UIView alloc] init];
-    meRight.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:meRight];
-    self.meRightView = meRight;
-    [self layoutForMeRight:meRight];
+    meRight *meRightView = [[meRight alloc] init];
+    meRightView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:meRightView];
+    self.meRightView = meRightView;
+    [self layoutForMeRight:meRightView];
+    //设置右边为左边代理
+    me.delegate = meRightView;
     
 }
 

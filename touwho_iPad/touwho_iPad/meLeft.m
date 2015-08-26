@@ -36,7 +36,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    if (indexPath.row == 0) {
+        [self.delegate presentPublish];
+    }
+    else if (indexPath.row == 1)
+    {
+        [self.delegate presentPrograms];
+    }
+    else if (indexPath.row == 2)
+    {
+        [self.delegate presentApply];
+    }
 }
 
 

@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol meLeftDelegate
+//发布项目
+- (void)presentPublish;
+//已投资的项目
+- (void)presentPrograms;
+/** 申请领头*/ 
+- (void)presentApply;
+
+@end
+
+
 
 @interface meLeft : UIView <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (weak,nonatomic) id <meLeftDelegate>delegate;
 @end

@@ -20,6 +20,8 @@
 		A1033BE41B8C59DB00FC8921 /* sixin.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BE31B8C59DB00FC8921 /* sixin.m */; };
 		A1033BE61B8C5AA300FC8921 /* topicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BE51B8C5AA300FC8921 /* topicsCell.xib */; };
 		A1033BE81B8C5DF200FC8921 /* sixinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BE71B8C5DF200FC8921 /* sixinCell.xib */; };
+		A11451C21B8DC31400E45381 /* programsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11451C11B8DC31400E45381 /* programsCell.xib */; };
+		A11451C41B8DC47700E45381 /* apply.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11451C31B8DC47700E45381 /* apply.xib */; };
 		A13259261B82C35A00A327C6 /* programView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259251B82C35A00A327C6 /* programView.m */; };
 		A13259281B82C37B00A327C6 /* programView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13259271B82C37B00A327C6 /* programView.xib */; };
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
@@ -75,6 +77,8 @@
 		A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F401B8D90F300E76711 /* meLeft.xib */; };
 		A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F421B8D962100E76711 /* meLeftCell.xib */; };
 		A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F451B8DA5CE00E76711 /* meLeft.m */; };
+		A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F491B8DAFE100E76711 /* publish.xib */; };
+		A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F4C1B8DB2AC00E76711 /* meRight.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
@@ -120,6 +124,8 @@
 		A1033BE31B8C59DB00FC8921 /* sixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sixin.m; sourceTree = "<group>"; };
 		A1033BE51B8C5AA300FC8921 /* topicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topicsCell.xib; sourceTree = "<group>"; };
 		A1033BE71B8C5DF200FC8921 /* sixinCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixinCell.xib; sourceTree = "<group>"; };
+		A11451C11B8DC31400E45381 /* programsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programsCell.xib; sourceTree = "<group>"; };
+		A11451C31B8DC47700E45381 /* apply.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = apply.xib; sourceTree = "<group>"; };
 		A13259241B82C35A00A327C6 /* programView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programView.h; sourceTree = "<group>"; };
 		A13259251B82C35A00A327C6 /* programView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programView.m; sourceTree = "<group>"; };
 		A13259271B82C37B00A327C6 /* programView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programView.xib; sourceTree = "<group>"; };
@@ -210,6 +216,9 @@
 		A1BE7F421B8D962100E76711 /* meLeftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = meLeftCell.xib; sourceTree = "<group>"; };
 		A1BE7F441B8DA5CE00E76711 /* meLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meLeft.h; sourceTree = "<group>"; };
 		A1BE7F451B8DA5CE00E76711 /* meLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meLeft.m; sourceTree = "<group>"; };
+		A1BE7F491B8DAFE100E76711 /* publish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = publish.xib; sourceTree = "<group>"; };
+		A1BE7F4B1B8DB2AC00E76711 /* meRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meRight.h; sourceTree = "<group>"; };
+		A1BE7F4C1B8DB2AC00E76711 /* meRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meRight.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
@@ -390,10 +399,8 @@
 		A13259311B8306E900A327C6 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				A1BE7F441B8DA5CE00E76711 /* meLeft.h */,
-				A1BE7F451B8DA5CE00E76711 /* meLeft.m */,
-				A1BE7F401B8D90F300E76711 /* meLeft.xib */,
-				A1BE7F421B8D962100E76711 /* meLeftCell.xib */,
+				A1BE7F471B8DAF8500E76711 /* 左边 */,
+				A1BE7F481B8DAF8F00E76711 /* 右边 */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -620,6 +627,29 @@
 			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
+		A1BE7F471B8DAF8500E76711 /* 左边 */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE7F441B8DA5CE00E76711 /* meLeft.h */,
+				A1BE7F451B8DA5CE00E76711 /* meLeft.m */,
+				A1BE7F401B8D90F300E76711 /* meLeft.xib */,
+				A1BE7F421B8D962100E76711 /* meLeftCell.xib */,
+			);
+			name = "左边";
+			sourceTree = "<group>";
+		};
+		A1BE7F481B8DAF8F00E76711 /* 右边 */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE7F4B1B8DB2AC00E76711 /* meRight.h */,
+				A1BE7F4C1B8DB2AC00E76711 /* meRight.m */,
+				A11451C31B8DC47700E45381 /* apply.xib */,
+				A1BE7F491B8DAFE100E76711 /* publish.xib */,
+				A11451C11B8DC31400E45381 /* programsCell.xib */,
+			);
+			name = "右边";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -725,6 +755,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11451C21B8DC31400E45381 /* programsCell.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A1033BD51B8C4CDA00FC8921 /* sixin.xib in Resources */,
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
@@ -734,12 +765,14 @@
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
 				A1033BE81B8C5DF200FC8921 /* sixinCell.xib in Resources */,
+				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
 				A1033BD31B8C487000FC8921 /* topics.xib in Resources */,
+				A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */,
 				A1002B1C1B857581007520AA /* shipinView.xib in Resources */,
 				A1033BE61B8C5AA300FC8921 /* topicsCell.xib in Resources */,
 				A13259281B82C37B00A327C6 /* programView.xib in Resources */,
@@ -821,6 +854,7 @@
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
+				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
