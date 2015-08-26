@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface splitViewController : UISplitViewController
-
+- (void)extentMeView;
 @end

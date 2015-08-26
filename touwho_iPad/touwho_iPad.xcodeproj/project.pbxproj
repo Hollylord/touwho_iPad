@@ -72,6 +72,8 @@
 		A1BE7F3D1B8D5DA100E76711 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F331B8D5DA100E76711 /* CAXException.cpp */; };
 		A1BE7F3E1B8D5DA100E76711 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F371B8D5DA100E76711 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A1BE7F3F1B8D5DA100E76711 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */; };
+		A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F401B8D90F300E76711 /* meLeft.xib */; };
+		A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F421B8D962100E76711 /* meLeftCell.xib */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
@@ -203,6 +205,8 @@
 		A1BE7F371B8D5DA100E76711 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		A1BE7F391B8D5DA100E76711 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
+		A1BE7F401B8D90F300E76711 /* meLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = meLeft.xib; sourceTree = "<group>"; };
+		A1BE7F421B8D962100E76711 /* meLeftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = meLeftCell.xib; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
@@ -383,6 +387,8 @@
 		A13259311B8306E900A327C6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE7F401B8D90F300E76711 /* meLeft.xib */,
+				A1BE7F421B8D962100E76711 /* meLeftCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -718,11 +724,13 @@
 				A1033BD51B8C4CDA00FC8921 /* sixin.xib in Resources */,
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
 				A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */,
+				A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */,
 				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
 				A1033BE81B8C5DF200FC8921 /* sixinCell.xib in Resources */,
 				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
+				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,

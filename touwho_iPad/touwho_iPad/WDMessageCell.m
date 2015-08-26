@@ -80,7 +80,7 @@
     return self;
 }
 
-#warning 在这里是拿到已经设置好的frame设置到cell上。。设置frame的地方在fm.message的setter方法里；
+
 
 -(void)setFrameMessage:(WDMessageFrameModel *)frameMessage{
     _frameMessage = frameMessage;

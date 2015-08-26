@@ -10,7 +10,6 @@
 @class WDMessageFrameModel;
 
 @interface WDMessageCell : UITableViewCell
-#warning 为了拥有这数据才弄出来的属性吗？？；
 @property (nonatomic,strong) WDMessageFrameModel * frameMessage;  // frame 的模型
 @property (nonatomic ,weak ) UILabel* time;  //显示的时间
 @property (nonatomic ,weak)  UIButton * textView;  // 显示的正文

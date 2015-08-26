@@ -29,7 +29,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"topicsCell" forIndexPath:indexPath];
-    
+    //小箭头
+    //    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
     
 }

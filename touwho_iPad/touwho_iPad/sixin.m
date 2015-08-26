@@ -204,10 +204,7 @@
     BDRecognizerViewController *recognizerViewController = [[BDRecognizerViewController alloc] initWithOrigin:CGPointMake(35, 250) withTheme:[BDTheme defaultTheme]];
     
     if ([[UIScreen mainScreen] bounds].size.width > 375) {
-        //        CGRect frame =recognizerViewController.view.frame;
-        //        //NSLog(@"laidaozheli");
-        //        frame.origin = CGPointMake(100, 250);
-        //        recognizerViewController.view.frame =frame;
+       
         recognizerViewController = [[BDRecognizerViewController alloc] initWithOrigin:CGPointMake(58, 250) withTheme:[BDTheme defaultTheme]];
         
     }
@@ -259,10 +256,8 @@
 -(void)keyboardDidChangeFrame:(NSNotification *)noti{
     // transform 平移缩放；
     CGRect frame=[noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat screenH = self.contentBView.frame.size.height; // 屏幕高度；
+    
     CGFloat keyY =frame.origin.y;   // 键盘的实时Y。
-    NSLog(@"%f",keyY);
-    CGFloat keyH = frame.size.height; //键盘的高度
     CGFloat keyDuration = [noti.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue]; //KEYB的持续时间
     [UIView animateWithDuration:keyDuration animations:^{
         if (keyY != 768) {

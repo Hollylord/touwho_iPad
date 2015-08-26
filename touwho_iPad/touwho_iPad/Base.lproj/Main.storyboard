@@ -531,6 +531,9 @@
                                 <state key="normal" image="login">
                                     <attributedString key="attributedTitle"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="EhZ-7N-x95" eventType="touchUpInside" id="DS7-jI-PgG"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MAO-NW-41c">
                                 <rect key="frame" x="182" y="516" width="237" height="69"/>
