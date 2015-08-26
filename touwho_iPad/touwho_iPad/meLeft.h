@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 @protocol meLeftDelegate
-//发布项目
+/**
+ *  发布项目
+ */
 - (void)presentPublish;
-//已投资的项目
+/**
+ *  已投资的项目
+ */
 - (void)presentPrograms;
-/** 申请领头*/ 
+/**
+ *  申请领投人资格页面
+ */
 - (void)presentApply;
 
 @end

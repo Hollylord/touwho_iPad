@@ -47,6 +47,7 @@
     else if (indexPath.row == 2)
     {
         [self.delegate presentApply];
+        
     }
 }
 
