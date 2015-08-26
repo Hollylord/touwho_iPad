@@ -74,6 +74,7 @@
                                         <constraint firstItem="VPz-Fm-aAd" firstAttribute="leading" secondItem="fOa-87-Ihk" secondAttribute="trailing" constant="8" id="Uf3-gf-h8d"/>
                                         <constraint firstItem="ZIW-qh-mLb" firstAttribute="leading" secondItem="CA5-hh-poy" secondAttribute="leading" constant="17" id="eWr-5h-ckI"/>
                                         <constraint firstItem="JGj-bc-avf" firstAttribute="width" secondItem="fOa-87-Ihk" secondAttribute="width" id="kjI-zx-bkw"/>
+                                        <constraint firstAttribute="height" constant="44" id="nGc-kW-jzn"/>
                                         <constraint firstItem="VPz-Fm-aAd" firstAttribute="top" secondItem="CA5-hh-poy" secondAttribute="top" constant="8" id="obk-Vs-n8F"/>
                                         <constraint firstItem="JGj-bc-avf" firstAttribute="height" secondItem="fOa-87-Ihk" secondAttribute="height" id="tmu-nU-s0K"/>
                                         <constraint firstAttribute="trailing" secondItem="VPz-Fm-aAd" secondAttribute="trailing" constant="14" id="wzm-gh-PaD"/>
@@ -83,15 +84,20 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="CA5-hh-poy" firstAttribute="top" secondItem="RbG-mr-GfV" secondAttribute="bottom" id="9bl-g6-u4S"/>
                                 <constraint firstAttribute="bottom" secondItem="CA5-hh-poy" secondAttribute="bottom" id="BL2-4z-ALe"/>
                                 <constraint firstItem="RbG-mr-GfV" firstAttribute="leading" secondItem="9XC-Dh-ujn" secondAttribute="leading" id="DJL-Dv-yd7"/>
                                 <constraint firstItem="CA5-hh-poy" firstAttribute="leading" secondItem="9XC-Dh-ujn" secondAttribute="leading" id="O4q-xh-d1b"/>
                                 <constraint firstAttribute="bottom" secondItem="RbG-mr-GfV" secondAttribute="bottom" constant="44" id="Orn-Xe-ps6"/>
-                                <constraint firstItem="CA5-hh-poy" firstAttribute="top" secondItem="RbG-mr-GfV" secondAttribute="bottom" id="Xrw-yK-Imm"/>
                                 <constraint firstAttribute="trailing" secondItem="RbG-mr-GfV" secondAttribute="trailing" id="d9n-An-Dr3"/>
                                 <constraint firstAttribute="trailing" secondItem="CA5-hh-poy" secondAttribute="trailing" id="qKs-X7-3fP"/>
                                 <constraint firstItem="RbG-mr-GfV" firstAttribute="top" secondItem="9XC-Dh-ujn" secondAttribute="top" id="zTJ-5E-K2X"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Orn-Xe-ps6"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                 </stackView>
@@ -124,6 +130,8 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bottomOfInput" destination="BL2-4z-ALe" id="sfO-ZL-H2Y"/>
+                <outlet property="contentBView" destination="9XC-Dh-ujn" id="PdB-5T-fsJ"/>
                 <outlet property="inputView" destination="JGj-bc-avf" id="F4N-83-sqL"/>
                 <outlet property="replyView" destination="RbG-mr-GfV" id="yL2-93-HrL"/>
                 <outlet property="talkBtn" destination="fOa-87-Ihk" id="1ys-qL-8Nb"/>

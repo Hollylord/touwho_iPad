@@ -10,7 +10,7 @@
 #import "WDMessageModel.h"
 
 
-#define kScreenWidth [[UIScreen mainScreen]bounds].size.width
+#define kScreenWidth 400
 #define kNormalH 44
 #define kIconW 50
 #define kIconH 50

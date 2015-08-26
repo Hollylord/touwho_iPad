@@ -49,6 +49,29 @@
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
 		A1B8684A1B848112005C4A6F /* popUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868471B848112005C4A6F /* popUpView.m */; };
 		A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868491B848112005C4A6F /* customAnnotationView.m */; };
+		A1BE7EFC1B8D551C00E76711 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7EFB1B8D551C00E76711 /* CoreGraphics.framework */; };
+		A1BE7EFE1B8D552400E76711 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7EFD1B8D552400E76711 /* CFNetwork.framework */; };
+		A1BE7F001B8D552B00E76711 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7EFF1B8D552B00E76711 /* CoreLocation.framework */; };
+		A1BE7F021B8D553500E76711 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F011B8D553500E76711 /* OpenGLES.framework */; };
+		A1BE7F041B8D553D00E76711 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F031B8D553D00E76711 /* GLKit.framework */; };
+		A1BE7F061B8D554300E76711 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F051B8D554300E76711 /* CoreText.framework */; };
+		A1BE7F081B8D554B00E76711 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F071B8D554B00E76711 /* QuartzCore.framework */; };
+		A1BE7F0A1B8D555400E76711 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F091B8D555400E76711 /* Security.framework */; };
+		A1BE7F0C1B8D555E00E76711 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F0B1B8D555E00E76711 /* libz.1.tbd */; };
+		A1BE7F0E1B8D556700E76711 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F0D1B8D556700E76711 /* Foundation.framework */; };
+		A1BE7F101B8D556E00E76711 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F0F1B8D556E00E76711 /* UIKit.framework */; };
+		A1BE7F121B8D557600E76711 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F111B8D557600E76711 /* AudioToolbox.framework */; };
+		A1BE7F141B8D558200E76711 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F131B8D558200E76711 /* SystemConfiguration.framework */; };
+		A1BE7F161B8D558A00E76711 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F151B8D558A00E76711 /* AVFoundation.framework */; };
+		A1BE7F181B8D55D800E76711 /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F171B8D55D800E76711 /* Headers */; };
+		A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F1D1B8D56DD00E76711 /* BDVoiceRecognitionClientResources */; };
+		A1BE7F211B8D571800E76711 /* BDVRSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F201B8D571800E76711 /* BDVRSConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1BE7F251B8D5C7F00E76711 /* libBDVoiceRecognitionClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F191B8D564700E76711 /* libBDVoiceRecognitionClient.a */; };
+		A1BE7F3B1B8D5DA100E76711 /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F2E1B8D5DA100E76711 /* CADebugMacros.cpp */; };
+		A1BE7F3C1B8D5DA100E76711 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F311B8D5DA100E76711 /* CAStreamBasicDescription.cpp */; };
+		A1BE7F3D1B8D5DA100E76711 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F331B8D5DA100E76711 /* CAXException.cpp */; };
+		A1BE7F3E1B8D5DA100E76711 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F371B8D5DA100E76711 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A1BE7F3F1B8D5DA100E76711 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
@@ -150,6 +173,36 @@
 		A1B868471B848112005C4A6F /* popUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popUpView.m; sourceTree = "<group>"; };
 		A1B868481B848112005C4A6F /* customAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customAnnotationView.h; sourceTree = "<group>"; };
 		A1B868491B848112005C4A6F /* customAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customAnnotationView.m; sourceTree = "<group>"; };
+		A1BE7EFB1B8D551C00E76711 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A1BE7EFD1B8D552400E76711 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A1BE7EFF1B8D552B00E76711 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A1BE7F011B8D553500E76711 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A1BE7F031B8D553D00E76711 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		A1BE7F051B8D554300E76711 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		A1BE7F071B8D554B00E76711 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A1BE7F091B8D555400E76711 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A1BE7F0B1B8D555E00E76711 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		A1BE7F0D1B8D556700E76711 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A1BE7F0F1B8D556E00E76711 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A1BE7F111B8D557600E76711 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A1BE7F131B8D558200E76711 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A1BE7F151B8D558A00E76711 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A1BE7F171B8D55D800E76711 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Headers; sourceTree = "<group>"; };
+		A1BE7F191B8D564700E76711 /* libBDVoiceRecognitionClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBDVoiceRecognitionClient.a; sourceTree = "<group>"; };
+		A1BE7F1D1B8D56DD00E76711 /* BDVoiceRecognitionClientResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BDVoiceRecognitionClientResources; path = "../../../../Downloads/Baidu-Voice-SDK-iOS-1.6.1/Baidu-Voice-SDK-iOS-1.6.1/BDVoiceRecognitionClientResources"; sourceTree = "<group>"; };
+		A1BE7F1F1B8D571800E76711 /* BDVRSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDVRSConfig.h; sourceTree = "<group>"; };
+		A1BE7F201B8D571800E76711 /* BDVRSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDVRSConfig.m; sourceTree = "<group>"; };
+		A1BE7F2E1B8D5DA100E76711 /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		A1BE7F2F1B8D5DA100E76711 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		A1BE7F301B8D5DA100E76711 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		A1BE7F311B8D5DA100E76711 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		A1BE7F321B8D5DA100E76711 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		A1BE7F331B8D5DA100E76711 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		A1BE7F341B8D5DA100E76711 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		A1BE7F361B8D5DA100E76711 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		A1BE7F371B8D5DA100E76711 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		A1BE7F391B8D5DA100E76711 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
@@ -162,6 +215,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BE7F251B8D5C7F00E76711 /* libBDVoiceRecognitionClient.a in Frameworks */,
+				A1BE7F161B8D558A00E76711 /* AVFoundation.framework in Frameworks */,
+				A1BE7F141B8D558200E76711 /* SystemConfiguration.framework in Frameworks */,
+				A1BE7F121B8D557600E76711 /* AudioToolbox.framework in Frameworks */,
+				A1BE7F101B8D556E00E76711 /* UIKit.framework in Frameworks */,
+				A1BE7F0E1B8D556700E76711 /* Foundation.framework in Frameworks */,
+				A1BE7F0C1B8D555E00E76711 /* libz.1.tbd in Frameworks */,
+				A1BE7F0A1B8D555400E76711 /* Security.framework in Frameworks */,
+				A1BE7F081B8D554B00E76711 /* QuartzCore.framework in Frameworks */,
+				A1BE7F061B8D554300E76711 /* CoreText.framework in Frameworks */,
+				A1BE7F041B8D553D00E76711 /* GLKit.framework in Frameworks */,
+				A1BE7F021B8D553500E76711 /* OpenGLES.framework in Frameworks */,
+				A1BE7F001B8D552B00E76711 /* CoreLocation.framework in Frameworks */,
+				A1BE7EFE1B8D552400E76711 /* CFNetwork.framework in Frameworks */,
+				A1BE7EFC1B8D551C00E76711 /* CoreGraphics.framework in Frameworks */,
 				751CFC778842ECC9FA71EE08 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +263,20 @@
 		73AC23966CB8C0D034DD33F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE7F151B8D558A00E76711 /* AVFoundation.framework */,
+				A1BE7F131B8D558200E76711 /* SystemConfiguration.framework */,
+				A1BE7F111B8D557600E76711 /* AudioToolbox.framework */,
+				A1BE7F0F1B8D556E00E76711 /* UIKit.framework */,
+				A1BE7F0D1B8D556700E76711 /* Foundation.framework */,
+				A1BE7F0B1B8D555E00E76711 /* libz.1.tbd */,
+				A1BE7F091B8D555400E76711 /* Security.framework */,
+				A1BE7F071B8D554B00E76711 /* QuartzCore.framework */,
+				A1BE7F051B8D554300E76711 /* CoreText.framework */,
+				A1BE7F031B8D553D00E76711 /* GLKit.framework */,
+				A1BE7F011B8D553500E76711 /* OpenGLES.framework */,
+				A1BE7EFF1B8D552B00E76711 /* CoreLocation.framework */,
+				A1BE7EFD1B8D552400E76711 /* CFNetwork.framework */,
+				A1BE7EFB1B8D551C00E76711 /* CoreGraphics.framework */,
 				46FD57436EEF26BB21147271 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -308,6 +390,7 @@
 		A17C9A7B1B8C6FBA00F5677C /* library */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE7F221B8D572000E76711 /* 百度语音 */,
 				A17C9A7C1B8C6FCC00F5677C /* UIView+Extension.h */,
 				A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */,
 			);
@@ -471,6 +554,61 @@
 			name = "活动";
 			sourceTree = "<group>";
 		};
+		A1BE7F221B8D572000E76711 /* 百度语音 */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE7F2C1B8D5DA100E76711 /* Third-party */,
+				A1BE7F1F1B8D571800E76711 /* BDVRSConfig.h */,
+				A1BE7F201B8D571800E76711 /* BDVRSConfig.m */,
+				A1BE7F1D1B8D56DD00E76711 /* BDVoiceRecognitionClientResources */,
+				A1BE7F191B8D564700E76711 /* libBDVoiceRecognitionClient.a */,
+				A1BE7F171B8D55D800E76711 /* Headers */,
+			);
+			name = "百度语音";
+			sourceTree = "<group>";
+		};
+		A1BE7F2C1B8D5DA100E76711 /* Third-party */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE7F2D1B8D5DA100E76711 /* CoreAudioUtility */,
+				A1BE7F351B8D5DA100E76711 /* JSONKit-master */,
+				A1BE7F381B8D5DA100E76711 /* TTTAttributedLabel */,
+			);
+			path = "Third-party";
+			sourceTree = "<group>";
+		};
+		A1BE7F2D1B8D5DA100E76711 /* CoreAudioUtility */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE7F2E1B8D5DA100E76711 /* CADebugMacros.cpp */,
+				A1BE7F2F1B8D5DA100E76711 /* CADebugMacros.h */,
+				A1BE7F301B8D5DA100E76711 /* CAMath.h */,
+				A1BE7F311B8D5DA100E76711 /* CAStreamBasicDescription.cpp */,
+				A1BE7F321B8D5DA100E76711 /* CAStreamBasicDescription.h */,
+				A1BE7F331B8D5DA100E76711 /* CAXException.cpp */,
+				A1BE7F341B8D5DA100E76711 /* CAXException.h */,
+			);
+			path = CoreAudioUtility;
+			sourceTree = "<group>";
+		};
+		A1BE7F351B8D5DA100E76711 /* JSONKit-master */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE7F361B8D5DA100E76711 /* JSONKit.h */,
+				A1BE7F371B8D5DA100E76711 /* JSONKit.m */,
+			);
+			path = "JSONKit-master";
+			sourceTree = "<group>";
+		};
+		A1BE7F381B8D5DA100E76711 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				A1BE7F391B8D5DA100E76711 /* TTTAttributedLabel.h */,
+				A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -582,7 +720,9 @@
 				A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */,
 				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
+				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
 				A1033BE81B8C5DF200FC8921 /* sixinCell.xib in Resources */,
+				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
@@ -647,15 +787,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BE7F3D1B8D5DA100E76711 /* CAXException.cpp in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
+				A1BE7F3E1B8D5DA100E76711 /* JSONKit.m in Sources */,
+				A1BE7F3C1B8D5DA100E76711 /* CAStreamBasicDescription.cpp in Sources */,
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A17C9A7A1B8C6F6800F5677C /* WDMessageTool.m in Sources */,
+				A1BE7F3B1B8D5DA100E76711 /* CADebugMacros.cpp in Sources */,
 				A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
@@ -667,6 +811,7 @@
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A17C9A791B8C6F6800F5677C /* WDMessageModel.m in Sources */,
+				A1BE7F3F1B8D5DA100E76711 /* TTTAttributedLabel.m in Sources */,
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
@@ -674,6 +819,7 @@
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A1033BE41B8C59DB00FC8921 /* sixin.m in Sources */,
 				A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */,
+				A1BE7F211B8D571800E76711 /* BDVRSConfig.m in Sources */,
 				A17C9A771B8C6F6800F5677C /* WDMessageCell.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 			);
@@ -821,6 +967,10 @@
 				INFOPLIST_FILE = touwho_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/touwho_iPad",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5dd39495-358a-473f-b96e-7ae2b9ac59b2";
@@ -836,6 +986,10 @@
 				INFOPLIST_FILE = touwho_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/touwho_iPad",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5dd39495-358a-473f-b96e-7ae2b9ac59b2";
