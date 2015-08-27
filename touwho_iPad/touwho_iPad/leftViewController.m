@@ -57,6 +57,7 @@
         self.news.selected = YES;
         self.discovery.selected = NO;
         self.me.selected = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"newsNotification" object:nil];
         
     }
     else if (sender.tag == 2 )

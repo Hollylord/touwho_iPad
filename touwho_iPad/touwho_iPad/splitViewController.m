@@ -39,6 +39,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - 收到通知
 - (void)receiveNotification:(NSNotification *)notification{
     if ([notification.name isEqualToString:@"programNotification"]) {
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"shouye"] sender:nil];
@@ -51,9 +52,12 @@
         login.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:login animated:YES completion:NULL];
     }
+    else if ([notification.name isEqualToString:@"newsNotification"]){
+        [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"newsNavigation"] sender:nil];
+    }
 }
 
-//展开me的视图
+#pragma mark - 展开个人详细页面
 - (void)extentMeView{
     //添加左边view
     meLeft *me = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];

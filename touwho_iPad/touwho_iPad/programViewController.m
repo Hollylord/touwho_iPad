@@ -12,7 +12,7 @@
 #import "programView.h"
 
 
-@interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate,programViewDelegate>
+@interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
 
 
@@ -57,14 +57,19 @@
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
     
     
+    NSArray *nameOfPrograms = @[@"国内项目",@"海外项目",@"商品众筹",@"公益众筹"];
     //添加项目视图
-    for (int i = 0; i < 5; i ++) {
-        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+    for (int i = 0; i < 4; i ++) {
+//        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+        UIButton *categoryOfPrograms = [UIButton buttonWithType:UIButtonTypeCustom];
+        [categoryOfPrograms setTitle:nameOfPrograms[i] forState:UIControlStateNormal];
+        categoryOfPrograms.tag = i;
+        [categoryOfPrograms addTarget:self action:@selector(turn2programs:) forControlEvents:UIControlEventTouchUpInside];
         
-        program.delegate = self;
-        [self.scrollView addSubview:program];
-        program.backgroundColor = [UIColor redColor];
-        [self.programs addObject:program];
+        categoryOfPrograms.backgroundColor = [UIColor redColor];
+        [self.scrollView addSubview:categoryOfPrograms];
+        
+        [self.programs addObject:categoryOfPrograms];
         [self layoutForProgramView:self.programs[i] index:i];
     }
 
@@ -83,6 +88,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+#pragma mark - 按钮响应
+- (void)turn2programs:(UIButton *)button{
+    NSLog(@"%ld",(long)button.tag);
 }
 
 #pragma mark - 布局programView
@@ -199,10 +209,7 @@
 
 }
 
-#pragma mark - 点击项目
-- (void)tap{
-    NSLog(@"123");
-}
+
 
 
 

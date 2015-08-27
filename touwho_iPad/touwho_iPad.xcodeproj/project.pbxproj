@@ -31,6 +31,7 @@
 		A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259391B8336FE00A327C6 /* splitViewController.m */; };
 		A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BA5661B8712960087DEF0 /* themesViewController.m */; };
 		A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA851B8EA51D0052C2A7 /* profile.xib */; };
+		A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */; };
 		A17C9A771B8C6F6800F5677C /* WDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A701B8C6F6800F5677C /* WDMessageCell.m */; };
 		A17C9A781B8C6F6800F5677C /* WDMessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A721B8C6F6800F5677C /* WDMessageFrameModel.m */; };
 		A17C9A791B8C6F6800F5677C /* WDMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A741B8C6F6800F5677C /* WDMessageModel.m */; };
@@ -143,6 +144,8 @@
 		A13BA5651B8712960087DEF0 /* themesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = themesViewController.h; sourceTree = "<group>"; };
 		A13BA5661B8712960087DEF0 /* themesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = themesViewController.m; sourceTree = "<group>"; };
 		A13EEA851B8EA51D0052C2A7 /* profile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profile.xib; sourceTree = "<group>"; };
+		A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news1ViewController.h; sourceTree = "<group>"; };
+		A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news1ViewController.m; sourceTree = "<group>"; };
 		A17C9A6F1B8C6F6800F5677C /* WDMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageCell.h; sourceTree = "<group>"; };
 		A17C9A701B8C6F6800F5677C /* WDMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMessageCell.m; sourceTree = "<group>"; };
 		A17C9A711B8C6F6800F5677C /* WDMessageFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageFrameModel.h; sourceTree = "<group>"; };
@@ -407,6 +410,31 @@
 			name = view;
 			sourceTree = "<group>";
 		};
+		A13EEA871B8EF7A60052C2A7 /* 新闻 */ = {
+			isa = PBXGroup;
+			children = (
+				A13EEA881B8EF7C70052C2A7 /* view */,
+				A13EEA891B8EF7D00052C2A7 /* controller */,
+			);
+			name = "新闻";
+			sourceTree = "<group>";
+		};
+		A13EEA881B8EF7C70052C2A7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		A13EEA891B8EF7D00052C2A7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */,
+				A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		A17C9A7B1B8C6FBA00F5677C /* library */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +479,7 @@
 				A1B868381B842BEF005C4A6F /* 发现 */,
 				A13259301B8306E100A327C6 /* 我 */,
 				A19D09721B7C301300094B81 /* 首页 */,
+				A13EEA871B8EF7A60052C2A7 /* 新闻 */,
 				A19D09711B7C2F5B00094B81 /* other */,
 				A19D093E1B7C2DF100094B81 /* Supporting Files */,
 			);
@@ -864,6 +893,7 @@
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A17C9A791B8C6F6800F5677C /* WDMessageModel.m in Sources */,
 				A1BE7F3F1B8D5DA100E76711 /* TTTAttributedLabel.m in Sources */,
+				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
