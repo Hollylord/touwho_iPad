@@ -34,6 +34,8 @@
 		A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */; };
 		A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */; };
 		A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA901B8EFC710052C2A7 /* newsMenu.m */; };
+		A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA931B8F0F580052C2A7 /* news2ViewController.m */; };
+		A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */; };
 		A17C9A771B8C6F6800F5677C /* WDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A701B8C6F6800F5677C /* WDMessageCell.m */; };
 		A17C9A781B8C6F6800F5677C /* WDMessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A721B8C6F6800F5677C /* WDMessageFrameModel.m */; };
 		A17C9A791B8C6F6800F5677C /* WDMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A741B8C6F6800F5677C /* WDMessageModel.m */; };
@@ -151,6 +153,9 @@
 		A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newsMenu.xib; sourceTree = "<group>"; };
 		A13EEA8F1B8EFC710052C2A7 /* newsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsMenu.h; sourceTree = "<group>"; };
 		A13EEA901B8EFC710052C2A7 /* newsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsMenu.m; sourceTree = "<group>"; };
+		A13EEA921B8F0F580052C2A7 /* news2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news2ViewController.h; sourceTree = "<group>"; };
+		A13EEA931B8F0F580052C2A7 /* news2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news2ViewController.m; sourceTree = "<group>"; };
+		A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = news2ViewController.xib; sourceTree = "<group>"; };
 		A17C9A6F1B8C6F6800F5677C /* WDMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageCell.h; sourceTree = "<group>"; };
 		A17C9A701B8C6F6800F5677C /* WDMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMessageCell.m; sourceTree = "<group>"; };
 		A17C9A711B8C6F6800F5677C /* WDMessageFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageFrameModel.h; sourceTree = "<group>"; };
@@ -439,6 +444,9 @@
 			children = (
 				A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */,
 				A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */,
+				A13EEA921B8F0F580052C2A7 /* news2ViewController.h */,
+				A13EEA931B8F0F580052C2A7 /* news2ViewController.m */,
+				A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -809,6 +817,7 @@
 				A1033BE81B8C5DF200FC8921 /* sixinCell.xib in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
+				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
@@ -913,6 +922,7 @@
 				A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */,
 				A1BE7F211B8D571800E76711 /* BDVRSConfig.m in Sources */,
 				A17C9A771B8C6F6800F5677C /* WDMessageCell.m in Sources */,
+				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,12 +8,13 @@
 
 #import "news1ViewController.h"
 #import "newsMenu.h"
+#import "news2ViewController.h"
 #define MarginSide 50
 #define MarginTop 30
 #define Width 400
 #define Height 200
 
-@interface news1ViewController ()
+@interface news1ViewController () <newsMenuDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
@@ -26,7 +27,7 @@
     
     for (int i = 0; i < 5; i ++) {
         newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];
-        
+        view.delegate = self;
         view.backgroundColor = [UIColor redColor];
         [self.scrollView addSubview:view];
         [self layoutForNewsMenu:view index:i];
@@ -58,4 +59,14 @@
     self.scrollView.contentSize = CGSizeMake(0, CGRectGetMaxY(view.frame) + 20);
 }
 
+#pragma mark - newsMenu代理
+/**
+ *  跳转新闻详细页面
+ */
+- (void)turn2newsDetail{
+    
+    news2ViewController *viewcontroller = [[news2ViewController alloc]initWithNibName:@"news2ViewController" bundle:nil];
+    [self.navigationController pushViewController:viewcontroller animated:YES];
+//    self.navigationItem.backBarButtonItem = @"";
+}
 @end
