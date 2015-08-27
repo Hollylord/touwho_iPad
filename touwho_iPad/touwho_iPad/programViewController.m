@@ -92,7 +92,7 @@
 
 #pragma mark - 按钮响应
 - (void)turn2programs:(UIButton *)button{
-    NSLog(@"%ld",(long)button.tag);
+   
 }
 
 #pragma mark - 布局programView

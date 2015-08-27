@@ -32,6 +32,8 @@
 		A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BA5661B8712960087DEF0 /* themesViewController.m */; };
 		A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA851B8EA51D0052C2A7 /* profile.xib */; };
 		A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */; };
+		A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */; };
+		A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA901B8EFC710052C2A7 /* newsMenu.m */; };
 		A17C9A771B8C6F6800F5677C /* WDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A701B8C6F6800F5677C /* WDMessageCell.m */; };
 		A17C9A781B8C6F6800F5677C /* WDMessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A721B8C6F6800F5677C /* WDMessageFrameModel.m */; };
 		A17C9A791B8C6F6800F5677C /* WDMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A741B8C6F6800F5677C /* WDMessageModel.m */; };
@@ -146,6 +148,9 @@
 		A13EEA851B8EA51D0052C2A7 /* profile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profile.xib; sourceTree = "<group>"; };
 		A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news1ViewController.h; sourceTree = "<group>"; };
 		A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news1ViewController.m; sourceTree = "<group>"; };
+		A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newsMenu.xib; sourceTree = "<group>"; };
+		A13EEA8F1B8EFC710052C2A7 /* newsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newsMenu.h; sourceTree = "<group>"; };
+		A13EEA901B8EFC710052C2A7 /* newsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newsMenu.m; sourceTree = "<group>"; };
 		A17C9A6F1B8C6F6800F5677C /* WDMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageCell.h; sourceTree = "<group>"; };
 		A17C9A701B8C6F6800F5677C /* WDMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMessageCell.m; sourceTree = "<group>"; };
 		A17C9A711B8C6F6800F5677C /* WDMessageFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageFrameModel.h; sourceTree = "<group>"; };
@@ -422,6 +427,9 @@
 		A13EEA881B8EF7C70052C2A7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */,
+				A13EEA8F1B8EFC710052C2A7 /* newsMenu.h */,
+				A13EEA901B8EFC710052C2A7 /* newsMenu.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -788,6 +796,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A11451C21B8DC31400E45381 /* programsCell.xib in Resources */,
+				A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A1033BD51B8C4CDA00FC8921 /* sixin.xib in Resources */,
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
@@ -898,6 +907,7 @@
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
+				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A1033BE41B8C59DB00FC8921 /* sixin.m in Sources */,
 				A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */,

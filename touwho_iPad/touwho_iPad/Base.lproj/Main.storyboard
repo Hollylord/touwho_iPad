@@ -491,10 +491,10 @@
             </objects>
             <point key="canvasLocation" x="-371" y="-608"/>
         </scene>
-        <!--View Controller-->
+        <!--新闻1页-->
         <scene sceneID="3iz-pD-KLk">
             <objects>
-                <viewController id="j2A-mm-g1Y" sceneMemberID="viewController">
+                <viewController title="新闻1页" id="j2A-mm-g1Y" customClass="news1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FG9-KY-skq"/>
                         <viewControllerLayoutGuide type="bottom" id="f9W-4o-EYy"/>
@@ -502,9 +502,23 @@
                     <view key="view" contentMode="scaleToFill" id="V6N-sl-f2M">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lw-80-owP">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9Lw-80-owP" secondAttribute="trailing" id="Bx4-UV-A1v"/>
+                            <constraint firstItem="9Lw-80-owP" firstAttribute="leading" secondItem="V6N-sl-f2M" secondAttribute="leading" id="Ye9-bo-sJo"/>
+                            <constraint firstItem="f9W-4o-EYy" firstAttribute="top" secondItem="9Lw-80-owP" secondAttribute="bottom" id="qFt-xY-pb7"/>
+                            <constraint firstItem="9Lw-80-owP" firstAttribute="top" secondItem="FG9-KY-skq" secondAttribute="bottom" constant="-44" id="spz-Er-0q9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eYZ-Z9-aFX"/>
+                    <connections>
+                        <outlet property="scrollView" destination="9Lw-80-owP" id="zNa-1S-h3r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2de-es-GYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
