@@ -9,6 +9,8 @@
 #import "news2ViewController.h"
 
 @interface news2ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *article;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *yOfContentsize;
 
 @end
 
@@ -16,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.article.text = @"神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。";
+    
+
+   
+    
 }
 
 - (void)didReceiveMemoryWarning {
