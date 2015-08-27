@@ -20,6 +20,10 @@
  *  申请领投人资格页面
  */
 - (void)presentApply;
+/**
+ *  编辑个人信息
+ */
+- (void)presentProfile;
 
 @end
 

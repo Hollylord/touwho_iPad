@@ -30,6 +30,7 @@
 		A13259371B83339300A327C6 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259361B83339300A327C6 /* leftViewController.m */; };
 		A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259391B8336FE00A327C6 /* splitViewController.m */; };
 		A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BA5661B8712960087DEF0 /* themesViewController.m */; };
+		A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA851B8EA51D0052C2A7 /* profile.xib */; };
 		A17C9A771B8C6F6800F5677C /* WDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A701B8C6F6800F5677C /* WDMessageCell.m */; };
 		A17C9A781B8C6F6800F5677C /* WDMessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A721B8C6F6800F5677C /* WDMessageFrameModel.m */; };
 		A17C9A791B8C6F6800F5677C /* WDMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A741B8C6F6800F5677C /* WDMessageModel.m */; };
@@ -141,6 +142,7 @@
 		A13259391B8336FE00A327C6 /* splitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splitViewController.m; sourceTree = "<group>"; };
 		A13BA5651B8712960087DEF0 /* themesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = themesViewController.h; sourceTree = "<group>"; };
 		A13BA5661B8712960087DEF0 /* themesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = themesViewController.m; sourceTree = "<group>"; };
+		A13EEA851B8EA51D0052C2A7 /* profile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profile.xib; sourceTree = "<group>"; };
 		A17C9A6F1B8C6F6800F5677C /* WDMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageCell.h; sourceTree = "<group>"; };
 		A17C9A701B8C6F6800F5677C /* WDMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMessageCell.m; sourceTree = "<group>"; };
 		A17C9A711B8C6F6800F5677C /* WDMessageFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageFrameModel.h; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 				A11451C31B8DC47700E45381 /* apply.xib */,
 				A1BE7F491B8DAFE100E76711 /* publish.xib */,
 				A11451C11B8DC31400E45381 /* programsCell.xib */,
+				A13EEA851B8EA51D0052C2A7 /* profile.xib */,
 			);
 			name = "右边";
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
+				A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */,
 				A1033BE81B8C5DF200FC8921 /* sixinCell.xib in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,

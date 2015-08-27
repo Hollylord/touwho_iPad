@@ -28,9 +28,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"meLeftCell" forIndexPath:indexPath];
-    UILabel *label = (UILabel *)[cell viewWithTag:1];
-    label.text = @"123";
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    UILabel *label = (UILabel *)[cell viewWithTag:1];
+    switch (indexPath.row) {
+        case 0:
+            label.text = @"编辑个人信息";
+            break;
+        case 1:
+            label.text = @"申请领投资格";
+            break;
+        case 2:
+            label.text = @"发布项目";
+            break;
+        case 3:
+            label.text = @"已投资的项目";
+            break;
+        default:
+            break;
+    }
     
     return cell;
 }
@@ -38,15 +53,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.row == 0) {
-        [self.delegate presentPublish];
+        [self.delegate presentProfile];
     }
     else if (indexPath.row == 1)
     {
-        [self.delegate presentPrograms];
+        [self.delegate presentApply];
     }
     else if (indexPath.row == 2)
     {
-        [self.delegate presentApply];
+        [self.delegate presentPublish];
+        
+    }
+    else if (indexPath.row == 3)
+    {
+        [self.delegate presentPrograms];
         
     }
 }

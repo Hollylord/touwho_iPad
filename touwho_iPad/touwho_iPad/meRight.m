@@ -39,6 +39,15 @@
     [self addSubview:view];
 }
 
+- (void)presentProfile{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"profile" owner:nil options:nil]firstObject];
+    [self addSubview:view];
+}
+
+
 #pragma mark - tableview代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -54,7 +63,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
-    
+
     
     return cell;
 }
