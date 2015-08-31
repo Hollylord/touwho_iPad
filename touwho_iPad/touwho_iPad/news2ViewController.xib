@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="article" destination="NcE-Cw-69Y" id="9i2-wH-26f"/>
                 <outlet property="heightOfArticle" destination="uSL-Km-MzJ" id="d7q-hN-yYh"/>
+                <outlet property="tableview" destination="L3h-z3-aOg" id="ZWd-dc-Etq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,17 +73,51 @@
                         <constraint firstAttribute="trailing" secondItem="NcE-Cw-69Y" secondAttribute="trailing" constant="50" id="wGv-Z7-N4J" userLabel="水平范围"/>
                     </constraints>
                 </scrollView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-lw-ASH">
-                    <rect key="frame" x="500" y="0.0" width="423" height="768"/>
-                </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L3h-z3-aOg">
+                    <rect key="frame" x="500" y="64" width="423" height="660"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="j0q-ib-AWr"/>
+                        <outlet property="delegate" destination="-1" id="UPn-5J-xcW"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-n9-Dy7">
+                    <rect key="frame" x="500" y="724" width="423" height="44"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1LE-Fb-DKF">
+                            <rect key="frame" x="19" y="7" width="317" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="SvT-L5-JRs"/>
+                                <constraint firstAttribute="width" constant="317" id="vWn-Nu-Exh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-XZ-8gY">
+                            <rect key="frame" x="359" y="7" width="30" height="30"/>
+                            <state key="normal" title="发送"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1LE-Fb-DKF" firstAttribute="leading" secondItem="uYo-n9-Dy7" secondAttribute="leading" constant="19" id="HCg-Ep-ibX"/>
+                        <constraint firstItem="1LE-Fb-DKF" firstAttribute="centerY" secondItem="uYo-n9-Dy7" secondAttribute="centerY" id="RGm-kh-iNl"/>
+                        <constraint firstItem="HcI-XZ-8gY" firstAttribute="leading" secondItem="1LE-Fb-DKF" secondAttribute="trailing" constant="23" id="TuY-n0-gP4"/>
+                        <constraint firstItem="HcI-XZ-8gY" firstAttribute="centerY" secondItem="1LE-Fb-DKF" secondAttribute="centerY" id="v3D-6N-3mV"/>
+                        <constraint firstAttribute="height" constant="44" id="vWl-zD-xMC"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Dre-lw-ASH" secondAttribute="bottom" id="64D-Dh-zJE"/>
-                <constraint firstAttribute="trailing" secondItem="Dre-lw-ASH" secondAttribute="trailing" id="TJu-gF-PLj"/>
+                <constraint firstAttribute="trailing" secondItem="L3h-z3-aOg" secondAttribute="trailing" id="B0R-Rx-AQR"/>
+                <constraint firstItem="uYo-n9-Dy7" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="trailing" id="EiU-b6-Nbh"/>
                 <constraint firstItem="3Sl-QO-mbG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vm4-Lz-Qcv"/>
-                <constraint firstItem="Dre-lw-ASH" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="trailing" id="aQX-E0-i9B"/>
-                <constraint firstItem="Dre-lw-ASH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="da5-yg-NAH"/>
+                <constraint firstItem="L3h-z3-aOg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="WSQ-70-EjJ"/>
+                <constraint firstItem="L3h-z3-aOg" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="trailing" id="ZWr-Hf-q6Q"/>
+                <constraint firstAttribute="trailing" secondItem="uYo-n9-Dy7" secondAttribute="trailing" id="ZzQ-ev-GXn"/>
+                <constraint firstItem="uYo-n9-Dy7" firstAttribute="top" secondItem="L3h-z3-aOg" secondAttribute="bottom" id="eTq-Lp-xxh"/>
+                <constraint firstAttribute="bottom" secondItem="uYo-n9-Dy7" secondAttribute="bottom" id="ezD-pz-cbM"/>
                 <constraint firstAttribute="bottom" secondItem="3Sl-QO-mbG" secondAttribute="bottom" id="kL2-fJ-pSh"/>
                 <constraint firstItem="3Sl-QO-mbG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="stp-Cl-Azm"/>
             </constraints>
@@ -90,7 +125,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="247.5" y="310"/>
+            <point key="canvasLocation" x="241.5" y="194"/>
         </view>
     </objects>
 </document>

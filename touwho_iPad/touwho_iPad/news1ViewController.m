@@ -67,6 +67,6 @@
     
     news2ViewController *viewcontroller = [[news2ViewController alloc]initWithNibName:@"news2ViewController" bundle:nil];
     [self.navigationController pushViewController:viewcontroller animated:YES];
-//    self.navigationItem.backBarButtonItem = @"";
+
 }
 @end

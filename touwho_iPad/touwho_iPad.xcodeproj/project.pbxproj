@@ -89,6 +89,7 @@
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
+		A1F61D601B942FD600AB89FF /* news2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F61D5F1B942FD600AB89FF /* news2Cell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,7 @@
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
 		A1DAFAB91B8C37BE00189680 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
 		A1DAFABA1B8C37BE00189680 /* circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circle.m; sourceTree = "<group>"; };
+		A1F61D5F1B942FD600AB89FF /* news2Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = news2Cell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +437,7 @@
 				A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */,
 				A13EEA8F1B8EFC710052C2A7 /* newsMenu.h */,
 				A13EEA901B8EFC710052C2A7 /* newsMenu.m */,
+				A1F61D5F1B942FD600AB89FF /* news2Cell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
+				A1F61D601B942FD600AB89FF /* news2Cell.xib in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
 				A1033BD31B8C487000FC8921 /* topics.xib in Resources */,
 				A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */,

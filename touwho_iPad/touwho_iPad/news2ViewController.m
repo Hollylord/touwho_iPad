@@ -8,8 +8,9 @@
 
 #import "news2ViewController.h"
 
-@interface news2ViewController ()
+@interface news2ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *article;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfArticle;
@@ -34,6 +35,11 @@
     self.heightOfArticle.constant = textSize.height;
     //切记改变了约束以后要立马下一句
     [self.article layoutIfNeeded];
+    
+    /**
+     *  注册tableviewCell
+     */
+    [self.tableview registerNib:[UINib nibWithNibName:@"news2Cell" bundle:nil] forCellReuseIdentifier:@"news2Cell"];
 
 }
 
@@ -42,14 +48,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - tableView代理
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    
+    return 4;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"news2Cell" forIndexPath:indexPath];
+ 
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
+
+
 
 @end

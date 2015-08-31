@@ -24,17 +24,12 @@
     self.replyView.separatorStyle = UITableViewCellSeparatorStyleNone;  // 去横杠。
     // 成为文本框的代理；
     self.inputView.delegate = self;
-   
-    
-    
-    
+
     // 将messageplist文件保存到沙河的caches文件夹中
     [WDMessageTool copyMessages];
     // 将autoplist文件保存到沙河的caches文件夹中
     [WDMessageTool copyautoReplay];
-    
-    
-    
+
     // 通知中心 在这里；  监听键盘；
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter]; //单例；
     
@@ -78,10 +73,7 @@
         cell.textView.tag = indexPath.row; // 绑定了方便监听
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone; // 点击没有颜色
-        
-        //    [cell.textView addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
+      
         return cell;
 
     }
@@ -132,22 +124,7 @@
     }
     else
     {
-        // 输入模式下的结果为带置信度的结果，示例如下：
-        //  [
-        //      [
-        //         {
-        //             "百度" = "0.6055192947387695";
-        //         },
-        //         {
-        //             "摆渡" = "0.3625582158565521";
-        //         },
-        //      ]
-        //      [
-        //         {
-        //             "一下" = "0.7665404081344604";
-        //         }
-        //      ],
-        //   ]
+      
         NSString *tmpString = [[BDVRSConfig sharedInstance] composeInputModeResult:aResults];
         
         self.inputView.text = [self.inputView.text stringByAppendingString:tmpString];
@@ -156,7 +133,7 @@
 }
 
 
-
+#pragma mark - 按钮点击
 - (IBAction)send:(UIButton *)sender {
     if ([self.inputView.text isEqualToString:@""] || self.inputView.text==nil) {
         return;
@@ -263,6 +240,7 @@
         if (keyY != 768) {
             self.bottomOfInput.constant = keyY + 30;
             [self layoutIfNeeded];
+            
             NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
             [self.replyView scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         }

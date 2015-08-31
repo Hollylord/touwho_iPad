@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news2Cell" rowHeight="298" id="peV-kL-nIH">
+            <rect key="frame" x="0.0" y="0.0" width="506" height="298"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="peV-kL-nIH" id="s39-Be-SJm">
+                <rect key="frame" x="0.0" y="0.0" width="506" height="297"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-Zb-BF8">
+                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                        <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="YS8-eZ-bd3"/>
+                            <constraint firstAttribute="width" constant="20" id="cQg-f7-xR1"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94c-e4-KSX">
+                        <rect key="frame" x="450" y="8" width="34" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcl-dl-iwC">
+                        <rect key="frame" x="10" y="39" width="486" height="248"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="097-YG-9aM">
+                        <rect key="frame" x="36" y="8" width="34" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Lcl-dl-iwC" secondAttribute="bottom" constant="10" id="GLd-UQ-T4P"/>
+                    <constraint firstItem="94c-e4-KSX" firstAttribute="centerY" secondItem="097-YG-9aM" secondAttribute="centerY" id="Jfd-5J-Qll"/>
+                    <constraint firstItem="097-YG-9aM" firstAttribute="centerY" secondItem="wh2-Zb-BF8" secondAttribute="centerY" id="Ohk-5u-0ZL"/>
+                    <constraint firstItem="wh2-Zb-BF8" firstAttribute="leading" secondItem="s39-Be-SJm" secondAttribute="leading" constant="8" id="Uog-u8-7xE"/>
+                    <constraint firstAttribute="trailing" secondItem="94c-e4-KSX" secondAttribute="trailing" constant="22" id="X4b-td-mpR"/>
+                    <constraint firstItem="Lcl-dl-iwC" firstAttribute="top" secondItem="097-YG-9aM" secondAttribute="bottom" constant="10" id="c8R-Dd-6ql"/>
+                    <constraint firstItem="wh2-Zb-BF8" firstAttribute="top" secondItem="s39-Be-SJm" secondAttribute="top" constant="8" id="fLr-ZR-EG3"/>
+                    <constraint firstAttribute="trailing" secondItem="Lcl-dl-iwC" secondAttribute="trailing" constant="10" id="gOc-6d-Ws3"/>
+                    <constraint firstItem="Lcl-dl-iwC" firstAttribute="leading" secondItem="s39-Be-SJm" secondAttribute="leading" constant="10" id="kAh-s5-99N"/>
+                    <constraint firstItem="097-YG-9aM" firstAttribute="leading" secondItem="wh2-Zb-BF8" secondAttribute="trailing" constant="8" id="t08-0C-pwB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="296" y="359"/>
+        </tableViewCell>
+    </objects>
+</document>
