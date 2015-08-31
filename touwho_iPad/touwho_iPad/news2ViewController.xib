@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="news2ViewController">
             <connections>
-                <outlet property="article" destination="R6U-S4-umE" id="Cb4-JA-gcz"/>
+                <outlet property="article" destination="NcE-Cw-69Y" id="9i2-wH-26f"/>
+                <outlet property="heightOfArticle" destination="uSL-Km-MzJ" id="d7q-hN-yYh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="yOfContentsize" destination="2f5-1B-Cv5" id="Oj3-QU-2fg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -44,30 +44,32 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6U-S4-umE">
-                            <rect key="frame" x="34" y="124" width="432" height="21"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcE-Cw-69Y">
+                            <rect key="frame" x="50" y="129" width="400" height="15"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="432" id="dEs-WT-yav"/>
+                                <constraint firstAttribute="width" constant="400" id="Wqt-Bc-OuV"/>
+                                <constraint firstAttribute="height" constant="15" id="uSL-Km-MzJ"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="R6U-S4-umE" firstAttribute="top" secondItem="Fpb-TA-Vsh" secondAttribute="bottom" constant="16" id="28P-lY-wFL"/>
-                        <constraint firstAttribute="bottom" secondItem="R6U-S4-umE" secondAttribute="bottom" constant="30" id="2f5-1B-Cv5" userLabel="竖直范围"/>
+                        <constraint firstAttribute="bottom" secondItem="NcE-Cw-69Y" secondAttribute="bottom" constant="30" id="0Xx-YN-9ba" userLabel="竖直范围"/>
+                        <constraint firstItem="NcE-Cw-69Y" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="8aO-qs-zSd"/>
                         <constraint firstItem="4Sx-ho-dBa" firstAttribute="leading" secondItem="Xnj-d3-sOq" secondAttribute="trailing" constant="29" id="J9Y-01-Zf4"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="KM7-Zp-HaR"/>
-                        <constraint firstAttribute="trailing" secondItem="R6U-S4-umE" secondAttribute="trailing" constant="34" id="Qb7-A1-z1Z" userLabel="水平范围"/>
                         <constraint firstItem="4Sx-ho-dBa" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="15" id="TGj-BF-PhB"/>
                         <constraint firstAttribute="width" constant="500" id="Wdq-ww-CBL"/>
                         <constraint firstItem="Xnj-d3-sOq" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="15" id="YbY-1Z-8R1"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="top" secondItem="4Sx-ho-dBa" secondAttribute="bottom" constant="8" id="bBs-f0-7Wo"/>
                         <constraint firstItem="Xnj-d3-sOq" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="leading" constant="26" id="f9F-pG-iK4"/>
-                        <constraint firstItem="R6U-S4-umE" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="fOI-sH-F0r"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="leading" secondItem="Xnj-d3-sOq" secondAttribute="trailing" constant="29" id="lUq-0T-Yfa"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="87" id="ogj-tV-7vV"/>
+                        <constraint firstItem="NcE-Cw-69Y" firstAttribute="top" secondItem="Fpb-TA-Vsh" secondAttribute="bottom" constant="21" id="wEJ-bD-1g3"/>
+                        <constraint firstAttribute="trailing" secondItem="NcE-Cw-69Y" secondAttribute="trailing" constant="50" id="wGv-Z7-N4J" userLabel="水平范围"/>
                     </constraints>
                 </scrollView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dre-lw-ASH">

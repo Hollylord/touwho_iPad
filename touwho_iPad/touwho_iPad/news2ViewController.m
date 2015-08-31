@@ -9,8 +9,10 @@
 #import "news2ViewController.h"
 
 @interface news2ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *article;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *yOfContentsize;
+@property (weak, nonatomic) IBOutlet UITextView *article;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfArticle;
 
 @end
 
@@ -19,11 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.article.text = @"神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。";
-    
+    self.article.text = @"神低负荷GIS度回复共i。  神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。";
+    /**
+     *  根据内容自动设置textview的高度
+     */
+    self.article.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
+    //value:key 这种标准化的字典生成方式不会出错！
+    NSDictionary *attribute = [NSDictionary dictionaryWithObjectsAndKeys:self.article.font,NSFontAttributeName, nil];
 
-   
+    CGSize textSize = [self.article.text boundingRectWithSize:CGSizeMake(400, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
     
+    self.heightOfArticle.constant = textSize.height;
+    //切记改变了约束以后要立马下一句
+    [self.article layoutIfNeeded];
+
 }
 
 - (void)didReceiveMemoryWarning {
