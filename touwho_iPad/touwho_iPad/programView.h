@@ -10,7 +10,10 @@
 #import "ASProgressPopUpView.h"
 
 @protocol programViewDelegate <NSObject>
-- (void)tap;
+/**
+ *  转到项目详细页面
+ */
+- (void)turn2DetailOfPrograms;
 @end
 
 

@@ -26,6 +26,7 @@
 //用来存放所有的项目
 @property (strong,nonatomic) NSMutableArray* programs;
 
+- (IBAction)buttonClick:(UIButton *)sender;
 
 
 @end
@@ -37,6 +38,10 @@
        _programs = [NSMutableArray array];
     }
     return _programs;
+}
+#pragma mark - 顶部按钮点击
+- (IBAction)buttonClick:(UIButton *)sender {
+    
 }
 
 #pragma mark - 生命周期
@@ -57,14 +62,13 @@
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
     
     
-    NSArray *nameOfPrograms = @[@"国内项目",@"海外项目",@"商品众筹",@"公益众筹"];
     //添加项目视图
     for (int i = 0; i < 4; i ++) {
 //        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
         UIButton *categoryOfPrograms = [UIButton buttonWithType:UIButtonTypeCustom];
-        [categoryOfPrograms setTitle:nameOfPrograms[i] forState:UIControlStateNormal];
+
         categoryOfPrograms.tag = i;
-        [categoryOfPrograms addTarget:self action:@selector(turn2programs:) forControlEvents:UIControlEventTouchUpInside];
+        
         
         categoryOfPrograms.backgroundColor = [UIColor redColor];
         [self.scrollView addSubview:categoryOfPrograms];
@@ -93,10 +97,7 @@
     
 }
 
-#pragma mark - 按钮响应
-- (void)turn2programs:(UIButton *)button{
-   
-}
+
 
 #pragma mark - 布局programView
 - (void)layoutForProgramView:(programView *)programView index:(int )indexPath{

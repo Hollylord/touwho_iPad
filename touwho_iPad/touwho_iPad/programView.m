@@ -13,7 +13,7 @@
 - (IBAction)tapProgram:(UITapGestureRecognizer *)sender {
     if ([self.delegate respondsToSelector:@selector(tap)])
     {
-        [self.delegate tap];
+        [self.delegate turn2DetailOfPrograms];
     }
 }
 

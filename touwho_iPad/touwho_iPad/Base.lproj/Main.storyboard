@@ -41,6 +41,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="17" width="159" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="mhN-Hl-y6u"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
                                         <rect key="frame" x="211" y="17" width="212" height="30"/>
@@ -51,6 +54,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="159" y="17" width="158" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="yXA-0l-KB6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
                                         <rect key="frame" x="423" y="17" width="211" height="30"/>
@@ -61,6 +67,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="317" y="17" width="159" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="TFy-bW-pKm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -68,6 +77,9 @@
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="476" y="17" width="158" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="7Ma-JU-T5u"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
