@@ -72,6 +72,7 @@
         [self.programs addObject:categoryOfPrograms];
         [self layoutForProgramView:self.programs[i] index:i];
     }
+    [self.scrollView layoutIfNeeded];
 
 }
 
@@ -82,8 +83,10 @@
 - (void)viewDidAppear:(BOOL)animated{
     programView *lastView =[self.programs lastObject];
     //设置scrollview的滚动范围
-    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - 200;
-  
+    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame);
+    
+    NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:250 inSection:0];
+    [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
