@@ -9,6 +9,7 @@
                 <outlet property="article" destination="NcE-Cw-69Y" id="9i2-wH-26f"/>
                 <outlet property="bottomOfInput" destination="ezD-pz-cbM" id="9Bb-tp-vIH"/>
                 <outlet property="heightOfArticle" destination="uSL-Km-MzJ" id="d7q-hN-yYh"/>
+                <outlet property="inputField" destination="tlh-oT-WZ4" id="XSJ-Eg-yY8"/>
                 <outlet property="tableview" destination="L3h-z3-aOg" id="ZWd-dc-Etq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -82,29 +83,36 @@
                         <outlet property="delegate" destination="-1" id="UPn-5J-xcW"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-n9-Dy7">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-n9-Dy7" userLabel="inputView">
                     <rect key="frame" x="500" y="724" width="423" height="44"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1LE-Fb-DKF">
-                            <rect key="frame" x="19" y="7" width="317" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="SvT-L5-JRs"/>
-                                <constraint firstAttribute="width" constant="317" id="vWn-Nu-Exh"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-XZ-8gY">
                             <rect key="frame" x="359" y="7" width="30" height="30"/>
                             <state key="normal" title="发送"/>
+                            <connections>
+                                <action selector="send:" destination="-1" eventType="touchUpInside" id="oV7-zg-Tov"/>
+                            </connections>
                         </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-oT-WZ4">
+                            <rect key="frame" x="24" y="7" width="290" height="29"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="U0y-nV-g1V"/>
+                                <constraint firstAttribute="width" constant="290" id="dIz-eL-Jub"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="DFO-VD-v99"/>
+                            </connections>
+                        </textView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="1LE-Fb-DKF" firstAttribute="leading" secondItem="uYo-n9-Dy7" secondAttribute="leading" constant="19" id="HCg-Ep-ibX"/>
-                        <constraint firstItem="1LE-Fb-DKF" firstAttribute="centerY" secondItem="uYo-n9-Dy7" secondAttribute="centerY" id="RGm-kh-iNl"/>
-                        <constraint firstItem="HcI-XZ-8gY" firstAttribute="leading" secondItem="1LE-Fb-DKF" secondAttribute="trailing" constant="23" id="TuY-n0-gP4"/>
-                        <constraint firstItem="HcI-XZ-8gY" firstAttribute="centerY" secondItem="1LE-Fb-DKF" secondAttribute="centerY" id="v3D-6N-3mV"/>
+                        <constraint firstItem="HcI-XZ-8gY" firstAttribute="centerY" secondItem="tlh-oT-WZ4" secondAttribute="centerY" id="1bC-yt-6M2"/>
+                        <constraint firstAttribute="trailing" secondItem="HcI-XZ-8gY" secondAttribute="trailing" constant="34" id="Bev-ck-F8e"/>
+                        <constraint firstItem="tlh-oT-WZ4" firstAttribute="leading" secondItem="uYo-n9-Dy7" secondAttribute="leading" constant="24" id="e1I-7u-7eW"/>
+                        <constraint firstItem="tlh-oT-WZ4" firstAttribute="centerY" secondItem="uYo-n9-Dy7" secondAttribute="centerY" id="tRT-nr-n4k"/>
                         <constraint firstAttribute="height" constant="44" id="vWl-zD-xMC"/>
                     </constraints>
                 </view>

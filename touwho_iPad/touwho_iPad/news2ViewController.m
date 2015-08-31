@@ -8,10 +8,17 @@
 
 #import "news2ViewController.h"
 
-@interface news2ViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface news2ViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *article;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomOfInput;
+
+
+/**
+ *  编辑框
+ */
+@property (weak, nonatomic) IBOutlet UITextView *inputField;
+
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfArticle;
@@ -19,6 +26,8 @@
  *  存放所有的评论
  */
 @property (nonatomic ,strong) NSMutableArray * messages;
+
+- (IBAction)send:(UIButton *)sender;
 @end
 
 @implementation news2ViewController
@@ -58,7 +67,8 @@
     
     [center addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    
+    //任意添加一个
+    [self.messages addObject:@"123"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,14 +84,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    
-    return 4;
+    return self.messages.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"news2Cell" forIndexPath:indexPath];
-    
+    UILabel *name = (UILabel *)[cell viewWithTag:1];
+    name.text = self.messages[indexPath.row];
     return cell;
 }
 
@@ -107,8 +117,9 @@
             self.bottomOfInput.constant = keyY + 30;
             [self.view layoutIfNeeded];
             
-//            NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
-//            [self.tableview scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+            //滚动到最后一行
+            NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
+            [self.tableview scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         }
         else{
             self.bottomOfInput.constant = 0;
@@ -118,6 +129,24 @@
     }];
 }
 
+//#pragma mark - 编辑框代理
+////回车的处理:换行
+//-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+//    
+//    return YES;
+//}
 
-
+#pragma mark - 点击发送
+- (IBAction)send:(UIButton *)sender {
+    if (self.inputField.text == nil) {
+        return ;
+    }
+    
+    [self.messages addObject:self.inputField.text];
+    self.inputField.text = nil;
+    [self.tableview reloadData];
+    //滚动到最后一行
+    NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
+    [self.tableview scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
 @end
