@@ -11,13 +11,23 @@
 @interface news2ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *article;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomOfInput;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfArticle;
-
+/**
+ *  存放所有的评论
+ */
+@property (nonatomic ,strong) NSMutableArray * messages;
 @end
 
 @implementation news2ViewController
+- (NSMutableArray *)messages{
+    if (!_messages) {
+        _messages = [NSMutableArray array];
+    }
+    return _messages;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +50,15 @@
      *  注册tableviewCell
      */
     [self.tableview registerNib:[UINib nibWithNibName:@"news2Cell" bundle:nil] forCellReuseIdentifier:@"news2Cell"];
-
+    
+    /**
+     *  通知中心,监听键盘
+     */
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    
+    [center addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +81,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"news2Cell" forIndexPath:indexPath];
- 
+    
     return cell;
 }
 
@@ -73,6 +91,31 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
+}
+
+#pragma mark - 监听键盘Frame变化
+-(void)keyboardDidChangeFrame:(NSNotification *)noti{
+    
+    //拿到键盘的frame
+    CGRect frame=[noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat keyY =frame.origin.y;   //
+
+    CGFloat keyDuration = [noti.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue]; //KEYB的持续时间
+    [UIView animateWithDuration:keyDuration animations:^{
+        if (keyY != 768) {
+            self.bottomOfInput.constant = keyY + 30;
+            [self.view layoutIfNeeded];
+            
+//            NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
+//            [self.tableview scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        }
+        else{
+            self.bottomOfInput.constant = 0;
+            [self.view layoutIfNeeded];
+        }
+        
+    }];
 }
 
 

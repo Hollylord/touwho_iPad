@@ -31,9 +31,8 @@
     [WDMessageTool copyautoReplay];
 
     // 通知中心 在这里；  监听键盘；
-    NSNotificationCenter * center = [NSNotificationCenter defaultCenter]; //单例；
-    
-    // 监听 监听者 ；添加监听者；
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+
     [center addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     
