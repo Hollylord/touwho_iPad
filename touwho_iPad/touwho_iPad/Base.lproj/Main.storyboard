@@ -33,7 +33,7 @@
                                 <rect key="frame" x="30" y="20" width="634" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
-                                        <rect key="frame" x="0.0" y="17" width="211" height="30"/>
+                                        <rect key="frame" x="0.0" y="17" width="159" height="30"/>
                                         <state key="normal" title="国内项目"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="17" width="67" height="30"/>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
-                                        <rect key="frame" x="211" y="17" width="212" height="30"/>
+                                        <rect key="frame" x="159" y="17" width="158" height="30"/>
                                         <state key="normal" title="海外项目"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="67" y="17" width="66" height="30"/>
@@ -59,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
-                                        <rect key="frame" x="423" y="17" width="211" height="30"/>
+                                        <rect key="frame" x="317" y="17" width="159" height="30"/>
                                         <state key="normal" title="商品众筹"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="133" y="17" width="67" height="30"/>
@@ -71,8 +71,8 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="TFy-bW-pKm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
+                                        <rect key="frame" x="476" y="17" width="158" height="30"/>
                                         <state key="normal" title="公益众筹"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="476" y="17" width="158" height="30"/>
@@ -95,7 +95,6 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-dH-dEa">
                                         <rect key="frame" x="30" y="30" width="864" height="218"/>
-                                        <color key="backgroundColor" red="0.50627164930000002" green="0.63141949070000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="864" id="SoP-bD-hPU"/>
                                             <constraint firstAttribute="height" constant="218" id="dWI-DT-Jjr"/>
@@ -125,22 +124,53 @@
                                             </mask>
                                         </variation>
                                     </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进行中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otW-o1-mnx">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预热中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jw9-si-OI0">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="30" y="415" width="51" height="20"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="otW-o1-mnx" firstAttribute="leading" secondItem="5oI-Iy-8Jl" secondAttribute="leading" constant="30" id="7QO-pM-C9B"/>
                                     <constraint firstAttribute="trailing" secondItem="hhD-dH-dEa" secondAttribute="trailing" constant="28" id="LeH-kX-AYp" userLabel="scrollview水平滚动范围"/>
                                     <constraint firstItem="hhD-dH-dEa" firstAttribute="top" secondItem="5oI-Iy-8Jl" secondAttribute="top" constant="30" id="Xo4-NG-ZjF"/>
                                     <constraint firstItem="hhD-dH-dEa" firstAttribute="leading" secondItem="5oI-Iy-8Jl" secondAttribute="leading" constant="30" id="bwS-b6-2kt"/>
                                     <constraint firstAttribute="bottom" secondItem="hhD-dH-dEa" secondAttribute="bottom" constant="498" id="f5h-DK-PEe" userLabel="scrollview竖直滚动范围"/>
+                                    <constraint firstItem="otW-o1-mnx" firstAttribute="top" secondItem="hhD-dH-dEa" secondAttribute="bottom" constant="41" id="r0O-yb-Enq"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="otW-o1-mnx"/>
+                                        <exclude reference="jw9-si-OI0"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="7QO-pM-C9B"/>
+                                        <exclude reference="r0O-yb-Enq"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <include reference="hhD-dH-dEa"/>
+                                        <include reference="otW-o1-mnx"/>
+                                        <include reference="jw9-si-OI0"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="LeH-kX-AYp"/>
                                         <include reference="Xo4-NG-ZjF"/>
                                         <include reference="bwS-b6-2kt"/>
                                         <include reference="f5h-DK-PEe"/>
+                                        <include reference="7QO-pM-C9B"/>
+                                        <include reference="r0O-yb-Enq"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -181,12 +211,14 @@
                         <outlet property="flowLayoutForCollectionView" destination="HlU-G7-qEw" id="cZR-xm-Vbc"/>
                         <outlet property="pictureCollection" destination="hhD-dH-dEa" id="YpH-n6-P1P"/>
                         <outlet property="scrollView" destination="5oI-Iy-8Jl" id="0Ol-Xx-HPF"/>
+                        <outlet property="title1" destination="otW-o1-mnx" id="IiX-ks-EGQ"/>
+                        <outlet property="title2" destination="jw9-si-OI0" id="dKI-UI-t8g"/>
                         <outlet property="yOfScrollView" destination="f5h-DK-PEe" id="6Ge-Zv-fOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-pS-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-709.5" y="30"/>
+            <point key="canvasLocation" x="-704.25" y="29.25"/>
         </scene>
         <!--路演视频-->
         <scene sceneID="hgE-ij-v2w">

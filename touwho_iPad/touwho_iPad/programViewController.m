@@ -22,10 +22,23 @@
 @property (weak, nonatomic) IBOutlet myFlowLayout *flowLayoutForCollectionView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *yOfScrollView;
+/**
+ *  进行中
+ */
+@property (weak, nonatomic) IBOutlet UILabel *title1;
+/**
+ *  预热中
+ */
+@property (weak, nonatomic) IBOutlet UILabel *title2;
 
-//用来存放所有的项目
+/**
+ *  进行中的项目
+ */
 @property (strong,nonatomic) NSMutableArray* programs;
-
+/**
+ *  预热中的项目
+ */
+@property (strong,nonatomic) NSMutableArray* programsForPreparing;
 - (IBAction)buttonClick:(UIButton *)sender;
 
 
@@ -39,6 +52,13 @@
     }
     return _programs;
 }
+- (NSMutableArray *)programsForPreparing{
+    if (!_programsForPreparing) {
+        _programsForPreparing = [NSMutableArray array];
+    }
+    return _programsForPreparing;
+}
+
 #pragma mark - 顶部按钮点击
 - (IBAction)buttonClick:(UIButton *)sender {
     
@@ -61,36 +81,61 @@
     //还是要先注册一个cell
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
     
-    
-    //添加项目视图
+    [self.scrollView addSubview:self.title1];//要先将title1添加到scrollview中来。
+    //添加进行中项目视图
     for (int i = 0; i < 4; i ++) {
-//        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-        UIButton *categoryOfPrograms = [UIButton buttonWithType:UIButtonTypeCustom];
+        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+        program.delegate = self;
+        program.backgroundColor = [UIColor redColor];
+        [self.scrollView addSubview:program];
+        [self.programs addObject:program];
 
-        categoryOfPrograms.tag = i;
-        
-        
-        categoryOfPrograms.backgroundColor = [UIColor redColor];
-        [self.scrollView addSubview:categoryOfPrograms];
-        
-        [self.programs addObject:categoryOfPrograms];
-        [self layoutForProgramView:self.programs[i] index:i];
     }
-    [self.scrollView layoutIfNeeded];
+    
+    [self.scrollView addSubview:self.title2];
+    //添加预热中项目视图
+    for (int i = 0; i < 4; i ++) {
+        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+        program.delegate = self;
+        program.backgroundColor = [UIColor greenColor];
+        [self.scrollView addSubview:program];
+        [self.programsForPreparing addObject:program];
+        
+    }
+    
+
 
 }
-
-
+    /** 更新所有主页的约束**/
+- (void)updateViewConstraints{
+    [super updateViewConstraints];//这句话一定要写
+    
+    for (int i = 0 ; i < self.programs.count; i ++) {
+        [self layoutForProgramView:self.programs[i] index:i];//给programView添加约束
+    }
+    
+    [self layoutForTitle2:self.title2];//给title2添加约束
+    
+    /** 给预热中项目约束**/
+    for (int i = 0 ; i < self.programsForPreparing.count; i ++) {
+        [self layoutForPreparingPrograms:self.programsForPreparing[i] index:i];
+    }
+    
+    
+}
 
 
 //在这里才能获得视图的真正frame
 - (void)viewDidAppear:(BOOL)animated{
-    programView *lastView =[self.programs lastObject];
-    //设置scrollview的滚动范围
-    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame);
     
     NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:250 inSection:0];
     [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    
+    //调整scrollView的滚动范围
+    programView *lastView = [self.programsForPreparing lastObject];
+    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - CGRectGetMaxY(self.pictureCollection.frame) + 20;
+
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -99,33 +144,70 @@
 
 
 
-#pragma mark - 布局programView
+#pragma mark - 布局
 - (void)layoutForProgramView:(programView *)programView index:(int )indexPath{
     
     //项目视图在左半边
     if (indexPath%2 == 0) {
         NSLayoutConstraint* leading = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
-        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:300 + indexPath/2*(250 + 20)];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.title1 attribute:NSLayoutAttributeBottom multiplier:1 constant:20 + indexPath/2*(250 + 20)];
         NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
         NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
         [self.scrollView addConstraints:@[leading,top]];
+
         [programView addConstraints:@[width,height]];
         programView.translatesAutoresizingMaskIntoConstraints = NO;
+      
         
         
     }
     //在右半边
     else {
         NSLayoutConstraint* trailing = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTrailing multiplier:1 constant:-30];
-        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1 constant:300 + (indexPath-1)/2*(250 + 20)];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.title1 attribute:NSLayoutAttributeBottom multiplier:1 constant:20 + (indexPath-1)/2*(250 + 20)];
         NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
         NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
         [self.scrollView addConstraints:@[trailing,top]];
+
         [programView addConstraints:@[width,height]];
         programView.translatesAutoresizingMaskIntoConstraints = NO;
     }
 }
 
+- (void)layoutForTitle2:(UIView *)view{
+    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:[self.programs lastObject] attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    [self.scrollView addConstraints:@[leading,top]];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+}
+
+- (void)layoutForPreparingPrograms:(programView *)programView index:(int )indexPath{
+    
+    //项目视图在左半边
+    if (indexPath%2 == 0) {
+        NSLayoutConstraint* leading = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.title2 attribute:NSLayoutAttributeBottom multiplier:1 constant:20 + indexPath/2*(250 + 20)];
+        NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
+        NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
+        [self.scrollView addConstraints:@[leading,top]];
+        
+        [programView addConstraints:@[width,height]];
+        programView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+    }
+    //在右半边
+    else {
+        NSLayoutConstraint* trailing = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTrailing multiplier:1 constant:-30];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.title2 attribute:NSLayoutAttributeBottom multiplier:1 constant:20 + (indexPath-1)/2*(250 + 20)];
+        NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
+        NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
+        [self.scrollView addConstraints:@[trailing,top]];
+        
+        [programView addConstraints:@[width,height]];
+        programView.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+
+}
 
 #pragma mark - 搜索框的代理
 - (CGRect)destinationFrameForSearchBar:(INSSearchBar *)searchBar
