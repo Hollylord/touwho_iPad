@@ -136,7 +136,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="30" y="415" width="51" height="20"/>
+                                            <rect key="frame" x="0.0" y="-84" width="51" height="21"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -165,18 +165,19 @@
                                         <include reference="jw9-si-OI0"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="7QO-pM-C9B"/>
+                                        <include reference="r0O-yb-Enq"/>
                                         <include reference="LeH-kX-AYp"/>
                                         <include reference="Xo4-NG-ZjF"/>
                                         <include reference="bwS-b6-2kt"/>
                                         <include reference="f5h-DK-PEe"/>
-                                        <include reference="7QO-pM-C9B"/>
-                                        <include reference="r0O-yb-Enq"/>
                                     </mask>
                                 </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yRo-bS-wmy" firstAttribute="centerX" secondItem="Wro-eH-3jp" secondAttribute="centerX" id="034-QY-izt"/>
                             <constraint firstItem="Niq-eg-sAP" firstAttribute="top" secondItem="jTM-1b-KYt" secondAttribute="bottom" constant="62" id="34d-sh-b0o"/>
                             <constraint firstAttribute="trailing" secondItem="Niq-eg-sAP" secondAttribute="trailing" id="Jve-mR-2tS"/>
                             <constraint firstItem="0sk-6n-MDh" firstAttribute="top" secondItem="5oI-Iy-8Jl" secondAttribute="bottom" id="Mbc-SR-8Oi"/>
@@ -187,6 +188,11 @@
                             <constraint firstItem="5oI-Iy-8Jl" firstAttribute="leading" secondItem="Wro-eH-3jp" secondAttribute="leading" id="tYU-Gd-LMh"/>
                             <constraint firstItem="5oI-Iy-8Jl" firstAttribute="top" secondItem="Niq-eg-sAP" secondAttribute="bottom" id="vcH-mV-hF5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="034-QY-izt"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="Niq-eg-sAP"/>
@@ -194,7 +200,8 @@
                                 <include reference="5oI-Iy-8Jl"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Wfz-88-hdu"/>
+                                <include reference="034-QY-izt"/>
+                                <exclude reference="Wfz-88-hdu"/>
                                 <include reference="34d-sh-b0o"/>
                                 <include reference="Jve-mR-2tS"/>
                                 <include reference="WEf-y4-3U6"/>

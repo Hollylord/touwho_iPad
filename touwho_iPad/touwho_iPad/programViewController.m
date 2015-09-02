@@ -7,21 +7,21 @@
 //
 
 #import "programViewController.h"
-#import "INSSearchBar.h"
+
 #import "myFlowLayout.h"
 #import "programView.h"
 
 
-@interface programViewController () <INSSearchBarDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface programViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 
 
 
 //中间的视图
-@property (weak,nonatomic) INSSearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UICollectionView *pictureCollection;
-@property (weak, nonatomic) IBOutlet myFlowLayout *flowLayoutForCollectionView;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *yOfScrollView;
+
+@property (weak, nonatomic) IBOutlet UICollectionView   * pictureCollection;
+@property (weak, nonatomic) IBOutlet myFlowLayout       * flowLayoutForCollectionView;
+@property (weak, nonatomic) IBOutlet UIScrollView       *scrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * yOfScrollView;
 /**
  *  进行中
  */
@@ -68,15 +68,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //搜索框
-    INSSearchBar *search = [[INSSearchBar alloc] initWithFrame:CGRectMake(644, 33, 44, 30)];
-    [self.view addSubview:search];
-    self.searchBar = search;
-    self.searchBar.delegate = self;
-    self.searchBar.backgroundColor = [UIColor redColor];
     
+
     //图片滚动
-    self.pictureCollection.delegate = self;
+    self.pictureCollection.delegate   = self;
     self.pictureCollection.dataSource = self;
     //还是要先注册一个cell
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
@@ -85,7 +80,7 @@
     //添加进行中项目视图
     for (int i = 0; i < 4; i ++) {
         programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-        program.delegate = self;
+        program.delegate        = self;
         program.backgroundColor = [UIColor redColor];
         [self.scrollView addSubview:program];
         [self.programs addObject:program];
@@ -96,7 +91,7 @@
     //添加预热中项目视图
     for (int i = 0; i < 4; i ++) {
         programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-        program.delegate = self;
+        program.delegate        = self;
         program.backgroundColor = [UIColor greenColor];
         [self.scrollView addSubview:program];
         [self.programsForPreparing addObject:program];
@@ -106,6 +101,7 @@
 
 
 }
+
     /** 更新所有主页的约束**/
 - (void)updateViewConstraints{
     [super updateViewConstraints];//这句话一定要写
@@ -125,7 +121,7 @@
 }
 
 
-//在这里才能获得视图的真正frame
+    //在这里才能获得视图的真正frame
 - (void)viewDidAppear:(BOOL)animated{
     
     NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:250 inSection:0];
@@ -209,33 +205,6 @@
 
 }
 
-#pragma mark - 搜索框的代理
-- (CGRect)destinationFrameForSearchBar:(INSSearchBar *)searchBar
-{
-    return CGRectMake(644, 33, 250, 30);
-}
-
-- (void)searchBar:(INSSearchBar *)searchBar willStartTransitioningToState:(INSSearchBarState)destinationState
-{
-    // Do whatever you deem necessary.
-}
-
-- (void)searchBar:(INSSearchBar *)searchBar didEndTransitioningFromState:(INSSearchBarState)previousState
-{
-    // Do whatever you deem necessary.
-}
-
-- (void)searchBarDidTapReturn:(INSSearchBar *)searchBar
-{
-    // Do whatever you deem necessary.
-    // Access the text from the search bar like searchBar.searchField.text
-}
-
-- (void)searchBarTextDidChange:(INSSearchBar *)searchBar
-{
-    // Do whatever you deem necessary.
-    // Access the text from the search bar like searchBar.searchField.text
-}
 
 #pragma mark - collection代理
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{

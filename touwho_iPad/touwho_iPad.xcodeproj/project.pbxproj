@@ -50,7 +50,6 @@
 		A19D09591B7C2DF100094B81 /* touwho_iPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09581B7C2DF100094B81 /* touwho_iPadTests.m */; };
 		A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */; };
 		A19D09761B7C306900094B81 /* programViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09751B7C306900094B81 /* programViewController.m */; };
-		A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09791B7C6E5C00094B81 /* INSSearchBar.m */; };
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
@@ -184,8 +183,6 @@
 		A19D09651B7C2DF100094B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A19D09741B7C306900094B81 /* programViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programViewController.h; sourceTree = "<group>"; };
 		A19D09751B7C306900094B81 /* programViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programViewController.m; sourceTree = "<group>"; };
-		A19D09781B7C6E5C00094B81 /* INSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSSearchBar.h; sourceTree = "<group>"; };
-		A19D09791B7C6E5C00094B81 /* INSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSSearchBar.m; sourceTree = "<group>"; };
 		A19D097B1B7C835C00094B81 /* myFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myFlowLayout.h; sourceTree = "<group>"; };
 		A19D097C1B7C835C00094B81 /* myFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFlowLayout.m; sourceTree = "<group>"; };
 		A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
@@ -572,8 +569,6 @@
 				A132592C1B82C65000A327C6 /* ASProgressPopUpView.m */,
 				A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */,
 				A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */,
-				A19D09781B7C6E5C00094B81 /* INSSearchBar.h */,
-				A19D09791B7C6E5C00094B81 /* INSSearchBar.m */,
 				A19D097B1B7C835C00094B81 /* myFlowLayout.h */,
 				A19D097C1B7C835C00094B81 /* myFlowLayout.m */,
 				A13259241B82C35A00A327C6 /* programView.h */,
@@ -923,7 +918,6 @@
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A1033BE41B8C59DB00FC8921 /* sixin.m in Sources */,
-				A19D097A1B7C6E5C00094B81 /* INSSearchBar.m in Sources */,
 				A1BE7F211B8D571800E76711 /* BDVRSConfig.m in Sources */,
 				A17C9A771B8C6F6800F5677C /* WDMessageCell.m in Sources */,
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
