@@ -136,7 +136,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="-84" width="51" height="21"/>
+                                            <rect key="frame" x="30" y="412" width="51" height="21"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -213,6 +213,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="Yfy-Ak-tEV"/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="flowLayoutForCollectionView" destination="HlU-G7-qEw" id="cZR-xm-Vbc"/>
@@ -225,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-pS-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-704.25" y="29.25"/>
+            <point key="canvasLocation" x="54.75" y="29.25"/>
         </scene>
         <!--路演视频-->
         <scene sceneID="hgE-ij-v2w">
@@ -374,7 +375,7 @@
                 <splitViewController id="mdT-Lc-ULI" customClass="splitViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="vhw-J9-pxa" kind="relationship" relationship="masterViewController" id="Gon-hp-gaC"/>
-                        <segue destination="4hH-uE-Vy4" kind="relationship" relationship="detailViewController" id="fd4-40-s7W"/>
+                        <segue destination="o3B-lP-QB4" kind="relationship" relationship="detailViewController" id="fd4-40-s7W"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cu4-HH-4kw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -482,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyc-8K-E16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-371" y="-608"/>
+            <point key="canvasLocation" x="387.75" y="-608.25"/>
         </scene>
         <!--新闻1页-->
         <scene sceneID="3iz-pD-KLk">
@@ -916,6 +917,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voP-2l-keg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2865" y="-305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cwv-gS-7rt">
+            <objects>
+                <navigationController storyboardIdentifier="shouyeNavigation" automaticallyAdjustsScrollViewInsets="NO" id="o3B-lP-QB4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qeg-Mt-v9y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4hH-uE-Vy4" kind="relationship" relationship="rootViewController" id="ekY-Co-0F6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUE-lp-cMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704.25" y="29.25"/>
         </scene>
     </scenes>
     <resources>

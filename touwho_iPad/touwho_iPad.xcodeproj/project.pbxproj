@@ -43,6 +43,8 @@
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
+		A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A198E3C41B96D52700BB060E /* program2ViewController.m */; };
+		A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A198E3C51B96D52700BB060E /* program2ViewController.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
 		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
@@ -168,6 +170,9 @@
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		A198E3C31B96D52700BB060E /* program2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program2ViewController.h; sourceTree = "<group>"; };
+		A198E3C41B96D52700BB060E /* program2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = program2ViewController.m; sourceTree = "<group>"; };
+		A198E3C51B96D52700BB060E /* program2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = program2ViewController.xib; sourceTree = "<group>"; };
 		A19D093B1B7C2DF100094B81 /* touwho_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touwho_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -552,10 +557,13 @@
 			children = (
 				A13259381B8336FE00A327C6 /* splitViewController.h */,
 				A13259391B8336FE00A327C6 /* splitViewController.m */,
-				A19D09741B7C306900094B81 /* programViewController.h */,
-				A19D09751B7C306900094B81 /* programViewController.m */,
 				A13259351B83339300A327C6 /* leftViewController.h */,
 				A13259361B83339300A327C6 /* leftViewController.m */,
+				A19D09741B7C306900094B81 /* programViewController.h */,
+				A19D09751B7C306900094B81 /* programViewController.m */,
+				A198E3C31B96D52700BB060E /* program2ViewController.h */,
+				A198E3C41B96D52700BB060E /* program2ViewController.m */,
+				A198E3C51B96D52700BB060E /* program2ViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -801,6 +809,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */,
 				A11451C21B8DC31400E45381 /* programsCell.xib in Resources */,
 				A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
@@ -895,6 +904,7 @@
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A17C9A7A1B8C6F6800F5677C /* WDMessageTool.m in Sources */,
+				A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */,
 				A1BE7F3B1B8D5DA100E76711 /* CADebugMacros.cpp in Sources */,
 				A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,

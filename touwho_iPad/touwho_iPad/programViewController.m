@@ -7,12 +7,12 @@
 //
 
 #import "programViewController.h"
-
+#import "program2ViewController.h"
 #import "myFlowLayout.h"
 #import "programView.h"
 
 
-@interface programViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface programViewController () <UICollectionViewDataSource,UICollectionViewDelegate,programViewDelegate>
 
 
 
@@ -67,8 +67,6 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 
     //图片滚动
     self.pictureCollection.delegate   = self;
@@ -102,26 +100,13 @@
 
 }
 
-    /** 更新所有主页的约束**/
-- (void)updateViewConstraints{
-    [super updateViewConstraints];//这句话一定要写
-    
-    for (int i = 0 ; i < self.programs.count; i ++) {
-        [self layoutForProgramView:self.programs[i] index:i];//给programView添加约束
-    }
-    
-    [self layoutForTitle2:self.title2];//给title2添加约束
-    
-    /** 给预热中项目约束**/
-    for (int i = 0 ; i < self.programsForPreparing.count; i ++) {
-        [self layoutForPreparingPrograms:self.programsForPreparing[i] index:i];
-    }
-    
-    
-}
+
 
 
     //在这里才能获得视图的真正frame
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 - (void)viewDidAppear:(BOOL)animated{
     
     NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:250 inSection:0];
@@ -141,6 +126,24 @@
 
 
 #pragma mark - 布局
+/** 更新所有主页的约束**/
+- (void)updateViewConstraints{
+    [super updateViewConstraints];//这句话一定要写
+    
+    for (int i = 0 ; i < self.programs.count; i ++) {
+        [self layoutForProgramView:self.programs[i] index:i];//给programView添加约束
+    }
+    
+    [self layoutForTitle2:self.title2];//给title2添加约束
+    
+    /** 给预热中项目约束**/
+    for (int i = 0 ; i < self.programsForPreparing.count; i ++) {
+        [self layoutForPreparingPrograms:self.programsForPreparing[i] index:i];
+    }
+    
+    
+}
+
 - (void)layoutForProgramView:(programView *)programView index:(int )indexPath{
     
     //项目视图在左半边
@@ -250,8 +253,6 @@
     return cell;
 }
 
-
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSIndexPath * currentIndexPath = [[self.pictureCollection indexPathsForVisibleItems]lastObject];
     
@@ -264,6 +265,12 @@
 
 }
 
+#pragma mark - 点击项目跳转页面
+- (void)turn2DetailOfPrograms{
+    program2ViewController *viewController = [[program2ViewController alloc]initWithNibName:@"program2ViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    
+}
 
 
 

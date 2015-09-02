@@ -42,7 +42,7 @@
 #pragma mark - 收到通知
 - (void)receiveNotification:(NSNotification *)notification{
     if ([notification.name isEqualToString:@"programNotification"]) {
-        [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"shouye"] sender:nil];
+        [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"shouyeNavigation"] sender:nil];
     }
     else if ([notification.name isEqualToString:@"discoveryNotification"]){
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"discoveryNavigation"] sender:nil];

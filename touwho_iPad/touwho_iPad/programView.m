@@ -11,7 +11,7 @@
 @implementation programView
 
 - (IBAction)tapProgram:(UITapGestureRecognizer *)sender {
-    if ([self.delegate respondsToSelector:@selector(tap)])
+    if ([self.delegate respondsToSelector:@selector(turn2DetailOfPrograms)])
     {
         [self.delegate turn2DetailOfPrograms];
     }

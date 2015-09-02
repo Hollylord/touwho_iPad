@@ -40,6 +40,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 - (void)layoutForNewsMenu:(newsMenu *)view index:(int)i{
     //行数
     int line = (int)i/2;
