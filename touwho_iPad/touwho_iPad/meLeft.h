@@ -21,6 +21,10 @@
  */
 - (void)presentApply;
 /**
+ *  申请投资人资格
+ */
+- (void)presentSponsor;
+/**
  *  编辑个人信息
  */
 - (void)presentProfile;

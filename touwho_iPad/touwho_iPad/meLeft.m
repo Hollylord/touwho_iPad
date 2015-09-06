@@ -22,7 +22,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 4;
+    return 5;
 }
 
 
@@ -38,9 +38,12 @@
             label.text = @"申请领投资格";
             break;
         case 2:
-            label.text = @"发布项目";
+            label.text = @"申请投资人资格";
             break;
         case 3:
+            label.text = @"发布项目";
+            break;
+        case 4:
             label.text = @"已投资的项目";
             break;
         default:
@@ -58,13 +61,19 @@
     else if (indexPath.row == 1)
     {
         [self.delegate presentApply];
+        
     }
     else if (indexPath.row == 2)
+    {
+        [self.delegate presentSponsor];
+        
+    }
+    else if (indexPath.row == 3)
     {
         [self.delegate presentPublish];
         
     }
-    else if (indexPath.row == 3)
+    else if (indexPath.row == 4)
     {
         [self.delegate presentPrograms];
 

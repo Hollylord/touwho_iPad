@@ -42,11 +42,12 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-//点击登录按钮
+//点击登录按钮 跳转个人中心控制器
 - (IBAction)login:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
     splitViewController *split = (splitViewController *) self.presentingViewController;
     [split extentMeView];
     
 }
+
 @end

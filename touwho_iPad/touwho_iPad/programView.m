@@ -7,6 +7,7 @@
 //
 
 #import "programView.h"
+#import "program2ViewController.h"
 
 @implementation programView
 
@@ -21,14 +22,16 @@
     //配置progressView 进度条
     [self.progressView showPopUpViewAnimated:YES];
     self.progressView.progress = 0.0;
-    
     self.progressView.popUpViewCornerRadius = 8.0;
-    //    self.progressView.popUpViewColor = [UIColor grayColor];
+   
     self.progressView.font = [UIFont fontWithName:@"Futura-CondensedExtraBold" size:20];
     self.progressView.dataSource = self;
     self.progressView.popUpViewColor = [UIColor grayColor];
     
     [self progress];
+    
+    
+    
 }
 
 - (BOOL)progressViewShouldPreCalculatePopUpViewSize:(ASProgressPopUpView *)progressView;

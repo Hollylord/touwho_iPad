@@ -10,6 +10,7 @@
 
 @implementation meRight
 #pragma mark - meleft代理
+//发布项目
 - (void)presentPublish{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -18,6 +19,7 @@
     UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"publish" owner:nil options:nil]firstObject];
     [self addSubview:view];
 }
+//已投资的项目
 - (void)presentPrograms{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -30,8 +32,16 @@
     [self addSubview:programs];
 
 }
-
+//申请为领头
 - (void)presentApply{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"apply" owner:nil options:nil]firstObject];
+    [self addSubview:view];
+}
+//申请为投资人
+- (void)presentSponsor{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
