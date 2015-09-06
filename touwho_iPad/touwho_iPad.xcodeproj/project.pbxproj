@@ -88,6 +88,8 @@
 		A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F4C1B8DB2AC00E76711 /* meRight.m */; };
 		A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C07CD51B9C229B00A2F1CB /* profileViewController.m */; };
 		A1C07CD81B9C229B00A2F1CB /* profileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */; };
+		A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C07CDE1B9C3D8200A2F1CB /* zhuce.xib */; };
+		A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C07CE11B9C41C800A2F1CB /* zhuce.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
@@ -242,6 +244,9 @@
 		A1C07CD41B9C229B00A2F1CB /* profileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profileViewController.h; sourceTree = "<group>"; };
 		A1C07CD51B9C229B00A2F1CB /* profileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profileViewController.m; sourceTree = "<group>"; };
 		A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileViewController.xib; sourceTree = "<group>"; };
+		A1C07CDE1B9C3D8200A2F1CB /* zhuce.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = zhuce.xib; sourceTree = "<group>"; };
+		A1C07CE01B9C41C800A2F1CB /* zhuce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhuce.h; sourceTree = "<group>"; };
+		A1C07CE11B9C41C800A2F1CB /* zhuce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhuce.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
@@ -428,6 +433,9 @@
 			children = (
 				A1BE7F471B8DAF8500E76711 /* 左边 */,
 				A1BE7F481B8DAF8F00E76711 /* 右边 */,
+				A1C07CE01B9C41C800A2F1CB /* zhuce.h */,
+				A1C07CE11B9C41C800A2F1CB /* zhuce.m */,
+				A1C07CDE1B9C3D8200A2F1CB /* zhuce.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -830,6 +838,7 @@
 				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
 				A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */,
 				A1033BE81B8C5DF200FC8921 /* sixinCell.xib in Resources */,
+				A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
@@ -910,6 +919,7 @@
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
+				A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A17C9A7A1B8C6F6800F5677C /* WDMessageTool.m in Sources */,

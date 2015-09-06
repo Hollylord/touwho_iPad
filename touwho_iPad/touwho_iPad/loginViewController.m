@@ -9,6 +9,7 @@
 #import "loginViewController.h"
 #import "profileViewController.h"
 #import "splitViewController.h"
+#import "zhuce.h"
 
 @interface loginViewController ()
 - (IBAction)login:(UIButton *)sender;
@@ -16,6 +17,8 @@
 - (IBAction)quickLogin:(UIButton *)sender;
 
 - (IBAction)quit:(UIButton *)sender;
+- (IBAction)zhuce:(UIButton *)sender;
+
 
 @end
 
@@ -41,6 +44,16 @@
 #pragma mark - 点击按钮
 - (IBAction)quit:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)zhuce:(UIButton *)sender {
+    zhuce *zhuce = [[[NSBundle mainBundle] loadNibNamed:@"zhuce" owner:nil options:nil]firstObject];
+    [self.view addSubview:zhuce];
+    zhuce.frame = self.view.frame;
+    
+    zhuce.block = ^(){
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    };
 }
 
 //点击登录按钮 跳转个人中心控制器
