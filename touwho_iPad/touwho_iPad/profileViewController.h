@@ -1,13 +1,13 @@
 //
-//  splitViewController.h
+//  profileViewController.h
 //  touwho_iPad
 //
-//  Created by apple on 15/8/18.
+//  Created by apple on 15/9/6.
 //  Copyright © 2015年 touhu.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface splitViewController : UISplitViewController
+@interface profileViewController : UIViewController
 
 @end

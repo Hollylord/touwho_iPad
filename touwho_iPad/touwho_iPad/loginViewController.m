@@ -7,6 +7,7 @@
 //
 
 #import "loginViewController.h"
+#import "profileViewController.h"
 #import "splitViewController.h"
 
 @interface loginViewController ()
@@ -45,8 +46,10 @@
 //点击登录按钮 跳转个人中心控制器
 - (IBAction)login:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
-    splitViewController *split = (splitViewController *) self.presentingViewController;
-    [split extentMeView];
+    profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+    splitViewController *split = (splitViewController *)self.presentingViewController;
+    [split showDetailViewController:viewcontroller sender:nil];
+    
     
 }
 

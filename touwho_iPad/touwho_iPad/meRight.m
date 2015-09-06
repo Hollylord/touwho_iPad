@@ -18,6 +18,7 @@
     
     UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"publish" owner:nil options:nil]firstObject];
     [self addSubview:view];
+    view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 }
 //已投资的项目
 - (void)presentPrograms{

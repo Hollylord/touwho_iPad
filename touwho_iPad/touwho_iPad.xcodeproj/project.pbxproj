@@ -86,6 +86,8 @@
 		A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F451B8DA5CE00E76711 /* meLeft.m */; };
 		A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F491B8DAFE100E76711 /* publish.xib */; };
 		A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F4C1B8DB2AC00E76711 /* meRight.m */; };
+		A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C07CD51B9C229B00A2F1CB /* profileViewController.m */; };
+		A1C07CD81B9C229B00A2F1CB /* profileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
@@ -237,6 +239,9 @@
 		A1BE7F491B8DAFE100E76711 /* publish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = publish.xib; sourceTree = "<group>"; };
 		A1BE7F4B1B8DB2AC00E76711 /* meRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meRight.h; sourceTree = "<group>"; };
 		A1BE7F4C1B8DB2AC00E76711 /* meRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = meRight.m; sourceTree = "<group>"; };
+		A1C07CD41B9C229B00A2F1CB /* profileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profileViewController.h; sourceTree = "<group>"; };
+		A1C07CD51B9C229B00A2F1CB /* profileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profileViewController.m; sourceTree = "<group>"; };
+		A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profileViewController.xib; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
@@ -402,6 +407,9 @@
 			children = (
 				A13259321B83071200A327C6 /* loginViewController.h */,
 				A13259331B83071200A327C6 /* loginViewController.m */,
+				A1C07CD41B9C229B00A2F1CB /* profileViewController.h */,
+				A1C07CD51B9C229B00A2F1CB /* profileViewController.m */,
+				A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -826,6 +834,7 @@
 				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
+				A1C07CD81B9C229B00A2F1CB /* profileViewController.xib in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
 				A1F61D601B942FD600AB89FF /* news2Cell.xib in Resources */,
@@ -926,6 +935,7 @@
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
+				A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A1033BE41B8C59DB00FC8921 /* sixin.m in Sources */,
 				A1BE7F211B8D571800E76711 /* BDVRSConfig.m in Sources */,

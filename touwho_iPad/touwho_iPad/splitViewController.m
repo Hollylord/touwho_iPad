@@ -8,15 +8,12 @@
 
 #import "splitViewController.h"
 #import "loginViewController.h"
-#import "meRight.h"
-#import "meLeft.h"
+
 
 @interface splitViewController ()
 
-//个人信息页面的返回按钮
-- (IBAction)meBack:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UIView *meLeftView;
-@property (strong,nonatomic) UIView *meRightView;
+
+
 @end
 
 @implementation splitViewController
@@ -57,70 +54,8 @@
     }
 }
 
-#pragma mark - 展开个人详细页面
-- (void)extentMeView{
-    //添加左边view
-    meLeft *me = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
-    [self.view addSubview:me];
-    [self layoutForMe:me];
-    
-    //添加右边view
-    meRight *meRightView = [[meRight alloc] init];
-    meRightView.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:meRightView];
-    self.meRightView = meRightView;
-    [self layoutForMeRight:meRightView];
-    //设置右边为左边代理
-    me.delegate = meRightView;
-    
-}
 
-- (void)layoutForMe:(UIView *)view{
-    NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:300];
-    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
-    [self.view addConstraints:@[trailing,top,bottom]];
-    [view addConstraint:width];
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view layoutIfNeeded];
-    
-    [UIView animateWithDuration:1 animations:^{
-        [self.view removeConstraint:trailing];
-        [self.view addConstraint:leading];
-        [self.view layoutIfNeeded];
-        
-    }];
-}
-- (void)layoutForMeRight:(UIView *)view{
-    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.view.frame.size.width - 300];
-    NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
-    [self.view addConstraints:@[leading,top,bottom]];
-    [view addConstraint:width];
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view layoutIfNeeded];
-    
-    [UIView animateWithDuration:1 animations:^{
-        [self.view removeConstraint:leading];
-        [self.view addConstraint:trailing];
-        [self.view layoutIfNeeded];
-        
-    }];
-}
 
-#pragma mark - 返回按钮
-- (IBAction)meBack:(UIButton *)sender {
-    [UIView animateWithDuration:1 animations:^{
-        self.meLeftView.transform = CGAffineTransformMakeTranslation(-300, 0);
-        self.meRightView.transform = CGAffineTransformMakeTranslation(self.view.frame.size.width - 300, 0);
-    } completion:^(BOOL finished) {
-        [self.meLeftView removeFromSuperview];
-        [self.meRightView removeFromSuperview];
-    }];
-    
-}
+
+
 @end
