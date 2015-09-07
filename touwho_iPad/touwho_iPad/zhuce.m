@@ -4,17 +4,21 @@
 //
 //  Created by apple on 15/9/6.
 //  Copyright © 2015年 touhu.com. All rights reserved.
-//
 
 #import "zhuce.h"
 
 @implementation zhuce
 
 
-
-- (IBAction)return:(UIButton *)sender {
+- (IBAction)upStep:(UIButton *)sender {
     if (self.block){
         self.block();
+    }
+}
+
+- (IBAction)nextStep:(UIButton *)sender {
+    if (self.nextStepBlock) {
+        self.nextStepBlock();
     }
 }
 @end

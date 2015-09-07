@@ -10,9 +10,15 @@
 
 @interface zhuce : UIView
 /**
- *  跟loginViewcontroller之间的通信
+ *  对应返回按钮的操作
  */
 @property (copy,nonatomic) dispatch_block_t block;
-- (IBAction)return:(UIButton *)sender;
+/**
+ *  对应 下一步 操作
+ */
+@property (copy,nonatomic) dispatch_block_t nextStepBlock;
+- (IBAction)upStep:(UIButton *)sender;
+
+- (IBAction)nextStep:(UIButton *)sender;
 
 @end

@@ -91,6 +91,8 @@
 		A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C07CDE1B9C3D8200A2F1CB /* zhuce.xib */; };
 		A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C07CE11B9C41C800A2F1CB /* zhuce.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
+		A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78DD31B9D341D00C136C3 /* forgetPassword.m */; };
+		A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD51B9D342700C136C3 /* forgetPassword.xib */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
@@ -248,6 +250,9 @@
 		A1C07CE01B9C41C800A2F1CB /* zhuce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhuce.h; sourceTree = "<group>"; };
 		A1C07CE11B9C41C800A2F1CB /* zhuce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhuce.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1D78DD21B9D341D00C136C3 /* forgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPassword.h; sourceTree = "<group>"; };
+		A1D78DD31B9D341D00C136C3 /* forgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPassword.m; sourceTree = "<group>"; };
+		A1D78DD51B9D342700C136C3 /* forgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgetPassword.xib; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
 		A1DAFAB91B8C37BE00189680 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
@@ -436,6 +441,9 @@
 				A1C07CE01B9C41C800A2F1CB /* zhuce.h */,
 				A1C07CE11B9C41C800A2F1CB /* zhuce.m */,
 				A1C07CDE1B9C3D8200A2F1CB /* zhuce.xib */,
+				A1D78DD21B9D341D00C136C3 /* forgetPassword.h */,
+				A1D78DD31B9D341D00C136C3 /* forgetPassword.m */,
+				A1D78DD51B9D342700C136C3 /* forgetPassword.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -833,6 +841,7 @@
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
 				A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */,
 				A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */,
+				A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */,
 				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
@@ -944,6 +953,7 @@
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
+				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,

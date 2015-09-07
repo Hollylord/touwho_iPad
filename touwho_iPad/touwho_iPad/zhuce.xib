@@ -45,6 +45,9 @@
                             </fragment>
                         </attributedString>
                     </state>
+                    <connections>
+                        <action selector="nextStep:" destination="V6w-VY-s05" eventType="touchUpInside" id="32v-8A-U07"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-87-PLm">
                     <rect key="frame" x="182" y="518" width="237" height="69"/>
@@ -119,7 +122,7 @@
                         </attributedString>
                     </state>
                     <connections>
-                        <action selector="return:" destination="V6w-VY-s05" eventType="touchUpInside" id="HLy-ZM-XbJ"/>
+                        <action selector="upStep:" destination="V6w-VY-s05" eventType="touchUpInside" id="4xN-jp-Hsg"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP7-j9-4YY">

@@ -623,6 +623,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="forgetPassword:" destination="EhZ-7N-x95" eventType="touchUpInside" id="7np-2X-DIm"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-cL-bmW" userLabel="ID">
                                 <rect key="frame" x="150" y="93" width="359" height="53"/>

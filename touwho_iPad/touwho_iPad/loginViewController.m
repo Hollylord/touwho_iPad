@@ -10,6 +10,7 @@
 #import "profileViewController.h"
 #import "splitViewController.h"
 #import "zhuce.h"
+#import "forgetPassword.h"
 
 @interface loginViewController ()
 - (IBAction)login:(UIButton *)sender;
@@ -18,6 +19,7 @@
 
 - (IBAction)quit:(UIButton *)sender;
 - (IBAction)zhuce:(UIButton *)sender;
+- (IBAction)forgetPassword:(UIButton *)sender;
 
 
 @end
@@ -45,14 +47,33 @@
 - (IBAction)quit:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
-
+//点击注册
 - (IBAction)zhuce:(UIButton *)sender {
-    zhuce *zhuce = [[[NSBundle mainBundle] loadNibNamed:@"zhuce" owner:nil options:nil]firstObject];
-    [self.view addSubview:zhuce];
-    zhuce.frame = self.view.frame;
+    zhuce *view = [[[NSBundle mainBundle] loadNibNamed:@"zhuce" owner:nil options:nil]firstObject];
+    [self.view addSubview:view];
+    view.frame = self.view.frame;
     
-    zhuce.block = ^(){
+    __weak zhuce *weakzhuce = view;
+    view.block = ^(){
+        [weakzhuce removeFromSuperview];
+    };
+    
+    view.nextStepBlock = ^(){
         [self dismissViewControllerAnimated:YES completion:NULL];
+        profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+        splitViewController *split = (splitViewController *)self.presentingViewController;
+        [split showDetailViewController:viewcontroller sender:nil];
+    };
+}
+//点击忘记密码
+- (IBAction)forgetPassword:(UIButton *)sender {
+    forgetPassword *view = [[[NSBundle mainBundle] loadNibNamed:@"forgetPassword" owner:nil options:nil]firstObject];
+    [self.view addSubview:view];
+    view.frame = self.view.frame;
+    
+    __weak forgetPassword *weakview = view;
+    view.block = ^(){
+        [weakview removeFromSuperview];
     };
 }
 
