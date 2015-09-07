@@ -12,9 +12,8 @@
 
 
 
-- (IBAction)return:(UIButton *)sender {
-    if (self.block){
-        self.block();
-    }
+
+- (IBAction)upStep:(UIButton *)sender {
+    [self removeFromSuperview];
 }
 @end

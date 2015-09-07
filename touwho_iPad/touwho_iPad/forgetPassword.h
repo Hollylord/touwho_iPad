@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface forgetPassword : UIView
-@property (copy,nonatomic) dispatch_block_t block;
-- (IBAction)return:(UIButton *)sender;
+- (IBAction)upStep:(UIButton *)sender;
+
+
 @end

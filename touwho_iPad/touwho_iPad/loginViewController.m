@@ -53,11 +53,8 @@
     [self.view addSubview:view];
     view.frame = self.view.frame;
     
-    __weak zhuce *weakzhuce = view;
-    view.block = ^(){
-        [weakzhuce removeFromSuperview];
-    };
     
+    //定义点击下一步 跳转到个人中心
     view.nextStepBlock = ^(){
         [self dismissViewControllerAnimated:YES completion:NULL];
         profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
@@ -71,10 +68,7 @@
     [self.view addSubview:view];
     view.frame = self.view.frame;
     
-    __weak forgetPassword *weakview = view;
-    view.block = ^(){
-        [weakview removeFromSuperview];
-    };
+    
 }
 
 //点击登录按钮 跳转个人中心控制器
