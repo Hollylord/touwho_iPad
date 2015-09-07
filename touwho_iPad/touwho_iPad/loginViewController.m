@@ -39,7 +39,7 @@
 
 
 
-
+//快速登录
 - (IBAction)quickLogin:(UIButton *)sender {
 }
 
@@ -47,6 +47,7 @@
 - (IBAction)quit:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
 //点击注册
 - (IBAction)zhuce:(UIButton *)sender {
     zhuce *view = [[[NSBundle mainBundle] loadNibNamed:@"zhuce" owner:nil options:nil]firstObject];
@@ -62,6 +63,7 @@
         [split showDetailViewController:viewcontroller sender:nil];
     };
 }
+
 //点击忘记密码
 - (IBAction)forgetPassword:(UIButton *)sender {
     forgetPassword *view = [[[NSBundle mainBundle] loadNibNamed:@"forgetPassword" owner:nil options:nil]firstObject];

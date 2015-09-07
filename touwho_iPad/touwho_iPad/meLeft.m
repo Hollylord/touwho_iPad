@@ -80,5 +80,9 @@
     }
 }
 
-
+#pragma mark - 按钮点击
+- (IBAction)message:(UIButton *)sender {
+    [self.delegate presentMessage];
+    
+}
 @end

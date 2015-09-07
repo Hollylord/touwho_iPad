@@ -10,9 +10,6 @@
 
 @implementation forgetPassword
 
-
-
-
 - (IBAction)upStep:(UIButton *)sender {
     [self removeFromSuperview];
 }

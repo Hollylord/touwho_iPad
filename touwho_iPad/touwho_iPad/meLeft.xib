@@ -33,6 +33,13 @@
                         <outlet property="delegate" destination="iN0-l3-epB" id="su8-34-rdG"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-pI-xNw">
+                    <rect key="frame" x="191" y="101" width="30" height="30"/>
+                    <state key="normal" title="消息"/>
+                    <connections>
+                        <action selector="message:" destination="iN0-l3-epB" eventType="touchUpInside" id="nrR-ZI-bOV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -43,6 +50,8 @@
                 <constraint firstAttribute="trailing" secondItem="KFX-fE-VOB" secondAttribute="trailing" id="HIq-Jd-zYC"/>
                 <constraint firstItem="PHX-UH-hff" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="NUR-xl-XgV"/>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="Opy-GK-SVt" secondAttribute="bottom" constant="8" id="Njy-56-dA5"/>
+                <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="101" id="Tqg-QC-MSp"/>
+                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Opy-GK-SVt" secondAttribute="trailing" constant="61" id="f5z-Fv-2Sm"/>
                 <constraint firstAttribute="bottom" secondItem="KFX-fE-VOB" secondAttribute="bottom" constant="153" id="xsJ-cH-Dvg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

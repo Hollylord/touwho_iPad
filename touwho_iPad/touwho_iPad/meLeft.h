@@ -28,6 +28,10 @@
  *  编辑个人信息
  */
 - (void)presentProfile;
+/**
+ *  跳转消息界面
+ */
+- (void)presentMessage;
 
 @end
 
@@ -36,4 +40,10 @@
 @interface meLeft : UIView <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak,nonatomic) id <meLeftDelegate>delegate;
+/**
+ *  查看消息
+ */
+- (IBAction)message:(UIButton *)sender;
+
+
 @end
