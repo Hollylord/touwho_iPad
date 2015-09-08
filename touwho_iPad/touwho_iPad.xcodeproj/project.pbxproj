@@ -92,6 +92,8 @@
 		A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C07CE11B9C41C800A2F1CB /* zhuce.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
 		A1C3EDD01B9E84510023AB6E /* notification.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDCF1B9E84510023AB6E /* notification.m */; };
+		A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDD21B9E8D140023AB6E /* privateMessage.m */; };
+		A1C3EDD51B9E8D250023AB6E /* privateMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */; };
 		A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78DD31B9D341D00C136C3 /* forgetPassword.m */; };
 		A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD51B9D342700C136C3 /* forgetPassword.xib */; };
 		A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD81B9D5D4B00C136C3 /* message.xib */; };
@@ -257,6 +259,9 @@
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1C3EDCE1B9E84510023AB6E /* notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notification.h; sourceTree = "<group>"; };
 		A1C3EDCF1B9E84510023AB6E /* notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notification.m; sourceTree = "<group>"; };
+		A1C3EDD11B9E8D140023AB6E /* privateMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateMessage.h; sourceTree = "<group>"; };
+		A1C3EDD21B9E8D140023AB6E /* privateMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = privateMessage.m; sourceTree = "<group>"; };
+		A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = privateMessage.xib; sourceTree = "<group>"; };
 		A1D78DD21B9D341D00C136C3 /* forgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPassword.h; sourceTree = "<group>"; };
 		A1D78DD31B9D341D00C136C3 /* forgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPassword.m; sourceTree = "<group>"; };
 		A1D78DD51B9D342700C136C3 /* forgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgetPassword.xib; sourceTree = "<group>"; };
@@ -738,6 +743,9 @@
 				A1C3EDCF1B9E84510023AB6E /* notification.m */,
 				A1D78E1C1B9D943200C136C3 /* notification.xib */,
 				A1D78E1E1B9D945F00C136C3 /* commentCell.xib */,
+				A1C3EDD11B9E8D140023AB6E /* privateMessage.h */,
+				A1C3EDD21B9E8D140023AB6E /* privateMessage.m */,
+				A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */,
 			);
 			name = "个人中心右边";
 			sourceTree = "<group>";
@@ -870,6 +878,7 @@
 				A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */,
 				A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */,
 				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
+				A1C3EDD51B9E8D250023AB6E /* privateMessage.xib in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
 				A1D78E1F1B9D945F00C136C3 /* commentCell.xib in Resources */,
@@ -972,6 +981,7 @@
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
+				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,

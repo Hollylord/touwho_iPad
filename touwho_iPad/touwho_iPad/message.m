@@ -8,6 +8,7 @@
 
 #import "message.h"
 #import "notification.h"
+#import "privateMessage.h"
 
 @implementation message
 
@@ -40,6 +41,9 @@
     sender.selected = YES;
     self.privateMessageBtn.selected = NO;
     
+    UIView *privateView = [self.subviews lastObject];
+    [privateView removeFromSuperview];
+    
     //切换到显示通知 界面
     notification *notificationView = [[[NSBundle mainBundle] loadNibNamed:@"notification" owner:nil options:nil] firstObject];
     [self addSubview:notificationView];
@@ -57,8 +61,13 @@
     sender.selected = YES;
     self.noticeBtn.selected = NO;
     
-    notification *noticeView = [self.subviews lastObject];
+    UIView *noticeView = [self.subviews lastObject];
     [noticeView removeFromSuperview];
+    
+    //切换到显示私信 界面
+    privateMessage *privateMessageView = [[[NSBundle mainBundle] loadNibNamed:@"privateMessage" owner:nil options:nil] firstObject];
+    [self addSubview:privateMessageView];
+    [self layoutForNotificationView:privateMessageView];
     
 }
 @end
