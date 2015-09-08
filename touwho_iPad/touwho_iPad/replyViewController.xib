@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="replyViewController">
+            <connections>
+                <outlet property="contentView" destination="Csu-zU-saW" id="Rge-gw-BNO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1F1-se-W4j">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <items>
+                        <navigationItem title="Title" id="aEg-Og-smr">
+                            <barButtonItem key="leftBarButtonItem" title="取消" id="BKL-OL-iyZ">
+                                <connections>
+                                    <action selector="cancel:" destination="-1" id="c38-z0-TbQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="发布" id="bmn-P3-Vg7"/>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csu-zU-saW">
+                    <rect key="frame" x="0.0" y="44" width="600" height="242"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="1F1-se-W4j" secondAttribute="trailing" id="6xQ-iz-Urd"/>
+                <constraint firstItem="1F1-se-W4j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GLL-7t-M0J"/>
+                <constraint firstAttribute="trailing" secondItem="Csu-zU-saW" secondAttribute="trailing" id="J0u-78-ppy"/>
+                <constraint firstItem="Csu-zU-saW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kwt-oQ-D7d"/>
+                <constraint firstItem="1F1-se-W4j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a9R-rO-d5L"/>
+                <constraint firstItem="Csu-zU-saW" firstAttribute="top" secondItem="1F1-se-W4j" secondAttribute="bottom" id="oWa-av-i37"/>
+                <constraint firstAttribute="bottom" secondItem="Csu-zU-saW" secondAttribute="bottom" constant="314" id="xIK-7h-zOI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+</document>

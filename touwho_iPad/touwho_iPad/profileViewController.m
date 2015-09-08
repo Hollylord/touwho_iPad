@@ -9,6 +9,7 @@
 #import "profileViewController.h"
 #import "meRight.h"
 #import "meLeft.h"
+#import "notification.h"
 
 @interface profileViewController ()
 @property (strong, nonatomic) IBOutlet meLeft *meLeftView;
@@ -35,6 +36,8 @@
 
     //设置右边为左边代理
     me.delegate          = meRightView;
+    
+   
 
 }
 
