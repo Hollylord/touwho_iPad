@@ -91,6 +91,7 @@
 		A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C07CDE1B9C3D8200A2F1CB /* zhuce.xib */; };
 		A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C07CE11B9C41C800A2F1CB /* zhuce.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
+		A1C3EDD01B9E84510023AB6E /* notification.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDCF1B9E84510023AB6E /* notification.m */; };
 		A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78DD31B9D341D00C136C3 /* forgetPassword.m */; };
 		A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD51B9D342700C136C3 /* forgetPassword.xib */; };
 		A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD81B9D5D4B00C136C3 /* message.xib */; };
@@ -254,6 +255,8 @@
 		A1C07CE01B9C41C800A2F1CB /* zhuce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhuce.h; sourceTree = "<group>"; };
 		A1C07CE11B9C41C800A2F1CB /* zhuce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhuce.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1C3EDCE1B9E84510023AB6E /* notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notification.h; sourceTree = "<group>"; };
+		A1C3EDCF1B9E84510023AB6E /* notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notification.m; sourceTree = "<group>"; };
 		A1D78DD21B9D341D00C136C3 /* forgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPassword.h; sourceTree = "<group>"; };
 		A1D78DD31B9D341D00C136C3 /* forgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPassword.m; sourceTree = "<group>"; };
 		A1D78DD51B9D342700C136C3 /* forgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgetPassword.xib; sourceTree = "<group>"; };
@@ -731,6 +734,8 @@
 				A1D78E201B9D96BB00C136C3 /* message.h */,
 				A1D78E211B9D96BB00C136C3 /* message.m */,
 				A1D78DD81B9D5D4B00C136C3 /* message.xib */,
+				A1C3EDCE1B9E84510023AB6E /* notification.h */,
+				A1C3EDCF1B9E84510023AB6E /* notification.m */,
 				A1D78E1C1B9D943200C136C3 /* notification.xib */,
 				A1D78E1E1B9D945F00C136C3 /* commentCell.xib */,
 			);
@@ -946,6 +951,7 @@
 			files = (
 				A1BE7F3D1B8D5DA100E76711 /* CAXException.cpp in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
+				A1C3EDD01B9E84510023AB6E /* notification.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
 				A1BE7F3E1B8D5DA100E76711 /* JSONKit.m in Sources */,

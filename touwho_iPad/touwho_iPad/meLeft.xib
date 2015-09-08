@@ -21,10 +21,6 @@
                         <constraint firstAttribute="width" constant="100" id="Mtu-SJ-FjO"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHX-UH-hff">
-                    <rect key="frame" x="30" y="20" width="30" height="30"/>
-                    <state key="normal" title="返回"/>
-                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KFX-fE-VOB">
                     <rect key="frame" x="0.0" y="174" width="300" height="441"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,10 +41,8 @@
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>
                 <constraint firstItem="Opy-GK-SVt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="6km-WZ-0O2"/>
-                <constraint firstItem="PHX-UH-hff" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="9kf-gY-Icc"/>
-                <constraint firstItem="Opy-GK-SVt" firstAttribute="top" secondItem="PHX-UH-hff" secondAttribute="bottom" constant="16" id="G22-8p-65g"/>
                 <constraint firstAttribute="trailing" secondItem="KFX-fE-VOB" secondAttribute="trailing" id="HIq-Jd-zYC"/>
-                <constraint firstItem="PHX-UH-hff" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="NUR-xl-XgV"/>
+                <constraint firstItem="Opy-GK-SVt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="Iik-sh-oEt"/>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="Opy-GK-SVt" secondAttribute="bottom" constant="8" id="Njy-56-dA5"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="101" id="Tqg-QC-MSp"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Opy-GK-SVt" secondAttribute="trailing" constant="61" id="f5z-Fv-2Sm"/>

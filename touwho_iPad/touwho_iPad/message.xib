@@ -53,6 +53,8 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
+                <outlet property="noticeBtn" destination="8Hf-Z4-Myb" id="gyM-K5-Xtt"/>
+                <outlet property="privateMessageBtn" destination="fMW-5d-lpv" id="14Z-Xu-bMC"/>
                 <outlet property="sliderBar" destination="mXt-uq-o3B" id="Gpi-Xg-iK1"/>
             </connections>
             <point key="canvasLocation" x="330" y="360"/>

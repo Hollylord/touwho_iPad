@@ -13,6 +13,8 @@
  *  滑块
  */
 @property (weak, nonatomic) IBOutlet UIImageView *sliderBar;
+@property (weak, nonatomic) IBOutlet UIButton *noticeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *privateMessageBtn;
 
 - (IBAction)notice:(UIButton *)sender;
 - (IBAction)privateMessage:(UIButton *)sender;
