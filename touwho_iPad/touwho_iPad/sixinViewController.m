@@ -8,6 +8,7 @@
 
 #import "sixinViewController.h"
 #import <AVOSCloudIM/AVOSCloudIM.h>
+#import "chatTableViewCell.h"
 
 
 
@@ -22,15 +23,25 @@
 @property (strong,nonatomic) AVIMConversation *conversation;
 @property (strong,nonatomic) AVIMClient *client;
 @property (copy,nonatomic) NSString *oldMsgID;
+/**
+ *  最近接受的消息
+ */
+@property (strong,nonatomic) NSMutableArray *recentMessages;
 
 @end
 
 @implementation sixinViewController
+- (NSMutableArray *)recentMessages{
+    if (!_recentMessages) {
+        _recentMessages = [NSMutableArray array];
+    }
+    return _recentMessages;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"sixinCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"chatTableViewCell" bundle:nil] forCellReuseIdentifier:@"chatCell"];
     
     //开启聊天客户端
     AVIMClient *imClient = [[AVIMClient alloc] init];
@@ -62,7 +73,11 @@
                         self.conversation = objects[0];
                         //查询最近的信息
                         [self.conversation queryMessagesWithLimit:20 callback:^(NSArray *objects, NSError *error) {
-                            NSLog(@"%@",objects);
+                            for (AVIMMessage *message in objects) {
+                                [self.recentMessages addObject:message];
+                                
+                            }
+                            [self.tableView reloadData];
                         }];
                     }
                     
@@ -83,7 +98,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
+#pragma mark -
 /**
  *  创建新会话
  */
@@ -125,15 +143,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    
-    return 4;
+    NSLog(@"%lu",(unsigned long)self.recentMessages.count);
+    return self.recentMessages.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sixinCell" forIndexPath:indexPath];
-    
-    
+    chatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"chatCell" forIndexPath:indexPath];
+    cell.clientID = self.client.clientId;
+    cell.message = self.recentMessages[indexPath.row];
+    [cell.contentView layoutIfNeeded];
     
     return cell;
 }
@@ -142,6 +161,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
 }
 
 

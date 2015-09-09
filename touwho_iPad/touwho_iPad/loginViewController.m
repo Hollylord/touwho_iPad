@@ -38,12 +38,12 @@
 
 
 
-
+#pragma mark - 点击按钮
 //快速登录
 - (IBAction)quickLogin:(UIButton *)sender {
 }
 
-#pragma mark - 点击按钮
+
 - (IBAction)quit:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }

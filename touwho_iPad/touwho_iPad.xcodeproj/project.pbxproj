@@ -43,6 +43,9 @@
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
+		A187AD6C1BA0014700BBA856 /* chatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */; };
+		A187AD6D1BA0014700BBA856 /* chatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */; };
+		A187AD701BA0023B00BBA856 /* chatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A187AD6F1BA0023B00BBA856 /* chatModel.m */; };
 		A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A198E3C41B96D52700BB060E /* program2ViewController.m */; };
 		A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A198E3C51B96D52700BB060E /* program2ViewController.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
@@ -187,6 +190,11 @@
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		A187AD691BA0014700BBA856 /* chatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatTableViewCell.h; sourceTree = "<group>"; };
+		A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatTableViewCell.m; sourceTree = "<group>"; };
+		A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatTableViewCell.xib; sourceTree = "<group>"; };
+		A187AD6E1BA0023B00BBA856 /* chatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatModel.h; sourceTree = "<group>"; };
+		A187AD6F1BA0023B00BBA856 /* chatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatModel.m; sourceTree = "<group>"; };
 		A198E3C31B96D52700BB060E /* program2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program2ViewController.h; sourceTree = "<group>"; };
 		A198E3C41B96D52700BB060E /* program2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = program2ViewController.m; sourceTree = "<group>"; };
 		A198E3C51B96D52700BB060E /* program2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = program2ViewController.xib; sourceTree = "<group>"; };
@@ -449,6 +457,7 @@
 		A13259301B8306E100A327C6 /* 我 */ = {
 			isa = PBXGroup;
 			children = (
+				A187AD641B9FFCE900BBA856 /* model */,
 				A13259311B8306E900A327C6 /* view */,
 				A132592F1B8306CE00A327C6 /* controller */,
 			);
@@ -517,6 +526,44 @@
 				A1002B1B1B857581007520AA /* shipinView.xib */,
 			);
 			name = "视频";
+			sourceTree = "<group>";
+		};
+		A187AD641B9FFCE900BBA856 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A187AD661B9FFE5800BBA856 /* 私信列表 */ = {
+			isa = PBXGroup;
+			children = (
+				A1C3EDD11B9E8D140023AB6E /* privateMessage.h */,
+				A1C3EDD21B9E8D140023AB6E /* privateMessage.m */,
+				A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */,
+			);
+			name = "私信列表";
+			sourceTree = "<group>";
+		};
+		A187AD671B9FFE6500BBA856 /* 通知列表 */ = {
+			isa = PBXGroup;
+			children = (
+				A1C3EDCE1B9E84510023AB6E /* notification.h */,
+				A1C3EDCF1B9E84510023AB6E /* notification.m */,
+				A1D78E1C1B9D943200C136C3 /* notification.xib */,
+				A1D78E1E1B9D945F00C136C3 /* commentCell.xib */,
+			);
+			name = "通知列表";
+			sourceTree = "<group>";
+		};
+		A187AD681B9FFE6C00BBA856 /* 消息界面 */ = {
+			isa = PBXGroup;
+			children = (
+				A1D78E201B9D96BB00C136C3 /* message.h */,
+				A1D78E211B9D96BB00C136C3 /* message.m */,
+				A1D78DD81B9D5D4B00C136C3 /* message.xib */,
+			);
+			name = "消息界面";
 			sourceTree = "<group>";
 		};
 		A19D09321B7C2DF100094B81 = {
@@ -756,16 +803,9 @@
 		A1C3EDD81B9EB60D0023AB6E /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
-				A1D78E201B9D96BB00C136C3 /* message.h */,
-				A1D78E211B9D96BB00C136C3 /* message.m */,
-				A1D78DD81B9D5D4B00C136C3 /* message.xib */,
-				A1C3EDCE1B9E84510023AB6E /* notification.h */,
-				A1C3EDCF1B9E84510023AB6E /* notification.m */,
-				A1D78E1C1B9D943200C136C3 /* notification.xib */,
-				A1D78E1E1B9D945F00C136C3 /* commentCell.xib */,
-				A1C3EDD11B9E8D140023AB6E /* privateMessage.h */,
-				A1C3EDD21B9E8D140023AB6E /* privateMessage.m */,
-				A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */,
+				A187AD681B9FFE6C00BBA856 /* 消息界面 */,
+				A187AD671B9FFE6500BBA856 /* 通知列表 */,
+				A187AD661B9FFE5800BBA856 /* 私信列表 */,
 			);
 			name = "消息";
 			sourceTree = "<group>";
@@ -818,6 +858,11 @@
 				A1C3EDE21B9EBB640023AB6E /* sixinViewController.h */,
 				A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */,
 				A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */,
+				A187AD691BA0014700BBA856 /* chatTableViewCell.h */,
+				A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */,
+				A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */,
+				A187AD6E1BA0023B00BBA856 /* chatModel.h */,
+				A187AD6F1BA0023B00BBA856 /* chatModel.m */,
 			);
 			name = "聊天";
 			sourceTree = "<group>";
@@ -961,6 +1006,7 @@
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
 				A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */,
+				A187AD6D1BA0014700BBA856 /* chatTableViewCell.xib in Resources */,
 				A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
@@ -1035,6 +1081,7 @@
 				A1BE7F3D1B8D5DA100E76711 /* CAXException.cpp in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1C3EDD01B9E84510023AB6E /* notification.m in Sources */,
+				A187AD6C1BA0014700BBA856 /* chatTableViewCell.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
 				A1BE7F3E1B8D5DA100E76711 /* JSONKit.m in Sources */,
@@ -1058,6 +1105,7 @@
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,
+				A187AD701BA0023B00BBA856 /* chatModel.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,

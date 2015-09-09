@@ -38,17 +38,17 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // 1、时间
-        // self.time 是一个弱指针，如果一个实例化出来的对象给了弱指针，那么代码过了这一行 就不存在了；
+       
         UILabel * time = [[UILabel alloc]init];
         time.textAlignment = NSTextAlignmentCenter;
         time.font = [UIFont systemFontOfSize:13.0f];
         time.textColor = [UIColor grayColor];
         [self.contentView addSubview:time]; // 只要加到这个父控件里，父控件在，那么儿子就在；
         self.time = time;
-        // 要这样写才行；
+ 
         
         // 2、正文
-        // self.time 是一个弱指针，如果一个实例化出来的对象给了弱指针，那么代码过了这一行 就不存在了；
+        
         UIButton * textView = [[UIButton alloc]init];
         textView.titleLabel.font = [UIFont systemFontOfSize:15.0f];   //因为这个类型是butten 所以方法有些不一样；
         textView.titleLabel.textColor = [UIColor blackColor];
@@ -56,14 +56,10 @@
         
         // 设置内边距;
         textView.contentEdgeInsets = UIEdgeInsetsMake(20, 10, 20, 10);
-        [self.contentView addSubview:textView]; // 只要加到这个父控件里，父控件在，那么儿子就在；
+        [self.contentView addSubview:textView];
         self.textView = textView;
         
-//        // 图片
-//        UIButton * imageView = [[UIButton alloc] init];
-//        imageView.contentEdgeInsets =UIEdgeInsetsMake(20, 10, 20, 10);
-//        [self.contentView addSubview:imageView];
-//         self.imageView = imageView;
+        
         
         
         
