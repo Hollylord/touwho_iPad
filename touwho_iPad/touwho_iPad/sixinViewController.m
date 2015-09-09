@@ -143,7 +143,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"%lu",(unsigned long)self.recentMessages.count);
+    
     return self.recentMessages.count;
 }
 

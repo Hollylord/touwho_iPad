@@ -24,7 +24,7 @@
     information.titleLabel.font = [UIFont systemFontOfSize:20];
     //自动换行
     self.information.titleLabel.numberOfLines = 0;
-    self.information.contentEdgeInsets = UIEdgeInsetsMake(20, 10, 20, 10);
+//    self.information.contentEdgeInsets = UIEdgeInsetsMake(20, 10, 20, 10);
  
     
 }
@@ -45,7 +45,6 @@
     
     //通过消息，计算气泡高度
     NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:20]};
-    
    CGSize msgSize = [message.content boundingRectWithSize:CGSizeMake(480, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil].size;
     
     //这条消息是本人发的
@@ -53,8 +52,9 @@
         self.icon.frame = CGRectMake(widthOfContentView-60,10 ,50 , 50);
         
         [self.information setTitle:message.content forState:UIControlStateNormal];
+        
         [self.information setBackgroundImage:[UIImage imageNamed:@"chat_send_nor"] forState:UIControlStateNormal];
-        self.information.frame = CGRectMake(self.icon.frame.origin.x - msgSize.width-20, 10, msgSize.width, msgSize.height);
+        self.information.frame = CGRectMake(self.icon.frame.origin.x - msgSize.width-20-50, 10, msgSize.width + 50, msgSize.height+ 30);
     }
     //对方发的
     else{
