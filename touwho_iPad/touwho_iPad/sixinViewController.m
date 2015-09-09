@@ -21,6 +21,8 @@
 
 @property (strong,nonatomic) AVIMConversation *conversation;
 @property (strong,nonatomic) AVIMClient *client;
+@property (copy,nonatomic) NSString *oldMsgID;
+
 @end
 
 @implementation sixinViewController
@@ -42,28 +44,33 @@
             
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"聊天不可用" message:@"123" preferredStyle:UIAlertControllerStyleActionSheet];
             [self presentViewController:alert animated:YES completion:NULL];
-        } else {
+        }
+        else {
             // 成功登录，可以进入聊天主界面了。
+            
+            //连接以前的会话
             NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
             NSString *conversationID = [user objectForKey:@"conversationID"];
+            //查询会话
             if (conversationID) {
-                //查询会话
                 // 新建一个 AVIMConversationQuery 实例
-            AVIMConversationQuery *query = [[AVIMClient defaultClient] conversationQuery];
-            [query getConversationById:conversationID callback:^(AVIMConversation *conversation, NSError *error) {
-                    NSLog(@"%@",conversation);
-                    //查到了会话
-                    if (conversation) {
-                        NSLog(@"%@",conversation.conversationId);
-                        
+            AVIMConversationQuery *query = [imClient conversationQuery];
+                [query whereKey:kAVIMKeyConversationId equalTo:@"55eeb48260b23c9d6ff16fd4"];
+                [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
+                    //查到了以前的会话
+                    if (!error) {
+                        self.conversation = objects[0];
+                        //查询最近的信息
+                        [self.conversation queryMessagesWithLimit:20 callback:^(NSArray *objects, NSError *error) {
+                            NSLog(@"%@",objects);
+                        }];
                     }
-                    //没有查到则创建会话
-                    else{
-                        [self creatSession];
-                    }
+                    
+                    
                 }];
             }
             else{
+                //这里私信肯定都是以前的会话 不能创建新会话
                 [self creatSession];
             }
 
@@ -77,6 +84,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  创建新会话
+ */
 - (void) creatSession{
     // 创建一个包含 Tom、Bob 的新对话
     NSArray *clientIds = [[NSArray alloc] initWithObjects:@"Tom", @"Bob", nil];
@@ -106,6 +116,7 @@
     }
         }];
 }
+
 #pragma mark - tableView代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -143,6 +154,8 @@
     [self.conversation sendMessage:abc callback:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"发送成功");
+            self.oldMsgID = abc.messageId;
+            
         }
     }];
 }
@@ -155,6 +168,7 @@
 }
 
 #pragma mark - AVIMClientDelegate代理
+//接收普通消息
 - (void)conversation:(AVIMConversation *)conversation didReceiveCommonMessage:(AVIMMessage *)message{
     NSLog(@"%@",message.content);
 }

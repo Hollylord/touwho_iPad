@@ -97,9 +97,6 @@
         self.icon.image = [UIImage imageNamed:@"touhu"];
         
     }
-    
-//    if ([model.image isEqualToString:@"error"]) {
-//        [self.textView setImage:nil forState:UIControlStateNormal]; // 先把图片清空；
         // 3、正文
         // 传入上下左右不需要拉伸的边距。。然后中间 （拉伸、平铺）
         // resizableImageWithCapInsets 返回一张支持拉伸的图片

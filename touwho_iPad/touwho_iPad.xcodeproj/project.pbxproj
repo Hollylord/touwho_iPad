@@ -362,11 +362,7 @@
 		A1002B131B856F43007520AA /* view */ = {
 			isa = PBXGroup;
 			children = (
-				A1002B1E1B85B682007520AA /* shipinMenuView.h */,
-				A1002B1F1B85B682007520AA /* shipinMenuView.m */,
-				A1002B181B857570007520AA /* shipinView.h */,
-				A1002B191B857570007520AA /* shipinView.m */,
-				A1002B1B1B857581007520AA /* shipinView.xib */,
+				A187AD631B9FD2EF00BBA856 /* 视频 */,
 				A1033BDC1B8C555900FC8921 /* 圈子 */,
 				A1033BDB1B8C554600FC8921 /* 小组 */,
 				A1033BDD1B8C597200FC8921 /* 最新话题 */,
@@ -509,6 +505,18 @@
 				A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */,
 			);
 			name = library;
+			sourceTree = "<group>";
+		};
+		A187AD631B9FD2EF00BBA856 /* 视频 */ = {
+			isa = PBXGroup;
+			children = (
+				A1002B1E1B85B682007520AA /* shipinMenuView.h */,
+				A1002B1F1B85B682007520AA /* shipinMenuView.m */,
+				A1002B181B857570007520AA /* shipinView.h */,
+				A1002B191B857570007520AA /* shipinView.m */,
+				A1002B1B1B857581007520AA /* shipinView.xib */,
+			);
+			name = "视频";
 			sourceTree = "<group>";
 		};
 		A19D09321B7C2DF100094B81 = {
