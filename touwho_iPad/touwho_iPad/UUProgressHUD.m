@@ -29,7 +29,8 @@
     static dispatch_once_t once;
     static UUProgressHUD *sharedView;
     dispatch_once(&once, ^ {
-        sharedView = [[UUProgressHUD alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        sharedView = [[UUProgressHUD alloc] initWithFrame:CGRectMake(120, 100, 300, 300)];
+        
         sharedView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5];
     });
     return sharedView;
@@ -41,8 +42,8 @@
 
 - (void)show {
     dispatch_async(dispatch_get_main_queue(), ^{
-        if(!self.superview)
-            [self.overlayWindow addSubview:self];
+//        if(!self.superview)
+//            [self.overlayWindow addSubview:self];
         
         if (!centerLabel){
             centerLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 150, 40)];
@@ -60,19 +61,28 @@
         if (!edgeImageView)
             edgeImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Chat_record_circle"]];
         
-        self.subTitleLabel.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2,[[UIScreen mainScreen] bounds].size.height/2 + 30);
+        [self addSubview:edgeImageView];
+        [self addSubview:centerLabel];
+        [self addSubview:self.subTitleLabel];
+        [self addSubview:self.titleLabel];
+        
+        self.subTitleLabel.center = CGPointMake(self.center.x - self.frame.origin.x, self.center.y - self.frame.origin.y + 30);
+       
+//        CGPointMake([[UIScreen mainScreen] bounds].size.width/2,[[UIScreen mainScreen] bounds].size.height/2 + 30);
         self.subTitleLabel.text = @"Slide up to cancel";
         self.subTitleLabel.textAlignment = NSTextAlignmentCenter;
         self.subTitleLabel.font = [UIFont boldSystemFontOfSize:14];
         self.subTitleLabel.textColor = [UIColor whiteColor];
         
-        self.titleLabel.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2,[[UIScreen mainScreen] bounds].size.height/2 - 30);
+        self.titleLabel.center = CGPointMake(self.center.x - self.frame.origin.x, self.center.y - self.frame.origin.y - 30);
+//        CGPointMake([[UIScreen mainScreen] bounds].size.width/2,[[UIScreen mainScreen] bounds].size.height/2 - 30);
         self.titleLabel.text = @"Time Limit";
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.font = [UIFont boldSystemFontOfSize:18];
         self.titleLabel.textColor = [UIColor whiteColor];
         
-        centerLabel.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2,[[UIScreen mainScreen] bounds].size.height/2);
+        centerLabel.center = CGPointMake(self.center.x - self.frame.origin.x, self.center.y - self.frame.origin.y);
+//        CGPointMake([[UIScreen mainScreen] bounds].size.width/2,[[UIScreen mainScreen] bounds].size.height/2);
         centerLabel.text = @"60";
         centerLabel.textAlignment = NSTextAlignmentCenter;
         centerLabel.font = [UIFont systemFontOfSize:30];
@@ -81,10 +91,7 @@
         
         edgeImageView.frame = CGRectMake(0, 0, 154, 154);
         edgeImageView.center = centerLabel.center;
-        [self addSubview:edgeImageView];
-        [self addSubview:centerLabel];
-        [self addSubview:self.subTitleLabel];
-        [self addSubview:self.titleLabel];
+        
 
         if (myTimer)
             [myTimer invalidate];
@@ -189,7 +196,7 @@
 
 - (UIWindow *)overlayWindow {
     if(!overlayWindow) {
-        overlayWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        overlayWindow = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 400, 400)];
         overlayWindow.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         overlayWindow.userInteractionEnabled = NO;
         [overlayWindow makeKeyAndVisible];

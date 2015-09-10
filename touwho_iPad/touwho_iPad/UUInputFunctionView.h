@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UUProgressHUD.h"
 
 @class UUInputFunctionView;
 
@@ -20,7 +21,10 @@
 
 // audio
 - (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendVoice:(NSData *)voice time:(NSInteger)second;
-
+/**
+ *  添加HUD
+ */
+- (void)addHUD:(UUProgressHUD *)view;
 @end
 
 @interface UUInputFunctionView : UIView <UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>

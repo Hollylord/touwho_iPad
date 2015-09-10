@@ -8,7 +8,7 @@
 
 #import "UUInputFunctionView.h"
 #import "Mp3Recorder.h"
-#import "UUProgressHUD.h"
+
 #import "ACMacros.h"
 
 @interface UUInputFunctionView ()<UITextViewDelegate,Mp3RecorderDelegate>
@@ -106,6 +106,8 @@
     [MP3 startRecord];
     playTime = 0;
     playTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countVoiceTime) userInfo:nil repeats:YES];
+    UUProgressHUD *HUDview = [UUProgressHUD sharedView];
+    [self.delegate addHUD:HUDview];
     [UUProgressHUD show];
 }
 

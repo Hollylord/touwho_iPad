@@ -225,6 +225,9 @@
         }
     }];
 }
+- (void)addHUD:(UUProgressHUD *)view{
+    [self.view addSubview:view];
+}
 
 #pragma mark - tableView delegate & datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

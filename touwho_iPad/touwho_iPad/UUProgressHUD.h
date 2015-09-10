@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *subTitleLabel;
 
++ (UUProgressHUD*)sharedView;
 + (void)show;
 
 + (void)dismissWithSuccess:(NSString *)str;

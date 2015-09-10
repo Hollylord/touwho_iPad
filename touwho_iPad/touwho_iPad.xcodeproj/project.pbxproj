@@ -36,8 +36,6 @@
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
-		A187AD6C1BA0014700BBA856 /* chatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */; };
-		A187AD6D1BA0014700BBA856 /* chatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */; };
 		A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A198E3C41B96D52700BB060E /* program2ViewController.m */; };
 		A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A198E3C51B96D52700BB060E /* program2ViewController.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
@@ -200,9 +198,6 @@
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
-		A187AD691BA0014700BBA856 /* chatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatTableViewCell.h; sourceTree = "<group>"; };
-		A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatTableViewCell.m; sourceTree = "<group>"; };
-		A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatTableViewCell.xib; sourceTree = "<group>"; };
 		A198E3C31B96D52700BB060E /* program2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program2ViewController.h; sourceTree = "<group>"; };
 		A198E3C41B96D52700BB060E /* program2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = program2ViewController.m; sourceTree = "<group>"; };
 		A198E3C51B96D52700BB060E /* program2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = program2ViewController.xib; sourceTree = "<group>"; };
@@ -902,9 +897,6 @@
 				A1C3EDE21B9EBB640023AB6E /* sixinViewController.h */,
 				A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */,
 				A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */,
-				A187AD691BA0014700BBA856 /* chatTableViewCell.h */,
-				A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */,
-				A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */,
 				A1B88CD31BA177B8008FA7C9 /* UUMessageCell.h */,
 				A1B88CD41BA177B8008FA7C9 /* UUMessageCell.m */,
 				A1B88C9F1BA165AD008FA7C9 /* UUInputFunctionView.h */,
@@ -1077,7 +1069,6 @@
 				A1B88CBB1BA16A55008FA7C9 /* chat_animation_white2.png in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */,
-				A187AD6D1BA0014700BBA856 /* chatTableViewCell.xib in Resources */,
 				A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
@@ -1165,7 +1156,6 @@
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1C3EDD01B9E84510023AB6E /* notification.m in Sources */,
 				A1B88CF51BA179B0008FA7C9 /* ChatModel.m in Sources */,
-				A187AD6C1BA0014700BBA856 /* chatTableViewCell.m in Sources */,
 				A1B88CEE1BA17843008FA7C9 /* NSDate+Utils.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
