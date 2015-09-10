@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeanMessageManager.h"
 
 @interface sixinViewController : UIViewController
-
+- (instancetype)initWithConversation:(AVIMConversation*)conversation;
 @end

@@ -76,6 +76,20 @@
 		A1B88CCE1BA16A6C008FA7C9 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B88CCB1BA16A6C008FA7C9 /* libmp3lame.a */; };
 		A1B88CCF1BA16A6C008FA7C9 /* Mp3Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CCD1BA16A6C008FA7C9 /* Mp3Recorder.m */; };
 		A1B88CD21BA16A91008FA7C9 /* UUProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CD11BA16A91008FA7C9 /* UUProgressHUD.m */; };
+		A1B88CD51BA177B8008FA7C9 /* UUMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CD41BA177B8008FA7C9 /* UUMessageCell.m */; };
+		A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CD71BA177E5008FA7C9 /* UUMessageContentButton.m */; };
+		A1B88CDB1BA177E5008FA7C9 /* UUMessageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CD91BA177E5008FA7C9 /* UUMessageFrame.m */; };
+		A1B88CE91BA17843008FA7C9 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1B88CDD1BA17843008FA7C9 /* MJRefresh.bundle */; };
+		A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CE01BA17843008FA7C9 /* MJRefreshBaseView.m */; };
+		A1B88CEB1BA17843008FA7C9 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CE21BA17843008FA7C9 /* MJRefreshConst.m */; };
+		A1B88CEC1BA17843008FA7C9 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CE41BA17843008FA7C9 /* MJRefreshFooterView.m */; };
+		A1B88CED1BA17843008FA7C9 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CE61BA17843008FA7C9 /* MJRefreshHeaderView.m */; };
+		A1B88CEE1BA17843008FA7C9 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CE81BA17843008FA7C9 /* NSDate+Utils.m */; };
+		A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CF11BA1785B008FA7C9 /* LeanMessageManager.m */; };
+		A1B88CF51BA179B0008FA7C9 /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CF41BA179B0008FA7C9 /* ChatModel.m */; };
+		A1B88CF81BA179C7008FA7C9 /* UUMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CF71BA179C7008FA7C9 /* UUMessage.m */; };
+		A1B88CFC1BA17B75008FA7C9 /* UUAVAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CFB1BA17B75008FA7C9 /* UUAVAudioPlayer.m */; };
+		A1B88CFF1BA17D32008FA7C9 /* UUImageAvatarBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CFE1BA17D32008FA7C9 /* UUImageAvatarBrowser.m */; };
 		A1BE7EFC1B8D551C00E76711 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7EFB1B8D551C00E76711 /* CoreGraphics.framework */; };
 		A1BE7EFE1B8D552400E76711 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7EFD1B8D552400E76711 /* CFNetwork.framework */; };
 		A1BE7F001B8D552B00E76711 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7EFF1B8D552B00E76711 /* CoreLocation.framework */; };
@@ -247,6 +261,35 @@
 		A1B88CCD1BA16A6C008FA7C9 /* Mp3Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mp3Recorder.m; sourceTree = "<group>"; };
 		A1B88CD01BA16A91008FA7C9 /* UUProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUProgressHUD.h; sourceTree = "<group>"; };
 		A1B88CD11BA16A91008FA7C9 /* UUProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUProgressHUD.m; sourceTree = "<group>"; };
+		A1B88CD31BA177B8008FA7C9 /* UUMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMessageCell.h; sourceTree = "<group>"; };
+		A1B88CD41BA177B8008FA7C9 /* UUMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMessageCell.m; sourceTree = "<group>"; };
+		A1B88CD61BA177E5008FA7C9 /* UUMessageContentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMessageContentButton.h; sourceTree = "<group>"; };
+		A1B88CD71BA177E5008FA7C9 /* UUMessageContentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMessageContentButton.m; sourceTree = "<group>"; };
+		A1B88CD81BA177E5008FA7C9 /* UUMessageFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMessageFrame.h; sourceTree = "<group>"; };
+		A1B88CD91BA177E5008FA7C9 /* UUMessageFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMessageFrame.m; sourceTree = "<group>"; };
+		A1B88CDD1BA17843008FA7C9 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		A1B88CDE1BA17843008FA7C9 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		A1B88CDF1BA17843008FA7C9 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		A1B88CE01BA17843008FA7C9 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		A1B88CE11BA17843008FA7C9 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		A1B88CE21BA17843008FA7C9 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		A1B88CE31BA17843008FA7C9 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		A1B88CE41BA17843008FA7C9 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		A1B88CE51BA17843008FA7C9 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		A1B88CE61BA17843008FA7C9 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		A1B88CE71BA17843008FA7C9 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
+		A1B88CE81BA17843008FA7C9 /* NSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utils.m"; sourceTree = "<group>"; };
+		A1B88CF01BA1785B008FA7C9 /* LeanMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeanMessageManager.h; sourceTree = "<group>"; };
+		A1B88CF11BA1785B008FA7C9 /* LeanMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeanMessageManager.m; sourceTree = "<group>"; };
+		A1B88CF31BA179B0008FA7C9 /* ChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatModel.h; sourceTree = "<group>"; };
+		A1B88CF41BA179B0008FA7C9 /* ChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatModel.m; sourceTree = "<group>"; };
+		A1B88CF61BA179C7008FA7C9 /* UUMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMessage.h; sourceTree = "<group>"; };
+		A1B88CF71BA179C7008FA7C9 /* UUMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMessage.m; sourceTree = "<group>"; };
+		A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A1B88CFA1BA17B75008FA7C9 /* UUAVAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUAVAudioPlayer.h; sourceTree = "<group>"; };
+		A1B88CFB1BA17B75008FA7C9 /* UUAVAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUAVAudioPlayer.m; sourceTree = "<group>"; };
+		A1B88CFD1BA17D32008FA7C9 /* UUImageAvatarBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUImageAvatarBrowser.h; sourceTree = "<group>"; };
+		A1B88CFE1BA17D32008FA7C9 /* UUImageAvatarBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUImageAvatarBrowser.m; sourceTree = "<group>"; };
 		A1BE7EFB1B8D551C00E76711 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A1BE7EFD1B8D552400E76711 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A1BE7EFF1B8D552B00E76711 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -471,6 +514,14 @@
 				A17C9A7C1B8C6FCC00F5677C /* UIView+Extension.h */,
 				A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */,
 				A1B88CA21BA169E1008FA7C9 /* ACMacros.h */,
+				A1B88CE71BA17843008FA7C9 /* NSDate+Utils.h */,
+				A1B88CE81BA17843008FA7C9 /* NSDate+Utils.m */,
+				A1B88CFA1BA17B75008FA7C9 /* UUAVAudioPlayer.h */,
+				A1B88CFB1BA17B75008FA7C9 /* UUAVAudioPlayer.m */,
+				A1B88CFD1BA17D32008FA7C9 /* UUImageAvatarBrowser.h */,
+				A1B88CFE1BA17D32008FA7C9 /* UUImageAvatarBrowser.m */,
+				A1B88CEF1BA1785B008FA7C9 /* LeanCloud */,
+				A1B88CDC1BA17843008FA7C9 /* MJRefresh */,
 				A1B88CC91BA16A6C008FA7C9 /* VoiceLib */,
 				A1B88CA31BA16A55008FA7C9 /* pic */,
 			);
@@ -554,6 +605,7 @@
 			children = (
 				A19D094F1B7C2DF100094B81 /* Info.plist */,
 				A19D093F1B7C2DF100094B81 /* main.m */,
+				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -743,6 +795,32 @@
 			path = VoiceLib;
 			sourceTree = "<group>";
 		};
+		A1B88CDC1BA17843008FA7C9 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				A1B88CDD1BA17843008FA7C9 /* MJRefresh.bundle */,
+				A1B88CDE1BA17843008FA7C9 /* MJRefresh.h */,
+				A1B88CDF1BA17843008FA7C9 /* MJRefreshBaseView.h */,
+				A1B88CE01BA17843008FA7C9 /* MJRefreshBaseView.m */,
+				A1B88CE11BA17843008FA7C9 /* MJRefreshConst.h */,
+				A1B88CE21BA17843008FA7C9 /* MJRefreshConst.m */,
+				A1B88CE31BA17843008FA7C9 /* MJRefreshFooterView.h */,
+				A1B88CE41BA17843008FA7C9 /* MJRefreshFooterView.m */,
+				A1B88CE51BA17843008FA7C9 /* MJRefreshHeaderView.h */,
+				A1B88CE61BA17843008FA7C9 /* MJRefreshHeaderView.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		A1B88CEF1BA1785B008FA7C9 /* LeanCloud */ = {
+			isa = PBXGroup;
+			children = (
+				A1B88CF01BA1785B008FA7C9 /* LeanMessageManager.h */,
+				A1B88CF11BA1785B008FA7C9 /* LeanMessageManager.m */,
+			);
+			path = LeanCloud;
+			sourceTree = "<group>";
+		};
 		A1BE7F471B8DAF8500E76711 /* 个人中心左边 */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,10 +905,20 @@
 				A187AD691BA0014700BBA856 /* chatTableViewCell.h */,
 				A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */,
 				A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */,
+				A1B88CD31BA177B8008FA7C9 /* UUMessageCell.h */,
+				A1B88CD41BA177B8008FA7C9 /* UUMessageCell.m */,
 				A1B88C9F1BA165AD008FA7C9 /* UUInputFunctionView.h */,
 				A1B88CA01BA165AD008FA7C9 /* UUInputFunctionView.m */,
 				A1B88CD01BA16A91008FA7C9 /* UUProgressHUD.h */,
 				A1B88CD11BA16A91008FA7C9 /* UUProgressHUD.m */,
+				A1B88CD61BA177E5008FA7C9 /* UUMessageContentButton.h */,
+				A1B88CD71BA177E5008FA7C9 /* UUMessageContentButton.m */,
+				A1B88CD81BA177E5008FA7C9 /* UUMessageFrame.h */,
+				A1B88CD91BA177E5008FA7C9 /* UUMessageFrame.m */,
+				A1B88CF31BA179B0008FA7C9 /* ChatModel.h */,
+				A1B88CF41BA179B0008FA7C9 /* ChatModel.m */,
+				A1B88CF61BA179C7008FA7C9 /* UUMessage.h */,
+				A1B88CF71BA179C7008FA7C9 /* UUMessage.m */,
 			);
 			name = "聊天";
 			sourceTree = "<group>";
@@ -968,6 +1056,7 @@
 				A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
+				A1B88CE91BA17843008FA7C9 /* MJRefresh.bundle in Resources */,
 				A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */,
 				A1B88CBF1BA16A55008FA7C9 /* Chat_record_circle.png in Resources */,
 				A1B88CBD1BA16A55008FA7C9 /* chat_ipunt_message.png in Resources */,
@@ -1072,40 +1161,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B88CEC1BA17843008FA7C9 /* MJRefreshFooterView.m in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1C3EDD01B9E84510023AB6E /* notification.m in Sources */,
+				A1B88CF51BA179B0008FA7C9 /* ChatModel.m in Sources */,
 				A187AD6C1BA0014700BBA856 /* chatTableViewCell.m in Sources */,
+				A1B88CEE1BA17843008FA7C9 /* NSDate+Utils.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
+				A1B88CEB1BA17843008FA7C9 /* MJRefreshConst.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
 				A1B88CD21BA16A91008FA7C9 /* UUProgressHUD.m in Sources */,
 				A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */,
 				A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
+				A1B88CFC1BA17B75008FA7C9 /* UUAVAudioPlayer.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */,
+				A1B88CED1BA17843008FA7C9 /* MJRefreshHeaderView.m in Sources */,
 				A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
 				A1C3EDDD1B9EB7050023AB6E /* replyViewController.m in Sources */,
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
+				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
+				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,
 				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
 				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
 				A1B88CCF1BA16A6C008FA7C9 /* Mp3Recorder.m in Sources */,
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
+				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
+				A1B88CDB1BA177E5008FA7C9 /* UUMessageFrame.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A1D78E221B9D96BB00C136C3 /* message.m in Sources */,
 				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
+				A1B88CF81BA179C7008FA7C9 /* UUMessage.m in Sources */,
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
+				A1B88CFF1BA17D32008FA7C9 /* UUImageAvatarBrowser.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
@@ -1113,6 +1214,7 @@
 				A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
+				A1B88CD51BA177B8008FA7C9 /* UUMessageCell.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1256,6 +1358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/touwho_iPad/PrefixHeader.pch";
 				INFOPLIST_FILE = touwho_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1276,6 +1379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/touwho_iPad/PrefixHeader.pch";
 				INFOPLIST_FILE = touwho_iPad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

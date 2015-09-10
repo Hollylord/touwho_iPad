@@ -39,16 +39,41 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    //利用响应者链条获得这个view的控制器
-    UIViewController* controller = [self viewController];
-    sixinViewController *sixinVC = [[sixinViewController alloc] initWithNibName:@"sixinViewController" bundle:nil];
-    sixinVC.modalPresentationStyle = UIModalPresentationFormSheet;
-    //弹出回复控制器 界面
-    [controller presentViewController:sixinVC animated:YES completion:NULL];
+    [self openSessionByClientId:kMichaelClientID navigationToIMWithTargetClientIDs:@[kLindaClientID]];
+    
     
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
+}
+
+- (void)openSessionByClientId:(NSString*)clientId navigationToIMWithTargetClientIDs:(NSArray *)clientIDs {
+    [[LeanMessageManager manager] openSessionWithClientID:clientId completion:^(BOOL succeeded, NSError *error) {
+        if(!error){
+            ConversationType type;
+            if(clientIDs.count>1){
+                type=ConversationTypeGroup;
+            }else{
+                type=ConversationTypeOneToOne;
+            }
+            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:type completion:^(AVIMConversation *conversation, NSError *error) {
+                if(error){
+                    NSLog(@"error=%@",error);
+                }else{
+                    sixinViewController *vc=[[sixinViewController alloc] initWithConversation:conversation];
+                    vc.modalPresentationStyle = UIModalPresentationFormSheet;
+                    //利用响应者链条获得这个view的控制器
+                    UIViewController* controller = [self viewController];
+                    
+                    //弹出回复控制器 界面
+                    [controller presentViewController:vc animated:YES completion:NULL];
+                }
+            }];
+        }else{
+            NSLog(@"error=%@",error);
+        }
+    }];
 }
 
 //获得当前view的控制器

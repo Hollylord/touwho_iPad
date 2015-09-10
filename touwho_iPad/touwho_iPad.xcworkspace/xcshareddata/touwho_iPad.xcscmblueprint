@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EC30F90B8D57BEED783206D5EE1D32688A5531AE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "646fb212-6d06-11e3-a2a4-57cd746879f3++1155" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "646fb212-6d06-11e3-a2a4-57cd746879f3++1155" : 0,
+    "EC30F90B8D57BEED783206D5EE1D32688A5531AE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2B674F42-730F-4D8F-99A2-6E4C56628E0C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "646fb212-6d06-11e3-a2a4-57cd746879f3++1155" : "touwho_iPad\/touwho_iPad\/touwho_iPad\/MJRefresh\/MJRefresh.bundle\/",
+    "EC30F90B8D57BEED783206D5EE1D32688A5531AE" : "touwho_iPad\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "touwho_iPad",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "touwho_iPad\/touwho_iPad.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/192.168.0.179\/BloodSugar",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "646fb212-6d06-11e3-a2a4-57cd746879f3++1155"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Hollylord\/touwho_iPad.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EC30F90B8D57BEED783206D5EE1D32688A5531AE"
+    }
+  ]
+}

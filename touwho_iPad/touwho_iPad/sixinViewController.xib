@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="sixinViewController">
             <connections>
                 <outlet property="bottomConstraint" destination="Lcc-Lg-2zi" id="IOt-Df-aTd"/>
-                <outlet property="tableView" destination="tpU-sJ-Gwy" id="dde-HZ-ax7"/>
+                <outlet property="chatTableView" destination="tpU-sJ-Gwy" id="aLI-jI-w5f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +20,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <items>
                         <navigationItem title="Title" id="s5n-Wl-3mm">
-                            <barButtonItem key="leftBarButtonItem" title="取消" id="8jp-zy-zrk">
-                                <connections>
-                                    <action selector="cancel:" destination="-1" id="7AW-rG-8H3"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem key="leftBarButtonItem" title="取消" id="8jp-zy-zrk"/>
                         </navigationItem>
                     </items>
                 </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tpU-sJ-Gwy">
                     <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="het-GV-7k7"/>
+                        <outlet property="delegate" destination="-1" id="GlS-w6-iRh"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
