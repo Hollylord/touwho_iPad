@@ -39,6 +39,9 @@
     
     //注册通知观察者
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(turn2shipinController) name:@"playNotification" object:nil];
+    
+    [self buttonClick:self.discussion];
+    
 }
 
 - (void)didReceiveMemoryWarning {

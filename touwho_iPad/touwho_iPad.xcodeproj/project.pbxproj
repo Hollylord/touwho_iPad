@@ -68,15 +68,6 @@
 		A1BE7F121B8D557600E76711 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F111B8D557600E76711 /* AudioToolbox.framework */; };
 		A1BE7F141B8D558200E76711 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F131B8D558200E76711 /* SystemConfiguration.framework */; };
 		A1BE7F161B8D558A00E76711 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F151B8D558A00E76711 /* AVFoundation.framework */; };
-		A1BE7F181B8D55D800E76711 /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F171B8D55D800E76711 /* Headers */; };
-		A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F1D1B8D56DD00E76711 /* BDVoiceRecognitionClientResources */; };
-		A1BE7F211B8D571800E76711 /* BDVRSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F201B8D571800E76711 /* BDVRSConfig.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A1BE7F251B8D5C7F00E76711 /* libBDVoiceRecognitionClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BE7F191B8D564700E76711 /* libBDVoiceRecognitionClient.a */; };
-		A1BE7F3B1B8D5DA100E76711 /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F2E1B8D5DA100E76711 /* CADebugMacros.cpp */; };
-		A1BE7F3C1B8D5DA100E76711 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F311B8D5DA100E76711 /* CAStreamBasicDescription.cpp */; };
-		A1BE7F3D1B8D5DA100E76711 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F331B8D5DA100E76711 /* CAXException.cpp */; };
-		A1BE7F3E1B8D5DA100E76711 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F371B8D5DA100E76711 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A1BE7F3F1B8D5DA100E76711 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */; };
 		A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F401B8D90F300E76711 /* meLeft.xib */; };
 		A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BE7F421B8D962100E76711 /* meLeftCell.xib */; };
 		A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = A1BE7F451B8DA5CE00E76711 /* meLeft.m */; };
@@ -221,22 +212,6 @@
 		A1BE7F111B8D557600E76711 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A1BE7F131B8D558200E76711 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A1BE7F151B8D558A00E76711 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A1BE7F171B8D55D800E76711 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Headers; sourceTree = "<group>"; };
-		A1BE7F191B8D564700E76711 /* libBDVoiceRecognitionClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBDVoiceRecognitionClient.a; sourceTree = "<group>"; };
-		A1BE7F1D1B8D56DD00E76711 /* BDVoiceRecognitionClientResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BDVoiceRecognitionClientResources; path = "../../../../Downloads/Baidu-Voice-SDK-iOS-1.6.1/Baidu-Voice-SDK-iOS-1.6.1/BDVoiceRecognitionClientResources"; sourceTree = "<group>"; };
-		A1BE7F1F1B8D571800E76711 /* BDVRSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDVRSConfig.h; sourceTree = "<group>"; };
-		A1BE7F201B8D571800E76711 /* BDVRSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDVRSConfig.m; sourceTree = "<group>"; };
-		A1BE7F2E1B8D5DA100E76711 /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
-		A1BE7F2F1B8D5DA100E76711 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
-		A1BE7F301B8D5DA100E76711 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
-		A1BE7F311B8D5DA100E76711 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
-		A1BE7F321B8D5DA100E76711 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
-		A1BE7F331B8D5DA100E76711 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
-		A1BE7F341B8D5DA100E76711 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
-		A1BE7F361B8D5DA100E76711 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		A1BE7F371B8D5DA100E76711 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		A1BE7F391B8D5DA100E76711 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
-		A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		A1BE7F401B8D90F300E76711 /* meLeft.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = meLeft.xib; sourceTree = "<group>"; };
 		A1BE7F421B8D962100E76711 /* meLeftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = meLeftCell.xib; sourceTree = "<group>"; };
 		A1BE7F441B8DA5CE00E76711 /* meLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = meLeft.h; sourceTree = "<group>"; };
@@ -285,7 +260,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BE7F251B8D5C7F00E76711 /* libBDVoiceRecognitionClient.a in Frameworks */,
 				A1BE7F161B8D558A00E76711 /* AVFoundation.framework in Frameworks */,
 				A1BE7F141B8D558200E76711 /* SystemConfiguration.framework in Frameworks */,
 				A1BE7F121B8D557600E76711 /* AudioToolbox.framework in Frameworks */,
@@ -444,7 +418,6 @@
 		A17C9A7B1B8C6FBA00F5677C /* library */ = {
 			isa = PBXGroup;
 			children = (
-				A1BE7F221B8D572000E76711 /* 百度语音 */,
 				A17C9A7C1B8C6FCC00F5677C /* UIView+Extension.h */,
 				A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */,
 			);
@@ -671,61 +644,6 @@
 				A1B88C9D1BA15EF8008FA7C9 /* jigou.xib */,
 			);
 			name = "机构专题";
-			sourceTree = "<group>";
-		};
-		A1BE7F221B8D572000E76711 /* 百度语音 */ = {
-			isa = PBXGroup;
-			children = (
-				A1BE7F2C1B8D5DA100E76711 /* Third-party */,
-				A1BE7F1F1B8D571800E76711 /* BDVRSConfig.h */,
-				A1BE7F201B8D571800E76711 /* BDVRSConfig.m */,
-				A1BE7F1D1B8D56DD00E76711 /* BDVoiceRecognitionClientResources */,
-				A1BE7F191B8D564700E76711 /* libBDVoiceRecognitionClient.a */,
-				A1BE7F171B8D55D800E76711 /* Headers */,
-			);
-			name = "百度语音";
-			sourceTree = "<group>";
-		};
-		A1BE7F2C1B8D5DA100E76711 /* Third-party */ = {
-			isa = PBXGroup;
-			children = (
-				A1BE7F2D1B8D5DA100E76711 /* CoreAudioUtility */,
-				A1BE7F351B8D5DA100E76711 /* JSONKit-master */,
-				A1BE7F381B8D5DA100E76711 /* TTTAttributedLabel */,
-			);
-			path = "Third-party";
-			sourceTree = "<group>";
-		};
-		A1BE7F2D1B8D5DA100E76711 /* CoreAudioUtility */ = {
-			isa = PBXGroup;
-			children = (
-				A1BE7F2E1B8D5DA100E76711 /* CADebugMacros.cpp */,
-				A1BE7F2F1B8D5DA100E76711 /* CADebugMacros.h */,
-				A1BE7F301B8D5DA100E76711 /* CAMath.h */,
-				A1BE7F311B8D5DA100E76711 /* CAStreamBasicDescription.cpp */,
-				A1BE7F321B8D5DA100E76711 /* CAStreamBasicDescription.h */,
-				A1BE7F331B8D5DA100E76711 /* CAXException.cpp */,
-				A1BE7F341B8D5DA100E76711 /* CAXException.h */,
-			);
-			path = CoreAudioUtility;
-			sourceTree = "<group>";
-		};
-		A1BE7F351B8D5DA100E76711 /* JSONKit-master */ = {
-			isa = PBXGroup;
-			children = (
-				A1BE7F361B8D5DA100E76711 /* JSONKit.h */,
-				A1BE7F371B8D5DA100E76711 /* JSONKit.m */,
-			);
-			path = "JSONKit-master";
-			sourceTree = "<group>";
-		};
-		A1BE7F381B8D5DA100E76711 /* TTTAttributedLabel */ = {
-			isa = PBXGroup;
-			children = (
-				A1BE7F391B8D5DA100E76711 /* TTTAttributedLabel.h */,
-				A1BE7F3A1B8D5DA100E76711 /* TTTAttributedLabel.m */,
-			);
-			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
 		A1BE7F471B8DAF8500E76711 /* 个人中心左边 */ = {
@@ -955,13 +873,11 @@
 				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
 				A1C3EDD51B9E8D250023AB6E /* privateMessage.xib in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
-				A1BE7F181B8D55D800E76711 /* Headers in Resources */,
 				A1D78E1F1B9D945F00C136C3 /* commentCell.xib in Resources */,
 				A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */,
 				A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */,
 				A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
-				A1BE7F1E1B8D56DD00E76711 /* BDVoiceRecognitionClientResources in Resources */,
 				A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */,
 				A187AD6D1BA0014700BBA856 /* chatTableViewCell.xib in Resources */,
 				A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */,
@@ -1037,14 +953,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BE7F3D1B8D5DA100E76711 /* CAXException.cpp in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1C3EDD01B9E84510023AB6E /* notification.m in Sources */,
 				A187AD6C1BA0014700BBA856 /* chatTableViewCell.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
-				A1BE7F3E1B8D5DA100E76711 /* JSONKit.m in Sources */,
-				A1BE7F3C1B8D5DA100E76711 /* CAStreamBasicDescription.cpp in Sources */,
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
@@ -1053,7 +966,6 @@
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */,
-				A1BE7F3B1B8D5DA100E76711 /* CADebugMacros.cpp in Sources */,
 				A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */,
 				A13259371B83339300A327C6 /* leftViewController.m in Sources */,
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
@@ -1068,7 +980,6 @@
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
-				A1BE7F3F1B8D5DA100E76711 /* TTTAttributedLabel.m in Sources */,
 				A1D78E221B9D96BB00C136C3 /* message.m in Sources */,
 				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
@@ -1079,7 +990,6 @@
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
-				A1BE7F211B8D571800E76711 /* BDVRSConfig.m in Sources */,
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 			);
