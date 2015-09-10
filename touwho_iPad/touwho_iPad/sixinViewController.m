@@ -15,6 +15,8 @@
 @interface sixinViewController () <UITableViewDataSource,UITableViewDelegate,AVIMClientDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomOfinput;
+
 
 - (IBAction)sendMessage:(UIButton *)sender;
 
@@ -27,10 +29,20 @@
  *  最近接受的消息
  */
 @property (strong,nonatomic) NSMutableArray *recentMessages;
-
+/**
+ *  所有cell的高度
+ */
+@property (strong,nonatomic) NSMutableArray *cellHeights;
 @end
 
 @implementation sixinViewController
+- (NSMutableArray *)cellHeights{
+    if (!_cellHeights) {
+        _cellHeights = [NSMutableArray array];
+    }
+    return  _cellHeights;
+}
+
 - (NSMutableArray *)recentMessages{
     if (!_recentMessages) {
         _recentMessages = [NSMutableArray array];
@@ -41,14 +53,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //配置tableview
     [self.tableView registerNib:[UINib nibWithNibName:@"chatTableViewCell" bundle:nil] forCellReuseIdentifier:@"chatCell"];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
-    //开启聊天客户端
+    //创建聊天客户端
     AVIMClient *imClient = [[AVIMClient alloc] init];
     imClient.delegate = self;
     self.client = imClient;
+    [self creatClient];
     
-    [imClient openWithClientId:@"Tom" callback:^(BOOL succeeded, NSError *error){
+    // 通知中心 在这里；  监听键盘；
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/**
+ *  开启IM客户端
+ */
+- (void) creatClient{
+    [self.client openWithClientId:@"Tom" callback:^(BOOL succeeded, NSError *error){
         if (error) {
             // 出错了，可能是网络问题无法连接 LeanCloud 云端，请检查网络之后重试。
             // 此时聊天服务不可用。
@@ -65,7 +98,7 @@
             //查询会话
             if (conversationID) {
                 // 新建一个 AVIMConversationQuery 实例
-            AVIMConversationQuery *query = [imClient conversationQuery];
+                AVIMConversationQuery *query = [self.client conversationQuery];
                 [query whereKey:kAVIMKeyConversationId equalTo:@"55eeb48260b23c9d6ff16fd4"];
                 [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
                     //查到了以前的会话
@@ -76,7 +109,13 @@
                             for (AVIMMessage *message in objects) {
                                 [self.recentMessages addObject:message];
                                 
+                                //通过消息，计算cell的高度
+                                NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:20]};
+                                CGSize msgSize = [message.content boundingRectWithSize:CGSizeMake(400, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil].size;
+                                NSString *height = [NSString stringWithFormat:@"%f",msgSize.height + 50];
+                                [self.cellHeights addObject:height];
                             }
+                            
                             [self.tableView reloadData];
                         }];
                     }
@@ -88,19 +127,11 @@
                 //这里私信肯定都是以前的会话 不能创建新会话
                 [self creatSession];
             }
-
+            
         }
     }];
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (void)viewWillAppear:(BOOL)animated {
-    
-}
 #pragma mark -
 /**
  *  创建新会话
@@ -112,7 +143,6 @@
     // 我们给对话增加一个自定义属性 type，表示单聊还是群聊
     // 常量定义：
     const int kConversationType_OneOne = 0; // 表示一对一的单聊
-    const int kConversationType_Group = 1;  // 表示多人群聊
     [self.client createConversationWithName:nil clientIds:clientIds attributes:@{@"type":[NSNumber numberWithInt:kConversationType_OneOne]} options:AVIMConversationOptionNone
         callback:^(AVIMConversation *conversation, NSError *error) {
     if (error) {
@@ -151,8 +181,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     chatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"chatCell" forIndexPath:indexPath];
     cell.clientID = self.client.clientId;
+  
     cell.message = self.recentMessages[indexPath.row];
-    [cell.contentView layoutIfNeeded];
+    
     
     return cell;
 }
@@ -164,7 +195,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    NSString *height = self.cellHeights[indexPath.row];
+    
+    return [height floatValue];
 }
 
 
@@ -177,7 +210,9 @@
     [self.conversation sendMessage:abc callback:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"发送成功");
-            self.oldMsgID = abc.messageId;
+            
+            [self.recentMessages addObject:abc];
+            [self.tableView reloadData];
             
         }
     }];
@@ -195,4 +230,29 @@
 - (void)conversation:(AVIMConversation *)conversation didReceiveCommonMessage:(AVIMMessage *)message{
     NSLog(@"%@",message.content);
 }
+
+#pragma mark - 监听键盘Frame变化
+// 监听成功后 会调用的方法；
+-(void)keyboardDidChangeFrame:(NSNotification *)noti{
+    // transform 平移缩放；
+    CGRect frame=[noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat keyY =frame.origin.y;   // 键盘的实时Y。
+    CGFloat keyDuration = [noti.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue]; //KEYB的持续时间
+    [UIView animateWithDuration:keyDuration animations:^{
+        if (keyY != 768) {
+            self.bottomOfinput.constant = keyY - 100;
+            [self.view layoutIfNeeded];
+            
+            NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.recentMessages.count - 1 inSection:0];
+            [self.tableView scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        }
+        else{
+            self.bottomOfinput.constant = 0;
+            [self.view layoutIfNeeded];
+        }
+        
+    }];
+}
+
 @end

@@ -22,4 +22,5 @@
 @property (copy,nonatomic) NSString *clientID;
 @property (strong,nonatomic) UIImageView *icon;
 @property (strong,nonatomic) UIButton *information;
+
 @end

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="sixinViewController">
             <connections>
+                <outlet property="bottomOfinput" destination="SNN-i5-Iri" id="wDN-uS-KjE"/>
                 <outlet property="inputField" destination="nfq-80-6Mh" id="1fq-cI-JjT"/>
                 <outlet property="tableView" destination="tpU-sJ-Gwy" id="dde-HZ-ax7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,10 +32,6 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tpU-sJ-Gwy">
                     <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="GQW-WC-IuO"/>
-                        <outlet property="delegate" destination="-1" id="StH-9g-EO8"/>
-                    </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsC-Ig-Bg8">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
