@@ -23,8 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *footage;
 @property (weak, nonatomic) IBOutlet UIButton *discussion;//圈子
-@property (weak, nonatomic) IBOutlet UIButton *institutions;
-@property (weak, nonatomic) IBOutlet UIButton *reviews;
+
 
 
 
@@ -84,9 +83,8 @@
     //点击视频路演按钮
     if (sender.tag == 1 && sender.selected == NO) {
         sender.selected = YES;
-        self.institutions.selected = NO;
         self.discussion.selected = NO;
-        self.reviews.selected = NO;
+        
         [self.contentView removeFromSuperview];
         self.contentView = nil;
         [self.view addSubview:self.contentView];
@@ -100,8 +98,6 @@
     {
         sender.selected = YES;
         self.footage.selected = NO;
-        self.institutions.selected = NO;
-        self.reviews.selected = NO;
         
         //添加圈子
         [self.contentView removeFromSuperview];

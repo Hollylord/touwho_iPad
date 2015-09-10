@@ -77,6 +77,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark -
 /**
  *  开启IM客户端
  */
@@ -132,7 +138,6 @@
     }];
 }
 
-#pragma mark -
 /**
  *  创建新会话
  */
@@ -164,6 +169,7 @@
     }
         }];
 }
+
 
 #pragma mark - tableView代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -770,7 +770,7 @@
                                 <rect key="frame" x="100" y="0.0" width="400" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
-                                        <rect key="frame" x="0.0" y="70" width="27" height="30"/>
+                                        <rect key="frame" x="0.0" y="70" width="60" height="30"/>
                                         <state key="normal" title="投壶活动"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="70" width="60" height="30"/>
@@ -780,7 +780,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
-                                        <rect key="frame" x="77" y="70" width="60" height="30"/>
+                                        <rect key="frame" x="178" y="70" width="60" height="30"/>
                                         <state key="normal" title="视频路演"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="135" y="70" width="60" height="30"/>
@@ -790,33 +790,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
-                                        <rect key="frame" x="187" y="70" width="26" height="30"/>
+                                        <rect key="frame" x="370" y="70" width="30" height="30"/>
                                         <state key="normal" title="圈子"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="285" y="70" width="30" height="30"/>
                                         </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-or-ygN">
-                                        <rect key="frame" x="263" y="70" width="60" height="30"/>
-                                        <state key="normal" title="机构专题"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="405" y="70" width="60" height="30"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="zV0-nN-ocJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brZ-HG-tEg">
-                                        <rect key="frame" x="373" y="70" width="27" height="30"/>
-                                        <state key="normal" title="牛人观点"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="540" y="70" width="60" height="30"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="Wde-gf-9fE"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -848,9 +828,7 @@
                     <connections>
                         <outlet property="discussion" destination="S9R-wC-daW" id="I04-p0-DkE"/>
                         <outlet property="footage" destination="xdF-cn-FPy" id="mc5-M4-5G6"/>
-                        <outlet property="institutions" destination="3m0-or-ygN" id="iyg-HS-VsC"/>
                         <outlet property="line" destination="S61-Ex-FFa" id="a2P-3D-9KT"/>
-                        <outlet property="reviews" destination="brZ-HG-tEg" id="xAh-5L-7wh"/>
                         <segue destination="SsC-1w-ZeR" kind="show" identifier="discovery2shipinViewController" id="Fq9-rG-GrD"/>
                         <segue destination="Eet-V0-c8f" kind="show" identifier="discovery2themes" id="6r6-jS-Wqj"/>
                     </connections>

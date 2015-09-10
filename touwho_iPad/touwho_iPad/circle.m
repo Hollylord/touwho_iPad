@@ -26,7 +26,7 @@
         UIView *view2 = [[[NSBundle mainBundle] loadNibNamed:@"topics" owner:nil options:nil]firstObject];
         [self.views addObject:view2];
         
-        UIView *view3 = [[[NSBundle mainBundle] loadNibNamed:@"sixin" owner:nil options:nil]firstObject];
+        UIView *view3 = [[[NSBundle mainBundle] loadNibNamed:@"jigou" owner:nil options:nil]firstObject];
         [self.views addObject:view3];
         
     }
