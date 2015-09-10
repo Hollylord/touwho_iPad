@@ -44,6 +44,13 @@
  *  查看消息
  */
 - (IBAction)message:(UIButton *)sender;
+- (IBAction)headClick:(UIButton *)sender;
+
+
+/**
+ *  通知控制器头像被点击
+ */
+@property (copy,nonatomic) void (^headIconClick)();
 
 
 @end

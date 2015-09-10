@@ -14,13 +14,6 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Opy-GK-SVt">
-                    <rect key="frame" x="30" y="66" width="100" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="4JN-rW-lGI"/>
-                        <constraint firstAttribute="width" constant="100" id="Mtu-SJ-FjO"/>
-                    </constraints>
-                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KFX-fE-VOB">
                     <rect key="frame" x="0.0" y="174" width="300" height="441"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,20 +29,32 @@
                         <action selector="message:" destination="iN0-l3-epB" eventType="touchUpInside" id="nrR-ZI-bOV"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-HP-Jr1">
+                    <rect key="frame" x="16" y="63" width="97" height="91"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="91" id="7lg-IJ-obM"/>
+                        <constraint firstAttribute="width" constant="97" id="Rmh-7v-0Cx"/>
+                    </constraints>
+                    <state key="normal" title="头像"/>
+                    <connections>
+                        <action selector="headClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="7fj-Em-ScF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>
-                <constraint firstItem="Opy-GK-SVt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="6km-WZ-0O2"/>
                 <constraint firstAttribute="trailing" secondItem="KFX-fE-VOB" secondAttribute="trailing" id="HIq-Jd-zYC"/>
-                <constraint firstItem="Opy-GK-SVt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="Iik-sh-oEt"/>
-                <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="Opy-GK-SVt" secondAttribute="bottom" constant="8" id="Njy-56-dA5"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="101" id="Tqg-QC-MSp"/>
-                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Opy-GK-SVt" secondAttribute="trailing" constant="61" id="f5z-Fv-2Sm"/>
+                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="4aa-HP-Jr1" secondAttribute="trailing" constant="78" id="iXD-dp-2Cb"/>
+                <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="4aa-HP-Jr1" secondAttribute="bottom" constant="20" id="kK5-kf-ZYM"/>
+                <constraint firstItem="4aa-HP-Jr1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="qNy-87-Jh9"/>
+                <constraint firstItem="4aa-HP-Jr1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="63" id="xeB-Cb-NkV"/>
                 <constraint firstAttribute="bottom" secondItem="KFX-fE-VOB" secondAttribute="bottom" constant="153" id="xsJ-cH-Dvg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <nil key="simulatedTopBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

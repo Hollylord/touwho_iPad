@@ -45,7 +45,6 @@
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
 		A187AD6C1BA0014700BBA856 /* chatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */; };
 		A187AD6D1BA0014700BBA856 /* chatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */; };
-		A187AD701BA0023B00BBA856 /* chatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A187AD6F1BA0023B00BBA856 /* chatModel.m */; };
 		A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A198E3C41B96D52700BB060E /* program2ViewController.m */; };
 		A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A198E3C51B96D52700BB060E /* program2ViewController.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
@@ -110,6 +109,8 @@
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
+		A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */; };
+		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
 		A1F61D601B942FD600AB89FF /* news2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F61D5F1B942FD600AB89FF /* news2Cell.xib */; };
 /* End PBXBuildFile section */
 
@@ -193,8 +194,6 @@
 		A187AD691BA0014700BBA856 /* chatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatTableViewCell.h; sourceTree = "<group>"; };
 		A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatTableViewCell.m; sourceTree = "<group>"; };
 		A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatTableViewCell.xib; sourceTree = "<group>"; };
-		A187AD6E1BA0023B00BBA856 /* chatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatModel.h; sourceTree = "<group>"; };
-		A187AD6F1BA0023B00BBA856 /* chatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatModel.m; sourceTree = "<group>"; };
 		A198E3C31B96D52700BB060E /* program2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program2ViewController.h; sourceTree = "<group>"; };
 		A198E3C41B96D52700BB060E /* program2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = program2ViewController.m; sourceTree = "<group>"; };
 		A198E3C51B96D52700BB060E /* program2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = program2ViewController.xib; sourceTree = "<group>"; };
@@ -292,6 +291,9 @@
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
 		A1DAFAB91B8C37BE00189680 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
 		A1DAFABA1B8C37BE00189680 /* circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circle.m; sourceTree = "<group>"; };
+		A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherCenterViewController.h; sourceTree = "<group>"; };
+		A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherCenterViewController.m; sourceTree = "<group>"; };
+		A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherCenterViewController.xib; sourceTree = "<group>"; };
 		A1F61D5F1B942FD600AB89FF /* news2Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = news2Cell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -443,35 +445,16 @@
 			name = "私信";
 			sourceTree = "<group>";
 		};
-		A132592F1B8306CE00A327C6 /* controller */ = {
+		A13259301B8306E100A327C6 /* 我 */ = {
 			isa = PBXGroup;
 			children = (
+				A1E6EB381BA13404005D4E6F /* 他人中心 */,
 				A1C3EDE11B9EB72B0023AB6E /* 登录 */,
 				A1C3EDE01B9EB7230023AB6E /* 个人中心 */,
 				A1C3EDDF1B9EB7090023AB6E /* 回复通知 */,
 				A1C3EDE71B9EBB730023AB6E /* 聊天 */,
 			);
-			name = controller;
-			sourceTree = "<group>";
-		};
-		A13259301B8306E100A327C6 /* 我 */ = {
-			isa = PBXGroup;
-			children = (
-				A187AD641B9FFCE900BBA856 /* model */,
-				A13259311B8306E900A327C6 /* view */,
-				A132592F1B8306CE00A327C6 /* controller */,
-			);
 			name = "我";
-			sourceTree = "<group>";
-		};
-		A13259311B8306E900A327C6 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				A1BE7F471B8DAF8500E76711 /* 个人中心左边 */,
-				A1BE7F481B8DAF8F00E76711 /* 个人中心右边 */,
-				A1D78DD71B9D5A8200C136C3 /* 注册与忘记密码 */,
-			);
-			name = view;
 			sourceTree = "<group>";
 		};
 		A13EEA871B8EF7A60052C2A7 /* 新闻 */ = {
@@ -526,13 +509,6 @@
 				A1002B1B1B857581007520AA /* shipinView.xib */,
 			);
 			name = "视频";
-			sourceTree = "<group>";
-		};
-		A187AD641B9FFCE900BBA856 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = model;
 			sourceTree = "<group>";
 		};
 		A187AD661B9FFE5800BBA856 /* 私信列表 */ = {
@@ -794,6 +770,8 @@
 		A1BE7F481B8DAF8F00E76711 /* 个人中心右边 */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE7F4B1B8DB2AC00E76711 /* meRight.h */,
+				A1BE7F4C1B8DB2AC00E76711 /* meRight.m */,
 				A1C3EDD91B9EB61C0023AB6E /* 个人详情 */,
 				A1C3EDD81B9EB60D0023AB6E /* 消息 */,
 			);
@@ -813,8 +791,6 @@
 		A1C3EDD91B9EB61C0023AB6E /* 个人详情 */ = {
 			isa = PBXGroup;
 			children = (
-				A1BE7F4B1B8DB2AC00E76711 /* meRight.h */,
-				A1BE7F4C1B8DB2AC00E76711 /* meRight.m */,
 				A11451C31B8DC47700E45381 /* apply.xib */,
 				A1BE7F491B8DAFE100E76711 /* publish.xib */,
 				A11451C11B8DC31400E45381 /* programsCell.xib */,
@@ -836,6 +812,8 @@
 		A1C3EDE01B9EB7230023AB6E /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
+				A1BE7F471B8DAF8500E76711 /* 个人中心左边 */,
+				A1BE7F481B8DAF8F00E76711 /* 个人中心右边 */,
 				A1C07CD41B9C229B00A2F1CB /* profileViewController.h */,
 				A1C07CD51B9C229B00A2F1CB /* profileViewController.m */,
 				A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */,
@@ -848,6 +826,7 @@
 			children = (
 				A13259321B83071200A327C6 /* loginViewController.h */,
 				A13259331B83071200A327C6 /* loginViewController.m */,
+				A1D78DD71B9D5A8200C136C3 /* 注册与忘记密码 */,
 			);
 			name = "登录";
 			sourceTree = "<group>";
@@ -861,8 +840,6 @@
 				A187AD691BA0014700BBA856 /* chatTableViewCell.h */,
 				A187AD6A1BA0014700BBA856 /* chatTableViewCell.m */,
 				A187AD6B1BA0014700BBA856 /* chatTableViewCell.xib */,
-				A187AD6E1BA0023B00BBA856 /* chatModel.h */,
-				A187AD6F1BA0023B00BBA856 /* chatModel.m */,
 			);
 			name = "聊天";
 			sourceTree = "<group>";
@@ -878,6 +855,16 @@
 				A1D78DD51B9D342700C136C3 /* forgetPassword.xib */,
 			);
 			name = "注册与忘记密码";
+			sourceTree = "<group>";
+		};
+		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */,
+				A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */,
+				A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */,
+			);
+			name = "他人中心";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1014,6 +1001,7 @@
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
 				A1F61D601B942FD600AB89FF /* news2Cell.xib in Resources */,
+				A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
 				A1033BD31B8C487000FC8921 /* topics.xib in Resources */,
 				A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */,
@@ -1104,8 +1092,8 @@
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
+				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,
-				A187AD701BA0023B00BBA856 /* chatModel.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,

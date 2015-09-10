@@ -12,6 +12,7 @@
 - (void)awakeFromNib{
     UINib *nib = [UINib nibWithNibName:@"meLeftCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"meLeftCell"];
+    
 }
 #pragma mark - tableview代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -84,5 +85,11 @@
 - (IBAction)message:(UIButton *)sender {
     [self.delegate presentMessage];
     
+}
+
+- (IBAction)headClick:(UIButton *)sender {
+    if (self.headIconClick) {
+        self.headIconClick();
+    }
 }
 @end

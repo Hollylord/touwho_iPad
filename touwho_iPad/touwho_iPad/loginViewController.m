@@ -77,8 +77,9 @@
 - (IBAction)login:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
     profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
     splitViewController *split = (splitViewController *)self.presentingViewController;
-    [split showDetailViewController:viewcontroller sender:nil];
+    [split showDetailViewController:navigationController sender:nil];
     
     
 }

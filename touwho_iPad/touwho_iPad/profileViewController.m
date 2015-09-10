@@ -10,6 +10,7 @@
 #import "meRight.h"
 #import "meLeft.h"
 #import "notification.h"
+#import "OtherCenterViewController.h"
 
 @interface profileViewController ()
 @property (strong, nonatomic) IBOutlet meLeft *meLeftView;
@@ -24,9 +25,13 @@
     
     //添加左边view
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
-    me.backgroundColor = [UIColor redColor];
     [self.view addSubview:me];
     [self layoutForMe:me];
+    //实现点击头像操作
+    me.headIconClick = ^(){
+        OtherCenterViewController *otherVC = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
+        [self.navigationController pushViewController:otherVC animated:YES];
+    };
     
     //添加右边view
     meRight *meRightView = [[meRight alloc] init];
@@ -44,6 +49,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 #pragma mark - 布局
