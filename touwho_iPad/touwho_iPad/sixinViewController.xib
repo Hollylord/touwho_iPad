@@ -6,8 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="sixinViewController">
             <connections>
-                <outlet property="bottomOfinput" destination="SNN-i5-Iri" id="wDN-uS-KjE"/>
-                <outlet property="inputField" destination="nfq-80-6Mh" id="1fq-cI-JjT"/>
+                <outlet property="bottomConstraint" destination="Lcc-Lg-2zi" id="IOt-Df-aTd"/>
                 <outlet property="tableView" destination="tpU-sJ-Gwy" id="dde-HZ-ax7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,45 +32,14 @@
                     <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsC-Ig-Bg8">
-                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                    <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入私信内容" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-80-6Mh">
-                            <rect key="frame" x="28" y="8" width="433" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="433" id="VhW-tm-nrs"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hr-in-lrb">
-                            <rect key="frame" x="510" y="8" width="30" height="30"/>
-                            <state key="normal" title="发送"/>
-                            <connections>
-                                <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="Bo5-5T-UAI"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="0.88321738189999999" blue="0.2418502434" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="5Hr-in-lrb" firstAttribute="top" secondItem="EsC-Ig-Bg8" secondAttribute="top" constant="8" id="5Kj-DR-Twm"/>
-                        <constraint firstItem="5Hr-in-lrb" firstAttribute="leading" secondItem="nfq-80-6Mh" secondAttribute="trailing" constant="49" id="7Fd-t0-1Wf"/>
-                        <constraint firstItem="nfq-80-6Mh" firstAttribute="top" secondItem="EsC-Ig-Bg8" secondAttribute="top" constant="8" id="cMf-Nm-VHg"/>
-                        <constraint firstAttribute="height" constant="44" id="n6u-gk-6QX"/>
-                        <constraint firstItem="nfq-80-6Mh" firstAttribute="leading" secondItem="EsC-Ig-Bg8" secondAttribute="leading" constant="28" id="sPT-93-7GU"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="tpU-sJ-Gwy" secondAttribute="bottom" constant="44" id="Lcc-Lg-2zi"/>
                 <constraint firstItem="tpU-sJ-Gwy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QGC-Qj-BLe"/>
-                <constraint firstAttribute="bottom" secondItem="EsC-Ig-Bg8" secondAttribute="bottom" id="SNN-i5-Iri"/>
-                <constraint firstAttribute="trailing" secondItem="EsC-Ig-Bg8" secondAttribute="trailing" id="UFZ-VU-x4H"/>
                 <constraint firstItem="WnE-Es-7zc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VIu-ub-7cb"/>
                 <constraint firstItem="WnE-Es-7zc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZkZ-tA-zoC"/>
-                <constraint firstItem="EsC-Ig-Bg8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gd2-jl-mgN"/>
                 <constraint firstAttribute="trailing" secondItem="tpU-sJ-Gwy" secondAttribute="trailing" id="h40-X5-dfy"/>
-                <constraint firstItem="EsC-Ig-Bg8" firstAttribute="top" secondItem="tpU-sJ-Gwy" secondAttribute="bottom" id="nun-oJ-kpd"/>
                 <constraint firstAttribute="trailing" secondItem="WnE-Es-7zc" secondAttribute="trailing" id="rMP-oa-D0G"/>
                 <constraint firstItem="tpU-sJ-Gwy" firstAttribute="top" secondItem="WnE-Es-7zc" secondAttribute="bottom" id="yQX-vD-tTN"/>
             </constraints>

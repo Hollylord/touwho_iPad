@@ -9,16 +9,14 @@
 #import "sixinViewController.h"
 #import <AVOSCloudIM/AVOSCloudIM.h>
 #import "chatTableViewCell.h"
+#import "UUInputFunctionView.h"
 
 
 
-@interface sixinViewController () <UITableViewDataSource,UITableViewDelegate,AVIMClientDelegate>
+@interface sixinViewController () <UITableViewDataSource,UITableViewDelegate,AVIMClientDelegate,UUInputFunctionViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UITextField *inputField;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomOfinput;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
-
-- (IBAction)sendMessage:(UIButton *)sender;
 
 - (IBAction)cancel:(UIBarButtonItem *)sender;
 
@@ -36,6 +34,10 @@
 @end
 
 @implementation sixinViewController
+{
+    UUInputFunctionView *IFView;
+}
+
 - (NSMutableArray *)cellHeights{
     if (!_cellHeights) {
         _cellHeights = [NSMutableArray array];
@@ -58,6 +60,11 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    //添加输入框
+    IFView = [[UUInputFunctionView alloc]initWithSuperVC:self];
+    IFView.delegate = self;
+    [self.view addSubview:IFView];
+    
     //创建聊天客户端
     AVIMClient *imClient = [[AVIMClient alloc] init];
     imClient.delegate = self;
@@ -65,8 +72,9 @@
     [self creatClient];
     
     // 通知中心 在这里；  监听键盘；
-    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(keyboardDidChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    //add notification
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillHideNotification object:nil];
     
     
     
@@ -205,24 +213,32 @@
     
     return [height floatValue];
 }
-
+//tableView Scroll to bottom
+- (void)tableViewScrollToBottom
+{
+    if (self.recentMessages.count==0)
+        return;
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.recentMessages.count-1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+}
 
 #pragma mark - 按钮点击
-- (IBAction)sendMessage:(UIButton *)sender {
-    NSString *str = self.inputField.text;
-    self.inputField.text = nil;
-    
-    AVIMMessage *abc = [AVIMMessage messageWithContent:str];
-    [self.conversation sendMessage:abc callback:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"发送成功");
-            
-            [self.recentMessages addObject:abc];
-            [self.tableView reloadData];
-            
-        }
-    }];
-}
+//- (IBAction)sendMessage:(UIButton *)sender {
+//    NSString *str = self.inputField.text;
+//    self.inputField.text = nil;
+//    
+//    AVIMMessage *abc = [AVIMMessage messageWithContent:str];
+//    [self.conversation sendMessage:abc callback:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            NSLog(@"发送成功");
+//            
+//            [self.recentMessages addObject:abc];
+//            [self.tableView reloadData];
+//            
+//        }
+//    }];
+//}
 
 - (IBAction)cancel:(UIBarButtonItem *)sender {
     //结束客户端
@@ -239,26 +255,136 @@
 
 #pragma mark - 监听键盘Frame变化
 // 监听成功后 会调用的方法；
--(void)keyboardDidChangeFrame:(NSNotification *)noti{
-    // transform 平移缩放；
-    CGRect frame=[noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//-(void)keyboardDidChangeFrame:(NSNotification *)noti{
+//    // transform 平移缩放；
+//    CGRect frame=[noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    
+//    CGFloat keyY =frame.origin.y;   // 键盘的实时Y。
+//    CGFloat keyDuration = [noti.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue]; //KEYB的持续时间
+//    [UIView animateWithDuration:keyDuration animations:^{
+//        if (keyY != 768) {
+//            self.bottomOfinput.constant = keyY - 100;
+//            [self.view layoutIfNeeded];
+//            
+//            NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.recentMessages.count - 1 inSection:0];
+//            [self.tableView scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//        }
+//        else{
+//            self.bottomOfinput.constant = 0;
+//            [self.view layoutIfNeeded];
+//        }
+//        
+//    }];
+//}
+
+/**
+ *  监听键盘的变化
+ *
+ *  @param notification <#notification description#>
+ */
+-(void)keyboardChange:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    NSTimeInterval animationDuration;
+    UIViewAnimationCurve animationCurve;
+    CGRect keyboardEndFrame;
     
-    CGFloat keyY =frame.origin.y;   // 键盘的实时Y。
-    CGFloat keyDuration = [noti.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue]; //KEYB的持续时间
-    [UIView animateWithDuration:keyDuration animations:^{
-        if (keyY != 768) {
-            self.bottomOfinput.constant = keyY - 100;
-            [self.view layoutIfNeeded];
-            
-            NSIndexPath *lastIndex = [NSIndexPath indexPathForRow:self.recentMessages.count - 1 inSection:0];
-            [self.tableView scrollToRowAtIndexPath:lastIndex atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-        }
-        else{
-            self.bottomOfinput.constant = 0;
-            [self.view layoutIfNeeded];
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndFrame];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    [UIView setAnimationCurve:animationCurve];
+    
+    //adjust ChatTableView's height
+    if (notification.name == UIKeyboardWillShowNotification) {
+        self.bottomConstraint.constant = keyboardEndFrame.origin.y -64;
+        CGFloat delta = self.bottomConstraint.constant - 44;
+        
+        //adjust UUInputFunctionView's originPoint
+        CGRect newFrame = IFView.frame;
+        newFrame.origin.y = newFrame.origin.y - delta;
+        IFView.frame = newFrame;
+        
+        
+    }else{
+        self.bottomConstraint.constant = 44;
+        
+        //adjust UUInputFunctionView's originPoint
+        CGRect newFrame = IFView.frame;
+        newFrame.origin.y = 620 - 44;
+        IFView.frame = newFrame;
+    }
+    [self.view layoutIfNeeded];
+    [self tableViewScrollToBottom];
+    
+    
+    
+    
+    
+    [UIView commitAnimations];
+    
+}
+
+
+#pragma mark - InputFunctionViewDelegate
+//发普通消息
+- (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendMessage:(NSString *)message
+{
+    
+    AVIMTextMessage *textMessage=[AVIMTextMessage messageWithText:message attributes:nil];
+    
+    [self.conversation sendMessage:textMessage callback:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            funcView.TextViewInput.text = @"";
+            [funcView changeSendBtnWithPhoto:YES];
+            [self finishSendMessage];
         }
         
     }];
+    
+}
+
+-(void)finishSendMessage{
+    [self.tableView reloadData];
+    [self tableViewScrollToBottom];
+}
+
+//发送图片
+- (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendPicture:(UIImage *)image
+{
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"tmp.jpg"];
+    NSData* photoData=UIImageJPEGRepresentation(image,0.6);
+    [photoData writeToFile:filePath atomically:YES];
+    AVIMImageMessage *imageMessage = [AVIMImageMessage messageWithText:nil attachedFilePath:filePath attributes:nil];
+    
+    [self.conversation sendMessage:imageMessage callback:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self finishSendMessage];
+        }
+    }];
+    
+}
+/**
+ *  发送语音信息，（怎么调用话筒，并把语音录制到filepath里面）
+ *
+ *  @param funcView 就是这个view负责录音，然后它让它的代理发送录音
+ *  @param voice    <#voice description#>
+ *  @param second   <#second description#>
+ */
+- (void)UUInputFunctionView:(UUInputFunctionView *)funcView sendVoice:(NSData *)voice time:(NSInteger)second
+{
+    //首先
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"tmp.mp3"];
+    [voice writeToFile:filePath atomically:YES];
+    AVIMAudioMessage* sendAudioMessage=[AVIMAudioMessage messageWithText:nil attachedFilePath:filePath attributes:nil];
+    [self.conversation sendMessage:sendAudioMessage callback:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self finishSendMessage];
+        }
+    }];
+    
 }
 
 @end
