@@ -128,9 +128,10 @@
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
+		A1DB9AAD1BA2AD5800EC97D6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */; };
+		A1DB9AB61BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */; };
 		A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */; };
 		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
-		A1F61D601B942FD600AB89FF /* news2Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F61D5F1B942FD600AB89FF /* news2Cell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -336,10 +337,15 @@
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
 		A1DAFAB91B8C37BE00189680 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
 		A1DAFABA1B8C37BE00189680 /* circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circle.m; sourceTree = "<group>"; };
+		A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A1DB9AB11BA2ADBF00EC97D6 /* BDSBuiltinPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltinPlayer.h; sourceTree = "<group>"; };
+		A1DB9AB21BA2ADBF00EC97D6 /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		A1DB9AB31BA2ADBF00EC97D6 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
+		A1DB9AB41BA2ADBF00EC97D6 /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
+		A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBDSSpeechSynthesizer.a; sourceTree = "<group>"; };
 		A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherCenterViewController.h; sourceTree = "<group>"; };
 		A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherCenterViewController.m; sourceTree = "<group>"; };
 		A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherCenterViewController.xib; sourceTree = "<group>"; };
-		A1F61D5F1B942FD600AB89FF /* news2Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = news2Cell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DB9AAD1BA2AD5800EC97D6 /* MobileCoreServices.framework in Frameworks */,
 				A1BE7F161B8D558A00E76711 /* AVFoundation.framework in Frameworks */,
 				A1B88CCE1BA16A6C008FA7C9 /* libmp3lame.a in Frameworks */,
 				A1BE7F141B8D558200E76711 /* SystemConfiguration.framework in Frameworks */,
@@ -362,6 +369,7 @@
 				A1BE7F001B8D552B00E76711 /* CoreLocation.framework in Frameworks */,
 				A1BE7EFE1B8D552400E76711 /* CFNetwork.framework in Frameworks */,
 				A1BE7EFC1B8D551C00E76711 /* CoreGraphics.framework in Frameworks */,
+				A1DB9AB61BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a in Frameworks */,
 				751CFC778842ECC9FA71EE08 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +403,8 @@
 		73AC23966CB8C0D034DD33F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */,
+				A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */,
 				A1BE7F151B8D558A00E76711 /* AVFoundation.framework */,
 				A1BE7F131B8D558200E76711 /* SystemConfiguration.framework */,
 				A1BE7F111B8D557600E76711 /* AudioToolbox.framework */,
@@ -474,33 +484,10 @@
 		A13EEA871B8EF7A60052C2A7 /* 新闻 */ = {
 			isa = PBXGroup;
 			children = (
-				A13EEA881B8EF7C70052C2A7 /* view */,
-				A13EEA891B8EF7D00052C2A7 /* controller */,
+				A1DB9AAA1BA2A1A000EC97D6 /* 新闻列表 */,
+				A1DB9AAB1BA2A1AB00EC97D6 /* 新闻详情 */,
 			);
 			name = "新闻";
-			sourceTree = "<group>";
-		};
-		A13EEA881B8EF7C70052C2A7 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */,
-				A13EEA8F1B8EFC710052C2A7 /* newsMenu.h */,
-				A13EEA901B8EFC710052C2A7 /* newsMenu.m */,
-				A1F61D5F1B942FD600AB89FF /* news2Cell.xib */,
-			);
-			name = view;
-			sourceTree = "<group>";
-		};
-		A13EEA891B8EF7D00052C2A7 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */,
-				A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */,
-				A13EEA921B8F0F580052C2A7 /* news2ViewController.h */,
-				A13EEA931B8F0F580052C2A7 /* news2ViewController.m */,
-				A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */,
-			);
-			name = controller;
 			sourceTree = "<group>";
 		};
 		A17C9A7B1B8C6FBA00F5677C /* library */ = {
@@ -515,6 +502,7 @@
 				A1B88CFB1BA17B75008FA7C9 /* UUAVAudioPlayer.m */,
 				A1B88CFD1BA17D32008FA7C9 /* UUImageAvatarBrowser.h */,
 				A1B88CFE1BA17D32008FA7C9 /* UUImageAvatarBrowser.m */,
+				A1DB9AB01BA2ADBF00EC97D6 /* Headers */,
 				A1B88CEF1BA1785B008FA7C9 /* LeanCloud */,
 				A1B88CDC1BA17843008FA7C9 /* MJRefresh */,
 				A1B88CC91BA16A6C008FA7C9 /* VoiceLib */,
@@ -952,6 +940,39 @@
 			name = "项目详情";
 			sourceTree = "<group>";
 		};
+		A1DB9AAA1BA2A1A000EC97D6 /* 新闻列表 */ = {
+			isa = PBXGroup;
+			children = (
+				A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */,
+				A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */,
+				A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */,
+				A13EEA8F1B8EFC710052C2A7 /* newsMenu.h */,
+				A13EEA901B8EFC710052C2A7 /* newsMenu.m */,
+			);
+			name = "新闻列表";
+			sourceTree = "<group>";
+		};
+		A1DB9AAB1BA2A1AB00EC97D6 /* 新闻详情 */ = {
+			isa = PBXGroup;
+			children = (
+				A13EEA921B8F0F580052C2A7 /* news2ViewController.h */,
+				A13EEA931B8F0F580052C2A7 /* news2ViewController.m */,
+				A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */,
+			);
+			name = "新闻详情";
+			sourceTree = "<group>";
+		};
+		A1DB9AB01BA2ADBF00EC97D6 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A1DB9AB11BA2ADBF00EC97D6 /* BDSBuiltinPlayer.h */,
+				A1DB9AB21BA2ADBF00EC97D6 /* BDSSpeechSynthesizer.h */,
+				A1DB9AB31BA2ADBF00EC97D6 /* BDSSpeechSynthesizerDelegate.h */,
+				A1DB9AB41BA2ADBF00EC97D6 /* BDSSynthesizerLogLevel.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1103,7 +1124,6 @@
 				A1B88CC11BA16A55008FA7C9 /* Chat_take_picture.png in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
-				A1F61D601B942FD600AB89FF /* news2Cell.xib in Resources */,
 				A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */,
 				A1B88CBA1BA16A55008FA7C9 /* chat_animation_white1.png in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
@@ -1380,6 +1400,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/touwho_iPad",
 					"$(PROJECT_DIR)/touwho_iPad/VoiceLib",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1401,6 +1422,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/touwho_iPad",
 					"$(PROJECT_DIR)/touwho_iPad/VoiceLib",
+					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
