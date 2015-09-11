@@ -14,7 +14,6 @@
 		A1002B201B85B682007520AA /* shipinMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B1F1B85B682007520AA /* shipinMenuView.m */; };
 		A1033BD31B8C487000FC8921 /* topics.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD21B8C487000FC8921 /* topics.xib */; };
 		A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BD71B8C513800FC8921 /* xiaozu.m */; };
-		A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD91B8C537F00FC8921 /* xiaozuCell.xib */; };
 		A1033BE11B8C59CD00FC8921 /* topics.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BE01B8C59CD00FC8921 /* topics.m */; };
 		A1033BE61B8C5AA300FC8921 /* topicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BE51B8C5AA300FC8921 /* topicsCell.xib */; };
 		A11451C21B8DC31400E45381 /* programsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11451C11B8DC31400E45381 /* programsCell.xib */; };
@@ -130,6 +129,7 @@
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
 		A1DB9AAD1BA2AD5800EC97D6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */; };
 		A1DB9AB61BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */; };
+		A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */; };
 		A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */; };
 		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
 /* End PBXBuildFile section */
@@ -165,7 +165,6 @@
 		A1033BD21B8C487000FC8921 /* topics.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topics.xib; sourceTree = "<group>"; };
 		A1033BD61B8C513800FC8921 /* xiaozu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xiaozu.h; sourceTree = "<group>"; };
 		A1033BD71B8C513800FC8921 /* xiaozu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xiaozu.m; sourceTree = "<group>"; };
-		A1033BD91B8C537F00FC8921 /* xiaozuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozuCell.xib; sourceTree = "<group>"; };
 		A1033BDF1B8C59CD00FC8921 /* topics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topics.h; sourceTree = "<group>"; };
 		A1033BE01B8C59CD00FC8921 /* topics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = topics.m; sourceTree = "<group>"; };
 		A1033BE51B8C5AA300FC8921 /* topicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topicsCell.xib; sourceTree = "<group>"; };
@@ -343,6 +342,7 @@
 		A1DB9AB31BA2ADBF00EC97D6 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
 		A1DB9AB41BA2ADBF00EC97D6 /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
 		A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBDSSpeechSynthesizer.a; sourceTree = "<group>"; };
+		A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozuUnit.xib; sourceTree = "<group>"; };
 		A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherCenterViewController.h; sourceTree = "<group>"; };
 		A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherCenterViewController.m; sourceTree = "<group>"; };
 		A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherCenterViewController.xib; sourceTree = "<group>"; };
@@ -429,6 +429,7 @@
 			children = (
 				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
 				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
+				A1DB9AB71BA2B46500EC97D6 /* 路演菜单 */,
 				A1033BDC1B8C555900FC8921 /* 圈子 */,
 			);
 			name = "发现";
@@ -440,7 +441,7 @@
 				A1033BD61B8C513800FC8921 /* xiaozu.h */,
 				A1033BD71B8C513800FC8921 /* xiaozu.m */,
 				A1DAFAB71B8C1F9400189680 /* xiaozu.xib */,
-				A1033BD91B8C537F00FC8921 /* xiaozuCell.xib */,
+				A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */,
 			);
 			name = "小组";
 			sourceTree = "<group>";
@@ -451,8 +452,8 @@
 				A1DAFAB91B8C37BE00189680 /* circle.h */,
 				A1DAFABA1B8C37BE00189680 /* circle.m */,
 				A1DAFAB31B8C1A4300189680 /* circle.xib */,
-				A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */,
 				A1033BDB1B8C554600FC8921 /* 小组 */,
+				A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */,
 				A1033BDD1B8C597200FC8921 /* 最新话题 */,
 			);
 			name = "圈子";
@@ -502,7 +503,7 @@
 				A1B88CFB1BA17B75008FA7C9 /* UUAVAudioPlayer.m */,
 				A1B88CFD1BA17D32008FA7C9 /* UUImageAvatarBrowser.h */,
 				A1B88CFE1BA17D32008FA7C9 /* UUImageAvatarBrowser.m */,
-				A1DB9AB01BA2ADBF00EC97D6 /* Headers */,
+				A1DB9AB01BA2ADBF00EC97D6 /* 百度语音合成 */,
 				A1B88CEF1BA1785B008FA7C9 /* LeanCloud */,
 				A1B88CDC1BA17843008FA7C9 /* MJRefresh */,
 				A1B88CC91BA16A6C008FA7C9 /* VoiceLib */,
@@ -694,11 +695,6 @@
 			children = (
 				A1002B151B8570D5007520AA /* shipinViewController.h */,
 				A1002B161B8570D5007520AA /* shipinViewController.m */,
-				A1002B1E1B85B682007520AA /* shipinMenuView.h */,
-				A1002B1F1B85B682007520AA /* shipinMenuView.m */,
-				A1002B181B857570007520AA /* shipinView.h */,
-				A1002B191B857570007520AA /* shipinView.m */,
-				A1002B1B1B857581007520AA /* shipinView.xib */,
 			);
 			name = "视频";
 			sourceTree = "<group>";
@@ -962,7 +958,7 @@
 			name = "新闻详情";
 			sourceTree = "<group>";
 		};
-		A1DB9AB01BA2ADBF00EC97D6 /* Headers */ = {
+		A1DB9AB01BA2ADBF00EC97D6 /* 百度语音合成 */ = {
 			isa = PBXGroup;
 			children = (
 				A1DB9AB11BA2ADBF00EC97D6 /* BDSBuiltinPlayer.h */,
@@ -970,7 +966,20 @@
 				A1DB9AB31BA2ADBF00EC97D6 /* BDSSpeechSynthesizerDelegate.h */,
 				A1DB9AB41BA2ADBF00EC97D6 /* BDSSynthesizerLogLevel.h */,
 			);
+			name = "百度语音合成";
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		A1DB9AB71BA2B46500EC97D6 /* 路演菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				A1002B1E1B85B682007520AA /* shipinMenuView.h */,
+				A1002B1F1B85B682007520AA /* shipinMenuView.m */,
+				A1002B181B857570007520AA /* shipinView.h */,
+				A1002B191B857570007520AA /* shipinView.m */,
+				A1002B1B1B857581007520AA /* shipinView.xib */,
+			);
+			name = "路演菜单";
 			sourceTree = "<group>";
 		};
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {
@@ -1123,11 +1132,11 @@
 				A1B88CC21BA16A55008FA7C9 /* chat_voice_record.png in Resources */,
 				A1B88CC11BA16A55008FA7C9 /* Chat_take_picture.png in Resources */,
 				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
-				A1033BDA1B8C537F00FC8921 /* xiaozuCell.xib in Resources */,
 				A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */,
 				A1B88CBA1BA16A55008FA7C9 /* chat_animation_white1.png in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
 				A1033BD31B8C487000FC8921 /* topics.xib in Resources */,
+				A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */,
 				A1B88CC71BA16A55008FA7C9 /* 1.jpeg in Resources */,
 				A1B88CC31BA16A55008FA7C9 /* chatfrom_bg_normal.png in Resources */,
 				A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */,

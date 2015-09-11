@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Niq-eg-sAP" userLabel="横线">
-                                <rect key="frame" x="0.0" y="82" width="600" height="2"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Niq-eg-sAP" userLabel="横线">
+                                <rect key="frame" x="0.0" y="126" width="600" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="ej4-mL-0bQ"/>
@@ -29,8 +29,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-bS-wmy">
-                                <rect key="frame" x="29" y="20" width="634" height="64"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-bS-wmy">
+                                <rect key="frame" x="30" y="64" width="634" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
                                         <rect key="frame" x="0.0" y="17" width="159" height="30"/>
@@ -90,8 +90,8 @@
                                     </constraint>
                                 </constraints>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oI-Iy-8Jl">
-                                <rect key="frame" x="0.0" y="84" width="600" height="516"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oI-Iy-8Jl">
+                                <rect key="frame" x="0.0" y="128" width="600" height="472"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-dH-dEa">
                                         <rect key="frame" x="30" y="30" width="864" height="218"/>
@@ -769,8 +769,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="r1g-ca-zyV">
                                 <rect key="frame" x="100" y="0.0" width="400" height="100"/>
                                 <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
+                                        <rect key="frame" x="0.0" y="70" width="30" height="30"/>
+                                        <state key="normal" title="社群"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="285" y="70" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
-                                        <rect key="frame" x="0.0" y="70" width="60" height="30"/>
+                                        <rect key="frame" x="163" y="70" width="60" height="30"/>
                                         <state key="normal" title="投壶活动"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="70" width="60" height="30"/>
@@ -780,23 +790,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
-                                        <rect key="frame" x="178" y="70" width="60" height="30"/>
+                                        <rect key="frame" x="340" y="70" width="60" height="30"/>
                                         <state key="normal" title="视频路演"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="135" y="70" width="60" height="30"/>
                                         </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="yKX-2j-tkZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
-                                        <rect key="frame" x="370" y="70" width="30" height="30"/>
-                                        <state key="normal" title="圈子"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="285" y="70" width="30" height="30"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
                                         </connections>
                                     </button>
                                 </subviews>

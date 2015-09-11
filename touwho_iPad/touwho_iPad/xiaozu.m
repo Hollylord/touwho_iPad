@@ -9,38 +9,60 @@
 #import "xiaozu.h"
 
 @implementation xiaozu
+{
+    NSMutableArray *hotGroup;
+}
+
+//只会初始化自己 不能在这里面添加子视图，设置层级关系无效
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        hotGroup = [NSMutableArray array];
+
+    }
+    return self;
+}
+
+//相当于viewDidLoad
 - (void)awakeFromNib{
-    UINib *nib = [UINib nibWithNibName:@"xiaozuCell" bundle:nil];
-    [self.tuijian registerNib:nib forCellReuseIdentifier:@"xiaozuCell"];
-    [self.enrolled registerNib:nib forCellReuseIdentifier:@"xiaozuCell"];
+    for (int i = 0; i < 5; i ++) {
+        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:nil options:nil]firstObject];
+        [self.scrollView addSubview:unit];
+        [hotGroup addObject:unit];
+    }
 }
 
-#pragma mark - tableView代理
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+- (void)updateConstraints{
+    [super updateConstraints];
     
+    NSUInteger totalNumber = hotGroup.count;
+    
+    for (int i = 0; i < totalNumber; i ++) {
+        //列数
+        int column = i%3;
+        //行数
+        int lines = (int) i/3;
+        
+        UIView *view = hotGroup[i];
+        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.splitLine1 attribute:NSLayoutAttributeLeading multiplier:1 constant:column * (240+30)];
+        NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.splitLine1 attribute:NSLayoutAttributeBottom multiplier:1 constant:10 + lines * (180 + 20)];
+        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:240];
+        NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:180];
+        [view.superview addConstraints:@[leading,top]];
+        [view addConstraints:@[width,height]];
+        view.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+    
+    for (NSLayoutConstraint *constraint in self.scrollView.constraints) {
+        if ([constraint.identifier isEqualToString:@"label2TopConstraint"]) {
+            [self.scrollView removeConstraint:constraint];
+            NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.label2 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:hotGroup.lastObject attribute:NSLayoutAttributeBottom multiplier:1 constant:20];
+            [self.scrollView addConstraint:top];
+        }
+    }
+
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"xiaozuCell" forIndexPath:indexPath];
-    UILabel *name = (UILabel *)[cell viewWithTag:1];
-    name.text = @"鹏鹏丁满历险记";
-        return cell;
-    
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
-}
 
 @end

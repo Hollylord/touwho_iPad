@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface xiaozu : UIView <UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tuijian;
-@property (weak, nonatomic) IBOutlet UITableView *enrolled;
+@interface xiaozu : UIView
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UIImageView *splitLine1;
 
 @end
