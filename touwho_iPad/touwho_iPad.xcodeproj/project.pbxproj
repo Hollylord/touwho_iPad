@@ -587,7 +587,7 @@
 				A17C9A7B1B8C6FBA00F5677C /* library */,
 				A1B868381B842BEF005C4A6F /* 发现 */,
 				A13259301B8306E100A327C6 /* 我 */,
-				A19D09721B7C301300094B81 /* 首页 */,
+				A19D09721B7C301300094B81 /* 项目 */,
 				A13EEA871B8EF7A60052C2A7 /* 新闻 */,
 				A19D09711B7C2F5B00094B81 /* other */,
 				A19D093E1B7C2DF100094B81 /* Supporting Files */,
@@ -628,33 +628,19 @@
 			children = (
 				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
 				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
+				A1DB9AA31BA269A900EC97D6 /* 根控制器 */,
 			);
 			name = other;
 			sourceTree = "<group>";
 		};
-		A19D09721B7C301300094B81 /* 首页 */ = {
+		A19D09721B7C301300094B81 /* 项目 */ = {
 			isa = PBXGroup;
 			children = (
-				A19D09771B7C6E4D00094B81 /* view */,
-				A19D09731B7C302500094B81 /* controller */,
+				A1DB9AA41BA269D400EC97D6 /* 菜单 */,
+				A1DB9AA51BA269E000EC97D6 /* 首页 */,
+				A1DB9AA61BA269E800EC97D6 /* 项目详情 */,
 			);
-			name = "首页";
-			sourceTree = "<group>";
-		};
-		A19D09731B7C302500094B81 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				A13259381B8336FE00A327C6 /* splitViewController.h */,
-				A13259391B8336FE00A327C6 /* splitViewController.m */,
-				A13259351B83339300A327C6 /* leftViewController.h */,
-				A13259361B83339300A327C6 /* leftViewController.m */,
-				A19D09741B7C306900094B81 /* programViewController.h */,
-				A19D09751B7C306900094B81 /* programViewController.m */,
-				A198E3C31B96D52700BB060E /* program2ViewController.h */,
-				A198E3C41B96D52700BB060E /* program2ViewController.m */,
-				A198E3C51B96D52700BB060E /* program2ViewController.xib */,
-			);
-			name = controller;
+			name = "项目";
 			sourceTree = "<group>";
 		};
 		A19D09771B7C6E4D00094B81 /* view */ = {
@@ -926,6 +912,44 @@
 				A1D78DD51B9D342700C136C3 /* forgetPassword.xib */,
 			);
 			name = "注册与忘记密码";
+			sourceTree = "<group>";
+		};
+		A1DB9AA31BA269A900EC97D6 /* 根控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				A13259381B8336FE00A327C6 /* splitViewController.h */,
+				A13259391B8336FE00A327C6 /* splitViewController.m */,
+			);
+			name = "根控制器";
+			sourceTree = "<group>";
+		};
+		A1DB9AA41BA269D400EC97D6 /* 菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				A13259351B83339300A327C6 /* leftViewController.h */,
+				A13259361B83339300A327C6 /* leftViewController.m */,
+			);
+			name = "菜单";
+			sourceTree = "<group>";
+		};
+		A1DB9AA51BA269E000EC97D6 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09771B7C6E4D00094B81 /* view */,
+				A19D09741B7C306900094B81 /* programViewController.h */,
+				A19D09751B7C306900094B81 /* programViewController.m */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		A1DB9AA61BA269E800EC97D6 /* 项目详情 */ = {
+			isa = PBXGroup;
+			children = (
+				A198E3C31B96D52700BB060E /* program2ViewController.h */,
+				A198E3C41B96D52700BB060E /* program2ViewController.m */,
+				A198E3C51B96D52700BB060E /* program2ViewController.xib */,
+			);
+			name = "项目详情";
 			sourceTree = "<group>";
 		};
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {

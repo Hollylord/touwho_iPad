@@ -36,6 +36,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+/**
+ *  控制器的子视图更新约束
+ */
 - (void)updateViewConstraints{
     [super updateViewConstraints];
     
