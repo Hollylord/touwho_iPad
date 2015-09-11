@@ -20,7 +20,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="35Z-GU-nVe">
-                            <rect key="frame" x="50" y="70" width="827" height="4"/>
+                            <rect key="frame" x="20" y="70" width="827" height="4"/>
                             <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="827" id="aKr-XL-a77"/>
@@ -34,19 +34,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAc-62-4CA">
-                            <rect key="frame" x="50" y="203" width="827" height="4"/>
+                            <rect key="frame" x="20" y="203" width="827" height="4"/>
                             <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="d6Y-31-1sJ" firstAttribute="top" secondItem="TGB-Rz-oQb" secondAttribute="top" constant="41" id="7bd-tj-Vmk"/>
-                        <constraint firstItem="35Z-GU-nVe" firstAttribute="leading" secondItem="TGB-Rz-oQb" secondAttribute="leading" constant="50" id="8ro-Rk-fdz"/>
+                        <constraint firstItem="35Z-GU-nVe" firstAttribute="leading" secondItem="TGB-Rz-oQb" secondAttribute="leading" constant="20" id="8ro-Rk-fdz"/>
                         <constraint firstItem="xAc-62-4CA" firstAttribute="top" secondItem="prt-Ug-fWh" secondAttribute="bottom" constant="17" id="GFO-3F-y7v"/>
                         <constraint firstAttribute="trailing" secondItem="35Z-GU-nVe" secondAttribute="trailing" id="GZX-jH-s5O" userLabel="水平范围"/>
                         <constraint firstItem="xAc-62-4CA" firstAttribute="trailing" secondItem="35Z-GU-nVe" secondAttribute="trailing" id="S3a-yp-PQY"/>
                         <constraint firstItem="xAc-62-4CA" firstAttribute="height" secondItem="35Z-GU-nVe" secondAttribute="height" id="UsU-dq-cUq"/>
                         <constraint firstItem="35Z-GU-nVe" firstAttribute="top" secondItem="d6Y-31-1sJ" secondAttribute="bottom" constant="8" id="WEb-jh-XnZ"/>
-                        <constraint firstAttribute="bottom" secondItem="xAc-62-4CA" secondAttribute="bottom" constant="490" id="jTC-zF-339" userLabel="竖直范围"/>
+                        <constraint firstAttribute="bottom" secondItem="xAc-62-4CA" secondAttribute="bottom" constant="20" id="jTC-zF-339" userLabel="竖直范围"/>
                         <constraint firstItem="prt-Ug-fWh" firstAttribute="leading" secondItem="d6Y-31-1sJ" secondAttribute="leading" id="lKX-Wl-DZ1"/>
                         <constraint firstItem="prt-Ug-fWh" firstAttribute="top" secondItem="35Z-GU-nVe" secondAttribute="bottom" constant="91" identifier="label2TopConstraint" id="sMk-yV-ppt"/>
                         <constraint firstItem="xAc-62-4CA" firstAttribute="leading" secondItem="35Z-GU-nVe" secondAttribute="leading" id="ysN-ym-6iR"/>
@@ -54,7 +54,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.18039215689999999" green="0.49803921569999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="TGB-Rz-oQb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="01z-CV-i1g"/>
                 <constraint firstAttribute="trailing" secondItem="TGB-Rz-oQb" secondAttribute="trailing" id="C8r-Yl-lYN"/>
