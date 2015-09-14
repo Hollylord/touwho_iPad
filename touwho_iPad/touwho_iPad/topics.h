@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine2;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+- (IBAction)turn2SpecifiTopicVC:(UITapGestureRecognizer *)sender;
 
 
 @end

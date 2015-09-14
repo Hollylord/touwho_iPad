@@ -24,7 +24,6 @@
 		A13259341B83071200A327C6 /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259331B83071200A327C6 /* loginViewController.m */; };
 		A13259371B83339300A327C6 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259361B83339300A327C6 /* leftViewController.m */; };
 		A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259391B8336FE00A327C6 /* splitViewController.m */; };
-		A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13BA5661B8712960087DEF0 /* themesViewController.m */; };
 		A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA851B8EA51D0052C2A7 /* profile.xib */; };
 		A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */; };
 		A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */; };
@@ -121,6 +120,8 @@
 		A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */; };
 		A1D620021BA6AEA9009FCA1F /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620011BA6AEA9009FCA1F /* TopicCell.xib */; };
 		A1D620041BA6BCFB009FCA1F /* TopicUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620031BA6BCFB009FCA1F /* TopicUnit.xib */; };
+		A1D620091BA6C0D2009FCA1F /* SpecificTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D620071BA6C0D2009FCA1F /* SpecificTopicViewController.m */; };
+		A1D6200A1BA6C0D2009FCA1F /* SpecificTopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620081BA6C0D2009FCA1F /* SpecificTopicViewController.xib */; };
 		A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78DD31B9D341D00C136C3 /* forgetPassword.m */; };
 		A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD51B9D342700C136C3 /* forgetPassword.xib */; };
 		A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD81B9D5D4B00C136C3 /* message.xib */; };
@@ -185,8 +186,6 @@
 		A13259361B83339300A327C6 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
 		A13259381B8336FE00A327C6 /* splitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splitViewController.h; sourceTree = "<group>"; };
 		A13259391B8336FE00A327C6 /* splitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splitViewController.m; sourceTree = "<group>"; };
-		A13BA5651B8712960087DEF0 /* themesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = themesViewController.h; sourceTree = "<group>"; };
-		A13BA5661B8712960087DEF0 /* themesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = themesViewController.m; sourceTree = "<group>"; };
 		A13EEA851B8EA51D0052C2A7 /* profile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = profile.xib; sourceTree = "<group>"; };
 		A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news1ViewController.h; sourceTree = "<group>"; };
 		A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news1ViewController.m; sourceTree = "<group>"; };
@@ -331,6 +330,9 @@
 		A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificGroupViewController.xib; sourceTree = "<group>"; };
 		A1D620011BA6AEA9009FCA1F /* TopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
 		A1D620031BA6BCFB009FCA1F /* TopicUnit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicUnit.xib; sourceTree = "<group>"; };
+		A1D620061BA6C0D2009FCA1F /* SpecificTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificTopicViewController.h; sourceTree = "<group>"; };
+		A1D620071BA6C0D2009FCA1F /* SpecificTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificTopicViewController.m; sourceTree = "<group>"; };
+		A1D620081BA6C0D2009FCA1F /* SpecificTopicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificTopicViewController.xib; sourceTree = "<group>"; };
 		A1D78DD21B9D341D00C136C3 /* forgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPassword.h; sourceTree = "<group>"; };
 		A1D78DD31B9D341D00C136C3 /* forgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPassword.m; sourceTree = "<group>"; };
 		A1D78DD51B9D342700C136C3 /* forgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgetPassword.xib; sourceTree = "<group>"; };
@@ -663,8 +665,8 @@
 				A1002B1D1B857797007520AA /* 发现 */,
 				A1B8684C1B848A4C005C4A6F /* 活动 */,
 				A1B88C9A1BA15BB6008FA7C9 /* 视频 */,
-				A1B88C9B1BA15C0E008FA7C9 /* 话题还未使用 */,
 				A1D61FF91BA66A34009FCA1F /* 小组详情 */,
+				A1D620051BA6BF6B009FCA1F /* 话题详情 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -705,15 +707,6 @@
 				A1002B161B8570D5007520AA /* shipinViewController.m */,
 			);
 			name = "视频";
-			sourceTree = "<group>";
-		};
-		A1B88C9B1BA15C0E008FA7C9 /* 话题还未使用 */ = {
-			isa = PBXGroup;
-			children = (
-				A13BA5651B8712960087DEF0 /* themesViewController.h */,
-				A13BA5661B8712960087DEF0 /* themesViewController.m */,
-			);
-			name = "话题还未使用";
 			sourceTree = "<group>";
 		};
 		A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */ = {
@@ -902,6 +895,16 @@
 				A1D620011BA6AEA9009FCA1F /* TopicCell.xib */,
 			);
 			name = "小组详情";
+			sourceTree = "<group>";
+		};
+		A1D620051BA6BF6B009FCA1F /* 话题详情 */ = {
+			isa = PBXGroup;
+			children = (
+				A1D620061BA6C0D2009FCA1F /* SpecificTopicViewController.h */,
+				A1D620071BA6C0D2009FCA1F /* SpecificTopicViewController.m */,
+				A1D620081BA6C0D2009FCA1F /* SpecificTopicViewController.xib */,
+			);
+			name = "话题详情";
 			sourceTree = "<group>";
 		};
 		A1D78DD71B9D5A8200C136C3 /* 注册与忘记密码 */ = {
@@ -1162,6 +1165,7 @@
 				A1B88CC71BA16A55008FA7C9 /* 1.jpeg in Resources */,
 				A1B88CC31BA16A55008FA7C9 /* chatfrom_bg_normal.png in Resources */,
 				A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */,
+				A1D6200A1BA6C0D2009FCA1F /* SpecificTopicViewController.xib in Resources */,
 				A1002B1C1B857581007520AA /* shipinView.xib in Resources */,
 				A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */,
 				A13259281B82C37B00A327C6 /* programView.xib in Resources */,
@@ -1254,7 +1258,6 @@
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,
-				A13BA5671B8712960087DEF0 /* themesViewController.m in Sources */,
 				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
@@ -1281,6 +1284,7 @@
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
 				A1B88CD51BA177B8008FA7C9 /* UUMessageCell.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
+				A1D620091BA6C0D2009FCA1F /* SpecificTopicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
