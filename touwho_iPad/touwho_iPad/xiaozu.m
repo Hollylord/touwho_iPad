@@ -7,6 +7,7 @@
 
 
 #import "xiaozu.h"
+#import "SpecificGroupViewController.h"
 
 #define Width 240
 #define Height 180
@@ -35,13 +36,13 @@
 - (void)awakeFromNib{
     //添加热门小组
     for (int i = 0; i < 5; i ++) {
-        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:nil options:nil]firstObject];
+        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:self options:nil]firstObject];
         [self.scrollView addSubview:unit];
         [hotGroup addObject:unit];
     }
     //添加我加入的小组
     for (int i = 0; i < 6; i ++) {
-        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:nil options:nil]firstObject];
+        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:self options:nil]firstObject];
         [self.scrollView addSubview:unit];
         [iInvolved addObject:unit];
     }
@@ -100,4 +101,20 @@
 }
 
 
+- (IBAction)turn2SpecificGroupController:(UITapGestureRecognizer *)sender {
+    UIViewController *viewController = [self viewController];
+    SpecificGroupViewController *speVC = [[SpecificGroupViewController alloc] initWithNibName:@"SpecificGroupViewController" bundle:nil];
+    [viewController.navigationController pushViewController:speVC animated:YES];
+}
+
+//获得当前view的控制器
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
+}
 @end

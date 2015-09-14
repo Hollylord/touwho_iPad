@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine1;
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine2;
 
+- (IBAction)turn2SpecificGroupController:(UITapGestureRecognizer *)sender;
+
 @end
