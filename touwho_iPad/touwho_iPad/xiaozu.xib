@@ -46,7 +46,7 @@
                         <constraint firstItem="xAc-62-4CA" firstAttribute="trailing" secondItem="35Z-GU-nVe" secondAttribute="trailing" id="S3a-yp-PQY"/>
                         <constraint firstItem="xAc-62-4CA" firstAttribute="height" secondItem="35Z-GU-nVe" secondAttribute="height" id="UsU-dq-cUq"/>
                         <constraint firstItem="35Z-GU-nVe" firstAttribute="top" secondItem="d6Y-31-1sJ" secondAttribute="bottom" constant="8" id="WEb-jh-XnZ"/>
-                        <constraint firstAttribute="bottom" secondItem="xAc-62-4CA" secondAttribute="bottom" constant="20" id="jTC-zF-339" userLabel="竖直范围"/>
+                        <constraint firstAttribute="bottom" secondItem="xAc-62-4CA" secondAttribute="bottom" priority="200" constant="20" identifier="verticalScale" id="jTC-zF-339" userLabel="竖直范围"/>
                         <constraint firstItem="prt-Ug-fWh" firstAttribute="leading" secondItem="d6Y-31-1sJ" secondAttribute="leading" id="lKX-Wl-DZ1"/>
                         <constraint firstItem="prt-Ug-fWh" firstAttribute="top" secondItem="35Z-GU-nVe" secondAttribute="bottom" constant="91" identifier="label2TopConstraint" id="sMk-yV-ppt"/>
                         <constraint firstItem="xAc-62-4CA" firstAttribute="leading" secondItem="35Z-GU-nVe" secondAttribute="leading" id="ysN-ym-6iR"/>
@@ -69,6 +69,7 @@
                 <outlet property="label2" destination="prt-Ug-fWh" id="K5D-8S-bvv"/>
                 <outlet property="scrollView" destination="TGB-Rz-oQb" id="pFc-ou-kzq"/>
                 <outlet property="splitLine1" destination="35Z-GU-nVe" id="ln9-il-5aQ"/>
+                <outlet property="splitLine2" destination="xAc-62-4CA" id="2w2-qm-PWF"/>
             </connections>
             <point key="canvasLocation" x="316.5" y="171"/>
         </view>

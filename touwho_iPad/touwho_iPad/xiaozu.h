@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine1;
+@property (weak, nonatomic) IBOutlet UIImageView *splitLine2;
 
 @end
