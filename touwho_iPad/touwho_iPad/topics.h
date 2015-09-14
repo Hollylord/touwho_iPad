@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface topics : UIView
-@property (weak, nonatomic) IBOutlet UITableView *updatedTopics;
-@property (weak, nonatomic) IBOutlet UITableView *involvedTopics;
+@property (weak, nonatomic) IBOutlet UIImageView *splitLine1;
+@property (weak, nonatomic) IBOutlet UIImageView *splitLine2;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 
 @end
