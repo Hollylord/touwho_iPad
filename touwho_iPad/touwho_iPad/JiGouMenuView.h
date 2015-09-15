@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface JiGouMenuView : UIView
+- (IBAction)turn2JiGouVC:(UITapGestureRecognizer *)sender;
+
+
+- (IBAction)follow:(UIButton *)sender;
 
 @end

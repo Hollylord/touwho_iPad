@@ -11,6 +11,7 @@
 #define Height 150
 
 #import "JiGouMenuView.h"
+#import "JiGouDetailViewController.h"
 
 
 
@@ -22,6 +23,7 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
+
         UIScrollView *scroll = [[UIScrollView alloc] init];
         scrollView = scroll;
         [self addSubview:scrollView];
@@ -30,7 +32,7 @@
         scrollView.showsVerticalScrollIndicator = NO;
         
         for (int i = 0 ; i < 10; i ++) {
-            UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"JiGouUnit" owner:nil options:nil]firstObject];
+            UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"JiGouUnit" owner:self options:nil]firstObject];
             [scrollView addSubview:unit];
         }
         
@@ -78,5 +80,30 @@
     [view.superview addConstraints:@[trailing2,bottom2]];
 
 
+}
+
+
+
+
+
+- (IBAction)turn2JiGouVC:(UITapGestureRecognizer *)sender {
+    UIViewController *VC = [self viewController];
+    JiGouDetailViewController *jiGouVC = [[JiGouDetailViewController alloc] initWithNibName:@"JiGouDetailViewController" bundle:nil];
+    [VC.navigationController pushViewController:jiGouVC animated:YES];
+}
+
+- (IBAction)follow:(UIButton *)sender {
+    NSLog(@"关注");
+}
+
+//获得当前view的控制器
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
 }
 @end

@@ -137,6 +137,8 @@
 		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
 		A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */; };
 		A1E9BE901BA7B66C00876186 /* JiGouUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */; };
+		A1E9BE951BA7CD7400876186 /* JiGouDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE931BA7CD7400876186 /* JiGouDetailViewController.m */; };
+		A1E9BE961BA7CD7400876186 /* JiGouDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -358,6 +360,9 @@
 		A1E9BE8C1BA7B60D00876186 /* JiGouMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiGouMenuView.h; sourceTree = "<group>"; };
 		A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiGouMenuView.m; sourceTree = "<group>"; };
 		A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JiGouUnit.xib; sourceTree = "<group>"; };
+		A1E9BE921BA7CD7400876186 /* JiGouDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiGouDetailViewController.h; sourceTree = "<group>"; };
+		A1E9BE931BA7CD7400876186 /* JiGouDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiGouDetailViewController.m; sourceTree = "<group>"; };
+		A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JiGouDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -670,6 +675,7 @@
 				A1B88C9A1BA15BB6008FA7C9 /* 视频 */,
 				A1D61FF91BA66A34009FCA1F /* 小组详情 */,
 				A1D620051BA6BF6B009FCA1F /* 话题详情 */,
+				A1E9BE911BA7CD3500876186 /* 机构专题详情 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -1019,6 +1025,16 @@
 			name = "他人中心";
 			sourceTree = "<group>";
 		};
+		A1E9BE911BA7CD3500876186 /* 机构专题详情 */ = {
+			isa = PBXGroup;
+			children = (
+				A1E9BE921BA7CD7400876186 /* JiGouDetailViewController.h */,
+				A1E9BE931BA7CD7400876186 /* JiGouDetailViewController.m */,
+				A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */,
+			);
+			name = "机构专题详情";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1177,6 +1193,7 @@
 				A1B88CB71BA16A55008FA7C9 /* chat_animation1.png in Resources */,
 				A1B88CBC1BA16A55008FA7C9 /* chat_animation_white3.png in Resources */,
 				A1B88CB81BA16A55008FA7C9 /* chat_animation2.png in Resources */,
+				A1E9BE961BA7CD7400876186 /* JiGouDetailViewController.xib in Resources */,
 				A1B88CC51BA16A55008FA7C9 /* chatto_bg_normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1285,6 +1302,7 @@
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
+				A1E9BE951BA7CD7400876186 /* JiGouDetailViewController.m in Sources */,
 				A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
