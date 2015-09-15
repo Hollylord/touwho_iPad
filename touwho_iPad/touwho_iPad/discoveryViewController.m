@@ -9,6 +9,7 @@
 #import "discoveryViewController.h"
 #import "shipinMenuView.h"
 #import "circle.h"
+#import "activityList.h"
 
 
 #define Width 230
@@ -71,7 +72,7 @@
             _contentView = view;
         }
         else if (self.activity.selected){
-            UIView *view = [[UIView alloc] init];
+            activityList *view = [[activityList alloc] init];
             _contentView = view;
         }
         

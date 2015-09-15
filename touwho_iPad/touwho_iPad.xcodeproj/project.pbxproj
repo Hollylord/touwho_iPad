@@ -140,6 +140,9 @@
 		A1E9BE961BA7CD7400876186 /* JiGouDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */; };
 		A1E9BE991BA801FB00876186 /* shipinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE981BA801FB00876186 /* shipinView.xib */; };
 		A1E9BE9B1BA802C700876186 /* shipinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE9A1BA802C700876186 /* shipinViewController.xib */; };
+		A1E9BE9D1BA8057F00876186 /* activityUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE9C1BA8057F00876186 /* activityUnit.xib */; };
+		A1E9BEA01BA8077F00876186 /* activityList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE9F1BA8077F00876186 /* activityList.m */; };
+		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -365,6 +368,11 @@
 		A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JiGouDetailViewController.xib; sourceTree = "<group>"; };
 		A1E9BE981BA801FB00876186 /* shipinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinView.xib; sourceTree = "<group>"; };
 		A1E9BE9A1BA802C700876186 /* shipinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinViewController.xib; sourceTree = "<group>"; };
+		A1E9BE9C1BA8057F00876186 /* activityUnit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = activityUnit.xib; sourceTree = "<group>"; };
+		A1E9BE9E1BA8077F00876186 /* activityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = activityList.h; sourceTree = "<group>"; };
+		A1E9BE9F1BA8077F00876186 /* activityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityList.m; sourceTree = "<group>"; };
+		A1E9BEA11BA808A000876186 /* activityUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = activityUnit.h; sourceTree = "<group>"; };
+		A1E9BEA21BA808A000876186 /* activityUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityUnit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1042,6 +1050,11 @@
 		A1E9BE971BA7F60D00876186 /* 活动列表 */ = {
 			isa = PBXGroup;
 			children = (
+				A1E9BE9E1BA8077F00876186 /* activityList.h */,
+				A1E9BE9F1BA8077F00876186 /* activityList.m */,
+				A1E9BEA11BA808A000876186 /* activityUnit.h */,
+				A1E9BEA21BA808A000876186 /* activityUnit.m */,
+				A1E9BE9C1BA8057F00876186 /* activityUnit.xib */,
 			);
 			name = "活动列表";
 			sourceTree = "<group>";
@@ -1155,6 +1168,7 @@
 				A11451C21B8DC31400E45381 /* programsCell.xib in Resources */,
 				A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */,
 				A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */,
+				A1E9BE9D1BA8057F00876186 /* activityUnit.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
 				A1B88CE91BA17843008FA7C9 /* MJRefresh.bundle in Resources */,
@@ -1279,6 +1293,7 @@
 				A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */,
 				A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
+				A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */,
 				A1B88CFC1BA17B75008FA7C9 /* UUAVAudioPlayer.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */,
@@ -1320,6 +1335,7 @@
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
 				A1B88CD51BA177B8008FA7C9 /* UUMessageCell.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
+				A1E9BEA01BA8077F00876186 /* activityList.m in Sources */,
 				A1D620091BA6C0D2009FCA1F /* SpecificTopicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
