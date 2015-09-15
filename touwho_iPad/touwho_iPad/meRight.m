@@ -10,6 +10,8 @@
 #import "message.h"
 
 @implementation meRight
+
+
 #pragma mark - meleft代理
 //发布项目
 - (void)presentPublish{
@@ -21,20 +23,6 @@
     [self addSubview:view];
     [self layoutForSubview:view];
     
-}
-//已投资的项目
-- (void)presentPrograms{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-    programs.delegate = self;
-    programs.dataSource = self;
-    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-    [self addSubview:programs];
-    [self layoutForSubview:programs];
-
 }
 //申请为领头
 - (void)presentApply{
@@ -54,7 +42,7 @@
     [self addSubview:view];
     [self layoutForSubview:view];
 }
-
+//编辑个人信息
 - (void)presentProfile{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -62,6 +50,54 @@
     UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"profile" owner:nil options:nil]firstObject];
     [self addSubview:view];
     [self layoutForSubview:view];
+}
+//已投资的项目
+- (void)presentPrograms{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+    programs.delegate = self;
+    programs.dataSource = self;
+    
+    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+    [self addSubview:programs];
+    [self layoutForSubview:programs];
+    
+}
+//发起的项目
+- (void)presentPublished{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+    programs.delegate = self;
+    programs.dataSource = self;
+    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+    [self addSubview:programs];
+    [self layoutForSubview:programs];
+}
+//关注的项目
+- (void)presentFollowedProgram{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+    
+    programs.delegate = self;
+    programs.dataSource = self;
+    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+    [self addSubview:programs];
+    [self layoutForSubview:programs];
+}
+//关注的机构
+- (void)presentFollowedInstitution{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
 }
 
 - (void)presentMessage{
@@ -73,6 +109,7 @@
     [self layoutForSubview:view];
     
 }
+
 - (void)layoutForSubview:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
     NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
@@ -107,5 +144,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
 @end

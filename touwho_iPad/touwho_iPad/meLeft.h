@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 @protocol meLeftDelegate
 /**
+ *  跳转消息界面
+ */
+- (void)presentMessage;
+
+/**
  *  发布项目
  */
 - (void)presentPublish;
@@ -29,9 +34,17 @@
  */
 - (void)presentProfile;
 /**
- *  跳转消息界面
+ *  已发起的项目
  */
-- (void)presentMessage;
+- (void)presentPublished;
+/**
+ *  关注的项目
+ */
+- (void)presentFollowedProgram;
+/**
+ *  关注的机构
+ */
+- (void)presentFollowedInstitution;
 
 @end
 

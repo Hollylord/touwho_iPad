@@ -20,7 +20,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <items>
                         <navigationItem title="Title" id="s5n-Wl-3mm">
-                            <barButtonItem key="leftBarButtonItem" title="取消" id="8jp-zy-zrk"/>
+                            <barButtonItem key="leftBarButtonItem" title="取消" id="8jp-zy-zrk">
+                                <connections>
+                                    <action selector="cancel:" destination="-1" id="vn4-Fy-xuC"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>

@@ -24,8 +24,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *chatTableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
-
 @property (nonatomic,strong) AVIMConversation *conversation;
+- (IBAction)cancel:(UIBarButtonItem *)sender;
+
 @end
 
 @implementation sixinViewController
@@ -275,5 +276,8 @@
     }
     return YES;
 }
-
+#pragma mark - 按钮点击
+- (IBAction)cancel:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 @end
