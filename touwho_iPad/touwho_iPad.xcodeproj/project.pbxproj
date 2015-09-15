@@ -10,7 +10,6 @@
 		751CFC778842ECC9FA71EE08 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD57436EEF26BB21147271 /* libPods.a */; };
 		A1002B171B8570D5007520AA /* shipinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B161B8570D5007520AA /* shipinViewController.m */; };
 		A1002B1A1B857570007520AA /* shipinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B191B857570007520AA /* shipinView.m */; };
-		A1002B1C1B857581007520AA /* shipinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1002B1B1B857581007520AA /* shipinView.xib */; };
 		A1002B201B85B682007520AA /* shipinMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B1F1B85B682007520AA /* shipinMenuView.m */; };
 		A1033BD31B8C487000FC8921 /* topics.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD21B8C487000FC8921 /* topics.xib */; };
 		A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BD71B8C513800FC8921 /* xiaozu.m */; };
@@ -139,6 +138,8 @@
 		A1E9BE901BA7B66C00876186 /* JiGouUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */; };
 		A1E9BE951BA7CD7400876186 /* JiGouDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE931BA7CD7400876186 /* JiGouDetailViewController.m */; };
 		A1E9BE961BA7CD7400876186 /* JiGouDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */; };
+		A1E9BE991BA801FB00876186 /* shipinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE981BA801FB00876186 /* shipinView.xib */; };
+		A1E9BE9B1BA802C700876186 /* shipinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE9A1BA802C700876186 /* shipinViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,7 +167,6 @@
 		A1002B161B8570D5007520AA /* shipinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinViewController.m; sourceTree = "<group>"; };
 		A1002B181B857570007520AA /* shipinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipinView.h; sourceTree = "<group>"; };
 		A1002B191B857570007520AA /* shipinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinView.m; sourceTree = "<group>"; };
-		A1002B1B1B857581007520AA /* shipinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinView.xib; sourceTree = "<group>"; };
 		A1002B1E1B85B682007520AA /* shipinMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipinMenuView.h; sourceTree = "<group>"; };
 		A1002B1F1B85B682007520AA /* shipinMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinMenuView.m; sourceTree = "<group>"; };
 		A1033BD21B8C487000FC8921 /* topics.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topics.xib; sourceTree = "<group>"; };
@@ -363,6 +363,8 @@
 		A1E9BE921BA7CD7400876186 /* JiGouDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiGouDetailViewController.h; sourceTree = "<group>"; };
 		A1E9BE931BA7CD7400876186 /* JiGouDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiGouDetailViewController.m; sourceTree = "<group>"; };
 		A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JiGouDetailViewController.xib; sourceTree = "<group>"; };
+		A1E9BE981BA801FB00876186 /* shipinView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinView.xib; sourceTree = "<group>"; };
+		A1E9BE9A1BA802C700876186 /* shipinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shipinViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,7 +448,8 @@
 			children = (
 				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
 				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
-				A1DB9AB71BA2B46500EC97D6 /* 路演菜单 */,
+				A1E9BE971BA7F60D00876186 /* 活动列表 */,
+				A1DB9AB71BA2B46500EC97D6 /* 路演列表 */,
 				A1033BDC1B8C555900FC8921 /* 圈子 */,
 			);
 			name = "发现";
@@ -714,6 +717,7 @@
 			children = (
 				A1002B151B8570D5007520AA /* shipinViewController.h */,
 				A1002B161B8570D5007520AA /* shipinViewController.m */,
+				A1E9BE9A1BA802C700876186 /* shipinViewController.xib */,
 			);
 			name = "视频";
 			sourceTree = "<group>";
@@ -1003,16 +1007,16 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		A1DB9AB71BA2B46500EC97D6 /* 路演菜单 */ = {
+		A1DB9AB71BA2B46500EC97D6 /* 路演列表 */ = {
 			isa = PBXGroup;
 			children = (
 				A1002B1E1B85B682007520AA /* shipinMenuView.h */,
 				A1002B1F1B85B682007520AA /* shipinMenuView.m */,
 				A1002B181B857570007520AA /* shipinView.h */,
 				A1002B191B857570007520AA /* shipinView.m */,
-				A1002B1B1B857581007520AA /* shipinView.xib */,
+				A1E9BE981BA801FB00876186 /* shipinView.xib */,
 			);
-			name = "路演菜单";
+			name = "路演列表";
 			sourceTree = "<group>";
 		};
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {
@@ -1033,6 +1037,13 @@
 				A1E9BE941BA7CD7400876186 /* JiGouDetailViewController.xib */,
 			);
 			name = "机构专题详情";
+			sourceTree = "<group>";
+		};
+		A1E9BE971BA7F60D00876186 /* 活动列表 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "活动列表";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1173,6 +1184,7 @@
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A1C07CD81B9C229B00A2F1CB /* profileViewController.xib in Resources */,
 				A1B88CBE1BA16A55008FA7C9 /* chat_message_back.png in Resources */,
+				A1E9BE991BA801FB00876186 /* shipinView.xib in Resources */,
 				A1B88CC21BA16A55008FA7C9 /* chat_voice_record.png in Resources */,
 				A1B88CC11BA16A55008FA7C9 /* Chat_take_picture.png in Resources */,
 				A1D620041BA6BCFB009FCA1F /* TopicUnit.xib in Resources */,
@@ -1182,12 +1194,12 @@
 				A1B88CBA1BA16A55008FA7C9 /* chat_animation_white1.png in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
 				A1033BD31B8C487000FC8921 /* topics.xib in Resources */,
+				A1E9BE9B1BA802C700876186 /* shipinViewController.xib in Resources */,
 				A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */,
 				A1B88CC71BA16A55008FA7C9 /* 1.jpeg in Resources */,
 				A1B88CC31BA16A55008FA7C9 /* chatfrom_bg_normal.png in Resources */,
 				A1BE7F4A1B8DAFE100E76711 /* publish.xib in Resources */,
 				A1D6200A1BA6C0D2009FCA1F /* SpecificTopicViewController.xib in Resources */,
-				A1002B1C1B857581007520AA /* shipinView.xib in Resources */,
 				A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */,
 				A13259281B82C37B00A327C6 /* programView.xib in Resources */,
 				A1B88CB71BA16A55008FA7C9 /* chat_animation1.png in Resources */,

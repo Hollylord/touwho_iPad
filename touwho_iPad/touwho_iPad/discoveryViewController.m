@@ -10,6 +10,7 @@
 #import "shipinMenuView.h"
 #import "circle.h"
 
+
 #define Width 230
 #define Height 170
 #define MarginSide 30
@@ -21,8 +22,9 @@
 @property (strong,nonatomic) UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIImageView *line;
 
-@property (weak, nonatomic) IBOutlet UIButton *footage;
+@property (weak, nonatomic) IBOutlet UIButton *footage;//路演
 @property (weak, nonatomic) IBOutlet UIButton *discussion;//圈子
+@property (weak, nonatomic) IBOutlet UIButton *activity;//活动
 
 
 
@@ -37,8 +39,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //注册通知观察者
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(turn2shipinController) name:@"playNotification" object:nil];
     
     [self buttonClick:self.discussion];
     
@@ -57,9 +57,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)turn2shipinController{
-    [self performSegueWithIdentifier:@"discovery2shipinViewController" sender:nil];
-}
 
 #pragma mark - 内容页面懒加载
 - (UIView *)contentView{
@@ -73,6 +70,10 @@
             circle *view = [[[NSBundle mainBundle] loadNibNamed:@"circle" owner:nil options:nil]firstObject];
             _contentView = view;
         }
+        else if (self.activity.selected){
+            UIView *view = [[UIView alloc] init];
+            _contentView = view;
+        }
         
     }
     return _contentView;
@@ -83,10 +84,11 @@
 
 //上面5个按钮
 - (IBAction)buttonClick:(UIButton *)sender {
-    //点击视频路演按钮
+    //点击路演按钮
     if (sender.tag == 1 && sender.selected == NO) {
         sender.selected = YES;
         self.discussion.selected = NO;
+        self.activity.selected = NO;
         
         [self.contentView removeFromSuperview];
         self.contentView = nil;
@@ -101,14 +103,26 @@
     {
         sender.selected = YES;
         self.footage.selected = NO;
+        self.activity.selected = NO;
         
         //添加圈子
         [self.contentView removeFromSuperview];
         self.contentView = nil;
         [self.view addSubview:self.contentView];
         [self layoutForContentView:self.contentView];
+    }
+    //活动
+    else if (sender.tag == 3 && sender.selected == NO)
+    {
+        sender.selected = YES;
+        self.footage.selected = NO;
+        self.discussion.selected = NO;
         
-        
+        //添加活动列表
+        [self.contentView removeFromSuperview];
+        self.contentView = nil;
+        [self.view addSubview:self.contentView];
+        [self layoutForContentView:self.contentView];
     }
 }
 

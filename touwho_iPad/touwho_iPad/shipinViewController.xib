@@ -4,21 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="shipinMenuView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="shipinViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="rih-73-8Dc"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <gestureRecognizers/>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="Gcs-SR-C5g" appends="YES" id="rXE-Kh-E0Q"/>
-            </connections>
         </view>
-        <tapGestureRecognizer id="Gcs-SR-C5g">
-            <connections>
-                <action selector="tap:" destination="-1" id="ogT-Df-HoM"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
 </document>

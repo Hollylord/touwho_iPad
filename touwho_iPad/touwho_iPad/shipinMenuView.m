@@ -8,6 +8,8 @@
 
 #import "shipinMenuView.h"
 #import "shipinView.h"
+#import "shipinViewController.h"
+
 #define MarginSide 30
 #define MarginTop 30
 #define Width 193
@@ -18,7 +20,7 @@
     self = [super init];
     if (self) {
         for (int i = 0; i < 5; i ++) {
-            shipinView *view = [[[NSBundle mainBundle] loadNibNamed:@"shipinView" owner:nil options:nil] firstObject];
+            shipinView *view = [[[NSBundle mainBundle] loadNibNamed:@"shipinView" owner:self options:nil] firstObject];
             //只能在self的基础上添加，不能在self的子视图上添加子控件
             [self addSubview:view];
         }
@@ -29,6 +31,7 @@
 - (void)layoutSubviews{
     for (int i = 0; i < self.subviews.count; i ++) {
         shipinView *view = self.subviews[i];
+        
         //列数
         int column = i%4;
         //行数
@@ -42,5 +45,20 @@
         [view addConstraints:@[width,height]];
         view.translatesAutoresizingMaskIntoConstraints = NO;
     }
+}
+- (IBAction)tap:(UITapGestureRecognizer *)sender {
+    UIViewController *VC = [self viewController];
+    shipinViewController *shipinVC = [[shipinViewController alloc] initWithNibName:@"shipinViewController" bundle:nil];
+    [VC.navigationController pushViewController:shipinVC animated:YES];
+}
+//获得当前view的控制器
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
 }
 @end

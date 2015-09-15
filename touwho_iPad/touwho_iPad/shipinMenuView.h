@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface shipinMenuView : UIView
+- (IBAction)tap:(UITapGestureRecognizer *)sender;
 
 @end

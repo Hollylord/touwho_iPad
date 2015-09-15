@@ -22,7 +22,8 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3MP-zD-mVI">
-                    <rect key="frame" x="300" y="0.0" width="3" height="768"/>
+                    <rect key="frame" x="300" y="64" width="3" height="704"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="3" id="NAn-I6-mVh"/>
                     </constraints>
@@ -47,26 +48,77 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ump-Ri-xkn">
+                    <rect key="frame" x="303" y="64" width="620" height="704"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qHy-ov-Usd">
+                            <rect key="frame" x="21" y="22" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="GNK-wr-xRq"/>
+                                <constraint firstAttribute="width" constant="80" id="bNI-ng-9yl"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2e-7Z-7EO">
+                            <rect key="frame" x="550" y="22" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ep4-MI-fv9">
+                            <rect key="frame" x="132" y="51" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sp-29-ggx">
+                            <rect key="frame" x="21" y="125" width="578" height="128"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="99h-zM-jiO"/>
+                            </constraints>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="D2e-7Z-7EO" firstAttribute="top" secondItem="ump-Ri-xkn" secondAttribute="top" constant="22" id="1x9-Av-l0b"/>
+                        <constraint firstAttribute="trailing" secondItem="ep4-MI-fv9" secondAttribute="trailing" constant="446" id="47H-xf-kqw" userLabel="水平"/>
+                        <constraint firstItem="ep4-MI-fv9" firstAttribute="top" secondItem="ump-Ri-xkn" secondAttribute="top" constant="51" id="77P-Qs-5SW"/>
+                        <constraint firstAttribute="trailing" secondItem="4Sp-29-ggx" secondAttribute="trailing" constant="21" id="9oY-9g-Qk5"/>
+                        <constraint firstAttribute="trailing" secondItem="D2e-7Z-7EO" secondAttribute="trailing" constant="28" id="QmQ-Pe-xgI"/>
+                        <constraint firstItem="qHy-ov-Usd" firstAttribute="leading" secondItem="ump-Ri-xkn" secondAttribute="leading" constant="21" id="aNp-wg-rtA"/>
+                        <constraint firstAttribute="bottom" secondItem="4Sp-29-ggx" secondAttribute="bottom" constant="515" id="eRL-jM-Mhw" userLabel="竖直"/>
+                        <constraint firstItem="4Sp-29-ggx" firstAttribute="top" secondItem="qHy-ov-Usd" secondAttribute="bottom" constant="23" id="l1L-JT-0jD"/>
+                        <constraint firstItem="4Sp-29-ggx" firstAttribute="leading" secondItem="ump-Ri-xkn" secondAttribute="leading" constant="21" id="mwQ-Pf-eQ9"/>
+                        <constraint firstItem="qHy-ov-Usd" firstAttribute="top" secondItem="ump-Ri-xkn" secondAttribute="top" constant="22" id="pIx-0L-n2O"/>
+                        <constraint firstItem="ep4-MI-fv9" firstAttribute="leading" secondItem="qHy-ov-Usd" secondAttribute="trailing" constant="31" id="xiY-kO-NTV"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="3MP-zD-mVI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="300" id="0pt-Gz-2Fo"/>
-                <constraint firstItem="3MP-zD-mVI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2tK-ds-97y"/>
+                <constraint firstItem="ump-Ri-xkn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="1tm-Nu-2Di"/>
+                <constraint firstItem="3MP-zD-mVI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="2tK-ds-97y"/>
+                <constraint firstAttribute="trailing" secondItem="ump-Ri-xkn" secondAttribute="trailing" id="5PX-aO-rOi"/>
                 <constraint firstItem="278-zb-65z" firstAttribute="top" secondItem="aJZ-w3-RxE" secondAttribute="bottom" constant="8" id="5od-5P-Rdv"/>
                 <constraint firstItem="3MP-zD-mVI" firstAttribute="leading" secondItem="aJZ-w3-RxE" secondAttribute="trailing" constant="41" id="9Hu-it-mNc"/>
                 <constraint firstItem="aJZ-w3-RxE" firstAttribute="top" secondItem="stF-R2-H1q" secondAttribute="bottom" constant="14" id="Ac2-IS-V5i"/>
                 <constraint firstItem="stF-R2-H1q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="70" id="EoP-Km-B7K"/>
+                <constraint firstAttribute="bottom" secondItem="ump-Ri-xkn" secondAttribute="bottom" id="IRI-XK-Mzu"/>
                 <constraint firstItem="3MP-zD-mVI" firstAttribute="leading" secondItem="278-zb-65z" secondAttribute="trailing" constant="17" id="QO0-3w-vfo"/>
                 <constraint firstItem="3MP-zD-mVI" firstAttribute="leading" secondItem="stF-R2-H1q" secondAttribute="trailing" constant="70" id="TBB-wY-Vuc"/>
                 <constraint firstItem="VQl-WC-cCE" firstAttribute="top" secondItem="stF-R2-H1q" secondAttribute="bottom" constant="14" id="YFt-bH-Xlm"/>
                 <constraint firstItem="stF-R2-H1q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="as5-F9-VWU"/>
                 <constraint firstItem="VQl-WC-cCE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="mQp-bT-RMb"/>
+                <constraint firstItem="ump-Ri-xkn" firstAttribute="leading" secondItem="3MP-zD-mVI" secondAttribute="trailing" id="o81-yh-gCU"/>
                 <constraint firstItem="278-zb-65z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="oQK-ld-MTs"/>
                 <constraint firstAttribute="bottom" secondItem="3MP-zD-mVI" secondAttribute="bottom" id="sV1-Dc-uu1"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="452.5" y="280"/>
+            <point key="canvasLocation" x="269.5" y="275"/>
         </view>
     </objects>
 </document>

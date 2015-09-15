@@ -675,14 +675,14 @@
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
                                         <rect key="frame" x="163" y="70" width="60" height="30"/>
                                         <state key="normal" title="投壶活动"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="70" width="60" height="30"/>
                                         </variation>
                                         <connections>
-                                            <segue destination="CeU-pe-sUb" kind="show" id="CGF-8t-ezn"/>
+                                            <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="4IE-lB-gXT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
@@ -722,6 +722,7 @@
                         <barButtonItem key="backBarButtonItem" title="返回" id="ofK-NK-NFa"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activity" destination="U0Z-yg-lN0" id="9h4-QO-wUY"/>
                         <outlet property="discussion" destination="S9R-wC-daW" id="I04-p0-DkE"/>
                         <outlet property="footage" destination="xdF-cn-FPy" id="mc5-M4-5G6"/>
                         <outlet property="line" destination="S61-Ex-FFa" id="a2P-3D-9KT"/>
@@ -731,35 +732,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgn-6q-3Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-781" y="1403"/>
-        </scene>
-        <!--活动-->
-        <scene sceneID="ORF-O5-P9p">
-            <objects>
-                <viewController title="活动" id="CeU-pe-sUb" customClass="huodongViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wkA-6t-NqA"/>
-                        <viewControllerLayoutGuide type="bottom" id="M52-cN-znI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="80R-lo-sFO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruU-fh-iuW">
-                                <rect key="frame" x="243" y="170" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.88321738189999999" blue="0.2418502434" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="活动" id="LMG-wr-Tb2">
-                        <barButtonItem key="backBarButtonItem" title="返回" id="ePX-81-a1O"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oG3-6l-2FO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-13" y="1399"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yUn-DC-lOw">
