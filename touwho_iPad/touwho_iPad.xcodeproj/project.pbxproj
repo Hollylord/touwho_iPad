@@ -48,7 +48,6 @@
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
 		A1B8684A1B848112005C4A6F /* popUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868471B848112005C4A6F /* popUpView.m */; };
 		A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868491B848112005C4A6F /* customAnnotationView.m */; };
-		A1B88C9E1BA15EF8008FA7C9 /* jigou.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B88C9D1BA15EF8008FA7C9 /* jigou.xib */; };
 		A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B88CA01BA165AD008FA7C9 /* UUInputFunctionView.m */; };
 		A1B88CB71BA16A55008FA7C9 /* chat_animation1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B88CA41BA16A55008FA7C9 /* chat_animation1.png */; };
 		A1B88CB81BA16A55008FA7C9 /* chat_animation2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B88CA51BA16A55008FA7C9 /* chat_animation2.png */; };
@@ -136,6 +135,8 @@
 		A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */; };
 		A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */; };
 		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
+		A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */; };
+		A1E9BE901BA7B66C00876186 /* JiGouUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,7 +230,6 @@
 		A1B868471B848112005C4A6F /* popUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popUpView.m; sourceTree = "<group>"; };
 		A1B868481B848112005C4A6F /* customAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customAnnotationView.h; sourceTree = "<group>"; };
 		A1B868491B848112005C4A6F /* customAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customAnnotationView.m; sourceTree = "<group>"; };
-		A1B88C9D1BA15EF8008FA7C9 /* jigou.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = jigou.xib; sourceTree = "<group>"; };
 		A1B88C9F1BA165AD008FA7C9 /* UUInputFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUInputFunctionView.h; sourceTree = "<group>"; };
 		A1B88CA01BA165AD008FA7C9 /* UUInputFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUInputFunctionView.m; sourceTree = "<group>"; };
 		A1B88CA21BA169E1008FA7C9 /* ACMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
@@ -355,6 +355,9 @@
 		A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherCenterViewController.h; sourceTree = "<group>"; };
 		A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherCenterViewController.m; sourceTree = "<group>"; };
 		A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherCenterViewController.xib; sourceTree = "<group>"; };
+		A1E9BE8C1BA7B60D00876186 /* JiGouMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiGouMenuView.h; sourceTree = "<group>"; };
+		A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiGouMenuView.m; sourceTree = "<group>"; };
+		A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JiGouUnit.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -712,7 +715,9 @@
 		A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */ = {
 			isa = PBXGroup;
 			children = (
-				A1B88C9D1BA15EF8008FA7C9 /* jigou.xib */,
+				A1E9BE8C1BA7B60D00876186 /* JiGouMenuView.h */,
+				A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */,
+				A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */,
 			);
 			name = "机构专题";
 			sourceTree = "<group>";
@@ -1147,10 +1152,10 @@
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */,
 				A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */,
+				A1E9BE901BA7B66C00876186 /* JiGouUnit.xib in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A1C07CD81B9C229B00A2F1CB /* profileViewController.xib in Resources */,
-				A1B88C9E1BA15EF8008FA7C9 /* jigou.xib in Resources */,
 				A1B88CBE1BA16A55008FA7C9 /* chat_message_back.png in Resources */,
 				A1B88CC21BA16A55008FA7C9 /* chat_voice_record.png in Resources */,
 				A1B88CC11BA16A55008FA7C9 /* Chat_take_picture.png in Resources */,
@@ -1254,6 +1259,7 @@
 				A132593A1B8336FE00A327C6 /* splitViewController.m in Sources */,
 				A1C3EDDD1B9EB7050023AB6E /* replyViewController.m in Sources */,
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
+				A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,

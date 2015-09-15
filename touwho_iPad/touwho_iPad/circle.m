@@ -7,6 +7,7 @@
 //
 
 #import "circle.h"
+#import "JiGouMenuView.h"
 
 @implementation circle
 - (NSMutableArray *)views{
@@ -27,7 +28,7 @@
         UIView *view2 = [[[NSBundle mainBundle] loadNibNamed:@"topics" owner:nil options:nil]firstObject];
         [self.views addObject:view2];
         
-        UIView *view3 = [[[NSBundle mainBundle] loadNibNamed:@"jigou" owner:nil options:nil]firstObject];
+        JiGouMenuView *view3 = [[JiGouMenuView alloc] init];
         [self.views addObject:view3];
         
     }
