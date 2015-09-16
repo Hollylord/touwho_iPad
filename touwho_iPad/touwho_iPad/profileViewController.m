@@ -91,26 +91,48 @@
 
 #pragma mark - 按钮点击
 - (IBAction)uploadCard:(UIButton *)sender {
-    //只在这里生成照相机 由于没有strong 不知道出了这个方法能不能使用
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    
-    imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
-        [self presentViewController:imagePicker animated:YES completion:NULL];
-        
+    NSString *title = [sender titleForState:UIControlStateNormal];
+    if ([title isEqualToString:@"上传名片"]) {
+        [sender setTitle:@"重新上传" forState:UIControlStateNormal];//修改按钮的文字
     }
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+            [self presentViewController:imagePicker animated:YES completion:NULL];
+        }
+    
+    
+    
 }
 
 #pragma mark - 照相机代理
+//拍照完毕后调用
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    [picker dismissViewControllerAnimated:YES completion:NULL];//退出照相机
+    
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];//获取原始图片
+    NSDictionary *orientation = [info objectForKey:@"UIImagePickerControllerMediaMetadata"];
+    int multiple = [orientation objectForKey:@"Orientation"];
+    
+
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);//存入相册
     if (self.presentBusinessCard) {
         self.presentBusinessCard(image);
-    }
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    NSLog(@"%@",image);
+    }//将拍得的照片显示到个人信息页面上
+    
+    //cache文件夹目录
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+    //拼接文件目录
+    NSString *filePath = [cachePath stringByAppendingPathComponent:@"businessCard"];
+    //图片转NSData
+    NSData * imageData = UIImagePNGRepresentation(image);
+    //保存图片
+    [imageData writeToFile:filePath atomically:YES];
+    
     
 }
+
 @end

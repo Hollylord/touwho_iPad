@@ -7,15 +7,29 @@
 //
 
 #import "profile.h"
-#import "profileViewController.h"
+
 
 @implementation profile
 
+
 - (void)awakeFromNib{
-    profileViewController *VC = (profileViewController *)[self viewController];
-    VC.presentBusinessCard = ^(UIImage * image){
-        [self.businessCard setImage:image];
-    };
+    if (!self.businessCard.image) {
+        [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
+        //cache文件夹目录
+        NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+        //拼接文件目录
+        NSString *filePath = [cachePath stringByAppendingPathComponent:@"businessCard"];
+        //取出图片
+        NSData *imageData = [NSData dataWithContentsOfFile:filePath];
+        UIImage *image = [UIImage imageWithData:imageData];
+        
+        //显示图片
+        self.businessCard.image = image;
+    }
+    else {
+        [self.takePhotoBtn setTitle:@"上传名片" forState:UIControlStateNormal];
+    }
+    
 }
 
 //获得当前view的控制器

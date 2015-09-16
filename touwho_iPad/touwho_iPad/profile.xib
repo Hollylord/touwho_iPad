@@ -204,7 +204,7 @@
                     <constraints>
                         <constraint firstItem="zNT-Y1-KxZ" firstAttribute="leading" secondItem="2qN-Yw-XuA" secondAttribute="leading" id="0DB-k1-Vke"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="centerY" secondItem="kUa-g5-ewl" secondAttribute="centerY" id="2iD-Ad-Fjo"/>
-                        <constraint firstAttribute="trailing" secondItem="90e-Cg-PlC" secondAttribute="trailing" constant="225" id="6hP-ml-Hx4" userLabel="水平"/>
+                        <constraint firstAttribute="trailing" secondItem="90e-Cg-PlC" secondAttribute="trailing" id="6hP-ml-Hx4" userLabel="水平"/>
                         <constraint firstItem="y7N-OR-rmX" firstAttribute="top" secondItem="n3e-Ea-Qak" secondAttribute="bottom" constant="21" id="8aO-Sb-6mR"/>
                         <constraint firstItem="Hxz-IA-twR" firstAttribute="leading" secondItem="beV-X1-81z" secondAttribute="leading" constant="152" id="8sA-fZ-rgv"/>
                         <constraint firstItem="zNT-Y1-KxZ" firstAttribute="centerY" secondItem="WLi-RY-fZo" secondAttribute="centerY" id="94p-MG-4nY"/>
@@ -284,6 +284,7 @@
             </variation>
             <connections>
                 <outlet property="businessCard" destination="y7N-OR-rmX" id="HgK-82-xmo"/>
+                <outlet property="takePhotoBtn" destination="OjR-9S-WP9" id="97F-pi-OSU"/>
             </connections>
             <point key="canvasLocation" x="550" y="341.5"/>
         </view>

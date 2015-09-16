@@ -8,6 +8,8 @@
 
 #import "meRight.h"
 #import "message.h"
+#import "profileViewController.h"
+#import "profile.h"
 
 @implementation meRight
 
@@ -42,14 +44,22 @@
     [self addSubview:view];
     [self layoutForSubview:view];
 }
-//编辑个人信息
+//编辑个人信息页面的设置
 - (void)presentProfile{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
-    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"profile" owner:nil options:nil]firstObject];
+    profile *view = [[[NSBundle mainBundle] loadNibNamed:@"profile" owner:nil options:nil]firstObject];
     [self addSubview:view];
     [self layoutForSubview:view];
+    
+    //设置拍到照片后的回调方法：显示图片
+    profileViewController *VC = (profileViewController *)[self viewController];
+    VC.presentBusinessCard = ^(UIImage * image){
+        [view.businessCard setImage:image];
+        
+    };
+    
 }
 //已投资的项目
 - (void)presentPrograms{
@@ -146,5 +156,16 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
+}
+
+//获得当前view的控制器
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
 }
 @end
