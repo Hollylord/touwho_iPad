@@ -114,14 +114,27 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];//退出照相机
     
     UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];//获取原始图片
-    NSDictionary *orientation = [info objectForKey:@"UIImagePickerControllerMediaMetadata"];
-    int multiple = [orientation objectForKey:@"Orientation"];
+    NSDictionary *temp = [info objectForKey:@"UIImagePickerControllerMediaMetadata"];
+    int orientation = (int)[temp objectForKey:@"Orientation"];
+    //如果照相方向反了就把图片旋转180°
+    if (orientation == 50) {
+        //旋转图片
+        //获得上下文
+        UIGraphicsBeginImageContext(image.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        //往上下文上添加图片
+        CGContextDrawImage(context, CGRectMake(0, 0, image.size.width, image.size.height), image.CGImage);
+        CGContextRotateCTM(context, M_PI);//旋转
+        UIImage *imageNew = UIGraphicsGetImageFromCurrentImageContext();//获得新图片
+        UIGraphicsEndImageContext();
+        image = imageNew;
+    }
     
-
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);//存入相册
+    
+    //将拍得的照片显示到个人信息页面上
     if (self.presentBusinessCard) {
         self.presentBusinessCard(image);
-    }//将拍得的照片显示到个人信息页面上
+    }
     
     //cache文件夹目录
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
