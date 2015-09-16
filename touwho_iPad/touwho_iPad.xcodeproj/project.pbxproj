@@ -11,6 +11,7 @@
 		A1002B171B8570D5007520AA /* shipinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B161B8570D5007520AA /* shipinViewController.m */; };
 		A1002B1A1B857570007520AA /* shipinView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B191B857570007520AA /* shipinView.m */; };
 		A1002B201B85B682007520AA /* shipinMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1002B1F1B85B682007520AA /* shipinMenuView.m */; };
+		A10076BE1BA91D780097987B /* profile.m in Sources */ = {isa = PBXBuildFile; fileRef = A10076BD1BA91D780097987B /* profile.m */; };
 		A1033BD31B8C487000FC8921 /* topics.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD21B8C487000FC8921 /* topics.xib */; };
 		A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BD71B8C513800FC8921 /* xiaozu.m */; };
 		A1033BE11B8C59CD00FC8921 /* topics.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BE01B8C59CD00FC8921 /* topics.m */; };
@@ -172,6 +173,8 @@
 		A1002B191B857570007520AA /* shipinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinView.m; sourceTree = "<group>"; };
 		A1002B1E1B85B682007520AA /* shipinMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shipinMenuView.h; sourceTree = "<group>"; };
 		A1002B1F1B85B682007520AA /* shipinMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shipinMenuView.m; sourceTree = "<group>"; };
+		A10076BC1BA91D780097987B /* profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = profile.h; sourceTree = "<group>"; };
+		A10076BD1BA91D780097987B /* profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = profile.m; sourceTree = "<group>"; };
 		A1033BD21B8C487000FC8921 /* topics.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topics.xib; sourceTree = "<group>"; };
 		A1033BD61B8C513800FC8921 /* xiaozu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xiaozu.h; sourceTree = "<group>"; };
 		A1033BD71B8C513800FC8921 /* xiaozu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xiaozu.m; sourceTree = "<group>"; };
@@ -848,6 +851,8 @@
 				A11451C31B8DC47700E45381 /* apply.xib */,
 				A1BE7F491B8DAFE100E76711 /* publish.xib */,
 				A11451C11B8DC31400E45381 /* programsCell.xib */,
+				A10076BC1BA91D780097987B /* profile.h */,
+				A10076BD1BA91D780097987B /* profile.m */,
 				A13EEA851B8EA51D0052C2A7 /* profile.xib */,
 			);
 			name = "个人详情";
@@ -1307,6 +1312,7 @@
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
+				A10076BE1BA91D780097987B /* profile.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,
 				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface profileViewController : UIViewController
-
+/**
+ *  显示拍照后的照片
+ */
+@property (copy,nonatomic) void (^presentBusinessCard)(UIImage *);
 @end
