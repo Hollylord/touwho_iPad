@@ -110,10 +110,10 @@
     [self.delegate presentMessage];
     
 }
-
+//点击头像
 - (IBAction)headClick:(UIButton *)sender {
-    if (self.headIconClick) {
-        self.headIconClick();
+    if (self.headClick) {
+        self.headClick();
     }
 }
 @end

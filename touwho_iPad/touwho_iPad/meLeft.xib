@@ -60,7 +60,7 @@
             <connections>
                 <outlet property="tableView" destination="KFX-fE-VOB" id="ODh-Fh-SKJ"/>
             </connections>
-            <point key="canvasLocation" x="122" y="336"/>
+            <point key="canvasLocation" x="122" y="270"/>
         </view>
     </objects>
 </document>

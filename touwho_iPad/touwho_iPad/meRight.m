@@ -11,6 +11,7 @@
 #import "profileViewController.h"
 #import "profile.h"
 
+
 @implementation meRight
 
 
@@ -109,7 +110,7 @@
         [view removeFromSuperview];
     }
 }
-
+//消息
 - (void)presentMessage{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -119,6 +120,7 @@
     [self layoutForSubview:view];
     
 }
+
 
 - (void)layoutForSubview:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1 constant:0];

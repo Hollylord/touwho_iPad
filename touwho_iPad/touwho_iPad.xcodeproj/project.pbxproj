@@ -43,6 +43,8 @@
 		A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */; };
 		A19D09761B7C306900094B81 /* programViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09751B7C306900094B81 /* programViewController.m */; };
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
+		A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
@@ -228,6 +230,9 @@
 		A19D09751B7C306900094B81 /* programViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programViewController.m; sourceTree = "<group>"; };
 		A19D097B1B7C835C00094B81 /* myFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myFlowLayout.h; sourceTree = "<group>"; };
 		A19D097C1B7C835C00094B81 /* myFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFlowLayout.m; sourceTree = "<group>"; };
+		A1A01AA81BAA61AA009EF690 /* HeadIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadIconViewController.h; sourceTree = "<group>"; };
+		A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadIconViewController.m; sourceTree = "<group>"; };
+		A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadIconViewController.xib; sourceTree = "<group>"; };
 		A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
 		A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
 		A1B868401B842D02005C4A6F /* discoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discoveryViewController.h; sourceTree = "<group>"; };
@@ -501,6 +506,16 @@
 			name = "最新话题";
 			sourceTree = "<group>";
 		};
+		A10CCA091BAA56EB00ED0F49 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1C07CD41B9C229B00A2F1CB /* profileViewController.h */,
+				A1C07CD51B9C229B00A2F1CB /* profileViewController.m */,
+				A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		A13259301B8306E100A327C6 /* 我 */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +524,7 @@
 				A1C3EDE01B9EB7230023AB6E /* 个人中心 */,
 				A1C3EDDF1B9EB7090023AB6E /* 回复通知 */,
 				A1C3EDE71B9EBB730023AB6E /* 聊天 */,
+				A1A01AA71BAA6158009EF690 /* 头像 */,
 			);
 			name = "我";
 			sourceTree = "<group>";
@@ -679,6 +695,16 @@
 				A13259271B82C37B00A327C6 /* programView.xib */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		A1A01AA71BAA6158009EF690 /* 头像 */ = {
+			isa = PBXGroup;
+			children = (
+				A1A01AA81BAA61AA009EF690 /* HeadIconViewController.h */,
+				A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */,
+				A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */,
+			);
+			name = "头像";
 			sourceTree = "<group>";
 		};
 		A1B868381B842BEF005C4A6F /* 发现 */ = {
@@ -873,9 +899,7 @@
 			children = (
 				A1BE7F471B8DAF8500E76711 /* 个人中心左边 */,
 				A1BE7F481B8DAF8F00E76711 /* 个人中心右边 */,
-				A1C07CD41B9C229B00A2F1CB /* profileViewController.h */,
-				A1C07CD51B9C229B00A2F1CB /* profileViewController.m */,
-				A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */,
+				A10CCA091BAA56EB00ED0F49 /* controller */,
 			);
 			name = "个人中心";
 			sourceTree = "<group>";
@@ -1188,6 +1212,7 @@
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A1B88CC01BA16A55008FA7C9 /* chat_send_message.png in Resources */,
 				A1B88CB91BA16A55008FA7C9 /* chat_animation3.png in Resources */,
+				A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */,
 				A1D78E1F1B9D945F00C136C3 /* commentCell.xib in Resources */,
 				A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */,
 				A1B88CC41BA16A55008FA7C9 /* chatfrom_doctor_icon.png in Resources */,
@@ -1333,6 +1358,7 @@
 				A1B88CFF1BA17D32008FA7C9 /* UUImageAvatarBrowser.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
+				A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A1E9BE951BA7CD7400876186 /* JiGouDetailViewController.m in Sources */,

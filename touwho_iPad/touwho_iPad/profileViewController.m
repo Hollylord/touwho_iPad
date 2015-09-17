@@ -10,7 +10,7 @@
 #import "meRight.h"
 #import "meLeft.h"
 #import "notification.h"
-#import "OtherCenterViewController.h"
+#import "HeadIconViewController.h"
 
 @interface profileViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet meLeft *meLeftView;
@@ -31,10 +31,11 @@
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
     [self.view addSubview:me];
     [self layoutForMe:me];
-    //实现点击头像操作
-    me.headIconClick = ^(){
-        OtherCenterViewController *otherVC = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
-        [self.navigationController pushViewController:otherVC animated:YES];
+    //modal出头像控制器
+    me.headClick = ^(){
+        HeadIconViewController *headVC = [[HeadIconViewController alloc] initWithNibName:@"HeadIconViewController" bundle:nil];
+        headVC.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:headVC animated:YES completion:NULL];
     };
     
     //添加右边view
