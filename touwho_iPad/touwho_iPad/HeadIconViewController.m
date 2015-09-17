@@ -7,8 +7,13 @@
 //
 
 #import "HeadIconViewController.h"
+#import "MyImagePickerViewController.h"
 
-@interface HeadIconViewController ()
+@interface HeadIconViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+
+- (IBAction)cancelClick:(UIBarButtonItem *)sender;
+- (IBAction)localIconClick:(UIButton *)sender;
+- (IBAction)uploadClick:(UIButton *)sender;
 
 @end
 
@@ -24,14 +29,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - 按钮点击
+//点击取消
+- (IBAction)cancelClick:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
-*/
+//点击本地头像
+- (IBAction)localIconClick:(UIButton *)sender {
+    MyImagePickerViewController *headIconPicker = [[MyImagePickerViewController alloc] init];
+    headIconPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    headIconPicker.delegate = self;
+    headIconPicker.allowsEditing = YES;
+    [self presentViewController:headIconPicker animated:YES completion:NULL];
+}
+
+//点击上传
+- (IBAction)uploadClick:(UIButton *)sender {
+    
+}
+
+#pragma mark - UIImagePicker代理
+//点击use photo后的回调方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    //退出照相机
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSLog(@"%@",image);
+}
 
 @end

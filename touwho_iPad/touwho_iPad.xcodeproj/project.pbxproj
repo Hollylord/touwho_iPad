@@ -45,6 +45,7 @@
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
 		A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
@@ -233,6 +234,8 @@
 		A1A01AA81BAA61AA009EF690 /* HeadIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadIconViewController.h; sourceTree = "<group>"; };
 		A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadIconViewController.m; sourceTree = "<group>"; };
 		A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadIconViewController.xib; sourceTree = "<group>"; };
+		A1A01AAD1BAA6CFF009EF690 /* MyImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImagePickerViewController.h; sourceTree = "<group>"; };
+		A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImagePickerViewController.m; sourceTree = "<group>"; };
 		A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
 		A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
 		A1B868401B842D02005C4A6F /* discoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discoveryViewController.h; sourceTree = "<group>"; };
@@ -664,6 +667,7 @@
 			children = (
 				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
 				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
+				A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */,
 				A1DB9AA31BA269A900EC97D6 /* 根控制器 */,
 			);
 			name = other;
@@ -705,6 +709,15 @@
 				A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */,
 			);
 			name = "头像";
+			sourceTree = "<group>";
+		};
+		A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A1A01AAD1BAA6CFF009EF690 /* MyImagePickerViewController.h */,
+				A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */,
+			);
+			name = MyUIImagePicker;
 			sourceTree = "<group>";
 		};
 		A1B868381B842BEF005C4A6F /* 发现 */ = {
@@ -1344,6 +1357,7 @@
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
 				A1B88CCF1BA16A6C008FA7C9 /* Mp3Recorder.m in Sources */,
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
+				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
 				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
 				A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,

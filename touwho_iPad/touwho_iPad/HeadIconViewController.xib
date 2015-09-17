@@ -13,7 +13,59 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAF-kf-Vy4">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="1Pg-tA-9q8"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="头像设置" id="O1S-Ax-gx1">
+                            <barButtonItem key="leftBarButtonItem" title="取消" id="sBw-6C-7vw">
+                                <connections>
+                                    <action selector="cancelClick:" destination="-1" id="Zlb-AO-huh"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EKP-sf-B4k">
+                    <rect key="frame" x="118" y="59" width="365" height="191"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="191" id="8Cy-zL-JSF"/>
+                        <constraint firstAttribute="width" constant="365" id="sAi-2G-awk"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPQ-SN-f2l">
+                    <rect key="frame" x="118" y="272" width="365" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="本地头像"/>
+                    <connections>
+                        <action selector="localIconClick:" destination="-1" eventType="touchUpInside" id="4s0-oT-85n"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-3v-1Kg">
+                    <rect key="frame" x="118" y="322" width="365" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="上传"/>
+                    <connections>
+                        <action selector="uploadClick:" destination="-1" eventType="touchUpInside" id="dc0-vU-yPA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="EKP-sf-B4k" firstAttribute="top" secondItem="IAF-kf-Vy4" secondAttribute="bottom" constant="15" id="6hA-jn-Wrv"/>
+                <constraint firstItem="IAF-kf-Vy4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7yO-jd-aKC"/>
+                <constraint firstAttribute="trailing" secondItem="IAF-kf-Vy4" secondAttribute="trailing" id="AXS-FG-jrG"/>
+                <constraint firstItem="hPQ-SN-f2l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C73-pP-Cga"/>
+                <constraint firstItem="hPQ-SN-f2l" firstAttribute="width" secondItem="EKP-sf-B4k" secondAttribute="width" id="NyO-OY-ar3"/>
+                <constraint firstItem="hPQ-SN-f2l" firstAttribute="top" secondItem="EKP-sf-B4k" secondAttribute="bottom" constant="22" id="Qb3-VK-5UB"/>
+                <constraint firstItem="EKP-sf-B4k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WT1-wr-Acn"/>
+                <constraint firstItem="6w8-3v-1Kg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f4O-vY-gEj"/>
+                <constraint firstItem="IAF-kf-Vy4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="klw-Xi-OQ0"/>
+                <constraint firstItem="6w8-3v-1Kg" firstAttribute="top" secondItem="hPQ-SN-f2l" secondAttribute="bottom" constant="20" id="ndN-FI-59y"/>
+                <constraint firstItem="6w8-3v-1Kg" firstAttribute="width" secondItem="EKP-sf-B4k" secondAttribute="width" id="zMV-Jb-CZY"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="322" y="344"/>
