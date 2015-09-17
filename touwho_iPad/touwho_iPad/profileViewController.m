@@ -33,7 +33,6 @@
     [self layoutForMe:me];
     
     //modal出头像控制器
-
     me.headClick = ^(){
         HeadIconViewController *headVC = [[HeadIconViewController alloc] initWithNibName:@"HeadIconViewController" bundle:nil];
         headVC.modalPresentationStyle = UIModalPresentationFormSheet;

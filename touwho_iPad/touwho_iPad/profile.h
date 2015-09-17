@@ -11,5 +11,9 @@
 @interface profile : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *businessCard;
 @property (weak, nonatomic) IBOutlet UIButton *takePhotoBtn;
+@property (weak, nonatomic) IBOutlet UISwitch *genderSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *gender;
+
+- (IBAction)sexChoose:(UISwitch *)sender;
 
 @end
