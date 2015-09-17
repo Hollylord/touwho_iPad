@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="profileViewController">
@@ -29,28 +29,27 @@
                         <action selector="message:" destination="iN0-l3-epB" eventType="touchUpInside" id="nrR-ZI-bOV"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-HP-Jr1">
-                    <rect key="frame" x="16" y="63" width="97" height="91"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lao-TQ-mu3">
+                    <rect key="frame" x="14" y="58" width="145" height="108"/>
+                    <gestureRecognizers/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="91" id="7lg-IJ-obM"/>
-                        <constraint firstAttribute="width" constant="97" id="Rmh-7v-0Cx"/>
+                        <constraint firstAttribute="width" constant="145" id="1OJ-gz-VEM"/>
+                        <constraint firstAttribute="height" constant="108" id="V1H-dO-blt"/>
                     </constraints>
-                    <state key="normal" title="头像"/>
                     <connections>
-                        <action selector="headClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="7fj-Em-ScF"/>
+                        <outletCollection property="gestureRecognizers" destination="HcU-ud-IIh" appends="YES" id="8UB-18-kT6"/>
                     </connections>
-                </button>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>
                 <constraint firstAttribute="trailing" secondItem="KFX-fE-VOB" secondAttribute="trailing" id="HIq-Jd-zYC"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="101" id="Tqg-QC-MSp"/>
-                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="4aa-HP-Jr1" secondAttribute="trailing" constant="78" id="iXD-dp-2Cb"/>
-                <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="4aa-HP-Jr1" secondAttribute="bottom" constant="20" id="kK5-kf-ZYM"/>
-                <constraint firstItem="4aa-HP-Jr1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="qNy-87-Jh9"/>
-                <constraint firstItem="4aa-HP-Jr1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="63" id="xeB-Cb-NkV"/>
+                <constraint firstItem="Lao-TQ-mu3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="58" id="cTo-bq-yBc"/>
+                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Lao-TQ-mu3" secondAttribute="trailing" constant="32" id="ge8-2R-hkq"/>
+                <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="Lao-TQ-mu3" secondAttribute="bottom" constant="8" id="iEL-va-Xie"/>
+                <constraint firstItem="Lao-TQ-mu3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="tQP-HA-tgX"/>
                 <constraint firstAttribute="bottom" secondItem="KFX-fE-VOB" secondAttribute="bottom" constant="153" id="xsJ-cH-Dvg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -58,9 +57,15 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="headImageView" destination="Lao-TQ-mu3" id="J50-LP-Csb"/>
                 <outlet property="tableView" destination="KFX-fE-VOB" id="ODh-Fh-SKJ"/>
             </connections>
             <point key="canvasLocation" x="122" y="270"/>
         </view>
+        <tapGestureRecognizer id="HcU-ud-IIh">
+            <connections>
+                <action selector="headClick:" destination="iN0-l3-epB" id="N9A-cd-3bg"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

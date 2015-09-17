@@ -31,12 +31,24 @@
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
     [self.view addSubview:me];
     [self layoutForMe:me];
+    
     //modal出头像控制器
+
     me.headClick = ^(){
         HeadIconViewController *headVC = [[HeadIconViewController alloc] initWithNibName:@"HeadIconViewController" bundle:nil];
         headVC.modalPresentationStyle = UIModalPresentationFormSheet;
-        [self presentViewController:headVC animated:YES completion:NULL];
+        [self presentViewController:headVC animated:YES completion:^{
+            
+            //获得头像后显示出来
+            headVC.passImage = ^(UIImage *image){
+                meLeft *view = self.view.subviews[0];
+                view.headImageView.image = image;
+            };
+        }];
+        
     };
+    
+    
     
     //添加右边view
     meRight *meRightView = [[meRight alloc] init];

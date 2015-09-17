@@ -10,6 +10,7 @@
 #import "MyImagePickerViewController.h"
 
 @interface HeadIconViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
 
 - (IBAction)cancelClick:(UIBarButtonItem *)sender;
 - (IBAction)localIconClick:(UIButton *)sender;
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,9 +39,9 @@
 //点击本地头像
 - (IBAction)localIconClick:(UIButton *)sender {
     MyImagePickerViewController *headIconPicker = [[MyImagePickerViewController alloc] init];
-    headIconPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    headIconPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     headIconPicker.delegate = self;
-    headIconPicker.allowsEditing = YES;
+//    headIconPicker.allowsEditing = YES;
     [self presentViewController:headIconPicker animated:YES completion:NULL];
 }
 
@@ -54,9 +55,21 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     //退出照相机
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
+    //获得原图
     UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSLog(@"%@",image);
+    //显示图片在imageView上
+    self.headImage.image = image;
+    //图片压缩成NSData 可以适合上传
+    NSData *compressed = UIImageJPEGRepresentation(image, 0.5);
+    //存储图片
+    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *filePath = [cache stringByAppendingPathComponent:@"headIcon"];
+    [compressed writeToFile:filePath atomically:YES];
+    
+    //传递图片给小头像
+    if (self.passImage) {
+        self.passImage(image);
+    }
 }
 
 @end

@@ -53,6 +53,11 @@
 @interface meLeft : UIView <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak,nonatomic) id <meLeftDelegate>delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+
+
+
+
 /**
  *  查看消息
  */

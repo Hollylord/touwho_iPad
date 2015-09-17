@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HeadIconViewController : UIViewController
-
+@property (copy, nonatomic) void (^passImage)(UIImage *);
 @end
