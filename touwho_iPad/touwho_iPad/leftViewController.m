@@ -32,13 +32,18 @@
     self.discovery.selected = NO;
     self.me.selected = NO;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(headImage:) name:@"setHeadImageView" object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 
+}
 
 
 #pragma mark - 按钮点击
@@ -77,5 +82,10 @@
         self.me.selected = YES;
     }
     
+}
+- (void)headImage:(NSNotification *)notification{
+    NSDictionary *dic = [notification userInfo];
+    UIImage *image = [dic objectForKey:@"headIcon"];
+    self.headImageView.image = image;
 }
 @end

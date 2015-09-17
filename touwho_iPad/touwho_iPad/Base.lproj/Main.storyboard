@@ -291,15 +291,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="100" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-p7-6f8">
-                                <rect key="frame" x="6" y="56" width="81" height="53"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-p7-6f8">
+                                <rect key="frame" x="0.0" y="56" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="7Q0-zq-Hmf"/>
-                                    <constraint firstAttribute="height" constant="53" id="ad9-JM-VWR"/>
+                                    <constraint firstAttribute="height" constant="100" id="ad9-JM-VWR"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Q0-zq-Hmf"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aqF-hp-sLO">
-                                <rect key="frame" x="0.0" y="162" width="100" height="450"/>
+                                <rect key="frame" x="0.0" y="166" width="100" height="450"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1da-Hc-FD0" userLabel="项目">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="113"/>
@@ -344,44 +350,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cUk-p7-6f8" firstAttribute="top" secondItem="RwT-BT-VK3" secondAttribute="bottom" constant="40" id="5n4-Ua-KEQ"/>
-                            <constraint firstItem="aqF-hp-sLO" firstAttribute="top" secondItem="cUk-p7-6f8" secondAttribute="bottom" constant="63" id="9Nm-ff-e8f"/>
-                            <constraint firstItem="aqF-hp-sLO" firstAttribute="leading" secondItem="cqh-93-WTH" secondAttribute="leading" id="Fbi-kk-Nc5"/>
                             <constraint firstAttribute="trailing" secondItem="KAR-va-XGw" secondAttribute="trailing" id="MI0-Sf-WEy"/>
                             <constraint firstItem="cUk-p7-6f8" firstAttribute="top" secondItem="cqh-93-WTH" secondAttribute="topMargin" constant="56" id="OI5-Tq-Lkf"/>
                             <constraint firstItem="aqF-hp-sLO" firstAttribute="leading" secondItem="cqh-93-WTH" secondAttribute="leading" id="OwC-HD-4JR"/>
-                            <constraint firstItem="cUk-p7-6f8" firstAttribute="leading" secondItem="cqh-93-WTH" secondAttribute="leadingMargin" constant="-10" id="bZF-f1-BfV"/>
-                            <constraint firstItem="cUk-p7-6f8" firstAttribute="leading" secondItem="cqh-93-WTH" secondAttribute="leading" constant="9" id="ct2-gv-gQd"/>
-                            <constraint firstItem="aqF-hp-sLO" firstAttribute="top" secondItem="cUk-p7-6f8" secondAttribute="bottom" constant="53" id="f7m-0T-kuw"/>
+                            <constraint firstItem="aqF-hp-sLO" firstAttribute="top" secondItem="cUk-p7-6f8" secondAttribute="bottom" constant="10" id="f7m-0T-kuw"/>
                             <constraint firstItem="cQH-9i-Oua" firstAttribute="top" secondItem="KAR-va-XGw" secondAttribute="bottom" constant="7" id="fF4-Xn-UFp"/>
+                            <constraint firstAttribute="trailing" secondItem="cUk-p7-6f8" secondAttribute="trailing" id="i4Z-X8-ldU"/>
+                            <constraint firstItem="cUk-p7-6f8" firstAttribute="leading" secondItem="cqh-93-WTH" secondAttribute="leading" id="oKo-1i-n4i"/>
                             <constraint firstItem="KAR-va-XGw" firstAttribute="leading" secondItem="cqh-93-WTH" secondAttribute="leading" id="tiU-ts-m8w"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5n4-Ua-KEQ"/>
-                                <exclude reference="ct2-gv-gQd"/>
-                                <exclude reference="9Nm-ff-e8f"/>
-                                <exclude reference="Fbi-kk-Nc5"/>
-                            </mask>
-                        </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="cUk-p7-6f8"/>
                                 <include reference="aqF-hp-sLO"/>
                             </mask>
-                            <mask key="constraints">
-                                <include reference="5n4-Ua-KEQ"/>
-                                <include reference="ct2-gv-gQd"/>
-                                <include reference="9Nm-ff-e8f"/>
-                                <include reference="Fbi-kk-Nc5"/>
-                            </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="tPY-Bj-J8r"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="100" height="800"/>
                     <connections>
                         <outlet property="discovery" destination="pBi-3T-LLd" id="cxr-KE-YP8"/>
+                        <outlet property="headImageView" destination="cUk-p7-6f8" id="R1F-Qk-zxc"/>
                         <outlet property="me" destination="pNT-wX-NCf" id="dfR-4l-qf2"/>
                         <outlet property="news" destination="N1d-Pg-Z8E" id="B8T-Ql-1AY"/>
                         <outlet property="program" destination="1da-Hc-FD0" id="Ucw-Pq-ifK"/>

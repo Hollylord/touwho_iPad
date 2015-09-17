@@ -70,6 +70,9 @@
     if (self.passImage) {
         self.passImage(image);
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self userInfo:@{@"headIcon":image}];
+    
 }
 
 @end

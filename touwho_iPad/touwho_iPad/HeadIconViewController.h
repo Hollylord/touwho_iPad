@@ -10,4 +10,5 @@
 
 @interface HeadIconViewController : UIViewController
 @property (copy, nonatomic) void (^passImage)(UIImage *);
+
 @end
