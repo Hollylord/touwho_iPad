@@ -28,10 +28,12 @@
 @end
 
 @interface UUInputFunctionView : UIView <UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
-
+//发送键 或者照相机键
 @property (nonatomic, retain) UIButton *btnSendMessage;
 @property (nonatomic, retain) UIButton *btnChangeVoiceState;
+//录音键
 @property (nonatomic, retain) UIButton *btnVoiceRecord;
+//文本输入框
 @property (nonatomic, retain) UITextView *TextViewInput;
 
 @property (nonatomic, assign) BOOL isAbleToSendTextMessage;

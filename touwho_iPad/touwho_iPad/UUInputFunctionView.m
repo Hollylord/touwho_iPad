@@ -8,7 +8,7 @@
 
 #import "UUInputFunctionView.h"
 #import "Mp3Recorder.h"
-
+#import "MyImagePickerViewController.h"
 #import "ACMacros.h"
 
 @interface UUInputFunctionView ()<UITextViewDelegate,Mp3RecorderDelegate>
@@ -207,8 +207,22 @@
     }
     else{
         [self.TextViewInput resignFirstResponder];
-        UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Images",nil];
-        [actionSheet showInView:self.window];
+//        UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"照相机",@"相册",nil];
+//        [actionSheet showInView:self];
+        UIAlertController *AC = [UIAlertController alertControllerWithTitle:nil message:@"选择图片" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *camera = [UIAlertAction actionWithTitle:@"照相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self addCarema];
+        }];
+        UIAlertAction *photo = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self openPicLibrary];
+        }];
+        [AC addAction:cancel];
+        [AC addAction:camera];
+        [AC addAction:photo];
+        [self.superVC presentViewController:AC animated:YES completion:nil];
+        
+        
     }
 }
 
@@ -242,18 +256,17 @@
 
 
 #pragma mark - Add Picture
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
         [self addCarema];
     }else if (buttonIndex == 1){
         [self openPicLibrary];
     }
 }
-
 -(void)addCarema{
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    if ([MyImagePickerViewController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        MyImagePickerViewController *picker = [[MyImagePickerViewController alloc] init];
         picker.delegate = self;
         picker.allowsEditing = YES;
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -266,8 +279,8 @@
 }
 
 -(void)openPicLibrary{
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    if ([MyImagePickerViewController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        MyImagePickerViewController *picker = [[MyImagePickerViewController alloc] init];
         picker.delegate = self;
         picker.allowsEditing = YES;
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -277,14 +290,14 @@
 }
 
 
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+-(void)imagePickerController:(MyImagePickerViewController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *editImage = [info objectForKey:UIImagePickerControllerEditedImage];
     [self.superVC dismissViewControllerAnimated:YES completion:^{
         [self.delegate UUInputFunctionView:self sendPicture:editImage];
     }];
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+- (void)imagePickerControllerDidCancel:(MyImagePickerViewController *)picker{
     [self.superVC dismissViewControllerAnimated:YES completion:nil];
 }
 
