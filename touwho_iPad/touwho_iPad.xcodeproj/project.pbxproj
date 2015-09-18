@@ -118,6 +118,7 @@
 		A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDDC1B9EB7050023AB6E /* replyViewController.xib */; };
 		A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */; };
 		A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */; };
+		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; settings = {ASSET_TAGS = (); }; };
 		A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */; };
 		A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */; };
 		A1D620021BA6AEA9009FCA1F /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620011BA6AEA9009FCA1F /* TopicCell.xib */; };
@@ -342,6 +343,8 @@
 		A1C3EDE21B9EBB640023AB6E /* sixinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sixinViewController.h; sourceTree = "<group>"; };
 		A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sixinViewController.m; sourceTree = "<group>"; };
 		A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixinViewController.xib; sourceTree = "<group>"; };
+		A1CC0C6A1BAC167700168536 /* UIImage+UIimage_HeadIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIimage_HeadIcon.h"; sourceTree = "<group>"; };
+		A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIimage_HeadIcon.m"; sourceTree = "<group>"; };
 		A1D61FFA1BA66AFD009FCA1F /* SpecificGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificGroupViewController.h; sourceTree = "<group>"; };
 		A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificGroupViewController.m; sourceTree = "<group>"; };
 		A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificGroupViewController.xib; sourceTree = "<group>"; };
@@ -1107,6 +1110,7 @@
 		A1F0E5251BABAAEF00BA0BDD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				A1F0E52D1BABE1E600BA0BDD /* 头像裁切 */,
 				A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */,
 				A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */,
 			);
@@ -1120,6 +1124,15 @@
 				A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */,
 			);
 			name = "火星坐标转国际坐标";
+			sourceTree = "<group>";
+		};
+		A1F0E52D1BABE1E600BA0BDD /* 头像裁切 */ = {
+			isa = PBXGroup;
+			children = (
+				A1CC0C6A1BAC167700168536 /* UIImage+UIimage_HeadIcon.h */,
+				A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */,
+			);
+			name = "头像裁切";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1370,6 +1383,7 @@
 				A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
+				A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
 				A10076BE1BA91D780097987B /* profile.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "leftViewController.h"
+#import "UIImage+UIimage_HeadIcon.h"
 
 
 @interface leftViewController () <UISplitViewControllerDelegate>
@@ -39,7 +40,8 @@
     //取出本地头像
     UIImage *image = [self searchImageFromCacheWithFileName:@"headIcon"];
     if (image) {
-        self.headImageView.image = image;
+        UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:100];
+        self.headImageView.image = newImage;
     }
     
     
