@@ -147,6 +147,7 @@
 		A1E9BE9D1BA8057F00876186 /* activityUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE9C1BA8057F00876186 /* activityUnit.xib */; };
 		A1E9BEA01BA8077F00876186 /* activityList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE9F1BA8077F00876186 /* activityList.m */; };
 		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
+		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,6 +385,8 @@
 		A1E9BE9F1BA8077F00876186 /* activityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityList.m; sourceTree = "<group>"; };
 		A1E9BEA11BA808A000876186 /* activityUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = activityUnit.h; sourceTree = "<group>"; };
 		A1E9BEA21BA808A000876186 /* activityUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityUnit.m; sourceTree = "<group>"; };
+		A1F0E5271BABAB5F00BA0BDD /* MarsTransToEarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarsTransToEarth.h; sourceTree = "<group>"; };
+		A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsTransToEarth.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -667,7 +670,7 @@
 			children = (
 				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
 				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
-				A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */,
+				A1F0E5251BABAAEF00BA0BDD /* Tool */,
 				A1DB9AA31BA269A900EC97D6 /* 根控制器 */,
 			);
 			name = other;
@@ -1101,6 +1104,24 @@
 			name = "活动列表";
 			sourceTree = "<group>";
 		};
+		A1F0E5251BABAAEF00BA0BDD /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */,
+				A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */ = {
+			isa = PBXGroup;
+			children = (
+				A1F0E5271BABAB5F00BA0BDD /* MarsTransToEarth.h */,
+				A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */,
+			);
+			name = "火星坐标转国际坐标";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1372,6 +1393,7 @@
 				A1B88CFF1BA17D32008FA7C9 /* UUImageAvatarBrowser.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
+				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,
 				A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,

@@ -5,12 +5,14 @@
 //  Created by apple on 15/8/19.
 //  Copyright © 2015年 touhu.com. All rights reserved.
 //
+/// 系统自带的地图也会有偏差
 
 #import "huodongViewController.h"
 #import <AMap2DMap/MAMapKit/MAMapKit.h>
 #import <AMapSearch/AMapSearchKit/AMapSearchAPI.h>
 #import "customAnnotationView.h"
 #import "popUpView.h"
+
 
 #define MAPAPIKEY @"a50e4a2d762f64b6a67ff794fc76c67e";
 
@@ -43,8 +45,10 @@
     _searchAPI = [[AMapSearchAPI alloc] initWithSearchKey:@"a50e4a2d762f64b6a67ff794fc76c67e" Delegate:self];
     AMapGeocodeSearchRequest *request = [[AMapGeocodeSearchRequest alloc] init];
     request.city = @[@"深圳"];
-    request.address = @"五和";
+    request.address = @"宝安区龙华街道奋进路64";
     [_searchAPI AMapGeocodeSearch:request];
+    
+    
     
     
 }
@@ -59,6 +63,7 @@
 }
 
 #pragma mark -  搜索回调
+//搜地址回调
 - (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response{
     AMapGeocode *geoCode = response.geocodes[0];
     
@@ -70,7 +75,8 @@
     [_map addAnnotation:_annotation];
     
 }
-//搜用户位置
+
+//搜地理经纬度回调
 - (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response{
     _map.userLocation.subtitle = response.regeocode.formattedAddress;
     NSLog(@"%@",response.regeocode.formattedAddress);
@@ -112,18 +118,21 @@
     if (_map.userLocation.subtitle != nil) {
         return ;
     }
-    //搜索
+    //搜索地理经纬度
     AMapReGeocodeSearchRequest *request = [[AMapReGeocodeSearchRequest alloc] init];
     
     //获得用户坐标
     AMapGeoPoint *userLocation1 = [[AMapGeoPoint alloc] init];
     userLocation1.longitude = userLocation.location.coordinate.longitude;
     userLocation1.latitude = userLocation.location.coordinate.latitude;
+    
     if (userLocation1 != nil) {
         request.location = userLocation1;
-        
         [_searchAPI AMapReGoecodeSearch:request];
+
+        
     }
+    
     
 }
 
