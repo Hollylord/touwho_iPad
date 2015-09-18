@@ -107,16 +107,14 @@
     if ([title isEqualToString:@"上传名片"]) {
         [sender setTitle:@"重新上传" forState:UIControlStateNormal];//修改按钮的文字
     }
-        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         
-        imagePicker.delegate = self;
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
-        if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
-            [self presentViewController:imagePicker animated:YES completion:NULL];
-        }
-    
-    
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.allowsEditing = YES;
+    if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]) {
+        [self presentViewController:imagePicker animated:YES completion:NULL];
+    }
     
 }
 

@@ -27,12 +27,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //设置按钮状态
     self.program.selected = YES;
     self.news.selected = NO;
     self.discovery.selected = NO;
     self.me.selected = NO;
     
+    //监听通知：获取最新头像
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(headImage:) name:@"setHeadImageView" object:nil];
+    
+    //取出本地头像
+    UIImage *image = [self searchImageFromCacheWithFileName:@"headIcon"];
+    if (image) {
+        self.headImageView.image = image;
+    }
+    
     
 }
 
@@ -83,9 +92,18 @@
     }
     
 }
+
+//接到通知换头像
 - (void)headImage:(NSNotification *)notification{
     NSDictionary *dic = [notification userInfo];
     UIImage *image = [dic objectForKey:@"headIcon"];
     self.headImageView.image = image;
+}
+
+//通过文件名查找Cache目录下的image
+- (UIImage *)searchImageFromCacheWithFileName:(NSString *)name{
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:name];
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    return image;
 }
 @end
