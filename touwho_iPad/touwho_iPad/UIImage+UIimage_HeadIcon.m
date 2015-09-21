@@ -17,37 +17,33 @@
     //圆的边框宽度为2，颜色为红色
     //设置线宽为2
     CGContextSetLineWidth(context,2);
+    
+    //找出图片边长最小值
+    CGFloat length = MIN(image.size.width, image.size.height);
+    
     //裁剪路径
-    CGContextAddEllipseInRect(context, CGRectMake(0, 0, image.size.width, image.size.height));
+    CGContextAddEllipseInRect(context, CGRectMake((image.size.width - length)/2, (image.size.height - length)/2, length, length));
     //裁剪
     CGContextClip(context);
     
-    //    ios9 不需要转换控件坐标系了？
+    //    ios9 不需要转换控件坐标系了？ 需要只不过从相册里面拿出来的图片已经换过坐标系了
     CGContextDrawImage(context, CGRectMake(0, 0, image.size.width, image.size.height), image.CGImage);
     
+
     
+    //画外圆
+    CGContextAddEllipseInRect(context, CGRectMake((image.size.width - length)/2, (image.size.height - length)/2, length, length));
+    //画内圆
+    CGContextAddEllipseInRect(context, CGRectMake((image.size.width - length)/2 + lineWidth, (image.size.height - length)/2 + lineWidth, length - 2 *lineWidth, length - 2 *lineWidth));
     
-    //画边框
-    CGContextAddEllipseInRect(context, CGRectMake(0, 0, image.size.width, image.size.height));
-    //宽高比
-    CGFloat r = image.size.width/image.size.height;
-    CGFloat x = lineWidth;
-    CGFloat y = x * r;
-    CGFloat wid = image.size.width - x * 2;
-    CGFloat hei = wid * r;
-    CGContextAddEllipseInRect(context, CGRectMake(x,y,wid,hei));
     //填充
     CGContextSetFillColorWithColor(context, [UIColor orangeColor].CGColor);
     CGContextEOFillPath(context);
     
-    
-    
-    
+
     //生成新的image
     UIImage *newimg = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
-    
     return newimg;
 
 }
