@@ -26,10 +26,9 @@
     //裁剪
     CGContextClip(context);
     
-    //    ios9 不需要转换控件坐标系了？ 需要只不过从相册里面拿出来的图片已经换过坐标系了
-    CGContextDrawImage(context, CGRectMake(0, 0, image.size.width, image.size.height), image.CGImage);
-    
-
+    //  若要转换坐标系，记得是坐标系在变，里面的图片的位置是不变的
+    //自适应坐标系，再也不用担心坐标系的问题了。这里的rect 为image的bounds，默认写法不要变。
+    [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
     
     //画外圆
     CGContextAddEllipseInRect(context, CGRectMake((image.size.width - length)/2, (image.size.height - length)/2, length, length));

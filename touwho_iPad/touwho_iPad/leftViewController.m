@@ -99,7 +99,8 @@
 - (void)headImage:(NSNotification *)notification{
     NSDictionary *dic = [notification userInfo];
     UIImage *image = [dic objectForKey:@"headIcon"];
-    self.headImageView.image = image;
+    UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:100];
+    self.headImageView.image = newImage;
 }
 
 //通过文件名查找Cache目录下的image
