@@ -114,9 +114,18 @@
 }
 
 
+/**
+ *  返回collectionView最终的偏移量（最终的停留位置）
+ *
+ *  @param proposedContentOffset 默认情况下，预测collectionView最终的contentOffset
+ *  @param velocity              <#velocity description#>
+ *
+ *  @return <#return value description#>
+ */
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
 {
     CGFloat offsetAdjustment = MAXFLOAT;
+    
     CGFloat horizontalCenter = proposedContentOffset.x + (CGRectGetWidth(self.collectionView.bounds) / 2.0);
     
     CGRect targetRect = CGRectMake(proposedContentOffset.x, 0.0, self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);
