@@ -60,7 +60,7 @@
                 <outlet property="headImageView" destination="Lao-TQ-mu3" id="J50-LP-Csb"/>
                 <outlet property="tableView" destination="KFX-fE-VOB" id="ODh-Fh-SKJ"/>
             </connections>
-            <point key="canvasLocation" x="122" y="270"/>
+            <point key="canvasLocation" x="105" y="-15"/>
         </view>
         <tapGestureRecognizer id="HcU-ud-IIh">
             <connections>

@@ -63,7 +63,9 @@
  */
 - (IBAction)message:(UIButton *)sender;
 - (IBAction)headClick:(UIButton *)sender;
-
+/**
+ *  控制器present出头像设置控制器
+ */
 @property (copy,nonatomic) void (^headClick)();
 
 @end

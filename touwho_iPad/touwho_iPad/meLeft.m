@@ -7,6 +7,7 @@
 //
 
 #import "meLeft.h"
+#import "UIImage+UIimage_HeadIcon.h"
 
 @implementation meLeft
 - (void)awakeFromNib{
@@ -17,7 +18,8 @@
     if (filePath) {
         NSData *data = [NSData dataWithContentsOfFile:filePath];
         UIImage *icon = [UIImage imageWithData:data];
-        self.headImageView.image = icon;
+        UIImage *newImage = [UIImage imageClipsWithHeadIcon:icon sideWidth:80];
+        self.headImageView.image = newImage;
     }
     
     

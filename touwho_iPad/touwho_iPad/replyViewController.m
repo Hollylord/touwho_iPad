@@ -36,6 +36,7 @@
 }
 #pragma mark - 按钮点击
 - (IBAction)cancel:(UIBarButtonItem *)sender {
+    [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 @end

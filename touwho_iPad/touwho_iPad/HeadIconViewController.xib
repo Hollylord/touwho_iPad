@@ -27,6 +27,11 @@
                                     <action selector="cancelClick:" destination="-1" id="Zlb-AO-huh"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="确定" id="dcH-5v-xr5">
+                                <connections>
+                                    <action selector="OK:" destination="-1" id="9Vr-JY-qgE"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>

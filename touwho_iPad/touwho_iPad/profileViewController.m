@@ -11,6 +11,7 @@
 #import "meLeft.h"
 #import "notification.h"
 #import "HeadIconViewController.h"
+#import "UIImage+UIimage_HeadIcon.h"
 
 @interface profileViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet meLeft *meLeftView;
@@ -41,7 +42,8 @@
             //获得头像后显示出来
             headVC.passImage = ^(UIImage *image){
                 meLeft *view = self.view.subviews[0];
-                view.headImageView.image = image;
+                UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:80];
+                view.headImageView.image = newImage;
             };
         }];
         
@@ -121,9 +123,12 @@
 #pragma mark - 照相机代理
 //拍照完毕后调用
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    [picker dismissViewControllerAnimated:YES completion:NULL];//退出照相机
-    
-    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];//获取原始图片
+    //退出照相机
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    //获取原始图片
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    //存入相册
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     NSDictionary *temp = [info objectForKey:@"UIImagePickerControllerMediaMetadata"];
     int orientation = (int)[temp objectForKey:@"Orientation"];
     //如果照相方向反了就把图片旋转180°
@@ -131,17 +136,16 @@
         //旋转图片
         //获得上下文
         UIGraphicsBeginImageContext(image.size);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        //往上下文上添加图片
-        CGContextDrawImage(context, CGRectMake(0, 0, image.size.width, image.size.height), image.CGImage);
-        CGContextRotateCTM(context, M_PI);//旋转
-        UIImage *imageNew = UIGraphicsGetImageFromCurrentImageContext();//获得新图片
-        UIGraphicsEndImageContext();
+        
+        //往上下文上添加图片 自适应坐标系
+        [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+        //获得新图片 新图片的坐标系变换了
+        UIImage *imageNew = UIGraphicsGetImageFromCurrentImageContext();        UIGraphicsEndImageContext();
         image = imageNew;
     }
     
     
-    //将拍得的照片显示到个人信息页面上
+    //将拍得的照片显示到个人信息页面上的名片上
     if (self.presentBusinessCard) {
         self.presentBusinessCard(image);
     }

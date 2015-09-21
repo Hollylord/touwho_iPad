@@ -192,7 +192,7 @@
                                 <action selector="uploadCard:" destination="-1" eventType="touchUpInside" id="zqL-2r-SXb"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-OR-rmX" userLabel="名片">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-OR-rmX" userLabel="名片">
                             <rect key="frame" x="125" y="388" width="442" height="243"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="442" id="L99-89-3Ao"/>

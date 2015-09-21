@@ -15,11 +15,14 @@
 - (IBAction)cancelClick:(UIBarButtonItem *)sender;
 - (IBAction)localIconClick:(UIButton *)sender;
 - (IBAction)uploadClick:(UIButton *)sender;
+- (IBAction)OK:(UIBarButtonItem *)sender;
 
 @end
 
 @implementation HeadIconViewController
-
+{
+    UIImage *imageForHead;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -50,6 +53,17 @@
     
 }
 
+- (IBAction)OK:(UIBarButtonItem *)sender {
+    //传递图片给个人中心left的头像
+    if (self.passImage) {
+        self.passImage(imageForHead);
+    }
+    //传头像给左菜单的头像
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self userInfo:@{@"headIcon":imageForHead}];
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 #pragma mark - UIImagePicker代理
 //点击use photo后的回调方法
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
@@ -59,19 +73,14 @@
     UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     //显示图片在imageView上
     self.headImage.image = image;
+    imageForHead = image;
+    
     //图片压缩成NSData 可以适合上传
     NSData *compressed = UIImageJPEGRepresentation(image, 0.5);
     //存储图片
     NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filePath = [cache stringByAppendingPathComponent:@"headIcon"];
     [compressed writeToFile:filePath atomically:YES];
-    
-    //传递图片给小头像
-    if (self.passImage) {
-        self.passImage(image);
-    }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self userInfo:@{@"headIcon":image}];
     
 }
 
