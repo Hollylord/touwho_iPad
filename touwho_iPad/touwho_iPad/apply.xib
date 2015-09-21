@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,7 +14,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9w-TN-0ak">
-                            <rect key="frame" x="23" y="20" width="490" height="30"/>
+                            <rect key="frame" x="55" y="20" width="490" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="4NK-v8-F24"/>
                                 <constraint firstAttribute="width" constant="490" id="Btg-C4-7vZ"/>
@@ -33,7 +33,7 @@
                             </variation>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l8m-vD-J59">
-                            <rect key="frame" x="23" y="64" width="490" height="70"/>
+                            <rect key="frame" x="55" y="64" width="490" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="a3L-0Y-EPt"/>
                             </constraints>
@@ -41,24 +41,23 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="领投人服务协议内容" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-9Y-7dG">
-                            <rect key="frame" x="23" y="208" width="240" height="128"/>
+                            <rect key="frame" x="55" y="208" width="490" height="128"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="240" id="EsJ-HB-MFM"/>
                                 <constraint firstAttribute="height" constant="128" id="muL-rL-zlp"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-xM-4np">
-                            <rect key="frame" x="23" y="172" width="36" height="34"/>
+                            <rect key="frame" x="55" y="172" width="36" height="34"/>
                             <state key="normal" title="打钩">
                                 <color key="titleColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-IJ-9FX">
-                            <rect key="frame" x="77" y="180" width="221" height="19"/>
+                            <rect key="frame" x="109" y="180" width="221" height="19"/>
                             <attributedString key="attributedText">
                                 <fragment content="阅读并同意投壶网">
                                     <attributes>
@@ -93,20 +92,15 @@
                         <constraint firstItem="FtZ-9Y-7dG" firstAttribute="leading" secondItem="ZBI-xM-4np" secondAttribute="leading" id="LdW-sA-Mfo"/>
                         <constraint firstItem="ZBI-xM-4np" firstAttribute="leading" secondItem="l8m-vD-J59" secondAttribute="leading" id="QAJ-dA-8zU"/>
                         <constraint firstAttribute="trailing" secondItem="a9w-TN-0ak" secondAttribute="trailing" constant="43" id="RqN-iB-S8p" userLabel="水平范围"/>
+                        <constraint firstItem="a9w-TN-0ak" firstAttribute="centerX" secondItem="R1g-0k-GSQ" secondAttribute="centerX" id="ZWZ-g7-uXl"/>
                         <constraint firstItem="jwL-IJ-9FX" firstAttribute="centerY" secondItem="ZBI-xM-4np" secondAttribute="centerY" id="aCF-Q2-oM6"/>
+                        <constraint firstItem="FtZ-9Y-7dG" firstAttribute="width" secondItem="l8m-vD-J59" secondAttribute="width" id="bKb-T4-wtM"/>
                         <constraint firstItem="X2U-Zo-Vp4" firstAttribute="top" secondItem="FtZ-9Y-7dG" secondAttribute="bottom" constant="151" id="dwh-Vn-C35"/>
-                        <constraint firstItem="a9w-TN-0ak" firstAttribute="leading" secondItem="R1g-0k-GSQ" secondAttribute="leading" constant="23" id="hQ4-e8-bBM"/>
                         <constraint firstItem="FtZ-9Y-7dG" firstAttribute="top" secondItem="ZBI-xM-4np" secondAttribute="bottom" constant="2" id="pdI-C2-cba"/>
                         <constraint firstItem="l8m-vD-J59" firstAttribute="top" secondItem="a9w-TN-0ak" secondAttribute="bottom" constant="14" id="rxw-G5-fE8"/>
-                        <constraint firstItem="l8m-vD-J59" firstAttribute="height" secondItem="a9w-TN-0ak" secondAttribute="height" id="vIv-FY-XiF"/>
                         <constraint firstItem="jwL-IJ-9FX" firstAttribute="leading" secondItem="ZBI-xM-4np" secondAttribute="trailing" constant="18" id="vgV-7X-21I"/>
                         <constraint firstItem="X2U-Zo-Vp4" firstAttribute="centerX" secondItem="R1g-0k-GSQ" secondAttribute="centerX" id="xLc-fj-lmd"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="vIv-FY-XiF"/>
-                        </mask>
-                    </variation>
                     <variation key="heightClass=regular-widthClass=compact">
                         <mask key="subviews">
                             <exclude reference="a9w-TN-0ak"/>

@@ -10,10 +10,23 @@
 #import "message.h"
 #import "profileViewController.h"
 #import "profile.h"
+#import "ProgramsTableViewCell.h"
+#import "ProgramsModel.h"
 
 
 @implementation meRight
+{
+    UITableView *institutionTableView;
+    UITableView *investedProgramsTableView;
+    UITableView *publishedProgramsTableView;
+    UITableView *followedProgramsTableView;
+    ProgramsModel *model;
+}
 
+- (void)awakeFromNib{
+    model = [[ProgramsModel alloc] init];
+    model.image = [UIImage imageNamed:@"logo"];
+}
 
 #pragma mark - meleft代理
 //发布项目
@@ -109,7 +122,17 @@
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
+    
+    UITableView *institution = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+
+    institution.delegate = self;
+    institution.dataSource = self;
+    [institution registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+    [self addSubview:institution];
+    [self layoutForSubview:institution];
+    
 }
+
 //消息
 - (void)presentMessage{
     for (UIView *view in self.subviews) {
@@ -147,8 +170,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
-
+    ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
+    cell.model = model;
     
     return cell;
 }
@@ -157,7 +180,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 200;
 }
 
 //获得当前view的控制器

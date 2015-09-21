@@ -119,6 +119,8 @@
 		A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */; };
 		A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */; };
 		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; settings = {ASSET_TAGS = (); }; };
+		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		A1CF1E231BAFF6190065EF77 /* ProgramsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */; settings = {ASSET_TAGS = (); }; };
 		A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */; };
 		A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */; };
 		A1D620021BA6AEA9009FCA1F /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620011BA6AEA9009FCA1F /* TopicCell.xib */; };
@@ -345,6 +347,10 @@
 		A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixinViewController.xib; sourceTree = "<group>"; };
 		A1CC0C6A1BAC167700168536 /* UIImage+UIimage_HeadIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIimage_HeadIcon.h"; sourceTree = "<group>"; };
 		A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIimage_HeadIcon.m"; sourceTree = "<group>"; };
+		A1CF1E1D1BAFEB670065EF77 /* ProgramsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewCell.h; sourceTree = "<group>"; };
+		A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewCell.m; sourceTree = "<group>"; };
+		A1CF1E211BAFF6190065EF77 /* ProgramsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsModel.h; sourceTree = "<group>"; };
+		A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsModel.m; sourceTree = "<group>"; };
 		A1D61FFA1BA66AFD009FCA1F /* SpecificGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificGroupViewController.h; sourceTree = "<group>"; };
 		A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificGroupViewController.m; sourceTree = "<group>"; };
 		A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificGroupViewController.xib; sourceTree = "<group>"; };
@@ -895,6 +901,8 @@
 			children = (
 				A11451C31B8DC47700E45381 /* apply.xib */,
 				A1BE7F491B8DAFE100E76711 /* publish.xib */,
+				A1CF1E1D1BAFEB670065EF77 /* ProgramsTableViewCell.h */,
+				A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */,
 				A11451C11B8DC31400E45381 /* programsCell.xib */,
 				A10076BC1BA91D780097987B /* profile.h */,
 				A10076BD1BA91D780097987B /* profile.m */,
@@ -919,6 +927,7 @@
 				A1BE7F471B8DAF8500E76711 /* 个人中心左边 */,
 				A1BE7F481B8DAF8F00E76711 /* 个人中心右边 */,
 				A10CCA091BAA56EB00ED0F49 /* controller */,
+				A1CF1E201BAFEBA90065EF77 /* Model */,
 			);
 			name = "个人中心";
 			sourceTree = "<group>";
@@ -955,6 +964,15 @@
 				A1B88CF71BA179C7008FA7C9 /* UUMessage.m */,
 			);
 			name = "聊天";
+			sourceTree = "<group>";
+		};
+		A1CF1E201BAFEBA90065EF77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1CF1E211BAFF6190065EF77 /* ProgramsModel.h */,
+				A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A1D61FF91BA66A34009FCA1F /* 小组详情 */ = {
@@ -1358,6 +1376,7 @@
 				A1B88CEC1BA17843008FA7C9 /* MJRefreshFooterView.m in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
 				A1C3EDD01B9E84510023AB6E /* notification.m in Sources */,
+				A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */,
 				A1B88CF51BA179B0008FA7C9 /* ChatModel.m in Sources */,
 				A1B88CEE1BA17843008FA7C9 /* NSDate+Utils.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
@@ -1390,6 +1409,7 @@
 				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
+				A1CF1E231BAFF6190065EF77 /* ProgramsModel.m in Sources */,
 				A1B88CCF1BA16A6C008FA7C9 /* Mp3Recorder.m in Sources */,
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
 				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
