@@ -22,11 +22,15 @@
     UITableView *followedProgramsTableView;
     ProgramsModel *model;
 }
-
-- (void)awakeFromNib{
-    model = [[ProgramsModel alloc] init];
-    model.image = [UIImage imageNamed:@"logo"];
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        model = [[ProgramsModel alloc] init];
+        model.image = [UIImage imageNamed:@"logo"];
+    }
+    return self;
 }
+
 
 #pragma mark - meleft代理
 //发布项目

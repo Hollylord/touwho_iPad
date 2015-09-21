@@ -21,7 +21,7 @@
 
 
 - (void)setModel:(ProgramsModel *)model{
-    self.model = model;
+    
     self.IMGView.image = model.image;
 }
 
