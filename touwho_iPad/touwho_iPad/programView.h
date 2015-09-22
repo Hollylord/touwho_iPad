@@ -14,7 +14,7 @@
 /**
  *  转到项目详细页面
  */
-- (void)turn2DetailOfPrograms;
+- (void)turn2DetailOfProgramsWithModel:(ModelForProgramView *)model;
 @end
 
 

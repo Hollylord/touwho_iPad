@@ -116,7 +116,8 @@
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     [refresh addTarget:self action:@selector(pullRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.scrollView addSubview:refresh];
-    
+    //第一次触发刷新
+    [self pullRefresh:refresh];
 
 }
 
@@ -286,10 +287,10 @@
 }
 
 #pragma mark - 点击项目跳转页面
-- (void)turn2DetailOfPrograms{
+- (void)turn2DetailOfProgramsWithModel:(ModelForProgramView *)model{
     program2ViewController *viewController = [[program2ViewController alloc]initWithNibName:@"program2ViewController" bundle:nil];
+    viewController.model1 = model;
     [self.navigationController pushViewController:viewController animated:YES];
-    
 }
 
 #pragma mark - 刷新页面获取网络数据
@@ -300,6 +301,9 @@
         model.title = [NSString stringWithFormat:@"回音必项目%d",i];
         model.backIMG = [UIImage imageNamed:@"xiangmuBIMG"];
         model.percent = (CGFloat) 150 / (i + 2)/100;
+        model.totalAmount = [NSString stringWithFormat:@"￥11500万"];
+        model.currentAmount = [NSString stringWithFormat:@"￥%.2f万",11500 * model.percent];
+        
         programView *view = self.programs[i];
         view.model = model;
     }

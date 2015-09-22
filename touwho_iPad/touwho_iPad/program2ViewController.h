@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelForProgramView.h"
 
 @interface program2ViewController : UIViewController
+/**
+ *  给programView的model
+ */
+@property (strong,nonatomic) ModelForProgramView *model1;
 
 @end

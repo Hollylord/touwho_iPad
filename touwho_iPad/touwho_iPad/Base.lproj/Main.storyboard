@@ -344,7 +344,7 @@
                                     <constraint firstAttribute="width" constant="100" id="cLe-KH-DZA"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-va-XGw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-va-XGw">
                                 <rect key="frame" x="0.0" y="686" width="100" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="107" id="Jwj-W0-5d5"/>
@@ -795,7 +795,7 @@
     <resources>
         <image name="ID" width="417" height="52"/>
         <image name="login" width="423" height="52"/>
-        <image name="logo" width="264" height="284"/>
+        <image name="logo" width="171" height="47"/>
         <image name="password" width="417" height="52"/>
         <image name="qq" width="50" height="50"/>
         <image name="wb" width="50" height="50"/>

@@ -8,13 +8,19 @@
 
 #import "program2ViewController.h"
 #import "programView.h"
-@interface program2ViewController ()
+#import "sponsorTableViewCell.h"
+#import "ModelForSponsor.h"
+
+
+@interface program2ViewController () <UITableViewDataSource,UITableViewDelegate>
 /**
  *  左上角的项目view
  */
 @property (weak, nonatomic) IBOutlet UIView *program;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-
+//用来装所有投资人Cell的模型
+@property (strong,nonatomic) NSMutableArray *modelArray;
 @end
 
 @implementation program2ViewController
@@ -22,13 +28,18 @@
     programView *viewForprogram;//左上角的项目视图
     UIButton *btn;//关注按钮
 }
-
+- (NSMutableArray *)modelArray{
+    if (!_modelArray) {
+        _modelArray = [NSMutableArray array];
+    }
+    return  _modelArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     //添加programView视图
     programView *view = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil]firstObject];
-    view.backgroundColor = [UIColor redColor];
+    view.model = self.model1;
     [self.program addSubview:view];
     viewForprogram = view;
     
@@ -39,6 +50,23 @@
     [followBtn setTitle:@"关注" forState:UIControlStateNormal];
     btn = followBtn;
     
+    //注册tableviewCell
+    [self.tableView registerNib:[UINib nibWithNibName:@"sponsorCell" bundle:nil] forCellReuseIdentifier:@"sponsorCell"];
+    
+    //假数据创建模型
+    ModelForSponsor *model = [[ModelForSponsor alloc] init];
+    model.image = [UIImage imageNamed:@"ywp"];
+    model.name = @"杨伟鹏";
+    model.amount = @"意向跟投：500万";
+    model.time = @"2015.8.15";
+    [self.modelArray addObject:model];
+    
+    ModelForSponsor *model2 = [[ModelForSponsor alloc] init];
+    model2.image = [UIImage imageNamed:@"zhw"];
+    model2.name = @"郑惠文";
+    model2.amount = @"意向跟投：500万";
+    model2.time = @"2015.9.15";
+    [self.modelArray addObject:model2];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,4 +108,32 @@
 
 
 }
+
+#pragma mark - tableView代理
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.modelArray.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    sponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sponsorCell" forIndexPath:indexPath];
+    
+    cell.model = self.modelArray[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 110;
+}
+
 @end

@@ -17,9 +17,9 @@
 
 //点击某个项目
 - (IBAction)tapProgram:(UITapGestureRecognizer *)sender {
-    if ([self.delegate respondsToSelector:@selector(turn2DetailOfPrograms)])
+    if ([self.delegate respondsToSelector:@selector(turn2DetailOfProgramsWithModel:)])
     {
-        [self.delegate turn2DetailOfPrograms];
+        [self.delegate turn2DetailOfProgramsWithModel:self.model];
     }
 }
 
@@ -73,10 +73,18 @@
 }
 #pragma mark - 获取model
 - (void)setModel:(ModelForProgramView *)model{
-    self.title.text = model.title;
-    self.backgroundImage.image = model.backIMG;
-    percent = model.percent;
-    [self setProgressWithProgress];
+    if (_model != model) {
+        _model = model;
+        
+        self.title.text = model.title;
+        self.backgroundImage.image = model.backIMG;
+        percent = model.percent;
+        [self setProgressWithProgress];
+        self.label1.text = model.currentAmount;
+        self.label2.text = [NSString stringWithFormat:@"%.0f%%",model.percent*100];
+        self.label3.text = model.totalAmount;
+        
+    }
     
 }
 

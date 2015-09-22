@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="program2ViewController">
             <connections>
                 <outlet property="program" destination="JNX-L7-OdP" id="W3X-Bs-8Ho"/>
+                <outlet property="tableView" destination="p9k-By-vdy" id="wY6-Nj-0ZF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +22,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发起人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw9-qA-2xz">
                             <rect key="frame" x="654" y="42" width="51" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SkM-oH-Vyz">
@@ -34,11 +35,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="孔辉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a0-Yj-l07">
                             <rect key="frame" x="725" y="42" width="34" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVR-B8-CXa">
-                            <rect key="frame" x="733" y="113" width="30" height="30"/>
+                            <rect key="frame" x="786" y="113" width="30" height="30"/>
                             <state key="normal" title="跟投"/>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaohu" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-PO-IuX">
@@ -51,10 +52,10 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目摘要" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB9-Aa-AG3">
                             <rect key="frame" x="17" y="338" width="68" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWk-N7-VYd">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWk-N7-VYd">
                             <rect key="frame" x="22" y="367" width="475" height="128"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -64,7 +65,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-Uh-VKB">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-Uh-VKB">
                             <rect key="frame" x="22" y="557" width="475" height="128"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -77,7 +78,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资建议书" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHz-8u-bnY">
                             <rect key="frame" x="22" y="528" width="85" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yt6-dM-j8d">
@@ -99,11 +100,11 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客服：小壶" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-1J-xy9">
                             <rect key="frame" x="531" y="199" width="85" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpz-73-mV8">
-                            <rect key="frame" x="565" y="113" width="30" height="30"/>
+                            <rect key="frame" x="618" y="113" width="30" height="30"/>
                             <state key="normal" title="领投"/>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-RK-wgW">
@@ -128,6 +129,10 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="300" id="g7a-Ke-5Ue"/>
                             </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="lSS-Nc-QSW"/>
+                                <outlet property="delegate" destination="-1" id="EVr-S2-YYD"/>
+                            </connections>
                         </tableView>
                     </subviews>
                     <constraints>
@@ -151,7 +156,7 @@
                         <constraint firstItem="rCY-RK-wgW" firstAttribute="top" secondItem="hpz-73-mV8" secondAttribute="bottom" constant="19" id="UBR-8z-RE0"/>
                         <constraint firstItem="p9k-By-vdy" firstAttribute="leading" secondItem="Yt6-dM-j8d" secondAttribute="trailing" constant="17" id="Ujt-tY-6CU"/>
                         <constraint firstItem="QB9-Aa-AG3" firstAttribute="top" secondItem="JNX-L7-OdP" secondAttribute="bottom" constant="31" id="V7e-Bo-2ip"/>
-                        <constraint firstItem="hpz-73-mV8" firstAttribute="leading" secondItem="Yt6-dM-j8d" secondAttribute="trailing" constant="51" id="VsF-Wk-JrJ"/>
+                        <constraint firstItem="hpz-73-mV8" firstAttribute="leading" secondItem="Yt6-dM-j8d" secondAttribute="trailing" constant="104" id="VsF-Wk-JrJ"/>
                         <constraint firstItem="JNX-L7-OdP" firstAttribute="leading" secondItem="gE3-Ch-hKL" secondAttribute="leading" constant="22" id="bn4-TY-gUe"/>
                         <constraint firstItem="JWk-N7-VYd" firstAttribute="width" secondItem="JNX-L7-OdP" secondAttribute="width" id="cHI-Xg-Zeu"/>
                         <constraint firstItem="Yt6-dM-j8d" firstAttribute="top" secondItem="gE3-Ch-hKL" secondAttribute="top" id="dFB-uQ-udO"/>
