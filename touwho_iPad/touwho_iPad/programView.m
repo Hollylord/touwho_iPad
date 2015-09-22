@@ -10,7 +10,12 @@
 #import "program2ViewController.h"
 
 @implementation programView
+{
+    //设置的progress
+    CGFloat percent;
+}
 
+//点击某个项目
 - (IBAction)tapProgram:(UITapGestureRecognizer *)sender {
     if ([self.delegate respondsToSelector:@selector(turn2DetailOfPrograms)])
     {
@@ -28,13 +33,16 @@
     self.progressView.dataSource = self;
     self.progressView.popUpViewColor = [UIColor grayColor];
     
-    [self progress];
+    
     
     
     
 }
 
-- (BOOL)progressViewShouldPreCalculatePopUpViewSize:(ASProgressPopUpView *)progressView;
+
+#pragma mark - 进度条
+
+- (BOOL)progressViewShouldPreCalculatePopUpViewSize:(ASProgressPopUpView *)progressView
 {
     return NO;
 }
@@ -45,13 +53,10 @@
     
 }
 
-#pragma mark - 进度条
-- (void)progress
-{
-    
-    float progress = self.progressView.progress;
+- (void)setProgressWithProgress{
+    CGFloat progress = self.progressView.progress;
     //设置进度条的进度
-    if (progress < 0.5 ) {
+    if (progress < percent ) {
         
         progress += 0.005;
         
@@ -60,9 +65,19 @@
         //调进度条的速度
         [NSTimer scheduledTimerWithTimeInterval:0.03
                                          target:self
-                                       selector:@selector(progress)
+                                       selector:@selector(setProgressWithProgress)
                                        userInfo:nil
                                         repeats:NO];
     }
+
 }
+#pragma mark - 获取model
+- (void)setModel:(ModelForProgramView *)model{
+    self.title.text = model.title;
+    self.backgroundImage.image = model.backIMG;
+    percent = model.percent;
+    [self setProgressWithProgress];
+    
+}
+
 @end

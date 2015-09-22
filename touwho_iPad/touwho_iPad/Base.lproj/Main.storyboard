@@ -32,7 +32,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-bS-wmy">
                                 <rect key="frame" x="30" y="64" width="634" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
                                         <rect key="frame" x="0.0" y="17" width="159" height="30"/>
                                         <state key="normal" title="国内项目"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
@@ -45,7 +45,7 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="mhN-Hl-y6u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
                                         <rect key="frame" x="159" y="17" width="158" height="30"/>
                                         <state key="normal" title="海外项目"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
@@ -58,7 +58,7 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="yXA-0l-KB6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
                                         <rect key="frame" x="317" y="17" width="159" height="30"/>
                                         <state key="normal" title="商品众筹"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
@@ -71,7 +71,7 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="TFy-bW-pKm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
                                         <rect key="frame" x="476" y="17" width="158" height="30"/>
                                         <state key="normal" title="公益众筹"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -222,6 +222,10 @@
                         <outlet property="scrollView" destination="5oI-Iy-8Jl" id="0Ol-Xx-HPF"/>
                         <outlet property="title1" destination="otW-o1-mnx" id="IiX-ks-EGQ"/>
                         <outlet property="title2" destination="jw9-si-OI0" id="dKI-UI-t8g"/>
+                        <outlet property="topBtn1" destination="JLN-vT-Hsb" id="lfE-kM-6Kf"/>
+                        <outlet property="topBtn2" destination="hpc-8w-d2z" id="14W-YS-id9"/>
+                        <outlet property="topBtn3" destination="hMg-Lh-D7A" id="1Db-3M-4mv"/>
+                        <outlet property="topBtn4" destination="ffC-eK-BDU" id="TRo-CT-GJZ"/>
                         <outlet property="yOfScrollView" destination="f5h-DK-PEe" id="6Ge-Zv-fOb"/>
                     </connections>
                 </viewController>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ASProgressPopUpView.h"
+#import "ModelForProgramView.h"
 
 @protocol programViewDelegate <NSObject>
 /**
@@ -18,12 +19,15 @@
 
 
 @interface programView : UIView <ASProgressPopUpViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet ASProgressPopUpView *progressView;
-@property (weak, nonatomic) IBOutlet UILabel *currentAmount;
-@property (weak, nonatomic) IBOutlet UILabel *percent;
-@property (weak, nonatomic) IBOutlet UILabel *totalAmount;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UILabel *label3;
+
 @property (weak,nonatomic) id<programViewDelegate>delegate;
+@property (strong,nonatomic) ModelForProgramView *model;
 
 @end

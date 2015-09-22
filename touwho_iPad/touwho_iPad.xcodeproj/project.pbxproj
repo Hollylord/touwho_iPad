@@ -33,6 +33,7 @@
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
+		A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */; settings = {ASSET_TAGS = (); }; };
 		A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A198E3C41B96D52700BB060E /* program2ViewController.m */; };
 		A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A198E3C51B96D52700BB060E /* program2ViewController.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
@@ -215,6 +216,8 @@
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		A1987DFC1BB0FE1800CC4130 /* ModelForProgramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForProgramView.h; sourceTree = "<group>"; };
+		A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForProgramView.m; sourceTree = "<group>"; };
 		A198E3C31B96D52700BB060E /* program2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program2ViewController.h; sourceTree = "<group>"; };
 		A198E3C41B96D52700BB060E /* program2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = program2ViewController.m; sourceTree = "<group>"; };
 		A198E3C51B96D52700BB060E /* program2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = program2ViewController.xib; sourceTree = "<group>"; };
@@ -603,6 +606,24 @@
 				A1D78DD81B9D5D4B00C136C3 /* message.xib */,
 			);
 			name = "消息界面";
+			sourceTree = "<group>";
+		};
+		A1987DFA1BB0FAD100CC4130 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A19D09741B7C306900094B81 /* programViewController.h */,
+				A19D09751B7C306900094B81 /* programViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A1987DFB1BB0FDF100CC4130 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A1987DFC1BB0FE1800CC4130 /* ModelForProgramView.h */,
+				A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		A19D09321B7C2DF100094B81 = {
@@ -1030,9 +1051,9 @@
 		A1DB9AA51BA269E000EC97D6 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				A1987DFB1BB0FDF100CC4130 /* model */,
 				A19D09771B7C6E4D00094B81 /* view */,
-				A19D09741B7C306900094B81 /* programViewController.h */,
-				A19D09751B7C306900094B81 /* programViewController.m */,
+				A1987DFA1BB0FAD100CC4130 /* controller */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -1382,6 +1403,7 @@
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
+				A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1B88CEB1BA17843008FA7C9 /* MJRefreshConst.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,

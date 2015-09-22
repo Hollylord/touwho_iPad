@@ -116,7 +116,7 @@
 
 /**
  *  返回collectionView最终的偏移量（最终的停留位置）
- *
+ *  这个方法是当手指离开的那一刻才调用， 不是手指一滑就调用。
  *  @param proposedContentOffset 默认情况下，预测collectionView最终的contentOffset
  *  @param velocity              <#velocity description#>
  *
@@ -124,20 +124,19 @@
  */
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
 {
-    CGFloat offsetAdjustment = MAXFLOAT;
     
-    CGFloat horizontalCenter = proposedContentOffset.x + (CGRectGetWidth(self.collectionView.bounds) / 2.0);
-    
-    CGRect targetRect = CGRectMake(proposedContentOffset.x, 0.0, self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);
-    NSArray* array = [super layoutAttributesForElementsInRect:targetRect];
-    
-    for (UICollectionViewLayoutAttributes* layoutAttributes in array) {
-        CGFloat itemHorizontalCenter = layoutAttributes.center.x;
-        if (ABS(itemHorizontalCenter - horizontalCenter) < ABS(offsetAdjustment)) {
-            offsetAdjustment = itemHorizontalCenter - horizontalCenter;
-        }
+    CGPoint currentContentOffset = self.collectionView.contentOffset;
+    //往左滑
+    if (proposedContentOffset.x < currentContentOffset.x) {
+        return CGPointMake(currentContentOffset.x - self.collectionView.bounds.size.width / 2, proposedContentOffset.y);
     }
-    return CGPointMake(proposedContentOffset.x + offsetAdjustment, proposedContentOffset.y);
+    //往右滑
+    else {
+        return CGPointMake(currentContentOffset.x + self.collectionView.bounds.size.width / 2 , proposedContentOffset.y);
+    }
+
+
+    
 }
 
 @end

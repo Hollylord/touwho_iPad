@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,6 +10,9 @@
             <rect key="frame" x="0.0" y="0.0" width="415" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Va0-WO-tjP">
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="250"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2c-dS-dBV" userLabel="标题">
                     <rect key="frame" x="186" y="70" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -19,44 +22,65 @@
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TQK-68-VOU" customClass="ASProgressPopUpView">
                     <rect key="frame" x="50" y="181" width="315" height="2"/>
                 </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-Ob-ehJ" userLabel="认筹金额">
-                    <rect key="frame" x="50" y="199" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="认筹金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-Ob-ehJ" userLabel="认筹金额">
+                    <rect key="frame" x="50" y="213" width="48" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="百分比" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Jw-222" userLabel="百分比">
+                    <rect key="frame" x="189" y="213" width="36" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目标金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf7-oi-LTU" userLabel="目标金额">
+                    <rect key="frame" x="317" y="213" width="48" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzm-FG-W3A">
+                    <rect key="frame" x="53" y="191" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Jw-222" userLabel="百分比">
-                    <rect key="frame" x="186" y="199" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H17-B5-TZB">
+                    <rect key="frame" x="186" y="191" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf7-oi-LTU" userLabel="目标金额">
-                    <rect key="frame" x="323" y="199" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S97-DF-l0O">
+                    <rect key="frame" x="320" y="191" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Va0-WO-tjP">
-                    <rect key="frame" x="0.0" y="0.0" width="415" height="250"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="C2c-dS-dBV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="70" id="9FV-F4-0p5"/>
+                <constraint firstItem="Vbv-Jw-222" firstAttribute="centerX" secondItem="H17-B5-TZB" secondAttribute="centerX" id="FFx-Ah-Mcq"/>
                 <constraint firstItem="C2c-dS-dBV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H08-PS-k1f"/>
                 <constraint firstItem="Vbv-Jw-222" firstAttribute="centerY" secondItem="Kc6-Ob-ehJ" secondAttribute="centerY" id="IRG-RF-for"/>
                 <constraint firstAttribute="trailing" secondItem="Va0-WO-tjP" secondAttribute="trailing" id="JPu-WE-uEE"/>
+                <constraint firstItem="Kc6-Ob-ehJ" firstAttribute="centerX" secondItem="yzm-FG-W3A" secondAttribute="centerX" id="K7g-Ez-uOx"/>
                 <constraint firstItem="Va0-WO-tjP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NQj-NK-CBT"/>
+                <constraint firstItem="Vbv-Jw-222" firstAttribute="top" secondItem="H17-B5-TZB" secondAttribute="bottom" constant="1" id="Urb-pc-ckb"/>
                 <constraint firstItem="Va0-WO-tjP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YfI-b2-O58"/>
                 <constraint firstItem="Kc6-Ob-ehJ" firstAttribute="leading" secondItem="TQK-68-VOU" secondAttribute="leading" id="ZYz-Gt-5vg"/>
+                <constraint firstItem="Tf7-oi-LTU" firstAttribute="centerX" secondItem="S97-DF-l0O" secondAttribute="centerX" id="fmp-hm-Zbl"/>
+                <constraint firstItem="Kc6-Ob-ehJ" firstAttribute="top" secondItem="yzm-FG-W3A" secondAttribute="bottom" constant="1" id="gDm-SA-hOn"/>
                 <constraint firstAttribute="trailing" secondItem="TQK-68-VOU" secondAttribute="trailing" constant="50" id="hD2-Ys-fBl"/>
+                <constraint firstItem="Tf7-oi-LTU" firstAttribute="top" secondItem="S97-DF-l0O" secondAttribute="bottom" constant="1" id="iyW-6Y-f4N"/>
                 <constraint firstItem="TQK-68-VOU" firstAttribute="top" secondItem="C2c-dS-dBV" secondAttribute="bottom" constant="90" id="q9k-Hd-xqS"/>
                 <constraint firstAttribute="bottom" secondItem="Va0-WO-tjP" secondAttribute="bottom" id="tdZ-5U-N3x"/>
                 <constraint firstItem="Tf7-oi-LTU" firstAttribute="trailing" secondItem="TQK-68-VOU" secondAttribute="trailing" id="tpZ-zz-LGG"/>
                 <constraint firstItem="TQK-68-VOU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="uel-lA-3Gb"/>
                 <constraint firstItem="Tf7-oi-LTU" firstAttribute="centerY" secondItem="Kc6-Ob-ehJ" secondAttribute="centerY" id="wXN-Yj-YfV"/>
-                <constraint firstItem="Kc6-Ob-ehJ" firstAttribute="top" secondItem="TQK-68-VOU" secondAttribute="bottom" constant="16" id="y2C-Iz-Rdq"/>
+                <constraint firstItem="Kc6-Ob-ehJ" firstAttribute="top" secondItem="TQK-68-VOU" secondAttribute="bottom" constant="30" id="y2C-Iz-Rdq"/>
                 <constraint firstItem="Vbv-Jw-222" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yTh-Er-wXX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -65,11 +89,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="backgroundImage" destination="Va0-WO-tjP" id="1gF-rn-JiQ"/>
-                <outlet property="currentAmount" destination="Kc6-Ob-ehJ" id="uyp-dH-3gV"/>
-                <outlet property="percent" destination="Vbv-Jw-222" id="U8i-yJ-q8q"/>
+                <outlet property="label1" destination="yzm-FG-W3A" id="2yo-qR-XND"/>
+                <outlet property="label2" destination="H17-B5-TZB" id="wzU-RH-RCt"/>
+                <outlet property="label3" destination="S97-DF-l0O" id="dIn-4Y-2ZV"/>
                 <outlet property="progressView" destination="TQK-68-VOU" id="hht-tx-sKe"/>
                 <outlet property="title" destination="C2c-dS-dBV" id="aAJ-K3-D67"/>
-                <outlet property="totalAmount" destination="Tf7-oi-LTU" id="A7p-lu-Hj1"/>
                 <outletCollection property="gestureRecognizers" destination="Atw-cB-Ipr" appends="YES" id="iUS-UF-jKa"/>
             </connections>
             <point key="canvasLocation" x="330.5" y="295"/>

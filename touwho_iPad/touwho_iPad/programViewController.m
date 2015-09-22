@@ -10,14 +10,19 @@
 #import "program2ViewController.h"
 #import "myFlowLayout.h"
 #import "programView.h"
+#import "ModelForProgramView.h"
 
 
 @interface programViewController () <UICollectionViewDataSource,UICollectionViewDelegate,programViewDelegate>
+//顶部四个按钮
+@property (weak, nonatomic) IBOutlet UIButton *topBtn1;
+@property (weak, nonatomic) IBOutlet UIButton *topBtn2;
+@property (weak, nonatomic) IBOutlet UIButton *topBtn3;
+@property (weak, nonatomic) IBOutlet UIButton *topBtn4;
 
 
 
 //中间的视图
-
 @property (weak, nonatomic) IBOutlet UICollectionView   * pictureCollection;
 @property (weak, nonatomic) IBOutlet myFlowLayout       * flowLayoutForCollectionView;
 @property (weak, nonatomic) IBOutlet UIScrollView       *scrollView;
@@ -32,13 +37,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *title2;
 
 /**
- *  进行中的项目
+ *  保存进行中的programView
  */
 @property (strong,nonatomic) NSMutableArray* programs;
 /**
- *  预热中的项目
+ *  保存预热中的programView
  */
 @property (strong,nonatomic) NSMutableArray* programsForPreparing;
+
+
+
+
+
+
 - (IBAction)buttonClick:(UIButton *)sender;
 
 
@@ -59,8 +70,10 @@
     return _programsForPreparing;
 }
 
+
 #pragma mark - 顶部按钮点击
 - (IBAction)buttonClick:(UIButton *)sender {
+    
     
 }
 
@@ -96,7 +109,14 @@
         
     }
     
-
+    //设置顶部按钮的状态
+    self.topBtn1.selected  = YES;
+    
+    //给scrollview添加refreshControl (自动添加到scrollview的顶部不用设置frame)
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self action:@selector(pullRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.scrollView addSubview:refresh];
+    
 
 }
 
@@ -272,7 +292,23 @@
     
 }
 
+#pragma mark - 刷新页面获取网络数据
+- (void)pullRefresh:(UIRefreshControl *)refresh{
+    //转换网络数据给model
+    for (int i = 0; i < self.programs.count ; i ++) {
+        ModelForProgramView *model = [[ModelForProgramView alloc] init];
+        model.title = [NSString stringWithFormat:@"回音必项目%d",i];
+        model.backIMG = [UIImage imageNamed:@"xiangmuBIMG"];
+        model.percent = (CGFloat) 150 / (i + 2)/100;
+        programView *view = self.programs[i];
+        view.model = model;
+    }
+    
+    //获取数据成功后停止刷新
+    [refresh endRefreshing];
 
+    
+}
 
 
 
