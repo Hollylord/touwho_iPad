@@ -56,7 +56,7 @@
                 <outlet property="label2" destination="3DG-Qt-x3a" id="Y9e-nE-p6K"/>
                 <outlet property="label3" destination="xFv-ds-gqt" id="HD4-wA-T4A"/>
             </connections>
-            <point key="canvasLocation" x="312.5" y="255"/>
+            <point key="canvasLocation" x="332.5" y="259"/>
         </tableViewCell>
     </objects>
 </document>
