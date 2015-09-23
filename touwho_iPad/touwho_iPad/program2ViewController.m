@@ -90,13 +90,18 @@
     CGSize textView2size = [self.textView2.text boundingRectWithSize:CGSizeMake(self.textView2.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil].size;
     height2 = textView2size.height + 10;
     
+    //设置分享按钮
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(share)];
+    [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
    
 }
-
+- (void)share{
+    NSLog(@"share");
+}
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     

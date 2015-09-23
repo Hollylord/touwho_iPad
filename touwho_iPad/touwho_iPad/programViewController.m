@@ -80,7 +80,9 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 
+    
     //图片滚动
     self.pictureCollection.delegate   = self;
     self.pictureCollection.dataSource = self;
@@ -118,6 +120,8 @@
     [self.scrollView addSubview:refresh];
     //第一次触发刷新
     [self pullRefresh:refresh];
+    
+    
 
 }
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVOSCloudIM/AVOSCloudIM.h>
+#import "UMSocial.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    /**
-     *  leanCloud设置
-     */
+    //设置leanCloud
     [AVOSCloud setApplicationId:@"9vyUjfA3OLiQeVD3P0TojM5Y" clientKey:@"QDSFGoFRxgDzohuf4JYRFvmD"];
+    
+    //设置友盟分享
+    [UMSocialData setAppKey:@"5602081a67e58ec377001b17"];
     
     return YES;
 }
