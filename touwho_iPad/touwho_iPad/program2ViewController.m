@@ -92,7 +92,7 @@
     height2 = textView2size.height + 10;
     
     //设置分享按钮
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(share)];
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
 }
 
@@ -199,22 +199,17 @@
 
 #pragma mark - 分享
 - (void)share{
-    //用这个方法设置url跳转的网页
+    //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault url:@"http://www.baidu.com"];
-    //设置分享到所有app的title
-    [UMSocialData defaultData].title = @"QQtitle";
+    //设置分享的 title
+    [UMSocialData defaultData].extConfig.qqData.title = @"QQtitle";
+    //设置跳转的页面地址
+    [UMSocialData defaultData].extConfig.qqData.url = @"www.baidu.com";
     
     //调用快速分享接口
-//    UIImage *image = [UIImage imageNamed:@"logo"];
-//    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToQQ] content:@"分享内嵌文字" image:image location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *shareResponse){
-//        if (shareResponse.responseCode == UMSResponseCodeSuccess) {
-//            NSLog(@"分享成功！");
-//        }
-//    }];
-    
-    [UMSocialSnsService presentSnsIconSheetView:self
+    [UMSocialSnsService presentSnsIconSheetView:self.splitViewController
                                          appKey:@"5602081a67e58ec377001b17"
-                                      shareText:nil
+                                      shareText:@""
                                      shareImage:[UIImage imageNamed:@"logo"]
                                 shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToWechatTimeline,UMShareToWechatSession]
                                        delegate:nil];
