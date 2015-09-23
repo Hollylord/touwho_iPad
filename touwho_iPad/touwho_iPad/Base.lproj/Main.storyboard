@@ -248,7 +248,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="视频" id="3rq-Cc-9xs">
                         <barButtonItem key="backBarButtonItem" title="返回" id="r2g-pt-mHY"/>
-                        <barButtonItem key="rightBarButtonItem" title="分享" id="05u-Xb-uif"/>
+                        <barButtonItem key="rightBarButtonItem" image="share1" id="05u-Xb-uif"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WdK-sq-mlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -799,6 +799,7 @@
         <image name="logo" width="171" height="47"/>
         <image name="password" width="417" height="52"/>
         <image name="qq" width="50" height="50"/>
+        <image name="share1" width="20" height="20"/>
         <image name="wb" width="50" height="50"/>
         <image name="wx" width="50" height="50"/>
     </resources>

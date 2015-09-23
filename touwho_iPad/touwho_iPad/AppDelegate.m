@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <AVOSCloudIM/AVOSCloudIM.h>
 #import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
 
 @interface AppDelegate ()
 
@@ -25,8 +27,29 @@
     //设置友盟分享
     [UMSocialData setAppKey:@"5602081a67e58ec377001b17"];
     
+    //设置微信分享
+    [UMSocialWechatHandler setWXAppId:@"wx43b8499d08842d8a" appSecret:@"80e470d7cc365cea2e677a87fb84e2bb" url:@"http://www.umeng.com/social"];
+    
+    //设置qq分享
+    [UMSocialQQHandler setQQWithAppId:@"1104734143" appKey:@"otFu8s5Dv6u8sFBm" url:@"http://www.umeng.com/social"];
+    
     return YES;
 }
+
+//分享的回调，此方法用于从其他app回到本app
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
