@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LingTouViewController">
@@ -13,7 +13,67 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyz-U8-KBM">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="0ca-Zq-bmO"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="跟投金额" id="COQ-Kw-y0n">
+                            <barButtonItem key="leftBarButtonItem" systemItem="stop" id="tF4-uF-XiQ">
+                                <connections>
+                                    <action selector="quit:" destination="-1" id="cRB-kl-VRs"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="确定" id="Bbk-hj-miE">
+                                <connections>
+                                    <action selector="OK:" destination="-1" id="xpW-Jl-pvB"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="意向跟投金额：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKZ-b6-fPE">
+                    <rect key="frame" x="56" y="114" width="119" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="gkQ-6T-YMf">
+                    <rect key="frame" x="227" y="98" width="267" height="53"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="267" id="Y4z-3t-00M"/>
+                        <constraint firstAttribute="height" constant="53" id="wit-2h-WN5"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="                                            万" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XQd-yG-1G0">
+                    <rect key="frame" x="227" y="98" width="267" height="53"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="gkQ-6T-YMf" firstAttribute="centerY" secondItem="BKZ-b6-fPE" secondAttribute="centerY" id="2dW-a1-QjX"/>
+                <constraint firstItem="gkQ-6T-YMf" firstAttribute="leading" secondItem="BKZ-b6-fPE" secondAttribute="trailing" constant="52" id="5BW-7E-kBR"/>
+                <constraint firstItem="XQd-yG-1G0" firstAttribute="leading" secondItem="gkQ-6T-YMf" secondAttribute="leading" id="5y1-EH-ZLO"/>
+                <constraint firstItem="BKZ-b6-fPE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="56" id="6Ej-Rz-Eyk"/>
+                <constraint firstAttribute="trailing" secondItem="cyz-U8-KBM" secondAttribute="trailing" id="9hN-fw-sr8"/>
+                <constraint firstItem="BKZ-b6-fPE" firstAttribute="top" secondItem="cyz-U8-KBM" secondAttribute="bottom" constant="70" id="Lme-Qp-oUH"/>
+                <constraint firstItem="cyz-U8-KBM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="doR-ZY-q8F"/>
+                <constraint firstItem="XQd-yG-1G0" firstAttribute="bottom" secondItem="gkQ-6T-YMf" secondAttribute="bottom" id="fjX-V0-kso"/>
+                <constraint firstItem="XQd-yG-1G0" firstAttribute="top" secondItem="gkQ-6T-YMf" secondAttribute="top" id="joB-tL-GYW"/>
+                <constraint firstItem="XQd-yG-1G0" firstAttribute="trailing" secondItem="gkQ-6T-YMf" secondAttribute="trailing" id="kO5-2O-VOw"/>
+                <constraint firstItem="cyz-U8-KBM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w8k-wh-mur"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="396" y="291"/>
         </view>
     </objects>
+    <resources>
+        <image name="shurukuang" width="133" height="26"/>
+    </resources>
 </document>

@@ -800,12 +800,12 @@
 			name = "消息界面";
 			sourceTree = "<group>";
 		};
-		A19234871BB14A220073A1C6 /* 领头金额选择 */ = {
+		A19234871BB14A220073A1C6 /* 跟头金额选择 */ = {
 			isa = PBXGroup;
 			children = (
 				A19234881BB14A3C0073A1C6 /* controller */,
 			);
-			name = "领头金额选择";
+			name = "跟头金额选择";
 			sourceTree = "<group>";
 		};
 		A19234881BB14A3C0073A1C6 /* controller */ = {
@@ -950,7 +950,7 @@
 				A1DB9AA41BA269D400EC97D6 /* 菜单 */,
 				A1DB9AA51BA269E000EC97D6 /* 首页 */,
 				A1DB9AA61BA269E800EC97D6 /* 项目详情 */,
-				A19234871BB14A220073A1C6 /* 领头金额选择 */,
+				A19234871BB14A220073A1C6 /* 跟头金额选择 */,
 			);
 			name = "项目";
 			sourceTree = "<group>";
