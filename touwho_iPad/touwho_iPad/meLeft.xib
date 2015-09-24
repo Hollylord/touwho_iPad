@@ -22,13 +22,6 @@
                         <outlet property="delegate" destination="iN0-l3-epB" id="su8-34-rdG"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-pI-xNw">
-                    <rect key="frame" x="191" y="101" width="30" height="30"/>
-                    <state key="normal" title="消息"/>
-                    <connections>
-                        <action selector="message:" destination="iN0-l3-epB" eventType="touchUpInside" id="nrR-ZI-bOV"/>
-                    </connections>
-                </button>
                 <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lao-TQ-mu3">
                     <rect key="frame" x="14" y="58" width="145" height="108"/>
                     <gestureRecognizers/>
@@ -40,16 +33,32 @@
                         <outletCollection property="gestureRecognizers" destination="HcU-ud-IIh" appends="YES" id="8UB-18-kT6"/>
                     </connections>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-e0-y1J" userLabel="投资人标志">
+                    <rect key="frame" x="259" y="53" width="33" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="8Fn-xo-aBz"/>
+                        <constraint firstAttribute="width" constant="33" id="UGc-dl-coi"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-pI-xNw">
+                    <rect key="frame" x="259" y="97" width="30" height="30"/>
+                    <state key="normal" title="消息"/>
+                    <connections>
+                        <action selector="message:" destination="iN0-l3-epB" eventType="touchUpInside" id="nrR-ZI-bOV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>
                 <constraint firstAttribute="trailing" secondItem="KFX-fE-VOB" secondAttribute="trailing" id="HIq-Jd-zYC"/>
-                <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="101" id="Tqg-QC-MSp"/>
+                <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="97" id="Tqg-QC-MSp"/>
                 <constraint firstItem="Lao-TQ-mu3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="58" id="cTo-bq-yBc"/>
-                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Lao-TQ-mu3" secondAttribute="trailing" constant="32" id="ge8-2R-hkq"/>
+                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Lao-TQ-mu3" secondAttribute="trailing" constant="100" id="ge8-2R-hkq"/>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="Lao-TQ-mu3" secondAttribute="bottom" constant="8" id="iEL-va-Xie"/>
+                <constraint firstItem="ZHI-e0-y1J" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="53" id="n9b-uC-jKG"/>
                 <constraint firstItem="Lao-TQ-mu3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="tQP-HA-tgX"/>
+                <constraint firstAttribute="trailing" secondItem="ZHI-e0-y1J" secondAttribute="trailing" constant="8" id="wSV-Ls-Fcv"/>
                 <constraint firstAttribute="bottom" secondItem="KFX-fE-VOB" secondAttribute="bottom" constant="153" id="xsJ-cH-Dvg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
