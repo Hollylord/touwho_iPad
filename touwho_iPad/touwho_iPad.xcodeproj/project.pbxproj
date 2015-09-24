@@ -54,6 +54,7 @@
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
+		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */; settings = {ASSET_TAGS = (); }; };
@@ -279,6 +280,7 @@
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
 		A19234891BB14A9C0073A1C6 /* LingTouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingTouViewController.h; sourceTree = "<group>"; };
 		A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingTouViewController.m; sourceTree = "<group>"; };
 		A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingTouViewController.xib; sourceTree = "<group>"; };
@@ -1149,6 +1151,7 @@
 				A10076BC1BA91D780097987B /* profile.h */,
 				A10076BD1BA91D780097987B /* profile.m */,
 				A13EEA851B8EA51D0052C2A7 /* profile.xib */,
+				A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */,
 			);
 			name = "个人详情";
 			sourceTree = "<group>";
@@ -1541,6 +1544,7 @@
 				A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */,
 				A1E9BE901BA7B66C00876186 /* JiGouUnit.xib in Resources */,
 				A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */,
+				A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A1211E961BB2413500B25AA4 /* UMSCommentInputControlleriPad.xib in Resources */,

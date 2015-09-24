@@ -11,7 +11,8 @@
 #import "sponsorTableViewCell.h"
 #import "ModelForSponsor.h"
 #import "LingTouViewController.h"
-#import "UMSocial.h"
+#import "OtherCenterViewController.h"
+
 
 @interface program2ViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -61,8 +62,8 @@
     //添加关注按钮
     UIButton *followBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [view addSubview:followBtn];
-    followBtn.backgroundColor = [UIColor greenColor];
-    [followBtn setTitle:@"关注" forState:UIControlStateNormal];
+    [followBtn setImage:[UIImage imageNamed:@"zan"] forState:UIControlStateNormal];
+    [followBtn setTitle:@"100" forState:UIControlStateNormal];
     btn = followBtn;
     
     //注册tableviewCell
@@ -167,8 +168,13 @@
     return cell;
 }
 
+//跳转他人个人中心
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    OtherCenterViewController *sponsor = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:sponsor animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -200,11 +206,19 @@
 #pragma mark - 分享
 - (void)share{
     //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault url:@"http://www.baidu.com"];
+    [UMSocialData defaultData].urlResource.url = @"http://www.baidu.com" ;
+    
+    //设置分享的左边的图片
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:@"http://img0.bdstatic.com/img/image/1f9ca4f74197091d203ca0edd6c4eee01410240322.jpg"];
+    
     //设置分享的 title
-    [UMSocialData defaultData].extConfig.qqData.title = @"QQtitle";
-    //设置跳转的页面地址
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"回音必项目分享";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"回音必项目分享";
+    [UMSocialData defaultData].extConfig.qqData.title = @"回音必项目分享";
     [UMSocialData defaultData].extConfig.qqData.url = @"www.baidu.com";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"www.baidu.com";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"www.baidu.com";
+    
     
     //调用快速分享接口
     [UMSocialSnsService presentSnsIconSheetView:self.splitViewController

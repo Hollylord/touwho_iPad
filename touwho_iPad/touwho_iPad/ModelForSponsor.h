@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelForSponsor : NSObject
+
 @property (strong,nonatomic) UIImage *image;
 @property (copy,nonatomic) NSString *name;
 @property (copy,nonatomic) NSString *amount;
 @property (copy,nonatomic) NSString *time;
+
 @end

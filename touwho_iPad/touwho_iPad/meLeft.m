@@ -33,7 +33,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 8;
+    return 9;
 }
 
 
@@ -65,6 +65,9 @@
             break;
         case 7:
             label.text = @"关注的机构";
+            break;
+        case 8:
+            label.text = @"关注的投资人";
             break;
         default:
             break;
@@ -111,6 +114,11 @@
     else if (indexPath.row == 7)
     {
         [self.delegate presentFollowedInstitution];
+        
+    }
+    else if (indexPath.row == 8)
+    {
+        [self.delegate presentFollowedSponsor];
         
     }
 }

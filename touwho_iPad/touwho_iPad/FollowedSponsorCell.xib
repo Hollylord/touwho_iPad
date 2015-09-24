@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowedSponsorCell" rowHeight="146" id="xmF-zu-gN1">
+            <rect key="frame" x="0.0" y="0.0" width="510" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xmF-zu-gN1" id="qcy-rd-4UY">
+                <rect key="frame" x="0.0" y="0.0" width="510" height="145"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5W0-rr-kfb">
+                        <rect key="frame" x="8" y="23" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="28W-XD-0Lc"/>
+                            <constraint firstAttribute="height" constant="100" id="ufv-Ed-S75"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RF2-I5-QZE">
+                        <rect key="frame" x="131" y="20" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5W0-rr-kfb" firstAttribute="leading" secondItem="qcy-rd-4UY" secondAttribute="leading" constant="8" id="JBQ-Tn-oc7"/>
+                    <constraint firstItem="5W0-rr-kfb" firstAttribute="centerY" secondItem="qcy-rd-4UY" secondAttribute="centerY" id="Wp4-RF-9ha"/>
+                    <constraint firstItem="RF2-I5-QZE" firstAttribute="leading" secondItem="5W0-rr-kfb" secondAttribute="trailing" constant="23" id="bl1-6e-aut"/>
+                    <constraint firstItem="RF2-I5-QZE" firstAttribute="top" secondItem="qcy-rd-4UY" secondAttribute="top" constant="20" id="ww6-ph-De2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="349" y="316"/>
+        </tableViewCell>
+    </objects>
+</document>

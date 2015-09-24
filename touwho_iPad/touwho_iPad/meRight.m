@@ -20,6 +20,7 @@
     UITableView *investedProgramsTableView;
     UITableView *publishedProgramsTableView;
     UITableView *followedProgramsTableView;
+    UITableView *followedSponsorTableview;
     ProgramsModel *model;
 }
 - (instancetype)init{
@@ -136,6 +137,20 @@
     [self layoutForSubview:institution];
     
 }
+//关注的投资人
+- (void)presentFollowedSponsor{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    UITableView *followedSponsor = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+    followedSponsorTableview = followedSponsor;
+    followedSponsor.delegate = self;
+    followedSponsor.dataSource = self;
+    [followedSponsor registerNib:[UINib nibWithNibName:@"FollowedSponsorCell" bundle:nil] forCellReuseIdentifier:@"FollowedSponsorCell"];
+    [self addSubview:followedSponsor];
+    [self layoutForSubview:followedSponsor];
+}
 
 //消息
 - (void)presentMessage{
@@ -174,10 +189,18 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
-    cell.model = model;
+    if ([tableView isEqual:followedSponsorTableview]) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
+        
+        return cell;
+    }
+    else{
+        ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
+        cell.model = model;
+        
+        return cell;
+    }
     
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

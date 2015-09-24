@@ -47,7 +47,7 @@
                                 <action selector="gentouClick:" destination="-1" eventType="touchUpInside" id="yoi-Jg-fRf"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaohu" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-PO-IuX">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaohu" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-PO-IuX">
                             <rect key="frame" x="711" y="199" width="164" height="131"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="131" id="URl-3y-mtM"/>

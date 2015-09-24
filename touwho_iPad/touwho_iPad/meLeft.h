@@ -45,7 +45,10 @@
  *  关注的机构
  */
 - (void)presentFollowedInstitution;
-
+/**
+ *  关注的投资人
+ */
+- (void)presentFollowedSponsor;
 @end
 
 
