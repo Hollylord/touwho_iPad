@@ -8,6 +8,7 @@
 
 #import "meLeft.h"
 #import "UIImage+UIimage_HeadIcon.h"
+#import "RiskTestViewController.h"
 
 @implementation meLeft
 - (void)awakeFromNib{
@@ -33,7 +34,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 9;
+    return 10;
 }
 
 
@@ -68,6 +69,9 @@
             break;
         case 8:
             label.text = @"关注的投资人";
+            break;
+        case 9:
+            label.text = @"风险评估测试";
             break;
         default:
             break;
@@ -121,6 +125,14 @@
         [self.delegate presentFollowedSponsor];
         
     }
+    else if (indexPath.row == 9)
+    {
+        UIViewController *VC = [self viewController];
+        RiskTestViewController *riskVC = [[RiskTestViewController alloc]initWithNibName:@"RiskTestViewController" bundle:nil];
+        riskVC.modalPresentationStyle = UIModalPresentationFormSheet;
+        [VC presentViewController:riskVC animated:YES completion:NULL];
+        
+    }
 }
 
 #pragma mark - 按钮点击
@@ -133,5 +145,16 @@
     if (self.headClick) {
         self.headClick();
     }
+}
+
+//获得当前view的控制器
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
 }
 @end

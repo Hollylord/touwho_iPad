@@ -55,6 +55,8 @@
 		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
+		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */; settings = {ASSET_TAGS = (); }; };
@@ -281,6 +283,9 @@
 		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
+		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
+		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
+		A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskTestViewController.xib; sourceTree = "<group>"; };
 		A19234891BB14A9C0073A1C6 /* LingTouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingTouViewController.h; sourceTree = "<group>"; };
 		A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingTouViewController.m; sourceTree = "<group>"; };
 		A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingTouViewController.xib; sourceTree = "<group>"; };
@@ -724,6 +729,7 @@
 				A1C3EDDF1B9EB7090023AB6E /* 回复通知 */,
 				A1C3EDE71B9EBB730023AB6E /* 聊天 */,
 				A1A01AA71BAA6158009EF690 /* 头像 */,
+				A18723381BB3D87500CD3630 /* 风险评估测试 */,
 			);
 			name = "我";
 			sourceTree = "<group>";
@@ -751,6 +757,16 @@
 				A1B88CA31BA16A55008FA7C9 /* pic */,
 			);
 			name = library;
+			sourceTree = "<group>";
+		};
+		A18723381BB3D87500CD3630 /* 风险评估测试 */ = {
+			isa = PBXGroup;
+			children = (
+				A18723391BB3D94700CD3630 /* RiskTestViewController.h */,
+				A187233A1BB3D94700CD3630 /* RiskTestViewController.m */,
+				A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */,
+			);
+			name = "风险评估测试";
 			sourceTree = "<group>";
 		};
 		A187AD661B9FFE5800BBA856 /* 私信列表 */ = {
@@ -1574,6 +1590,7 @@
 				A1B88CB71BA16A55008FA7C9 /* chat_animation1.png in Resources */,
 				A1B88CBC1BA16A55008FA7C9 /* chat_animation_white3.png in Resources */,
 				A1B88CB81BA16A55008FA7C9 /* chat_animation2.png in Resources */,
+				A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */,
 				A1E9BE961BA7CD7400876186 /* JiGouDetailViewController.xib in Resources */,
 				A1B88CC51BA16A55008FA7C9 /* chatto_bg_normal.png in Resources */,
 			);
@@ -1669,6 +1686,7 @@
 				A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
 				A10076BE1BA91D780097987B /* profile.m in Sources */,
+				A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,
 				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,

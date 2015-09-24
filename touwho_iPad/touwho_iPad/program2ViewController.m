@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextView *textView1;
 @property (weak, nonatomic) IBOutlet UITextView *textView2;
+- (IBAction)followTheProgram:(UIButton *)sender;
 
 
 
@@ -38,7 +39,6 @@
 @implementation program2ViewController
 {
     programView *viewForprogram;//左上角的项目视图
-    UIButton *btn;//关注按钮
     CGFloat height1;//textView1高度
     CGFloat height2;//textView2高度
 }
@@ -59,12 +59,7 @@
     [self.program addSubview:view];
     viewForprogram = view;
     
-    //添加关注按钮
-    UIButton *followBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [view addSubview:followBtn];
-    [followBtn setImage:[UIImage imageNamed:@"zan"] forState:UIControlStateNormal];
-    [followBtn setTitle:@"100" forState:UIControlStateNormal];
-    btn = followBtn;
+    
     
     //注册tableviewCell
     [self.tableView registerNib:[UINib nibWithNibName:@"sponsorCell" bundle:nil] forCellReuseIdentifier:@"sponsorCell"];
@@ -114,8 +109,7 @@
 - (void)updateViewConstraints{
     
     [super updateViewConstraints];
-    //约束关注按钮
-    [self layoutForFollowBtn:btn];
+
     //约束左上角的view
     [self layoutForProgram:viewForprogram];
     //更改textView1的高度
@@ -230,5 +224,23 @@
     
     
 
+}
+
+#pragma mark - 关注
+
+- (IBAction)followTheProgram:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    //加关注
+    if (sender.selected) {
+        NSInteger number = [sender.titleLabel.text integerValue];
+        NSString *title = [NSString stringWithFormat:@"%ld",number + 1];
+        [sender setTitle:title forState:!sender.state];
+    }
+    //取消关注
+    else{
+        NSInteger number = [sender.titleLabel.text integerValue];
+        NSString *title = [NSString stringWithFormat:@"%ld",number - 1];
+        [sender setTitle:title forState:!sender.state];
+    }
 }
 @end

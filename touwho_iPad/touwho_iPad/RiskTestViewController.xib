@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RiskTestViewController">
+            <connections>
+                <outlet property="view" destination="Cvw-tg-2r4" id="vJG-bx-uje"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Cvw-tg-2r4">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ul-cB-aCQ">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="UG3-Xl-nMN"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="风险评估测试" id="fW3-yc-MxS">
+                            <barButtonItem key="leftBarButtonItem" systemItem="stop" id="0JL-Jo-XvK">
+                                <connections>
+                                    <action selector="quit:" destination="-1" id="H8r-me-1qy"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uV2-cC-Cg9">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uV2-cC-Cg9" firstAttribute="top" secondItem="7ul-cB-aCQ" secondAttribute="bottom" id="MLt-S0-2zv"/>
+                <constraint firstItem="7ul-cB-aCQ" firstAttribute="top" secondItem="Cvw-tg-2r4" secondAttribute="top" id="Sh8-5C-x8L"/>
+                <constraint firstAttribute="bottom" secondItem="uV2-cC-Cg9" secondAttribute="bottom" id="YYp-Nc-6WH"/>
+                <constraint firstAttribute="trailing" secondItem="uV2-cC-Cg9" secondAttribute="trailing" id="aXS-rH-hAe"/>
+                <constraint firstItem="uV2-cC-Cg9" firstAttribute="leading" secondItem="Cvw-tg-2r4" secondAttribute="leading" id="eNP-aj-lrF"/>
+                <constraint firstItem="7ul-cB-aCQ" firstAttribute="leading" secondItem="Cvw-tg-2r4" secondAttribute="leading" id="lAH-sC-Pwz"/>
+                <constraint firstAttribute="trailing" secondItem="7ul-cB-aCQ" secondAttribute="trailing" id="nW1-YJ-xM7"/>
+            </constraints>
+            <point key="canvasLocation" x="334" y="313"/>
+        </view>
+    </objects>
+</document>

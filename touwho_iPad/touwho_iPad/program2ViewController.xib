@@ -172,11 +172,20 @@
                             </constraints>
                             <state key="normal" title="button"/>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-T3-nn8">
+                            <rect key="frame" x="848" y="15" width="55" height="23"/>
+                            <state key="normal" title="100" image="guanzhu1"/>
+                            <state key="selected" image="guanzhu2"/>
+                            <connections>
+                                <action selector="followTheProgram:" destination="-1" eventType="touchUpInside" id="9nz-iQ-AaN"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="hsX-Ob-COG" secondAttribute="bottom" id="0NL-gI-aRY" userLabel="竖直"/>
                         <constraint firstItem="uVR-B8-CXa" firstAttribute="centerY" secondItem="hpz-73-mV8" secondAttribute="centerY" id="14j-xh-3Lo"/>
                         <constraint firstItem="SkM-oH-Vyz" firstAttribute="top" secondItem="gE3-Ch-hKL" secondAttribute="top" constant="15" id="5uF-s5-OBy"/>
+                        <constraint firstAttribute="trailing" secondItem="S2m-T3-nn8" secondAttribute="trailing" constant="20" id="6MA-qM-ZHI"/>
                         <constraint firstItem="c0b-Uh-VKB" firstAttribute="leading" secondItem="JWk-N7-VYd" secondAttribute="leading" id="9ZC-vX-YCn"/>
                         <constraint firstAttribute="trailing" secondItem="rCY-RK-wgW" secondAttribute="trailing" constant="20" id="AeT-Ap-FpA" userLabel="水平范围"/>
                         <constraint firstItem="x5H-1J-xy9" firstAttribute="top" secondItem="rCY-RK-wgW" secondAttribute="bottom" constant="35" id="C7c-W5-xUT"/>
@@ -192,6 +201,7 @@
                         <constraint firstItem="JNX-L7-OdP" firstAttribute="top" secondItem="gE3-Ch-hKL" secondAttribute="top" constant="25" id="OMz-YU-LbX"/>
                         <constraint firstItem="rQc-oG-GjV" firstAttribute="top" secondItem="fZ5-7l-esh" secondAttribute="bottom" constant="33" id="Off-8c-X5f"/>
                         <constraint firstItem="lHz-8u-bnY" firstAttribute="leading" secondItem="gE3-Ch-hKL" secondAttribute="leading" constant="22" id="Oqk-sd-dPU"/>
+                        <constraint firstItem="S2m-T3-nn8" firstAttribute="top" secondItem="gE3-Ch-hKL" secondAttribute="top" constant="15" id="PWA-cm-PM9"/>
                         <constraint firstItem="LXP-jl-i6c" firstAttribute="leading" secondItem="Yt6-dM-j8d" secondAttribute="trailing" constant="17" id="Pt9-Cr-ksX"/>
                         <constraint firstItem="hpz-73-mV8" firstAttribute="top" secondItem="SkM-oH-Vyz" secondAttribute="bottom" constant="8" id="QE8-0w-cwu"/>
                         <constraint firstItem="ZVh-1f-lbv" firstAttribute="top" secondItem="c0b-Uh-VKB" secondAttribute="bottom" constant="33" id="T0f-Cl-iG1"/>
@@ -241,6 +251,8 @@
         </view>
     </objects>
     <resources>
+        <image name="guanzhu1" width="25" height="23"/>
+        <image name="guanzhu2" width="25" height="23"/>
         <image name="kh" width="70" height="93"/>
         <image name="xiaohu" width="147" height="147"/>
     </resources>
