@@ -19,6 +19,8 @@
  */
 @property (nonatomic ,strong) NSMutableArray * messages;
 
+- (IBAction)dianZan:(UIButton *)sender;
+
 
 @end
 
@@ -33,6 +35,8 @@
     }
     return _messages;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -94,5 +98,8 @@
     
     
 }
-
+#pragma mark - 按钮点击
+- (IBAction)dianZan:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
 @end

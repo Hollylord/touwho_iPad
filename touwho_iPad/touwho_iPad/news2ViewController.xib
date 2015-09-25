@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="news2ViewController">
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sl-QO-mbG">
-                    <rect key="frame" x="0.0" y="0.0" width="923" height="724"/>
+                    <rect key="frame" x="0.0" y="0.0" width="923" height="768"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xnj-d3-sOq">
                             <rect key="frame" x="26" y="15" width="50" height="50"/>
@@ -56,52 +56,54 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Aa-7R-as2">
-                            <rect key="frame" x="841" y="25" width="30" height="30"/>
+                            <rect key="frame" x="752" y="25" width="30" height="30"/>
                             <state key="normal" title="朗读"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
+                            <rect key="frame" x="856" y="27" width="25" height="25"/>
+                            <state key="normal" image="zan1"/>
+                            <state key="selected" image="zan2"/>
+                            <connections>
+                                <action selector="dianZan:" destination="-1" eventType="touchUpInside" id="Ns2-3U-trg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="NcE-Cw-69Y" secondAttribute="bottom" constant="30" id="0Xx-YN-9ba" userLabel="竖直范围"/>
                         <constraint firstItem="NcE-Cw-69Y" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="8aO-qs-zSd"/>
+                        <constraint firstItem="4HO-kJ-sP3" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="25" id="GmT-Nc-pet"/>
                         <constraint firstItem="4Sx-ho-dBa" firstAttribute="leading" secondItem="Xnj-d3-sOq" secondAttribute="trailing" constant="29" id="J9Y-01-Zf4"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="KM7-Zp-HaR"/>
-                        <constraint firstAttribute="trailing" secondItem="3Aa-7R-as2" secondAttribute="trailing" constant="41" id="Rmw-ev-Q1o"/>
+                        <constraint firstAttribute="trailing" secondItem="3Aa-7R-as2" secondAttribute="trailing" constant="130" id="Rmw-ev-Q1o"/>
                         <constraint firstItem="4Sx-ho-dBa" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="15" id="TGj-BF-PhB"/>
                         <constraint firstItem="Xnj-d3-sOq" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="15" id="YbY-1Z-8R1"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="top" secondItem="4Sx-ho-dBa" secondAttribute="bottom" constant="8" id="bBs-f0-7Wo"/>
                         <constraint firstItem="Xnj-d3-sOq" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="leading" constant="26" id="f9F-pG-iK4"/>
                         <constraint firstItem="3Aa-7R-as2" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="25" id="iCd-C7-gOe"/>
+                        <constraint firstAttribute="trailing" secondItem="4HO-kJ-sP3" secondAttribute="trailing" constant="29" id="iNX-dx-OLI"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="leading" secondItem="Xnj-d3-sOq" secondAttribute="trailing" constant="29" id="lUq-0T-Yfa"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="87" id="ogj-tV-7vV"/>
                         <constraint firstItem="NcE-Cw-69Y" firstAttribute="top" secondItem="Fpb-TA-Vsh" secondAttribute="bottom" constant="21" id="wEJ-bD-1g3"/>
                         <constraint firstAttribute="trailing" secondItem="NcE-Cw-69Y" secondAttribute="trailing" constant="50" id="wGv-Z7-N4J" userLabel="水平范围"/>
                     </constraints>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzN-4F-kG6">
-                    <rect key="frame" x="237" y="732" width="30" height="30"/>
-                    <state key="normal" title="转发"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lf-Ma-g7K">
-                    <rect key="frame" x="656" y="732" width="30" height="30"/>
-                    <state key="normal" title="赞"/>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="3Sl-QO-mbG" secondAttribute="trailing" id="5pj-Iy-gVc"/>
-                <constraint firstItem="gzN-4F-kG6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="237" id="Goh-CG-duK"/>
-                <constraint firstAttribute="trailing" secondItem="8lf-Ma-g7K" secondAttribute="trailing" constant="237" id="UTV-LP-R4g"/>
                 <constraint firstItem="3Sl-QO-mbG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vm4-Lz-Qcv"/>
-                <constraint firstAttribute="bottom" secondItem="3Sl-QO-mbG" secondAttribute="bottom" constant="44" id="kL2-fJ-pSh"/>
-                <constraint firstItem="gzN-4F-kG6" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="bottom" constant="8" id="mYO-i9-3Mr"/>
+                <constraint firstAttribute="bottom" secondItem="3Sl-QO-mbG" secondAttribute="bottom" id="kL2-fJ-pSh"/>
                 <constraint firstItem="3Sl-QO-mbG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="stp-Cl-Azm"/>
-                <constraint firstItem="8lf-Ma-g7K" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="bottom" constant="8" id="vdB-Ci-xqJ"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="55.5" y="175"/>
+            <point key="canvasLocation" x="166.5" y="161"/>
         </view>
     </objects>
+    <resources>
+        <image name="zan1" width="25" height="25"/>
+        <image name="zan2" width="25" height="25"/>
+    </resources>
 </document>
