@@ -33,8 +33,21 @@
     //设置qq分享
     [UMSocialQQHandler setQQWithAppId:@"1104734143" appKey:@"otFu8s5Dv6u8sFBm" url:@"http://www.umeng.com/social"];
     
+    //注册远程通知
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
+                                            | UIUserNotificationTypeBadge
+                                            | UIUserNotificationTypeSound
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
+    // 提取通知数据
+    NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    NSString *alert = [notificationPayload objectForKey:@"alert"];
+    NSLog(@"%@",alert);
     return YES;
 }
+
 
 //分享的回调，此方法用于从其他app回到本app
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
@@ -49,28 +62,36 @@
     return  [UMSocialSnsService handleOpenURL:url];
 }
 
-
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+//注册远程通知回调
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+    
+    // 添加订阅频道
+    [currentInstallation addUniqueObject:@"Giants" forKey:@"channels"];
+    [currentInstallation saveInBackground];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+//远程通知注册失败回调
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"注册失败，无法获取设备 ID, 具体错误: %@", error);
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    if (application.applicationState == UIApplicationStateActive) {
+        // 转换成一个本地通知，显示到通知栏，你也可以直接显示出一个 alertView，只是那样稍显 aggressive：）
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        localNotification.userInfo = userInfo;
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.alertBody = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+        localNotification.fireDate = [NSDate date];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler{
+    
 }
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
 @end

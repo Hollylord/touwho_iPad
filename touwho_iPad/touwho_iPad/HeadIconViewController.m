@@ -8,6 +8,8 @@
 
 #import "HeadIconViewController.h"
 #import "MyImagePickerViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+
 
 @interface HeadIconViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
@@ -44,7 +46,8 @@
     MyImagePickerViewController *headIconPicker = [[MyImagePickerViewController alloc] init];
     headIconPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     headIconPicker.delegate = self;
-//    headIconPicker.allowsEditing = YES;
+  
+    headIconPicker.allowsEditing = YES;
     [self presentViewController:headIconPicker animated:YES completion:NULL];
 }
 
