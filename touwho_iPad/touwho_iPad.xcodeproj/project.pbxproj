@@ -80,6 +80,8 @@
 		A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1C1BB4F4C50069818F /* RiskPrompt.m */; settings = {ASSET_TAGS = (); }; };
 		A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */; settings = {ASSET_TAGS = (); }; };
 		A1AB1F221BB4F52E0069818F /* ServiceAgreement.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */; settings = {ASSET_TAGS = (); }; };
+		A1B13D2A1BB5544B00A8AC29 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B13D291BB5544B00A8AC29 /* PushConfig.plist */; settings = {ASSET_TAGS = (); }; };
+		A1B13D2E1BB554D200A8AC29 /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B13D2D1BB554D200A8AC29 /* libPushSDK-1.8.5.a */; settings = {ASSET_TAGS = (); }; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
@@ -331,6 +333,9 @@
 		A1AB1F1E1BB4F5220069818F /* ServiceAgreement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAgreement.h; sourceTree = "<group>"; };
 		A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAgreement.m; sourceTree = "<group>"; };
 		A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAgreement.xib; sourceTree = "<group>"; };
+		A1B13D291BB5544B00A8AC29 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
+		A1B13D2C1BB554D200A8AC29 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
+		A1B13D2D1BB554D200A8AC29 /* libPushSDK-1.8.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.5.a"; sourceTree = "<group>"; };
 		A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
 		A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
 		A1B868401B842D02005C4A6F /* discoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discoveryViewController.h; sourceTree = "<group>"; };
@@ -520,6 +525,7 @@
 				A1BE7EFE1B8D552400E76711 /* CFNetwork.framework in Frameworks */,
 				A1BE7EFC1B8D551C00E76711 /* CoreGraphics.framework in Frameworks */,
 				A1DB9AB61BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a in Frameworks */,
+				A1B13D2E1BB554D200A8AC29 /* libPushSDK-1.8.5.a in Frameworks */,
 				A1211EAA1BB2421700B25AA4 /* TencentOpenAPI.framework in Frameworks */,
 				751CFC778842ECC9FA71EE08 /* libPods.a in Frameworks */,
 			);
@@ -756,6 +762,7 @@
 		A17C9A7B1B8C6FBA00F5677C /* library */ = {
 			isa = PBXGroup;
 			children = (
+				A1B13D2B1BB554D200A8AC29 /* 极光推送 */,
 				A1211E9D1BB2421700B25AA4 /* UMSocial_Sdk_Extra_Frameworks */,
 				A1211E771BB2413500B25AA4 /* UMSocial_Sdk_4.2.3 */,
 				A1F0E5251BABAAEF00BA0BDD /* 通用工具 */,
@@ -949,6 +956,7 @@
 			children = (
 				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
 				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
+				A1B13D291BB5544B00A8AC29 /* PushConfig.plist */,
 				A1DB9AA31BA269A900EC97D6 /* 根控制器 */,
 			);
 			name = other;
@@ -1000,6 +1008,16 @@
 				A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */,
 			);
 			name = MyUIImagePicker;
+			sourceTree = "<group>";
+		};
+		A1B13D2B1BB554D200A8AC29 /* 极光推送 */ = {
+			isa = PBXGroup;
+			children = (
+				A1B13D2C1BB554D200A8AC29 /* APService.h */,
+				A1B13D2D1BB554D200A8AC29 /* libPushSDK-1.8.5.a */,
+			);
+			name = "极光推送";
+			path = lib;
 			sourceTree = "<group>";
 		};
 		A1B868381B842BEF005C4A6F /* 发现 */ = {
@@ -1613,6 +1631,7 @@
 				A1D6200A1BA6C0D2009FCA1F /* SpecificTopicViewController.xib in Resources */,
 				A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */,
 				A13259281B82C37B00A327C6 /* programView.xib in Resources */,
+				A1B13D2A1BB5544B00A8AC29 /* PushConfig.plist in Resources */,
 				A1B88CB71BA16A55008FA7C9 /* chat_animation1.png in Resources */,
 				A1AB1F1A1BB4F1D30069818F /* RiskPrompt.xib in Resources */,
 				A1B88CBC1BA16A55008FA7C9 /* chat_animation_white3.png in Resources */,
@@ -1919,6 +1938,7 @@
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/touwho_iPad/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1950,6 +1970,7 @@
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/touwho_iPad/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";

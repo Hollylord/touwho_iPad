@@ -11,6 +11,7 @@
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
+#import "APService.h"
 
 @interface AppDelegate ()
 
@@ -33,18 +34,24 @@
     //设置qq分享
     [UMSocialQQHandler setQQWithAppId:@"1104734143" appKey:@"otFu8s5Dv6u8sFBm" url:@"http://www.umeng.com/social"];
     
-    //注册远程通知
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert
-                                            | UIUserNotificationTypeBadge
-                                            | UIUserNotificationTypeSound
-                                                                             categories:nil];
-    [application registerUserNotificationSettings:settings];
-    [application registerForRemoteNotifications];
+    // 极光推送
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        //可以添加自定义categories
+        [APService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
+                                                       UIUserNotificationTypeSound |
+                                                       UIUserNotificationTypeAlert)
+                                           categories:nil];
+    } else {
+        //categories 必须为nil
+        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                       UIRemoteNotificationTypeSound |
+                                                       UIRemoteNotificationTypeAlert)
+                                           categories:nil];
+    }
     
-    // 提取通知数据
-    NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-    NSString *alert = [notificationPayload objectForKey:@"alert"];
-    NSLog(@"%@",alert);
+    // Required
+    [APService setupWithOption:launchOptions];
+    
     return YES;
 }
 
@@ -65,13 +72,9 @@
 //注册远程通知回调
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    AVInstallation *currentInstallation = [AVInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
+    // Required
+    [APService registerDeviceToken:deviceToken];
     
-    // 添加订阅频道
-    [currentInstallation addUniqueObject:@"Giants" forKey:@"channels"];
-    [currentInstallation saveInBackground];
 }
 
 //远程通知注册失败回调
@@ -80,18 +83,58 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    if (application.applicationState == UIApplicationStateActive) {
-        // 转换成一个本地通知，显示到通知栏，你也可以直接显示出一个 alertView，只是那样稍显 aggressive：）
-        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        localNotification.userInfo = userInfo;
-        localNotification.soundName = UILocalNotificationDefaultSoundName;
-        localNotification.alertBody = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
-        localNotification.fireDate = [NSDate date];
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    }
+    
+    // Required
+    [APService handleRemoteNotification:userInfo];
 }
 
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler{
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    
+    
+    
+    // IOS 7 Support Required
+    [APService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+    
+    NSString *alertContentStr = [[NSString alloc]init];
+    
+    //在前台
+    if (application.applicationState == UIApplicationStateActive) {
+        //add
+        
+        if (userInfo) {
+            NSDictionary *apsDic = [userInfo objectForKey:@"aps"];
+            for (NSString *contentStr in [apsDic allKeys]) {
+                if ([contentStr isEqualToString:@"alert"]) {
+                    alertContentStr = [apsDic objectForKey:@"alert"];
+                }
+            }
+            NSLog(@"%@",userInfo);
+            
+        }
+    } else {
+        
+        if (userInfo) {
+            
+            NSString *jsonTypes = userInfo[@"jsonType"];
+            NSString *alert = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"温馨提示"
+                                      message:[NSString stringWithFormat:@"%@", alert]
+                                      delegate:self
+                                      cancelButtonTitle:nil
+                                      otherButtonTitles:@"确定",
+                                      nil];
+            alertView.tag = [jsonTypes integerValue];
+            
+            [alertView show];
+        }
+        
+    }
+    
+    
+    completionHandler(UIBackgroundFetchResultNewData);
     
 }
 @end
