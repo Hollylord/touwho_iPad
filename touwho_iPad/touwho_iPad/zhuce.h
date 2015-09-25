@@ -14,9 +14,11 @@
  *  对应 下一步 操作
  */
 @property (copy,nonatomic) dispatch_block_t nextStepBlock;
+
+
 //返回按钮
 - (IBAction)upStep:(UIButton *)sender;
-
+//下一步
 - (IBAction)nextStep:(UIButton *)sender;
 
 @end

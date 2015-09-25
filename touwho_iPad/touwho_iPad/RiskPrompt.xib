@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RiskPrompt">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiP-xS-B37">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2xA-JN-uIw"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="风险揭示书" id="3yW-wp-C1o">
+                            <barButtonItem key="leftBarButtonItem" systemItem="reply" id="MbK-Gl-qQQ">
+                                <connections>
+                                    <action selector="returnBack:" destination="iN0-l3-epB" id="tci-he-o4C"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wh9-ss-gB1">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <mutableString key="text">欢迎阅读深圳市投壶网络科技资产管理有限公司（以下简称“投壶网”）风险提示书，您应当在注册会员、使用服务之前认真阅读本协议全部内容。点击“立即注册”及“下一步”按钮即代表您对本风险提示书条款内容无异议，并愿自愿遵守。本文中“平台”是指由投壶网（由深圳市投壶网络科技资产管理有限公司开发、运营）包括但不限于就网站、移动网站、手机APP（iOS、Android）、平板电脑APP、微信端等投壶网自行开发和运营，及从第三方跳转进入投壶网所有平台。本平台的用户（主要包括项目发起人），在投壶网平台发起项目（包括但不限于股权类、商品类、慈善类等），平台保证对真实性等进行初步筛选排查，如果通过投壶网讲及时协助其进行上线融资或采取其他可能的适合的途径（如并购、可转债等）融资金及资源，但是不保证能达到项目的最终融资等需求。本平台的用户（主要包括但不限于投资人、产业专家、入驻企业、投资机构、中介机构等），在对平台的项目做好研究和筛选工作后，结合自身的投资能力及风险承担能力，投壶网仅保证项目的最大程度的真实性及融资后的资金安全，平台不承担项目亏损或失败引起的包括本金亏损在内的任何损失。投壶网集合专家团队共同判断项目风险，但股权投资的风险仍然较高，建议投资人认真完成投壶网的《风险承受能力评估问卷测试》，并谨慎投资。</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wh9-ss-gB1" firstAttribute="top" secondItem="RiP-xS-B37" secondAttribute="bottom" id="FKF-tC-tCZ"/>
+                <constraint firstAttribute="bottom" secondItem="wh9-ss-gB1" secondAttribute="bottom" id="TEh-Q8-QGT"/>
+                <constraint firstAttribute="trailing" secondItem="RiP-xS-B37" secondAttribute="trailing" id="Uzs-Fl-N94"/>
+                <constraint firstItem="RiP-xS-B37" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YcS-A5-zBL"/>
+                <constraint firstAttribute="trailing" secondItem="wh9-ss-gB1" secondAttribute="trailing" id="mqL-1I-M9R"/>
+                <constraint firstItem="RiP-xS-B37" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="soh-uv-Xum"/>
+                <constraint firstItem="wh9-ss-gB1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="syM-nJ-SRm"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="347" y="347"/>
+        </view>
+    </objects>
+</document>

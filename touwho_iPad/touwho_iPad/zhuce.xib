@@ -10,19 +10,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzt-JG-6bH">
-                    <rect key="frame" x="275" y="50" width="50" height="35"/>
-                    <attributedString key="attributedText">
-                        <fragment content="注册">
-                            <attributes>
-                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="25" name="STHeitiSC-Medium"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ID" translatesAutoresizingMaskIntoConstraints="NO" id="IhP-K2-KJh">
                     <rect key="frame" x="91" y="93" width="418" height="53"/>
                     <constraints>
@@ -34,10 +21,10 @@
                     <rect key="frame" x="91" y="162" width="418" height="53"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pbx-eD-a1N">
-                    <rect key="frame" x="255" y="390" width="90" height="54"/>
+                    <rect key="frame" x="240" y="390" width="120" height="54"/>
                     <state key="normal">
                         <attributedString key="attributedTitle">
-                            <fragment content="下一步">
+                            <fragment content="马上注册">
                                 <attributes>
                                     <font key="NSFont" size="30" name="STHeitiSC-Light"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -102,29 +89,6 @@
                         </mask>
                     </variation>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iW5-ps-dlM" userLabel="返回">
-                    <rect key="frame" x="8" y="8" width="30" height="33"/>
-                    <state key="normal">
-                        <attributedString key="attributedTitle">
-                            <fragment content="❌">
-                                <attributes>
-                                    <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
-                                    <font key="NSFont" size="13" name="AppleColorEmoji"/>
-                                    <real key="NSKern" value="0.0"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="20.020000457763672" defaultTabInterval="36">
-                                        <tabStops/>
-                                    </paragraphStyle>
-                                    <color key="NSStrokeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
-                                    <real key="NSStrokeWidth" value="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </state>
-                    <connections>
-                        <action selector="upStep:" destination="V6w-VY-s05" eventType="touchUpInside" id="4xN-jp-Hsg"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP7-j9-4YY">
                     <rect key="frame" x="266" y="464" width="68" height="24"/>
                     <attributedString key="attributedText">
@@ -183,6 +147,54 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3CD-yz-ytf">
+                    <rect key="frame" x="91" y="359" width="83" height="17"/>
+                    <state key="normal" image="dagou2">
+                        <attributedString key="attributedTitle">
+                            <fragment content="已阅读并同意">
+                                <attributes>
+                                    <font key="NSFont" size="12" name="STHeitiSC-Light"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <state key="selected" image="dagou1"/>
+                    <connections>
+                        <action selector="confirmProtocol:" destination="V6w-VY-s05" eventType="touchUpInside" id="VjV-I8-bY3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="348-P3-3A0">
+                    <rect key="frame" x="177" y="353" width="105" height="30"/>
+                    <state key="normal" title="《风险揭示书》"/>
+                    <connections>
+                        <action selector="riskPrompt:" destination="V6w-VY-s05" eventType="touchUpInside" id="hYX-2t-ZYr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgi-2F-rLp">
+                    <rect key="frame" x="285" y="353" width="135" height="30"/>
+                    <state key="normal" title="《投壶网服务协议》"/>
+                    <connections>
+                        <action selector="serviceAgreement:" destination="V6w-VY-s05" eventType="touchUpInside" id="d9z-GB-dcr"/>
+                    </connections>
+                </button>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqe-lb-gX5">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8Ux-o2-zY5"/>
+                    </constraints>
+                    <textAttributes key="titleTextAttributes">
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="注册" id="nw4-Xn-gGH">
+                            <barButtonItem key="leftBarButtonItem" systemItem="reply" id="jeK-2x-Jd8">
+                                <connections>
+                                    <action selector="upStep:" destination="V6w-VY-s05" id="XrC-l7-tMD"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
@@ -192,13 +204,14 @@
                 <constraint firstItem="bm6-nS-Ax2" firstAttribute="centerY" secondItem="qgq-hs-uIA" secondAttribute="centerY" id="4po-MD-i4v"/>
                 <constraint firstItem="dkH-qt-cEv" firstAttribute="leading" secondItem="Pbx-eD-a1N" secondAttribute="leading" id="5d7-S2-BFy"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="height" secondItem="IhP-K2-KJh" secondAttribute="height" id="6Wo-qs-bwn"/>
+                <constraint firstAttribute="trailing" secondItem="gqe-lb-gX5" secondAttribute="trailing" id="74l-rR-PqW"/>
+                <constraint firstItem="348-P3-3A0" firstAttribute="centerY" secondItem="3CD-yz-ytf" secondAttribute="centerY" id="7aA-IS-lAD"/>
                 <constraint firstItem="Sdb-87-PLm" firstAttribute="centerX" secondItem="V6w-VY-s05" secondAttribute="centerX" id="7jA-Lv-43k"/>
                 <constraint firstItem="VAi-p6-rrW" firstAttribute="top" secondItem="Q5h-wV-IGs" secondAttribute="top" id="8Af-IR-cDu"/>
-                <constraint firstItem="IhP-K2-KJh" firstAttribute="top" secondItem="Zzt-JG-6bH" secondAttribute="bottom" constant="8" id="8ur-Qp-JcM"/>
                 <constraint firstItem="qgq-hs-uIA" firstAttribute="leading" secondItem="866-fN-UBe" secondAttribute="leading" id="BaA-ra-4w0"/>
                 <constraint firstItem="IhP-K2-KJh" firstAttribute="centerX" secondItem="V6w-VY-s05" secondAttribute="centerX" id="Bup-hV-aJR"/>
                 <constraint firstItem="cP7-j9-4YY" firstAttribute="centerX" secondItem="V6w-VY-s05" secondAttribute="centerX" id="FOH-pW-DXr"/>
-                <constraint firstItem="Zzt-JG-6bH" firstAttribute="top" secondItem="V6w-VY-s05" secondAttribute="top" constant="50" id="FnD-b3-aaH"/>
+                <constraint firstItem="3CD-yz-ytf" firstAttribute="leading" secondItem="VAi-p6-rrW" secondAttribute="leading" id="GqQ-SL-IWy"/>
                 <constraint firstItem="dkH-qt-cEv" firstAttribute="trailing" secondItem="j1k-L2-gec" secondAttribute="trailing" constant="-30" id="HcG-ta-HYF"/>
                 <constraint firstItem="Sdb-87-PLm" firstAttribute="top" secondItem="Pbx-eD-a1N" secondAttribute="bottom" constant="74" id="I03-GZ-Ttq"/>
                 <constraint firstItem="VAi-p6-rrW" firstAttribute="bottom" secondItem="Q5h-wV-IGs" secondAttribute="bottom" id="K38-vM-sdF"/>
@@ -206,27 +219,31 @@
                 <constraint firstItem="Pbx-eD-a1N" firstAttribute="top" secondItem="cfj-2v-bSp" secondAttribute="bottom" constant="175" id="LM4-P3-PeZ"/>
                 <constraint firstItem="j1k-L2-gec" firstAttribute="trailing" secondItem="Vgg-f7-XN6" secondAttribute="trailing" id="M8C-Hk-BfP"/>
                 <constraint firstItem="866-fN-UBe" firstAttribute="height" secondItem="IhP-K2-KJh" secondAttribute="height" id="MFm-Dq-rPA"/>
-                <constraint firstItem="Zzt-JG-6bH" firstAttribute="centerX" secondItem="V6w-VY-s05" secondAttribute="centerX" id="MGx-RS-S0w"/>
+                <constraint firstItem="Zgi-2F-rLp" firstAttribute="centerY" secondItem="348-P3-3A0" secondAttribute="centerY" id="OxK-3e-2tf"/>
                 <constraint firstItem="JbL-ej-lpG" firstAttribute="centerY" secondItem="cP7-j9-4YY" secondAttribute="centerY" id="PVr-pa-ciG"/>
+                <constraint firstItem="gqe-lb-gX5" firstAttribute="top" secondItem="V6w-VY-s05" secondAttribute="top" id="QvP-ey-0DO"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="top" secondItem="IhP-K2-KJh" secondAttribute="top" id="SSC-Fw-ZhC"/>
                 <constraint firstItem="CDm-2k-IWz" firstAttribute="leading" secondItem="Q5h-wV-IGs" secondAttribute="trailing" constant="21" id="TBw-7T-sTe"/>
+                <constraint firstItem="gqe-lb-gX5" firstAttribute="leading" secondItem="V6w-VY-s05" secondAttribute="leading" id="TQ9-tP-nEH"/>
                 <constraint firstItem="Q5h-wV-IGs" firstAttribute="trailing" secondItem="866-fN-UBe" secondAttribute="trailing" id="VI5-88-WIA"/>
                 <constraint firstItem="Q5h-wV-IGs" firstAttribute="height" secondItem="866-fN-UBe" secondAttribute="height" id="WFA-vp-F1F"/>
                 <constraint firstItem="Q5h-wV-IGs" firstAttribute="leading" secondItem="866-fN-UBe" secondAttribute="leading" id="X8t-cl-ckg"/>
-                <constraint firstItem="iW5-ps-dlM" firstAttribute="top" secondItem="V6w-VY-s05" secondAttribute="top" constant="8" id="Yzk-Vz-Kpr"/>
                 <constraint firstItem="qgq-hs-uIA" firstAttribute="top" secondItem="866-fN-UBe" secondAttribute="top" id="Zih-ie-lrn"/>
                 <constraint firstItem="qgq-hs-uIA" firstAttribute="trailing" secondItem="866-fN-UBe" secondAttribute="trailing" id="Zko-0N-bDg"/>
                 <constraint firstItem="bm6-nS-Ax2" firstAttribute="leading" secondItem="qgq-hs-uIA" secondAttribute="trailing" constant="21" id="add-H0-Ll2"/>
-                <constraint firstItem="iW5-ps-dlM" firstAttribute="leading" secondItem="V6w-VY-s05" secondAttribute="leading" constant="8" id="bRW-b1-lOc"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="leading" secondItem="V6w-VY-s05" secondAttribute="leading" constant="150" id="d5Z-ZE-Ubq"/>
+                <constraint firstItem="3CD-yz-ytf" firstAttribute="top" secondItem="VAi-p6-rrW" secondAttribute="bottom" constant="10" id="dQ1-Ne-96e"/>
                 <constraint firstItem="JbL-ej-lpG" firstAttribute="trailing" secondItem="Pbx-eD-a1N" secondAttribute="trailing" id="dmz-xb-dn1"/>
                 <constraint firstItem="866-fN-UBe" firstAttribute="width" secondItem="IhP-K2-KJh" secondAttribute="width" id="efW-Hb-wi8"/>
                 <constraint firstItem="VAi-p6-rrW" firstAttribute="trailing" secondItem="Q5h-wV-IGs" secondAttribute="trailing" id="gB1-bZ-rIq"/>
                 <constraint firstItem="j1k-L2-gec" firstAttribute="leading" secondItem="Vgg-f7-XN6" secondAttribute="leading" id="hYw-0L-iE0"/>
+                <constraint firstItem="Vgg-f7-XN6" firstAttribute="top" secondItem="gqe-lb-gX5" secondAttribute="bottom" constant="49" id="iIs-ze-M07"/>
+                <constraint firstItem="348-P3-3A0" firstAttribute="leading" secondItem="3CD-yz-ytf" secondAttribute="trailing" constant="3" id="ibV-ea-ts4"/>
                 <constraint firstItem="CDm-2k-IWz" firstAttribute="centerY" secondItem="Q5h-wV-IGs" secondAttribute="centerY" id="jML-2h-JAV"/>
                 <constraint firstItem="866-fN-UBe" firstAttribute="top" secondItem="j1k-L2-gec" secondAttribute="bottom" constant="20" id="jfD-Zk-RMG"/>
                 <constraint firstItem="cfj-2v-bSp" firstAttribute="centerX" secondItem="V6w-VY-s05" secondAttribute="centerX" id="kFm-B9-u5Q"/>
                 <constraint firstItem="866-fN-UBe" firstAttribute="leading" secondItem="IhP-K2-KJh" secondAttribute="leading" id="mSz-rV-XSb"/>
+                <constraint firstItem="Zgi-2F-rLp" firstAttribute="leading" secondItem="348-P3-3A0" secondAttribute="trailing" constant="3" id="nVA-mC-6b0"/>
                 <constraint firstItem="VAi-p6-rrW" firstAttribute="leading" secondItem="Q5h-wV-IGs" secondAttribute="leading" id="pP4-7P-7Sb"/>
                 <constraint firstItem="Pbx-eD-a1N" firstAttribute="centerX" secondItem="V6w-VY-s05" secondAttribute="centerX" id="tnv-nb-2cM"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="trailing" secondItem="IhP-K2-KJh" secondAttribute="trailing" id="tp4-Sg-Cj8"/>
@@ -237,6 +254,7 @@
                 <constraint firstItem="cP7-j9-4YY" firstAttribute="centerY" secondItem="dkH-qt-cEv" secondAttribute="centerY" id="zX7-4j-gtz"/>
                 <constraint firstItem="qgq-hs-uIA" firstAttribute="bottom" secondItem="866-fN-UBe" secondAttribute="bottom" id="zox-XX-p8n"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="efW-Hb-wi8"/>
@@ -248,6 +266,8 @@
     </objects>
     <resources>
         <image name="ID" width="417" height="52"/>
+        <image name="dagou1" width="10" height="10"/>
+        <image name="dagou2" width="11" height="10"/>
         <image name="password" width="417" height="52"/>
         <image name="qq" width="50" height="50"/>
         <image name="shurukuang" width="133" height="26"/>

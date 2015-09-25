@@ -8,6 +8,16 @@
 #import "zhuce.h"
 
 @implementation zhuce
+- (IBAction)riskPrompt:(UIButton *)sender {
+    UIView *riskView = [[[NSBundle mainBundle] loadNibNamed:@"RiskPrompt" owner:nil options:nil] firstObject];
+    [self addSubview:riskView];
+    riskView.frame = self.frame;
+}
+- (IBAction)serviceAgreement:(UIButton *)sender {
+    UIView *ServiceAgreement = [[[NSBundle mainBundle] loadNibNamed:@"ServiceAgreement" owner:nil options:nil] firstObject];
+    [self addSubview:ServiceAgreement];
+    ServiceAgreement.frame = self.frame;
+}
 
 
 - (IBAction)upStep:(UIButton *)sender {
@@ -19,4 +29,8 @@
         self.nextStepBlock();
     }
 }
+- (IBAction)confirmProtocol:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
 @end

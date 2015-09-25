@@ -62,6 +62,9 @@
         splitViewController *split = (splitViewController *)self.presentingViewController;
         [split showDetailViewController:viewcontroller sender:nil];
     };
+    
+    
+    
 }
 
 //点击忘记密码

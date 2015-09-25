@@ -7,6 +7,7 @@
 //
 
 #import "SpecificGroupViewController.h"
+#import "SpecificTopicViewController.h"
 
 @interface SpecificGroupViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (strong,nonatomic) NSMutableArray *topics;//存放所有话题
@@ -56,6 +57,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //跳转到话题详情页面
+    SpecificTopicViewController *topicVC = [[SpecificTopicViewController alloc] initWithNibName:@"SpecificTopicViewController" bundle:nil];
+    [self.navigationController pushViewController:topicVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

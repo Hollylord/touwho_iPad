@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nRw-hD-kgn" customClass="ServiceAgreement">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHl-fY-7vi">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="zdK-ML-UO7"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="投壶网服务协议" id="oSW-AZ-Hty">
+                            <barButtonItem key="leftBarButtonItem" systemItem="reply" id="uho-cX-Tmf">
+                                <connections>
+                                    <action selector="returnBack:" destination="nRw-hD-kgn" id="bvu-zq-SlM"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LeV-OB-ilB">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <mutableString key="text">欢迎阅读深圳市投壶网络科技资产管理有限公司（以下简称“投壶网”）服务协议，您应当在注册会员、使用服务之前认真阅读本协议全部内容。点击“立即注册”及“下一步”按钮即代表您对本服务协议条款内容无异议，并愿自愿遵守。本文中“平台”是指由投壶网（由深圳市投壶网络科技资产管理有限公司开发、运营）包括但不限于就网站、移动网站、手机APP（iOS、Android）、平板电脑APP、微信端等投壶网自行开发和运营，及从第三方跳转进入投壶网所有平台。一、接受条款1.1 本协议构成您与投壶网（由深圳市投壶网络科技资产管理有限公司开发、运营）包括但不限于就网站、移动网站、手机APP（iOS、Android）、平板电脑APP、微信端等投壶网自行开发和运营，及从第三方跳转进入投壶网所有平台使用服务所达成的协议。1.2 我们所提供的服务包含投壶网的平台体验和使用、基于互联网通过平台发布、阅读、共享、传递相关信息文字、图片及视频内容，用户注册类型包括但不限于项目发起人、投资人、企业、机构或相关行业人员，均视为同意遵守本服务协议。1.3 平台有权随时修改本协议文本中的任何条款。一旦我们平台对本协议进行修改,我们平台将会以公告形式发布通知或直接修改。任何该等修改自发布之日起生效。如果用户在该修改发布后继续使用我们平台服务，则表示该用户同意遵守对本协议所作出的该等修改。因此，请用户务必定期查阅本协议，以确保了解所有关于本协议的最新修改。二、平台服务2.1 用户在阅读、理解本协议内容并同意接受本协议后，自愿申报注册成为投壶网认证会员的，在本协议生效后有权依据投壶网的相关规定及本协议的约定使用投壶网服务、发布创业项目、申请领投及跟投项目、社区留言讨论、参与平台组织的各项线上及线下活动等，并使用本协议及其签署同意的其他协议规定的相应服务。2.2 项目发布者在本协议生效后有权依据投壶网的相关规定及本协议的约定上传并发布项目筹措资金或其他服务。项目发布者使用投壶网融资服务开展融资活动的，需经投壶网审核通过同意在商定时期内仅通过投壶网平台发布并融资的条款并另行签署《投壶项目融资服务协议》。2.3 平台竭力为项目方、投资方、其他方（行业专业人士、法律专业人士、创业人士等）提供基于互联网平台的投融资及理财服务，包括但不限于协助项目发起方发布图片、文字、视频等；利用自身资源或第三方为投资方提供净值调查等；创建社区为各方提供信息交流渠道；适当的相关广告运营等。平台有在任何时候根据发展需求 取消或增加相关服务的权利。2.4 用户在服务期限内使用投壶网提供的有偿服务的，应根据与投壶网达成的相关协议支付服务价款。三、责任、权利和义务3.1用户在同意了投壶网服务协议后，必须遵守中华人民共和国相关法律法规的规定，用户保证不会利用我们平台服务进行任何违法或不正当的活动，包括但不限于下列行为∶上传、展示、张贴或以其它方式传播含有下列内容之一的信息：1）反对宪法及其他法律的基本原则的；2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；3）损害国家荣誉和利益的；4）煽动民族仇恨、民族歧视、破坏民族团结的；5）破坏国家宗教政策，宣扬邪教和封建迷信的；6）散布谣言，扰乱社会秩序，破坏社会稳定的；7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；8）侮辱或者诽谤他人，侵害他人合法权利的；9）含有虚假、有害、胁迫、侵害他人隐私、骚扰、中伤、粗俗、猥亵、或其它道德上令人反感的内容；10）含有中国法律、法规、规章、条例以及任何具有法律效力的规范所限制或禁止的其它内容的；11）不得为任何非法目的而使用网络服务系统；用户同时保证不会利用我们平台服务从事以下活动：1）未经允许，进入计算机信息网络或者使用计算机信息网络资源的；2）未经允许，对计算机信息网络功能进行删除、修改或者增加的；3）未经允许，对进入计算机信息网络中存储、处理或者传输的数据和应用程序进行删除、修改或者增加的;故意制作、传播计算机病毒等破坏性程序的；4）其他危害计算机信息网络安全的行为。如用户有在平台上违反上述或其他违法违规行为的，投壶网有权向用户索取包括但不限于经济赔偿、书面公开歉意等。情节严重的，投壶网保留对其诉讼的权利。3.2 平台在运营期间，将对每一个申请成为认证注册会员进行审核，并且有权拒绝注册会员申请成为认证投资人或者发布项目的要求，承诺并保证注册会员用户运用投壶网平台为用户提供本协议约定的服务。包括但不限于：1）投壶网会竭力审核用户发布的信息，但不保证其全部的真实性、准确性、完整性、合法性、及时性或有效性；2）不承诺投资收益，亦不承担投资损失；3）投壶网将严格依照协议及国家法律法规给予用户隐私权保护；4）投壶网有权随时删除含有任何危害国家安全、淫秽色情、虚假、侮辱、诽谤、恐吓或骚扰、侵犯他人知识产权或人身权或其他合法权益等违法或有违社会公序良俗的内容或指向这些内容链接的信息，并有权终止对发布前述信息的用户的服务；5）通过投壶网服务存储或传送之任何信息、通讯资料和其他内容，如被删除或未予储存，投壶网毋须承担任何责任；6）投壶网及其关联机构除对用户提供的资料（包括但不限于文字、图片、视频）拥有合理使用权外，还拥有独家通用的免费 的许可使用权。许可使用范围包括复制、发行、展览、信息网络传播、改编、翻译、汇编等。用户将前述资料提供给投壶网期间，使用权持续有效。若用户发现投壶网对用户资料的使用不当时，可及时提出；7）用户所从事的经营业务不得对投壶网利益构成任何现实或潜在的损害或冲突，否则投壶网有权通知用户立即终止服务，且无需承担其他法律责任和费用补偿；8）对于以下情况（包括但不限于）停电；软件系统故障；服务器、电信设备等硬件故障；台风、地震等恶劣气候；战争、恐怖袭击等不可抗力事件，影响到本服务的正常运行，投壶网承诺尽可能及时处理进行修复。但用户因此而产生的经济和精神损失，投壶网不承担任何直接或间接的责任。对于投壶网有计划的系统维修、保养、升级，投壶网将会以网站公告的方式事先通知用户，升级期间，投壶网服务将不同程度受到影响，用户因此而产生的损失，投壶网不承担任何直接或间接的责任；9）本协议未涉及的问题参见国家有关法律法规，当本协议与国家法律法规冲突时，以国家法律法规为准。10）其他未提及的事项或变更，投壶网拥有最终解释权。四、隐私权政策及安全4.1投壶网尊重并保护所有注册会员的个人隐私权。为了给您提供更准确、更有个性化的服务，投壶网会按照本隐私权政策 的规定使用和披露您的个人信息。但我们将以高度审慎的态度对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，投壶网不会将这些信息对外披露或向第三方提供。但以下状况除外：1）根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、司法机构披露；2）如出现违反中国有关法律、法规或相关规则的情况，需要向第三方披露；4.2投壶网有权更新本隐私权政策；4.3投壶网可能通过使用您的个人信息，向您提供您感兴趣的信息；五、知识产权5.1 注册会员的上传行为代表着注册会员或其代表的公司授权投壶网对上传的信息享有不可撤销的永久的使用权和收益权，但注册会员或其代表的公司仍保有上传信息的所属权。5.2注册会员有义务确保其发布的信息不侵犯任何第三方知识产权及其他权利，否则由此给第三方及投壶网造成的损失将由注册会员承担。六、附则6.1 本协议签署、效力、解释和执行以及争议之解决均应适用中国法律。6.2本协议自用户注册成为投壶网认证会员并同意接受本协议全部条款之日起生效对本协议任何条款的执行或解释所引起的任何争议，投壶网和注册会员应尽最大努力友好协商解决；协商不成的，双方均可向所在地的人民法院起诉。6.3协议双方一致同意，本协议所涉及的税项和费用，按照中国有关法律、法规及规范性文件的规定办理。法律没有明确规定的，由双方各自/平均负担。6.4除非取得投壶网的书面同意，用户不得将其在本协议项下的全部或部分权利与义务转让给任何第三方。6.5本协议部分条款无效、被撤销或者终止的，不影响其他条款的效力，其他条款仍然有效。6.6本协议标题是为了方便阅读所设，并非是对条款的定义、限制和解释，如与协议内容存在矛盾，以协议内容为准，并且投壶网拥有最终解释权。</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LeV-OB-ilB" secondAttribute="bottom" id="AVn-8V-cce"/>
+                <constraint firstItem="WHl-fY-7vi" firstAttribute="leading" secondItem="nRw-hD-kgn" secondAttribute="leading" id="Azl-Sm-HEt"/>
+                <constraint firstAttribute="trailing" secondItem="WHl-fY-7vi" secondAttribute="trailing" id="MVh-uU-xbt"/>
+                <constraint firstAttribute="trailing" secondItem="LeV-OB-ilB" secondAttribute="trailing" id="Qb4-YQ-Gty"/>
+                <constraint firstItem="WHl-fY-7vi" firstAttribute="top" secondItem="nRw-hD-kgn" secondAttribute="top" id="ZKc-9J-YuQ"/>
+                <constraint firstItem="LeV-OB-ilB" firstAttribute="top" secondItem="WHl-fY-7vi" secondAttribute="bottom" id="dWQ-hs-KBB"/>
+                <constraint firstItem="LeV-OB-ilB" firstAttribute="leading" secondItem="nRw-hD-kgn" secondAttribute="leading" id="vbc-YM-dzU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="textView" destination="LeV-OB-ilB" id="oME-99-RyW"/>
+            </connections>
+            <point key="canvasLocation" x="347" y="347"/>
+        </view>
+    </objects>
+</document>

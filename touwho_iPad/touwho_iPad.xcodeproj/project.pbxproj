@@ -76,6 +76,10 @@
 		A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A1AB1F1A1BB4F1D30069818F /* RiskPrompt.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F191BB4F1D30069818F /* RiskPrompt.xib */; settings = {ASSET_TAGS = (); }; };
+		A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1C1BB4F4C50069818F /* RiskPrompt.m */; settings = {ASSET_TAGS = (); }; };
+		A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */; settings = {ASSET_TAGS = (); }; };
+		A1AB1F221BB4F52E0069818F /* ServiceAgreement.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */; settings = {ASSET_TAGS = (); }; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
@@ -321,6 +325,12 @@
 		A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadIconViewController.xib; sourceTree = "<group>"; };
 		A1A01AAD1BAA6CFF009EF690 /* MyImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImagePickerViewController.h; sourceTree = "<group>"; };
 		A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImagePickerViewController.m; sourceTree = "<group>"; };
+		A1AB1F191BB4F1D30069818F /* RiskPrompt.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskPrompt.xib; sourceTree = "<group>"; };
+		A1AB1F1B1BB4F4C50069818F /* RiskPrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskPrompt.h; sourceTree = "<group>"; };
+		A1AB1F1C1BB4F4C50069818F /* RiskPrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskPrompt.m; sourceTree = "<group>"; };
+		A1AB1F1E1BB4F5220069818F /* ServiceAgreement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAgreement.h; sourceTree = "<group>"; };
+		A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAgreement.m; sourceTree = "<group>"; };
+		A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAgreement.xib; sourceTree = "<group>"; };
 		A1B2CF421B7D7D9D001B25CE /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
 		A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
 		A1B868401B842D02005C4A6F /* discoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discoveryViewController.h; sourceTree = "<group>"; };
@@ -724,7 +734,7 @@
 			isa = PBXGroup;
 			children = (
 				A1E6EB381BA13404005D4E6F /* 他人中心 */,
-				A1C3EDE11B9EB72B0023AB6E /* 登录 */,
+				A1C3EDE11B9EB72B0023AB6E /* 登录注册 */,
 				A1C3EDE01B9EB7230023AB6E /* 个人中心 */,
 				A1C3EDDF1B9EB7090023AB6E /* 回复通知 */,
 				A1C3EDE71B9EBB730023AB6E /* 聊天 */,
@@ -1193,14 +1203,14 @@
 			name = "个人中心";
 			sourceTree = "<group>";
 		};
-		A1C3EDE11B9EB72B0023AB6E /* 登录 */ = {
+		A1C3EDE11B9EB72B0023AB6E /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
 				A13259321B83071200A327C6 /* loginViewController.h */,
 				A13259331B83071200A327C6 /* loginViewController.m */,
 				A1D78DD71B9D5A8200C136C3 /* 注册与忘记密码 */,
 			);
-			name = "登录";
+			name = "登录注册";
 			sourceTree = "<group>";
 		};
 		A1C3EDE71B9EBB730023AB6E /* 聊天 */ = {
@@ -1266,6 +1276,12 @@
 				A1D78DD21B9D341D00C136C3 /* forgetPassword.h */,
 				A1D78DD31B9D341D00C136C3 /* forgetPassword.m */,
 				A1D78DD51B9D342700C136C3 /* forgetPassword.xib */,
+				A1AB1F1B1BB4F4C50069818F /* RiskPrompt.h */,
+				A1AB1F1C1BB4F4C50069818F /* RiskPrompt.m */,
+				A1AB1F191BB4F1D30069818F /* RiskPrompt.xib */,
+				A1AB1F1E1BB4F5220069818F /* ServiceAgreement.h */,
+				A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */,
+				A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */,
 			);
 			name = "注册与忘记密码";
 			sourceTree = "<group>";
@@ -1547,6 +1563,7 @@
 				A13EEA861B8EA51D0052C2A7 /* profile.xib in Resources */,
 				A1211E991BB2413500B25AA4 /* UMSLoginViewController.xib in Resources */,
 				A1B88CC41BA16A55008FA7C9 /* chatfrom_doctor_icon.png in Resources */,
+				A1AB1F221BB4F52E0069818F /* ServiceAgreement.xib in Resources */,
 				A1211E971BB2413500B25AA4 /* UMShareEditViewController.xib in Resources */,
 				A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */,
 				A1211E9B1BB2413500B25AA4 /* UMSShareListController.xib in Resources */,
@@ -1588,6 +1605,7 @@
 				A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */,
 				A13259281B82C37B00A327C6 /* programView.xib in Resources */,
 				A1B88CB71BA16A55008FA7C9 /* chat_animation1.png in Resources */,
+				A1AB1F1A1BB4F1D30069818F /* RiskPrompt.xib in Resources */,
 				A1B88CBC1BA16A55008FA7C9 /* chat_animation_white3.png in Resources */,
 				A1B88CB81BA16A55008FA7C9 /* chat_animation2.png in Resources */,
 				A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */,
@@ -1697,9 +1715,11 @@
 				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
 				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
 				A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */,
+				A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B88CDB1BA177E5008FA7C9 /* UUMessageFrame.m in Sources */,
+				A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A1D78E221B9D96BB00C136C3 /* message.m in Sources */,
 				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
