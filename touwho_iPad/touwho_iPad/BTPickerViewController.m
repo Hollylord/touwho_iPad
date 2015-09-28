@@ -237,7 +237,7 @@
 
 
 
-
+#pragma mark - 按钮点击
 - (IBAction)cancel:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
     
@@ -246,18 +246,21 @@
 - (IBAction)confirm:(UIBarButtonItem *)sender {
     NSInteger row = [picker selectedRowInComponent:0];
     NSString *p = province[row];
-    //打印选中的地区
-    NSLog(@"%@",p);
+    
     
     NSInteger row2 = [picker selectedRowInComponent:1];
     NSString *p2 = city[row2];
-    //打印选中的地区
-    NSLog(@"%@",p2);
+    
     
     NSInteger row3 = [picker selectedRowInComponent:2];
     NSString *p3 = district[row3];
-    //打印选中的地区
-    NSLog(@"%@",p3);
+    
+    NSString *title = [NSString stringWithFormat:@"%@,%@,%@",p,p2,p3];
+    
+    if (self.regionPickerBlock) {
+        self.regionPickerBlock(title);
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 

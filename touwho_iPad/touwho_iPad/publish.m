@@ -15,7 +15,10 @@
 - (IBAction)chooseIndustry:(UIButton *)sender {
     //创建popVC
     self.picker = [[BTPickerViewController alloc] initWithNibName:@"BTPickerViewController" bundle:nil];
-   
+    __weak typeof(self) weakSelf = self;
+    self.picker.regionPickerBlock = ^(NSString *title){
+        [weakSelf.btnIndustry setTitle:title forState:UIControlStateNormal];
+    };
     
     //设置popVC的尺寸
     self.picker.preferredContentSize = CGSizeMake(300, 300);

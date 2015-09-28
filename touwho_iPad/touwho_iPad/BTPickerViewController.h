@@ -10,4 +10,7 @@
 
 @interface BTPickerViewController : UIViewController
 
+//返回地区选择的字符串
+@property (copy,nonatomic) void (^regionPickerBlock)(NSString *);
+
 @end
