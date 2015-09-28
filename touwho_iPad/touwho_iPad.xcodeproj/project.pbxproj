@@ -59,6 +59,10 @@
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A193F68F1BB90CD9007A697F /* publish.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F68E1BB90CD9007A697F /* publish.m */; settings = {ASSET_TAGS = (); }; };
+		A193F6D61BB924CB007A697F /* BTPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F6D41BB924CB007A697F /* BTPickerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A193F6D71BB924CB007A697F /* BTPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A193F6D51BB924CB007A697F /* BTPickerViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A193F6DB1BB94216007A697F /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = A193F6DA1BB94216007A697F /* area.plist */; settings = {ASSET_TAGS = (); }; };
 		A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */; settings = {ASSET_TAGS = (); }; };
 		A1987E021BB134CE00CC4130 /* sponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1987E011BB134CE00CC4130 /* sponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A1987E051BB1361700CC4130 /* sponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987E041BB1361700CC4130 /* sponsorTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -295,6 +299,12 @@
 		A19234891BB14A9C0073A1C6 /* LingTouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingTouViewController.h; sourceTree = "<group>"; };
 		A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingTouViewController.m; sourceTree = "<group>"; };
 		A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingTouViewController.xib; sourceTree = "<group>"; };
+		A193F68D1BB90CD9007A697F /* publish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = publish.h; sourceTree = "<group>"; };
+		A193F68E1BB90CD9007A697F /* publish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = publish.m; sourceTree = "<group>"; };
+		A193F6D31BB924CB007A697F /* BTPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPickerViewController.h; sourceTree = "<group>"; };
+		A193F6D41BB924CB007A697F /* BTPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPickerViewController.m; sourceTree = "<group>"; };
+		A193F6D51BB924CB007A697F /* BTPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTPickerViewController.xib; sourceTree = "<group>"; };
+		A193F6DA1BB94216007A697F /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		A1987DFC1BB0FE1800CC4130 /* ModelForProgramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForProgramView.h; sourceTree = "<group>"; };
 		A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForProgramView.m; sourceTree = "<group>"; };
 		A1987E011BB134CE00CC4130 /* sponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sponsorCell.xib; sourceTree = "<group>"; };
@@ -835,6 +845,16 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
+		A193F6D21BB9244E007A697F /* BTPickerVC */ = {
+			isa = PBXGroup;
+			children = (
+				A193F6D31BB924CB007A697F /* BTPickerViewController.h */,
+				A193F6D41BB924CB007A697F /* BTPickerViewController.m */,
+				A193F6D51BB924CB007A697F /* BTPickerViewController.xib */,
+			);
+			name = BTPickerVC;
+			sourceTree = "<group>";
+		};
 		A1987DFA1BB0FAD100CC4130 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -926,6 +946,8 @@
 		A19D093E1B7C2DF100094B81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A193F6DA1BB94216007A697F /* area.plist */,
+				A1B13D291BB5544B00A8AC29 /* PushConfig.plist */,
 				A19D094F1B7C2DF100094B81 /* Info.plist */,
 				A19D093F1B7C2DF100094B81 /* main.m */,
 				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
@@ -956,7 +978,6 @@
 			children = (
 				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
 				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
-				A1B13D291BB5544B00A8AC29 /* PushConfig.plist */,
 				A1DB9AA31BA269A900EC97D6 /* 根控制器 */,
 			);
 			name = other;
@@ -1188,6 +1209,8 @@
 			isa = PBXGroup;
 			children = (
 				A11451C31B8DC47700E45381 /* apply.xib */,
+				A193F68D1BB90CD9007A697F /* publish.h */,
+				A193F68E1BB90CD9007A697F /* publish.m */,
 				A1BE7F491B8DAFE100E76711 /* publish.xib */,
 				A1CF1E1D1BAFEB670065EF77 /* ProgramsTableViewCell.h */,
 				A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */,
@@ -1426,6 +1449,7 @@
 				A1F0E52D1BABE1E600BA0BDD /* 头像裁切 */,
 				A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */,
 				A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */,
+				A193F6D21BB9244E007A697F /* BTPickerVC */,
 			);
 			name = "通用工具";
 			sourceTree = "<group>";
@@ -1568,6 +1592,7 @@
 				A1211E941BB2413500B25AA4 /* UMSCommentDetailController.xib in Resources */,
 				A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */,
 				A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */,
+				A193F6DB1BB94216007A697F /* area.plist in Resources */,
 				A1E9BE9D1BA8057F00876186 /* activityUnit.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
 				A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */,
@@ -1582,6 +1607,7 @@
 				A1B88CC81BA16A55008FA7C9 /* headImage.jpeg in Resources */,
 				A1211E9A1BB2413500B25AA4 /* UMSnsAccountViewController.xib in Resources */,
 				A1C3EDD51B9E8D250023AB6E /* privateMessage.xib in Resources */,
+				A193F6D71BB924CB007A697F /* BTPickerViewController.xib in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
 				A1B88CC01BA16A55008FA7C9 /* chat_send_message.png in Resources */,
 				A1B88CB91BA16A55008FA7C9 /* chat_animation3.png in Resources */,
@@ -1711,6 +1737,7 @@
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1B88CEB1BA17843008FA7C9 /* MJRefreshConst.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
+				A193F6D61BB924CB007A697F /* BTPickerViewController.m in Sources */,
 				A1B88CD21BA16A91008FA7C9 /* UUProgressHUD.m in Sources */,
 				A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */,
 				A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */,
@@ -1731,6 +1758,7 @@
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
+				A193F68F1BB90CD9007A697F /* publish.m in Sources */,
 				A10076BE1BA91D780097987B /* profile.m in Sources */,
 				A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,

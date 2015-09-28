@@ -35,19 +35,9 @@
     [UMSocialQQHandler setQQWithAppId:@"1104734143" appKey:@"otFu8s5Dv6u8sFBm" url:@"http://www.umeng.com/social"];
     
     // 极光推送
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        //可以添加自定义categories
-        [APService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |
-                                                       UIUserNotificationTypeSound |
-                                                       UIUserNotificationTypeAlert)
+    //可以添加自定义categories
+    [APService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert)
                                            categories:nil];
-    } else {
-        //categories 必须为nil
-        [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
-                                                       UIRemoteNotificationTypeSound |
-                                                       UIRemoteNotificationTypeAlert)
-                                           categories:nil];
-    }
     
     // Required
     [APService setupWithOption:launchOptions];
@@ -82,6 +72,7 @@
     NSLog(@"注册失败，无法获取设备 ID, 具体错误: %@", error);
 }
 
+//处理远程推送
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     
     // Required
@@ -101,7 +92,7 @@
     
     //在前台
     if (application.applicationState == UIApplicationStateActive) {
-        //add
+
         
         if (userInfo) {
             NSDictionary *apsDic = [userInfo objectForKey:@"aps"];
@@ -113,7 +104,10 @@
             NSLog(@"%@",userInfo);
             
         }
-    } else {
+
+    }
+    //在后台
+    else {
         
         if (userInfo) {
             
