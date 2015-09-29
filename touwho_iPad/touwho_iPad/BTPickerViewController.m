@@ -12,6 +12,7 @@
 #define CITY_COMPONENT      1
 #define DISTRICT_COMPONENT  2
 
+
 @interface BTPickerViewController () <UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
@@ -21,7 +22,7 @@
 @implementation BTPickerViewController
 {
     UIPickerView *picker;
-    UIButton *button;
+    NSInteger componentsOfPicker;
     
     NSDictionary *areaDic;
     NSArray *province;
@@ -30,13 +31,21 @@
     
     NSString *selectedProvince;
 }
+- (instancetype)initWithPlist:(NSString *)plistFile numberOfComponents:(NSInteger)components{
+    self = [super initWithNibName:@"BTPickerViewController" bundle:nil];
+    if (self) {
+        NSBundle *bundle = [NSBundle mainBundle];
+        NSString *plistPath = [bundle pathForResource:plistFile ofType:@"plist"];
+        areaDic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+        
+        componentsOfPicker = components;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *plistPath = [bundle pathForResource:@"area" ofType:@"plist"];
-    areaDic = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     
     NSArray *components = [areaDic allKeys];
     NSArray *sortedArray = [components sortedArrayUsingComparator: ^(id obj1, id obj2) {
@@ -48,6 +57,7 @@
         if ([obj1 integerValue] < [obj2 integerValue]) {
             return (NSComparisonResult)NSOrderedAscending;
         }
+        
         return (NSComparisonResult)NSOrderedSame;
     }];
     
@@ -65,14 +75,17 @@
     NSDictionary *dic = [NSDictionary dictionaryWithDictionary: [[areaDic objectForKey:index]objectForKey:selected]];
     
     NSArray *cityArray = [dic allKeys];
-    NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [cityArray objectAtIndex:0]]];
-    //城市数组
-    city = [[NSArray alloc] initWithArray: [cityDic allKeys]];
+    if (cityArray.count != 0) {
+        NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [cityArray objectAtIndex:0]]];
+        //城市数组
+        city = [[NSArray alloc] initWithArray: [cityDic allKeys]];
+        
+        
+        NSString *selectedCity = [city objectAtIndex: 0];
+        //区数组
+        district = [[NSArray alloc] initWithArray: [cityDic objectForKey: selectedCity]];
+    }
     
-    
-    NSString *selectedCity = [city objectAtIndex: 0];
-    //区数组
-    district = [[NSArray alloc] initWithArray: [cityDic objectForKey: selectedCity]];
     
     picker = self.pickerView;
     picker.delegate = self;
@@ -92,7 +105,7 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 3;
+    return componentsOfPicker;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -155,13 +168,15 @@
         city = [[NSArray alloc] initWithArray: array];
 
         
+        if (sortedArray.count != 0) {
+            NSDictionary *cityDic = [dic objectForKey: [sortedArray objectAtIndex: 0]];
+            district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [city objectAtIndex: 0]]];
+            [picker selectRow: 0 inComponent: CITY_COMPONENT animated: YES];
+            [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
+            [picker reloadComponent: CITY_COMPONENT];
+            [picker reloadComponent: DISTRICT_COMPONENT];
+        }
         
-        NSDictionary *cityDic = [dic objectForKey: [sortedArray objectAtIndex: 0]];
-        district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [city objectAtIndex: 0]]];
-        [picker selectRow: 0 inComponent: CITY_COMPONENT animated: YES];
-        [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
-        [picker reloadComponent: CITY_COMPONENT];
-        [picker reloadComponent: DISTRICT_COMPONENT];
 
     }
     else if (component == CITY_COMPONENT) {
@@ -184,7 +199,7 @@
         NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [sortedArray objectAtIndex: row]]];
         NSArray *cityKeyArray = [cityDic allKeys];
         
-
+        
         district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [cityKeyArray objectAtIndex:0]]];
         [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
         [picker reloadComponent: DISTRICT_COMPONENT];
@@ -244,18 +259,29 @@
 }
 
 - (IBAction)confirm:(UIBarButtonItem *)sender {
+    NSInteger components = picker.numberOfComponents;
+    
     NSInteger row = [picker selectedRowInComponent:0];
     NSString *p = province[row];
     
+    NSString *p2;
+    NSString *p3;
+    NSString *title;
     
-    NSInteger row2 = [picker selectedRowInComponent:1];
-    NSString *p2 = city[row2];
+    title = [NSString stringWithFormat:@"%@",p];
     
+    if (components > 1) {
+        NSInteger row2 = [picker selectedRowInComponent:1];
+        p2 = city[row2];
+        title = [NSString stringWithFormat:@"%@,%@",p,p2];
+    }
     
-    NSInteger row3 = [picker selectedRowInComponent:2];
-    NSString *p3 = district[row3];
+    if (components > 2) {
+        NSInteger row3 = [picker selectedRowInComponent:2];
+        p3 = district[row3];
+        title = [NSString stringWithFormat:@"%@,%@,%@",p,p2,p3];
+    }
     
-    NSString *title = [NSString stringWithFormat:@"%@,%@,%@",p,p2,p3];
     
     if (self.regionPickerBlock) {
         self.regionPickerBlock(title);

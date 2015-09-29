@@ -226,15 +226,25 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jo-94-I58">
+                    <rect key="frame" x="158" y="201" width="193" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="regionPick:" destination="NuR-KF-EqN" eventType="touchUpInside" id="40Q-vf-JAo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="0Jo-94-I58" firstAttribute="leading" secondItem="rBc-H9-AoQ" secondAttribute="leading" id="0Gw-6U-f2x"/>
                 <constraint firstItem="bAP-XM-VNG" firstAttribute="top" secondItem="j9W-oL-ev0" secondAttribute="bottom" constant="46" id="0qu-Rc-nf0"/>
                 <constraint firstItem="0Ad-vc-2EE" firstAttribute="leading" secondItem="ZWf-aC-jwb" secondAttribute="leading" id="1HL-zQ-W9h"/>
                 <constraint firstItem="ZWf-aC-jwb" firstAttribute="top" secondItem="NuR-KF-EqN" secondAttribute="top" constant="20" id="2Yx-MQ-5uK"/>
                 <constraint firstItem="rBc-H9-AoQ" firstAttribute="height" secondItem="jLU-fQ-o9j" secondAttribute="height" id="2cd-E9-oJF"/>
                 <constraint firstItem="j9W-oL-ev0" firstAttribute="leading" secondItem="SDY-Sm-I7P" secondAttribute="leading" id="3HR-Pr-u8O"/>
                 <constraint firstItem="j9W-oL-ev0" firstAttribute="width" secondItem="SDY-Sm-I7P" secondAttribute="width" id="9ca-8e-bjj"/>
+                <constraint firstItem="0Jo-94-I58" firstAttribute="width" secondItem="rBc-H9-AoQ" secondAttribute="width" id="AZy-aq-7nj"/>
+                <constraint firstItem="0Jo-94-I58" firstAttribute="height" secondItem="rBc-H9-AoQ" secondAttribute="height" id="Ay1-Y7-nFW"/>
                 <constraint firstItem="axb-vZ-Dk1" firstAttribute="top" secondItem="CC1-uU-4MN" secondAttribute="bottom" constant="30" id="DMs-yc-KaE"/>
                 <constraint firstItem="Lrk-dF-fjK" firstAttribute="leading" secondItem="ZWf-aC-jwb" secondAttribute="leading" id="F3l-b2-TlQ"/>
                 <constraint firstItem="Lrk-dF-fjK" firstAttribute="top" secondItem="0Ad-vc-2EE" secondAttribute="bottom" constant="70" id="FQu-aW-axb"/>
@@ -250,6 +260,7 @@
                 <constraint firstItem="axb-vZ-Dk1" firstAttribute="leading" secondItem="ZWf-aC-jwb" secondAttribute="leading" id="bkX-2A-51E"/>
                 <constraint firstItem="ugI-l5-rS6" firstAttribute="leading" secondItem="ZWf-aC-jwb" secondAttribute="leading" id="c14-eI-Nij"/>
                 <constraint firstItem="CC1-uU-4MN" firstAttribute="top" secondItem="czA-jY-rUI" secondAttribute="bottom" constant="30" id="d5x-rh-5kE"/>
+                <constraint firstItem="0Jo-94-I58" firstAttribute="centerY" secondItem="ugI-l5-rS6" secondAttribute="centerY" id="dRp-NW-NV7"/>
                 <constraint firstItem="bAP-XM-VNG" firstAttribute="centerX" secondItem="NuR-KF-EqN" secondAttribute="centerX" id="ekX-uD-pIt"/>
                 <constraint firstItem="czA-jY-rUI" firstAttribute="top" secondItem="ZWf-aC-jwb" secondAttribute="bottom" constant="30" id="hbN-ly-JER"/>
                 <constraint firstItem="0Ad-vc-2EE" firstAttribute="top" secondItem="ugI-l5-rS6" secondAttribute="bottom" constant="50" id="huo-Nf-xW9"/>
@@ -283,9 +294,6 @@
                     <include reference="j9W-oL-ev0"/>
                 </mask>
             </variation>
-            <connections>
-                <outlet property="btnIndustry" destination="PSD-EE-wFC" id="oe7-9C-7D5"/>
-            </connections>
             <point key="canvasLocation" x="153.5" y="-419.5"/>
         </view>
     </objects>

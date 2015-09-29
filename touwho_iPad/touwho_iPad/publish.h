@@ -10,6 +10,6 @@
 #import "BTPickerViewController.h"
 
 @interface publish : UIView
-@property (weak, nonatomic) IBOutlet UIButton *btnIndustry;
+
 @property (strong,nonatomic) BTPickerViewController *picker;
 @end

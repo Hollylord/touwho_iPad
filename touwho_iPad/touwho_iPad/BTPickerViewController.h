@@ -13,4 +13,5 @@
 //返回地区选择的字符串
 @property (copy,nonatomic) void (^regionPickerBlock)(NSString *);
 
+- (instancetype)initWithPlist:(NSString *)plistFile numberOfComponents:(NSInteger)components;
 @end
