@@ -11,5 +11,5 @@
 
 @interface publish : UIView
 
-@property (strong,nonatomic) BTPickerViewController *picker;
+
 @end

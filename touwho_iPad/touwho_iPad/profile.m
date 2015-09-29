@@ -7,21 +7,14 @@
 //
 
 #import "profile.h"
+#import "BTPickerViewController.h"
 
 
 @implementation profile
 
 
 - (void)awakeFromNib{
-    NSString *str = [[NSUserDefaults standardUserDefaults] valueForKey:@"sex"];
-    BOOL status = [[NSUserDefaults standardUserDefaults] boolForKey:@"genderSwitchisOn"];
-    if (str) {
-        self.gender.text = str;
-        self.genderSwitch.on = status;
-    }
-    
-    
-    
+  
     //显示名片
     if (!self.businessCard.image) {
         [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
@@ -51,16 +44,117 @@
     }
     return nil;
 }
-#pragma mark - UISwitch响应
-- (IBAction)sexChoose:(UISwitch *)sender {
-    if ([sender isOn]) {
-        self.gender.text = @"先生";
-    }
-    else{
-        self.gender.text = @"女士";
-    }
-    [[NSUserDefaults standardUserDefaults] setBool:sender.on forKey:@"genderSwitchisOn"];
-    [[NSUserDefaults standardUserDefaults] setValue:self.gender.text forKey:@"sex"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+
+#pragma mark - picker选择
+- (IBAction)pickGender:(UIButton *)sender {
+    //创建popVC
+    BTPickerViewController *btPicker = [[BTPickerViewController alloc] initWithPlist:@"gender" numberOfComponents:1];
+    
+    btPicker.regionPickerBlock = ^(NSString *title){
+        [sender setTitle:title forState:UIControlStateNormal];
+    };
+    
+    //设置popVC的尺寸
+    btPicker.preferredContentSize = CGSizeMake(300, 300);
+    //设置popVC为popOver
+    btPicker.modalPresentationStyle = UIModalPresentationPopover;
+    //设置箭头方向
+    btPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    //设置参考系
+    btPicker.popoverPresentationController.sourceView = sender;
+    //设置箭头指向的对象
+    btPicker.popoverPresentationController.sourceRect = sender.bounds;
+    //展现popVC
+    [[self viewController] presentViewController:btPicker animated:YES completion:NULL];
 }
+
+//所处行业
+- (IBAction)pickIndustry:(UIButton *)sender {
+    //创建popVC
+    BTPickerViewController *btPicker = [[BTPickerViewController alloc] initWithPlist:@"industry" numberOfComponents:1];
+    
+    btPicker.regionPickerBlock = ^(NSString *title){
+        [sender setTitle:title forState:UIControlStateNormal];
+    };
+    
+    //设置popVC的尺寸
+    btPicker.preferredContentSize = CGSizeMake(300, 300);
+    //设置popVC为popOver
+    btPicker.modalPresentationStyle = UIModalPresentationPopover;
+    //设置箭头方向
+    btPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    //设置参考系
+    btPicker.popoverPresentationController.sourceView = sender;
+    //设置箭头指向的对象
+    btPicker.popoverPresentationController.sourceRect = sender.bounds;
+    //展现popVC
+    [[self viewController] presentViewController:btPicker animated:YES completion:NULL];
+}
+//年龄选择
+- (IBAction)pickAge:(UIButton *)sender {
+    //创建popVC
+    BTPickerViewController *btPicker = [[BTPickerViewController alloc] initWithPlist:@"age" numberOfComponents:1];
+    
+    btPicker.regionPickerBlock = ^(NSString *title){
+        [sender setTitle:title forState:UIControlStateNormal];
+    };
+    
+    //设置popVC的尺寸
+    btPicker.preferredContentSize = CGSizeMake(300, 300);
+    //设置popVC为popOver
+    btPicker.modalPresentationStyle = UIModalPresentationPopover;
+    //设置箭头方向
+    btPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    //设置参考系
+    btPicker.popoverPresentationController.sourceView = sender;
+    //设置箭头指向的对象
+    btPicker.popoverPresentationController.sourceRect = sender.bounds;
+    //展现popVC
+    [[self viewController] presentViewController:btPicker animated:YES completion:NULL];
+}
+//感兴趣的行业
+- (IBAction)pickInterestingIndustry:(UIButton *)sender {
+    //创建popVC
+    BTPickerViewController *btPicker = [[BTPickerViewController alloc] initWithPlist:@"interestIndustry" numberOfComponents:1];
+    
+    btPicker.regionPickerBlock = ^(NSString *title){
+        [sender setTitle:title forState:UIControlStateNormal];
+    };
+    
+    //设置popVC的尺寸
+    btPicker.preferredContentSize = CGSizeMake(300, 300);
+    //设置popVC为popOver
+    btPicker.modalPresentationStyle = UIModalPresentationPopover;
+    //设置箭头方向
+    btPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    //设置参考系
+    btPicker.popoverPresentationController.sourceView = sender;
+    //设置箭头指向的对象
+    btPicker.popoverPresentationController.sourceRect = sender.bounds;
+    //展现popVC
+    [[self viewController] presentViewController:btPicker animated:YES completion:NULL];
+}
+//风险偏好
+- (IBAction)pickRiskPreference:(UIButton *)sender {
+    //创建popVC
+    BTPickerViewController *btPicker = [[BTPickerViewController alloc] initWithPlist:@"riskPreference" numberOfComponents:1];
+    
+    btPicker.regionPickerBlock = ^(NSString *title){
+        [sender setTitle:title forState:UIControlStateNormal];
+    };
+    
+    //设置popVC的尺寸
+    btPicker.preferredContentSize = CGSizeMake(300, 300);
+    //设置popVC为popOver
+    btPicker.modalPresentationStyle = UIModalPresentationPopover;
+    //设置箭头方向
+    btPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    //设置参考系
+    btPicker.popoverPresentationController.sourceView = sender;
+    //设置箭头指向的对象
+    btPicker.popoverPresentationController.sourceRect = sender.bounds;
+    //展现popVC
+    [[self viewController] presentViewController:btPicker animated:YES completion:NULL];
+}
+
 @end

@@ -233,15 +233,25 @@
                         <action selector="regionPick:" destination="NuR-KF-EqN" eventType="touchUpInside" id="40Q-vf-JAo"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zia-x1-CVG">
+                    <rect key="frame" x="158" y="269" width="193" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="statePick:" destination="NuR-KF-EqN" eventType="touchUpInside" id="ihx-yD-tPa"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="0Jo-94-I58" firstAttribute="leading" secondItem="rBc-H9-AoQ" secondAttribute="leading" id="0Gw-6U-f2x"/>
                 <constraint firstItem="bAP-XM-VNG" firstAttribute="top" secondItem="j9W-oL-ev0" secondAttribute="bottom" constant="46" id="0qu-Rc-nf0"/>
                 <constraint firstItem="0Ad-vc-2EE" firstAttribute="leading" secondItem="ZWf-aC-jwb" secondAttribute="leading" id="1HL-zQ-W9h"/>
+                <constraint firstItem="zia-x1-CVG" firstAttribute="leading" secondItem="0Jo-94-I58" secondAttribute="leading" id="2Lw-uH-qxW"/>
                 <constraint firstItem="ZWf-aC-jwb" firstAttribute="top" secondItem="NuR-KF-EqN" secondAttribute="top" constant="20" id="2Yx-MQ-5uK"/>
                 <constraint firstItem="rBc-H9-AoQ" firstAttribute="height" secondItem="jLU-fQ-o9j" secondAttribute="height" id="2cd-E9-oJF"/>
                 <constraint firstItem="j9W-oL-ev0" firstAttribute="leading" secondItem="SDY-Sm-I7P" secondAttribute="leading" id="3HR-Pr-u8O"/>
+                <constraint firstItem="zia-x1-CVG" firstAttribute="height" secondItem="0Jo-94-I58" secondAttribute="height" id="3yq-Go-Vbo"/>
+                <constraint firstItem="zia-x1-CVG" firstAttribute="centerY" secondItem="0Ad-vc-2EE" secondAttribute="centerY" id="8Go-kb-G1i"/>
                 <constraint firstItem="j9W-oL-ev0" firstAttribute="width" secondItem="SDY-Sm-I7P" secondAttribute="width" id="9ca-8e-bjj"/>
                 <constraint firstItem="0Jo-94-I58" firstAttribute="width" secondItem="rBc-H9-AoQ" secondAttribute="width" id="AZy-aq-7nj"/>
                 <constraint firstItem="0Jo-94-I58" firstAttribute="height" secondItem="rBc-H9-AoQ" secondAttribute="height" id="Ay1-Y7-nFW"/>
@@ -252,6 +262,7 @@
                 <constraint firstItem="rBc-H9-AoQ" firstAttribute="leading" secondItem="jLU-fQ-o9j" secondAttribute="leading" id="GTj-Ag-Pw3"/>
                 <constraint firstItem="ugI-l5-rS6" firstAttribute="top" secondItem="axb-vZ-Dk1" secondAttribute="bottom" constant="30" id="HsZ-Ix-eiG"/>
                 <constraint firstItem="PSD-EE-wFC" firstAttribute="height" secondItem="SDY-Sm-I7P" secondAttribute="height" id="IlW-sK-wmU"/>
+                <constraint firstItem="zia-x1-CVG" firstAttribute="width" secondItem="0Jo-94-I58" secondAttribute="width" id="Sjc-MA-RSa"/>
                 <constraint firstItem="CC1-uU-4MN" firstAttribute="leading" secondItem="ZWf-aC-jwb" secondAttribute="leading" id="Uc2-sH-viF"/>
                 <constraint firstItem="PSD-EE-wFC" firstAttribute="width" secondItem="SDY-Sm-I7P" secondAttribute="width" id="VCZ-uV-FOM"/>
                 <constraint firstItem="jLU-fQ-o9j" firstAttribute="height" secondItem="SDY-Sm-I7P" secondAttribute="height" id="W3q-LV-8o9"/>
