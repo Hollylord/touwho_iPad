@@ -9,10 +9,11 @@
 #import "news1ViewController.h"
 #import "newsMenu.h"
 #import "news2ViewController.h"
+
 #define MarginSide 50
 #define MarginTop 30
 #define Width 400
-#define Height 200
+#define Height 150
 
 @interface news1ViewController () <newsMenuDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

@@ -12,8 +12,8 @@
 
 #define MarginSide 30
 #define MarginTop 30
-#define Width 193
-#define Height 216
+#define Width 200
+#define Height 200
 
 @implementation shipinMenuView
 {

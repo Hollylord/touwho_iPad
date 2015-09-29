@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>A轮</key>
+		<dict/>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>B轮</key>
+		<dict/>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>C轮</key>
+		<dict/>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>Pre-IPO</key>
+		<dict/>
+	</dict>
+	<key>4</key>
+	<dict>
+		<key>其他</key>
+		<dict/>
+	</dict>
+</dict>
+</plist>

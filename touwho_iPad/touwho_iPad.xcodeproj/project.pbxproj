@@ -85,6 +85,9 @@
 		A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */; settings = {ASSET_TAGS = (); }; };
 		A1AB1F221BB4F52E0069818F /* ServiceAgreement.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */; settings = {ASSET_TAGS = (); }; };
 		A1AC16C51BBA2D48002A8F70 /* industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C41BBA2D48002A8F70 /* industry.plist */; settings = {ASSET_TAGS = (); }; };
+		A1AC16C71BBA3ACB002A8F70 /* age.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C61BBA3ACB002A8F70 /* age.plist */; settings = {ASSET_TAGS = (); }; };
+		A1AC16C91BBA3B9A002A8F70 /* stateOfProgram.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C81BBA3B9A002A8F70 /* stateOfProgram.plist */; settings = {ASSET_TAGS = (); }; };
+		A1AC16CB1BBA3C65002A8F70 /* firms.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16CA1BBA3C65002A8F70 /* firms.plist */; settings = {ASSET_TAGS = (); }; };
 		A1B13D2A1BB5544B00A8AC29 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B13D291BB5544B00A8AC29 /* PushConfig.plist */; settings = {ASSET_TAGS = (); }; };
 		A1B13D2E1BB554D200A8AC29 /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B13D2D1BB554D200A8AC29 /* libPushSDK-1.8.5.a */; settings = {ASSET_TAGS = (); }; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
@@ -345,6 +348,9 @@
 		A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAgreement.m; sourceTree = "<group>"; };
 		A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceAgreement.xib; sourceTree = "<group>"; };
 		A1AC16C41BBA2D48002A8F70 /* industry.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = industry.plist; sourceTree = "<group>"; };
+		A1AC16C61BBA3ACB002A8F70 /* age.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = age.plist; sourceTree = "<group>"; };
+		A1AC16C81BBA3B9A002A8F70 /* stateOfProgram.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stateOfProgram.plist; sourceTree = "<group>"; };
+		A1AC16CA1BBA3C65002A8F70 /* firms.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firms.plist; sourceTree = "<group>"; };
 		A1B13D291BB5544B00A8AC29 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		A1B13D2C1BB554D200A8AC29 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
 		A1B13D2D1BB554D200A8AC29 /* libPushSDK-1.8.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.5.a"; sourceTree = "<group>"; };
@@ -605,7 +611,7 @@
 				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
 				A1E9BE971BA7F60D00876186 /* 活动列表 */,
 				A1DB9AB71BA2B46500EC97D6 /* 路演列表 */,
-				A1033BDC1B8C555900FC8921 /* 圈子 */,
+				A1033BDC1B8C555900FC8921 /* 社群 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -621,7 +627,7 @@
 			name = "小组";
 			sourceTree = "<group>";
 		};
-		A1033BDC1B8C555900FC8921 /* 圈子 */ = {
+		A1033BDC1B8C555900FC8921 /* 社群 */ = {
 			isa = PBXGroup;
 			children = (
 				A1DAFAB91B8C37BE00189680 /* circle.h */,
@@ -631,7 +637,7 @@
 				A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */,
 				A1033BDD1B8C597200FC8921 /* 最新话题 */,
 			);
-			name = "圈子";
+			name = "社群";
 			sourceTree = "<group>";
 		};
 		A1033BDD1B8C597200FC8921 /* 最新话题 */ = {
@@ -948,12 +954,15 @@
 		A19D093E1B7C2DF100094B81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A1AC16C61BBA3ACB002A8F70 /* age.plist */,
 				A1AC16C41BBA2D48002A8F70 /* industry.plist */,
 				A193F6DA1BB94216007A697F /* area.plist */,
 				A1B13D291BB5544B00A8AC29 /* PushConfig.plist */,
 				A19D094F1B7C2DF100094B81 /* Info.plist */,
 				A19D093F1B7C2DF100094B81 /* main.m */,
 				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
+				A1AC16C81BBA3B9A002A8F70 /* stateOfProgram.plist */,
+				A1AC16CA1BBA3C65002A8F70 /* firms.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1606,12 +1615,14 @@
 				A1BE7F431B8D962100E76711 /* meLeftCell.xib in Resources */,
 				A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */,
 				A1211E981BB2413500B25AA4 /* UMShareEditViewControlleriPad.xib in Resources */,
+				A1AC16C71BBA3ACB002A8F70 /* age.plist in Resources */,
 				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
 				A1B88CC81BA16A55008FA7C9 /* headImage.jpeg in Resources */,
 				A1211E9A1BB2413500B25AA4 /* UMSnsAccountViewController.xib in Resources */,
 				A1C3EDD51B9E8D250023AB6E /* privateMessage.xib in Resources */,
 				A193F6D71BB924CB007A697F /* BTPickerViewController.xib in Resources */,
 				A19D094E1B7C2DF100094B81 /* LaunchScreen.storyboard in Resources */,
+				A1AC16C91BBA3B9A002A8F70 /* stateOfProgram.plist in Resources */,
 				A1B88CC01BA16A55008FA7C9 /* chat_send_message.png in Resources */,
 				A1B88CB91BA16A55008FA7C9 /* chat_animation3.png in Resources */,
 				A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */,
@@ -1620,6 +1631,7 @@
 				A1211E991BB2413500B25AA4 /* UMSLoginViewController.xib in Resources */,
 				A1B88CC41BA16A55008FA7C9 /* chatfrom_doctor_icon.png in Resources */,
 				A1AB1F221BB4F52E0069818F /* ServiceAgreement.xib in Resources */,
+				A1AC16CB1BBA3C65002A8F70 /* firms.plist in Resources */,
 				A1211E971BB2413500B25AA4 /* UMShareEditViewController.xib in Resources */,
 				A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */,
 				A1211E9B1BB2413500B25AA4 /* UMSShareListController.xib in Resources */,

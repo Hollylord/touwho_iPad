@@ -14,7 +14,7 @@
 //行业选择
 - (IBAction)chooseIndustry:(UIButton *)sender {
     //创建popVC
-    self.picker = [[BTPickerViewController alloc] initWithPlist:@"industry" numberOfComponents:1];
+    self.picker = [[BTPickerViewController alloc] initWithPlist:@"firms" numberOfComponents:2];
     
     self.picker.regionPickerBlock = ^(NSString *title){
         [sender setTitle:title forState:UIControlStateNormal];

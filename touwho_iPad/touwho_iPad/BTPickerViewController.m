@@ -46,8 +46,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    //获得所有0、1、2等key
     NSArray *components = [areaDic allKeys];
+    //把第一层key排序
     NSArray *sortedArray = [components sortedArrayUsingComparator: ^(id obj1, id obj2) {
         
         if ([obj1 integerValue] > [obj2 integerValue]) {
@@ -70,20 +71,34 @@
     //获得省 数组
     province = [[NSArray alloc] initWithArray: provinceTmp];
     
-    NSString *index = [sortedArray objectAtIndex:0];
-    NSString *selected = [province objectAtIndex:0];
-    NSDictionary *dic = [NSDictionary dictionaryWithDictionary: [[areaDic objectForKey:index]objectForKey:selected]];
     
+    
+    //把0转换成 "0"
+    NSString *index = [sortedArray objectAtIndex:0];
+    //取出省里面第一个对象 "北京市"
+    NSString *selected = [province objectAtIndex:0];
+    //取出第一个city这个字典  "北京市"这个字典
+    NSDictionary *dic = [NSDictionary dictionaryWithDictionary: [[areaDic objectForKey:index]objectForKey:selected]];
+    //获得city所有key
     NSArray *cityArray = [dic allKeys];
     if (cityArray.count != 0) {
-        NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [cityArray objectAtIndex:0]]];
+        NSMutableArray *cityTmp = [NSMutableArray array];
+        for (int i = 0; i < cityArray.count; i ++) {
+            NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [cityArray objectAtIndex:i]]];
+
+            [cityTmp addObject:[[cityDic allKeys] firstObject]];
+        }
+        
         //城市数组
-        city = [[NSArray alloc] initWithArray: [cityDic allKeys]];
+        city = [[NSArray alloc] initWithArray: cityTmp];
         
+        if (city.count != 0 ) {
+            NSString *selectedCity = [city objectAtIndex: 0];
+
+            //区数组
+            district = [[NSArray alloc] initWithArray:[[dic objectForKey:@"0"] objectForKey:selectedCity]];
+        }
         
-        NSString *selectedCity = [city objectAtIndex: 0];
-        //区数组
-        district = [[NSArray alloc] initWithArray: [cityDic objectForKey: selectedCity]];
     }
     
     
@@ -172,9 +187,15 @@
             NSDictionary *cityDic = [dic objectForKey: [sortedArray objectAtIndex: 0]];
             district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [city objectAtIndex: 0]]];
             [picker selectRow: 0 inComponent: CITY_COMPONENT animated: YES];
-            [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
             [picker reloadComponent: CITY_COMPONENT];
-            [picker reloadComponent: DISTRICT_COMPONENT];
+            
+            if (componentsOfPicker > DISTRICT_COMPONENT) {
+                [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
+                [picker reloadComponent: DISTRICT_COMPONENT];
+            }
+            
+            
+            
         }
         
 
@@ -199,10 +220,12 @@
         NSDictionary *cityDic = [NSDictionary dictionaryWithDictionary: [dic objectForKey: [sortedArray objectAtIndex: row]]];
         NSArray *cityKeyArray = [cityDic allKeys];
         
+        if (cityKeyArray.count != 0) {
+            district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [cityKeyArray objectAtIndex:0]]];
+            [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
+            [picker reloadComponent: DISTRICT_COMPONENT];
+        }
         
-        district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [cityKeyArray objectAtIndex:0]]];
-        [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
-        [picker reloadComponent: DISTRICT_COMPONENT];
     }
     
 }

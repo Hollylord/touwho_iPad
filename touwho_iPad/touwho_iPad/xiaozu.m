@@ -10,7 +10,7 @@
 #import "SpecificGroupViewController.h"
 
 #define Width 240
-#define Height 180
+#define Height 90
 #define MarginTop 20
 #define MarginSide 30
 
