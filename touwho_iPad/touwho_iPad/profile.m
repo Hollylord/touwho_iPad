@@ -52,6 +52,7 @@
     
     btPicker.regionPickerBlock = ^(NSString *title){
         [sender setTitle:title forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     };
     
     //设置popVC的尺寸
@@ -75,6 +76,7 @@
     
     btPicker.regionPickerBlock = ^(NSString *title){
         [sender setTitle:title forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     };
     
     //设置popVC的尺寸
@@ -97,6 +99,7 @@
     
     btPicker.regionPickerBlock = ^(NSString *title){
         [sender setTitle:title forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     };
     
     //设置popVC的尺寸
@@ -119,6 +122,7 @@
     
     btPicker.regionPickerBlock = ^(NSString *title){
         [sender setTitle:title forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     };
     
     //设置popVC的尺寸
@@ -141,6 +145,7 @@
     
     btPicker.regionPickerBlock = ^(NSString *title){
         [sender setTitle:title forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     };
     
     //设置popVC的尺寸

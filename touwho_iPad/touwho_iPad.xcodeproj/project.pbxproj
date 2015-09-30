@@ -58,6 +58,8 @@
 		A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE901BBBC6B500571817 /* SponsorModel.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE931BBBD51900571817 /* JiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
+		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; settings = {ASSET_TAGS = (); }; };
+		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; settings = {ASSET_TAGS = (); }; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -311,6 +313,9 @@
 		A17FAE931BBBD51900571817 /* JiGouUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiGouUnit.m; sourceTree = "<group>"; };
 		A17FAE971BBBD5EE00571817 /* ModelForJiGouUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForJiGouUnit.h; sourceTree = "<group>"; };
 		A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForJiGouUnit.m; sourceTree = "<group>"; };
+		A17FAE9A1BBBDE0A00571817 /* apply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apply.h; sourceTree = "<group>"; };
+		A17FAE9B1BBBDE0A00571817 /* apply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apply.m; sourceTree = "<group>"; };
+		A17FAE9D1BBBDEDF00571817 /* enterprise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
@@ -1002,6 +1007,7 @@
 				A1AC16CC1BBA88F2002A8F70 /* interestIndustry.plist */,
 				A1AC16CE1BBA8986002A8F70 /* riskPreference.plist */,
 				A1AC16D21BBA914F002A8F70 /* gender.plist */,
+				A17FAE9D1BBBDEDF00571817 /* enterprise.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1264,6 +1270,8 @@
 				A10076BC1BA91D780097987B /* profile.h */,
 				A10076BD1BA91D780097987B /* profile.m */,
 				A13EEA851B8EA51D0052C2A7 /* profile.xib */,
+				A17FAE9A1BBBDE0A00571817 /* apply.h */,
+				A17FAE9B1BBBDE0A00571817 /* apply.m */,
 				A11451C31B8DC47700E45381 /* apply.xib */,
 				A193F68D1BB90CD9007A697F /* publish.h */,
 				A193F68E1BB90CD9007A697F /* publish.m */,
@@ -1695,6 +1703,7 @@
 				A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */,
 				A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
+				A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */,
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A1211E961BB2413500B25AA4 /* UMSCommentInputControlleriPad.xib in Resources */,
 				A1C07CD81B9C229B00A2F1CB /* profileViewController.xib in Resources */,
@@ -1858,6 +1867,7 @@
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A1E9BE951BA7CD7400876186 /* JiGouDetailViewController.m in Sources */,
 				A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */,
+				A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
 				A1B88CD51BA177B8008FA7C9 /* UUMessageCell.m in Sources */,

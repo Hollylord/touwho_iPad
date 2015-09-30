@@ -28,10 +28,6 @@
                         <constraint firstAttribute="width" constant="3" id="NAn-I6-mVh"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJZ-w3-RxE">
-                    <rect key="frame" x="213" y="214" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="278-zb-65z">
                     <rect key="frame" x="17" y="252" width="266" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,6 +91,10 @@
                         <constraint firstItem="ep4-MI-fv9" firstAttribute="leading" secondItem="qHy-ov-Usd" secondAttribute="trailing" constant="31" id="xiY-kO-NTV"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJZ-w3-RxE">
+                    <rect key="frame" x="213" y="214" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -118,7 +118,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="269.5" y="275"/>
+            <point key="canvasLocation" x="219.5" y="233"/>
         </view>
     </objects>
 </document>
