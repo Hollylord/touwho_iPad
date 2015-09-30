@@ -142,12 +142,14 @@
                 <constraint firstItem="R1g-0k-GSQ" firstAttribute="leading" secondItem="nqK-Oe-dt7" secondAttribute="leading" id="Zg0-Ir-rQu"/>
                 <constraint firstItem="R1g-0k-GSQ" firstAttribute="top" secondItem="nqK-Oe-dt7" secondAttribute="top" id="spm-kX-giT"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <exclude reference="R1g-0k-GSQ"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="316" y="367"/>
+            <point key="canvasLocation" x="303" y="283"/>
         </view>
     </objects>
     <resources>

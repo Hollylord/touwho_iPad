@@ -11,7 +11,10 @@
 
 
 @interface splitViewController ()
-
+@property (nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic,strong) UIPageControl *pageControl;
+@property (nonatomic,weak) UIButton *advertButton;
+@property (nonatomic,strong) UIImageView * image;
 
 
 @end
@@ -25,6 +28,11 @@
     self.maximumPrimaryColumnWidth = 100;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
+    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
+        [self showADScrollView];
+    }
+
  
 }
 
@@ -59,6 +67,146 @@
 }
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return (UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight);
+}
+
+-(void)showADScrollView{
+    CGRect imageFrame = self.view.frame;
+    
+    UIImageView * image = [[UIImageView alloc] initWithFrame:imageFrame];
+    image.backgroundColor = [UIColor whiteColor];
+    //image.alpha = 0.5f;
+    [self.view addSubview:image];
+    self.image = image;
+    
+    
+    
+    
+    
+    //创建1个scrollview
+    self.scrollView  = [[UIScrollView alloc] initWithFrame:CGRectMake(imageFrame.origin.x, imageFrame.origin.y, imageFrame.size.width, imageFrame.size.height)];
+    self.scrollView.contentSize = CGSizeMake(imageFrame.size.width * 5, imageFrame.size.height);
+    self.scrollView.pagingEnabled = YES;   //这个要开启；
+    self.scrollView.delegate = self;
+    //    self.scrollView.showsHorizontalScrollIndicator = NO;
+    //    self.scrollView.showsVerticalScrollIndicator = NO;
+    
+    self.scrollView.backgroundColor = [UIColor clearColor];
+    
+    // self.scrollView.bounces = NO;
+    
+    [self.view addSubview:self.scrollView];
+    
+    
+    //创建5个imageview
+    int i;
+    for (i = 0; i < 5; i++) {
+        UIImageView * imageView = [[UIImageView alloc] init];
+        imageView.frame = CGRectMake(imageFrame.origin.x + i * imageFrame.size.width, imageFrame.origin.y, imageFrame.size.width, imageFrame.size.height);
+        NSString *imageName = [NSString stringWithFormat:@"advert%d",i + 1];
+        UIImage *image = [UIImage imageNamed:imageName];
+        imageView.image = image;
+        [self.scrollView addSubview:imageView];
+    }
+    
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *buttonImage = [UIImage imageNamed:@"advertButton"];
+    //            [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [button setImage:buttonImage forState:UIControlStateNormal];
+    
+    button.frame = CGRectMake((imageFrame.size.width - 200)/2 + imageFrame.size.width *4, imageFrame.size.height - 150, 200, 100);
+    self.advertButton = button;
+    [button addTarget:self action:@selector(turnToHomeViewController) forControlEvents:UIControlEventTouchUpInside];
+    //一定要把按钮添加到scrollview上面
+    [self.scrollView addSubview:self.advertButton];
+    
+    
+    
+    
+    
+    
+    //创建pagecontrol
+    self.pageControl = [[UIPageControl alloc] init];
+    self.pageControl.frame = CGRectMake(100, imageFrame.size.height - 50, 100, 30);
+    CGPoint center = self.pageControl.center;
+    center.x = self.view.center.x;
+    self.pageControl.center= center;
+    self.pageControl.currentPage = 0;
+    self.pageControl.numberOfPages = 5;
+    self.pageControl.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.pageControl];
+    
+}
+
+
+#pragma mark - scrollView delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{  // 滑动完毕后的scrollView可以拿到里面的位移；
+    
+    
+    
+    
+    CGPoint contentOffset = scrollView.contentOffset;
+    
+    //    if(contentOffset.x >=750){
+    //    self.scrollView.backgroundColor =[UIColor colorWithRed:70/255.0f green:215/255.0f blue:134/255.0f alpha:0.8f]; // 绿
+    //    }
+    //    if(contentOffset.x <= 375){
+    //        self.scrollView.backgroundColor =[UIColor colorWithRed:58/255.0f green:159/255.0f blue:207/255.0f alpha:0.8f]; // 蓝
+    //    }
+    
+    
+    
+    int i = contentOffset.x / self.view.frame.size.width;
+    
+    CGFloat currentWidth = [UIScreen mainScreen].applicationFrame.size.width;
+    
+    // NSLog(@"---%f",contentOffset.x);
+    
+    if (contentOffset.x <= currentWidth) {
+        self.image.alpha = 1.0f;
+    }
+    
+    if (contentOffset.x > currentWidth) {
+        self.image.alpha = 0.5f;
+    }
+    
+    
+    
+    
+    
+    if (contentOffset.x > currentWidth*4+50) {
+        [self.scrollView removeFromSuperview];
+        [self.pageControl removeFromSuperview];
+        
+        
+        
+        [UIView animateWithDuration:0.25f animations:^{
+            self.image.alpha = 0.0f;
+            
+        } completion:^(BOOL finished) {
+            [self.image removeFromSuperview];
+        }];
+        
+        
+    }
+    
+    
+    self.pageControl.currentPage = i;
+}
+
+#pragma mark - 点击按钮
+- (void)turnToHomeViewController{
+    [self.scrollView removeFromSuperview];
+    
+    [self.pageControl removeFromSuperview];
+    
+    [UIView animateWithDuration:0.25f animations:^{
+        self.image.alpha = 0.0f;
+        
+    } completion:^(BOOL finished) {
+        [self.image removeFromSuperview];
+    }];
 }
 
 

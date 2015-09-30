@@ -52,8 +52,6 @@
 		A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA931B8F0F580052C2A7 /* news2ViewController.m */; };
 		A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */; };
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
-		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
-		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
 		A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE901BBBC6B500571817 /* SponsorModel.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE931BBBD51900571817 /* JiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
@@ -303,8 +301,6 @@
 		A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = news2ViewController.xib; sourceTree = "<group>"; };
 		A17C9A7C1B8C6FCC00F5677C /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
-		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
 		A17FAE8C1BBBC64700571817 /* FollowedSponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowedSponsorTableViewCell.h; sourceTree = "<group>"; };
 		A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowedSponsorTableViewCell.m; sourceTree = "<group>"; };
 		A17FAE8F1BBBC6B500571817 /* SponsorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorModel.h; sourceTree = "<group>"; };
@@ -979,8 +975,6 @@
 				A1C239FC1B81BC41004E6DAC /* Main.storyboard */,
 				A19D094A1B7C2DF100094B81 /* Assets.xcassets */,
 				A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */,
-				A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */,
-				A17C9A801B8C6FDF00F5677C /* messages.plist */,
 				A17C9A7B1B8C6FBA00F5677C /* library */,
 				A1B868381B842BEF005C4A6F /* 发现 */,
 				A13259301B8306E100A327C6 /* 我 */,
@@ -1669,7 +1663,6 @@
 				A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */,
 				A1211E981BB2413500B25AA4 /* UMShareEditViewControlleriPad.xib in Resources */,
 				A1AC16C71BBA3ACB002A8F70 /* age.plist in Resources */,
-				A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */,
 				A1B88CC81BA16A55008FA7C9 /* headImage.jpeg in Resources */,
 				A1211E9A1BB2413500B25AA4 /* UMSnsAccountViewController.xib in Resources */,
 				A1C3EDD51B9E8D250023AB6E /* privateMessage.xib in Resources */,
@@ -1716,7 +1709,6 @@
 				A1211E951BB2413500B25AA4 /* UMSCommentInputController.xib in Resources */,
 				A1987E021BB134CE00CC4130 /* sponsorCell.xib in Resources */,
 				A1D620021BA6AEA9009FCA1F /* TopicCell.xib in Resources */,
-				A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */,
 				A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */,
 				A1B88CBA1BA16A55008FA7C9 /* chat_animation_white1.png in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
