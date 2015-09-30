@@ -610,7 +610,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A1002B1D1B857797007520AA /* 发现 */ = {
+		A1002B1D1B857797007520AA /* 社群 */ = {
 			isa = PBXGroup;
 			children = (
 				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
@@ -619,7 +619,7 @@
 				A1DB9AB71BA2B46500EC97D6 /* 路演列表 */,
 				A1033BDC1B8C555900FC8921 /* 社群 */,
 			);
-			name = "发现";
+			name = "社群";
 			sourceTree = "<group>";
 		};
 		A1033BDB1B8C554600FC8921 /* 小组 */ = {
@@ -640,8 +640,8 @@
 				A1DAFABA1B8C37BE00189680 /* circle.m */,
 				A1DAFAB31B8C1A4300189680 /* circle.xib */,
 				A1033BDB1B8C554600FC8921 /* 小组 */,
-				A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */,
 				A1033BDD1B8C597200FC8921 /* 最新话题 */,
+				A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */,
 			);
 			name = "社群";
 			sourceTree = "<group>";
@@ -1065,12 +1065,12 @@
 		A1B868381B842BEF005C4A6F /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
-				A1002B1D1B857797007520AA /* 发现 */,
-				A1B8684C1B848A4C005C4A6F /* 活动 */,
-				A1B88C9A1BA15BB6008FA7C9 /* 视频 */,
+				A1002B1D1B857797007520AA /* 社群 */,
 				A1D61FF91BA66A34009FCA1F /* 小组详情 */,
 				A1D620051BA6BF6B009FCA1F /* 话题详情 */,
 				A1E9BE911BA7CD3500876186 /* 机构专题详情 */,
+				A1B8684C1B848A4C005C4A6F /* 活动 */,
+				A1B88C9A1BA15BB6008FA7C9 /* 视频 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";

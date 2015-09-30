@@ -29,7 +29,6 @@
     for (int i = 0; i < 5; i ++) {
         newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];
         view.delegate = self;
-        view.backgroundColor = [UIColor redColor];
         [self.scrollView addSubview:view];
         [self layoutForNewsMenu:view index:i];
     }

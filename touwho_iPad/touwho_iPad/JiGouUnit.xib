@@ -45,7 +45,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="d6R-RD-SdP" secondAttribute="bottom" constant="8" id="KwR-na-4zL"/>
@@ -64,7 +63,7 @@
             <connections>
                 <outletCollection property="gestureRecognizers" destination="cGa-5c-1m6" appends="YES" id="Yyg-xC-QbV"/>
             </connections>
-            <point key="canvasLocation" x="338" y="291"/>
+            <point key="canvasLocation" x="260" y="56"/>
         </view>
         <tapGestureRecognizer id="cGa-5c-1m6">
             <connections>

@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="240" height="127"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kRR-jo-5eR">
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaozu" translatesAutoresizingMaskIntoConstraints="NO" id="kRR-jo-5eR">
                     <rect key="frame" x="8" y="24" width="80" height="80"/>
                     <color key="backgroundColor" red="1" green="0.88321738189999999" blue="0.2418502434" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -25,7 +25,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="kRR-jo-5eR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0b0-Z0-cI4"/>
                 <constraint firstItem="kRR-jo-5eR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="3Nt-gP-XIY"/>
@@ -45,4 +44,7 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="xiaozu" width="341" height="341"/>
+    </resources>
 </document>

@@ -94,7 +94,7 @@
         [self.contentView removeFromSuperview];
         self.contentView = nil;
         [self.view addSubview:self.contentView];
-        self.contentView.backgroundColor = [UIColor redColor];
+        
         [self layoutForContentView:self.contentView];
         
         

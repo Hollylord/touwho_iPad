@@ -165,12 +165,12 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-Ob-COG">
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-Ob-COG">
                             <rect key="frame" x="22" y="937" width="475" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="IWZ-Qz-Xhk"/>
                             </constraints>
-                            <state key="normal" title="button"/>
+                            <state key="normal" image="shipin"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-T3-nn8">
                             <rect key="frame" x="848" y="15" width="55" height="23"/>
@@ -254,6 +254,7 @@
         <image name="guanzhu1" width="25" height="23"/>
         <image name="guanzhu2" width="25" height="23"/>
         <image name="kh" width="70" height="93"/>
+        <image name="shipin" width="200" height="133"/>
         <image name="xiaohu" width="147" height="147"/>
     </resources>
 </document>
