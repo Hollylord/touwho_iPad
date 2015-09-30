@@ -54,6 +54,8 @@
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17C9A811B8C6FDF00F5677C /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */; };
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
+		A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE901BBBC6B500571817 /* SponsorModel.m */; settings = {ASSET_TAGS = (); }; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -299,6 +301,10 @@
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17C9A7F1B8C6FDF00F5677C /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 		A17C9A801B8C6FDF00F5677C /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		A17FAE8C1BBBC64700571817 /* FollowedSponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowedSponsorTableViewCell.h; sourceTree = "<group>"; };
+		A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowedSponsorTableViewCell.m; sourceTree = "<group>"; };
+		A17FAE8F1BBBC6B500571817 /* SponsorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorModel.h; sourceTree = "<group>"; };
+		A17FAE901BBBC6B500571817 /* SponsorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorModel.m; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
@@ -1229,6 +1235,9 @@
 		A1C3EDD91B9EB61C0023AB6E /* 个人详情 */ = {
 			isa = PBXGroup;
 			children = (
+				A10076BC1BA91D780097987B /* profile.h */,
+				A10076BD1BA91D780097987B /* profile.m */,
+				A13EEA851B8EA51D0052C2A7 /* profile.xib */,
 				A11451C31B8DC47700E45381 /* apply.xib */,
 				A193F68D1BB90CD9007A697F /* publish.h */,
 				A193F68E1BB90CD9007A697F /* publish.m */,
@@ -1236,9 +1245,8 @@
 				A1CF1E1D1BAFEB670065EF77 /* ProgramsTableViewCell.h */,
 				A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */,
 				A11451C11B8DC31400E45381 /* programsCell.xib */,
-				A10076BC1BA91D780097987B /* profile.h */,
-				A10076BD1BA91D780097987B /* profile.m */,
-				A13EEA851B8EA51D0052C2A7 /* profile.xib */,
+				A17FAE8C1BBBC64700571817 /* FollowedSponsorTableViewCell.h */,
+				A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */,
 				A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */,
 			);
 			name = "个人详情";
@@ -1304,6 +1312,8 @@
 			children = (
 				A1CF1E211BAFF6190065EF77 /* ProgramsModel.h */,
 				A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */,
+				A17FAE8F1BBBC6B500571817 /* SponsorModel.h */,
+				A17FAE901BBBC6B500571817 /* SponsorModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1798,9 +1808,11 @@
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
 				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
 				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
+				A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */,
 				A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */,
 				A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
+				A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B88CDB1BA177E5008FA7C9 /* UUMessageFrame.m in Sources */,
 				A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */,

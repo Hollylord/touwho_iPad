@@ -21,6 +21,9 @@
 
 
 - (void)setModel:(ProgramsModel *)model{
+    if (_model != model) {
+        _model = model;
+    }
     
     self.IMGView.image = model.image;
 }

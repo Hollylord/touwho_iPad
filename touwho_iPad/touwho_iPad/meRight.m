@@ -11,7 +11,9 @@
 #import "profileViewController.h"
 #import "profile.h"
 #import "ProgramsTableViewCell.h"
+#import "FollowedSponsorTableViewCell.h"
 #import "ProgramsModel.h"
+#import "SponsorModel.h"
 
 
 @implementation meRight
@@ -21,14 +23,29 @@
     UITableView *publishedProgramsTableView;
     UITableView *followedProgramsTableView;
     UITableView *followedSponsorTableview;
-    ProgramsModel *model;
+    ProgramsModel *modelForProgram;
+    
+    //用来存放模型的数组，这个数组的模型最后要给cell，所以要用全局变量
+    NSMutableArray *arrayForSponsorModel;
+    
 }
 
 - (instancetype)init{
     self = [super init];
     if (self) {
-        model = [[ProgramsModel alloc] init];
-        model.image = [UIImage imageNamed:@"logo"];
+        modelForProgram = [[ProgramsModel alloc] init];
+        modelForProgram.image = [UIImage imageNamed:@"logo"];
+        
+        NSArray *name = @[@"杨伟鹏",@"郑慧文",@"袁泽平",@"赵妍昱",@"吴迪",@"吴萌",@"江泽民",];
+        arrayForSponsorModel = [NSMutableArray array];
+        for (int i = 0 ; i < 7; i ++) {
+            SponsorModel *model = [[SponsorModel alloc] init];
+            NSString *imageName = [NSString stringWithFormat:@"jigou%d",i];
+            model.image = [UIImage imageNamed:imageName];
+            model.name = name[i];
+    
+            [arrayForSponsorModel addObject:model];
+        }
     }
     return self;
 }
@@ -183,21 +200,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //关注的投资人
+    if (tableView == followedSponsorTableview) {
+        return arrayForSponsorModel.count;
+    } else {
+        return 10;
+    }
     
-    
-    return 4;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //投资人tableview
     if ([tableView isEqual:followedSponsorTableview]) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
-        
+        FollowedSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
+        cell.model = arrayForSponsorModel[indexPath.row];
         return cell;
     }
+    //项目tableview 4个
     else{
         ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
-        cell.model = model;
+        cell.model = modelForProgram;
         
         return cell;
     }
@@ -208,7 +231,13 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    //我关注的投资人
+    if (tableView == followedSponsorTableview) {
+        return 100;
+    } else {
+        return 200;
+    }
+  
 }
 
 //获得当前view的控制器
