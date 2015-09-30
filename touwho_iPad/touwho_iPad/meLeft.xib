@@ -53,11 +53,22 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-HZ-P64">
+                    <rect key="frame" x="50" y="660" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="aHy-gP-Laf"/>
+                    </constraints>
+                    <state key="normal" title="退出当前账号" backgroundImage="tuichu">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>
+                <constraint firstItem="4Af-HZ-P64" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7pF-WE-lHD"/>
                 <constraint firstAttribute="trailing" secondItem="KFX-fE-VOB" secondAttribute="trailing" id="HIq-Jd-zYC"/>
+                <constraint firstItem="4Af-HZ-P64" firstAttribute="top" secondItem="KFX-fE-VOB" secondAttribute="bottom" constant="45" id="MrA-IW-rSE"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="135" id="Tqg-QC-MSp"/>
                 <constraint firstItem="Lao-TQ-mu3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="58" id="cTo-bq-yBc"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Lao-TQ-mu3" secondAttribute="trailing" constant="140" id="ge8-2R-hkq"/>
@@ -85,4 +96,7 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="tuichu" width="100" height="50"/>
+    </resources>
 </document>
