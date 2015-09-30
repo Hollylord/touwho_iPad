@@ -27,22 +27,16 @@
 @property (weak, nonatomic) IBOutlet myFlowLayout       * flowLayoutForCollectionView;
 @property (weak, nonatomic) IBOutlet UIScrollView       *scrollView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * yOfScrollView;
-/**
- *  进行中
- */
+
+//进行中
 @property (weak, nonatomic) IBOutlet UILabel *title1;
-/**
- *  预热中
- */
+
+//预热中
 @property (weak, nonatomic) IBOutlet UILabel *title2;
 
-/**
- *  保存进行中的programView
- */
+//保存进行中的programView
 @property (strong,nonatomic) NSMutableArray* programs;
-/**
- *  保存预热中的programView
- */
+//保存预热中的programView
 @property (strong,nonatomic) NSMutableArray* programsForPreparing;
 
 
@@ -94,7 +88,6 @@
     for (int i = 0; i < 4; i ++) {
         programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
         program.delegate        = self;
-        program.backgroundColor = [UIColor redColor];
         [self.scrollView addSubview:program];
         [self.programs addObject:program];
 
@@ -105,7 +98,6 @@
     for (int i = 0; i < 4; i ++) {
         programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
         program.delegate        = self;
-        program.backgroundColor = [UIColor greenColor];
         [self.scrollView addSubview:program];
         [self.programsForPreparing addObject:program];
         
@@ -299,10 +291,12 @@
 
 #pragma mark - 刷新页面获取网络数据
 - (void)pullRefresh:(UIRefreshControl *)refresh{
+    NSArray *programName = @[@"微旋基因项目",@"回音必项目",@"独角兽项目",@"原子弹项目"];
+    
     //转换网络数据给model
     for (int i = 0; i < self.programs.count ; i ++) {
         ModelForProgramView *model = [[ModelForProgramView alloc] init];
-        model.title = [NSString stringWithFormat:@"回音必项目%d",i];
+        model.title = programName[i];
         model.backIMG = [UIImage imageNamed:@"xiangmuBIMG"];
         model.percent = (CGFloat) 150 / (i + 2)/100;
         model.totalAmount = [NSString stringWithFormat:@"￥11500万"];
@@ -311,7 +305,18 @@
         programView *view = self.programs[i];
         view.model = model;
     }
-    
+    NSArray *programName2 = @[@"维纳斯项目",@"万花筒项目",@"分子试剂盒项目",@"DNA测序项目"];
+    for (int i = 0; i < self.programsForPreparing.count ; i ++) {
+        ModelForProgramView *model = [[ModelForProgramView alloc] init];
+        model.title = programName2[i];
+        model.backIMG = [UIImage imageNamed:@"xiangmuBIMG2"];
+        model.percent = (CGFloat) 0;
+        model.totalAmount = [NSString stringWithFormat:@"￥11500万"];
+        model.currentAmount = [NSString stringWithFormat:@"￥%.2f万",11500 * model.percent];
+        
+        programView *view = self.programsForPreparing[i];
+        view.model = model;
+    }
     //获取数据成功后停止刷新
     [refresh endRefreshing];
 

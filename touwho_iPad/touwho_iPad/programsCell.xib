@@ -49,7 +49,7 @@
                 <outlet property="contentTextView" destination="wzS-UE-9aX" id="qHZ-ZV-tJI"/>
                 <outlet property="titleLabel" destination="o5u-jm-gAG" id="Xi4-XI-XTb"/>
             </connections>
-            <point key="canvasLocation" x="484" y="254"/>
+            <point key="canvasLocation" x="519" y="251"/>
         </tableViewCell>
     </objects>
 </document>
