@@ -222,8 +222,12 @@
         
         if (cityKeyArray.count != 0) {
             district = [[NSArray alloc] initWithArray: [cityDic objectForKey: [cityKeyArray objectAtIndex:0]]];
-            [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
-            [picker reloadComponent: DISTRICT_COMPONENT];
+            
+            if (componentsOfPicker > DISTRICT_COMPONENT) {
+                [picker selectRow: 0 inComponent: DISTRICT_COMPONENT animated: YES];
+                [picker reloadComponent: DISTRICT_COMPONENT];
+            }
+            
         }
         
     }

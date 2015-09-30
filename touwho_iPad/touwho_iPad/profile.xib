@@ -156,13 +156,12 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90e-Cg-PlC">
-                            <rect key="frame" x="150" y="808" width="300" height="37"/>
-                            <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <rect key="frame" x="125" y="808" width="350" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="37" id="Kot-uQ-gvf"/>
-                                <constraint firstAttribute="width" constant="300" id="ckM-XW-zHk"/>
+                                <constraint firstAttribute="height" constant="50" id="Kot-uQ-gvf"/>
+                                <constraint firstAttribute="width" constant="350" id="ckM-XW-zHk"/>
                             </constraints>
-                            <state key="normal">
+                            <state key="normal" backgroundImage="anniu">
                                 <attributedString key="attributedTitle">
                                     <fragment content="保存">
                                         <attributes>
@@ -391,4 +390,7 @@
             <point key="canvasLocation" x="550" y="482"/>
         </view>
     </objects>
+    <resources>
+        <image name="anniu" width="41" height="52"/>
+    </resources>
 </document>

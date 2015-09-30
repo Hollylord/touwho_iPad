@@ -20,18 +20,18 @@
                             <constraint firstAttribute="height" constant="100" id="ufv-Ed-S75"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RF2-I5-QZE">
-                        <rect key="frame" x="131" y="20" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RF2-I5-QZE">
+                        <rect key="frame" x="131" y="63" width="34" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="RF2-I5-QZE" firstAttribute="centerY" secondItem="5W0-rr-kfb" secondAttribute="centerY" id="2sd-cW-1X7"/>
                     <constraint firstItem="5W0-rr-kfb" firstAttribute="leading" secondItem="qcy-rd-4UY" secondAttribute="leading" constant="8" id="JBQ-Tn-oc7"/>
+                    <constraint firstItem="RF2-I5-QZE" firstAttribute="leading" secondItem="5W0-rr-kfb" secondAttribute="trailing" constant="23" id="T0s-mI-dGQ"/>
                     <constraint firstItem="5W0-rr-kfb" firstAttribute="centerY" secondItem="qcy-rd-4UY" secondAttribute="centerY" id="Wp4-RF-9ha"/>
-                    <constraint firstItem="RF2-I5-QZE" firstAttribute="leading" secondItem="5W0-rr-kfb" secondAttribute="trailing" constant="23" id="bl1-6e-aut"/>
-                    <constraint firstItem="RF2-I5-QZE" firstAttribute="top" secondItem="qcy-rd-4UY" secondAttribute="top" constant="20" id="ww6-ph-De2"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="349" y="316"/>

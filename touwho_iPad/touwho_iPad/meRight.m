@@ -23,6 +23,7 @@
     UITableView *followedSponsorTableview;
     ProgramsModel *model;
 }
+
 - (instancetype)init{
     self = [super init];
     if (self) {
