@@ -12,12 +12,16 @@
 
 #import "JiGouMenuView.h"
 #import "JiGouDetailViewController.h"
+#import "JiGouUnit.h"
+#import "ModelForJiGouUnit.h"
 
 
 
 @implementation JiGouMenuView
 {
     UIScrollView *scrollView;
+    //用来装model的数组
+    NSMutableArray *arrayFormodel;
 }
 //如果使用纯代码写，则init方法里面可以设置self子视图与子视图之间的层次关系
 - (instancetype)init{
@@ -31,8 +35,22 @@
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.showsVerticalScrollIndicator = NO;
         
-        for (int i = 0 ; i < 10; i ++) {
-            UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"JiGouUnit" owner:self options:nil]firstObject];
+        arrayFormodel = [NSMutableArray array];
+        NSArray *jigouName = @[@"顺丰速运",@"京道基金",@"君盛投资",@"高特佳",@"大正元",@"东方赛富",@"TCL",@"同威创投"];
+        for (int i = 0; i < 8; i ++) {
+            ModelForJiGouUnit *model = [[ModelForJiGouUnit alloc] init];
+            NSString *imageName = [NSString stringWithFormat:@"jigou%d",i];
+            model.image = [UIImage imageNamed:imageName];
+            model.title1 = jigouName[i];
+            model.time = @"2015-9-30";
+            model.title2 = @"投壶网合作伙伴";
+            
+            [arrayFormodel addObject:model];
+        }
+        
+        for (int i = 0 ; i < 8; i ++) {
+            JiGouUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"JiGouUnit" owner:self options:nil]firstObject];
+            unit.model = arrayFormodel[i];
             [scrollView addSubview:unit];
         }
         

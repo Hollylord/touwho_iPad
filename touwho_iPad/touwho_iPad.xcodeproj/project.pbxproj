@@ -56,6 +56,8 @@
 		A17C9A821B8C6FDF00F5677C /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17C9A801B8C6FDF00F5677C /* messages.plist */; };
 		A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE901BBBC6B500571817 /* SponsorModel.m */; settings = {ASSET_TAGS = (); }; };
+		A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE931BBBD51900571817 /* JiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
+		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -305,6 +307,10 @@
 		A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowedSponsorTableViewCell.m; sourceTree = "<group>"; };
 		A17FAE8F1BBBC6B500571817 /* SponsorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorModel.h; sourceTree = "<group>"; };
 		A17FAE901BBBC6B500571817 /* SponsorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorModel.m; sourceTree = "<group>"; };
+		A17FAE921BBBD51900571817 /* JiGouUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiGouUnit.h; sourceTree = "<group>"; };
+		A17FAE931BBBD51900571817 /* JiGouUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiGouUnit.m; sourceTree = "<group>"; };
+		A17FAE971BBBD5EE00571817 /* ModelForJiGouUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForJiGouUnit.h; sourceTree = "<group>"; };
+		A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForJiGouUnit.m; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
@@ -619,11 +625,11 @@
 		A1002B1D1B857797007520AA /* 社群 */ = {
 			isa = PBXGroup;
 			children = (
-				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
-				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
+				A17FAE951BBBD5CB00571817 /* model */,
+				A17FAE961BBBD5D200571817 /* controller */,
+				A1033BDC1B8C555900FC8921 /* 社群 */,
 				A1E9BE971BA7F60D00876186 /* 活动列表 */,
 				A1DB9AB71BA2B46500EC97D6 /* 路演列表 */,
-				A1033BDC1B8C555900FC8921 /* 社群 */,
 			);
 			name = "社群";
 			sourceTree = "<group>";
@@ -804,6 +810,24 @@
 				A1B88CA31BA16A55008FA7C9 /* pic */,
 			);
 			name = library;
+			sourceTree = "<group>";
+		};
+		A17FAE951BBBD5CB00571817 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A17FAE971BBBD5EE00571817 /* ModelForJiGouUnit.h */,
+				A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A17FAE961BBBD5D200571817 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1B868401B842D02005C4A6F /* discoveryViewController.h */,
+				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 		A18723381BB3D87500CD3630 /* 风险评估测试 */ = {
@@ -1125,6 +1149,8 @@
 			children = (
 				A1E9BE8C1BA7B60D00876186 /* JiGouMenuView.h */,
 				A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */,
+				A17FAE921BBBD51900571817 /* JiGouUnit.h */,
+				A17FAE931BBBD51900571817 /* JiGouUnit.m */,
 				A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */,
 			);
 			name = "机构专题";
@@ -1806,6 +1832,7 @@
 				A1CF1E231BAFF6190065EF77 /* ProgramsModel.m in Sources */,
 				A1B88CCF1BA16A6C008FA7C9 /* Mp3Recorder.m in Sources */,
 				A1BE7F4D1B8DB2AC00E76711 /* meRight.m in Sources */,
+				A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */,
 				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
 				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
 				A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */,
@@ -1837,6 +1864,7 @@
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 				A1E9BEA01BA8077F00876186 /* activityList.m in Sources */,
 				A1D620091BA6C0D2009FCA1F /* SpecificTopicViewController.m in Sources */,
+				A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

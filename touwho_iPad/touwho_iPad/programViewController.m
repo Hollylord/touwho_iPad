@@ -308,6 +308,7 @@
     NSArray *programName2 = @[@"维纳斯项目",@"万花筒项目",@"分子试剂盒项目",@"DNA测序项目"];
     for (int i = 0; i < self.programsForPreparing.count ; i ++) {
         ModelForProgramView *model = [[ModelForProgramView alloc] init];
+        
         model.title = programName2[i];
         model.backIMG = [UIImage imageNamed:@"xiangmuBIMG2"];
         model.percent = (CGFloat) 0;
