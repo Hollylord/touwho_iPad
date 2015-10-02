@@ -29,7 +29,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
     
-    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
+//        [self showADScrollView];
+    }
 
  
 }
@@ -42,13 +44,11 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
-
-- (void)viewDidAppear:(BOOL)animated{
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
-        [self showADScrollView];
-    }
+- (void)viewWillAppear:(BOOL)animated{
+    
 }
+
+
 
 #pragma mark - 收到通知
 - (void)receiveNotification:(NSNotification *)notification{
@@ -77,10 +77,10 @@
 
 //添加广告页
 -(void)showADScrollView{
-    CGRect imageFrame = self.view.frame;
+    CGRect imageFrame = CGRectMake(0, 0, 1024, 768);
     NSLog(@"%@",NSStringFromCGRect(imageFrame));
     UIImageView * image = [[UIImageView alloc] initWithFrame:imageFrame];
-
+    image.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:image];
     self.image = image;
     

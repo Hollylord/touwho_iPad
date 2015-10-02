@@ -2017,6 +2017,7 @@
 			baseConfigurationReference = 8C84536996CF0BF9A214368E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer: JIAN PENG (GXRWRW28TT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JIAN PENG (GXRWRW28TT)";
 				ENABLE_BITCODE = NO;
@@ -2049,6 +2050,7 @@
 			baseConfigurationReference = 767A21CB34EA456EF48D831C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer: JIAN PENG (GXRWRW28TT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JIAN PENG (GXRWRW28TT)";
 				ENABLE_BITCODE = NO;

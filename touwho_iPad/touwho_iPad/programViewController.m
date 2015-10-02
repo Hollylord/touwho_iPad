@@ -113,28 +113,23 @@
     //第一次触发刷新
     [self pullRefresh:refresh];
     
-    
-
-}
-
-
-
-
-    //在这里才能获得视图的真正frame
-- (void)viewWillAppear:(BOOL)animated{
+    //去除导航栏
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-- (void)viewDidAppear:(BOOL)animated{
     
+    
+}
+
+
+
+- (void)viewDidAppear:(BOOL)animated{
     NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:250 inSection:0];
     [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     
     //调整scrollView的滚动范围
     programView *lastView = [self.programsForPreparing lastObject];
     self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - CGRectGetMaxY(self.pictureCollection.frame) + 20;
-
-    
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     

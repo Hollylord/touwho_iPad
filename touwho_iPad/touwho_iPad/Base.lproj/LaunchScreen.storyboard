@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,23 +14,26 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="advert0" translatesAutoresizingMaskIntoConstraints="NO" id="Vlz-gD-Yop">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="20" y="0.0" width="1024" height="768"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="768" id="SBK-05-yPh"/>
+                                    <constraint firstAttribute="width" constant="1024" id="w72-HD-Ibj"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Vlz-gD-Yop" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="9sT-Tb-cum"/>
-                            <constraint firstAttribute="trailing" secondItem="Vlz-gD-Yop" secondAttribute="trailing" id="dKf-mh-nwl"/>
-                            <constraint firstItem="Vlz-gD-Yop" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gDw-Mn-Boo"/>
-                            <constraint firstAttribute="bottom" secondItem="Vlz-gD-Yop" secondAttribute="bottom" id="hOK-6c-jG3"/>
+                            <constraint firstItem="Vlz-gD-Yop" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="OyA-1k-zB6"/>
+                            <constraint firstItem="Vlz-gD-Yop" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="u3V-P2-qIH"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
