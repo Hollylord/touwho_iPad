@@ -29,10 +29,11 @@
                             <constraint firstAttribute="bottom" secondItem="Vlz-gD-Yop" secondAttribute="bottom" id="hOK-6c-jG3"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="363"/>
+            <point key="canvasLocation" x="-6" y="296"/>
         </scene>
     </scenes>
     <resources>

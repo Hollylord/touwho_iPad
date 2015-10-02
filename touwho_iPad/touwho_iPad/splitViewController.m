@@ -29,9 +29,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
     
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
-        [self showADScrollView];
-    }
+    
 
  
 }
@@ -42,6 +40,14 @@
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+
+- (void)viewDidAppear:(BOOL)animated{
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
+        [self showADScrollView];
+    }
 }
 
 #pragma mark - 收到通知
@@ -69,12 +75,12 @@
     return (UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight);
 }
 
+//添加广告页
 -(void)showADScrollView{
     CGRect imageFrame = self.view.frame;
-    
+    NSLog(@"%@",NSStringFromCGRect(imageFrame));
     UIImageView * image = [[UIImageView alloc] initWithFrame:imageFrame];
-    image.backgroundColor = [UIColor whiteColor];
-    //image.alpha = 0.5f;
+
     [self.view addSubview:image];
     self.image = image;
     
@@ -147,14 +153,6 @@
     
     
     CGPoint contentOffset = scrollView.contentOffset;
-    
-    //    if(contentOffset.x >=750){
-    //    self.scrollView.backgroundColor =[UIColor colorWithRed:70/255.0f green:215/255.0f blue:134/255.0f alpha:0.8f]; // 绿
-    //    }
-    //    if(contentOffset.x <= 375){
-    //        self.scrollView.backgroundColor =[UIColor colorWithRed:58/255.0f green:159/255.0f blue:207/255.0f alpha:0.8f]; // 蓝
-    //    }
-    
     
     
     int i = contentOffset.x / self.view.frame.size.width;
