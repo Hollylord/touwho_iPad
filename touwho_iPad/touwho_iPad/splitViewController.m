@@ -44,9 +44,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-}
 
 
 

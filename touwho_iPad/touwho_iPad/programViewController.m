@@ -113,15 +113,18 @@
     //第一次触发刷新
     [self pullRefresh:refresh];
     
+    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     //去除导航栏
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    
 }
 
 
-
 - (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
     NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:250 inSection:0];
     [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     
