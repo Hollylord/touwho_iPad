@@ -58,6 +58,7 @@
 		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; settings = {ASSET_TAGS = (); }; };
+		A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */; settings = {ASSET_TAGS = (); }; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -312,6 +313,8 @@
 		A17FAE9A1BBBDE0A00571817 /* apply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apply.h; sourceTree = "<group>"; };
 		A17FAE9B1BBBDE0A00571817 /* apply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apply.m; sourceTree = "<group>"; };
 		A17FAE9D1BBBDEDF00571817 /* enterprise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
+		A1837AC11BBF63E9000D29BF /* modelForOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modelForOtherVC.h; sourceTree = "<group>"; };
+		A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modelForOtherVC.m; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
@@ -802,8 +805,6 @@
 				A1B13D2B1BB554D200A8AC29 /* 极光推送 */,
 				A1211E9D1BB2421700B25AA4 /* UMSocial_Sdk_Extra_Frameworks */,
 				A1211E771BB2413500B25AA4 /* UMSocial_Sdk_4.2.3 */,
-				A1F0E5251BABAAEF00BA0BDD /* 通用工具 */,
-				A1211E761BB240EC00B25AA4 /* 私信工具 */,
 				A1DB9AB01BA2ADBF00EC97D6 /* 百度语音合成 */,
 				A1B88CEF1BA1785B008FA7C9 /* LeanCloud */,
 				A1B88CDC1BA17843008FA7C9 /* MJRefresh */,
@@ -829,6 +830,38 @@
 				A1B868411B842D02005C4A6F /* discoveryViewController.m */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		A1837ABE1BBF5FA2000D29BF /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A1F0E52D1BABE1E600BA0BDD /* 头像裁切 */,
+				A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */,
+				A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */,
+				A193F6D21BB9244E007A697F /* BTPickerVC */,
+				A1211E761BB240EC00B25AA4 /* 私信工具 */,
+				A1CF1E201BAFEBA90065EF77 /* 项目和人model */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		A1837ABF1BBF63C0000D29BF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */,
+				A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */,
+				A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A1837AC01BBF63C8000D29BF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A1837AC11BBF63E9000D29BF /* modelForOtherVC.h */,
+				A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		A18723381BB3D87500CD3630 /* 风险评估测试 */ = {
@@ -975,6 +1008,7 @@
 				A1C239FC1B81BC41004E6DAC /* Main.storyboard */,
 				A19D094A1B7C2DF100094B81 /* Assets.xcassets */,
 				A19D094C1B7C2DF100094B81 /* LaunchScreen.storyboard */,
+				A1837ABE1BBF5FA2000D29BF /* Tool */,
 				A17C9A7B1B8C6FBA00F5677C /* library */,
 				A1B868381B842BEF005C4A6F /* 发现 */,
 				A13259301B8306E100A327C6 /* 我 */,
@@ -1296,7 +1330,6 @@
 				A1BE7F471B8DAF8500E76711 /* 个人中心左边 */,
 				A1BE7F481B8DAF8F00E76711 /* 个人中心右边 */,
 				A10CCA091BAA56EB00ED0F49 /* controller */,
-				A1CF1E201BAFEBA90065EF77 /* Model */,
 			);
 			name = "个人中心";
 			sourceTree = "<group>";
@@ -1335,7 +1368,7 @@
 			name = "聊天";
 			sourceTree = "<group>";
 		};
-		A1CF1E201BAFEBA90065EF77 /* Model */ = {
+		A1CF1E201BAFEBA90065EF77 /* 项目和人model */ = {
 			isa = PBXGroup;
 			children = (
 				A1CF1E211BAFF6190065EF77 /* ProgramsModel.h */,
@@ -1343,7 +1376,7 @@
 				A17FAE8F1BBBC6B500571817 /* SponsorModel.h */,
 				A17FAE901BBBC6B500571817 /* SponsorModel.m */,
 			);
-			name = Model;
+			name = "项目和人model";
 			sourceTree = "<group>";
 		};
 		A1D61FF91BA66A34009FCA1F /* 小组详情 */ = {
@@ -1473,9 +1506,8 @@
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {
 			isa = PBXGroup;
 			children = (
-				A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */,
-				A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */,
-				A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */,
+				A1837AC01BBF63C8000D29BF /* model */,
+				A1837ABF1BBF63C0000D29BF /* controller */,
 			);
 			name = "他人中心";
 			sourceTree = "<group>";
@@ -1500,17 +1532,6 @@
 				A1E9BE9C1BA8057F00876186 /* activityUnit.xib */,
 			);
 			name = "活动列表";
-			sourceTree = "<group>";
-		};
-		A1F0E5251BABAAEF00BA0BDD /* 通用工具 */ = {
-			isa = PBXGroup;
-			children = (
-				A1F0E52D1BABE1E600BA0BDD /* 头像裁切 */,
-				A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */,
-				A1A01AB01BAA71D4009EF690 /* MyUIImagePicker */,
-				A193F6D21BB9244E007A697F /* BTPickerVC */,
-			);
-			name = "通用工具";
 			sourceTree = "<group>";
 		};
 		A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */ = {
@@ -1809,6 +1830,7 @@
 				A1987E051BB1361700CC4130 /* sponsorTableViewCell.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */,
+				A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */,
 				A1B88CFC1BA17B75008FA7C9 /* UUAVAudioPlayer.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */,

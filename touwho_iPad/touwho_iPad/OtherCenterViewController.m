@@ -7,15 +7,26 @@
 //
 
 #import "OtherCenterViewController.h"
+#import "FollowedSponsorTableViewCell.h"
+#import "ProgramsTableViewCell.h"
+
 
 @interface OtherCenterViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UIImageView *headIconView;
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 
 @end
 
 @implementation OtherCenterViewController
-
+{
+    UITableView *followedSponsorTableview;
+    ProgramsModel *modelForProgram;
+    
+    //用来存放模型的数组，这个数组的模型最后要给cell，所以要用全局变量
+    NSMutableArray *arrayForSponsorModel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +44,24 @@
     UIView *rightView = [[UIView alloc] init];
     [self.view addSubview:rightView];
     [self layoutForSubview:rightView];
+    
+    //生成model 设置假数据
+    //关注的项目model
+    modelForProgram = [[ProgramsModel alloc] init];
+    modelForProgram.image = [UIImage imageNamed:@"logo"];
+    //关注的人model
+    NSArray *name = @[@"杨伟鹏",@"郑慧文",@"袁泽平",@"赵妍昱",@"吴迪",@"吴萌",@"江泽民",];
+    arrayForSponsorModel = [NSMutableArray array];
+    for (int i = 0 ; i < 7; i ++) {
+        SponsorModel *model = [[SponsorModel alloc] init];
+        NSString *imageName = [NSString stringWithFormat:@"jigou%d",i];
+        model.image = [UIImage imageNamed:imageName];
+        model.name = name[i];
+        
+        [arrayForSponsorModel addObject:model];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +70,9 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    self.headIconView.image = self.model.image;
+    self.nickNameLabel.text = self.model.nickName;
 }
 
 #pragma mark - tableView代理
@@ -50,12 +82,22 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    
-    return 5;
+    if ([tableView isEqual:self.tableview]) {
+        return 5;
+    }
+    else{
+        if (tableView == followedSponsorTableview) {
+            
+            return arrayForSponsorModel.count;
+        }
+        else{
+            return 10;
+        }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //左边tableView
     if ([tableView isEqual:self.tableview]) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"meLeftCell" forIndexPath:indexPath];
         
@@ -82,17 +124,27 @@
         }
         return cell;
     }
+    //右边tableView
     else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
+        //关注的投资人的tableview
+        if (tableView == followedSponsorTableview) {
+            FollowedSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
+            cell.model = arrayForSponsorModel[indexPath.row];
+            return cell;
+        }
+        //项目的tableview
+        else {
+            ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
+            cell.model = modelForProgram;
+            return cell;
+        }
         
-        return cell;
+        
     }
-
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     
     switch (indexPath.row) {
         case 0:
@@ -106,6 +158,9 @@
             break;
         case 3:
             [self presentFollowedInstitution];
+            break;
+        case 4:
+            [self presentFollowedSponsor];
             break;
         default:
             break;
@@ -199,6 +254,20 @@
     [self.view addSubview:institution];
     [self layoutForSubview:institution];
     
+}
+
+//关注的投资人
+- (void)presentFollowedSponsor{
+    UIView *lastSub = [self.view.subviews lastObject];
+    [lastSub removeFromSuperview];
+    
+    UITableView *followedSponsor = [[UITableView alloc] init];
+    followedSponsorTableview = followedSponsor;
+    followedSponsor.delegate = self;
+    followedSponsor.dataSource = self;
+    [followedSponsor registerNib:[UINib nibWithNibName:@"FollowedSponsorCell" bundle:nil] forCellReuseIdentifier:@"FollowedSponsorCell"];
+    [self.view addSubview:followedSponsor];
+    [self layoutForSubview:followedSponsor];
 }
 
 - (void)layoutForSubview:(UIView *)view{

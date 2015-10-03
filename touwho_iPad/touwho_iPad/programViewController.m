@@ -50,6 +50,9 @@
 @end
 
 @implementation programViewController
+{
+    UIRefreshControl *fresh;
+}
 #pragma mark - 懒加载
 - (NSMutableArray *)programs{
     if (_programs == nil) {
@@ -67,7 +70,32 @@
 
 #pragma mark - 顶部按钮点击
 - (IBAction)buttonClick:(UIButton *)sender {
+    if (sender.selected == YES) {
+        return ;
+    }
     
+    //点击了国内项目
+    if (sender.tag == 10) {
+        sender.selected = !sender.selected;
+        [self pullRefresh:fresh];
+    }
+    //点击海外项目
+    else if (sender.tag == 11){
+        sender.selected = !sender.selected;
+        [self pullRefresh:fresh];
+    }
+    //商品众筹
+    else if (sender.tag == 12){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"商品众筹" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
+        [alert addAction:OK];
+    }
+    //公益众筹
+    else if (sender.tag == 13){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"商品众筹" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
+        [alert addAction:OK];
+    }
     
 }
 
@@ -109,6 +137,7 @@
     //给scrollview添加refreshControl (自动添加到scrollview的顶部不用设置frame)
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     [refresh addTarget:self action:@selector(pullRefresh:) forControlEvents:UIControlEventValueChanged];
+    fresh = refresh;
     [self.scrollView addSubview:refresh];
     //第一次触发刷新
     [self pullRefresh:refresh];

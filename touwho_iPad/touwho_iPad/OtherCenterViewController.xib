@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OtherCenterViewController">
             <connections>
+                <outlet property="headIconView" destination="1ua-D3-YlH" id="AzM-he-EEf"/>
+                <outlet property="nickNameLabel" destination="xga-VI-mfX" id="5vm-cf-Ynv"/>
                 <outlet property="tableview" destination="D3B-Br-doA" id="ZLH-OK-vxv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

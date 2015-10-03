@@ -167,6 +167,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     OtherCenterViewController *sponsor = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
+    //传递数据
+    ModelForSponsor *model = self.modelArray[indexPath.row];
+    //没有创建model会使得指针指向nil，数据传递不过去
+    sponsor.model = [[modelForOtherVC alloc] init];
+    sponsor.model.nickName = model.name;
+    sponsor.model.image = model.image;
     
     [self.navigationController pushViewController:sponsor animated:YES];
 }
