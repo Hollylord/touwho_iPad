@@ -41,15 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //由于换行引起的计算高度不准确
-    self.article.text = @"神低负荷GIS度回复共i。 \r\n 神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。\r\n神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低负荷GIS度回复共i。神低123";
-    /**
-     *  根据内容自动设置textview的高度
-     */
-    self.article.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
-    NSDictionary *attribute = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:20]};
-    CGSize textSize = [self.article.text boundingRectWithSize:CGSizeMake(800, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
-    height = textSize.height;
+    
     
     //语音合成设置
     BDSSpeechSynthesizer *synthesizer = [[BDSSpeechSynthesizer alloc] initSynthesizer:@"holder"delegate:nil];
@@ -70,6 +62,29 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    //加载plist
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    NSString *content = [dic objectForKey:@"news"];
+    
+    //根据内容设置新闻的高度
+    self.article.text = content;
+   
+
+    self.article.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineBreakMode:NSLineBreakByCharWrapping];
+    
+    NSDictionary *attribute = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:20],NSParagraphStyleAttributeName:style};
+    NSStringDrawingOptions opts = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    
+    CGSize textSize = [self.article.text boundingRectWithSize:CGSizeMake(800, MAXFLOAT) options:opts attributes:attribute context:nil].size;
+    
+    
+    
+    
+    height = textSize.height + 20;
 }
 
 - (void)updateViewConstraints{

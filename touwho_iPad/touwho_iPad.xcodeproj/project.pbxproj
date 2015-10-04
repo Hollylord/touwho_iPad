@@ -62,6 +62,7 @@
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A1909ACD1BC139AF00BF919A /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1909ACC1BC139AF00BF919A /* xinwen.plist */; settings = {ASSET_TAGS = (); }; };
 		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A193F68F1BB90CD9007A697F /* publish.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F68E1BB90CD9007A697F /* publish.m */; settings = {ASSET_TAGS = (); }; };
@@ -319,6 +320,7 @@
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
 		A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskTestViewController.xib; sourceTree = "<group>"; };
+		A1909ACC1BC139AF00BF919A /* xinwen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xinwen.plist; sourceTree = "<group>"; };
 		A19234891BB14A9C0073A1C6 /* LingTouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingTouViewController.h; sourceTree = "<group>"; };
 		A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingTouViewController.m; sourceTree = "<group>"; };
 		A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingTouViewController.xib; sourceTree = "<group>"; };
@@ -1036,6 +1038,7 @@
 				A1AC16CE1BBA8986002A8F70 /* riskPreference.plist */,
 				A1AC16D21BBA914F002A8F70 /* gender.plist */,
 				A17FAE9D1BBBDEDF00571817 /* enterprise.plist */,
+				A1909ACC1BC139AF00BF919A /* xinwen.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1707,6 +1710,7 @@
 				A1AC16CF1BBA8986002A8F70 /* riskPreference.plist in Resources */,
 				A1211E921BB2413500B25AA4 /* UMSocialLocalizable.strings in Resources */,
 				A1B88CBB1BA16A55008FA7C9 /* chat_animation_white2.png in Resources */,
+				A1909ACD1BC139AF00BF919A /* xinwen.plist in Resources */,
 				A1211E9C1BB2413500B25AA4 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */,

@@ -17,8 +17,8 @@
                         <constraint firstAttribute="width" constant="120" id="fcr-CM-jbt"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发文机构" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRP-16-ml6">
-                    <rect key="frame" x="146" y="37" width="68" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投壶网" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRP-16-ml6">
+                    <rect key="frame" x="146" y="37" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -30,19 +30,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-A8-YDY">
-                    <rect key="frame" x="146" y="66" width="246" height="68"/>
+                    <rect key="frame" x="146" y="66" width="246" height="34"/>
                     <attributedString key="attributedText">
-                        <fragment content="士大夫哦哈锁定发货哦啊啥都干哈哦啊深度还是需哦好凑活和">
+                        <fragment content="为什么习近平讲中国反腐没有权力斗争？">
                             <attributes>
-                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <font key="NSFont" size="17" name="STHeitiSC-Light"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="ioihouhouhouhp">
-                            <attributes>
-                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                <font key="NSFont" size="15" name="MicrosoftYaHei"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                             </attributes>
                         </fragment>

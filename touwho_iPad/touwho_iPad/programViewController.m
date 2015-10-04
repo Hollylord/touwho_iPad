@@ -77,11 +77,13 @@
     //点击了国内项目
     if (sender.tag == 10) {
         sender.selected = !sender.selected;
+        self.topBtn2.selected = NO;
         [self pullRefresh:fresh];
     }
     //点击海外项目
     else if (sender.tag == 11){
         sender.selected = !sender.selected;
+        self.topBtn1.selected = NO;
         [self pullRefresh:fresh];
     }
     //商品众筹
@@ -89,12 +91,14 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"商品众筹" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
         [alert addAction:OK];
+        [self presentViewController:alert animated:YES completion:NULL];
     }
     //公益众筹
     else if (sender.tag == 13){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"商品众筹" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
         [alert addAction:OK];
+        [self presentViewController:alert animated:YES completion:NULL];
     }
     
 }
