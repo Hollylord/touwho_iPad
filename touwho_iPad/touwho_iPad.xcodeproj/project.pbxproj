@@ -58,11 +58,11 @@
 		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; settings = {ASSET_TAGS = (); }; };
+		A183384A1BC65665000866EB /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18338491BC65665000866EB /* xinwen.plist */; settings = {ASSET_TAGS = (); }; };
 		A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */; settings = {ASSET_TAGS = (); }; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1909ACD1BC139AF00BF919A /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1909ACC1BC139AF00BF919A /* xinwen.plist */; settings = {ASSET_TAGS = (); }; };
 		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A193F68F1BB90CD9007A697F /* publish.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F68E1BB90CD9007A697F /* publish.m */; settings = {ASSET_TAGS = (); }; };
@@ -314,13 +314,13 @@
 		A17FAE9A1BBBDE0A00571817 /* apply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apply.h; sourceTree = "<group>"; };
 		A17FAE9B1BBBDE0A00571817 /* apply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apply.m; sourceTree = "<group>"; };
 		A17FAE9D1BBBDEDF00571817 /* enterprise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
+		A18338491BC65665000866EB /* xinwen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xinwen.plist; sourceTree = "<group>"; };
 		A1837AC11BBF63E9000D29BF /* modelForOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modelForOtherVC.h; sourceTree = "<group>"; };
 		A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modelForOtherVC.m; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
 		A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskTestViewController.xib; sourceTree = "<group>"; };
-		A1909ACC1BC139AF00BF919A /* xinwen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xinwen.plist; sourceTree = "<group>"; };
 		A19234891BB14A9C0073A1C6 /* LingTouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingTouViewController.h; sourceTree = "<group>"; };
 		A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingTouViewController.m; sourceTree = "<group>"; };
 		A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingTouViewController.xib; sourceTree = "<group>"; };
@@ -1038,7 +1038,7 @@
 				A1AC16CE1BBA8986002A8F70 /* riskPreference.plist */,
 				A1AC16D21BBA914F002A8F70 /* gender.plist */,
 				A17FAE9D1BBBDEDF00571817 /* enterprise.plist */,
-				A1909ACC1BC139AF00BF919A /* xinwen.plist */,
+				A18338491BC65665000866EB /* xinwen.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1710,7 +1710,7 @@
 				A1AC16CF1BBA8986002A8F70 /* riskPreference.plist in Resources */,
 				A1211E921BB2413500B25AA4 /* UMSocialLocalizable.strings in Resources */,
 				A1B88CBB1BA16A55008FA7C9 /* chat_animation_white2.png in Resources */,
-				A1909ACD1BC139AF00BF919A /* xinwen.plist in Resources */,
+				A183384A1BC65665000866EB /* xinwen.plist in Resources */,
 				A1211E9C1BB2413500B25AA4 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
 				A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */,
