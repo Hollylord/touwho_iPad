@@ -59,6 +59,11 @@
 		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; settings = {ASSET_TAGS = (); }; };
 		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; settings = {ASSET_TAGS = (); }; };
 		A183384A1BC65665000866EB /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18338491BC65665000866EB /* xinwen.plist */; settings = {ASSET_TAGS = (); }; };
+		A183384D1BC66333000866EB /* ModelForGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384C1BC66333000866EB /* ModelForGroup.m */; settings = {ASSET_TAGS = (); }; };
+		A18338501BC665AB000866EB /* ModelForTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384F1BC665AB000866EB /* ModelForTopic.m */; settings = {ASSET_TAGS = (); }; };
+		A18338531BC6693C000866EB /* ModelForUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338521BC6693C000866EB /* ModelForUser.m */; settings = {ASSET_TAGS = (); }; };
+		A18338561BC66C5A000866EB /* ModelForComment.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338551BC66C5A000866EB /* ModelForComment.m */; settings = {ASSET_TAGS = (); }; };
+		A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338581BC673A3000866EB /* xiaozuUnit.m */; settings = {ASSET_TAGS = (); }; };
 		A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */; settings = {ASSET_TAGS = (); }; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -315,6 +320,16 @@
 		A17FAE9B1BBBDE0A00571817 /* apply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apply.m; sourceTree = "<group>"; };
 		A17FAE9D1BBBDEDF00571817 /* enterprise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
 		A18338491BC65665000866EB /* xinwen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xinwen.plist; sourceTree = "<group>"; };
+		A183384B1BC66333000866EB /* ModelForGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForGroup.h; sourceTree = "<group>"; };
+		A183384C1BC66333000866EB /* ModelForGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForGroup.m; sourceTree = "<group>"; };
+		A183384E1BC665AB000866EB /* ModelForTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForTopic.h; sourceTree = "<group>"; };
+		A183384F1BC665AB000866EB /* ModelForTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForTopic.m; sourceTree = "<group>"; };
+		A18338511BC6693C000866EB /* ModelForUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForUser.h; sourceTree = "<group>"; };
+		A18338521BC6693C000866EB /* ModelForUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForUser.m; sourceTree = "<group>"; };
+		A18338541BC66C5A000866EB /* ModelForComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForComment.h; sourceTree = "<group>"; };
+		A18338551BC66C5A000866EB /* ModelForComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForComment.m; sourceTree = "<group>"; };
+		A18338571BC673A3000866EB /* xiaozuUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xiaozuUnit.h; sourceTree = "<group>"; };
+		A18338581BC673A3000866EB /* xiaozuUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xiaozuUnit.m; sourceTree = "<group>"; };
 		A1837AC11BBF63E9000D29BF /* modelForOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modelForOtherVC.h; sourceTree = "<group>"; };
 		A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modelForOtherVC.m; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
@@ -646,6 +661,8 @@
 				A1033BD61B8C513800FC8921 /* xiaozu.h */,
 				A1033BD71B8C513800FC8921 /* xiaozu.m */,
 				A1DAFAB71B8C1F9400189680 /* xiaozu.xib */,
+				A18338571BC673A3000866EB /* xiaozuUnit.h */,
+				A18338581BC673A3000866EB /* xiaozuUnit.m */,
 				A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */,
 			);
 			name = "小组";
@@ -821,6 +838,12 @@
 			children = (
 				A17FAE971BBBD5EE00571817 /* ModelForJiGouUnit.h */,
 				A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */,
+				A183384B1BC66333000866EB /* ModelForGroup.h */,
+				A183384C1BC66333000866EB /* ModelForGroup.m */,
+				A183384E1BC665AB000866EB /* ModelForTopic.h */,
+				A183384F1BC665AB000866EB /* ModelForTopic.m */,
+				A18338541BC66C5A000866EB /* ModelForComment.h */,
+				A18338551BC66C5A000866EB /* ModelForComment.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1378,6 +1401,8 @@
 				A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */,
 				A17FAE8F1BBBC6B500571817 /* SponsorModel.h */,
 				A17FAE901BBBC6B500571817 /* SponsorModel.m */,
+				A18338511BC6693C000866EB /* ModelForUser.h */,
+				A18338521BC6693C000866EB /* ModelForUser.m */,
 			);
 			name = "项目和人model";
 			sourceTree = "<group>";
@@ -1836,6 +1861,7 @@
 				A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */,
 				A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */,
 				A1B88CFC1BA17B75008FA7C9 /* UUAVAudioPlayer.m in Sources */,
+				A18338531BC6693C000866EB /* ModelForUser.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,
 				A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */,
 				A1B88CED1BA17843008FA7C9 /* MJRefreshHeaderView.m in Sources */,
@@ -1849,6 +1875,8 @@
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
+				A183384D1BC66333000866EB /* ModelForGroup.m in Sources */,
+				A18338501BC665AB000866EB /* ModelForTopic.m in Sources */,
 				A193F68F1BB90CD9007A697F /* publish.m in Sources */,
 				A10076BE1BA91D780097987B /* profile.m in Sources */,
 				A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */,
@@ -1863,8 +1891,10 @@
 				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
 				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
 				A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */,
+				A18338561BC66C5A000866EB /* ModelForComment.m in Sources */,
 				A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */,
 				A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */,
+				A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
 				A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,

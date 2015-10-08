@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="profileViewController">
@@ -16,6 +17,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KFX-fE-VOB">
                     <rect key="frame" x="0.0" y="174" width="300" height="441"/>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="iN0-l3-epB" id="cCl-yl-f3X"/>
@@ -24,6 +26,7 @@
                 </tableView>
                 <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lao-TQ-mu3">
                     <rect key="frame" x="14" y="58" width="108" height="108"/>
+                    <animations/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" constant="108" id="1OJ-gz-VEM"/>
@@ -33,28 +36,24 @@
                         <outletCollection property="gestureRecognizers" destination="HcU-ud-IIh" appends="YES" id="8UB-18-kT6"/>
                     </connections>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-e0-y1J" userLabel="投资人标志">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hege" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-e0-y1J" userLabel="投资人标志">
                     <rect key="frame" x="102" y="133" width="33" height="33"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="8Fn-xo-aBz"/>
                         <constraint firstAttribute="width" constant="33" id="UGc-dl-coi"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-pI-xNw">
-                    <rect key="frame" x="262" y="135" width="30" height="30"/>
-                    <state key="normal" title="消息"/>
-                    <connections>
-                        <action selector="message:" destination="iN0-l3-epB" eventType="touchUpInside" id="nrR-ZI-bOV"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g80-7g-bQS">
                     <rect key="frame" x="137" y="58" width="34" height="21"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-HZ-P64">
                     <rect key="frame" x="50" y="660" width="200" height="50"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="aHy-gP-Laf"/>
                     </constraints>
@@ -62,7 +61,20 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-pI-xNw">
+                    <rect key="frame" x="240" y="135" width="50" height="25"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pwx-pI-xNw" secondAttribute="height" multiplier="2:1" id="83G-Jc-nMo"/>
+                        <constraint firstAttribute="width" constant="50" id="GFh-yI-AM2"/>
+                    </constraints>
+                    <state key="normal" title="消息" backgroundImage="anniuHei"/>
+                    <connections>
+                        <action selector="message:" destination="iN0-l3-epB" eventType="touchUpInside" id="nrR-ZI-bOV"/>
+                    </connections>
+                </button>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>
@@ -71,7 +83,7 @@
                 <constraint firstItem="4Af-HZ-P64" firstAttribute="top" secondItem="KFX-fE-VOB" secondAttribute="bottom" constant="45" id="MrA-IW-rSE"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="135" id="Tqg-QC-MSp"/>
                 <constraint firstItem="Lao-TQ-mu3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="58" id="cTo-bq-yBc"/>
-                <constraint firstItem="pwx-pI-xNw" firstAttribute="leading" secondItem="Lao-TQ-mu3" secondAttribute="trailing" constant="140" id="ge8-2R-hkq"/>
+                <constraint firstAttribute="trailing" secondItem="pwx-pI-xNw" secondAttribute="trailing" constant="10" id="gD9-g7-aRw"/>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="top" secondItem="Lao-TQ-mu3" secondAttribute="bottom" constant="8" id="iEL-va-Xie"/>
                 <constraint firstItem="ZHI-e0-y1J" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="133" id="n9b-uC-jKG"/>
                 <constraint firstItem="Lao-TQ-mu3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="tQP-HA-tgX"/>
@@ -97,6 +109,8 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="anniuHei" width="100" height="50"/>
+        <image name="hege" width="13" height="13"/>
         <image name="tuichu" width="100" height="50"/>
     </resources>
 </document>

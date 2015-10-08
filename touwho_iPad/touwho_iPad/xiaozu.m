@@ -8,6 +8,8 @@
 
 #import "xiaozu.h"
 #import "SpecificGroupViewController.h"
+#import "ModelForGroup.h"
+#import "xiaozuUnit.h"
 
 #define Width 240
 #define Height 90
@@ -17,8 +19,14 @@
 
 @implementation xiaozu
 {
-    NSMutableArray *hotGroup;//热门推荐小组
-    NSMutableArray *iInvolved;//我加入的小组
+    //存放热门小组view
+    NSMutableArray *hotGroup;
+    //存放我加入的小组view
+    NSMutableArray *iInvolved;
+    //存放热门小组model
+    NSMutableArray *hotModelArr;
+    //存放加入的小组model
+    NSMutableArray *iInvoModelArr;
 }
 
 //只会初始化自己 不能在这里面添加子视图的子视图，设置层级关系无效。只能设置self 与子视图的层级关系
@@ -27,7 +35,16 @@
     if (self) {
         hotGroup = [NSMutableArray array];
         iInvolved = [NSMutableArray array];
-
+        hotModelArr = [NSMutableArray array];
+        iInvoModelArr = [NSMutableArray array];
+        
+        for (int i = 0; i < 3; i ++) {
+            ModelForGroup *model = [[ModelForGroup alloc] init];
+            NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i + 1];
+            model.icon = [UIImage imageNamed:imageName];
+            [hotModelArr addObject:model];
+        }
+        
     }
     return self;
 }
@@ -35,14 +52,15 @@
 //相当于viewDidLoad
 - (void)awakeFromNib{
     //添加热门小组
-    for (int i = 0; i < 5; i ++) {
-        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:self options:nil]firstObject];
+    for (int i = 0; i < 3; i ++) {
+        xiaozuUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:self options:nil]firstObject];
+        unit.model = hotModelArr[i];
         [self.scrollView addSubview:unit];
         [hotGroup addObject:unit];
     }
     //添加我加入的小组
     for (int i = 0; i < 6; i ++) {
-        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:self options:nil]firstObject];
+        xiaozuUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:self options:nil]firstObject];
         [self.scrollView addSubview:unit];
         [iInvolved addObject:unit];
     }

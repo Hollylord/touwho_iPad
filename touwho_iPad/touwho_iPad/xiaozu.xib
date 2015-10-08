@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -15,12 +15,14 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门小组" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6Y-31-1sJ">
                             <rect key="frame" x="104" y="41" width="68" height="21"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="35Z-GU-nVe">
                             <rect key="frame" x="20" y="70" width="827" height="4"/>
+                            <animations/>
                             <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="827" id="aKr-XL-a77"/>
@@ -29,15 +31,18 @@
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我加入的小组" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prt-Ug-fWh">
                             <rect key="frame" x="104" y="165" width="102" height="21"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAc-62-4CA">
                             <rect key="frame" x="20" y="203" width="827" height="4"/>
+                            <animations/>
                             <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                     </subviews>
+                    <animations/>
                     <constraints>
                         <constraint firstItem="d6Y-31-1sJ" firstAttribute="top" secondItem="TGB-Rz-oQb" secondAttribute="top" constant="41" id="7bd-tj-Vmk"/>
                         <constraint firstItem="35Z-GU-nVe" firstAttribute="leading" secondItem="TGB-Rz-oQb" secondAttribute="leading" constant="20" id="8ro-Rk-fdz"/>
@@ -54,6 +59,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
+            <animations/>
             <constraints>
                 <constraint firstItem="TGB-Rz-oQb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="01z-CV-i1g"/>
                 <constraint firstAttribute="trailing" secondItem="TGB-Rz-oQb" secondAttribute="trailing" id="C8r-Yl-lYN"/>
