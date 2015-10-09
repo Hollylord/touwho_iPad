@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="topics"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TopicUnit">
             <rect key="frame" x="0.0" y="0.0" width="240" height="129"/>
@@ -65,7 +65,7 @@
         </view>
         <tapGestureRecognizer id="yV3-gq-TZS">
             <connections>
-                <action selector="turn2SpecifiTopicVC:" destination="-1" id="yxu-fI-gAq"/>
+                <action selector="turn2SpecifiTopicVC:" destination="iN0-l3-epB" id="avF-Vx-5CL"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

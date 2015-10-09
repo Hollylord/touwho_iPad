@@ -10,6 +10,7 @@
 #import "ModelForUser.h"
 
 @interface ModelForComment : NSObject
+
 @property (strong,nonatomic) ModelForUser *user;
 @property (copy,nonatomic) NSString *content;
 @property (copy,nonatomic) NSString *time;

@@ -15,6 +15,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconWriter;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UITextView *introductionTextView;
+@property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *writerNameLabel;
 
 
 @end
@@ -23,12 +27,25 @@
 {
     CGFloat heightTextView;
 }
+#pragma mark - 懒加载
+- (ModelForTopic *)model{
+    if (!_model) {
+        _model = [[ModelForTopic alloc] init];
+    }
+    return _model;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //评论cell
     [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
     
+    //添加数据
+    self.groupNameLabel.text = self.model.group.name;
+    self.iconWriter.image = self.model.publisher.icon;
+    self.titleLabel.text = self.model.title;
+    self.timeLabel.text = self.model.time;
     
 
 }

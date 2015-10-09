@@ -18,7 +18,7 @@
 @property (strong,nonatomic) ModelForTopic *model;
 
 
-- (IBAction)turn2SpecifiTopicVC:(UITapGestureRecognizer *)sender;
+
 
 
 

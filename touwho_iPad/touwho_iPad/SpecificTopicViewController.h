@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelForTopic.h"
 
 @interface SpecificTopicViewController : UIViewController
-
+@property (strong,nonatomic) ModelForTopic *model;
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "topics.h"
-#import "SpecificTopicViewController.h"
 #import "TopicUnit.h"
 
 #define Width 240
@@ -69,14 +68,14 @@
 - (void)awakeFromNib{
     //添加热门话题
     for (int i = 0; i < hotModelArr.count; i ++) {
-        TopicUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:self options:nil]firstObject];
+        TopicUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:nil options:nil]firstObject];
         unit.model = hotModelArr[i];
         [self.scrollView addSubview:unit];
         [hotTopics addObject:unit];
     }
     //添加我加入的小组
     for (int i = 0; i < iInvoModelArr.count; i ++) {
-        TopicUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:self options:nil]firstObject];
+        TopicUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:nil options:nil]firstObject];
         unit.model = iInvoModelArr[i];
         [self.scrollView addSubview:unit];
         [involedTopics addObject:unit];
@@ -137,20 +136,4 @@
 
 
 
-- (IBAction)turn2SpecifiTopicVC:(UITapGestureRecognizer *)sender {
-    UIViewController *viewController = [self viewController];
-    SpecificTopicViewController *spe = [[SpecificTopicViewController alloc] initWithNibName:@"SpecificTopicViewController" bundle:nil];
-    [viewController.navigationController pushViewController:spe animated:YES];
-}
-
-//获得当前view的控制器
-- (UIViewController*)viewController {
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
-        }
-    }
-    return nil;
-}
 @end
