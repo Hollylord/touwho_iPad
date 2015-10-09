@@ -38,6 +38,7 @@
 		A1211EB31BB242DF00B25AA4 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EB21BB242DF00B25AA4 /* libiconv.tbd */; };
 		A1211EB51BB242ED00B25AA4 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EB41BB242ED00B25AA4 /* libstdc++.tbd */; };
 		A1211EB71BB242F800B25AA4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EB61BB242F800B25AA4 /* libz.tbd */; };
+		A12492521BC757070042324D /* TopicUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A12492511BC757070042324D /* TopicUnit.m */; settings = {ASSET_TAGS = (); }; };
 		A13259261B82C35A00A327C6 /* programView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259251B82C35A00A327C6 /* programView.m */; };
 		A13259281B82C37B00A327C6 /* programView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13259271B82C37B00A327C6 /* programView.xib */; };
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
@@ -284,6 +285,8 @@
 		A1211EB21BB242DF00B25AA4 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A1211EB41BB242ED00B25AA4 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A1211EB61BB242F800B25AA4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A12492501BC757070042324D /* TopicUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicUnit.h; sourceTree = "<group>"; };
+		A12492511BC757070042324D /* TopicUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicUnit.m; sourceTree = "<group>"; };
 		A13259241B82C35A00A327C6 /* programView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = programView.h; sourceTree = "<group>"; };
 		A13259251B82C35A00A327C6 /* programView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = programView.m; sourceTree = "<group>"; };
 		A13259271B82C37B00A327C6 /* programView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programView.xib; sourceTree = "<group>"; };
@@ -687,6 +690,8 @@
 				A1033BDF1B8C59CD00FC8921 /* topics.h */,
 				A1033BE01B8C59CD00FC8921 /* topics.m */,
 				A1033BD21B8C487000FC8921 /* topics.xib */,
+				A12492501BC757070042324D /* TopicUnit.h */,
+				A12492511BC757070042324D /* TopicUnit.m */,
 				A1D620031BA6BCFB009FCA1F /* TopicUnit.xib */,
 			);
 			name = "最新话题";
@@ -1907,6 +1912,7 @@
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A1B88CFF1BA17D32008FA7C9 /* UUImageAvatarBrowser.m in Sources */,
+				A12492521BC757070042324D /* TopicUnit.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
 				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,

@@ -38,11 +38,24 @@
         hotModelArr = [NSMutableArray array];
         iInvoModelArr = [NSMutableArray array];
         
+        NSArray *groupNamesArr1 = @[@"经济学人",@"投壶咨询组",@"驴友"];
+        //添加数据到hotModelArr
         for (int i = 0; i < 3; i ++) {
             ModelForGroup *model = [[ModelForGroup alloc] init];
             NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i + 1];
             model.icon = [UIImage imageNamed:imageName];
+            model.name = groupNamesArr1[i];
             [hotModelArr addObject:model];
+        }
+        
+        NSArray *groupNamesArr2 = @[@"上班这件事",@"闲置二手",@"居家装饰",@"深圳歌友会"];
+        //添加数据到hotModelArr
+        for (int i = 4; i < 8; i ++) {
+            ModelForGroup *model = [[ModelForGroup alloc] init];
+            NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i];
+            model.icon = [UIImage imageNamed:imageName];
+            model.name = groupNamesArr2[i-4];
+            [iInvoModelArr addObject:model];
         }
         
     }
@@ -59,8 +72,9 @@
         [hotGroup addObject:unit];
     }
     //添加我加入的小组
-    for (int i = 0; i < 6; i ++) {
+    for (int i = 0; i < 4; i ++) {
         xiaozuUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"xiaozuUnit" owner:self options:nil]firstObject];
+        unit.model = iInvoModelArr[i];
         [self.scrollView addSubview:unit];
         [iInvolved addObject:unit];
     }

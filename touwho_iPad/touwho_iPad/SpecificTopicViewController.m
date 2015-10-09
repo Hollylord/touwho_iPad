@@ -9,21 +9,27 @@
 #import "SpecificTopicViewController.h"
 
 @interface SpecificTopicViewController () <UITableViewDelegate,UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *iconGroup;
+@property (weak, nonatomic) IBOutlet UIImageView *iconWriter;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+
 
 @end
 
 @implementation SpecificTopicViewController
-
+{
+    CGFloat heightTextView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //评论cell
     [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
     
-    //设置分享按钮
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
-    [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
+    
 
 }
 
@@ -34,6 +40,35 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    //新闻内容
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
+    NSDictionary *newsDic = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *content = [newsDic objectForKey:@"topic"];
+    
+    //根据内容设置新闻的高度
+    self.contentTextView.text = content;
+    
+    self.contentTextView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineBreakMode:NSLineBreakByCharWrapping];
+    
+    NSDictionary *attribute = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:20],NSParagraphStyleAttributeName:style};
+    NSStringDrawingOptions opts = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    
+    CGSize textSize = [self.contentTextView.text boundingRectWithSize:CGSizeMake(519, MAXFLOAT) options:opts attributes:attribute context:nil].size;
+    
+    heightTextView = textSize.height + 20;
+}
+
+- (void)updateViewConstraints{
+    [super updateViewConstraints];
+    
+    for (NSLayoutConstraint *constraint in self.contentTextView.constraints) {
+        if ([constraint.identifier isEqualToString:@"heightTextView"]) {
+            constraint.constant = heightTextView;
+        }
+    }
 }
 
 #pragma mark - tableView代理
@@ -52,7 +87,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+ 
     
     return cell;
 }
@@ -66,7 +101,8 @@
 }
 
 #pragma mark - 分享
-- (void)share{
+
+- (IBAction)share:(id)sender {
     //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault url:@"http://www.baidu.com"];
     //设置分享的 title
@@ -80,8 +116,13 @@
                                      shareImage:[UIImage imageNamed:@"logo"]
                                 shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToWechatTimeline,UMShareToWechatSession]
                                        delegate:nil];
-    
-    
+}
+#pragma mark - 评论
+- (IBAction)remark:(id)sender {
     
 }
+#pragma mark - 点赞
+- (IBAction)thumbUp:(id)sender {
+}
+
 @end

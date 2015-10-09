@@ -59,6 +59,7 @@
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
+    //新闻内容
     NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
     NSDictionary *newsDic = [NSDictionary dictionaryWithContentsOfFile:path];
     NSString *content = [newsDic objectForKey:@"xinwen"];

@@ -14,6 +14,7 @@
         _model = model;
     }
     self.iconView.image = model.icon;
+    self.nameLabel.text = model.name;
 }
 
 @end
