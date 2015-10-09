@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UITextView *introductionTextView;
+@property (weak, nonatomic) IBOutlet UILabel *introductionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *writerNameLabel;
 
@@ -57,6 +57,7 @@
     self.iconWriter.image = self.model.publisher.icon;
     self.titleLabel.text = self.model.title;
     self.timeLabel.text = self.model.time;
+    self.writerNameLabel.text = self.model.publisher.nickName;
     
     //添加评论数据
     self.modelComment.user.icon = [UIImage imageNamed:@"jingwang"];

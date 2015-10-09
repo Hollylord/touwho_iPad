@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelForGroup.h"
 
 @interface SpecificGroupViewController : UIViewController
 
+@property (strong,nonatomic) ModelForGroup *model;
 @end

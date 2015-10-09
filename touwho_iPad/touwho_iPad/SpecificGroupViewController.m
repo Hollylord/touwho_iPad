@@ -8,13 +8,28 @@
 
 #import "SpecificGroupViewController.h"
 #import "SpecificTopicViewController.h"
+#import "TopicCell.h"
 
 @interface SpecificGroupViewController () <UITableViewDataSource,UITableViewDelegate>
-@property (strong,nonatomic) NSMutableArray *topics;//存放所有话题
+
+//存放所有话题model
+@property (strong,nonatomic) NSMutableArray *topicsArr;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UIImageView *groupIcon;
+@property (weak, nonatomic) IBOutlet UILabel *groupName;
+@property (weak, nonatomic) IBOutlet UILabel *groupIntroduction;
+
+@property (strong,nonatomic) ModelForTopic *modelTopic;
 @end
 
 @implementation SpecificGroupViewController
+- (ModelForTopic *)modelTopic{
+    if (!_modelTopic) {
+        _modelTopic = [[ModelForTopic alloc] init];
+    }
+    return _modelTopic;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +40,17 @@
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
+    //添加数据
+    self.groupIcon.image = self.model.icon;
+    self.groupName.text = self.model.name;
+//    self.groupIntroduction.text = self.model.introduction;
+    
+    //添加话题数据
+    self.modelTopic.publisher.icon = [UIImage imageNamed:@"jingwang"];
+    self.modelTopic.publisher.nickName = @"悬镜司首尊夏江";
+    self.modelTopic.title = @"江左盟宗主的真正目的";
+    self.modelTopic.time = @"2015-10-10";
+    self.modelTopic.content = @"遥映人间冰雪样，暗香幽浮曲临江，遍识天下英雄路，俯首江左有梅郎";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,8 +75,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopicCell" forIndexPath:indexPath];
-
+    TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopicCell" forIndexPath:indexPath];
+    
+    cell.model = self.modelTopic;
     
     return cell;
 }
@@ -60,6 +87,7 @@
     
     //跳转到话题详情页面
     SpecificTopicViewController *topicVC = [[SpecificTopicViewController alloc] initWithNibName:@"SpecificTopicViewController" bundle:nil];
+    topicVC.model = self.modelTopic;
     [self.navigationController pushViewController:topicVC animated:YES];
 }
 

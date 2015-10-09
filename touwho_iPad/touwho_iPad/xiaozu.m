@@ -133,20 +133,4 @@
 }
 
 
-- (IBAction)turn2SpecificGroupController:(UITapGestureRecognizer *)sender {
-    UIViewController *viewController = [self viewController];
-    SpecificGroupViewController *speVC = [[SpecificGroupViewController alloc] initWithNibName:@"SpecificGroupViewController" bundle:nil];
-    [viewController.navigationController pushViewController:speVC animated:YES];
-}
-
-//获得当前view的控制器
-- (UIViewController*)viewController {
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
-        }
-    }
-    return nil;
-}
 @end

@@ -10,7 +10,9 @@
 #import "ModelForGroup.h"
 
 @interface xiaozuUnit : UIView
+
 @property (strong,nonatomic) ModelForGroup *model;
+
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 

@@ -211,6 +211,7 @@
 		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
 		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; settings = {ASSET_TAGS = (); }; };
 		A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD81451BC79DA800F269E3 /* CommentCell.m */; settings = {ASSET_TAGS = (); }; };
+		A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD814B1BC7B3B100F269E3 /* TopicCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -555,6 +556,8 @@
 		A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsTransToEarth.m; sourceTree = "<group>"; };
 		A1FD81441BC79DA800F269E3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		A1FD81451BC79DA800F269E3 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		A1FD814A1BC7B3B100F269E3 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
+		A1FD814B1BC7B3B100F269E3 /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -661,7 +664,7 @@
 			name = "社群";
 			sourceTree = "<group>";
 		};
-		A1033BDB1B8C554600FC8921 /* 小组 */ = {
+		A1033BDB1B8C554600FC8921 /* 小组列表 */ = {
 			isa = PBXGroup;
 			children = (
 				A1033BD61B8C513800FC8921 /* xiaozu.h */,
@@ -671,7 +674,7 @@
 				A18338581BC673A3000866EB /* xiaozuUnit.m */,
 				A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */,
 			);
-			name = "小组";
+			name = "小组列表";
 			sourceTree = "<group>";
 		};
 		A1033BDC1B8C555900FC8921 /* 社群 */ = {
@@ -680,14 +683,14 @@
 				A1DAFAB91B8C37BE00189680 /* circle.h */,
 				A1DAFABA1B8C37BE00189680 /* circle.m */,
 				A1DAFAB31B8C1A4300189680 /* circle.xib */,
-				A1033BDB1B8C554600FC8921 /* 小组 */,
-				A1033BDD1B8C597200FC8921 /* 最新话题 */,
-				A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */,
+				A1033BDB1B8C554600FC8921 /* 小组列表 */,
+				A1033BDD1B8C597200FC8921 /* 话题列表 */,
+				A1B88C9C1BA15ED9008FA7C9 /* 机构列表 */,
 			);
 			name = "社群";
 			sourceTree = "<group>";
 		};
-		A1033BDD1B8C597200FC8921 /* 最新话题 */ = {
+		A1033BDD1B8C597200FC8921 /* 话题列表 */ = {
 			isa = PBXGroup;
 			children = (
 				A1033BDF1B8C59CD00FC8921 /* topics.h */,
@@ -697,7 +700,7 @@
 				A12492511BC757070042324D /* TopicUnit.m */,
 				A1D620031BA6BCFB009FCA1F /* TopicUnit.xib */,
 			);
-			name = "最新话题";
+			name = "话题列表";
 			sourceTree = "<group>";
 		};
 		A10CCA091BAA56EB00ED0F49 /* controller */ = {
@@ -1211,7 +1214,7 @@
 			name = "视频";
 			sourceTree = "<group>";
 		};
-		A1B88C9C1BA15ED9008FA7C9 /* 机构专题 */ = {
+		A1B88C9C1BA15ED9008FA7C9 /* 机构列表 */ = {
 			isa = PBXGroup;
 			children = (
 				A1E9BE8C1BA7B60D00876186 /* JiGouMenuView.h */,
@@ -1220,7 +1223,7 @@
 				A17FAE931BBBD51900571817 /* JiGouUnit.m */,
 				A1E9BE8F1BA7B66C00876186 /* JiGouUnit.xib */,
 			);
-			name = "机构专题";
+			name = "机构列表";
 			sourceTree = "<group>";
 		};
 		A1B88CA31BA16A55008FA7C9 /* pic */ = {
@@ -1417,10 +1420,8 @@
 		A1D61FF91BA66A34009FCA1F /* 小组详情 */ = {
 			isa = PBXGroup;
 			children = (
-				A1D61FFA1BA66AFD009FCA1F /* SpecificGroupViewController.h */,
-				A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */,
-				A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */,
-				A1D620011BA6AEA9009FCA1F /* TopicCell.xib */,
+				A1FD81481BC7B00000F269E3 /* controller */,
+				A1FD81491BC7B00600F269E3 /* view */,
 			);
 			name = "小组详情";
 			sourceTree = "<group>";
@@ -1604,6 +1605,26 @@
 				A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */,
 			);
 			name = "头像裁切";
+			sourceTree = "<group>";
+		};
+		A1FD81481BC7B00000F269E3 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1D61FFA1BA66AFD009FCA1F /* SpecificGroupViewController.h */,
+				A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */,
+				A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A1FD81491BC7B00600F269E3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A1FD814A1BC7B3B100F269E3 /* TopicCell.h */,
+				A1FD814B1BC7B3B100F269E3 /* TopicCell.m */,
+				A1D620011BA6AEA9009FCA1F /* TopicCell.xib */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1932,6 +1953,7 @@
 				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
 				A1B88CF81BA179C7008FA7C9 /* UUMessage.m in Sources */,
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
+				A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,
 				A1B88CFF1BA17D32008FA7C9 /* UUImageAvatarBrowser.m in Sources */,
 				A12492521BC757070042324D /* TopicUnit.m in Sources */,
