@@ -9,13 +9,15 @@
 #import "TopicUnit.h"
 
 @implementation TopicUnit
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setModel:(ModelForTopic *)model{
+    if (_model != model) {
+        _model = model;
+        
+    }
+    self.iconView.image = model.publisher.icon;
+    self.topicNameLabel.text = model.title;
+    self.groupNameLabel.text = model.group.name;
+    self.timeLabel.text = @"2015-10-9";
 }
-*/
 
 @end

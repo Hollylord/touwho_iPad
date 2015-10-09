@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelForGroup : NSObject
+
 @property (strong,nonatomic) UIImage *icon;
 @property (copy,nonatomic) NSString *name;
 @property (copy,nonatomic) NSString *introduction;

@@ -1426,9 +1426,8 @@
 		A1D620051BA6BF6B009FCA1F /* 话题详情 */ = {
 			isa = PBXGroup;
 			children = (
-				A1D620061BA6C0D2009FCA1F /* SpecificTopicViewController.h */,
-				A1D620071BA6C0D2009FCA1F /* SpecificTopicViewController.m */,
-				A1D620081BA6C0D2009FCA1F /* SpecificTopicViewController.xib */,
+				A1DF1F2F1BC774440050C30B /* model */,
+				A1DF1F2E1BC774390050C30B /* controller */,
 			);
 			name = "话题详情";
 			sourceTree = "<group>";
@@ -1534,6 +1533,23 @@
 				A1E9BE981BA801FB00876186 /* shipinView.xib */,
 			);
 			name = "路演列表";
+			sourceTree = "<group>";
+		};
+		A1DF1F2E1BC774390050C30B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1D620061BA6C0D2009FCA1F /* SpecificTopicViewController.h */,
+				A1D620071BA6C0D2009FCA1F /* SpecificTopicViewController.m */,
+				A1D620081BA6C0D2009FCA1F /* SpecificTopicViewController.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A1DF1F2F1BC774440050C30B /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {

@@ -8,6 +8,7 @@
 
 #import "topics.h"
 #import "SpecificTopicViewController.h"
+#import "TopicUnit.h"
 
 #define Width 240
 #define Height 90
@@ -17,8 +18,15 @@
 
 @implementation topics
 {
-    NSMutableArray *hotTopics;//热门推荐话题
-    NSMutableArray *involedTopics;//我参加的话题
+    //存放热门话题view
+    NSMutableArray *hotTopics;
+    //存放参与的话题view
+    NSMutableArray *involedTopics;
+    
+    //存放热门话题model
+    NSMutableArray *hotModelArr;
+    //存放参与的话题model
+    NSMutableArray *iInvoModelArr;
 }
 
 //只会初始化自己 不能在这里面添加子视图的子视图，设置层级关系无效。只能设置self 与子视图的层级关系
@@ -27,7 +35,32 @@
     if (self) {
         hotTopics = [NSMutableArray array];
         involedTopics = [NSMutableArray array];
+        hotModelArr = [NSMutableArray array];
+        iInvoModelArr = [NSMutableArray array];
         
+        NSArray *topicNamesArr1 = @[@"沪指大涨3%",@"青蒿素发展史",@"港囧"];
+        NSArray *groupNamesArr1 = @[@"经济学人",@"投壶咨询组",@"驴友"];
+        //添加数据到
+        for (int i = 0; i < 3; i ++) {
+            ModelForTopic *model = [[ModelForTopic alloc] init];
+            NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i + 1];
+            model.publisher.icon = [UIImage imageNamed:imageName];
+            model.title = topicNamesArr1[i];
+            model.group.name = groupNamesArr1[i];
+            [hotModelArr addObject:model];
+        }
+        
+        NSArray *groupNamesArr2 = @[@"上班这件事",@"闲置二手",@"居家装饰",@"深圳歌友会"];
+        NSArray *topicNamesArr2 = @[@"上班这件事",@"闲置二手",@"居家装饰",@"深圳歌友会"];
+        //添加数据到hotModelArr
+        for (int i = 4; i < 8; i ++) {
+            ModelForTopic *model = [[ModelForTopic alloc] init];
+            NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i];
+            model.publisher.icon = [UIImage imageNamed:imageName];
+            model.title = topicNamesArr2[i-4];
+            model.group.name = groupNamesArr2[i-4];
+            [iInvoModelArr addObject:model];
+        }
     }
     return self;
 }
@@ -35,14 +68,16 @@
 //相当于viewDidLoad
 - (void)awakeFromNib{
     //添加热门话题
-    for (int i = 0; i < 5; i ++) {
-        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:self options:nil]firstObject];
+    for (int i = 0; i < hotModelArr.count; i ++) {
+        TopicUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:self options:nil]firstObject];
+        unit.model = hotModelArr[i];
         [self.scrollView addSubview:unit];
         [hotTopics addObject:unit];
     }
     //添加我加入的小组
-    for (int i = 0; i < 6; i ++) {
-        UIView *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:self options:nil]firstObject];
+    for (int i = 0; i < iInvoModelArr.count; i ++) {
+        TopicUnit *unit = [[[NSBundle mainBundle] loadNibNamed:@"TopicUnit" owner:self options:nil]firstObject];
+        unit.model = iInvoModelArr[i];
         [self.scrollView addSubview:unit];
         [involedTopics addObject:unit];
     }

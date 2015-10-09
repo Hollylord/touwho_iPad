@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelForTopic.h"
 
 @interface topics : UIView
+
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine1;
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine2;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong,nonatomic) ModelForTopic *model;
+
+
 - (IBAction)turn2SpecifiTopicVC:(UITapGestureRecognizer *)sender;
+
 
 
 @end
