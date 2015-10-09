@@ -18,7 +18,7 @@
     self.iconView.image = model.publisher.icon;
     self.topicNameLabel.text = model.title;
     self.groupNameLabel.text = model.group.name;
-    self.timeLabel.text = @"2015-10-9";
+    self.timeLabel.text = model.time;
 }
 
 #pragma mark - 话题点击控制器跳转

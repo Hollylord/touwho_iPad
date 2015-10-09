@@ -39,25 +39,27 @@
         
         NSArray *topicNamesArr1 = @[@"沪指大涨3%",@"青蒿素发展史",@"港囧"];
         NSArray *groupNamesArr1 = @[@"经济学人",@"投壶咨询组",@"驴友"];
-        //添加数据到
+        //添加数据到热门小组
         for (int i = 0; i < 3; i ++) {
             ModelForTopic *model = [[ModelForTopic alloc] init];
             NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i + 1];
             model.publisher.icon = [UIImage imageNamed:imageName];
             model.title = topicNamesArr1[i];
             model.group.name = groupNamesArr1[i];
+            model.time = @"2015-10-9";
             [hotModelArr addObject:model];
         }
         
         NSArray *groupNamesArr2 = @[@"上班这件事",@"闲置二手",@"居家装饰",@"深圳歌友会"];
         NSArray *topicNamesArr2 = @[@"上班这件事",@"闲置二手",@"居家装饰",@"深圳歌友会"];
-        //添加数据到hotModelArr
+        //添加数据到参与的小组
         for (int i = 4; i < 8; i ++) {
             ModelForTopic *model = [[ModelForTopic alloc] init];
             NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i];
             model.publisher.icon = [UIImage imageNamed:imageName];
             model.title = topicNamesArr2[i-4];
             model.group.name = groupNamesArr2[i-4];
+            model.time = @"2015-10-9";
             [iInvoModelArr addObject:model];
         }
     }

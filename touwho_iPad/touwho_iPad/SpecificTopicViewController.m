@@ -7,6 +7,8 @@
 //
 
 #import "SpecificTopicViewController.h"
+#import "replyViewController.h"
+#import "CommentCell.h"
 
 @interface SpecificTopicViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *writerNameLabel;
 
+@property (strong,nonatomic) ModelForComment *modelComment;
 
 @end
 
@@ -35,6 +38,14 @@
     return _model;
 }
 
+- (ModelForComment *)modelComment{
+    if (!_modelComment) {
+        _modelComment = [[ModelForComment alloc] init];
+    }
+    return _modelComment;
+}
+
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,12 +58,17 @@
     self.titleLabel.text = self.model.title;
     self.timeLabel.text = self.model.time;
     
+    //添加评论数据
+    self.modelComment.user.icon = [UIImage imageNamed:@"jingwang"];
+    self.modelComment.user.nickName = @"萧景琰";
+    self.modelComment.content = @"等我死后见了林殊，如果他问我为什么不救他的副将，难道我能回答他说不值得吗？";
+    self.modelComment.time = @"2015-10-10";
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -102,9 +118,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
+    CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
     
- 
+    cell.model = self.modelComment;
     
     return cell;
 }
@@ -118,7 +134,6 @@
 }
 
 #pragma mark - 分享
-
 - (IBAction)share:(id)sender {
     //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
     [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault url:@"http://www.baidu.com"];
@@ -134,12 +149,24 @@
                                 shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToWechatTimeline,UMShareToWechatSession]
                                        delegate:nil];
 }
+
 #pragma mark - 评论
 - (IBAction)remark:(id)sender {
     
+    replyViewController *replyVC = [[replyViewController alloc] initWithNibName:@"replyViewController" bundle:nil];
+    replyVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    //弹出回复控制器 界面
+    [self presentViewController:replyVC animated:YES completion:NULL];
+
 }
 #pragma mark - 点赞
-- (IBAction)thumbUp:(id)sender {
+- (IBAction)thumbUp:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
+#pragma mark - 私信
+- (IBAction)sendMessage:(UIButton *)sender {
+    
 }
 
 @end

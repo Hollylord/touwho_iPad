@@ -11,4 +11,5 @@
 
 @interface SpecificTopicViewController : UIViewController
 @property (strong,nonatomic) ModelForTopic *model;
+
 @end

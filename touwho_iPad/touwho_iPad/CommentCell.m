@@ -6,9 +6,9 @@
 //  Copyright © 2015年 touhu.com. All rights reserved.
 //
 
-#import "commentCell.h"
+#import "CommentCell.h"
 
-@implementation commentCell
+@implementation CommentCell
 
 - (void)awakeFromNib {
     // Initialization code
