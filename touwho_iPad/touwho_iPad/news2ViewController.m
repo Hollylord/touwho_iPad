@@ -104,14 +104,12 @@
     self.heightOfcontentView.constant = height;
     
     if (imageView.image) {
-        NSLog(@"%@",NSStringFromCGSize(imageSize));
         [self layoutForImageView:imageView imageSize:imageSize];
         
         //修改滚动范围
         for (NSLayoutConstraint *constraint in self.scrollView.constraints) {
             if ([constraint.identifier isEqualToString:@"contentSizeHeight"]) {
                 constraint.constant = constraint.constant + imageSize.height/2;
-                NSLog(@"%f",imageSize.height);
             }
         }
         

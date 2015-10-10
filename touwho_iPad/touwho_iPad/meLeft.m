@@ -50,7 +50,7 @@
             label.text = @"申请成为领投人";
             break;
         case 2:
-            label.text = @"申请成为投资人";
+            label.text = @"申请成为跟投人";
             break;
         case 3:
             label.text = @"发布项目";

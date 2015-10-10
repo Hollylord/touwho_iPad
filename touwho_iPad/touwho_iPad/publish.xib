@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -12,6 +12,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWf-aC-jwb">
                     <rect key="frame" x="89" y="20" width="67" height="17"/>
+                    <animations/>
                     <attributedString key="attributedText">
                         <fragment content="公司名称">
                             <attributes>
@@ -39,6 +40,7 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDY-Sm-I7P">
                     <rect key="frame" x="233" y="14" width="300" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Yed-LK-f7r"/>
                         <constraint firstAttribute="width" constant="300" id="pcT-Dg-6cr"/>
@@ -48,6 +50,7 @@
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czA-jY-rUI">
                     <rect key="frame" x="89" y="67" width="67" height="17"/>
+                    <animations/>
                     <attributedString key="attributedText">
                         <fragment content="所属行业">
                             <attributes>
@@ -75,6 +78,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC1-uU-4MN">
                     <rect key="frame" x="89" y="114" width="67" height="17"/>
+                    <animations/>
                     <attributedString key="attributedText">
                         <fragment content="项目名称">
                             <attributes>
@@ -95,11 +99,13 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLU-fQ-o9j">
                     <rect key="frame" x="233" y="108" width="300" height="30"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axb-vZ-Dk1">
                     <rect key="frame" x="89" y="161" width="120" height="17"/>
+                    <animations/>
                     <attributedString key="attributedText">
                         <fragment content="融资金额（万元）">
                             <attributes>
@@ -121,11 +127,13 @@
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBc-H9-AoQ">
                     <rect key="frame" x="233" y="155" width="300" height="30"/>
+                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugI-l5-rS6">
                     <rect key="frame" x="89" y="208" width="67" height="17"/>
+                    <animations/>
                     <attributedString key="attributedText">
                         <fragment content="项目地点">
                             <attributes>
@@ -153,6 +161,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ad-vc-2EE">
                     <rect key="frame" x="89" y="255" width="67" height="17"/>
+                    <animations/>
                     <attributedString key="attributedText">
                         <fragment content="项目状态">
                             <attributes>
@@ -180,6 +189,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrk-dF-fjK">
                     <rect key="frame" x="89" y="312" width="67" height="17"/>
+                    <animations/>
                     <attributedString key="attributedText">
                         <fragment content="项目简介">
                             <attributes>
@@ -200,6 +210,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-XM-VNG">
                     <rect key="frame" x="137" y="397" width="350" height="50"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="NEo-0z-7Am"/>
                         <constraint firstAttribute="width" constant="350" id="aN1-02-XhW"/>
@@ -217,6 +228,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSD-EE-wFC">
                     <rect key="frame" x="233" y="61" width="300" height="30"/>
+                    <animations/>
                     <state key="normal" title="请选择行业">
                         <color key="titleColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -226,6 +238,7 @@
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9W-oL-ev0">
                     <rect key="frame" x="233" y="291" width="300" height="60"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Fpr-Ns-vqH"/>
                     </constraints>
@@ -234,6 +247,7 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jo-94-I58">
                     <rect key="frame" x="233" y="201" width="300" height="30"/>
+                    <animations/>
                     <state key="normal" title="请选择地区">
                         <color key="titleColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -243,6 +257,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zia-x1-CVG">
                     <rect key="frame" x="233" y="249" width="300" height="30"/>
+                    <animations/>
                     <state key="normal" title="请选择项目状态">
                         <color key="titleColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -252,6 +267,7 @@
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GR3-NN-Vul">
                     <rect key="frame" x="89" y="47" width="444" height="1"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="W74-RF-Sk6"/>
@@ -259,6 +275,7 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SLg-yW-xms">
                     <rect key="frame" x="89" y="94" width="444" height="1"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Ged-4S-QsY"/>
@@ -266,6 +283,7 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jiU-Ri-n3g">
                     <rect key="frame" x="89" y="188" width="444" height="1"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="gaC-oU-ddg"/>
@@ -273,6 +291,7 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vg-ta-XSu">
                     <rect key="frame" x="89" y="234" width="444" height="1"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Y0y-rl-6C5"/>
@@ -280,6 +299,7 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bgm-ao-X12">
                     <rect key="frame" x="89" y="282" width="444" height="1"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Xj5-wT-EVF"/>
@@ -287,6 +307,7 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IwC-OG-5uQ">
                     <rect key="frame" x="89" y="141" width="444" height="1"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="vQX-NX-cSb"/>
@@ -294,12 +315,14 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3SB-9o-Kqj">
                     <rect key="frame" x="89" y="354" width="444" height="1"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="biB-4J-4kI"/>
                     </constraints>
                 </imageView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="0Jo-94-I58" firstAttribute="leading" secondItem="rBc-H9-AoQ" secondAttribute="leading" id="0Gw-6U-f2x"/>

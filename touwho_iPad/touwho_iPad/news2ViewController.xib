@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="news2ViewController">
             <connections>
                 <outlet property="contentView" destination="NcE-Cw-69Y" id="5we-rf-yc5"/>
-                <outlet property="heightOfArticle" destination="uSL-Km-MzJ" id="d7q-hN-yYh"/>
+                <outlet property="heightOfcontentView" destination="uSL-Km-MzJ" id="36j-nm-k2Q"/>
                 <outlet property="scrollView" destination="3Sl-QO-mbG" id="5jv-6n-HNZ"/>
                 <outlet property="timeLabel" destination="8cu-km-mwi" id="cdl-Io-2Rm"/>
                 <outlet property="titleLabel" destination="Fpb-TA-Vsh" id="Bfr-Bt-H6b"/>

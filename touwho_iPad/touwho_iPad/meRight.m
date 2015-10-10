@@ -14,6 +14,7 @@
 #import "FollowedSponsorTableViewCell.h"
 #import "ProgramsModel.h"
 #import "SponsorModel.h"
+#import "apply.h"
 
 
 @implementation meRight
@@ -52,35 +53,6 @@
 
 
 #pragma mark - meleft代理
-//发布项目
-- (void)presentPublish{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"publish" owner:nil options:nil]firstObject];
-    [self addSubview:view];
-    [self layoutForSubview:view];
-    
-}
-//申请为领头
-- (void)presentApply{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"apply" owner:nil options:nil]firstObject];
-    [self addSubview:view];
-    [self layoutForSubview:view];
-}
-//申请为投资人
-- (void)presentSponsor{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"apply" owner:nil options:nil]firstObject];
-    [self addSubview:view];
-    [self layoutForSubview:view];
-}
 //编辑个人信息页面的设置
 - (void)presentProfile{
     for (UIView *view in self.subviews) {
@@ -98,6 +70,50 @@
     };
     
 }
+
+//申请为领投人
+- (void)presentApply{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    apply *view = [[[NSBundle mainBundle] loadNibNamed:@"apply" owner:nil options:nil]firstObject];
+    [self addSubview:view];
+    [self layoutForSubview:view];
+    
+    //修改数据
+    [view.enterpriseIdentify removeFromSuperview];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    view.serviceContentView.text = [dic objectForKey:@"lingtourenxieyi"];
+}
+
+//申请为投资人
+- (void)presentSponsor{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    apply *view = [[[NSBundle mainBundle] loadNibNamed:@"apply" owner:nil options:nil]firstObject];
+    [self addSubview:view];
+    [self layoutForSubview:view];
+    
+    //修改数据
+    [view.protocolLabel setText:@"《跟投人服务协议》"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    view.serviceContentView.text = [dic objectForKey:@"gentourenxieyi"];
+}
+
+//发布项目
+- (void)presentPublish{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"publish" owner:nil options:nil]firstObject];
+    [self addSubview:view];
+    [self layoutForSubview:view];
+    
+}
 //已投资的项目
 - (void)presentPrograms{
     for (UIView *view in self.subviews) {
@@ -113,7 +129,8 @@
     [self layoutForSubview:programs];
     
 }
-//发起的项目
+
+//已发布的项目
 - (void)presentPublished{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -126,6 +143,7 @@
     [self addSubview:programs];
     [self layoutForSubview:programs];
 }
+
 //关注的项目
 - (void)presentFollowedProgram{
     for (UIView *view in self.subviews) {
@@ -140,6 +158,7 @@
     [self addSubview:programs];
     [self layoutForSubview:programs];
 }
+
 //关注的机构
 - (void)presentFollowedInstitution{
     for (UIView *view in self.subviews) {
@@ -155,6 +174,7 @@
     [self layoutForSubview:institution];
     
 }
+
 //关注的投资人
 - (void)presentFollowedSponsor{
     for (UIView *view in self.subviews) {

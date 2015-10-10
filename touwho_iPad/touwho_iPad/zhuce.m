@@ -8,6 +8,8 @@
 #import "zhuce.h"
 
 @implementation zhuce
+
+
 - (IBAction)statusChoose:(UIButton *)sender {
     //点击投资人
     if (sender.tag == 10) {

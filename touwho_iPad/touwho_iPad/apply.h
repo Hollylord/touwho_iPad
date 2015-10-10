@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface apply : UIView
+@property (weak, nonatomic) IBOutlet UILabel *enterpriseIdentify;
+@property (weak, nonatomic) IBOutlet UILabel *protocolLabel;
+@property (weak, nonatomic) IBOutlet UITextView *serviceContentView;
 
 @end

@@ -10,6 +10,8 @@
 #import "BTPickerViewController.h"
 
 @implementation apply
+
+
 - (IBAction)enterprisePick:(UIButton *)sender {
     //创建popVC
     BTPickerViewController *btPicker = [[BTPickerViewController alloc] initWithPlist:@"enterprise" numberOfComponents:3];
