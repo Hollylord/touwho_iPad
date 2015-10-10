@@ -209,6 +209,7 @@
 		A1E9BE9D1BA8057F00876186 /* activityUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE9C1BA8057F00876186 /* activityUnit.xib */; };
 		A1E9BEA01BA8077F00876186 /* activityList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE9F1BA8077F00876186 /* activityList.m */; };
 		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
+		A1EB96701BC8B17200C15A39 /* ModelForNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB966F1BC8B17200C15A39 /* ModelForNews.m */; settings = {ASSET_TAGS = (); }; };
 		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; settings = {ASSET_TAGS = (); }; };
 		A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD81451BC79DA800F269E3 /* CommentCell.m */; settings = {ASSET_TAGS = (); }; };
 		A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD814B1BC7B3B100F269E3 /* TopicCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -552,6 +553,8 @@
 		A1E9BE9F1BA8077F00876186 /* activityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityList.m; sourceTree = "<group>"; };
 		A1E9BEA11BA808A000876186 /* activityUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = activityUnit.h; sourceTree = "<group>"; };
 		A1E9BEA21BA808A000876186 /* activityUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityUnit.m; sourceTree = "<group>"; };
+		A1EB966E1BC8B17200C15A39 /* ModelForNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForNews.h; sourceTree = "<group>"; };
+		A1EB966F1BC8B17200C15A39 /* ModelForNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForNews.m; sourceTree = "<group>"; };
 		A1F0E5271BABAB5F00BA0BDD /* MarsTransToEarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarsTransToEarth.h; sourceTree = "<group>"; };
 		A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsTransToEarth.m; sourceTree = "<group>"; };
 		A1FD81441BC79DA800F269E3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
@@ -823,6 +826,7 @@
 		A13EEA871B8EF7A60052C2A7 /* 新闻 */ = {
 			isa = PBXGroup;
 			children = (
+				A1EB96711BC8B17A00C15A39 /* Model */,
 				A1DB9AAA1BA2A1A000EC97D6 /* 新闻列表 */,
 				A1DB9AAB1BA2A1AB00EC97D6 /* 新闻详情 */,
 			);
@@ -1497,9 +1501,9 @@
 			children = (
 				A13EEA8A1B8EF90E0052C2A7 /* news1ViewController.h */,
 				A13EEA8B1B8EF90E0052C2A7 /* news1ViewController.m */,
-				A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */,
 				A13EEA8F1B8EFC710052C2A7 /* newsMenu.h */,
 				A13EEA901B8EFC710052C2A7 /* newsMenu.m */,
+				A13EEA8D1B8EFBBF0052C2A7 /* newsMenu.xib */,
 			);
 			name = "新闻列表";
 			sourceTree = "<group>";
@@ -1587,6 +1591,15 @@
 				A1E9BE9C1BA8057F00876186 /* activityUnit.xib */,
 			);
 			name = "活动列表";
+			sourceTree = "<group>";
+		};
+		A1EB96711BC8B17A00C15A39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1EB966E1BC8B17200C15A39 /* ModelForNews.h */,
+				A1EB966F1BC8B17200C15A39 /* ModelForNews.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */ = {
@@ -1968,6 +1981,7 @@
 				A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */,
 				A19D09401B7C2DF100094B81 /* main.m in Sources */,
 				A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */,
+				A1EB96701BC8B17200C15A39 /* ModelForNews.m in Sources */,
 				A1B88CD51BA177B8008FA7C9 /* UUMessageCell.m in Sources */,
 				A19D09761B7C306900094B81 /* programViewController.m in Sources */,
 				A1E9BEA01BA8077F00876186 /* activityList.m in Sources */,

@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新三板上市券商全程指引" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yum-Mx-ekx">
-                    <rect key="frame" x="157" y="8" width="187" height="21"/>
+                    <rect key="frame" x="146" y="8" width="187" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -56,8 +56,8 @@
                 <constraint firstAttribute="trailing" secondItem="Tux-bQ-O5p" secondAttribute="trailing" constant="13" id="GZb-PJ-4ri"/>
                 <constraint firstItem="yum-Mx-ekx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="MjI-kF-yoC"/>
                 <constraint firstItem="5gw-A8-YDY" firstAttribute="leading" secondItem="jIj-M2-kjm" secondAttribute="trailing" constant="18" id="PIi-ZF-RDJ"/>
+                <constraint firstItem="5gw-A8-YDY" firstAttribute="leading" secondItem="yum-Mx-ekx" secondAttribute="leading" id="btJ-hW-FvE"/>
                 <constraint firstItem="Tux-bQ-O5p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="m4w-xO-8am"/>
-                <constraint firstItem="yum-Mx-ekx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="50" id="q25-qU-4H6"/>
                 <constraint firstItem="5gw-A8-YDY" firstAttribute="top" secondItem="Tux-bQ-O5p" secondAttribute="bottom" constant="8" id="quw-ss-eGe"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -65,6 +65,10 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="abstractLabel" destination="5gw-A8-YDY" id="gTE-kG-oFt"/>
+                <outlet property="newsIconView" destination="jIj-M2-kjm" id="vic-nt-Nja"/>
+                <outlet property="timeLabel" destination="Tux-bQ-O5p" id="lvG-M3-yv0"/>
+                <outlet property="titleLabel" destination="yum-Mx-ekx" id="gNu-N3-uNL"/>
                 <outletCollection property="gestureRecognizers" destination="YK4-RO-ybl" appends="YES" id="8Dp-Yv-gy9"/>
             </connections>
             <point key="canvasLocation" x="42" y="117"/>

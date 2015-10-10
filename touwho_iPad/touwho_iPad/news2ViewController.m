@@ -13,15 +13,16 @@
 
 @interface news2ViewController ()
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfArticle;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfcontentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-//存放所有评论
-@property (nonatomic ,strong) NSMutableArray * messages;
+
 //标题
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 //正文
-@property (weak, nonatomic) IBOutlet UITextView *article;
+@property (weak, nonatomic) IBOutlet UITextView *contentView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 
 - (IBAction)dianZan:(UIButton *)sender;
 
@@ -33,13 +34,6 @@
     CGFloat height;
     UIImageView *imageView;
     CGSize imageSize;
-}
-
-- (NSMutableArray *)messages{
-    if (!_messages) {
-        _messages = [NSMutableArray array];
-    }
-    return _messages;
 }
 
 
@@ -66,16 +60,16 @@
     
     
     //根据内容设置新闻的高度
-    self.article.text = content;
+    self.contentView.text = content;
     
-    self.article.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
+    self.contentView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineBreakMode:NSLineBreakByCharWrapping];
     
     NSDictionary *attribute = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:20],NSParagraphStyleAttributeName:style};
     NSStringDrawingOptions opts = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
     
-    CGSize textSize = [self.article.text boundingRectWithSize:CGSizeMake(800, MAXFLOAT) options:opts attributes:attribute context:nil].size;
+    CGSize textSize = [self.contentView.text boundingRectWithSize:CGSizeMake(800, MAXFLOAT) options:opts attributes:attribute context:nil].size;
     
     height = textSize.height + 20;
     
@@ -107,7 +101,7 @@
 - (void)updateViewConstraints{
     
     [super updateViewConstraints];
-    self.heightOfArticle.constant = height;
+    self.heightOfcontentView.constant = height;
     
     if (imageView.image) {
         NSLog(@"%@",NSStringFromCGSize(imageSize));
@@ -129,7 +123,7 @@
 - (void)layoutForImageView:(UIImageView *)view imageSize:(CGSize)size{
     NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.article attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
     
     NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:size.width];
     NSLayoutConstraint *heigh = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:size.height];
