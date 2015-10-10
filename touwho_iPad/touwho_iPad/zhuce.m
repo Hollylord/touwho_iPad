@@ -8,6 +8,21 @@
 #import "zhuce.h"
 
 @implementation zhuce
+- (IBAction)statusChoose:(UIButton *)sender {
+    //点击投资人
+    if (sender.tag == 10) {
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        self.statusImage.image = [UIImage imageNamed:@"shenfen1"];
+    }
+    //点击创业者
+    else {
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        self.statusImage.image = [UIImage imageNamed:@"shenfen2"];
+    }
+}
+
 - (IBAction)riskPrompt:(UIButton *)sender {
     UIView *riskView = [[[NSBundle mainBundle] loadNibNamed:@"RiskPrompt" owner:nil options:nil] firstObject];
     [self addSubview:riskView];

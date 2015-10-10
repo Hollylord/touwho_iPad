@@ -1380,8 +1380,7 @@
 		A1C3EDE11B9EB72B0023AB6E /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
-				A13259321B83071200A327C6 /* loginViewController.h */,
-				A13259331B83071200A327C6 /* loginViewController.m */,
+				A1EB96761BC8E57000C15A39 /* controller */,
 				A1D78DD71B9D5A8200C136C3 /* 注册与忘记密码 */,
 			);
 			name = "登录注册";
@@ -1613,6 +1612,15 @@
 				A1DAFAB31B8C1A4300189680 /* circle.xib */,
 			);
 			name = segementView;
+			sourceTree = "<group>";
+		};
+		A1EB96761BC8E57000C15A39 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A13259321B83071200A327C6 /* loginViewController.h */,
+				A13259331B83071200A327C6 /* loginViewController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 		A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */ = {

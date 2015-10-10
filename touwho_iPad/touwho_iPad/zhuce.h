@@ -10,9 +10,11 @@
 
 @interface zhuce : UIView
 
-/**
- *  对应 下一步 操作
- */
+@property (weak, nonatomic) IBOutlet UIImageView *statusImage;
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+
+//马上注册
 @property (copy,nonatomic) dispatch_block_t nextStepBlock;
 
 
