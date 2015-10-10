@@ -210,6 +210,7 @@
 		A1E9BEA01BA8077F00876186 /* activityList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE9F1BA8077F00876186 /* activityList.m */; };
 		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
 		A1EB96701BC8B17200C15A39 /* ModelForNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB966F1BC8B17200C15A39 /* ModelForNews.m */; settings = {ASSET_TAGS = (); }; };
+		A1EB96751BC8C41D00C15A39 /* ModelForActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */; settings = {ASSET_TAGS = (); }; };
 		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; settings = {ASSET_TAGS = (); }; };
 		A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD81451BC79DA800F269E3 /* CommentCell.m */; settings = {ASSET_TAGS = (); }; };
 		A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD814B1BC7B3B100F269E3 /* TopicCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -555,6 +556,8 @@
 		A1E9BEA21BA808A000876186 /* activityUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityUnit.m; sourceTree = "<group>"; };
 		A1EB966E1BC8B17200C15A39 /* ModelForNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForNews.h; sourceTree = "<group>"; };
 		A1EB966F1BC8B17200C15A39 /* ModelForNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForNews.m; sourceTree = "<group>"; };
+		A1EB96731BC8C41D00C15A39 /* ModelForActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForActivity.h; sourceTree = "<group>"; };
+		A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForActivity.m; sourceTree = "<group>"; };
 		A1F0E5271BABAB5F00BA0BDD /* MarsTransToEarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarsTransToEarth.h; sourceTree = "<group>"; };
 		A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsTransToEarth.m; sourceTree = "<group>"; };
 		A1FD81441BC79DA800F269E3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
@@ -660,7 +663,7 @@
 			children = (
 				A17FAE951BBBD5CB00571817 /* model */,
 				A17FAE961BBBD5D200571817 /* controller */,
-				A1033BDC1B8C555900FC8921 /* 社群 */,
+				A1033BDC1B8C555900FC8921 /* 社群列表 */,
 				A1E9BE971BA7F60D00876186 /* 活动列表 */,
 				A1DB9AB71BA2B46500EC97D6 /* 路演列表 */,
 			);
@@ -680,17 +683,15 @@
 			name = "小组列表";
 			sourceTree = "<group>";
 		};
-		A1033BDC1B8C555900FC8921 /* 社群 */ = {
+		A1033BDC1B8C555900FC8921 /* 社群列表 */ = {
 			isa = PBXGroup;
 			children = (
-				A1DAFAB91B8C37BE00189680 /* circle.h */,
-				A1DAFABA1B8C37BE00189680 /* circle.m */,
-				A1DAFAB31B8C1A4300189680 /* circle.xib */,
+				A1EB96721BC8BE2600C15A39 /* segementView */,
 				A1033BDB1B8C554600FC8921 /* 小组列表 */,
 				A1033BDD1B8C597200FC8921 /* 话题列表 */,
 				A1B88C9C1BA15ED9008FA7C9 /* 机构列表 */,
 			);
-			name = "社群";
+			name = "社群列表";
 			sourceTree = "<group>";
 		};
 		A1033BDD1B8C597200FC8921 /* 话题列表 */ = {
@@ -859,6 +860,8 @@
 				A183384F1BC665AB000866EB /* ModelForTopic.m */,
 				A18338541BC66C5A000866EB /* ModelForComment.h */,
 				A18338551BC66C5A000866EB /* ModelForComment.m */,
+				A1EB96731BC8C41D00C15A39 /* ModelForActivity.h */,
+				A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1173,8 +1176,8 @@
 				A1D61FF91BA66A34009FCA1F /* 小组详情 */,
 				A1D620051BA6BF6B009FCA1F /* 话题详情 */,
 				A1E9BE911BA7CD3500876186 /* 机构专题详情 */,
-				A1B8684C1B848A4C005C4A6F /* 活动 */,
-				A1B88C9A1BA15BB6008FA7C9 /* 视频 */,
+				A1B8684C1B848A4C005C4A6F /* 活动详情 */,
+				A1B88C9A1BA15BB6008FA7C9 /* 视频详情 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -1199,23 +1202,23 @@
 			name = view;
 			sourceTree = "<group>";
 		};
-		A1B8684C1B848A4C005C4A6F /* 活动 */ = {
+		A1B8684C1B848A4C005C4A6F /* 活动详情 */ = {
 			isa = PBXGroup;
 			children = (
 				A1B8683A1B842C00005C4A6F /* view */,
 				A1B868391B842BFA005C4A6F /* controller */,
 			);
-			name = "活动";
+			name = "活动详情";
 			sourceTree = "<group>";
 		};
-		A1B88C9A1BA15BB6008FA7C9 /* 视频 */ = {
+		A1B88C9A1BA15BB6008FA7C9 /* 视频详情 */ = {
 			isa = PBXGroup;
 			children = (
 				A1002B151B8570D5007520AA /* shipinViewController.h */,
 				A1002B161B8570D5007520AA /* shipinViewController.m */,
 				A1E9BE9A1BA802C700876186 /* shipinViewController.xib */,
 			);
-			name = "视频";
+			name = "视频详情";
 			sourceTree = "<group>";
 		};
 		A1B88C9C1BA15ED9008FA7C9 /* 机构列表 */ = {
@@ -1602,6 +1605,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A1EB96721BC8BE2600C15A39 /* segementView */ = {
+			isa = PBXGroup;
+			children = (
+				A1DAFAB91B8C37BE00189680 /* circle.h */,
+				A1DAFABA1B8C37BE00189680 /* circle.m */,
+				A1DAFAB31B8C1A4300189680 /* circle.xib */,
+			);
+			name = segementView;
+			sourceTree = "<group>";
+		};
 		A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1965,6 +1978,7 @@
 				A1D78E221B9D96BB00C136C3 /* message.m in Sources */,
 				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
 				A1B88CF81BA179C7008FA7C9 /* UUMessage.m in Sources */,
+				A1EB96751BC8C41D00C15A39 /* ModelForActivity.m in Sources */,
 				A1B8684A1B848112005C4A6F /* popUpView.m in Sources */,
 				A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */,
 				A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */,

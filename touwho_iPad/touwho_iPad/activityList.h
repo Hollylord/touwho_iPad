@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface activityList : UIView
-- (IBAction)tap:(UITapGestureRecognizer *)sender;
+
 
 @end

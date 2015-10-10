@@ -12,12 +12,14 @@
 
 #import "activityList.h"
 #import "activityUnit.h"
-#import "huodongViewController.h"
+#import "ModelForActivity.h"
+
 
 @implementation activityList
 {
     UIScrollView *scrollView;
 }
+
 - (instancetype)init{
     self = [super init];
     if (self) {
@@ -28,8 +30,18 @@
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.showsVerticalScrollIndicator = NO;
         
+        //添加数据
+        ModelForActivity *model = [[ModelForActivity alloc] init];
+        model.status = YES;
+        model.icon = [UIImage imageNamed:@"gongdian"];
+        model.name = @"独角兽项目路演";
+        model.time = @"2015-8-27";
+        model.introduction = @"投壶网首次线下项目路演活动，诚邀您参加！";
+        
         for (int i = 0; i < 5; i ++) {
-            activityUnit *view = [[[NSBundle mainBundle] loadNibNamed:@"activityUnit" owner:self options:nil] firstObject];
+            activityUnit *view = [[[NSBundle mainBundle] loadNibNamed:@"activityUnit" owner:nil options:nil] firstObject];
+            //传递数据
+            view.model = model;
             //只能在self的基础上添加，不能在self的子视图上添加子控件
             [scrollView addSubview:view];
         }
@@ -75,19 +87,5 @@
     
 }
 
-- (IBAction)tap:(UITapGestureRecognizer *)sender {
-    UIViewController *VC = [self viewController];
-    huodongViewController *huodongVC = [[huodongViewController alloc]init];
-    [VC.navigationController pushViewController:huodongVC animated:YES];
-}
-//获得当前view的控制器
-- (UIViewController*)viewController {
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
-        }
-    }
-    return nil;
-}
+
 @end
