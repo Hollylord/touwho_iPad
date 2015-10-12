@@ -17,7 +17,6 @@
   
     //显示名片
     if (!self.businessCard.image) {
-        [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
         //cache文件夹目录
         NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
         //拼接文件目录
@@ -29,7 +28,7 @@
         self.businessCard.image = image;
     }
     else {
-        [self.takePhotoBtn setTitle:@"上传名片" forState:UIControlStateNormal];
+        [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
     }
     
 }

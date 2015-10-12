@@ -26,6 +26,8 @@
     }
     
     self.IMGView.image = model.image;
+//    self.titleLabel.text = model.title;
+//    self.contentTextView.text = model.content;
 }
 
 @end

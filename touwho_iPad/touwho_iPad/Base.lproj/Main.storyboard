@@ -470,7 +470,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ID" translatesAutoresizingMaskIntoConstraints="NO" id="QyH-eH-2d9">
-                                <rect key="frame" x="91" y="93" width="418" height="53"/>
+                                <rect key="frame" x="91" y="168" width="418" height="53"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="WKQ-ip-OLf"/>
@@ -478,7 +478,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="gvF-vg-wSK">
-                                <rect key="frame" x="91" y="162" width="418" height="53"/>
+                                <rect key="frame" x="91" y="237" width="418" height="53"/>
                                 <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGe-wC-bdT">
@@ -563,7 +563,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-cL-bmW" userLabel="ID">
-                                <rect key="frame" x="150" y="93" width="359" height="53"/>
+                                <rect key="frame" x="150" y="168" width="359" height="53"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="359" id="Kpe-8W-SjU"/>
@@ -580,7 +580,7 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ydl-uv-Rty" userLabel="password">
-                                <rect key="frame" x="150" y="162" width="359" height="53"/>
+                                <rect key="frame" x="150" y="237" width="359" height="53"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Sl9-aM-RsU"/>
@@ -656,10 +656,10 @@
                             <constraint firstItem="gvF-vg-wSK" firstAttribute="height" secondItem="QyH-eH-2d9" secondAttribute="height" id="0OI-Ad-kRc"/>
                             <constraint firstItem="C67-fo-gfU" firstAttribute="top" secondItem="XGe-wC-bdT" secondAttribute="bottom" constant="100" id="1nM-U2-oxa"/>
                             <constraint firstItem="ZyR-t3-oYO" firstAttribute="leading" secondItem="XGe-wC-bdT" secondAttribute="leading" id="3ZC-Dc-frp"/>
-                            <constraint firstItem="QyH-eH-2d9" firstAttribute="top" secondItem="2C5-v7-mdr" secondAttribute="bottom" constant="8" id="4eh-en-BQk"/>
+                            <constraint firstItem="QyH-eH-2d9" firstAttribute="top" secondItem="2C5-v7-mdr" secondAttribute="bottom" constant="83" id="4eh-en-BQk"/>
                             <constraint firstItem="XGe-wC-bdT" firstAttribute="centerX" secondItem="nY8-Lz-zoz" secondAttribute="centerX" id="5go-Kg-IRn"/>
                             <constraint firstItem="ydl-uv-Rty" firstAttribute="leading" secondItem="UcD-cL-bmW" secondAttribute="leading" id="9Xu-kJ-hra"/>
-                            <constraint firstItem="XGe-wC-bdT" firstAttribute="top" secondItem="gvF-vg-wSK" secondAttribute="bottom" constant="95" id="CP1-ET-guA"/>
+                            <constraint firstItem="XGe-wC-bdT" firstAttribute="top" secondItem="gvF-vg-wSK" secondAttribute="bottom" constant="20" id="CP1-ET-guA"/>
                             <constraint firstItem="MAO-NW-41c" firstAttribute="centerX" secondItem="nY8-Lz-zoz" secondAttribute="centerX" id="Cc7-LL-gVK"/>
                             <constraint firstItem="UcD-cL-bmW" firstAttribute="trailing" secondItem="QyH-eH-2d9" secondAttribute="trailing" id="FQr-Xi-rFS"/>
                             <constraint firstItem="C67-fo-gfU" firstAttribute="centerY" secondItem="ZyR-t3-oYO" secondAttribute="centerY" id="PKq-5t-Ov2"/>

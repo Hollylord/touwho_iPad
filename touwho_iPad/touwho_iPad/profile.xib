@@ -221,7 +221,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQc-AC-O7C">
                             <rect key="frame" x="259" y="325" width="190" height="30"/>
                             <animations/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="请选择">
+                                <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="pickIndustry:" destination="a2i-yt-wSD" eventType="touchUpInside" id="Aed-Yo-wct"/>
                             </connections>
@@ -243,7 +245,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13C-u5-BCa">
                             <rect key="frame" x="259" y="375" width="190" height="30"/>
                             <animations/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="请选择">
+                                <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="pickAge:" destination="a2i-yt-wSD" eventType="touchUpInside" id="Al4-8v-O5w"/>
                             </connections>
@@ -265,7 +269,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-ZX-bZ0">
                             <rect key="frame" x="259" y="425" width="190" height="30"/>
                             <animations/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="请选择">
+                                <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="pickInterestingIndustry:" destination="a2i-yt-wSD" eventType="touchUpInside" id="c3O-IK-95u"/>
                             </connections>
@@ -287,7 +293,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9V-pR-kUZ">
                             <rect key="frame" x="259" y="475" width="190" height="30"/>
                             <animations/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="请选择">
+                                <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="pickRiskPreference:" destination="a2i-yt-wSD" eventType="touchUpInside" id="1Uy-2y-Uso"/>
                             </connections>
@@ -299,7 +307,9 @@
                                 <constraint firstAttribute="height" constant="30" id="jUT-m2-v2i"/>
                                 <constraint firstAttribute="width" constant="190" id="m8Q-l1-UGC"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="请选择">
+                                <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="pickGender:" destination="a2i-yt-wSD" eventType="touchUpInside" id="geP-nE-snb"/>
                             </connections>

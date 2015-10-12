@@ -10,4 +10,7 @@
 
 @interface ProgramsModel : NSObject
 @property (strong,nonatomic) UIImage *image;
+@property (copy,nonatomic) NSString *title;
+@property (copy,nonatomic) NSString *content;
+
 @end
