@@ -60,6 +60,10 @@
 #pragma mark - 按钮点击
 - (IBAction)menuClick:(UIButton *)sender {
     if (sender.tag == 0 ) {
+        if (sender.selected) {
+            return ;
+        }
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"programNotification" object:nil];
         self.program.selected = YES;
         self.news.selected = NO;
@@ -69,6 +73,10 @@
     }
     else if (sender.tag == 1 )
     {
+        if (sender.selected) {
+            return ;
+        }
+        
         self.program.selected = NO;
         self.news.selected = YES;
         self.discovery.selected = NO;
@@ -78,6 +86,10 @@
     }
     else if (sender.tag == 2 )
     {
+        if (sender.selected) {
+            return ;
+        }
+        
         self.program.selected = NO;
         self.news.selected = NO;
         self.discovery.selected = YES;
@@ -85,6 +97,10 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"discoveryNotification" object:nil];
     }
     else {
+        if (sender.selected) {
+            return ;
+        }
+        
         //发送被点击的通知
         [[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotification" object:nil];
         self.program.selected = NO;
