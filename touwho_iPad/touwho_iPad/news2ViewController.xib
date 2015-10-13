@@ -47,11 +47,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Aa-7R-as2">
-                            <rect key="frame" x="752" y="25" width="30" height="30"/>
-                            <animations/>
-                            <state key="normal" title="朗读"/>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
                             <rect key="frame" x="858" y="25" width="25" height="25"/>
                             <animations/>
@@ -69,8 +64,6 @@
                         <constraint firstItem="NcE-Cw-69Y" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="8aO-qs-zSd"/>
                         <constraint firstItem="4HO-kJ-sP3" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="25" id="GmT-Nc-pet"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="KM7-Zp-HaR"/>
-                        <constraint firstAttribute="trailing" secondItem="3Aa-7R-as2" secondAttribute="trailing" constant="130" id="Rmw-ev-Q1o"/>
-                        <constraint firstItem="3Aa-7R-as2" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="25" id="iCd-C7-gOe"/>
                         <constraint firstAttribute="trailing" secondItem="4HO-kJ-sP3" secondAttribute="trailing" constant="29" id="iNX-dx-OLI"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="leading" constant="105" id="mZ3-dO-4wN"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="87" id="ogj-tV-7vV"/>

@@ -171,7 +171,17 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="UMK-wn-NbY"/>
                             </constraints>
-                            <string key="text">A轮-- 300万美元/ 1000万美元的投前估值2014募集资金的使用：设计、工程、加工销售、市场营销运营合作关系维护国际市场运营市场规模：164亿美元</string>
+                            <string key="text">A轮-- 300万美元/ 1000万美元的投前估值
+
+2014募集资金的使用：
+设计、工程、加工
+销售、市场营销
+运营
+合作关系维护
+国际市场运营
+
+市场规模：164亿美元
+</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>

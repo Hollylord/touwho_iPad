@@ -310,7 +310,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="100" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-p7-6f8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-p7-6f8">
                                 <rect key="frame" x="0.0" y="56" width="100" height="100"/>
                                 <animations/>
                                 <constraints>
@@ -849,6 +849,7 @@
         <image name="logo" width="171" height="47"/>
         <image name="password" width="417" height="52"/>
         <image name="qq" width="50" height="50"/>
+        <image name="touxiang" width="100" height="100"/>
         <image name="wb" width="50" height="50"/>
         <image name="wx" width="50" height="50"/>
     </resources>
