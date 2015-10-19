@@ -69,6 +69,7 @@
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A189BF321BD4997700E5CA37 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A189BF301BD4997700E5CA37 /* libSocialSina.a */; settings = {ASSET_TAGS = (); }; };
 		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; settings = {ASSET_TAGS = (); }; };
 		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A193F68F1BB90CD9007A697F /* publish.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F68E1BB90CD9007A697F /* publish.m */; settings = {ASSET_TAGS = (); }; };
@@ -343,6 +344,8 @@
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
 		A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskTestViewController.xib; sourceTree = "<group>"; };
+		A189BF301BD4997700E5CA37 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
+		A189BF311BD4997700E5CA37 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
 		A19234891BB14A9C0073A1C6 /* LingTouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingTouViewController.h; sourceTree = "<group>"; };
 		A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingTouViewController.m; sourceTree = "<group>"; };
 		A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingTouViewController.xib; sourceTree = "<group>"; };
@@ -588,6 +591,7 @@
 				A1BE7F0C1B8D555E00E76711 /* libz.1.tbd in Frameworks */,
 				A1BE7F0A1B8D555400E76711 /* Security.framework in Frameworks */,
 				A1211EAC1BB2421700B25AA4 /* libSocialWechat.a in Frameworks */,
+				A189BF321BD4997700E5CA37 /* libSocialSina.a in Frameworks */,
 				A1BE7F081B8D554B00E76711 /* QuartzCore.framework in Frameworks */,
 				A1211E931BB2413500B25AA4 /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
 				A1BE7F061B8D554300E76711 /* CoreText.framework in Frameworks */,
@@ -781,6 +785,7 @@
 		A1211E9D1BB2421700B25AA4 /* UMSocial_Sdk_Extra_Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A189BF2F1BD4997700E5CA37 /* Sina */,
 				A1211E9E1BB2421700B25AA4 /* TencentOpenAPI */,
 				A1211EA31BB2421700B25AA4 /* Wechat */,
 			);
@@ -945,6 +950,15 @@
 				A1D78DD81B9D5D4B00C136C3 /* message.xib */,
 			);
 			name = "消息界面";
+			sourceTree = "<group>";
+		};
+		A189BF2F1BD4997700E5CA37 /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				A189BF301BD4997700E5CA37 /* libSocialSina.a */,
+				A189BF311BD4997700E5CA37 /* UMSocialSinaHandler.h */,
+			);
+			path = Sina;
 			sourceTree = "<group>";
 		};
 		A19234871BB14A220073A1C6 /* 跟头金额选择 */ = {
@@ -2179,6 +2193,7 @@
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/touwho_iPad/lib",
+					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Sina",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2211,6 +2226,7 @@
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/touwho_iPad/lib",
+					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Sina",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";

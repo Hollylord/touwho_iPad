@@ -11,6 +11,7 @@
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
+#import "UMSocialSinaHandler.h"
 #import "APService.h"
 
 @interface AppDelegate ()
@@ -33,6 +34,9 @@
     
     //设置qq分享
     [UMSocialQQHandler setQQWithAppId:@"1104734143" appKey:@"otFu8s5Dv6u8sFBm" url:@"http://www.umeng.com/social"];
+    
+    //微博SSO
+    [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     // 极光推送
     //可以添加自定义categories

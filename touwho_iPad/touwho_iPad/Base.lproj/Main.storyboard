@@ -499,7 +499,7 @@
                                         <animations/>
                                         <state key="normal" image="wb"/>
                                         <connections>
-                                            <action selector="quickLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="za2-fU-ZrZ"/>
+                                            <action selector="weiboLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="KSp-eS-Scv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inK-KU-Ii8" userLabel="微信">
@@ -510,7 +510,7 @@
                                             <rect key="frame" x="94" y="10" width="50" height="50"/>
                                         </variation>
                                         <connections>
-                                            <action selector="quickLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="fzP-Th-V3p"/>
+                                            <action selector="wechatLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="pMM-tO-hag"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APM-hD-9wE" userLabel="QQ">
@@ -518,7 +518,7 @@
                                         <animations/>
                                         <state key="normal" image="qq"/>
                                         <connections>
-                                            <action selector="quickLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="Yin-2y-NQp"/>
+                                            <action selector="QQlogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="Zqx-4y-UaN"/>
                                         </connections>
                                     </button>
                                 </subviews>

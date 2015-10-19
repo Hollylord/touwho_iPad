@@ -15,8 +15,6 @@
 @interface loginViewController ()
 - (IBAction)login:(UIButton *)sender;
 
-- (IBAction)quickLogin:(UIButton *)sender;
-
 - (IBAction)quit:(UIButton *)sender;
 - (IBAction)zhuce:(UIButton *)sender;
 - (IBAction)forgetPassword:(UIButton *)sender;
@@ -40,8 +38,7 @@
 
 #pragma mark - 点击按钮
 //快速登录
-- (IBAction)quickLogin:(UIButton *)sender {
-}
+
 
 
 - (IBAction)quit:(UIButton *)sender {
@@ -84,6 +81,30 @@
     splitViewController *split = (splitViewController *)self.presentingViewController;
     [split showDetailViewController:navigationController sender:nil];
     
+    
+}
+
+- (IBAction)weiboLogin:(UIButton *)sender {
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
+    
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        
+        //          获取微博用户名、uid、token等
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
+            
+            NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
+            
+            //跳转到个人中心页面
+            
+        }});
+}
+
+- (IBAction)wechatLogin:(UIButton *)sender {
+    
+}
+- (IBAction)QQlogin:(UIButton *)sender {
     
 }
 
