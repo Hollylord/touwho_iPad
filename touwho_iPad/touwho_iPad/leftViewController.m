@@ -59,6 +59,7 @@
 
 #pragma mark - 按钮点击
 - (IBAction)menuClick:(UIButton *)sender {
+    //项目
     if (sender.tag == 0 ) {
         if (sender.selected) {
             return ;
@@ -71,6 +72,7 @@
         self.me.selected = NO;
         
     }
+    //新闻
     else if (sender.tag == 1 )
     {
         if (sender.selected) {
@@ -84,6 +86,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"newsNotification" object:nil];
         
     }
+    //发现
     else if (sender.tag == 2 )
     {
         if (sender.selected) {
@@ -96,6 +99,7 @@
         self.me.selected = NO;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"discoveryNotification" object:nil];
     }
+    //我
     else {
         if (sender.selected) {
             return ;

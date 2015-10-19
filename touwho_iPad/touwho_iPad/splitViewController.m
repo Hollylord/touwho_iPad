@@ -8,6 +8,7 @@
 
 #import "splitViewController.h"
 #import "loginViewController.h"
+#import "profileViewController.h"
 
 
 @interface splitViewController ()
@@ -30,7 +31,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
     
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
-        [self showADScrollView];
+//        [self showADScrollView];
     }
 
  
@@ -56,9 +57,21 @@
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"discoveryNavigation"] sender:nil];
     }
     else if ([notification.name isEqualToString:@"loginNotification"]){
-        loginViewController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
-        login.modalPresentationStyle = UIModalPresentationFormSheet;
-        [self presentViewController:login animated:YES completion:NULL];
+        //验证用户存在则直接跳转个人中心
+        NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+        if (user) {
+            profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
+            [self showDetailViewController:navigationController sender:nil];
+            
+        }
+        else {
+            //跳转登录VC
+            loginViewController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+            login.modalPresentationStyle = UIModalPresentationFormSheet;
+            [self presentViewController:login animated:YES completion:NULL];
+        }
+        
     }
     else if ([notification.name isEqualToString:@"newsNotification"]){
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"newsNavigation"] sender:nil];
