@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="news2ViewController">
             <connections>
+                <outlet property="LectBtn" destination="HTp-0t-cbr" id="qYo-rC-ryU"/>
                 <outlet property="contentView" destination="NcE-Cw-69Y" id="5we-rf-yc5"/>
                 <outlet property="heightOfcontentView" destination="uSL-Km-MzJ" id="36j-nm-k2Q"/>
+                <outlet property="playBtn" destination="SlK-Kv-bck" id="LFK-KR-Lg0"/>
                 <outlet property="scrollView" destination="3Sl-QO-mbG" id="5jv-6n-HNZ"/>
                 <outlet property="timeLabel" destination="8cu-km-mwi" id="cdl-Io-2Rm"/>
                 <outlet property="titleLabel" destination="Fpb-TA-Vsh" id="Bfr-Bt-H6b"/>
@@ -29,8 +31,8 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="“东北虎”苏树林系十八大后首位落马在任省长" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-TA-Vsh">
-                            <rect key="frame" x="213" y="87" width="499" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“东北虎”苏树林系十八大后首位落马在任省长" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-TA-Vsh">
+                            <rect key="frame" x="212" y="87" width="499" height="30"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,7 +49,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
                             <rect key="frame" x="858" y="25" width="25" height="25"/>
                             <animations/>
                             <state key="normal" image="zan1"/>
@@ -56,15 +58,37 @@
                                 <action selector="dianZan:" destination="-1" eventType="touchUpInside" id="Ns2-3U-trg"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlK-Kv-bck">
+                            <rect key="frame" x="805" y="24" width="23" height="27"/>
+                            <animations/>
+                            <state key="normal" backgroundImage="newsLect"/>
+                            <connections>
+                                <action selector="playBtn:" destination="-1" eventType="touchUpInside" id="Nlc-XT-0te"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTp-0t-cbr">
+                            <rect key="frame" x="805" y="24" width="23" height="27"/>
+                            <animations/>
+                            <state key="normal" backgroundImage="newsLectClose"/>
+                            <connections>
+                                <action selector="newsLect:" destination="-1" eventType="touchUpInside" id="hSF-p1-OPl"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <animations/>
                     <constraints>
+                        <constraint firstItem="4HO-kJ-sP3" firstAttribute="centerY" secondItem="SlK-Kv-bck" secondAttribute="centerY" id="0Gk-vB-tbm"/>
                         <constraint firstAttribute="bottom" secondItem="NcE-Cw-69Y" secondAttribute="bottom" constant="30" identifier="contentSizeHeight" id="0Xx-YN-9ba" userLabel="竖直范围"/>
+                        <constraint firstItem="HTp-0t-cbr" firstAttribute="trailing" secondItem="SlK-Kv-bck" secondAttribute="trailing" id="0fv-Aj-79V"/>
+                        <constraint firstItem="HTp-0t-cbr" firstAttribute="leading" secondItem="SlK-Kv-bck" secondAttribute="leading" id="46t-aU-05O"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="44" id="7cE-TH-WFH"/>
                         <constraint firstItem="NcE-Cw-69Y" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="8aO-qs-zSd"/>
                         <constraint firstItem="4HO-kJ-sP3" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="25" id="GmT-Nc-pet"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="KM7-Zp-HaR"/>
+                        <constraint firstItem="HTp-0t-cbr" firstAttribute="bottom" secondItem="SlK-Kv-bck" secondAttribute="bottom" id="Uou-o6-Bnl"/>
+                        <constraint firstItem="4HO-kJ-sP3" firstAttribute="leading" secondItem="SlK-Kv-bck" secondAttribute="trailing" constant="30" id="Wcf-cW-c35"/>
                         <constraint firstAttribute="trailing" secondItem="4HO-kJ-sP3" secondAttribute="trailing" constant="29" id="iNX-dx-OLI"/>
+                        <constraint firstItem="HTp-0t-cbr" firstAttribute="top" secondItem="SlK-Kv-bck" secondAttribute="top" id="j70-EH-aCv"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="leading" constant="105" id="mZ3-dO-4wN"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="87" id="ogj-tV-7vV"/>
                         <constraint firstItem="NcE-Cw-69Y" firstAttribute="top" secondItem="Fpb-TA-Vsh" secondAttribute="bottom" constant="21" id="wEJ-bD-1g3"/>
@@ -88,6 +112,8 @@
         </view>
     </objects>
     <resources>
+        <image name="newsLect" width="23" height="23"/>
+        <image name="newsLectClose" width="21" height="27"/>
         <image name="zan1" width="25" height="25"/>
         <image name="zan2" width="25" height="25"/>
     </resources>

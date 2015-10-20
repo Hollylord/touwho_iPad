@@ -7,21 +7,34 @@
 //
 
 #import "news2ViewController.h"
-#import "BDSSpeechSynthesizer.h"
-#import "BDSSpeechSynthesizerDelegate.h"
+#import "BDTTSSynthesizer.h"
+#import "BDTTSSynthesizerDelegate.h"
 #import <AFNetworking.h>
 
-@interface news2ViewController ()
+
+#define KtitleHeight 138
+#define KreadLength 300
+
+@interface news2ViewController () <BDTTSSynthesizerDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfcontentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 
 //标题
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 //正文
 @property (weak, nonatomic) IBOutlet UITextView *contentView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
+@property (weak, nonatomic) IBOutlet UIButton *LectBtn;
+
+@property (copy , nonatomic)  NSString * currentText;
+@property (assign ,nonatomic) int numLength;
+@property (assign ,nonatomic) int currentLength;
+
+
+
 
 
 - (IBAction)dianZan:(UIButton *)sender;
@@ -34,20 +47,18 @@
     CGFloat height;
     UIImageView *imageView;
     CGSize imageSize;
+
 }
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-    //语音合成设置
-    BDSSpeechSynthesizer *synthesizer = [[BDSSpeechSynthesizer alloc] initSynthesizer:@"holder"delegate:nil];
-    // 注：your-apiKey 和 your-secretKey 需要换成在百度开发者中心注册应用得到的对应值
-    [synthesizer setApiKey:@"mheb5yGoOkbOihOikcOjhnt1" withSecretKey:@"b65db23549102b069a9e7851aaa18669"];
-    //    [synthesizer speak:@"百度一下"];
+
+    self.LectBtn.hidden = NO;
+    self.playBtn.hidden = YES;
+    // 初始化合成器
+    [self initSynthesizer];
     
     //设置分享按钮
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
@@ -86,6 +97,27 @@
     
 }
 
+#pragma mark - internal function
+- (void)initSynthesizer
+{
+    [BDTTSSynthesizer setLogLevel:BDS_LOG_VERBOSE];
+    
+    // 设置合成器代理
+    [[BDTTSSynthesizer sharedInstance] setSynthesizerDelegate: self];
+    
+    // 在线相关设置
+    
+    [[BDTTSSynthesizer sharedInstance] setApiKey:@"mheb5yGoOkbOihOikcOjhnt1" withSecretKey:@"b65db23549102b069a9e7851aaa18669"];
+    [[BDTTSSynthesizer sharedInstance] setTTSServerTimeOut:10];
+    
+    
+    // 合成参数设置
+    [[BDTTSSynthesizer sharedInstance] setSynthesizeParam: BDTTS_PARAM_VOLUME withValue: BDTTS_PARAM_VOLUME_MAX];
+    
+    // 加载合成引擎
+    [[BDTTSSynthesizer sharedInstance] loadTTSEngine];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -93,12 +125,22 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-
+    
+    
 }
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [[BDTTSSynthesizer sharedInstance] cancel];
+    
+}
+
+
 - (void)updateViewConstraints{
     
     [super updateViewConstraints];
@@ -154,4 +196,76 @@
 - (IBAction)dianZan:(UIButton *)sender {
     sender.selected = !sender.selected;
 }
+
+
+
+- (IBAction)playBtn:(UIButton *)sender {
+    
+    if (sender.selected == NO) {
+        sender.selected = !sender.selected;
+        [sender setBackgroundImage:[UIImage imageNamed:@"newsPause"] forState:UIControlStateNormal];
+        [[BDTTSSynthesizer sharedInstance] pause];
+        
+    }else{
+        sender.selected = !sender.selected;
+        [sender setBackgroundImage:[UIImage imageNamed:@"newsLect"] forState:UIControlStateNormal];
+        [[BDTTSSynthesizer sharedInstance] resume];
+    }
+}
+
+- (IBAction)newsLect:(UIButton *)sender {
+    
+    
+    if(sender.selected == NO)
+    {
+        sender.hidden = YES;
+        self.playBtn.hidden = NO;
+        [sender setBackgroundImage:[UIImage imageNamed:@"newsLectClose"] forState:UIControlStateNormal];
+        self.numLength =(int) self.contentView.text.length;
+        
+        self.currentLength +=KreadLength;
+        int readlength = KreadLength;
+        
+        if (self.numLength <  KreadLength) {
+            readlength = self.numLength;
+        }
+        
+        
+        NSString * str = [self.contentView.text substringWithRange:NSMakeRange(0, readlength)];
+        NSInteger ret = [[BDTTSSynthesizer sharedInstance] speak:str];
+        if (ret != BDTTS_ERR_SYNTH_OK) {}
+        
+    }
+    
+}
+
+
+-(void)synthesizerSpeechDidFinished{
+    
+    int readlength = KreadLength;
+    int textlength = self.numLength - self.currentLength ;
+    if ( textlength >= 0) { // 判断停止；
+        
+        if (textlength <= KreadLength) {
+            readlength = textlength;
+        }
+        
+        
+        NSString * str = [self.contentView.text substringWithRange:NSMakeRange(self.currentLength, readlength)];
+        [[BDTTSSynthesizer sharedInstance] speak:str];
+        
+        self.currentLength +=KreadLength;
+        
+    }else{
+        
+        self.playBtn.hidden = YES;
+        self.LectBtn.hidden = NO;
+        self.currentLength = 0;
+        
+    }
+    
+    
+}
+
+
 @end

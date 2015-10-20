@@ -197,8 +197,8 @@
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
 		A1DB9AAD1BA2AD5800EC97D6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */; };
-		A1DB9AB61BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */; };
 		A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */; };
+		A1DDDE891BD6477C0045A659 /* libbdtts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DDDE881BD6477C0045A659 /* libbdtts.a */; settings = {ASSET_TAGS = (); }; };
 		A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */; };
 		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
 		A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */; };
@@ -535,12 +535,11 @@
 		A1DAFAB91B8C37BE00189680 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
 		A1DAFABA1B8C37BE00189680 /* circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circle.m; sourceTree = "<group>"; };
 		A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		A1DB9AB11BA2ADBF00EC97D6 /* BDSBuiltinPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltinPlayer.h; sourceTree = "<group>"; };
-		A1DB9AB21BA2ADBF00EC97D6 /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
-		A1DB9AB31BA2ADBF00EC97D6 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
-		A1DB9AB41BA2ADBF00EC97D6 /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
-		A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBDSSpeechSynthesizer.a; sourceTree = "<group>"; };
 		A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozuUnit.xib; sourceTree = "<group>"; };
+		A1DDDE831BD644740045A659 /* BDTTSSynthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTTSSynthesizer.h; sourceTree = "<group>"; };
+		A1DDDE841BD644740045A659 /* BDTTSSynthesizerDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTTSSynthesizerDefine.h; sourceTree = "<group>"; };
+		A1DDDE851BD644740045A659 /* BDTTSSynthesizerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTTSSynthesizerDelegate.h; sourceTree = "<group>"; };
+		A1DDDE881BD6477C0045A659 /* libbdtts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbdtts.a; sourceTree = "<group>"; };
 		A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherCenterViewController.h; sourceTree = "<group>"; };
 		A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherCenterViewController.m; sourceTree = "<group>"; };
 		A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherCenterViewController.xib; sourceTree = "<group>"; };
@@ -599,8 +598,8 @@
 				A1BE7F021B8D553500E76711 /* OpenGLES.framework in Frameworks */,
 				A1BE7F001B8D552B00E76711 /* CoreLocation.framework in Frameworks */,
 				A1BE7EFE1B8D552400E76711 /* CFNetwork.framework in Frameworks */,
+				A1DDDE891BD6477C0045A659 /* libbdtts.a in Frameworks */,
 				A1BE7EFC1B8D551C00E76711 /* CoreGraphics.framework in Frameworks */,
-				A1DB9AB61BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a in Frameworks */,
 				A1B13D2E1BB554D200A8AC29 /* libPushSDK-1.8.5.a in Frameworks */,
 				A1211EAA1BB2421700B25AA4 /* TencentOpenAPI.framework in Frameworks */,
 				751CFC778842ECC9FA71EE08 /* libPods.a in Frameworks */,
@@ -641,7 +640,6 @@
 				A1211EB21BB242DF00B25AA4 /* libiconv.tbd */,
 				A1211EB01BB242D400B25AA4 /* libsqlite3.tbd */,
 				A1211EAE1BB242B300B25AA4 /* CoreTelephony.framework */,
-				A1DB9AB51BA2AF5C00EC97D6 /* libBDSSpeechSynthesizer.a */,
 				A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */,
 				A1BE7F151B8D558A00E76711 /* AVFoundation.framework */,
 				A1BE7F131B8D558200E76711 /* SystemConfiguration.framework */,
@@ -1537,10 +1535,10 @@
 		A1DB9AB01BA2ADBF00EC97D6 /* 百度语音合成 */ = {
 			isa = PBXGroup;
 			children = (
-				A1DB9AB11BA2ADBF00EC97D6 /* BDSBuiltinPlayer.h */,
-				A1DB9AB21BA2ADBF00EC97D6 /* BDSSpeechSynthesizer.h */,
-				A1DB9AB31BA2ADBF00EC97D6 /* BDSSpeechSynthesizerDelegate.h */,
-				A1DB9AB41BA2ADBF00EC97D6 /* BDSSynthesizerLogLevel.h */,
+				A1DDDE831BD644740045A659 /* BDTTSSynthesizer.h */,
+				A1DDDE841BD644740045A659 /* BDTTSSynthesizerDefine.h */,
+				A1DDDE851BD644740045A659 /* BDTTSSynthesizerDelegate.h */,
+				A1DDDE881BD6477C0045A659 /* libbdtts.a */,
 			);
 			name = "百度语音合成";
 			path = Headers;
@@ -2194,6 +2192,7 @@
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/touwho_iPad/lib",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Sina",
+					"$(PROJECT_DIR)/touwho_iPad/Headers",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2227,6 +2226,7 @@
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/touwho_iPad/lib",
 					"$(PROJECT_DIR)/touwho_iPad/UMSocial_Sdk_Extra_Frameworks/Sina",
+					"$(PROJECT_DIR)/touwho_iPad/Headers",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";

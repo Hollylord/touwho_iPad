@@ -138,10 +138,10 @@
     CGFloat delta = currentContentOffset.x + self.collectionView.bounds.size.width*0.5 - itemCenterx;
     //往左滑
     if (proposedContentOffset.x < currentContentOffset.x) {
-        if (ABS(delta) <= 10) {
+        if (ABS(delta) <= 30) {
             return CGPointMake(currentContentOffset.x - delta , proposedContentOffset.y);
         }
-        else if (ABS(delta) > 10 &&  itemCenterx - currentContentOffset.x > 284 )
+        else if (ABS(delta) > 30 &&  itemCenterx - currentContentOffset.x > 284 )
         {
             return CGPointMake(currentContentOffset.x - (delta+380) , proposedContentOffset.y);
         }
