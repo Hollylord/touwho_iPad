@@ -52,6 +52,10 @@
 @implementation programViewController
 {
     UIRefreshControl *fresh;
+    NSIndexPath *currentPath;
+    NSIndexPath *finalPath;
+    CGFloat initialX;
+    
 }
 #pragma mark - 懒加载
 - (NSMutableArray *)programs{
@@ -159,7 +163,9 @@
     [super viewDidAppear:animated];
     
     NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:250 inSection:0];
+    currentPath = goalIndex;
     [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+    
     
     //调整scrollView的滚动范围
     programView *lastView = [self.programsForPreparing lastObject];
@@ -275,6 +281,7 @@
 
     
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.bounds.size.width, cell.contentView.bounds.size.height)];
+//    image.contentMode = UIViewContentModeScaleAspectFit;
     [cell.contentView addSubview:image];
     NSString *imageName = [NSString stringWithFormat:@"ydy%ld",indexPath.item%5+1];
     if (indexPath.item%5 == 0) {
@@ -301,14 +308,27 @@
     return cell;
 }
 
+//手开始拖动时调用，如果是代码scroll 并不会触发这个方法。
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    initialX = scrollView.contentOffset.x;
+    
+    
+}
+
+//滚动时就触发这个方法, 持续触发。代码scroll会触发这个方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSIndexPath * currentIndexPath = [[self.pictureCollection indexPathsForVisibleItems]lastObject];
+    //获得当前可视范围内第一个item的indexPath
+    NSIndexPath * currentIndexPath = [[self.pictureCollection indexPathsForVisibleItems]firstObject];
+    
     
     if (currentIndexPath.item == 499) {
         //indexPath item适用于collectionview
         NSIndexPath *goalIndex = [NSIndexPath indexPathForItem:0 inSection:0];
         [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     }
+
+    
+    
     
 
 }

@@ -14,12 +14,15 @@
 #define CELL_DISTANCE 200
 
 @implementation myFlowLayout
-
+{
+    CGFloat itemCenterx;
+}
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
+        //-20
         self.minimumLineSpacing = -20.0;
-        self.itemSize = CGSizeMake(401, 148);
+        self.itemSize = CGSizeMake(400, 148);
         
     }
     return self;
@@ -41,11 +44,16 @@
 {
     
     NSArray* array = [super layoutAttributesForElementsInRect:rect];
+    
+    //当下可视范围
     CGRect visibleRect;
     visibleRect.origin = self.collectionView.contentOffset;
     visibleRect.size = self.collectionView.bounds.size;
-    
-    
+    NSArray *visibleItemAttr = [super layoutAttributesForElementsInRect:visibleRect];
+
+    //获得中间item的centerX
+    UICollectionViewLayoutAttributes* attrCenterItem = [visibleItemAttr objectAtIndex:1];
+    itemCenterx = attrCenterItem.center.x;
     
     for (UICollectionViewLayoutAttributes* attributes in array) {
         
@@ -65,7 +73,7 @@
               
                 //在左半边
                 if (distance > 0) {
-                    //                    //旋转的角度控制(1-zoom)*M_PI/6
+                    //                    旋转的角度控制(1-zoom)*M_PI/6
                     CATransform3D rotate = CATransform3DMakeRotation((1-zoom)*M_PI/6, 0, 1, 0);
                     
                     //                    attributes.transform3D = rotate;
@@ -118,25 +126,45 @@
  *  返回collectionView最终的偏移量（最终的停留位置）
  *  这个方法是当手指离开的那一刻才调用， 不是手指一滑就调用。
  *  @param proposedContentOffset 默认情况下，预测collectionView最终的contentOffset
- *  @param velocity              <#velocity description#>
+ *  @param velocity              velocity description
  *
  *  @return <#return value description#>
  */
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
 {
-    
+ 
     CGPoint currentContentOffset = self.collectionView.contentOffset;
+    //偏移量：也就是手指滑动的距离
+    CGFloat delta = currentContentOffset.x + self.collectionView.bounds.size.width*0.5 - itemCenterx;
     //往左滑
     if (proposedContentOffset.x < currentContentOffset.x) {
-        return CGPointMake(currentContentOffset.x - self.collectionView.bounds.size.width / 2, proposedContentOffset.y);
+        if (ABS(delta) <= 10) {
+            return CGPointMake(currentContentOffset.x - delta , proposedContentOffset.y);
+        }
+        else if (ABS(delta) > 10 &&  itemCenterx - currentContentOffset.x > 284 )
+        {
+            return CGPointMake(currentContentOffset.x - (delta+380) , proposedContentOffset.y);
+        }
+        else{
+            return CGPointMake(currentContentOffset.x - delta , proposedContentOffset.y);
+        }
     }
     //往右滑
     else {
-        return CGPointMake(currentContentOffset.x + self.collectionView.bounds.size.width / 2 , proposedContentOffset.y);
+        if (ABS(delta) <= 10) {
+            return CGPointMake(currentContentOffset.x - delta , proposedContentOffset.y);
+        }
+        else if (ABS(delta) > 10 &&  itemCenterx - currentContentOffset.x > 284 )
+        {
+            return CGPointMake(currentContentOffset.x - (delta-380) , proposedContentOffset.y);
+        }
+        else{
+            return CGPointMake(currentContentOffset.x - delta , proposedContentOffset.y);
+        }
     }
-
 
     
 }
+
 
 @end

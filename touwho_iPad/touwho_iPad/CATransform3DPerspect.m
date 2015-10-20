@@ -14,7 +14,7 @@ CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ,float zoom
 {
     CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
     CATransform3D transBack = CATransform3DMakeTranslation(center.x, center.y, 0);
-    CATransform3D scale = CATransform3DMakeScale(zoom, 1, 0);
+    CATransform3D scale = CATransform3DMakeScale(zoom, 1.3, 0);
     scale.m34 = -1.0f/disZ;
     return CATransform3DConcat(CATransform3DConcat(transToCenter, scale), transBack);
 }
