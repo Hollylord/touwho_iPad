@@ -22,7 +22,7 @@
                         <constraint firstAttribute="height" constant="44" id="UdM-gG-d8B"/>
                     </constraints>
                     <items>
-                        <navigationItem title="Title" id="WQo-Yc-rLd">
+                        <navigationItem id="WQo-Yc-rLd">
                             <barButtonItem key="leftBarButtonItem" title="取消" id="5ns-Ds-9B2">
                                 <connections>
                                     <action selector="cancel:" destination="-1" id="6RR-bn-RVh"/>

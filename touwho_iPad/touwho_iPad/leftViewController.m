@@ -40,7 +40,7 @@
     //取出本地头像
     UIImage *image = [self searchImageFromCacheWithFileName:@"headIcon"];
     if (image) {
-        UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:100];
+        UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
         self.headImageView.image = newImage;
     }
     
@@ -119,7 +119,7 @@
 - (void)headImage:(NSNotification *)notification{
     NSDictionary *dic = [notification userInfo];
     UIImage *image = [dic objectForKey:@"headIcon"];
-    UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:100];
+    UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
     self.headImageView.image = newImage;
 }
 

@@ -57,8 +57,9 @@
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"discoveryNavigation"] sender:nil];
     }
     else if ([notification.name isEqualToString:@"loginNotification"]){
-        //验证用户存在则直接跳转个人中心
+        
         NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+        //验证用户存在则直接跳转个人中心
         if (user) {
             profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];

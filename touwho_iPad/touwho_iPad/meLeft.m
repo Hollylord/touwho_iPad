@@ -19,7 +19,7 @@
     if (filePath) {
         NSData *data = [NSData dataWithContentsOfFile:filePath];
         UIImage *icon = [UIImage imageWithData:data];
-        UIImage *newImage = [UIImage imageClipsWithHeadIcon:icon sideWidth:80];
+        UIImage *newImage = [UIImage imageClipsWithHeadIcon:icon sideWidth:0];
         self.headImageView.image = newImage;
     }
     

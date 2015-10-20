@@ -36,7 +36,7 @@
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
                                         <rect key="frame" x="0.0" y="17" width="159" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="国内项目"/>
+                                        <state key="normal" title="股权投资"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="17" width="67" height="30"/>
                                         </variation>
@@ -50,7 +50,7 @@
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
                                         <rect key="frame" x="159" y="17" width="158" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="海外项目"/>
+                                        <state key="normal" title="海外专区"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="67" y="17" width="66" height="30"/>
                                         </variation>
@@ -78,7 +78,7 @@
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
                                         <rect key="frame" x="476" y="17" width="158" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="公益众筹"/>
+                                        <state key="normal" title="公益活动"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="476" y="17" width="158" height="30"/>
                                         </variation>
@@ -725,7 +725,7 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
                                         <rect key="frame" x="163" y="70" width="60" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="投壶活动"/>
+                                        <state key="normal" title="路演活动"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="70" width="60" height="30"/>
                                         </variation>
@@ -736,7 +736,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
                                         <rect key="frame" x="340" y="70" width="60" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="视频路演"/>
+                                        <state key="normal" title="影音资料"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="135" y="70" width="60" height="30"/>
                                         </variation>
@@ -846,7 +846,7 @@
     <resources>
         <image name="ID" width="417" height="52"/>
         <image name="login" width="423" height="52"/>
-        <image name="logo" width="171" height="47"/>
+        <image name="logo" width="99" height="115"/>
         <image name="password" width="417" height="52"/>
         <image name="qq" width="50" height="50"/>
         <image name="touxiang" width="100" height="100"/>

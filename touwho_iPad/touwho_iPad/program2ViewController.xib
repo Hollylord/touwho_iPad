@@ -51,7 +51,7 @@
                                 <action selector="gentouClick:" destination="-1" eventType="touchUpInside" id="yoi-Jg-fRf"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaohu" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-PO-IuX">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="xiaohu" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-PO-IuX">
                             <rect key="frame" x="711" y="199" width="164" height="131"/>
                             <animations/>
                             <constraints>
@@ -116,7 +116,7 @@
                                 <constraint firstAttribute="height" constant="282" id="fGz-CD-Nb4"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客服：小壶" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-1J-xy9">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="联系项目负责人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-1J-xy9">
                             <rect key="frame" x="531" y="199" width="85" height="21"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
