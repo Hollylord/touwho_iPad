@@ -124,6 +124,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <animations/>
+                                                <gestureRecognizers/>
                                                 <size key="customSize" width="401" height="143"/>
                                             </collectionViewCell>
                                         </cells>
@@ -133,6 +134,9 @@
                                                 <include reference="dWI-DT-Jjr"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3zV-ZB-DV7" appends="YES" id="z5k-i2-9nW"/>
+                                        </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进行中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otW-o1-mnx">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -153,6 +157,7 @@
                                     </label>
                                 </subviews>
                                 <animations/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="otW-o1-mnx" firstAttribute="leading" secondItem="5oI-Iy-8Jl" secondAttribute="leading" constant="30" id="7QO-pM-C9B"/>
                                     <constraint firstAttribute="trailing" secondItem="hhD-dH-dEa" secondAttribute="trailing" constant="28" id="LeH-kX-AYp" userLabel="scrollview水平滚动范围"/>
@@ -243,6 +248,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-pS-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3zV-ZB-DV7">
+                    <connections>
+                        <action selector="tap:" destination="4hH-uE-Vy4" id="pUU-Pb-phL"/>
+                        <outlet property="delegate" destination="4hH-uE-Vy4" id="WBP-A2-c3o"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="54.75" y="29.25"/>
         </scene>

@@ -13,7 +13,8 @@
 #import "ModelForProgramView.h"
 
 
-@interface programViewController () <UICollectionViewDataSource,UICollectionViewDelegate,programViewDelegate>
+@interface programViewController () <UICollectionViewDataSource,UICollectionViewDelegate,programViewDelegate,UIGestureRecognizerDelegate>
+
 //顶部四个按钮
 @property (weak, nonatomic) IBOutlet UIButton *topBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *topBtn2;
@@ -53,8 +54,6 @@
 {
     UIRefreshControl *fresh;
     NSIndexPath *currentPath;
-    NSIndexPath *finalPath;
-    CGFloat initialX;
     
 }
 #pragma mark - 懒加载
@@ -111,11 +110,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-    
     //图片滚动
     self.pictureCollection.delegate   = self;
     self.pictureCollection.dataSource = self;
+    
     //还是要先注册一个cell
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
     
@@ -277,11 +275,12 @@
 {
     //cv.indexPathsForVisibleItems 是可视范围内的index，而indexPath是所有的index
     UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"picture" forIndexPath:indexPath];
-    
 
-    
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.bounds.size.width, cell.contentView.bounds.size.height)];
-//    image.contentMode = UIViewContentModeScaleAspectFit;
+    
+    
+    //不设置yes 不能点击
+    image.userInteractionEnabled = YES;
     [cell.contentView addSubview:image];
     NSString *imageName = [NSString stringWithFormat:@"ydy%ld",indexPath.item%5+1];
     if (indexPath.item%5 == 0) {
@@ -309,11 +308,11 @@
 }
 
 //手开始拖动时调用，如果是代码scroll 并不会触发这个方法。
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    initialX = scrollView.contentOffset.x;
-    
-    
-}
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    initialX = scrollView.contentOffset.x;
+//    
+//    
+//}
 
 //滚动时就触发这个方法, 持续触发。代码scroll会触发这个方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -327,10 +326,17 @@
         [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
     }
 
-    
-    
-    
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 
+
+//由于flowout的cell的变形导致 此方法不响应！
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    NSLog(@"123");
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - 点击项目跳转页面
@@ -375,8 +381,17 @@
     
 }
 
+- (IBAction)tap:(UITapGestureRecognizer *)sender {
+    NSLog(@"123");
+}
 
-
+#pragma mark - 手势代理
+//是否识别这个touch
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    //判断点击位置是否在我设定的区域
+    CGPoint touchPoint = [touch locationInView:self.pictureCollection];
+     return  CGRectContainsPoint(CGRectMake(132+self.pictureCollection.contentOffset.x, 10, 600, 192), touchPoint);
+}
 
 
 @end

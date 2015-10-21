@@ -74,10 +74,9 @@
                 //在左半边
                 if (distance > 0) {
                     //                    旋转的角度控制(1-zoom)*M_PI/6
-                    CATransform3D rotate = CATransform3DMakeRotation((1-zoom)*M_PI/6, 0, 1, 0);
-                    
-                    //                    attributes.transform3D = rotate;
-                    CGFloat zoom2 = zoom/2+0.8 ;
+                    CATransform3D rotate = CATransform3DMakeRotation((CGFloat)(1-zoom)*M_PI/6, 0, 1, 0);
+          
+                    CGFloat zoom2 = (CGFloat)zoom/2+0.8 ;
                     if (zoom2 < 1) {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1);
                     }
@@ -85,17 +84,16 @@
                     else {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,zoom2);
                     }
-   
+                    
 
                 }
                 //在右半边
                 else {
                     //(zoom-1)*M_PI/6
-                    CATransform3D rotate = CATransform3DMakeRotation((zoom-1)*M_PI/6, 0, 1, 0);
-                    
- 
-                    
-                    CGFloat zoom2 = zoom/2+0.8;
+                    CATransform3D rotate = CATransform3DMakeRotation((CGFloat)(zoom-1)*M_PI/6, 0, 1, 0);
+    
+
+                    CGFloat zoom2 = (CGFloat)zoom/2+0.8;
                     if (zoom2 < 1) {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1);
                     }
@@ -110,7 +108,7 @@
                 
             }
             else{
-                [UIView animateWithDuration:1 animations:^{
+                [UIView animateWithDuration:0.5 animations:^{
                     attributes.transform3D = CATransform3DIdentity;
                 }];
             }
