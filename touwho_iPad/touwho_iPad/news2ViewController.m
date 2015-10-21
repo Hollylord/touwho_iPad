@@ -33,7 +33,7 @@
 @property (assign ,nonatomic) int numLength;
 @property (assign ,nonatomic) int currentLength;
 
-
+@property (strong,nonatomic) AFNetworkReachabilityManager *netWorkMgr;
 
 
 
@@ -94,6 +94,8 @@
     imageSize = CGSizeMake(image.size.width/2, image.size.height/2);
     imageView.image = image;
     
+    //监听网络
+    [self startNetWorkMonitor];
     
 }
 
@@ -116,6 +118,14 @@
     
     // 加载合成引擎
     [[BDTTSSynthesizer sharedInstance] loadTTSEngine];
+}
+
+//开启网络状态监听
+- (void)startNetWorkMonitor{
+    AFNetworkReachabilityManager *netWorkMgr = [AFNetworkReachabilityManager sharedManager];
+    self.netWorkMgr = netWorkMgr;
+    [self.netWorkMgr startMonitoring];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -209,33 +219,52 @@
     }else{
         sender.selected = !sender.selected;
         [sender setBackgroundImage:[UIImage imageNamed:@"newsLect"] forState:UIControlStateNormal];
-        [[BDTTSSynthesizer sharedInstance] resume];
+        if (self.netWorkMgr.reachable) {
+            [[BDTTSSynthesizer sharedInstance] resume];
+        }
+        else{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:@"您当前网络状态不良，请检查网络连接是否正常！" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
+            [alert addAction:OK];
+            [self presentViewController:alert animated:YES completion:NULL];
+        }
+        
     }
 }
 
 - (IBAction)newsLect:(UIButton *)sender {
     
-    
-    if(sender.selected == NO)
-    {
-        sender.hidden = YES;
-        self.playBtn.hidden = NO;
-        [sender setBackgroundImage:[UIImage imageNamed:@"newsLectClose"] forState:UIControlStateNormal];
-        self.numLength =(int) self.contentView.text.length;
-        
-        self.currentLength +=KreadLength;
-        int readlength = KreadLength;
-        
-        if (self.numLength <  KreadLength) {
-            readlength = self.numLength;
+    //网络良好则播放
+    if (self.netWorkMgr.reachable) {
+        if(sender.selected == NO)
+        {
+            sender.hidden = YES;
+            self.playBtn.hidden = NO;
+            [sender setBackgroundImage:[UIImage imageNamed:@"newsLectClose"] forState:UIControlStateNormal];
+            self.numLength =(int) self.contentView.text.length;
+            
+            self.currentLength +=KreadLength;
+            int readlength = KreadLength;
+            
+            if (self.numLength <  KreadLength) {
+                readlength = self.numLength;
+            }
+            
+            
+            NSString * str = [self.contentView.text substringWithRange:NSMakeRange(0, readlength)];
+            NSInteger ret = [[BDTTSSynthesizer sharedInstance] speak:str];
+            if (ret != BDTTS_ERR_SYNTH_OK) {}
+            
         }
-        
-        
-        NSString * str = [self.contentView.text substringWithRange:NSMakeRange(0, readlength)];
-        NSInteger ret = [[BDTTSSynthesizer sharedInstance] speak:str];
-        if (ret != BDTTS_ERR_SYNTH_OK) {}
-        
     }
+    else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:@"您当前网络状态不良，请检查网络连接是否正常！" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
+        [alert addAction:OK];
+        [self presentViewController:alert animated:YES completion:NULL];
+    }
+    
+    
     
 }
 
