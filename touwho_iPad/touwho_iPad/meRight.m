@@ -15,6 +15,7 @@
 #import "ProgramsModel.h"
 #import "SponsorModel.h"
 #import "apply.h"
+#import "program2ViewController.h"
 
 
 @implementation meRight
@@ -250,6 +251,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //投资人tableview
+    if ([tableView isEqual:followedSponsorTableview]) {
+        
+    }
+    //项目tableview 4个
+    else{
+        UIViewController *VC = [self viewController];
+        program2ViewController *programVC = [[program2ViewController alloc] initWithNibName:@"program2ViewController" bundle:nil];
+        //缺少传递数据工作
+        [VC.navigationController pushViewController:programVC animated:YES];
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //我关注的投资人
