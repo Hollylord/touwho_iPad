@@ -348,7 +348,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1d-Pg-Z8E" userLabel="新闻">
                                         <rect key="frame" x="0.0" y="113" width="100" height="112"/>
                                         <animations/>
-                                        <state key="normal" title="新闻"/>
+                                        <state key="normal" title="资讯"/>
                                         <connections>
                                             <action selector="menuClick:" destination="wbP-kx-f8L" eventType="touchUpInside" id="PEH-gN-CIi"/>
                                         </connections>

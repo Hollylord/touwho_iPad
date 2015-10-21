@@ -69,7 +69,7 @@
                                          appKey:@"5602081a67e58ec377001b17"
                                       shareText:@""
                                      shareImage:[UIImage imageNamed:@"logo"]
-                                shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToWechatTimeline,UMShareToWechatSession]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
                                        delegate:nil];
     
     

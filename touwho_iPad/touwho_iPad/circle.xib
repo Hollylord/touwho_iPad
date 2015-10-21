@@ -16,7 +16,7 @@
                     <segments>
                         <segment title="小组"/>
                         <segment title="最新话题"/>
-                        <segment title="机构专题"/>
+                        <segment title="投资社区"/>
                     </segments>
                 </segmentedControl>
             </subviews>

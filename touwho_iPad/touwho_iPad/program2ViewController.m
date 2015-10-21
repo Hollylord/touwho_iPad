@@ -225,7 +225,7 @@
                                          appKey:@"5602081a67e58ec377001b17"
                                       shareText:@""
                                      shareImage:[UIImage imageNamed:@"logo"]
-                                shareToSnsNames:@[UMShareToSina,UMShareToQQ,UMShareToWechatTimeline,UMShareToWechatSession]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
                                        delegate:nil];
     
     
@@ -238,14 +238,14 @@
     sender.selected = !sender.selected;
     //加关注
     if (sender.selected) {
-        NSInteger number = [sender.titleLabel.text integerValue];
-        NSString *title = [NSString stringWithFormat:@"%ld",number + 1];
+        
+        NSString *title = @"已关注";
         [sender setTitle:title forState:!sender.state];
     }
     //取消关注
     else{
-        NSInteger number = [sender.titleLabel.text integerValue];
-        NSString *title = [NSString stringWithFormat:@"%ld",number - 1];
+        
+        NSString *title = @"关注";
         [sender setTitle:title forState:!sender.state];
     }
 }

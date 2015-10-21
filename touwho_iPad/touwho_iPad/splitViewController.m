@@ -31,7 +31,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
     
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
-        [self showADScrollView];
+//        [self showADScrollView];
     }
     
     

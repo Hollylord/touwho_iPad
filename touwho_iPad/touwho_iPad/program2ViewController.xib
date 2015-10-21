@@ -51,8 +51,8 @@
                                 <action selector="gentouClick:" destination="-1" eventType="touchUpInside" id="yoi-Jg-fRf"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="xiaohu" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-PO-IuX">
-                            <rect key="frame" x="711" y="199" width="164" height="131"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaohu" translatesAutoresizingMaskIntoConstraints="NO" id="p3m-PO-IuX">
+                            <rect key="frame" x="745" y="199" width="164" height="131"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="131" id="URl-3y-mtM"/>
@@ -116,8 +116,8 @@
                                 <constraint firstAttribute="height" constant="282" id="fGz-CD-Nb4"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="联系项目负责人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-1J-xy9">
-                            <rect key="frame" x="531" y="199" width="85" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系项目负责人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-1J-xy9">
+                            <rect key="frame" x="531" y="199" width="119" height="21"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -201,9 +201,9 @@
                             <state key="normal" image="shipin"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-T3-nn8">
-                            <rect key="frame" x="848" y="15" width="55" height="23"/>
+                            <rect key="frame" x="842" y="15" width="61" height="23"/>
                             <animations/>
-                            <state key="normal" title="100" image="guanzhu1"/>
+                            <state key="normal" title="关注" image="guanzhu1"/>
                             <state key="selected" image="guanzhu2"/>
                             <connections>
                                 <action selector="followTheProgram:" destination="-1" eventType="touchUpInside" id="9nz-iQ-AaN"/>
