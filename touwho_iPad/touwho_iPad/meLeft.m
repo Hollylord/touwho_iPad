@@ -149,9 +149,19 @@
 
 //退出当前账号
 - (IBAction)quitAccount:(UIButton *)sender {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user"];
-    //发送点击了项目按钮的通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"programNotification" object:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"退出" message:@"确定退出当前账号吗？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user"];
+        //发送点击了项目按钮的通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"programNotification" object:nil];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:OK];
+    [alert addAction:cancel];
+    [[self viewController] presentViewController:alert animated:YES completion:NULL];
+    
+    
 }
 
 #pragma mark -
