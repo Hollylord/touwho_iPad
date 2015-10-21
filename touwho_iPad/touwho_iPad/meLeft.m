@@ -147,6 +147,14 @@
     }
 }
 
+//退出当前账号
+- (IBAction)quitAccount:(UIButton *)sender {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user"];
+    //发送点击了项目按钮的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"programNotification" object:nil];
+}
+
+#pragma mark -
 //获得当前view的控制器
 - (UIViewController*)viewController {
     for (UIView* next = [self superview]; next; next = next.superview) {

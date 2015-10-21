@@ -33,7 +33,8 @@
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
 //        [self showADScrollView];
     }
-
+    
+    
  
 }
 
@@ -51,6 +52,7 @@
 #pragma mark - 收到通知
 - (void)receiveNotification:(NSNotification *)notification{
     if ([notification.name isEqualToString:@"programNotification"]) {
+        self.block();
         [self showDetailViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"shouyeNavigation"] sender:nil];
     }
     else if ([notification.name isEqualToString:@"discoveryNotification"]){

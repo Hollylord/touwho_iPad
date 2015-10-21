@@ -8,6 +8,7 @@
 
 #import "leftViewController.h"
 #import "UIImage+UIimage_HeadIcon.h"
+#import "splitViewController.h"
 
 
 @interface leftViewController () <UISplitViewControllerDelegate>
@@ -27,6 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置splitVC的block
+    splitViewController *splitVC = (splitViewController *)[self splitViewController];
+    splitVC.block = ^(){
+        self.program.selected = YES;
+        self.news.selected = NO;
+        self.discovery.selected = NO;
+        self.me.selected = NO;
+    };
     
     //设置按钮状态
     self.program.selected = YES;
