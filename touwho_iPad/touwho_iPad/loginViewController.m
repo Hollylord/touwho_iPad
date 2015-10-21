@@ -123,6 +123,13 @@
             
             NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
             
+            //保存用户信息
+            NSDictionary *dic = @{@"userName":snsAccount.userName,@"userID":snsAccount.usid,@"token":snsAccount.accessToken,@"iconURL":snsAccount.iconURL};
+            
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:dic forKey:@"user"];
+            [userDefault synchronize];
+            
             //跳转到个人中心页面
             [self login:nil];
         }
@@ -147,6 +154,13 @@
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToQQ];
             
             NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
+            
+            //保存用户信息
+            NSDictionary *dic = @{@"userName":snsAccount.userName,@"userID":snsAccount.usid,@"token":snsAccount.accessToken,@"iconURL":snsAccount.iconURL};
+            
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:dic forKey:@"user"];
+            [userDefault synchronize];
             
             //跳转到个人中心页面
             [self login:nil];
