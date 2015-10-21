@@ -335,7 +335,6 @@
 //由于flowout的cell的变形导致 此方法不响应！
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-//    NSLog(@"123");
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
@@ -380,9 +379,15 @@
 
     
 }
-
+//点击collectionviewcell
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
-    NSLog(@"123");
+    //手滑了多少张
+    int i = ABS(self.pictureCollection.contentOffset.x - 94768)/380;
+    //确定第几页
+    NSInteger page = i%5 + 1;
+    //拿到确定的页数，跳转相应的页面
+    NSLog(@"%ld",(long)page);
+    
 }
 
 #pragma mark - 手势代理
