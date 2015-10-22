@@ -126,8 +126,9 @@
 //设置
 - (IBAction)setting:(UIBarButtonItem *)sender {
     SettingViewController *setVC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
-    setVC.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:setVC animated:YES completion:NULL];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:setVC];
+    navi.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navi animated:YES completion:NULL];
 }
 
 #pragma mark - 照相机代理

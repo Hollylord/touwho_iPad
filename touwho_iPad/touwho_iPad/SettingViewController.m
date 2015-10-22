@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "AboutViewController.h"
 
 @interface SettingViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -30,6 +31,9 @@
     [self.view addSubview:whiteView];
     
     
+}
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,6 +110,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        
+    }
+    else if (indexPath.row == 1)
+    {
+        AboutViewController *aboutVC = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+
+        [self.navigationController pushViewController:aboutVC animated:YES];
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;

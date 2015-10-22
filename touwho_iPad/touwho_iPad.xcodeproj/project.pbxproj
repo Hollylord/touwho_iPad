@@ -201,6 +201,8 @@
 		A1DB9AAD1BA2AD5800EC97D6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */; };
 		A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */; };
 		A1DDDE891BD6477C0045A659 /* libbdtts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DDDE881BD6477C0045A659 /* libbdtts.a */; settings = {ASSET_TAGS = (); }; };
+		A1E03BCF1BD8E414008247E0 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E03BCD1BD8E414008247E0 /* AboutViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A1E03BD01BD8E414008247E0 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E03BCE1BD8E414008247E0 /* AboutViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */; };
 		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
 		A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */; };
@@ -545,6 +547,9 @@
 		A1DDDE841BD644740045A659 /* BDTTSSynthesizerDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTTSSynthesizerDefine.h; sourceTree = "<group>"; };
 		A1DDDE851BD644740045A659 /* BDTTSSynthesizerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTTSSynthesizerDelegate.h; sourceTree = "<group>"; };
 		A1DDDE881BD6477C0045A659 /* libbdtts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbdtts.a; sourceTree = "<group>"; };
+		A1E03BCC1BD8E414008247E0 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		A1E03BCD1BD8E414008247E0 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		A1E03BCE1BD8E414008247E0 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		A1E6EB3E1BA13463005D4E6F /* OtherCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherCenterViewController.h; sourceTree = "<group>"; };
 		A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherCenterViewController.m; sourceTree = "<group>"; };
 		A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherCenterViewController.xib; sourceTree = "<group>"; };
@@ -1481,19 +1486,20 @@
 		A1D9FB481BD8C6B900321F7E /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
-				A1D9FB4E1BD8CD0600321F7E /* controller */,
+				A1D9FB4E1BD8CD0600321F7E /* 设置 */,
+				A1E03BD11BD8E436008247E0 /* 关于 */,
 			);
 			name = "设置";
 			sourceTree = "<group>";
 		};
-		A1D9FB4E1BD8CD0600321F7E /* controller */ = {
+		A1D9FB4E1BD8CD0600321F7E /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
 				A1D9FB491BD8C6E800321F7E /* SettingViewController.h */,
 				A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */,
 				A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */,
 			);
-			name = controller;
+			name = "设置";
 			sourceTree = "<group>";
 		};
 		A1DB9AA31BA269A900EC97D6 /* 根控制器 */ = {
@@ -1598,6 +1604,16 @@
 				A1D78E1E1B9D945F00C136C3 /* commentCell.xib */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		A1E03BD11BD8E436008247E0 /* 关于 */ = {
+			isa = PBXGroup;
+			children = (
+				A1E03BCC1BD8E414008247E0 /* AboutViewController.h */,
+				A1E03BCD1BD8E414008247E0 /* AboutViewController.m */,
+				A1E03BCE1BD8E414008247E0 /* AboutViewController.xib */,
+			);
+			name = "关于";
 			sourceTree = "<group>";
 		};
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {
@@ -1846,6 +1862,7 @@
 				A1AC16CB1BBA3C65002A8F70 /* firms.plist in Resources */,
 				A1211E971BB2413500B25AA4 /* UMShareEditViewController.xib in Resources */,
 				A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */,
+				A1E03BD01BD8E414008247E0 /* AboutViewController.xib in Resources */,
 				A1211E9B1BB2413500B25AA4 /* UMSShareListController.xib in Resources */,
 				A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */,
 				A1B88CC61BA16A55008FA7C9 /* 0.jpeg in Resources */,
@@ -2012,6 +2029,7 @@
 				A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */,
 				A18338561BC66C5A000866EB /* ModelForComment.m in Sources */,
 				A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */,
+				A1E03BCF1BD8E414008247E0 /* AboutViewController.m in Sources */,
 				A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */,
 				A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
