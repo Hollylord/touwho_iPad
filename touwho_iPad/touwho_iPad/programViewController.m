@@ -31,15 +31,17 @@
 
 //进行中
 @property (weak, nonatomic) IBOutlet UILabel *title1;
-
 //预热中
 @property (weak, nonatomic) IBOutlet UILabel *title2;
+//已结束
+@property (weak, nonatomic) IBOutlet UILabel *title3;
 
 //保存进行中的programView
 @property (strong,nonatomic) NSMutableArray* programs;
 //保存预热中的programView
 @property (strong,nonatomic) NSMutableArray* programsForPreparing;
-
+//保存已结束的programView
+@property (strong,nonatomic) NSMutableArray* programsForFinished;
 
 
 
@@ -69,7 +71,12 @@
     }
     return _programsForPreparing;
 }
-
+- (NSMutableArray *)programsForFinished{
+    if (!_programsForFinished) {
+        _programsForFinished = [NSMutableArray array];
+    }
+    return _programsForFinished;
+}
 
 #pragma mark - 顶部按钮点击
 - (IBAction)buttonClick:(UIButton *)sender {
@@ -126,7 +133,7 @@
         [self.programs addObject:program];
 
     }
-    
+
     [self.scrollView addSubview:self.title2];
     //添加预热中项目视图
     for (int i = 0; i < 4; i ++) {
@@ -134,6 +141,16 @@
         program.delegate        = self;
         [self.scrollView addSubview:program];
         [self.programsForPreparing addObject:program];
+        
+    }
+    
+    [self.scrollView addSubview:self.title3];
+    //添加已结束的项目视图
+    for (int i = 0; i < 4; i ++) {
+        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+        program.delegate        = self;
+        [self.scrollView addSubview:program];
+        [self.programsForFinished addObject:program];
         
     }
     
@@ -166,7 +183,7 @@
     
     
     //调整scrollView的滚动范围
-    programView *lastView = [self.programsForPreparing lastObject];
+    programView *lastView = [self.programsForFinished lastObject];
     self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - CGRectGetMaxY(self.pictureCollection.frame) + 20;
 }
 
@@ -182,18 +199,26 @@
 - (void)updateViewConstraints{
     [super updateViewConstraints];//这句话一定要写
     
+    //给正在进行的programView添加约束
     for (int i = 0 ; i < self.programs.count; i ++) {
-        [self layoutForProgramView:self.programs[i] index:i];//给programView添加约束
+        [self layoutForProgramView:self.programs[i] index:i];
     }
+
+    //给title2添加约束
+    [self layoutForTitle2:self.title2];
     
-    [self layoutForTitle2:self.title2];//给title2添加约束
-    
-    /** 给预热中项目约束**/
+    //给预热中项目约束
     for (int i = 0 ; i < self.programsForPreparing.count; i ++) {
         [self layoutForPreparingPrograms:self.programsForPreparing[i] index:i];
     }
     
+    //给title3添加约束
+    [self layoutForTitle3:self.title3];
     
+    //给已结束的项目约束
+    for (int i = 0 ; i < self.programsForFinished.count; i ++) {
+        [self layoutForFinishedPrograms:self.programsForFinished[i] index:i];
+    }
 }
 
 - (void)layoutForProgramView:(programView *)programView index:(int )indexPath{
@@ -260,7 +285,40 @@
 
 }
 
+- (void)layoutForTitle3:(UIView *)view{
+    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:[self.programsForPreparing lastObject] attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    [self.scrollView addConstraints:@[leading,top]];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+}
 
+- (void)layoutForFinishedPrograms:(programView *)programView index:(int )indexPath{
+    
+    //项目视图在左半边
+    if (indexPath%2 == 0) {
+        NSLayoutConstraint* leading = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.title3 attribute:NSLayoutAttributeBottom multiplier:1 constant:20 + indexPath/2*(250 + 20)];
+        NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
+        NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
+        [self.scrollView addConstraints:@[leading,top]];
+        
+        [programView addConstraints:@[width,height]];
+        programView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+    }
+    //在右半边
+    else {
+        NSLayoutConstraint* trailing = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTrailing multiplier:1 constant:-30];
+        NSLayoutConstraint* top = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.title3 attribute:NSLayoutAttributeBottom multiplier:1 constant:20 + (indexPath-1)/2*(250 + 20)];
+        NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
+        NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
+        [self.scrollView addConstraints:@[trailing,top]];
+        
+        [programView addConstraints:@[width,height]];
+        programView.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    
+}
 #pragma mark - collection代理
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;

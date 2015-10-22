@@ -40,9 +40,6 @@
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="17" width="67" height="30"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="17" width="159" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="mhN-Hl-y6u"/>
                                         </connections>
@@ -53,9 +50,6 @@
                                         <state key="normal" title="海外专区"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="67" y="17" width="66" height="30"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="159" y="17" width="158" height="30"/>
                                         </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="yXA-0l-KB6"/>
@@ -68,9 +62,6 @@
                                         <variation key="heightClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="133" y="17" width="67" height="30"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="317" y="17" width="159" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="TFy-bW-pKm"/>
                                         </connections>
@@ -79,9 +70,6 @@
                                         <rect key="frame" x="476" y="17" width="158" height="30"/>
                                         <animations/>
                                         <state key="normal" title="公益活动"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="476" y="17" width="158" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="7Ma-JU-T5u"/>
                                         </connections>
@@ -139,20 +127,30 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进行中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otW-o1-mnx">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <rect key="frame" x="30" y="289" width="51" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预热中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jw9-si-OI0">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="预热中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jw9-si-OI0">
+                                        <rect key="frame" x="30" y="352" width="51" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                             <rect key="frame" x="30" y="412" width="51" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已结束" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rib-3t-6Wu">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="29" y="487" width="52" height="21"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -170,10 +168,7 @@
                                     <mask key="subviews">
                                         <exclude reference="otW-o1-mnx"/>
                                         <exclude reference="jw9-si-OI0"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="7QO-pM-C9B"/>
-                                        <exclude reference="r0O-yb-Enq"/>
+                                        <exclude reference="rib-3t-6Wu"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -181,6 +176,7 @@
                                         <include reference="hhD-dH-dEa"/>
                                         <include reference="otW-o1-mnx"/>
                                         <include reference="jw9-si-OI0"/>
+                                        <include reference="rib-3t-6Wu"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="7QO-pM-C9B"/>
@@ -240,6 +236,7 @@
                         <outlet property="scrollView" destination="5oI-Iy-8Jl" id="0Ol-Xx-HPF"/>
                         <outlet property="title1" destination="otW-o1-mnx" id="IiX-ks-EGQ"/>
                         <outlet property="title2" destination="jw9-si-OI0" id="dKI-UI-t8g"/>
+                        <outlet property="title3" destination="rib-3t-6Wu" id="iKl-Wj-f6p"/>
                         <outlet property="topBtn1" destination="JLN-vT-Hsb" id="lfE-kM-6Kf"/>
                         <outlet property="topBtn2" destination="hpc-8w-d2z" id="14W-YS-id9"/>
                         <outlet property="topBtn3" destination="hMg-Lh-D7A" id="1Db-3M-4mv"/>
@@ -517,9 +514,6 @@
                                         <rect key="frame" x="94" y="10" width="50" height="50"/>
                                         <animations/>
                                         <state key="normal" image="wx"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="94" y="10" width="50" height="50"/>
-                                        </variation>
                                         <connections>
                                             <action selector="wechatLogin:" destination="EhZ-7N-x95" eventType="touchUpInside" id="pMM-tO-hag"/>
                                         </connections>
@@ -726,9 +720,6 @@
                                         <rect key="frame" x="0.0" y="70" width="30" height="30"/>
                                         <animations/>
                                         <state key="normal" title="社群"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="285" y="70" width="30" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
                                         </connections>
@@ -737,9 +728,6 @@
                                         <rect key="frame" x="163" y="70" width="60" height="30"/>
                                         <animations/>
                                         <state key="normal" title="路演活动"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="70" width="60" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="4IE-lB-gXT"/>
                                         </connections>
@@ -748,9 +736,6 @@
                                         <rect key="frame" x="340" y="70" width="60" height="30"/>
                                         <animations/>
                                         <state key="normal" title="影音资料"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="135" y="70" width="60" height="30"/>
-                                        </variation>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="yKX-2j-tkZ"/>
                                         </connections>

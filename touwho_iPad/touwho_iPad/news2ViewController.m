@@ -208,7 +208,7 @@
 }
 
 
-
+//后面点击播放按钮
 - (IBAction)playBtn:(UIButton *)sender {
     
     if (sender.selected == NO) {
@@ -232,6 +232,7 @@
     }
 }
 
+//第一次点击播放按钮
 - (IBAction)newsLect:(UIButton *)sender {
     
     //网络良好则播放
