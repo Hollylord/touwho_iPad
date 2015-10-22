@@ -69,6 +69,10 @@
         self.btnContent.titleLabel.font = ChatContentFont;
         self.btnContent.titleLabel.numberOfLines = 0;
         [self.btnContent addTarget:self action:@selector(btnContentClick)  forControlEvents:UIControlEventTouchUpInside];
+        //添加长按手势
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressBtnContent)];
+        [self.btnContent addGestureRecognizer:longPress];
+        
         [self.contentView addSubview:self.btnContent];
         
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(UUAVAudioPlayerDidFinishPlay) name:@"VoicePlayHasInterrupt" object:nil];
@@ -91,7 +95,36 @@
     }
 }
 
+- (void)longPressBtnContent{
+    //如果是图片
+    if (self.messageFrame.message.type == UUMessageTypePicture){
+        //弹出提示框
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存图片" message:@"是否保存图片到本地" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"保存到相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //保存图片到相册
+            UIImageWriteToSavedPhotosAlbum(self.btnContent.backImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:NULL];
+        [alert addAction:OK];
+        [alert addAction:cancel];
+        [(UIViewController *)self.delegate presentViewController:alert animated:YES completion:NULL];
+    }
+}
 
+//保存图片完成后调用
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    if (error) {
+        NSLog(@"%@",error);
+        return ;
+    }
+    //提示保存成功
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [(UIViewController *)self.delegate presentViewController:alert animated:YES completion:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [alert dismissViewControllerAnimated:YES completion:NULL];
+        });
+    }];
+}
 - (void)btnContentClick{
     //play audio
     if (self.messageFrame.message.type == UUMessageTypeVoice) {
