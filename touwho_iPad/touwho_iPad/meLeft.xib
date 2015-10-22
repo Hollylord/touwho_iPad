@@ -51,19 +51,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-HZ-P64">
-                    <rect key="frame" x="50" y="660" width="200" height="50"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="aHy-gP-Laf"/>
-                    </constraints>
-                    <state key="normal" title="退出当前账号" backgroundImage="tuichu">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="quitAccount:" destination="iN0-l3-epB" eventType="touchUpInside" id="ufJ-A9-zj4"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-pI-xNw">
                     <rect key="frame" x="240" y="135" width="50" height="25"/>
                     <animations/>
@@ -81,9 +68,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>
-                <constraint firstItem="4Af-HZ-P64" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7pF-WE-lHD"/>
                 <constraint firstAttribute="trailing" secondItem="KFX-fE-VOB" secondAttribute="trailing" id="HIq-Jd-zYC"/>
-                <constraint firstItem="4Af-HZ-P64" firstAttribute="top" secondItem="KFX-fE-VOB" secondAttribute="bottom" constant="45" id="MrA-IW-rSE"/>
                 <constraint firstItem="pwx-pI-xNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="135" id="Tqg-QC-MSp"/>
                 <constraint firstItem="Lao-TQ-mu3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="58" id="cTo-bq-yBc"/>
                 <constraint firstAttribute="trailing" secondItem="pwx-pI-xNw" secondAttribute="trailing" constant="10" id="gD9-g7-aRw"/>
@@ -115,6 +100,5 @@
         <image name="anniuHei" width="100" height="50"/>
         <image name="hege" width="13" height="13"/>
         <image name="touxiang" width="100" height="100"/>
-        <image name="tuichu" width="100" height="50"/>
     </resources>
 </document>

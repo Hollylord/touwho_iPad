@@ -193,6 +193,8 @@
 		A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78E1C1B9D943200C136C3 /* notification.xib */; };
 		A1D78E1F1B9D945F00C136C3 /* commentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78E1E1B9D945F00C136C3 /* commentCell.xib */; };
 		A1D78E221B9D96BB00C136C3 /* message.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78E211B9D96BB00C136C3 /* message.m */; };
+		A1D9FB4C1BD8C6E800321F7E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A1D9FB4D1BD8C6E800321F7E /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
@@ -530,6 +532,9 @@
 		A1D78E1E1B9D945F00C136C3 /* commentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = commentCell.xib; sourceTree = "<group>"; };
 		A1D78E201B9D96BB00C136C3 /* message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message.h; sourceTree = "<group>"; };
 		A1D78E211B9D96BB00C136C3 /* message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = message.m; sourceTree = "<group>"; };
+		A1D9FB491BD8C6E800321F7E /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		A1DAFAB31B8C1A4300189680 /* circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = circle.xib; sourceTree = "<group>"; };
 		A1DAFAB71B8C1F9400189680 /* xiaozu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = xiaozu.xib; sourceTree = "<group>"; };
 		A1DAFAB91B8C37BE00189680 /* circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circle.h; sourceTree = "<group>"; };
@@ -823,6 +828,7 @@
 				A1C3EDE71B9EBB730023AB6E /* 聊天 */,
 				A1A01AA71BAA6158009EF690 /* 头像 */,
 				A18723381BB3D87500CD3630 /* 风险评估测试 */,
+				A1D9FB481BD8C6B900321F7E /* 设置 */,
 			);
 			name = "我";
 			sourceTree = "<group>";
@@ -1472,6 +1478,24 @@
 			name = "注册与忘记密码";
 			sourceTree = "<group>";
 		};
+		A1D9FB481BD8C6B900321F7E /* 设置 */ = {
+			isa = PBXGroup;
+			children = (
+				A1D9FB4E1BD8CD0600321F7E /* controller */,
+			);
+			name = "设置";
+			sourceTree = "<group>";
+		};
+		A1D9FB4E1BD8CD0600321F7E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1D9FB491BD8C6E800321F7E /* SettingViewController.h */,
+				A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */,
+				A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		A1DB9AA31BA269A900EC97D6 /* 根控制器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1843,6 +1867,7 @@
 				A1BE7F411B8D90F300E76711 /* meLeft.xib in Resources */,
 				A1211E961BB2413500B25AA4 /* UMSCommentInputControlleriPad.xib in Resources */,
 				A1C07CD81B9C229B00A2F1CB /* profileViewController.xib in Resources */,
+				A1D9FB4D1BD8C6E800321F7E /* SettingViewController.xib in Resources */,
 				A1B88CBE1BA16A55008FA7C9 /* chat_message_back.png in Resources */,
 				A1E9BE991BA801FB00876186 /* shipinView.xib in Resources */,
 				A1B88CC21BA16A55008FA7C9 /* chat_voice_record.png in Resources */,
@@ -2009,6 +2034,7 @@
 				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,
 				A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
+				A1D9FB4C1BD8C6E800321F7E /* SettingViewController.m in Sources */,
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A1E9BE951BA7CD7400876186 /* JiGouDetailViewController.m in Sources */,
 				A1C07CD71B9C229B00A2F1CB /* profileViewController.m in Sources */,

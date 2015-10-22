@@ -12,11 +12,13 @@
 #import "notification.h"
 #import "HeadIconViewController.h"
 #import "UIImage+UIimage_HeadIcon.h"
+#import "SettingViewController.h"
 
 @interface profileViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet meLeft *meLeftView;
 @property (strong,nonatomic) UIView *meRightView;
-
+//导航栏
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 - (IBAction)uploadCard:(UIButton *)sender;//点击上传名片
 
@@ -76,7 +78,7 @@
 //布局meLeftView
 - (void)layoutForMe:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
-    NSLayoutConstraint *top     = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    NSLayoutConstraint *top     = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.navigationBar attribute:NSLayoutAttributeBottom multiplier:1 constant:1];
     NSLayoutConstraint *bottom  = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
     NSLayoutConstraint *width   = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:300];
     
@@ -104,6 +106,7 @@
 
 
 #pragma mark - 按钮点击
+//上传名片
 - (IBAction)uploadCard:(UIButton *)sender {
     NSString *title = [sender titleForState:UIControlStateNormal];
     if ([title isEqualToString:@"上传名片"]) {
@@ -118,6 +121,13 @@
         [self presentViewController:imagePicker animated:YES completion:NULL];
     }
     
+}
+
+//设置
+- (IBAction)setting:(UIBarButtonItem *)sender {
+    SettingViewController *setVC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+    setVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:setVC animated:YES completion:NULL];
 }
 
 #pragma mark - 照相机代理

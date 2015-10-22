@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="profileViewController">
             <connections>
+                <outlet property="navigationBar" destination="9VJ-A4-k8C" id="PAg-qb-HXt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,9 +14,38 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VJ-A4-k8C">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="u0r-I4-zJd"/>
+                    </constraints>
+                    <textAttributes key="titleTextAttributes">
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="我" id="VlP-uW-x76">
+                            <barButtonItem key="rightBarButtonItem" image="setting" id="jrP-ei-WSm">
+                                <connections>
+                                    <action selector="setting:" destination="-1" id="c6B-a1-QXz"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9VJ-A4-k8C" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JeF-Sr-pas"/>
+                <constraint firstItem="9VJ-A4-k8C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ok0-le-OHD"/>
+                <constraint firstAttribute="trailing" secondItem="9VJ-A4-k8C" secondAttribute="trailing" id="mrX-rJ-BbM"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="setting" width="25" height="25"/>
+    </resources>
 </document>
