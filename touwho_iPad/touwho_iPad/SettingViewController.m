@@ -15,12 +15,21 @@
 @end
 
 @implementation SettingViewController
-
+{
+    UIView *whiteView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //ios9以后 tableView必须注册cell，只要注册了 以后就在cellForRowAt这个方法中直接dequeue就可以了
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"setting"];
+    
+    //给tableView添加白view遮挡下面不要的
+    whiteView = [[UIView alloc] init];
+    whiteView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:whiteView];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,6 +37,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateViewConstraints{
+    [super updateViewConstraints];
+    
+    //给whiteView约束
+    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
+    NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeTop multiplier:1 constant:2*50];
+    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    
+    [whiteView.superview addConstraints:@[leading,trailing,top,bottom]];
+    whiteView.translatesAutoresizingMaskIntoConstraints = NO;
+
+
+}
 //关闭页面
 - (IBAction)closeViewController:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -85,7 +108,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 50;
 }
 
 @end
