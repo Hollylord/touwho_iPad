@@ -9,6 +9,8 @@
 #import "leftViewController.h"
 #import "UIImage+UIimage_HeadIcon.h"
 #import "splitViewController.h"
+#import "AboutViewController.h"
+#import "SettingViewController.h"
 
 
 @interface leftViewController () <UISplitViewControllerDelegate>
@@ -132,6 +134,19 @@
     self.headImageView.image = newImage;
 }
 
+//点击logo
+- (IBAction)tapLogo:(UITapGestureRecognizer *)sender {
+    
+    SettingViewController *setVC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:setVC];
+    navi.modalPresentationStyle = UIModalPresentationFormSheet;
+    AboutViewController *aboutVC = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+    [navi pushViewController:aboutVC animated:NO];
+    
+    [self.splitViewController presentViewController:navi animated:YES completion:NULL];
+}
+
+#pragma mark -
 //通过文件名查找Cache目录下的image
 - (UIImage *)searchImageFromCacheWithFileName:(NSString *)name{
     NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:name];

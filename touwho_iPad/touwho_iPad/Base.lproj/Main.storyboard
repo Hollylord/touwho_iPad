@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mdT-Lc-ULI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mdT-Lc-ULI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -373,12 +373,16 @@
                                     <constraint firstAttribute="width" constant="100" id="cLe-KH-DZA"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-va-XGw">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-va-XGw">
                                 <rect key="frame" x="0.0" y="686" width="100" height="107"/>
                                 <animations/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="107" id="Jwj-W0-5d5"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="f6o-z3-Qmi" appends="YES" id="8N4-vJ-aYm"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -413,6 +417,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyc-8K-E16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="f6o-z3-Qmi">
+                    <connections>
+                        <action selector="tapLogo:" destination="wbP-kx-f8L" id="TZ0-hN-XRT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="387" y="-609"/>
         </scene>
@@ -842,7 +851,7 @@
     <resources>
         <image name="ID" width="417" height="52"/>
         <image name="login" width="423" height="52"/>
-        <image name="logo" width="99" height="115"/>
+        <image name="logo" width="663" height="229"/>
         <image name="password" width="417" height="52"/>
         <image name="qq" width="50" height="50"/>
         <image name="touxiang" width="100" height="100"/>

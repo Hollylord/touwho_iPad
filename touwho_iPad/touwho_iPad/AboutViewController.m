@@ -27,6 +27,9 @@
     [super didReceiveMemoryWarning];
     
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setHidden:YES];
+}
 
 - (IBAction)returnBack:(UIBarButtonItem *)sender {
     [self.navigationController popViewControllerAnimated:YES];

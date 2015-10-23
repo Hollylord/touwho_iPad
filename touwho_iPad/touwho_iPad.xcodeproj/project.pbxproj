@@ -83,6 +83,8 @@
 		A1987E081BB138D000CC4130 /* ModelForSponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987E071BB138D000CC4130 /* ModelForSponsor.m */; };
 		A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A198E3C41B96D52700BB060E /* program2ViewController.m */; };
 		A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A198E3C51B96D52700BB060E /* program2ViewController.xib */; };
+		A19929151BDA087100B155A5 /* CorporationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19929131BDA087100B155A5 /* CorporationViewController.m */; };
+		A19929161BDA087100B155A5 /* CorporationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19929141BDA087100B155A5 /* CorporationViewController.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
 		A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09421B7C2DF100094B81 /* AppDelegate.m */; };
 		A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19D094A1B7C2DF100094B81 /* Assets.xcassets */; };
@@ -372,6 +374,9 @@
 		A198E3C31B96D52700BB060E /* program2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = program2ViewController.h; sourceTree = "<group>"; };
 		A198E3C41B96D52700BB060E /* program2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = program2ViewController.m; sourceTree = "<group>"; };
 		A198E3C51B96D52700BB060E /* program2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = program2ViewController.xib; sourceTree = "<group>"; };
+		A19929121BDA087100B155A5 /* CorporationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorporationViewController.h; sourceTree = "<group>"; };
+		A19929131BDA087100B155A5 /* CorporationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorporationViewController.m; sourceTree = "<group>"; };
+		A19929141BDA087100B155A5 /* CorporationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CorporationViewController.xib; sourceTree = "<group>"; };
 		A19D093B1B7C2DF100094B81 /* touwho_iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = touwho_iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19D093F1B7C2DF100094B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A19D09411B7C2DF100094B81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1050,6 +1055,16 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		A19929171BDA087600B155A5 /* 公司介绍 */ = {
+			isa = PBXGroup;
+			children = (
+				A19929121BDA087100B155A5 /* CorporationViewController.h */,
+				A19929131BDA087100B155A5 /* CorporationViewController.m */,
+				A19929141BDA087100B155A5 /* CorporationViewController.xib */,
+			);
+			name = "公司介绍";
+			sourceTree = "<group>";
+		};
 		A19D09321B7C2DF100094B81 = {
 			isa = PBXGroup;
 			children = (
@@ -1493,6 +1508,7 @@
 			children = (
 				A1D9FB4E1BD8CD0600321F7E /* 设置 */,
 				A1E03BD11BD8E436008247E0 /* 关于 */,
+				A19929171BDA087600B155A5 /* 公司介绍 */,
 			);
 			name = "设置";
 			sourceTree = "<group>";
@@ -1838,6 +1854,7 @@
 				A1211E941BB2413500B25AA4 /* UMSCommentDetailController.xib in Resources */,
 				A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */,
 				A13EEA8E1B8EFBBF0052C2A7 /* newsMenu.xib in Resources */,
+				A19929161BDA087100B155A5 /* CorporationViewController.xib in Resources */,
 				A193F6DB1BB94216007A697F /* area.plist in Resources */,
 				A1E9BE9D1BA8057F00876186 /* activityUnit.xib in Resources */,
 				A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */,
@@ -2055,6 +2072,7 @@
 				A12492521BC757070042324D /* TopicUnit.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
+				A19929151BDA087100B155A5 /* CorporationViewController.m in Sources */,
 				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,
 				A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,

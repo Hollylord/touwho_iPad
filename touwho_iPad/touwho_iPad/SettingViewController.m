@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "AboutViewController.h"
+#import "CorporationViewController.h"
 
 @interface SettingViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -110,9 +111,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //公司简介
     if (indexPath.row == 0) {
-        
+        CorporationViewController *firmVC = [[CorporationViewController alloc] initWithNibName:@"CorporationViewController" bundle:nil];
+        [self.navigationController pushViewController:firmVC animated:YES];
     }
+    //关于
     else if (indexPath.row == 1)
     {
         AboutViewController *aboutVC = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
