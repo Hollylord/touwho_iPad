@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface shipinView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 
 @end

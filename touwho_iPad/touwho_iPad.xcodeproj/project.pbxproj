@@ -15,30 +15,31 @@
 		A1033BD31B8C487000FC8921 /* topics.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1033BD21B8C487000FC8921 /* topics.xib */; };
 		A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BD71B8C513800FC8921 /* xiaozu.m */; };
 		A1033BE11B8C59CD00FC8921 /* topics.m in Sources */ = {isa = PBXBuildFile; fileRef = A1033BE01B8C59CD00FC8921 /* topics.m */; };
+		A11413C31BD9E4A600F11012 /* ModelForFootage.m in Sources */ = {isa = PBXBuildFile; fileRef = A11413C21BD9E4A600F11012 /* ModelForFootage.m */; };
 		A11451C21B8DC31400E45381 /* programsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11451C11B8DC31400E45381 /* programsCell.xib */; };
 		A11451C41B8DC47700E45381 /* apply.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11451C31B8DC47700E45381 /* apply.xib */; };
-		A1211E921BB2413500B25AA4 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1211E781BB2413500B25AA4 /* UMSocialLocalizable.strings */; settings = {ASSET_TAGS = (); }; };
-		A1211E931BB2413500B25AA4 /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211E861BB2413500B25AA4 /* libUMSocial_Sdk_4.2.3.a */; settings = {ASSET_TAGS = (); }; };
-		A1211E941BB2413500B25AA4 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E881BB2413500B25AA4 /* UMSCommentDetailController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E951BB2413500B25AA4 /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E891BB2413500B25AA4 /* UMSCommentInputController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E961BB2413500B25AA4 /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8A1BB2413500B25AA4 /* UMSCommentInputControlleriPad.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E971BB2413500B25AA4 /* UMShareEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8B1BB2413500B25AA4 /* UMShareEditViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E981BB2413500B25AA4 /* UMShareEditViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8C1BB2413500B25AA4 /* UMShareEditViewControlleriPad.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E991BB2413500B25AA4 /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8D1BB2413500B25AA4 /* UMSLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E9A1BB2413500B25AA4 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8E1BB2413500B25AA4 /* UMSnsAccountViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E9B1BB2413500B25AA4 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8F1BB2413500B25AA4 /* UMSShareListController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1211E9C1BB2413500B25AA4 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1211E901BB2413500B25AA4 /* UMSocialSDKResourcesNew.bundle */; settings = {ASSET_TAGS = (); }; };
-		A1211EA91BB2421700B25AA4 /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211E9F1BB2421700B25AA4 /* libSocialQQ.a */; settings = {ASSET_TAGS = (); }; };
-		A1211EAA1BB2421700B25AA4 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EA01BB2421700B25AA4 /* TencentOpenAPI.framework */; settings = {ASSET_TAGS = (); }; };
-		A1211EAB1BB2421700B25AA4 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1211EA11BB2421700B25AA4 /* TencentOpenApi_IOS_Bundle.bundle */; settings = {ASSET_TAGS = (); }; };
-		A1211EAC1BB2421700B25AA4 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EA41BB2421700B25AA4 /* libSocialWechat.a */; settings = {ASSET_TAGS = (); }; };
-		A1211EAD1BB2421700B25AA4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EA51BB2421700B25AA4 /* libWeChatSDK.a */; settings = {ASSET_TAGS = (); }; };
+		A1211E921BB2413500B25AA4 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1211E781BB2413500B25AA4 /* UMSocialLocalizable.strings */; };
+		A1211E931BB2413500B25AA4 /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211E861BB2413500B25AA4 /* libUMSocial_Sdk_4.2.3.a */; };
+		A1211E941BB2413500B25AA4 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E881BB2413500B25AA4 /* UMSCommentDetailController.xib */; };
+		A1211E951BB2413500B25AA4 /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E891BB2413500B25AA4 /* UMSCommentInputController.xib */; };
+		A1211E961BB2413500B25AA4 /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8A1BB2413500B25AA4 /* UMSCommentInputControlleriPad.xib */; };
+		A1211E971BB2413500B25AA4 /* UMShareEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8B1BB2413500B25AA4 /* UMShareEditViewController.xib */; };
+		A1211E981BB2413500B25AA4 /* UMShareEditViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8C1BB2413500B25AA4 /* UMShareEditViewControlleriPad.xib */; };
+		A1211E991BB2413500B25AA4 /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8D1BB2413500B25AA4 /* UMSLoginViewController.xib */; };
+		A1211E9A1BB2413500B25AA4 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8E1BB2413500B25AA4 /* UMSnsAccountViewController.xib */; };
+		A1211E9B1BB2413500B25AA4 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E8F1BB2413500B25AA4 /* UMSShareListController.xib */; };
+		A1211E9C1BB2413500B25AA4 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1211E901BB2413500B25AA4 /* UMSocialSDKResourcesNew.bundle */; };
+		A1211EA91BB2421700B25AA4 /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211E9F1BB2421700B25AA4 /* libSocialQQ.a */; };
+		A1211EAA1BB2421700B25AA4 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EA01BB2421700B25AA4 /* TencentOpenAPI.framework */; };
+		A1211EAB1BB2421700B25AA4 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A1211EA11BB2421700B25AA4 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		A1211EAC1BB2421700B25AA4 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EA41BB2421700B25AA4 /* libSocialWechat.a */; };
+		A1211EAD1BB2421700B25AA4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EA51BB2421700B25AA4 /* libWeChatSDK.a */; };
 		A1211EAF1BB242B300B25AA4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EAE1BB242B300B25AA4 /* CoreTelephony.framework */; };
 		A1211EB11BB242D400B25AA4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EB01BB242D400B25AA4 /* libsqlite3.tbd */; };
 		A1211EB31BB242DF00B25AA4 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EB21BB242DF00B25AA4 /* libiconv.tbd */; };
 		A1211EB51BB242ED00B25AA4 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EB41BB242ED00B25AA4 /* libstdc++.tbd */; };
 		A1211EB71BB242F800B25AA4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211EB61BB242F800B25AA4 /* libz.tbd */; };
-		A12492521BC757070042324D /* TopicUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A12492511BC757070042324D /* TopicUnit.m */; settings = {ASSET_TAGS = (); }; };
+		A12492521BC757070042324D /* TopicUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A12492511BC757070042324D /* TopicUnit.m */; };
 		A13259261B82C35A00A327C6 /* programView.m in Sources */ = {isa = PBXBuildFile; fileRef = A13259251B82C35A00A327C6 /* programView.m */; };
 		A13259281B82C37B00A327C6 /* programView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13259271B82C37B00A327C6 /* programView.xib */; };
 		A132592D1B82C65000A327C6 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A132592A1B82C65000A327C6 /* ASPopUpView.m */; };
@@ -53,33 +54,33 @@
 		A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA931B8F0F580052C2A7 /* news2ViewController.m */; };
 		A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */; };
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
-		A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE901BBBC6B500571817 /* SponsorModel.m */; settings = {ASSET_TAGS = (); }; };
-		A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE931BBBD51900571817 /* JiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
-		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; settings = {ASSET_TAGS = (); }; };
-		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; settings = {ASSET_TAGS = (); }; };
-		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; settings = {ASSET_TAGS = (); }; };
-		A183384A1BC65665000866EB /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18338491BC65665000866EB /* xinwen.plist */; settings = {ASSET_TAGS = (); }; };
-		A183384D1BC66333000866EB /* ModelForGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384C1BC66333000866EB /* ModelForGroup.m */; settings = {ASSET_TAGS = (); }; };
-		A18338501BC665AB000866EB /* ModelForTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384F1BC665AB000866EB /* ModelForTopic.m */; settings = {ASSET_TAGS = (); }; };
-		A18338531BC6693C000866EB /* ModelForUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338521BC6693C000866EB /* ModelForUser.m */; settings = {ASSET_TAGS = (); }; };
-		A18338561BC66C5A000866EB /* ModelForComment.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338551BC66C5A000866EB /* ModelForComment.m */; settings = {ASSET_TAGS = (); }; };
-		A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338581BC673A3000866EB /* xiaozuUnit.m */; settings = {ASSET_TAGS = (); }; };
-		A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */; settings = {ASSET_TAGS = (); }; };
-		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
-		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A189BF321BD4997700E5CA37 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A189BF301BD4997700E5CA37 /* libSocialSina.a */; settings = {ASSET_TAGS = (); }; };
-		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A193F68F1BB90CD9007A697F /* publish.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F68E1BB90CD9007A697F /* publish.m */; settings = {ASSET_TAGS = (); }; };
-		A193F6D61BB924CB007A697F /* BTPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F6D41BB924CB007A697F /* BTPickerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A193F6D71BB924CB007A697F /* BTPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A193F6D51BB924CB007A697F /* BTPickerViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A193F6DB1BB94216007A697F /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = A193F6DA1BB94216007A697F /* area.plist */; settings = {ASSET_TAGS = (); }; };
-		A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */; settings = {ASSET_TAGS = (); }; };
-		A1987E021BB134CE00CC4130 /* sponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1987E011BB134CE00CC4130 /* sponsorCell.xib */; settings = {ASSET_TAGS = (); }; };
-		A1987E051BB1361700CC4130 /* sponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987E041BB1361700CC4130 /* sponsorTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		A1987E081BB138D000CC4130 /* ModelForSponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987E071BB138D000CC4130 /* ModelForSponsor.m */; settings = {ASSET_TAGS = (); }; };
+		A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */; };
+		A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE901BBBC6B500571817 /* SponsorModel.m */; };
+		A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE931BBBD51900571817 /* JiGouUnit.m */; };
+		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; };
+		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; };
+		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; };
+		A183384A1BC65665000866EB /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18338491BC65665000866EB /* xinwen.plist */; };
+		A183384D1BC66333000866EB /* ModelForGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384C1BC66333000866EB /* ModelForGroup.m */; };
+		A18338501BC665AB000866EB /* ModelForTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384F1BC665AB000866EB /* ModelForTopic.m */; };
+		A18338531BC6693C000866EB /* ModelForUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338521BC6693C000866EB /* ModelForUser.m */; };
+		A18338561BC66C5A000866EB /* ModelForComment.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338551BC66C5A000866EB /* ModelForComment.m */; };
+		A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338581BC673A3000866EB /* xiaozuUnit.m */; };
+		A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */; };
+		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; };
+		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; };
+		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; };
+		A189BF321BD4997700E5CA37 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A189BF301BD4997700E5CA37 /* libSocialSina.a */; };
+		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; };
+		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; };
+		A193F68F1BB90CD9007A697F /* publish.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F68E1BB90CD9007A697F /* publish.m */; };
+		A193F6D61BB924CB007A697F /* BTPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F6D41BB924CB007A697F /* BTPickerViewController.m */; };
+		A193F6D71BB924CB007A697F /* BTPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A193F6D51BB924CB007A697F /* BTPickerViewController.xib */; };
+		A193F6DB1BB94216007A697F /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = A193F6DA1BB94216007A697F /* area.plist */; };
+		A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */; };
+		A1987E021BB134CE00CC4130 /* sponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1987E011BB134CE00CC4130 /* sponsorCell.xib */; };
+		A1987E051BB1361700CC4130 /* sponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987E041BB1361700CC4130 /* sponsorTableViewCell.m */; };
+		A1987E081BB138D000CC4130 /* ModelForSponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = A1987E071BB138D000CC4130 /* ModelForSponsor.m */; };
 		A198E3C61B96D52700BB060E /* program2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A198E3C41B96D52700BB060E /* program2ViewController.m */; };
 		A198E3C71B96D52700BB060E /* program2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A198E3C51B96D52700BB060E /* program2ViewController.xib */; };
 		A19D09401B7C2DF100094B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D093F1B7C2DF100094B81 /* main.m */; };
@@ -90,22 +91,22 @@
 		A19D09641B7C2DF100094B81 /* touwho_iPadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09631B7C2DF100094B81 /* touwho_iPadUITests.m */; };
 		A19D09761B7C306900094B81 /* programViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09751B7C306900094B81 /* programViewController.m */; };
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
-		A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A1AB1F1A1BB4F1D30069818F /* RiskPrompt.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F191BB4F1D30069818F /* RiskPrompt.xib */; settings = {ASSET_TAGS = (); }; };
-		A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1C1BB4F4C50069818F /* RiskPrompt.m */; settings = {ASSET_TAGS = (); }; };
-		A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */; settings = {ASSET_TAGS = (); }; };
-		A1AB1F221BB4F52E0069818F /* ServiceAgreement.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */; settings = {ASSET_TAGS = (); }; };
-		A1AC16C51BBA2D48002A8F70 /* industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C41BBA2D48002A8F70 /* industry.plist */; settings = {ASSET_TAGS = (); }; };
-		A1AC16C71BBA3ACB002A8F70 /* age.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C61BBA3ACB002A8F70 /* age.plist */; settings = {ASSET_TAGS = (); }; };
-		A1AC16C91BBA3B9A002A8F70 /* stateOfProgram.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C81BBA3B9A002A8F70 /* stateOfProgram.plist */; settings = {ASSET_TAGS = (); }; };
-		A1AC16CB1BBA3C65002A8F70 /* firms.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16CA1BBA3C65002A8F70 /* firms.plist */; settings = {ASSET_TAGS = (); }; };
-		A1AC16CD1BBA88F2002A8F70 /* interestIndustry.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16CC1BBA88F2002A8F70 /* interestIndustry.plist */; settings = {ASSET_TAGS = (); }; };
-		A1AC16CF1BBA8986002A8F70 /* riskPreference.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16CE1BBA8986002A8F70 /* riskPreference.plist */; settings = {ASSET_TAGS = (); }; };
-		A1AC16D31BBA914F002A8F70 /* gender.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16D21BBA914F002A8F70 /* gender.plist */; settings = {ASSET_TAGS = (); }; };
-		A1B13D2A1BB5544B00A8AC29 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B13D291BB5544B00A8AC29 /* PushConfig.plist */; settings = {ASSET_TAGS = (); }; };
-		A1B13D2E1BB554D200A8AC29 /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B13D2D1BB554D200A8AC29 /* libPushSDK-1.8.5.a */; settings = {ASSET_TAGS = (); }; };
+		A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */; };
+		A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */; };
+		A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */; };
+		A1AB1F1A1BB4F1D30069818F /* RiskPrompt.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F191BB4F1D30069818F /* RiskPrompt.xib */; };
+		A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1C1BB4F4C50069818F /* RiskPrompt.m */; };
+		A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */ = {isa = PBXBuildFile; fileRef = A1AB1F1F1BB4F5220069818F /* ServiceAgreement.m */; };
+		A1AB1F221BB4F52E0069818F /* ServiceAgreement.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AB1F211BB4F52E0069818F /* ServiceAgreement.xib */; };
+		A1AC16C51BBA2D48002A8F70 /* industry.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C41BBA2D48002A8F70 /* industry.plist */; };
+		A1AC16C71BBA3ACB002A8F70 /* age.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C61BBA3ACB002A8F70 /* age.plist */; };
+		A1AC16C91BBA3B9A002A8F70 /* stateOfProgram.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16C81BBA3B9A002A8F70 /* stateOfProgram.plist */; };
+		A1AC16CB1BBA3C65002A8F70 /* firms.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16CA1BBA3C65002A8F70 /* firms.plist */; };
+		A1AC16CD1BBA88F2002A8F70 /* interestIndustry.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16CC1BBA88F2002A8F70 /* interestIndustry.plist */; };
+		A1AC16CF1BBA8986002A8F70 /* riskPreference.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16CE1BBA8986002A8F70 /* riskPreference.plist */; };
+		A1AC16D31BBA914F002A8F70 /* gender.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC16D21BBA914F002A8F70 /* gender.plist */; };
+		A1B13D2A1BB5544B00A8AC29 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B13D291BB5544B00A8AC29 /* PushConfig.plist */; };
+		A1B13D2E1BB554D200A8AC29 /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B13D2D1BB554D200A8AC29 /* libPushSDK-1.8.5.a */; };
 		A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B2CF431B7D7D9D001B25CE /* CATransform3DPerspect.m */; };
 		A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868411B842D02005C4A6F /* discoveryViewController.m */; };
 		A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B868441B84768F005C4A6F /* huodongViewController.m */; };
@@ -178,9 +179,9 @@
 		A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDDC1B9EB7050023AB6E /* replyViewController.xib */; };
 		A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */; };
 		A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */; };
-		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; settings = {ASSET_TAGS = (); }; };
-		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		A1CF1E231BAFF6190065EF77 /* ProgramsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */; settings = {ASSET_TAGS = (); }; };
+		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; };
+		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; };
+		A1CF1E231BAFF6190065EF77 /* ProgramsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */; };
 		A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */; };
 		A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */; };
 		A1D620021BA6AEA9009FCA1F /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620011BA6AEA9009FCA1F /* TopicCell.xib */; };
@@ -193,16 +194,16 @@
 		A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78E1C1B9D943200C136C3 /* notification.xib */; };
 		A1D78E1F1B9D945F00C136C3 /* commentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78E1E1B9D945F00C136C3 /* commentCell.xib */; };
 		A1D78E221B9D96BB00C136C3 /* message.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78E211B9D96BB00C136C3 /* message.m */; };
-		A1D9FB4C1BD8C6E800321F7E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A1D9FB4D1BD8C6E800321F7E /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A1D9FB4C1BD8C6E800321F7E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */; };
+		A1D9FB4D1BD8C6E800321F7E /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
 		A1DAFAB81B8C1F9400189680 /* xiaozu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB71B8C1F9400189680 /* xiaozu.xib */; };
 		A1DAFABB1B8C37BE00189680 /* circle.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DAFABA1B8C37BE00189680 /* circle.m */; };
 		A1DB9AAD1BA2AD5800EC97D6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DB9AAC1BA2AD5800EC97D6 /* MobileCoreServices.framework */; };
 		A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DB9AB81BA2BB2A00EC97D6 /* xiaozuUnit.xib */; };
-		A1DDDE891BD6477C0045A659 /* libbdtts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DDDE881BD6477C0045A659 /* libbdtts.a */; settings = {ASSET_TAGS = (); }; };
-		A1E03BCF1BD8E414008247E0 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E03BCD1BD8E414008247E0 /* AboutViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A1E03BD01BD8E414008247E0 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E03BCE1BD8E414008247E0 /* AboutViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		A1DDDE891BD6477C0045A659 /* libbdtts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DDDE881BD6477C0045A659 /* libbdtts.a */; };
+		A1E03BCF1BD8E414008247E0 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E03BCD1BD8E414008247E0 /* AboutViewController.m */; };
+		A1E03BD01BD8E414008247E0 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E03BCE1BD8E414008247E0 /* AboutViewController.xib */; };
 		A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E6EB3F1BA13463005D4E6F /* OtherCenterViewController.m */; };
 		A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */; };
 		A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE8D1BA7B60D00876186 /* JiGouMenuView.m */; };
@@ -214,11 +215,11 @@
 		A1E9BE9D1BA8057F00876186 /* activityUnit.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E9BE9C1BA8057F00876186 /* activityUnit.xib */; };
 		A1E9BEA01BA8077F00876186 /* activityList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE9F1BA8077F00876186 /* activityList.m */; };
 		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
-		A1EB96701BC8B17200C15A39 /* ModelForNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB966F1BC8B17200C15A39 /* ModelForNews.m */; settings = {ASSET_TAGS = (); }; };
-		A1EB96751BC8C41D00C15A39 /* ModelForActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */; settings = {ASSET_TAGS = (); }; };
-		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; settings = {ASSET_TAGS = (); }; };
-		A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD81451BC79DA800F269E3 /* CommentCell.m */; settings = {ASSET_TAGS = (); }; };
-		A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD814B1BC7B3B100F269E3 /* TopicCell.m */; settings = {ASSET_TAGS = (); }; };
+		A1EB96701BC8B17200C15A39 /* ModelForNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB966F1BC8B17200C15A39 /* ModelForNews.m */; };
+		A1EB96751BC8C41D00C15A39 /* ModelForActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */; };
+		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; };
+		A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD81451BC79DA800F269E3 /* CommentCell.m */; };
+		A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD814B1BC7B3B100F269E3 /* TopicCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,6 +256,8 @@
 		A1033BD71B8C513800FC8921 /* xiaozu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xiaozu.m; sourceTree = "<group>"; };
 		A1033BDF1B8C59CD00FC8921 /* topics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topics.h; sourceTree = "<group>"; };
 		A1033BE01B8C59CD00FC8921 /* topics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = topics.m; sourceTree = "<group>"; };
+		A11413C11BD9E4A600F11012 /* ModelForFootage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForFootage.h; sourceTree = "<group>"; };
+		A11413C21BD9E4A600F11012 /* ModelForFootage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForFootage.m; sourceTree = "<group>"; };
 		A11451C11B8DC31400E45381 /* programsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programsCell.xib; sourceTree = "<group>"; };
 		A11451C31B8DC47700E45381 /* apply.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = apply.xib; sourceTree = "<group>"; };
 		A1211E791BB2413500B25AA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
@@ -677,7 +680,7 @@
 				A17FAE961BBBD5D200571817 /* controller */,
 				A1033BDC1B8C555900FC8921 /* 社群列表 */,
 				A1E9BE971BA7F60D00876186 /* 活动列表 */,
-				A1DB9AB71BA2B46500EC97D6 /* 路演列表 */,
+				A1DB9AB71BA2B46500EC97D6 /* 视频列表 */,
 			);
 			name = "社群";
 			sourceTree = "<group>";
@@ -876,6 +879,8 @@
 				A18338551BC66C5A000866EB /* ModelForComment.m */,
 				A1EB96731BC8C41D00C15A39 /* ModelForActivity.h */,
 				A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */,
+				A11413C11BD9E4A600F11012 /* ModelForFootage.h */,
+				A11413C21BD9E4A600F11012 /* ModelForFootage.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1574,7 +1579,7 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
-		A1DB9AB71BA2B46500EC97D6 /* 路演列表 */ = {
+		A1DB9AB71BA2B46500EC97D6 /* 视频列表 */ = {
 			isa = PBXGroup;
 			children = (
 				A1002B1E1B85B682007520AA /* shipinMenuView.h */,
@@ -1583,7 +1588,7 @@
 				A1002B191B857570007520AA /* shipinView.m */,
 				A1E9BE981BA801FB00876186 /* shipinView.xib */,
 			);
-			name = "路演列表";
+			name = "视频列表";
 			sourceTree = "<group>";
 		};
 		A1DF1F2E1BC774390050C30B /* controller */ = {
@@ -2017,6 +2022,7 @@
 				A10076BE1BA91D780097987B /* profile.m in Sources */,
 				A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,
+				A11413C31BD9E4A600F11012 /* ModelForFootage.m in Sources */,
 				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,
 				A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */,
 				A1BE7F461B8DA5CE00E76711 /* meLeft.m in Sources */,
