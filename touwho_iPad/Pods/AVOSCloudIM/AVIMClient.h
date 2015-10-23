@@ -16,7 +16,7 @@
 @class AVIMConversationQuery;
 @protocol AVIMClientDelegate;
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, AVIMClientStatus) {
     AVIMClientStatusNone,
     AVIMClientStatusOpening,
     AVIMClientStatusOpened,
@@ -24,19 +24,20 @@ typedef enum : NSUInteger {
     AVIMClientStatusResuming,
     AVIMClientStatusClosing,
     AVIMClientStatusClosed
-} AVIMClientStatus;
+};
 
-typedef uint64_t AVIMConversationOption;
-enum : AVIMConversationOption {
-    AVIMConversationOptionNone = 0,
+typedef NS_OPTIONS(uint64_t, AVIMConversationOption) {
+    AVIMConversationOptionNone      = 0,
     AVIMConversationOptionTransient = 1 << 0,
+    AVIMConversationOptionUnique    = 1 << 1,
 };
 
 @interface AVIMClient : NSObject
-@property(nonatomic, weak)id<AVIMClientDelegate> delegate;
-@property(nonatomic, weak)id<AVIMSignatureDataSource> signatureDataSource;
-@property(nonatomic, readonly)NSString *clientId;
-@property(nonatomic, readonly)AVIMClientStatus status;
+
+@property (nonatomic, weak) id<AVIMClientDelegate> delegate;
+@property (nonatomic, weak) id<AVIMSignatureDataSource> signatureDataSource;
+@property (nonatomic, readonly, copy) NSString *clientId;
+@property (nonatomic, readonly, assign) AVIMClientStatus status;
 
 /*!
  默认 AVIMClient 实例

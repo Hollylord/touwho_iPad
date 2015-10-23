@@ -4,3 +4,4 @@ pod 'AMapSearch'
 pod 'AVOSCloud'
 pod 'AVOSCloudIM'
 pod "AFNetworking", "~> 2.0"
+pod 'XXNibBridge', '~> 2.2'
