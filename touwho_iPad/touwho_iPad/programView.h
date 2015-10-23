@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ASProgressPopUpView.h"
 #import "ModelForProgramView.h"
+#import <XXNibBridge.h>
 
 @protocol programViewDelegate <NSObject>
 /**
@@ -18,7 +19,7 @@
 @end
 
 
-@interface programView : UIView <ASProgressPopUpViewDataSource>
+@interface programView : UIView <ASProgressPopUpViewDataSource,XXNibBridge>
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *title;

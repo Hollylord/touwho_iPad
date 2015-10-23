@@ -100,7 +100,7 @@
                                 <constraint firstAttribute="width" constant="2" id="dBN-oV-DkI"/>
                             </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNX-L7-OdP">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNX-L7-OdP" customClass="programView">
                             <rect key="frame" x="22" y="25" width="475" height="282"/>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

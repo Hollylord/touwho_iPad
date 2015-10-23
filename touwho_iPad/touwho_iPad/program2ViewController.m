@@ -60,10 +60,10 @@
     [super viewDidLoad];
 
     //添加programView视图
-    programView *view = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil]firstObject];
+    programView *view = (programView *)self.program;
     view.model = self.model1;
-    [self.program addSubview:view];
-    viewForprogram = view;
+    
+    
     
     
     
@@ -116,8 +116,7 @@
     
     [super updateViewConstraints];
 
-    //约束左上角的view
-    [self layoutForProgram:viewForprogram];
+    
     //更改textView1的高度
     for (NSLayoutConstraint *constraint in self.textView1.constraints) {
         if ([constraint.identifier isEqualToString:@"textView1Height"]) {
@@ -131,21 +130,13 @@
         }
     }
 }
-- (void)layoutForProgram:(programView *)view{
-    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.program attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
-    NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.program attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.program attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.program attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-    [self.program addConstraints:@[leading,trailing,top,bottom]];
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-}
+
 - (void)layoutForFollowBtn:(UIView *)view {
     NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTrailing multiplier:1 constant:-20];
     NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTop multiplier:1 constant:20];
     
     [view.superview addConstraints:@[trailing,top]];
     view.translatesAutoresizingMaskIntoConstraints = NO;
-
 
 }
 

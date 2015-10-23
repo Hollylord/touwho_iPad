@@ -47,9 +47,11 @@
     
     
     //搜索设置
-    _searchAPI = [[AMapSearchAPI alloc] initWithSearchKey:@"a50e4a2d762f64b6a67ff794fc76c67e" Delegate:self];
+    _searchAPI = [[AMapSearchAPI alloc] init];
+//    [[AMapSearchAPI alloc] initWithSearchKey:@"a50e4a2d762f64b6a67ff794fc76c67e" Delegate:self];
+    _searchAPI.delegate = self;
     AMapGeocodeSearchRequest *request = [[AMapGeocodeSearchRequest alloc] init];
-    request.city = @[@"深圳"];
+    request.city = @"深圳";
     request.address = @"宝安区龙华街道奋进路64";
     [_searchAPI AMapGeocodeSearch:request];
     
