@@ -34,7 +34,7 @@
     model.iconImage = [UIImage imageNamed:@"yuwang"];
     model.title = @"习近平向金正恩致贺电";
     model.time = @"2015-10-10";
-    model.abstract = @"习近平在贺电中说，在朝鲜劳动党成立70周年之际，我代表中国共产党中央委员会，并以我个人的名义，向你并通过你，向朝鲜劳动党中央、全体党员以及全体朝鲜人民致以热烈的祝贺。";
+    model.source = @"习近平";
     
     for (int i = 0; i < 5; i ++) {
         newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];

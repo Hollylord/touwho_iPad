@@ -25,9 +25,10 @@
 
 
 
-//用来装所有投资人Cell的模型的数组
-@property (strong,nonatomic) NSMutableArray *modelArray;
-
+//用来装所有LP投资人Cell的模型的数组
+@property (strong,nonatomic) NSMutableArray *LPArray;
+//用来装所有GP投资人Cell的模型的数组
+@property (strong,nonatomic) NSMutableArray *GPArray;
 
 
 //按钮点击
@@ -42,13 +43,18 @@
     CGFloat height1;//textView1高度
     CGFloat height2;//textView2高度
 }
-- (NSMutableArray *)modelArray{
-    if (!_modelArray) {
-        _modelArray = [NSMutableArray array];
+- (NSMutableArray *)LPArray{
+    if (!_LPArray) {
+        _LPArray = [NSMutableArray array];
     }
-    return  _modelArray;
+    return  _LPArray;
 }
-
+- (NSMutableArray *)GPArray{
+    if (!_GPArray) {
+        _GPArray = [NSMutableArray array];
+    }
+    return _GPArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,14 +76,14 @@
     model.name = @"杨伟鹏";
     model.amount = @"意向跟投：500万";
     model.time = @"2015.8.15";
-    [self.modelArray addObject:model];
+    [self.LPArray addObject:model];
     
     ModelForSponsor *model2 = [[ModelForSponsor alloc] init];
     model2.image = [UIImage imageNamed:@"zhw"];
     model2.name = @"郑惠文";
     model2.amount = @"意向跟投：500万";
     model2.time = @"2015.9.15";
-    [self.modelArray addObject:model2];
+    [self.LPArray addObject:model2];
     
     //计算textView高度
     NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
@@ -146,20 +152,43 @@
 #pragma mark - tableView代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+//        return self.GPArray.count;
+        return 2;
+    }
+    else{
+        return self.LPArray.count;
+    }
     
-    return self.modelArray.count;
 }
-
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return @"意向领投人";
+    }
+    else{
+        return @"意向跟投人";
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     sponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sponsorCell" forIndexPath:indexPath];
+    //GP
+    if (indexPath.section == 0) {
+        cell.identityIMG.hidden = NO;
+//        cell.model = self.GPArray[indexPath.row];
+        return cell;
+    }
+    //LP
+    else
+    {
+        cell.model = self.LPArray[indexPath.row];
+        return cell;
+    }
     
-    cell.model = self.modelArray[indexPath.row];
-    return cell;
 }
 
 //跳转他人个人中心
@@ -168,7 +197,7 @@
     
     OtherCenterViewController *sponsor = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
     //传递数据
-    ModelForSponsor *model = self.modelArray[indexPath.row];
+    ModelForSponsor *model = self.LPArray[indexPath.row];
     //没有创建model会使得指针指向nil，数据传递不过去
     sponsor.model = [[modelForOtherVC alloc] init];
     sponsor.model.nickName = model.name;

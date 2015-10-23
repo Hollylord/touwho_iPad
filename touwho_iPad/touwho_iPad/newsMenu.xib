@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -18,29 +18,22 @@
                         <constraint firstAttribute="width" constant="120" id="fcr-CM-jbt"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-10-7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tux-bQ-O5p">
-                    <rect key="frame" x="306" y="37" width="81" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新三板上市券商全程指引" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yum-Mx-ekx">
+                    <rect key="frame" x="147" y="8" width="187" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-A8-YDY">
-                    <rect key="frame" x="146" y="66" width="246" height="34"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来源：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnk-8U-F42">
+                    <rect key="frame" x="146" y="57" width="51" height="21"/>
                     <animations/>
-                    <attributedString key="attributedText">
-                        <fragment content="为什么习近平讲中国反腐没有权力斗争？">
-                            <attributes>
-                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
-                                <font key="NSFont" size="15" name="MicrosoftYaHei"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新三板上市券商全程指引" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yum-Mx-ekx">
-                    <rect key="frame" x="146" y="8" width="187" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-10-7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tux-bQ-O5p">
+                    <rect key="frame" x="146" y="99" width="81" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -51,27 +44,26 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="jIj-M2-kjm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0ma-me-OID"/>
-                <constraint firstAttribute="trailing" secondItem="5gw-A8-YDY" secondAttribute="trailing" constant="8" id="Bjz-Kd-nTa"/>
                 <constraint firstItem="jIj-M2-kjm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Fnm-js-cgF"/>
-                <constraint firstAttribute="trailing" secondItem="Tux-bQ-O5p" secondAttribute="trailing" constant="13" id="GZb-PJ-4ri"/>
+                <constraint firstItem="Tux-bQ-O5p" firstAttribute="top" secondItem="rnk-8U-F42" secondAttribute="bottom" constant="21" id="Hcj-gL-bqA"/>
+                <constraint firstItem="rnk-8U-F42" firstAttribute="top" secondItem="yum-Mx-ekx" secondAttribute="bottom" constant="28" id="Hwa-sF-M17"/>
+                <constraint firstItem="Tux-bQ-O5p" firstAttribute="leading" secondItem="rnk-8U-F42" secondAttribute="leading" id="Ja0-cl-Y0n"/>
                 <constraint firstItem="yum-Mx-ekx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="MjI-kF-yoC"/>
-                <constraint firstItem="5gw-A8-YDY" firstAttribute="leading" secondItem="jIj-M2-kjm" secondAttribute="trailing" constant="18" id="PIi-ZF-RDJ"/>
-                <constraint firstItem="5gw-A8-YDY" firstAttribute="leading" secondItem="yum-Mx-ekx" secondAttribute="leading" id="btJ-hW-FvE"/>
-                <constraint firstItem="Tux-bQ-O5p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="m4w-xO-8am"/>
-                <constraint firstItem="5gw-A8-YDY" firstAttribute="top" secondItem="Tux-bQ-O5p" secondAttribute="bottom" constant="8" id="quw-ss-eGe"/>
+                <constraint firstItem="yum-Mx-ekx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="40" id="iFz-tc-unH"/>
+                <constraint firstItem="rnk-8U-F42" firstAttribute="leading" secondItem="jIj-M2-kjm" secondAttribute="trailing" constant="18" id="iqs-6T-Ncb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="abstractLabel" destination="5gw-A8-YDY" id="gTE-kG-oFt"/>
                 <outlet property="newsIconView" destination="jIj-M2-kjm" id="vic-nt-Nja"/>
+                <outlet property="sourceLabel" destination="rnk-8U-F42" id="1MR-fV-7Yl"/>
                 <outlet property="timeLabel" destination="Tux-bQ-O5p" id="lvG-M3-yv0"/>
                 <outlet property="titleLabel" destination="yum-Mx-ekx" id="gNu-N3-uNL"/>
                 <outletCollection property="gestureRecognizers" destination="YK4-RO-ybl" appends="YES" id="8Dp-Yv-gy9"/>
             </connections>
-            <point key="canvasLocation" x="42" y="117"/>
+            <point key="canvasLocation" x="260" y="100"/>
         </view>
         <tapGestureRecognizer id="YK4-RO-ybl">
             <connections>

@@ -20,7 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *newsIconView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *abstractLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
+
 
 @property (strong,nonatomic) ModelForNews *model;
 

@@ -23,6 +23,7 @@
     self.newsIconView.image = model.iconImage;
     self.titleLabel.text = model.title;
     self.timeLabel.text = model.time;
-    self.abstractLabel.text = model.abstract;
+    NSString *source = model.source;
+    self.sourceLabel.text = [NSString stringWithFormat:@"来源：%@",source];
 }
 @end

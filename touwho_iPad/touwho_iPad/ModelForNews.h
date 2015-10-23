@@ -13,7 +13,7 @@
 @property (strong,nonatomic) UIImage *image;
 @property (copy,nonatomic) NSString *title;
 @property (copy,nonatomic) NSString *time;
-@property (copy,nonatomic) NSString *abstract;
+@property (copy,nonatomic) NSString *source;
 @property (copy,nonatomic) NSString *content;
 
 @end

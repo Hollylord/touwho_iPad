@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -42,22 +42,33 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="identity" translatesAutoresizingMaskIntoConstraints="NO" id="Jvr-LC-Vvb">
+                        <rect key="frame" x="181" y="5" width="14" height="14"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="Rke-ID-u2v"/>
+                            <constraint firstAttribute="width" constant="14" id="TcC-5M-BOP"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstItem="xFv-ds-gqt" firstAttribute="top" secondItem="3DG-Qt-x3a" secondAttribute="bottom" constant="8" id="96u-Ec-kh8"/>
                     <constraint firstItem="m2n-IL-aCk" firstAttribute="leading" secondItem="yrZ-7h-xDz" secondAttribute="trailing" constant="30" id="LNu-J2-w72"/>
                     <constraint firstItem="m2n-IL-aCk" firstAttribute="top" secondItem="Nso-Ql-j3p" secondAttribute="top" constant="8" id="LbL-gM-mzi"/>
+                    <constraint firstItem="Jvr-LC-Vvb" firstAttribute="leading" secondItem="m2n-IL-aCk" secondAttribute="trailing" constant="1" id="S3h-AI-WLd"/>
                     <constraint firstItem="3DG-Qt-x3a" firstAttribute="leading" secondItem="m2n-IL-aCk" secondAttribute="leading" id="ThG-e4-zez"/>
                     <constraint firstItem="yrZ-7h-xDz" firstAttribute="centerY" secondItem="Nso-Ql-j3p" secondAttribute="centerY" id="fPQ-Dr-SQO"/>
                     <constraint firstItem="3DG-Qt-x3a" firstAttribute="top" secondItem="m2n-IL-aCk" secondAttribute="bottom" constant="8" id="hAl-gR-xDY"/>
                     <constraint firstItem="xFv-ds-gqt" firstAttribute="leading" secondItem="m2n-IL-aCk" secondAttribute="leading" id="i0f-pM-OiJ"/>
+                    <constraint firstItem="Jvr-LC-Vvb" firstAttribute="top" secondItem="Nso-Ql-j3p" secondAttribute="top" constant="5" id="m38-bh-2yU"/>
                     <constraint firstItem="yrZ-7h-xDz" firstAttribute="leading" secondItem="Nso-Ql-j3p" secondAttribute="leading" constant="8" id="ttG-jd-msH"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
                 <outlet property="headIconIMG" destination="yrZ-7h-xDz" id="r07-zb-5cN"/>
+                <outlet property="identityIMG" destination="Jvr-LC-Vvb" id="8Rx-kJ-lFA"/>
                 <outlet property="label1" destination="m2n-IL-aCk" id="gDt-k8-UCI"/>
                 <outlet property="label2" destination="3DG-Qt-x3a" id="Y9e-nE-p6K"/>
                 <outlet property="label3" destination="xFv-ds-gqt" id="HD4-wA-T4A"/>
@@ -65,4 +76,7 @@
             <point key="canvasLocation" x="332.5" y="259"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="identity" width="14" height="14"/>
+    </resources>
 </document>

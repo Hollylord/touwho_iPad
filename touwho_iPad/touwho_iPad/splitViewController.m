@@ -11,7 +11,7 @@
 #import "profileViewController.h"
 
 
-@interface splitViewController ()
+@interface splitViewController () <UIScrollViewDelegate>
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) UIPageControl *pageControl;
 @property (nonatomic,weak) UIButton *advertButton;
