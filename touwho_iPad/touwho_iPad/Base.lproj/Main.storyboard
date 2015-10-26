@@ -600,7 +600,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Sl9-aM-RsU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Sl9-aM-RsU"/>

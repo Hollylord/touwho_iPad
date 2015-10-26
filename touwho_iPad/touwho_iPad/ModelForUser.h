@@ -11,5 +11,6 @@
 @interface ModelForUser : NSObject
 @property (strong,nonatomic) UIImage *icon;
 @property (copy,nonatomic) NSString *nickName;
+@property (copy,nonatomic) NSString *iconURL;
 
 @end

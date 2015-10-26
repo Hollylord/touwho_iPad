@@ -160,4 +160,14 @@
     }
     return nil;
 }
+
+#pragma mark - Model
+- (void)setModel:(ModelForUser *)model{
+    if (_model != model) {
+        _model = model;
+    }
+    self.nickNameLabel.text = model.nickName;
+    //用sdWebImage下载图片
+    
+}
 @end

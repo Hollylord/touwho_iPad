@@ -32,6 +32,8 @@
     
     //添加左边view
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
+    //传数据
+    me.model = self.model;
     [self.view addSubview:me];
     [self layoutForMe:me];
     

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelForUser.h"
+
 @protocol meLeftDelegate
 /**
  *  跳转消息界面
@@ -57,7 +59,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak,nonatomic) id <meLeftDelegate>delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 
+@property (strong,nonatomic) ModelForUser *model;
 
 
 
