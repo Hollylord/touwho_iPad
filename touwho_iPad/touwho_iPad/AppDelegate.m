@@ -46,6 +46,8 @@
     // Required
     [APService setupWithOption:launchOptions];
     
+    //设置app的bage为0
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     return YES;
 }
 

@@ -22,4 +22,7 @@
 #import "ACMacros.h"
 #import "UMSocial.h"
 #import "UIImage+UIimage_HeadIcon.h"
+#import <AFNetworking.h>
+
+#define SERVERURL @"http://120.25.215.53:8099/api.aspx"
 #endif

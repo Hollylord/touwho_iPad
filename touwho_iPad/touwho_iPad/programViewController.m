@@ -103,9 +103,9 @@
         [alert addAction:OK];
         [self presentViewController:alert animated:YES completion:NULL];
     }
-    //公益众筹
+    //公益活动
     else if (sender.tag == 13){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"商品众筹" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"公益活动" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
         [alert addAction:OK];
         [self presentViewController:alert animated:YES completion:NULL];

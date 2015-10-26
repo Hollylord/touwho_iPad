@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -70,7 +70,7 @@
                         <constraint firstAttribute="width" constant="237" id="Odw-ON-aiS"/>
                     </constraints>
                 </stackView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-f7-XN6" userLabel="ID">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-f7-XN6">
                     <rect key="frame" x="150" y="123" width="359" height="53"/>
                     <animations/>
                     <constraints>
@@ -150,6 +150,9 @@
                     <rect key="frame" x="379" y="266" width="100" height="50"/>
                     <animations/>
                     <state key="normal" title="获取验证码" backgroundImage="anniuHei"/>
+                    <connections>
+                        <action selector="getVerCode:" destination="V6w-VY-s05" eventType="touchUpInside" id="EHi-AG-KDB"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="Q5h-wV-IGs">
                     <rect key="frame" x="91" y="326" width="267" height="53"/>
@@ -325,7 +328,10 @@
             <connections>
                 <outlet property="btn1" destination="bbY-8c-AwR" id="FH6-7I-els"/>
                 <outlet property="btn2" destination="pW2-Ek-rcS" id="1Fu-Om-xTL"/>
+                <outlet property="passwordView" destination="j1k-L2-gec" id="sll-wV-9t6"/>
+                <outlet property="phoneNumberView" destination="Vgg-f7-XN6" id="BiH-8y-W3N"/>
                 <outlet property="statusImage" destination="rxn-yS-Aa3" id="2rq-34-f3p"/>
+                <outlet property="vercodeBtn" destination="bm6-nS-Ax2" id="O4y-dN-Vow"/>
             </connections>
         </view>
     </objects>

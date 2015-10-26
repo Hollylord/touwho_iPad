@@ -13,6 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *statusImage;
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberView;
+@property (weak, nonatomic) IBOutlet UITextField *passwordView;
+@property (weak, nonatomic) IBOutlet UIButton *vercodeBtn;
+
 
 //马上注册
 @property (copy,nonatomic) dispatch_block_t nextStepBlock;
