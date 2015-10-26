@@ -147,8 +147,12 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm6-nS-Ax2">
-                    <rect key="frame" x="379" y="266" width="100" height="50"/>
+                    <rect key="frame" x="379" y="266" width="130" height="50"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="RjR-sl-lsc"/>
+                        <constraint firstAttribute="width" constant="130" id="tWb-Xk-2sA"/>
+                    </constraints>
                     <state key="normal" title="获取验证码" backgroundImage="anniuHei"/>
                     <connections>
                         <action selector="getVerCode:" destination="V6w-VY-s05" eventType="touchUpInside" id="EHi-AG-KDB"/>
@@ -227,10 +231,9 @@
                     <rect key="frame" x="91" y="62" width="418" height="53"/>
                     <animations/>
                 </imageView>
-                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-8c-AwR">
-                    <rect key="frame" x="141" y="69" width="69" height="40"/>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-8c-AwR">
+                    <rect key="frame" x="141" y="72" width="54" height="34"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="投资人">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -238,10 +241,9 @@
                         <action selector="statusChoose:" destination="V6w-VY-s05" eventType="touchUpInside" id="TH9-Pg-FGa"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW2-Ek-rcS">
-                    <rect key="frame" x="390" y="69" width="69" height="40"/>
+                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW2-Ek-rcS">
+                    <rect key="frame" x="405" y="72" width="54" height="34"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="创业者">
                         <color key="titleColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -328,10 +330,12 @@
             <connections>
                 <outlet property="btn1" destination="bbY-8c-AwR" id="FH6-7I-els"/>
                 <outlet property="btn2" destination="pW2-Ek-rcS" id="1Fu-Om-xTL"/>
+                <outlet property="invitationView" destination="VAi-p6-rrW" id="tZA-Sl-xx6"/>
                 <outlet property="passwordView" destination="j1k-L2-gec" id="sll-wV-9t6"/>
                 <outlet property="phoneNumberView" destination="Vgg-f7-XN6" id="BiH-8y-W3N"/>
                 <outlet property="statusImage" destination="rxn-yS-Aa3" id="2rq-34-f3p"/>
                 <outlet property="vercodeBtn" destination="bm6-nS-Ax2" id="O4y-dN-Vow"/>
+                <outlet property="vercodeView" destination="qgq-hs-uIA" id="9Py-av-K5B"/>
             </connections>
         </view>
     </objects>

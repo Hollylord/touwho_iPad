@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordView;
 @property (weak, nonatomic) IBOutlet UIButton *vercodeBtn;
+@property (weak, nonatomic) IBOutlet UITextField *vercodeView;
+@property (weak, nonatomic) IBOutlet UITextField *invitationView;
 
 
 //马上注册

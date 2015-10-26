@@ -705,6 +705,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="passwordView" destination="ydl-uv-Rty" id="XvQ-L2-AY7"/>
+                        <outlet property="phoneNumberView" destination="UcD-cL-bmW" id="2Ev-sV-gR9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGI-xc-1c2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

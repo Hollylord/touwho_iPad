@@ -14,20 +14,26 @@
 
 @interface loginViewController ()
 - (IBAction)login:(UIButton *)sender;
-
 - (IBAction)quit:(UIButton *)sender;
 - (IBAction)zhuce:(UIButton *)sender;
 - (IBAction)forgetPassword:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberView;
+@property (weak, nonatomic) IBOutlet UITextField *passwordView;
 
 
 @end
 
 @implementation loginViewController
-
+{
+    AFHTTPRequestOperationManager *mgr;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    mgr = [AFHTTPRequestOperationManager manager];
+    //新增可接受contentType
+    mgr.responseSerializer.acceptableContentTypes= [NSSet setWithObject:@"text/html"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,8 +46,7 @@
 }
 
 #pragma mark - 点击按钮
-//快速登录
-
+//退出
 - (IBAction)quit:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -76,11 +81,28 @@
 
 //点击登录按钮 跳转个人中心控制器
 - (IBAction)login:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
-    splitViewController *split = (splitViewController *)self.presentingViewController;
-    [split showDetailViewController:navigationController sender:nil];
+    //设置参数
+    NSString *phoneNumber = self.phoneNumberView.text;
+   
+    NSString *password = self.passwordView.text;
+   
+    NSDictionary *dic = @{@"method":@"checkVerCode",@"phone":phoneNumber,@"password":password};
+    //请求
+    [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"%@",[responseObject description]);
+        
+        //跳转个人中心
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
+        splitViewController *split = (splitViewController *)self.presentingViewController;
+        [split showDetailViewController:navigationController sender:nil];
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+    
+    
     
     
 }

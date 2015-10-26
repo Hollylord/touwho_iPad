@@ -10,18 +10,34 @@
 @implementation zhuce
 {
     int second;
+    AFHTTPRequestOperationManager *mgr;
+}
+//创建一个afnManager
+- (void)awakeFromNib{
+    mgr = [AFHTTPRequestOperationManager manager];
+    //新增可接受contentType
+    mgr.responseSerializer.acceptableContentTypes= [NSSet setWithObject:@"text/html"];
+    //responseSerializer设定返回的默认都是json,由于已经设置acceptableContentTypes了 所以不要在设置responseSerializer, 否则上面的设置就被覆盖了。
+    
+    //默认为投资人
+    self.btn1.selected = YES;
+
 }
 
 - (IBAction)statusChoose:(UIButton *)sender {
     //点击投资人
     if (sender.tag == 10) {
-        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        sender.selected = YES;
+        self.btn2.selected = NO;
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [self.btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         self.statusImage.image = [UIImage imageNamed:@"shenfen1"];
     }
     //点击创业者
     else {
-        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        sender.selected = YES;
+        self.btn1.selected = NO;
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [self.btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         self.statusImage.image = [UIImage imageNamed:@"shenfen2"];
     }
@@ -44,9 +60,29 @@
 }
 //点击注册
 - (IBAction)nextStep:(UIButton *)sender {
-    if (self.nextStepBlock) {
-        self.nextStepBlock();
+    //设置参数
+    NSString *phoneNumber = self.phoneNumberView.text;
+    NSString *vercode = self.vercodeView.text;
+    NSString *password = self.passwordView.text;
+    NSString *userType;
+    if (self.btn1.selected) {
+        userType = @"1";
     }
+    else {
+        userType = @"2";
+    }
+    NSString *invitator = self.invitationView.text;
+    NSDictionary *dic = @{@"method":@"checkVerCode",@"phone":phoneNumber,@"ver_code":vercode,@"password":password,@"user_type":userType,@"invester":invitator};
+    //请求
+    [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"%@",[responseObject description]);
+        if (self.nextStepBlock) {
+            self.nextStepBlock();
+        }
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+    
 }
 //确认已阅读同意协议按钮
 - (IBAction)confirmProtocol:(UIButton *)sender {
@@ -54,11 +90,7 @@
 }
 //获取验证码
 - (IBAction)getVerCode:(UIButton *)sender {
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    //新增可接受contentType
-    mgr.responseSerializer.acceptableContentTypes= [NSSet setWithObject:@"text/html"];
-    //responseSerializer设定返回的默认都是json,由于已经设置acceptableContentTypes了 所以不要在设置responseSerializer, 否则上面的设置就被覆盖了。
-   
+    
     //设定参数
     NSString *phoneNumber = self.phoneNumberView.text;
     //发送请求
@@ -69,7 +101,7 @@
         [self.vercodeBtn addSubview:timerLabel];
         
         //设定倒计时的总时长
-        second = 30;
+        second = 60;
         
         //执行倒计时
         [self performSelector:@selector(reflashGetKeyBt:) withObject:[NSNumber numberWithInt:second] afterDelay:0];
@@ -81,7 +113,7 @@
 }
 
 
-//倒数
+//倒计时
 - (void)reflashGetKeyBt:(NSNumber *)sec
 {
     if ([sec integerValue] == 0)
