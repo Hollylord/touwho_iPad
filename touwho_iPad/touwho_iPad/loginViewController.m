@@ -49,6 +49,9 @@
 //退出
 - (IBAction)quit:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    if (self.quitBlock) {
+        self.quitBlock();
+    }
 }
 
 //点击注册

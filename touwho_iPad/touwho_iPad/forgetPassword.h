@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface forgetPassword : UIView
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberView;
+@property (weak, nonatomic) IBOutlet UITextField *vercodeInputView;
+@property (weak, nonatomic) IBOutlet UIButton *vercodeBtn;
+
+
+
+
 - (IBAction)upStep:(UIButton *)sender;
-
-
 @end
