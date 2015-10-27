@@ -11,6 +11,8 @@
 #import "splitViewController.h"
 #import "AboutViewController.h"
 #import "SettingViewController.h"
+#import "profileViewController.h"
+#import "loginViewController.h"
 
 
 @interface leftViewController () <UISplitViewControllerDelegate>
@@ -112,12 +114,38 @@
     }
     //我
     else {
+        //保存其他三个按钮的状态
+        NSArray *statesArr = @[@(self.program.selected),@(self.news.selected),@(self.discovery.selected)];
+        
         if (sender.selected) {
             return ;
         }
         
+        NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+        //验证用户存在则直接跳转个人中心
+        if (user) {
+            
+            
+            profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
+            [self.splitViewController showDetailViewController:navigationController sender:nil];
+            
+        }
+        else {
+            //跳转登录VC
+            loginViewController* login = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+            login.quitBlock = ^(){
+                self.me.selected = NO;
+                self.program.selected = [[statesArr objectAtIndex:0] boolValue];
+                self.news.selected = [[statesArr objectAtIndex:1] boolValue];
+                self.discovery.selected = [[statesArr lastObject] boolValue];
+            };
+            login.modalPresentationStyle = UIModalPresentationFormSheet;
+            [self.splitViewController presentViewController:login animated:YES completion:NULL];
+        }
+        
         //发送被点击的通知
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotification" object:nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginNotification" object:nil];
         self.program.selected = NO;
         self.news.selected = NO;
         self.discovery.selected = NO;

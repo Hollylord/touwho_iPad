@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface loginViewController : UIViewController
-
+//点击退出的block
+@property (copy,nonatomic) void (^quitBlock)();
 @end
