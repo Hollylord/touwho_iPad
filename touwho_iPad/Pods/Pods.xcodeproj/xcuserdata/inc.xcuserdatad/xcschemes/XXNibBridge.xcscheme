@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '529276FE2F93A460041FB7F6'
+               BlueprintIdentifier = 'CBDCEC8D143B77548C42F01C'
                BlueprintName = 'XXNibBridge'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libXXNibBridge.a'>
