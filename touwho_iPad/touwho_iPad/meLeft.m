@@ -15,13 +15,13 @@
     UINib *nib = [UINib nibWithNibName:@"meLeftCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"meLeftCell"];
     
-    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"headIcon"];
-    if (filePath) {
-        NSData *data = [NSData dataWithContentsOfFile:filePath];
-        UIImage *icon = [UIImage imageWithData:data];
-        UIImage *newImage = [UIImage imageClipsWithHeadIcon:icon sideWidth:0];
-        self.headImageView.image = newImage;
-    }
+//    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"headIcon"];
+//    if (filePath) {
+//        NSData *data = [NSData dataWithContentsOfFile:filePath];
+//        UIImage *icon = [UIImage imageWithData:data];
+//        UIImage *newImage = [UIImage imageClipsWithHeadIcon:icon sideWidth:0];
+//        self.headImageView.image = newImage;
+//    }
     
     
 }
@@ -167,7 +167,15 @@
         _model = model;
     }
     self.nickNameLabel.text = model.nickName;
-    //用sdWebImage下载图片
+    
+    
+    NSURL *url = [NSURL URLWithString:model.iconURL];
+    
+    SDWebImageManager *mgr = [SDWebImageManager sharedManager];
+    [mgr downloadImageWithURL:url options:0 progress:NULL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
+        [self.headImageView setImage:newImage];
+    }];
     
 }
 @end

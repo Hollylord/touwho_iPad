@@ -12,5 +12,6 @@
 @property (strong,nonatomic) UIImage *icon;
 @property (copy,nonatomic) NSString *nickName;
 @property (copy,nonatomic) NSString *iconURL;
+@property (copy,nonatomic) NSString *userID;
 
 @end

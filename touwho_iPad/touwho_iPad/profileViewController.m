@@ -25,10 +25,19 @@
 @end
 
 @implementation profileViewController
-
+- (ModelForUser *)model{
+    if (!_model) {
+        _model = [[ModelForUser alloc] init];
+    }
+    return _model;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    self.model.nickName = [user objectForKey:@"userName"];
+    self.model.userID = [user objectForKey:@"userID"];
+    self.model.iconURL = [user objectForKey:@"iconURL"];
     
     //添加左边view
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];

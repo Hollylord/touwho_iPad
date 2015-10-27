@@ -83,10 +83,9 @@
 - (IBAction)login:(UIButton *)sender {
     //设置参数
     NSString *phoneNumber = self.phoneNumberView.text;
-   
     NSString *password = self.passwordView.text;
-   
     NSDictionary *dic = @{@"method":@"login",@"account":phoneNumber,@"password":password};
+    
     //请求
     [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *result = responseObject;
@@ -104,7 +103,6 @@
             //跳转个人中心
             [self dismissViewControllerAnimated:YES completion:NULL];
             profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
-            viewcontroller.model.nickName = phoneNumber;
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
             splitViewController *split = (splitViewController *)self.presentingViewController;
             [split showDetailViewController:navigationController sender:nil];
@@ -131,7 +129,7 @@
             
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
             
-            
+            NSLog(@"%@",snsAccount);
             //跳转到个人中心页面
             [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"3"];
             
@@ -152,7 +150,7 @@
             NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
             
             //保存用户信息
-            NSDictionary *dic = @{@"userName":nickName,@"userID":userID};
+            NSDictionary *dic = @{@"userName":nickName,@"userID":userID,@"iconURL":iconURL};
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
             [userDefault setObject:dic forKey:@"user"];
             [userDefault synchronize];
@@ -183,7 +181,7 @@
             
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];
             
-            
+            NSLog(@"%@",snsAccount);
             //跳转到个人中心页面
             [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"1"];
         }
@@ -192,13 +190,14 @@
     
     [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToWechatSession  completion:^(UMSocialResponseEntity *response){
         NSLog(@"SnsInformation is %@",response.data);
+        
     }];
     
 }
 //QQ登录
 - (IBAction)QQlogin:(UIButton *)sender {
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
-//    UMSocialSnsPlatform *snsPlatform  = [UMSocialSnsPlatformManager sharedInstance];
+
     //判断是否需要授权
     if (snsPlatform.needLogin) {
         
@@ -213,7 +212,7 @@
                 UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToQQ];
                 
                 //跳转到个人中心页面
-                //            [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"2"];
+                [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"2"];
             }});
     }
     //已经授权了，就不用弹出授权处理页面了 
@@ -221,6 +220,8 @@
         //在授权完成后调用获取用户信息的方法
         [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
             NSLog(@"SnsInformation is %@",response.data);
+            
+            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
         }];
     }
     
