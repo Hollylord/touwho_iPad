@@ -25,6 +25,7 @@ PODS:
   - AVOSCloud (3.1.5.2)
   - AVOSCloudIM (3.1.5.2):
     - AVOSCloud
+  - MBProgressHUD (0.9.1)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - AMapSearch
   - AVOSCloud
   - AVOSCloudIM
+  - MBProgressHUD (~> 0.9.1)
   - SDWebImage (~> 3.7)
   - XXNibBridge (~> 2.2)
 
@@ -45,6 +47,7 @@ SPEC CHECKSUMS:
   AMapSearch: fd1ed96353f8a0f5c2e2463dac6a145bb3e6970f
   AVOSCloud: 7b1305f61ac6cd3367c683deab3fc0700982f1c1
   AVOSCloudIM: 8ce17375162a1b1831917267fd229d224aa96cfb
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   XXNibBridge: 70adcf1e85a2b5500d9de5f12781944dc51b0521
 

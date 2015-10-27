@@ -92,6 +92,11 @@
 - (IBAction)getVerCode:(UIButton *)sender {
     
     //设定参数
+    //如果不是11位手机号
+    if (self.phoneNumberView.text.length != 11) {
+        NSLog(@"手机号不正确");
+        return ;
+    }
     NSString *phoneNumber = self.phoneNumberView.text;
     //发送请求
     NSDictionary *para = @{@"method":@"getVercode",@"phone":phoneNumber};

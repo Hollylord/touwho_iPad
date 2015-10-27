@@ -6,3 +6,4 @@ pod 'AVOSCloudIM'
 pod "AFNetworking", "~> 2.0"
 pod 'XXNibBridge', '~> 2.2'
 pod 'SDWebImage', '~>3.7'
+pod 'MBProgressHUD', '~> 0.9.1'
