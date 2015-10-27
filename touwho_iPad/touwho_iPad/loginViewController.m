@@ -122,18 +122,34 @@
 - (IBAction)weiboLogin:(UIButton *)sender {
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
     
-    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+    //判断是否需要授权
+    if (snsPlatform.needLogin) {
         
-        //          获取微博用户名、uid、token等
-        if (response.responseCode == UMSResponseCodeSuccess) {
+        //弹出授权处理页面
+        snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
             
-            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
+            NSLog(@"%@",response);
             
-            NSLog(@"%@",snsAccount);
-            //跳转到个人中心页面
-            [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"3"];
+            //          获取微博用户名、uid、token等
+            if (response.responseCode == UMSResponseCodeSuccess) {
+                
+                UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
+                
+                NSLog(@"%@",snsAccount);
+                //跳转到个人中心页面
+                [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"3"];
+            }});
+    }
+    //已经授权了，就不用弹出授权处理页面了. 当然微博是不会来这个方法的
+    else{
+        //在授权完成后调用获取用户信息的方法
+        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
+            NSLog(@"SnsInformation is %@",response.data);
             
-        }});
+            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
+        }];
+    }
+
 }
 
 - (void)quickLogin:(NSString *)token withIcon:(NSString *)iconURL withNickName:(NSString *)nickName withChannel:(NSString *)channel{
