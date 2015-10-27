@@ -58,6 +58,7 @@
 - (IBAction)upStep:(UIButton *)sender {
     [self removeFromSuperview];
 }
+
 //点击注册
 - (IBAction)nextStep:(UIButton *)sender {
     //设置参数
@@ -75,10 +76,22 @@
     NSDictionary *dic = @{@"method":@"checkVerCode",@"phone":phoneNumber,@"ver_code":vercode,@"password":password,@"user_type":userType,@"invester":invitator};
     //请求
     [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",[responseObject description]);
-        if (self.nextStepBlock) {
-            self.nextStepBlock();
+        NSDictionary *result = responseObject;
+        //验证成功
+        if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]){
+            NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
+            
+            //保存用户信息
+            NSDictionary *dic = @{@"userName":phoneNumber,@"userID":userID};
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:dic forKey:@"user"];
+            [userDefault synchronize];
+            
+            if (self.nextStepBlock) {
+                self.nextStepBlock();
+            }
         }
+        
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
     }];
@@ -94,7 +107,10 @@
     //设定参数
     //如果不是11位手机号
     if (self.phoneNumberView.text.length != 11) {
-        NSLog(@"手机号不正确");
+        MBProgressHUD *hub = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hub.mode = MBProgressHUDModeText;
+        hub.labelText = @"手机号不正确";
+        [hub hide:YES afterDelay:0.5];
         return ;
     }
     NSString *phoneNumber = self.phoneNumberView.text;

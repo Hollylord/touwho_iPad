@@ -84,6 +84,9 @@
 
 //点击登录按钮 跳转个人中心控制器
 - (IBAction)login:(UIButton *)sender {
+    //小菊花loading
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     //设置参数
     NSString *phoneNumber = self.phoneNumberView.text;
     NSString *password = self.passwordView.text;
@@ -94,6 +97,8 @@
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]) {
+            //去除小菊花
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             
             NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
             

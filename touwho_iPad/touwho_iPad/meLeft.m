@@ -168,14 +168,18 @@
     }
     self.nickNameLabel.text = model.nickName;
     
-    
     NSURL *url = [NSURL URLWithString:model.iconURL];
+    if (url) {
+        SDWebImageManager *mgr = [SDWebImageManager sharedManager];
+        [mgr downloadImageWithURL:url options:0 progress:NULL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
+            [self.headImageView setImage:newImage];
+        }];
+    }
+    else{
+        self.headImageView.image = [UIImage imageClipsWithHeadIcon:[UIImage imageNamed:@"zhanweitu"] sideWidth:0];
+    }
     
-    SDWebImageManager *mgr = [SDWebImageManager sharedManager];
-    [mgr downloadImageWithURL:url options:0 progress:NULL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
-        [self.headImageView setImage:newImage];
-    }];
     
 }
 @end
