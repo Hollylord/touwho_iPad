@@ -75,7 +75,7 @@
     NSString *invitator = self.invitationView.text;
     NSDictionary *dic = @{@"method":@"checkVerCode",@"phone":phoneNumber,@"ver_code":vercode,@"password":password,@"user_type":userType,@"invester":invitator};
     //请求
-    [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]){
@@ -116,7 +116,7 @@
     NSString *phoneNumber = self.phoneNumberView.text;
     //发送请求
     NSDictionary *para = @{@"method":@"getVercode",@"phone":phoneNumber};
-    [mgr GET:SERVERURL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //添加一个倒计时的label
         UILabel *timerLabel = [[UILabel alloc] initWithFrame:self.vercodeBtn.bounds];
         [self.vercodeBtn addSubview:timerLabel];

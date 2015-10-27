@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelForNews : NSObject
-@property (strong,nonatomic) UIImage *iconImage;
-@property (strong,nonatomic) UIImage *image;
+//小图
+@property (copy,nonatomic) NSString *smallImageURL;
+//大图
+@property (copy,nonatomic) NSString *bigImageURL;
+
 @property (copy,nonatomic) NSString *title;
 @property (copy,nonatomic) NSString *time;
 @property (copy,nonatomic) NSString *source;

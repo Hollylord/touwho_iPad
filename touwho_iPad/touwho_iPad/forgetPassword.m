@@ -38,7 +38,7 @@
    
     NSDictionary *dic = @{@"method":@"getVercode_find",@"phone":phoneNumber};
     //请求
-    [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         //添加一个倒计时的label
         UILabel *timerLabel = [[UILabel alloc] initWithFrame:self.vercodeBtn.bounds];
@@ -96,7 +96,7 @@
     //设置参数
     NSString *newPassword = self.password2View.text;
     NSDictionary *para = @{@"method":@"checkVerCode_find",@"phone":self.phoneNumberView.text,@"ver_code":self.vercodeInputView.text,@"password":newPassword};
-    [mgr GET:SERVERURL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
         hud.mode = MBProgressHUDModeText;
         hud.labelText = @"修改密码成功";

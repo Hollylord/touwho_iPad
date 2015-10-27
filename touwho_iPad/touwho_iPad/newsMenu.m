@@ -20,7 +20,8 @@
     if (_model != model) {
         _model = model;
     }
-    self.newsIconView.image = model.iconImage;
+    NSURL *url = [NSURL URLWithString:model.smallImageURL];
+    [self.newsIconView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
     self.titleLabel.text = model.title;
     self.timeLabel.text = model.time;
     NSString *source = model.source;

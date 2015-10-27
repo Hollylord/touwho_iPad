@@ -19,31 +19,28 @@
 @interface news1ViewController () <newsMenuDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
+//存放下拉的所有新闻模型
+@property (strong, nonatomic) NSMutableArray *allNewsArr;
 
 
 @end
 
 @implementation news1ViewController
+{
+    AFHTTPRequestOperationManager *mgr;
+}
+- (NSMutableArray *)allNewsArr{
+    if (!_allNewsArr) {
+        _allNewsArr = [NSMutableArray array];
+    }
+    return _allNewsArr;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //创建数据
-    ModelForNews *model = [[ModelForNews alloc] init];
-    model.iconImage = [UIImage imageNamed:@"yuwang"];
-    model.title = @"习近平向金正恩致贺电";
-    model.time = @"2015-10-10";
-    model.source = @"习近平";
-    
-    for (int i = 0; i < 5; i ++) {
-        newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];
-        view.delegate = self;
-        view.model = model;
-        [self.scrollView addSubview:view];
-        [self layoutForNewsMenu:view index:i];
-    }
-    
+    //创建加载数据的AFN
+    mgr = [AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];  
 }
 
 
@@ -54,6 +51,46 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    //小菊花
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //设置参数
+    NSDictionary *para = @{@"method":@"getNewsTitle_Pre",@"news_id":@"0"};
+    //网络请求
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        //关闭小菊花
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        //获得新闻数组
+        NSArray *newsList = [responseObject objectForKey:@"value"];
+        for (NSDictionary *dic in newsList) {
+            //解析json
+            NSString *time = [dic objectForKey:@"mCreateTime"];
+            NSString *smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
+            NSString *title = [dic objectForKey:@"mTitle"];
+            
+            //转化为model
+            ModelForNews *model = [[ModelForNews alloc] init];
+            model.time = time;
+            model.smallImageURL = smallImageURL;
+            model.title = title;
+            
+            //存入模型
+            [self.allNewsArr addObject:model];
+        }
+        
+        for (int i = 0; i < self.allNewsArr.count; i ++) {
+            newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];
+            view.delegate = self;
+            view.model = self.allNewsArr[i];
+            [self.scrollView addSubview:view];
+            [self layoutForNewsMenu:view index:i];
+        }
+       
+        
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 - (void)layoutForNewsMenu:(newsMenu *)view index:(int)i{

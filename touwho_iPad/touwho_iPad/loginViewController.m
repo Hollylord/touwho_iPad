@@ -93,7 +93,7 @@
     NSDictionary *dic = @{@"method":@"login",@"account":phoneNumber,@"password":password};
     
     //请求
-    [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]) {
@@ -165,7 +165,7 @@
     //设置参数
     NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
     //请求
-    [mgr GET:SERVERURL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *result = responseObject;
         NSLog(@"%@",[[result objectForKey:@"value"] objectForKey:@"resValue"]);
         //验证成功

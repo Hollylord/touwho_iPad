@@ -88,7 +88,7 @@
  * @param url tts合成服务器地址
  *
  */
-- (void)setTTSServerURL: (NSString*)url;
+- (void)setTTSSERVER_API_URL: (NSString*)url;
 
 /**
  * @brief 设置tts超时时间
