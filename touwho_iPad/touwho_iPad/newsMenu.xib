@@ -41,7 +41,7 @@
                 </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="jIj-M2-kjm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0ma-me-OID"/>
                 <constraint firstItem="jIj-M2-kjm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Fnm-js-cgF"/>

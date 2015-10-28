@@ -438,21 +438,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lw-80-owP">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p28-wE-uVq">
+                                        <rect key="frame" x="0.0" y="435" width="600" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上拉刷新" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-JE-Jji">
+                                                <rect key="frame" x="266" y="11" width="68" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.63137254899999995" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="AI1-JE-Jji" firstAttribute="centerX" secondItem="p28-wE-uVq" secondAttribute="centerX" id="Dg0-X8-XfA"/>
+                                            <constraint firstItem="AI1-JE-Jji" firstAttribute="centerY" secondItem="p28-wE-uVq" secondAttribute="centerY" id="clm-aJ-s9Q"/>
+                                            <constraint firstAttribute="height" constant="44" id="w47-dY-PHb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="p28-wE-uVq" secondAttribute="bottom" constant="-20" id="9vf-GU-DwS"/>
+                                    <constraint firstItem="p28-wE-uVq" firstAttribute="top" secondItem="9Lw-80-owP" secondAttribute="top" priority="750" constant="435" id="F4S-fh-d5Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="p28-wE-uVq" secondAttribute="trailing" id="bcV-sm-TDD"/>
+                                    <constraint firstItem="p28-wE-uVq" firstAttribute="leading" secondItem="9Lw-80-owP" secondAttribute="leading" id="bkz-Ij-7qt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="j2A-mm-g1Y" id="rZW-Jv-cGJ"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9Lw-80-owP" secondAttribute="trailing" id="Bx4-UV-A1v"/>
+                            <constraint firstItem="p28-wE-uVq" firstAttribute="width" secondItem="V6N-sl-f2M" secondAttribute="width" id="OqZ-p9-rrD"/>
+                            <constraint firstItem="9Lw-80-owP" firstAttribute="top" secondItem="FG9-KY-skq" secondAttribute="bottom" id="YSY-kb-Xt4"/>
                             <constraint firstItem="9Lw-80-owP" firstAttribute="leading" secondItem="V6N-sl-f2M" secondAttribute="leading" id="Ye9-bo-sJo"/>
-                            <constraint firstItem="f9W-4o-EYy" firstAttribute="top" secondItem="9Lw-80-owP" secondAttribute="bottom" id="qFt-xY-pb7"/>
-                            <constraint firstItem="9Lw-80-owP" firstAttribute="top" secondItem="FG9-KY-skq" secondAttribute="bottom" constant="-44" id="spz-Er-0q9"/>
+                            <constraint firstAttribute="bottom" secondItem="9Lw-80-owP" secondAttribute="bottom" id="uG2-Pl-mcl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eYZ-Z9-aFX"/>
+                    <navigationItem key="navigationItem" title="新闻" id="eYZ-Z9-aFX"/>
                     <connections>
+                        <outlet property="bottomLabel" destination="AI1-JE-Jji" id="t6u-Ls-3hx"/>
+                        <outlet property="bottomView" destination="p28-wE-uVq" id="iHj-hN-giq"/>
                         <outlet property="scrollView" destination="9Lw-80-owP" id="zNa-1S-h3r"/>
                     </connections>
                 </viewController>
