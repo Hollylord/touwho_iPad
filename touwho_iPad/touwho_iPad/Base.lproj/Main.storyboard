@@ -441,7 +441,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p28-wE-uVq">
-                                        <rect key="frame" x="0.0" y="435" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="600" width="600" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上拉刷新" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-JE-Jji">
                                                 <rect key="frame" x="266" y="11" width="68" height="21"/>
@@ -462,8 +462,8 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="p28-wE-uVq" secondAttribute="bottom" constant="-20" id="9vf-GU-DwS"/>
-                                    <constraint firstItem="p28-wE-uVq" firstAttribute="top" secondItem="9Lw-80-owP" secondAttribute="top" priority="750" constant="435" id="F4S-fh-d5Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="p28-wE-uVq" secondAttribute="bottom" id="9vf-GU-DwS"/>
+                                    <constraint firstItem="p28-wE-uVq" firstAttribute="top" secondItem="9Lw-80-owP" secondAttribute="top" priority="750" constant="600" id="F4S-fh-d5Z" userLabel="滚动范围"/>
                                     <constraint firstAttribute="trailing" secondItem="p28-wE-uVq" secondAttribute="trailing" id="bcV-sm-TDD"/>
                                     <constraint firstItem="p28-wE-uVq" firstAttribute="leading" secondItem="9Lw-80-owP" secondAttribute="leading" id="bkz-Ij-7qt"/>
                                 </constraints>

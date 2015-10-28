@@ -25,6 +25,8 @@
 
 //存放下拉的所有新闻模型
 @property (strong, nonatomic) NSMutableArray *allNewsArr;
+//存放所有的新闻view
+@property (strong,nonatomic) NSMutableArray *allNewsViewArr;
 
 
 @end
@@ -36,12 +38,21 @@
     NSInteger currentCountsOfModel;
     //保存上一次的scrollview的竖直范围约束
     NSLayoutConstraint *constraintOfY;
+    //存放最老的新闻id
+    NSString *lastNewsID;
+    
 }
 - (NSMutableArray *)allNewsArr{
     if (!_allNewsArr) {
         _allNewsArr = [NSMutableArray array];
     }
     return _allNewsArr;
+}
+- (NSMutableArray *)allNewsViewArr{
+    if (!_allNewsViewArr) {
+        _allNewsViewArr = [NSMutableArray array];
+    }
+    return _allNewsViewArr;
 }
 
 - (void)viewDidLoad {
@@ -95,19 +106,26 @@
     view.translatesAutoresizingMaskIntoConstraints = NO;
     
     if (i == currentCountsOfModel-1) {
-        //这是最后一个view 设置scrollview的contentsize
-        NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeBottom multiplier:1 constant:-320];
-        
-        //清空原来的y范围
-        for (NSLayoutConstraint *constraint in self.scrollView.constraints) {
-            if ([constraint isEqual:constraintOfY]) {
-                [self.scrollView removeConstraint:constraint];
+        if (currentCountsOfModel < 7) {
+            //少于7条新闻 滚动范围自己设定
+            
+        }
+        else{
+            //这是最后一个view 设置scrollview的contentsize
+            NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeBottom multiplier:1 constant:-74];
+            
+            //清空原来的y范围
+            for (NSLayoutConstraint *constraint in self.scrollView.constraints) {
+                if ([constraint isEqual:constraintOfY]) {
+                    [self.scrollView removeConstraint:constraint];
+                }
             }
+            
+            //添加y范围
+            [self.scrollView addConstraint:bottom];
+            constraintOfY = bottom;
         }
         
-        //添加y范围
-        [self.scrollView addConstraint:bottom];
-        constraintOfY = bottom;
     }
     
     
@@ -132,19 +150,26 @@
     NSDictionary *para = @{@"method":@"getNewsTitle_Pre",@"news_id":@"0"};
     //网络请求
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
-        
-        //显示刷新view
-        self.bottomView.hidden = NO;
+        NSLog(@"%@",responseObject);
+    
         
         //关闭小菊花
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         //情况模型数组
         self.allNewsArr = nil;
+        //清空所有的newsView
+        for (UIView *view in self.allNewsViewArr) {
+            [view removeFromSuperview];
+        }
+        self.allNewsViewArr = nil;
         
         //获得新闻数组
         NSArray *newsList = [responseObject objectForKey:@"value"];
+        //获得最老的新闻id
+        lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
+ 
+        
         for (NSDictionary *dic in newsList) {
             //解析json
             NSString *time = [dic objectForKey:@"mCreateTime"];
@@ -162,6 +187,11 @@
         }
         
         currentCountsOfModel = self.allNewsArr.count;
+
+        if (currentCountsOfModel > 6) {
+            //显示刷新view
+            self.bottomView.hidden = NO;
+        }
         
         //view显示
         for (int i = 0; i < self.allNewsArr.count; i ++) {
@@ -170,7 +200,15 @@
             view.model = self.allNewsArr[i];
             [self.scrollView addSubview:view];
             [self layoutForNewsMenu:view index:i];
+            [self.allNewsViewArr addObject:view];
         }
+        
+//        测试使用
+//        newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];
+//        [self.scrollView addSubview:view];
+//        [self layoutForNewsMenu:view index:6];
+//        [self.allNewsViewArr addObject:view];
+        
         [self.scrollView setNeedsUpdateConstraints];
         
         //获取数据成功后停止刷新
@@ -186,9 +224,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat triggerPointA = scrollView.contentSize.height;
     CGFloat triggerPointB = scrollView.contentOffset.y + scrollView.bounds.size.height;
-    NSLog(@"%@",NSStringFromCGSize(scrollView.contentSize));
-    NSLog(@"%f  %f",triggerPointA,triggerPointB);
-    if (triggerPointB > triggerPointA) {
+    if (triggerPointB > triggerPointA + 100) {
         //触发上拉刷新
         self.bottomLabel.text = @"松手加载";
     }
@@ -200,16 +236,28 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     CGFloat triggerPointA = scrollView.contentSize.height;
     CGFloat triggerPointB = scrollView.contentOffset.y + scrollView.bounds.size.height;
-    if (triggerPointB > triggerPointA) {
+    if (triggerPointB > triggerPointA+100 && currentCountsOfModel>6) {
         
         //加载网络数据
+    
         //设置参数
-        NSDictionary *para = @{@"method":@"getNewsTitle_Next",@"news_id":@"0"};
+        NSDictionary *para = @{@"method":@"getNewsTitle_Next",@"news_id":lastNewsID};
         [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-            NSLog(@"%@",responseObject);
+//            NSLog(@"%@",responseObject);
             
             //获得新闻数组
             NSArray *newsList = [responseObject objectForKey:@"value"];
+            
+            //判断有没有错误
+            if ([[responseObject objectForKey:@"value"] objectForKey:@"resValue"]) {
+                //没有更多的数据
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = [[responseObject objectForKey:@"value"] objectForKey:@"resValue"];
+                [hud hide:YES afterDelay:0.5];
+                return ;
+            }
+            
             for (NSDictionary *dic in newsList) {
                 //解析json
                 NSString *time = [dic objectForKey:@"mCreateTime"];
@@ -244,6 +292,7 @@
         view.model = self.allNewsArr[i];
         [self.scrollView addSubview:view];
         [self layoutForNewsMenu:view index:i];
+        [self.allNewsViewArr addObject:view];
     }
     
     [self.scrollView setNeedsUpdateConstraints];
