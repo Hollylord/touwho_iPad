@@ -50,7 +50,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
                             <rect key="frame" x="858" y="25" width="25" height="25"/>
                             <animations/>
                             <state key="normal" image="zan1"/>
@@ -59,7 +59,7 @@
                                 <action selector="dianZan:" destination="-1" eventType="touchUpInside" id="Ns2-3U-trg"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlK-Kv-bck">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlK-Kv-bck">
                             <rect key="frame" x="805" y="24" width="23" height="27"/>
                             <animations/>
                             <state key="normal" backgroundImage="newsLect"/>
@@ -67,7 +67,7 @@
                                 <action selector="playBtn:" destination="-1" eventType="touchUpInside" id="Nlc-XT-0te"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTp-0t-cbr">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTp-0t-cbr">
                             <rect key="frame" x="805" y="24" width="23" height="27"/>
                             <animations/>
                             <state key="normal" backgroundImage="newsLectClose"/>

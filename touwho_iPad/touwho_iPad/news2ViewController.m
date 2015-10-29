@@ -273,7 +273,9 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     //1.判断是否已登录，没有登录提示用户登录；登录之后才有资格点赞
     if (!userID) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeDeterminate;
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ForkMark"]];
+        hud.mode = MBProgressHUDModeCustomView;
+        
         hud.labelText = @"您尚未登录。请登录后点赞";
         [hud hide:YES afterDelay:1];
         return ;
@@ -284,7 +286,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
         //点赞
         NSDictionary *para = @{@"method":@"praiseNews",@"news_id":self.model.mId,@"user_id":userID};
         [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-            NSLog(@"%@",responseObject);
+            
            NSString *resCode = [[responseObject objectForKey:@"value"] objectForKey:@"resCode"];
             if ([resCode isEqualToString:@"0"]) {
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -304,7 +306,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
         //取消点赞
         NSDictionary *para = @{@"method":@"cancelPraiseNews",@"news_id":self.model.mId,@"user_id":userID};
         [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//            NSLog(@"%@",responseObject);
+
             NSString *resCode = [[responseObject objectForKey:@"value"] objectForKey:@"resCode"];
             if ([resCode isEqualToString:@"0"]) {
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
