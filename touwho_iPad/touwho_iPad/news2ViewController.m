@@ -14,6 +14,8 @@
 
 #define KtitleHeight 138
 #define KreadLength 300
+//定义了一个block类型 叫completionBlock
+typedef void(^completionBlock)(NSString *content,NSString *ispraised);
 
 @interface news2ViewController () <BDTTSSynthesizerDelegate>
 
@@ -47,7 +49,7 @@
     CGFloat height;
     UIImageView *imageView;
     CGSize imageSize;
-
+    AFHTTPRequestOperationManager *mgr;
 }
 
 
@@ -57,33 +59,21 @@
 
     self.LectBtn.hidden = NO;
     self.playBtn.hidden = YES;
+    
     // 初始化合成器
     [self initSynthesizer];
+    
+    //监听网络
+    [self startNetWorkMonitor];
+    
+    //创建AFN
+    mgr = [AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     
     //设置分享按钮
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-    //新闻内容
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
-    NSDictionary *newsDic = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSString *content = [newsDic objectForKey:@"xinwen"];
-    
-    
-    //根据内容设置新闻的高度
-    self.contentView.text = content;
-    
-    self.contentView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineBreakMode:NSLineBreakByCharWrapping];
-    [style setParagraphSpacing:2];
-    
-    NSDictionary *attribute = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:20],NSParagraphStyleAttributeName:style};
-    NSStringDrawingOptions opts = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
-    
-    CGSize textSize = [self.contentView.text boundingRectWithSize:CGSizeMake(800, MAXFLOAT) options:opts attributes:attribute context:nil].size;
-    
-    height = textSize.height + 20;
     
     //增加一张图片放在底部
     imageView = [[UIImageView alloc] init];
@@ -93,40 +83,11 @@
     //image.size是以像素为单位的所以要换算成点
     imageSize = CGSizeMake(image.size.width/2, image.size.height/2);
     imageView.image = image;
-    
-    //监听网络
-    [self startNetWorkMonitor];
+
     
 }
 
-#pragma mark - internal function
-- (void)initSynthesizer
-{
-    [BDTTSSynthesizer setLogLevel:BDS_LOG_VERBOSE];
-    
-    // 设置合成器代理
-    [[BDTTSSynthesizer sharedInstance] setSynthesizerDelegate: self];
-    
-    // 在线相关设置
-    
-    [[BDTTSSynthesizer sharedInstance] setApiKey:@"mheb5yGoOkbOihOikcOjhnt1" withSecretKey:@"b65db23549102b069a9e7851aaa18669"];
-    [[BDTTSSynthesizer sharedInstance] setTTSServerTimeOut:10];
-    
-    
-    // 合成参数设置
-    [[BDTTSSynthesizer sharedInstance] setSynthesizeParam: BDTTS_PARAM_VOLUME withValue: BDTTS_PARAM_VOLUME_MAX];
-    
-    // 加载合成引擎
-    [[BDTTSSynthesizer sharedInstance] loadTTSEngine];
-}
 
-//开启网络状态监听
-- (void)startNetWorkMonitor{
-    AFNetworkReachabilityManager *netWorkMgr = [AFNetworkReachabilityManager sharedManager];
-    self.netWorkMgr = netWorkMgr;
-    [self.netWorkMgr startMonitoring];
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -135,6 +96,29 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    
+    //加载网络新闻内容
+    [self getData:^(NSString *content, NSString *ispraised) {
+        self.contentView.text = content;
+        
+        //根据内容设置新闻的高度
+        self.contentView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        [style setLineBreakMode:NSLineBreakByCharWrapping];
+        [style setParagraphSpacing:2];
+        
+        NSDictionary *attribute = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:20],NSParagraphStyleAttributeName:style};
+        NSStringDrawingOptions opts = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+        
+        CGSize textSize = [self.contentView.text boundingRectWithSize:CGSizeMake(800, MAXFLOAT) options:opts attributes:attribute context:nil].size;
+        
+        height = textSize.height + 20;
+        
+    }];
+    
+    
+    
     
     
 }
@@ -169,6 +153,34 @@
     }
 }
 
+#pragma mark - 初始化
+- (void)initSynthesizer
+{
+    [BDTTSSynthesizer setLogLevel:BDS_LOG_VERBOSE];
+    
+    // 设置合成器代理
+    [[BDTTSSynthesizer sharedInstance] setSynthesizerDelegate: self];
+    
+    // 在线相关设置
+    [[BDTTSSynthesizer sharedInstance] setApiKey:@"mheb5yGoOkbOihOikcOjhnt1" withSecretKey:@"b65db23549102b069a9e7851aaa18669"];
+    [[BDTTSSynthesizer sharedInstance] setTTSServerTimeOut:10];
+    
+    
+    // 合成参数设置
+    [[BDTTSSynthesizer sharedInstance] setSynthesizeParam: BDTTS_PARAM_VOLUME withValue: BDTTS_PARAM_VOLUME_MAX];
+    
+    // 加载合成引擎
+    [[BDTTSSynthesizer sharedInstance] loadTTSEngine];
+}
+
+//开启网络状态监听
+- (void)startNetWorkMonitor{
+    AFNetworkReachabilityManager *netWorkMgr = [AFNetworkReachabilityManager sharedManager];
+    self.netWorkMgr = netWorkMgr;
+    [self.netWorkMgr startMonitoring];
+    
+}
+
 - (void)layoutForImageView:(UIImageView *)view imageSize:(CGSize)size{
     NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
     
@@ -181,6 +193,38 @@
     [view addConstraints:@[width,heigh]];
     view.translatesAutoresizingMaskIntoConstraints = NO;
 
+}
+
+
+#pragma mark - 加载网络数据
+- (void)getData:(completionBlock)complete{
+    
+    NSString *mId = self.model.mId;
+    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    NSString *userID = [user objectForKey:@"userID"];
+    
+    //设置参数
+    NSDictionary *para;
+    if (!userID) {
+        para = @{@"method":@"getNewsContent",@"news_id":mId};
+    }
+    else{
+        para = @{@"method":@"getNewsContent",@"news_id":mId,@"user_id":userID};
+    }
+    
+    
+    
+    //加载数据
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"%@",responseObject);
+        NSArray *temp = [responseObject objectForKey:@"value"];
+        NSDictionary *dic = [temp firstObject];
+        NSString *content = [dic objectForKey:@"mContent"];
+        NSString *isPraised = [dic objectForKey:@"mIsPraise"];
+        
+        complete(content,isPraised);
+        
+    } failure:NULL];
 }
 #pragma mark - 分享
 - (void)share{
@@ -201,6 +245,7 @@
     
     
 }
+
 #pragma mark - 按钮点击
 //点赞
 - (IBAction)dianZan:(UIButton *)sender {

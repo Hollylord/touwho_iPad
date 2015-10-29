@@ -11,7 +11,7 @@
 
 @protocol newsMenuDelegate <NSObject>
 //news1跳转到新闻详情页面(可以传递参数)
-- (void)turn2newsDetail;
+- (void)turn2newsDetail:(ModelForNews *)model;
 
 @end
 

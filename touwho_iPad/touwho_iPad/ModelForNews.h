@@ -18,5 +18,6 @@
 @property (copy,nonatomic) NSString *time;
 @property (copy,nonatomic) NSString *source;
 @property (copy,nonatomic) NSString *content;
+@property (copy,nonatomic) NSString *mId;
 
 @end

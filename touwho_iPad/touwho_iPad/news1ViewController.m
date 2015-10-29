@@ -42,12 +42,14 @@
     NSString *lastNewsID;
     
 }
+
 - (NSMutableArray *)allNewsArr{
     if (!_allNewsArr) {
         _allNewsArr = [NSMutableArray array];
     }
     return _allNewsArr;
 }
+
 - (NSMutableArray *)allNewsViewArr{
     if (!_allNewsViewArr) {
         _allNewsViewArr = [NSMutableArray array];
@@ -68,8 +70,6 @@
     
     //先把它隐藏起来
     self.bottomView.hidden = YES;
-    
-    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 
@@ -86,10 +86,6 @@
     
 }
 
-- (void)updateViewConstraints{
-    [super updateViewConstraints];
-    
-}
 
 - (void)layoutForNewsMenu:(newsMenu *)view index:(int)i{
     //行数
@@ -133,9 +129,10 @@
 
 #pragma mark - newsMenu代理
 //跳转新闻详细页面
-- (void)turn2newsDetail{
+- (void)turn2newsDetail:(ModelForNews *)model{
     
     news2ViewController *viewcontroller = [[news2ViewController alloc]initWithNibName:@"news2ViewController" bundle:nil];
+    viewcontroller.model = model;
     [self.navigationController pushViewController:viewcontroller animated:YES];
 
 }
@@ -150,7 +147,7 @@
     NSDictionary *para = @{@"method":@"getNewsTitle_Pre",@"news_id":@"0"};
     //网络请求
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
     
         
         //关闭小菊花
@@ -175,12 +172,15 @@
             NSString *time = [dic objectForKey:@"mCreateTime"];
             NSString *smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
             NSString *title = [dic objectForKey:@"mTitle"];
+            NSString *source = [dic objectForKey:@"mSrc"];
             
             //转化为model
             ModelForNews *model = [[ModelForNews alloc] init];
             model.time = time;
             model.smallImageURL = smallImageURL;
             model.title = title;
+            model.source = source;
+            model.mId = [dic objectForKey:@"mID"];
             
             //存入模型
             [self.allNewsArr addObject:model];
@@ -263,19 +263,19 @@
                 NSString *time = [dic objectForKey:@"mCreateTime"];
                 NSString *smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
                 NSString *title = [dic objectForKey:@"mTitle"];
+                NSString *source = [dic objectForKey:@"mSrc"];
                 
                 //转化为model
                 ModelForNews *model = [[ModelForNews alloc] init];
                 model.time = time;
                 model.smallImageURL = smallImageURL;
                 model.title = title;
+                model.source = source;
+                model.mId = [dic objectForKey:@"mID"];
                 
                 //存入模型
                 [self.allNewsArr addObject:model];
             }
-            
-            
-            
            
         } failure:NULL];
     }

@@ -11,8 +11,8 @@
 @implementation newsMenu
 
 - (IBAction)tapProgram:(UITapGestureRecognizer *)sender {
-    if ([self.delegate respondsToSelector:@selector(turn2newsDetail)]) {
-        [self.delegate turn2newsDetail];
+    if ([self.delegate respondsToSelector:@selector(turn2newsDetail:)]) {
+        [self.delegate turn2newsDetail:self.model];
     }
 }
 
