@@ -14,6 +14,7 @@
 
 #define KtitleHeight 138
 #define KreadLength 300
+
 //定义了一个block类型 叫completionBlock
 typedef void(^completionBlock)(NSString *content,NSString *ispraised);
 
@@ -26,7 +27,10 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 //正文
 @property (weak, nonatomic) IBOutlet UITextView *contentView;
+//时间label
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+//点赞按钮
+@property (weak, nonatomic) IBOutlet UIButton *followBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UIButton *LectBtn;
@@ -74,15 +78,6 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-    
-    //增加一张图片放在底部
-    imageView = [[UIImageView alloc] init];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.scrollView addSubview:imageView];
-    UIImage *image = [UIImage imageNamed:@"advert3"];
-    //image.size是以像素为单位的所以要换算成点
-    imageSize = CGSizeMake(image.size.width/2, image.size.height/2);
-    imageView.image = image;
 
     
 }
@@ -100,6 +95,8 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     
     //加载网络新闻内容
     [self getData:^(NSString *content, NSString *ispraised) {
+        
+        //拿到获取的网络数据
         self.contentView.text = content;
         
         //根据内容设置新闻的高度
@@ -115,10 +112,30 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
         
         height = textSize.height + 20;
         
+        //根据是否已经被点赞了来选择点赞按钮的状态
+        if ([ispraised isEqualToString:@"0"]) {
+            //没有点赞
+            self.followBtn.selected = NO;
+            
+        }
+        else{
+            self.followBtn.selected = YES;
+        }
+        
     }];
     
     
-    
+    //增加一张图片放在底部
+    imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    NSURL *url = [NSURL URLWithString:self.model.bigImageURL];
+    NSLog(@"%@",self.model.bigImageURL);
+    [imageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        //image.size是以像素为单位的所以要换算成点
+        imageSize = CGSizeMake(image.size.width/2, image.size.height/2);
+        [self.scrollView addSubview:imageView];
+        [self.scrollView setNeedsUpdateConstraints];
+    }];
     
     
 }
@@ -216,7 +233,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     
     //加载数据
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSArray *temp = [responseObject objectForKey:@"value"];
         NSDictionary *dic = [temp firstObject];
         NSString *content = [dic objectForKey:@"mContent"];
