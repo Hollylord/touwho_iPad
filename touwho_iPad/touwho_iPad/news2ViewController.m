@@ -54,6 +54,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     UIImageView *imageView;
     CGSize imageSize;
     AFHTTPRequestOperationManager *mgr;
+    NSString *userID;
 }
 
 
@@ -78,8 +79,9 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-
-    
+    //添加全局变量
+    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    userID = [user objectForKey:@"userID"];
 }
 
 
@@ -92,6 +94,9 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    //添加时间和title
+    self.timeLabel.text = self.model.time;
+    self.titleLabel.text = self.model.title;
     
     //加载网络新闻内容
     [self getData:^(NSString *content, NSString *ispraised) {
@@ -217,8 +222,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
 - (void)getData:(completionBlock)complete{
     
     NSString *mId = self.model.mId;
-    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-    NSString *userID = [user objectForKey:@"userID"];
+    
     
     //设置参数
     NSDictionary *para;
@@ -266,7 +270,57 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
 #pragma mark - 按钮点击
 //点赞
 - (IBAction)dianZan:(UIButton *)sender {
-    sender.selected = !sender.selected;
+    //1.判断是否已登录，没有登录提示用户登录；登录之后才有资格点赞
+    if (!userID) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeDeterminate;
+        hud.labelText = @"您尚未登录。请登录后点赞";
+        [hud hide:YES afterDelay:1];
+        return ;
+    }
+    
+    //2. 判断是要点赞，还是取消点赞
+    if (!sender.selected) {
+        //点赞
+        NSDictionary *para = @{@"method":@"praiseNews",@"news_id":self.model.mId,@"user_id":userID};
+        [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+            NSLog(@"%@",responseObject);
+           NSString *resCode = [[responseObject objectForKey:@"value"] objectForKey:@"resCode"];
+            if ([resCode isEqualToString:@"0"]) {
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"点赞成功";
+                [hud hide:YES afterDelay:0.5];
+                
+                //更改按钮状态
+                sender.selected = !sender.selected;
+            }
+            
+            
+        } failure:NULL];
+        
+    }
+    else{
+        //取消点赞
+        NSDictionary *para = @{@"method":@"cancelPraiseNews",@"news_id":self.model.mId,@"user_id":userID};
+        [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//            NSLog(@"%@",responseObject);
+            NSString *resCode = [[responseObject objectForKey:@"value"] objectForKey:@"resCode"];
+            if ([resCode isEqualToString:@"0"]) {
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"取消点赞成功";
+                [hud hide:YES afterDelay:0.5];
+                
+                //更改按钮状态
+                sender.selected = !sender.selected;
+            }
+            
+            
+        } failure:NULL];
+    }
+    
+    
 }
 
 

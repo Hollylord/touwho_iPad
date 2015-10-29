@@ -182,6 +182,7 @@
             model.source = source;
             model.mId = [dic objectForKey:@"mID"];
             model.bigImageURL =[NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mLargeImageUrl"]];
+
             
             //存入模型
             [self.allNewsArr addObject:model];
