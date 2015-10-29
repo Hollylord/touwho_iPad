@@ -25,6 +25,7 @@
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
 #import <MBProgressHUD.h>
+#import <MJExtension.h>
 
 #define SERVER_API_URL @"http://120.25.215.53:8099/api.aspx"
 #define SERVER_URL @"http://120.25.215.53:8099"

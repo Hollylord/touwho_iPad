@@ -134,7 +134,6 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     imageView = [[UIImageView alloc] init];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     NSURL *url = [NSURL URLWithString:self.model.bigImageURL];
-    NSLog(@"%@",self.model.bigImageURL);
     [imageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         //image.size是以像素为单位的所以要换算成点
         imageSize = CGSizeMake(image.size.width/2, image.size.height/2);

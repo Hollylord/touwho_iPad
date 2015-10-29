@@ -168,20 +168,19 @@
  
         
         for (NSDictionary *dic in newsList) {
-            //解析json
-            NSString *time = [dic objectForKey:@"mCreateTime"];
-            NSString *smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
-            NSString *title = [dic objectForKey:@"mTitle"];
-            NSString *source = [dic objectForKey:@"mSrc"];
             
             //转化为model
-            ModelForNews *model = [[ModelForNews alloc] init];
-            model.time = time;
-            model.smallImageURL = smallImageURL;
-            model.title = title;
-            model.source = source;
-            model.mId = [dic objectForKey:@"mID"];
+            [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+                //设置json和模型名称对应:
+                //key:模型名，value：json名
+                return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
+            }];
+
+            //用字典创建模型
+           ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
+
             model.bigImageURL =[NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mLargeImageUrl"]];
+            model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
 
             
             //存入模型
@@ -261,20 +260,18 @@
             }
             
             for (NSDictionary *dic in newsList) {
-                //解析json
-                NSString *time = [dic objectForKey:@"mCreateTime"];
-                NSString *smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
-                NSString *title = [dic objectForKey:@"mTitle"];
-                NSString *source = [dic objectForKey:@"mSrc"];
                 
                 //转化为model
-                ModelForNews *model = [[ModelForNews alloc] init];
-                model.time = time;
-                model.smallImageURL = smallImageURL;
-                model.title = title;
-                model.source = source;
-                model.mId = [dic objectForKey:@"mID"];
+                [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+                    //设置json和模型名称对应:
+                    //key:模型名，value：json名
+                    return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
+                }];
+                
+                //用字典创建模型
+                ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
                 model.bigImageURL =[NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mLargeImageUrl"]];
+                model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
             
                 
                 //存入模型
