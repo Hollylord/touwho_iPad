@@ -163,29 +163,6 @@
     [self.scrollView addSubview:refresh];
     //第一次触发刷新
     [self pullRefresh:refresh];
-    
-    [self.scrollView addSubview:self.title1];//要先将title1添加到scrollview中来。
-
-
-//    [self.scrollView addSubview:self.title2];
-    //添加预热中项目视图
-//    for (int i = 0; i < 4; i ++) {
-//        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-//        program.delegate        = self;
-//        [self.scrollView addSubview:program];
-//        [self.programsForPreparing addObject:program];
-//        
-//    }
-    
-//    [self.scrollView addSubview:self.title3];
-    //添加已结束的项目视图
-//    for (int i = 0; i < 4; i ++) {
-//        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-//        program.delegate        = self;
-//        [self.scrollView addSubview:program];
-//        [self.programsForFinished addObject:program];
-//        
-//    }
 
     
 }
@@ -406,7 +383,15 @@
 #pragma mark - 刷新页面获取网络数据
 //拉取数据
 - (void)pullRefresh:(UIRefreshControl *)refresh{
+    //清空数据
+    self.modelsFinished = nil;
+    self.modelsOngoing = nil;
+    self.modelsPreparing = nil;
+    self.programs = nil;
+    self.programsForFinished = nil;
+    self.programsForPreparing = nil;
     
+    //设置参数
     NSString *userID = [[[NSUserDefaults standardUserDefaults] objectForKey:@"user"] objectForKey:@"userID"];
     NSString *type;
     if (self.topBtn1.selected) {
@@ -421,6 +406,7 @@
     else if (self.topBtn4.selected){
         type = @"3";
     }
+    
     //获取正在进行的数据
     [self getDataForOngoingProgramsWithType:type andUserID:userID withCompletionBlock:^{
         //获取预热中的数据
@@ -433,11 +419,8 @@
     }];
     
     
-    
-    
-    
-    
-    
+    //获取数据成功后停止刷新
+    [refresh endRefreshing];
 
     
 }
@@ -463,8 +446,7 @@
         
         block();
         
-        //获取数据成功后停止刷新
-//        [refresh endRefreshing];
+
         
     } failure:NULL];
 }
@@ -489,9 +471,6 @@
         self.modelsPreparing = [ModelForProgramView objectArrayWithKeyValuesArray:programs];
         
         block();
-
-        //获取数据成功后停止刷新
-        //        [refresh endRefreshing];
         
     } failure:NULL];
 
@@ -517,9 +496,6 @@
         
         block();
         
-        //获取数据成功后停止刷新
-        //        [refresh endRefreshing];
-        
     } failure:NULL];
 }
 
@@ -542,11 +518,11 @@
         //调整scrollView的滚动范围
         programView *lastView = [self.programs lastObject];
         [self configureScrollViewContentSizeWithLastiView:lastView andPriority:300];
-//        self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - CGRectGetMaxY(self.pictureCollection.frame) + 20;
         
     }
     if (self.modelsPreparing.count > 0){
         //布局 title2
+        [self.title2 setHidden:NO];
         [self layoutForTitle2:self.title2];
         
         //添加进行中项目视图
@@ -567,6 +543,7 @@
     }
     if (self.modelsFinished.count > 0){
         //布局 title3
+        [self.title3 setHidden:NO];
         [self layoutForTitle3:self.title3];
         
         //添加已结束中项目视图
@@ -589,8 +566,6 @@
     
     //更新约束
     [self.scrollView setNeedsUpdateConstraints];
-    
-
 
 }
 

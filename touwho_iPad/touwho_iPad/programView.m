@@ -63,11 +63,12 @@
         [self.progressView setProgress:progress animated:YES];
         
         //调进度条的速度
-        [NSTimer scheduledTimerWithTimeInterval:0.03
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.03
                                          target:self
                                        selector:@selector(setProgressWithProgress)
                                        userInfo:nil
                                         repeats:NO];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     }
 
 }
