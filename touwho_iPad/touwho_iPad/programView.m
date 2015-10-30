@@ -76,13 +76,14 @@
     if (_model != model) {
         _model = model;
         
-        self.title.text = model.title;
-        self.backgroundImage.image = model.backIMG;
-        percent = model.percent;
+        self.title.text = model.mTitle;
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,model.mFullImageUrl]];
+        [self.backgroundImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        percent = [model.mCurMoney floatValue]/[model.mGoalMoney floatValue];
         [self setProgressWithProgress];
-        self.label1.text = model.currentAmount;
-        self.label2.text = [NSString stringWithFormat:@"%.0f%%",model.percent*100];
-        self.label3.text = model.totalAmount;
+        self.label1.text = model.mCurMoney;
+        self.label2.text = [NSString stringWithFormat:@"%.0f%%",percent*100];
+        self.label3.text = model.mGoalMoney;
         
     }
     

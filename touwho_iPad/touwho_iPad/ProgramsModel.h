@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+///这个模型废弃，统一到ModelForProgramView
 @interface ProgramsModel : NSObject
+
 @property (strong,nonatomic) UIImage *image;
 @property (copy,nonatomic) NSString *title;
 @property (copy,nonatomic) NSString *content;

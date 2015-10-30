@@ -43,7 +43,12 @@
 //保存已结束的programView
 @property (strong,nonatomic) NSMutableArray* programsForFinished;
 
-
+//存放进行中的model
+@property (strong,nonatomic) NSMutableArray *modelsOngoing;
+//存放预热中的model
+@property (strong,nonatomic) NSMutableArray *modelsPreparing;
+//存放结束的model
+@property (strong,nonatomic) NSMutableArray *modelsFinished;
 
 
 
@@ -56,8 +61,10 @@
 {
     UIRefreshControl *fresh;
     NSIndexPath *currentPath;
+    AFHTTPRequestOperationManager *mgr;
     
 }
+
 #pragma mark - 懒加载
 - (NSMutableArray *)programs{
     if (_programs == nil) {
@@ -76,6 +83,25 @@
         _programsForFinished = [NSMutableArray array];
     }
     return _programsForFinished;
+}
+
+- (NSMutableArray *)modelsOngoing{
+    if (!_modelsOngoing) {
+        _modelsOngoing = [NSMutableArray array];
+    }
+    return _modelsOngoing;
+}
+- (NSMutableArray *)modelsPreparing{
+    if (!_modelsPreparing) {
+        _modelsPreparing = [NSMutableArray array];
+    }
+    return _modelsPreparing;
+}
+- (NSMutableArray *)modelsFinished{
+    if (!_modelsFinished) {
+        _modelsFinished = [NSMutableArray array];
+    }
+    return _modelsFinished;
 }
 
 #pragma mark - 顶部按钮点击
@@ -116,6 +142,9 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //创建加载数据的AFN
+    mgr = [AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     
     //图片滚动
     self.pictureCollection.delegate   = self;
@@ -123,36 +152,6 @@
     
     //还是要先注册一个cell
     [self.pictureCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"picture"];
-    
-    [self.scrollView addSubview:self.title1];//要先将title1添加到scrollview中来。
-    //添加进行中项目视图
-    for (int i = 0; i < 4; i ++) {
-        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-        program.delegate        = self;
-        [self.scrollView addSubview:program];
-        [self.programs addObject:program];
-
-    }
-
-    [self.scrollView addSubview:self.title2];
-    //添加预热中项目视图
-    for (int i = 0; i < 4; i ++) {
-        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-        program.delegate        = self;
-        [self.scrollView addSubview:program];
-        [self.programsForPreparing addObject:program];
-        
-    }
-    
-    [self.scrollView addSubview:self.title3];
-    //添加已结束的项目视图
-    for (int i = 0; i < 4; i ++) {
-        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
-        program.delegate        = self;
-        [self.scrollView addSubview:program];
-        [self.programsForFinished addObject:program];
-        
-    }
     
     //设置顶部按钮的状态
     self.topBtn1.selected  = YES;
@@ -165,6 +164,29 @@
     //第一次触发刷新
     [self pullRefresh:refresh];
     
+    [self.scrollView addSubview:self.title1];//要先将title1添加到scrollview中来。
+
+
+//    [self.scrollView addSubview:self.title2];
+    //添加预热中项目视图
+//    for (int i = 0; i < 4; i ++) {
+//        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+//        program.delegate        = self;
+//        [self.scrollView addSubview:program];
+//        [self.programsForPreparing addObject:program];
+//        
+//    }
+    
+//    [self.scrollView addSubview:self.title3];
+    //添加已结束的项目视图
+//    for (int i = 0; i < 4; i ++) {
+//        programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+//        program.delegate        = self;
+//        [self.scrollView addSubview:program];
+//        [self.programsForFinished addObject:program];
+//        
+//    }
+
     
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -182,9 +204,6 @@
     [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     
     
-    //调整scrollView的滚动范围
-    programView *lastView = [self.programsForFinished lastObject];
-    self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - CGRectGetMaxY(self.pictureCollection.frame) + 20;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -195,32 +214,16 @@
 
 
 #pragma mark - 布局
-/** 更新所有主页的约束**/
+//这个方法只来一次，就是给在viewDidLoad方法中添加的子视图布局的！
+//无论setNeeds... 何种方法都不会触发它。
 - (void)updateViewConstraints{
     [super updateViewConstraints];//这句话一定要写
-    
-    //给正在进行的programView添加约束
-    for (int i = 0 ; i < self.programs.count; i ++) {
-        [self layoutForProgramView:self.programs[i] index:i];
-    }
 
-    //给title2添加约束
-    [self layoutForTitle2:self.title2];
-    
-    //给预热中项目约束
-    for (int i = 0 ; i < self.programsForPreparing.count; i ++) {
-        [self layoutForPreparingPrograms:self.programsForPreparing[i] index:i];
-    }
-    
-    //给title3添加约束
-    [self layoutForTitle3:self.title3];
-    
-    //给已结束的项目约束
-    for (int i = 0 ; i < self.programsForFinished.count; i ++) {
-        [self layoutForFinishedPrograms:self.programsForFinished[i] index:i];
-    }
+
+
 }
 
+//进行中的项目 布局
 - (void)layoutForProgramView:(programView *)programView index:(int )indexPath{
     
     //项目视图在左半边
@@ -230,7 +233,6 @@
         NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:415];
         NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:programView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:250];
         [self.scrollView addConstraints:@[leading,top]];
-
         [programView addConstraints:@[width,height]];
         programView.translatesAutoresizingMaskIntoConstraints = NO;
       
@@ -257,6 +259,7 @@
     view.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
+//预热中的项目 布局
 - (void)layoutForPreparingPrograms:(programView *)programView index:(int )indexPath{
     
     //项目视图在左半边
@@ -292,6 +295,7 @@
     view.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
+//已结束的项目 布局
 - (void)layoutForFinishedPrograms:(programView *)programView index:(int )indexPath{
     
     //项目视图在左半边
@@ -319,6 +323,7 @@
     }
     
 }
+
 #pragma mark - collection代理
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -365,12 +370,7 @@
     return cell;
 }
 
-//手开始拖动时调用，如果是代码scroll 并不会触发这个方法。
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    initialX = scrollView.contentOffset.x;
-//    
-//    
-//}
+
 
 //滚动时就触发这个方法, 持续触发。代码scroll会触发这个方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -385,6 +385,7 @@
     }
 
 }
+
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }
@@ -392,7 +393,6 @@
 
 //由于flowout的cell的变形导致 此方法不响应！
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
@@ -404,39 +404,202 @@
 }
 
 #pragma mark - 刷新页面获取网络数据
+//拉取数据
 - (void)pullRefresh:(UIRefreshControl *)refresh{
-    NSArray *programName = @[@"微旋基因项目",@"回音必项目",@"独角兽项目",@"原子弹项目"];
     
-    //转换网络数据给model
-    for (int i = 0; i < self.programs.count ; i ++) {
-        ModelForProgramView *model = [[ModelForProgramView alloc] init];
-        model.title = programName[i];
-        model.backIMG = [UIImage imageNamed:@"xiangmuBIMG"];
-        model.percent = (CGFloat) 150 / (i + 2)/100;
-        model.totalAmount = [NSString stringWithFormat:@"￥11500万"];
-        model.currentAmount = [NSString stringWithFormat:@"￥%.2f万",11500 * model.percent];
-        
-        programView *view = self.programs[i];
-        view.model = model;
+    NSString *userID = [[[NSUserDefaults standardUserDefaults] objectForKey:@"user"] objectForKey:@"userID"];
+    NSString *type;
+    if (self.topBtn1.selected) {
+        type = @"1";
     }
-    NSArray *programName2 = @[@"维纳斯项目",@"万花筒项目",@"分子试剂盒项目",@"DNA测序项目"];
-    for (int i = 0; i < self.programsForPreparing.count ; i ++) {
-        ModelForProgramView *model = [[ModelForProgramView alloc] init];
-        
-        model.title = programName2[i];
-        model.backIMG = [UIImage imageNamed:@"xiangmuBIMG2"];
-        model.percent = (CGFloat) 0;
-        model.totalAmount = [NSString stringWithFormat:@"￥11500万"];
-        model.currentAmount = [NSString stringWithFormat:@"￥%.2f万",11500 * model.percent];
-        
-        programView *view = self.programsForPreparing[i];
-        view.model = model;
+    else if (self.topBtn2.selected){
+        type = @"4";
     }
-    //获取数据成功后停止刷新
-    [refresh endRefreshing];
+    else if (self.topBtn3.selected){
+        type = @"2";
+    }
+    else if (self.topBtn4.selected){
+        type = @"3";
+    }
+    //获取正在进行的数据
+    [self getDataForOngoingProgramsWithType:type andUserID:userID withCompletionBlock:^{
+        //获取预热中的数据
+        [self getDataForPreparingProgramsWithType:type andUserID:userID withCompletionBlock:^{
+            //获取已结束的数据
+            [self getDataForFinishedProgramsWithType:type andUserID:userID withCompletionBlock:^{
+                [self layoutProgramViewsAfterGetData];
+            }];
+        }];
+    }];
+    
+    
+    
+    
+    
+    
+    
 
     
 }
+
+//获取正在进行中的项目
+- (void) getDataForOngoingProgramsWithType:(NSString *)type andUserID:(NSString *)userID withCompletionBlock:(void (^)())block{
+    //设置进行中的项目
+    NSDictionary *para;
+    if (userID) {
+        //用户已登录
+        para = @{@"method":@"getRunningProject",@"user_id":userID,@"type":type};
+    }
+    else{
+        para = @{@"method":@"getRunningProject",@"type":type};
+    }
+    
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        //        NSLog(@"%@",responseObject);
+        NSArray *programs = [responseObject objectForKey:@"value"];
+        
+        //json数组-->模型数组
+        self.modelsOngoing = [ModelForProgramView objectArrayWithKeyValuesArray:programs];
+        
+        block();
+        
+        //获取数据成功后停止刷新
+//        [refresh endRefreshing];
+        
+    } failure:NULL];
+}
+
+//获取预热中的项目
+- (void) getDataForPreparingProgramsWithType:(NSString *)type andUserID:(NSString *)userID withCompletionBlock:(void (^)())block{
+    
+    NSDictionary *para;
+    if (userID) {
+        //用户已登录
+        para = @{@"method":@"getPrepareProject",@"user_id":userID,@"type":type};
+    }
+    else{
+        para = @{@"method":@"getPrepareProject",@"type":type};
+    }
+    
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        //        NSLog(@"%@",responseObject);
+        NSArray *programs = [responseObject objectForKey:@"value"];
+        
+        //json数组-->模型数组
+        self.modelsPreparing = [ModelForProgramView objectArrayWithKeyValuesArray:programs];
+        
+        block();
+
+        //获取数据成功后停止刷新
+        //        [refresh endRefreshing];
+        
+    } failure:NULL];
+
+}
+
+- (void)getDataForFinishedProgramsWithType:(NSString *)type andUserID:(NSString *)userID withCompletionBlock:(void (^)())block{
+    
+    NSDictionary *para;
+    if (userID) {
+        //用户已登录
+        para = @{@"method":@"getFinishProject",@"user_id":userID,@"type":type};
+    }
+    else{
+        para = @{@"method":@"getFinishProject",@"type":type};
+    }
+    
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        //        NSLog(@"%@",responseObject);
+        NSArray *programs = [responseObject objectForKey:@"value"];
+        
+        //json数组-->模型数组
+        self.modelsFinished = [ModelForProgramView objectArrayWithKeyValuesArray:programs];
+        
+        block();
+        
+        //获取数据成功后停止刷新
+        //        [refresh endRefreshing];
+        
+    } failure:NULL];
+}
+
+- (void)layoutProgramViewsAfterGetData{
+    
+    if (self.modelsOngoing.count > 0) {
+        //添加进行中项目视图
+        for (int i = 0; i < self.modelsOngoing.count; i ++) {
+            programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+            //传递数据
+            program.model = self.modelsOngoing[i];
+            program.delegate        = self;
+            //添加view
+            [self.scrollView addSubview:program];
+            [self.programs addObject:program];
+            [self layoutForProgramView:self.programs[i] index:i];
+        }
+        
+        
+        //调整scrollView的滚动范围
+        programView *lastView = [self.programs lastObject];
+        [self configureScrollViewContentSizeWithLastiView:lastView andPriority:300];
+//        self.yOfScrollView.constant = CGRectGetMaxY(lastView.frame) - CGRectGetMaxY(self.pictureCollection.frame) + 20;
+        
+    }
+    if (self.modelsPreparing.count > 0){
+        //布局 title2
+        [self layoutForTitle2:self.title2];
+        
+        //添加进行中项目视图
+        for (int i = 0; i < self.modelsPreparing.count; i ++) {
+            programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+            //传递数据
+            program.model = self.modelsPreparing[i];
+            program.delegate        = self;
+            //添加view
+            [self.scrollView addSubview:program];
+            [self.programsForPreparing addObject:program];
+            [self layoutForPreparingPrograms:self.programsForPreparing[i] index:i];
+        }
+        
+        //调整scrollView的滚动范围
+        programView *lastView = [self.programsForPreparing lastObject];
+        [self configureScrollViewContentSizeWithLastiView:lastView andPriority:500];
+    }
+    if (self.modelsFinished.count > 0){
+        //布局 title3
+        [self layoutForTitle3:self.title3];
+        
+        //添加已结束中项目视图
+        for (int i = 0; i < self.modelsFinished.count; i ++) {
+            programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
+            //传递数据
+            program.model = self.modelsFinished[i];
+            program.delegate        = self;
+            //添加view
+            [self.scrollView addSubview:program];
+            [self.programsForFinished addObject:program];
+            [self layoutForFinishedPrograms:self.programsForFinished[i] index:i];
+        }
+        
+        //调整scrollView的滚动范围
+        programView *lastView = [self.programsForFinished lastObject];
+        [self configureScrollViewContentSizeWithLastiView:lastView andPriority:1000];
+
+    }
+    
+    //更新约束
+    [self.scrollView setNeedsUpdateConstraints];
+    
+
+
+}
+
+- (void)configureScrollViewContentSizeWithLastiView:(programView *)lastView andPriority:(NSInteger)priority{
+    NSLayoutConstraint* bottom = [NSLayoutConstraint constraintWithItem:lastView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeBottom multiplier:1 constant:-20];
+    bottom.priority = priority;
+    [self.scrollView addConstraint:bottom];
+}
+#pragma mark - 点击轮播图
 //点击collectionviewcell
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
     //手滑了多少张
@@ -448,7 +611,7 @@
     
 }
 
-#pragma mark - 手势代理
+
 //是否识别这个touch
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     //判断点击位置是否在我设定的区域
