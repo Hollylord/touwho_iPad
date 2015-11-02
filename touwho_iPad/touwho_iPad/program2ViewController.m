@@ -12,18 +12,21 @@
 #import "ModelForSponsor.h"
 #import "LingTouViewController.h"
 #import "OtherCenterViewController.h"
+#import "ModelProgramDetails.h"
 
+typedef void(^dataBlock)(ModelProgramDetails *model);
 
 @interface program2ViewController () <UITableViewDataSource,UITableViewDelegate>
 
 //子视图
 @property (weak, nonatomic) IBOutlet UIView *program;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextView *textView1;
 @property (weak, nonatomic) IBOutlet UITextView *textView2;
-- (IBAction)followTheProgram:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UITextView *textView3;
 
-
+//@property (strong,nonatomic) ModelProgramDetails *modelDetail;
 
 //用来装所有LP投资人Cell的模型的数组
 @property (strong,nonatomic) NSMutableArray *LPArray;
@@ -31,18 +34,22 @@
 @property (strong,nonatomic) NSMutableArray *GPArray;
 
 
+
 //按钮点击
 - (IBAction)lingtouClick:(UIButton *)sender;
 - (IBAction)gentouClick:(UIButton *)sender;
-
+- (IBAction)followTheProgram:(UIButton *)sender;
 @end
 
 @implementation program2ViewController
 {
-    programView *viewForprogram;//左上角的项目视图
     CGFloat height1;//textView1高度
     CGFloat height2;//textView2高度
+    CGFloat height3;//textView3高度
+    AFHTTPRequestOperationManager *mgr;
 }
+
+#pragma mark - 懒加载
 - (NSMutableArray *)LPArray{
     if (!_LPArray) {
         _LPArray = [NSMutableArray array];
@@ -56,46 +63,27 @@
     return _GPArray;
 }
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //创建加载数据的AFN
+    mgr = [AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
 
     //添加programView视图
     programView *view = (programView *)self.program;
     view.model = self.model1;
-    
-    
-    
-    
+ 
     
     //注册tableviewCell
     [self.tableView registerNib:[UINib nibWithNibName:@"sponsorCell" bundle:nil] forCellReuseIdentifier:@"sponsorCell"];
     
-    //假数据创建模型
-    ModelForSponsor *model = [[ModelForSponsor alloc] init];
-    model.image = [UIImage imageNamed:@"ywp"];
-    model.name = @"杨伟鹏";
-    model.amount = @"意向跟投：500万";
-    model.time = @"2015.8.15";
-    [self.LPArray addObject:model];
-    
-    ModelForSponsor *model2 = [[ModelForSponsor alloc] init];
-    model2.image = [UIImage imageNamed:@"zhw"];
-    model2.name = @"郑惠文";
-    model2.amount = @"意向跟投：500万";
-    model2.time = @"2015.9.15";
-    [self.LPArray addObject:model2];
-    
-    //计算textView高度
-    NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
-    CGSize textView1size = [self.textView1.text boundingRectWithSize:CGSizeMake(self.textView1.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil].size;
-    height1 = textView1size.height + 10;
-    
-    CGSize textView2size = [self.textView2.text boundingRectWithSize:CGSizeMake(self.textView2.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attr context:nil].size;
-    height2 = textView2size.height + 10;
-    
     //设置分享按钮
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,29 +94,43 @@
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    //1.loading菊花
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    //2.加载数据
+    [self getData:^(ModelProgramDetails *model) {
+        //3. 显示数据
+        self.textView1.text = model.mSummary;
+        self.textView2.text = model.mSuggest;
+        self.textView3.text = model.mScheme;
+        
+        //4. 调整布局
+        //计算textView高度
+        NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
+        
+        height1 = [self calculateHeightForTextViewWithView:self.textView1 andAttributes:attr];
+        height2 = [self calculateHeightForTextViewWithView:self.textView2 andAttributes:attr];
+        height3 = [self calculateHeightForTextViewWithView:self.textView3 andAttributes:attr];
+        
+        //更改textView的约束
+        [self adjustConstraintWithView:self.textView1 andIdentifier:@"textView1Height" andValue:height1];
+        [self adjustConstraintWithView:self.textView2 andIdentifier:@"textView2Height" andValue:height2];
+        [self adjustConstraintWithView:self.textView3 andIdentifier:@"textView3Height" andValue:height3];
+        
+        //刷新约束
+        [self.scrollView setNeedsUpdateConstraints];
+        
+    }];
+
     
 }
-
-/**
- *  控制器的子视图更新约束(添加一些新视图的约束)
- */
+//控制器的子视图更新约束(添加一些新视图的约束)
 - (void)updateViewConstraints{
     
     [super updateViewConstraints];
 
     
-    //更改textView1的高度
-    for (NSLayoutConstraint *constraint in self.textView1.constraints) {
-        if ([constraint.identifier isEqualToString:@"textView1Height"]) {
-            constraint.constant = height1;
-        }
-    }
-    //更改textView2的高度
-    for (NSLayoutConstraint *constraint in self.textView2.constraints) {
-        if ([constraint.identifier isEqualToString:@"textView2Height"]) {
-            constraint.constant = height2;
-        }
-    }
+
 }
 
 - (void)layoutForFollowBtn:(UIView *)view {
@@ -140,6 +142,47 @@
 
 }
 
+#pragma mark - 获取数据
+- (void)getData:(dataBlock)completionBlock{
+    //设置参数
+    NSDictionary *para;
+    NSString *userID = [[[NSUserDefaults standardUserDefaults] objectForKey:@"user"] objectForKey:@"userID"];
+    if (userID) {
+        //用户已登录
+        para = @{@"method":@"getDetailProject",@"user_id":userID,@"project_id":self.model1.mID};
+    }
+    else{
+        para = @{@"method":@"getDetailProject",@"project_id":self.model1.mID};
+    }
+    
+    //获取数据
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        //去掉菊花
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        //json --> model
+        NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
+        ModelProgramDetails *model = [ModelProgramDetails objectWithKeyValues:dic];
+        
+        completionBlock(model);
+    } failure:NULL];
+    
+
+}
+
+//计算textview的高度
+- (CGFloat)calculateHeightForTextViewWithView:(UITextView *)view andAttributes:(NSDictionary *)dic{
+    CGSize viewSize = [view.text boundingRectWithSize:CGSizeMake(view.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    return viewSize.height + 20;
+}
+
+- (void)adjustConstraintWithView:(UITextView *)view andIdentifier:(NSString *)identifier andValue:(CGFloat)value{
+    for (NSLayoutConstraint *constraint in view.constraints) {
+        if ([constraint.identifier isEqualToString:identifier]) {
+            constraint.constant = value;
+        }
+    }
+}
 #pragma mark - tableView代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     

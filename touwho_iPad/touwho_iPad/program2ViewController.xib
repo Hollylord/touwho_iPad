@@ -7,9 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="program2ViewController">
             <connections>
                 <outlet property="program" destination="JNX-L7-OdP" id="W3X-Bs-8Ho"/>
+                <outlet property="scrollView" destination="gE3-Ch-hKL" id="G5E-oV-a7x"/>
                 <outlet property="tableView" destination="p9k-By-vdy" id="wY6-Nj-0ZF"/>
                 <outlet property="textView1" destination="JWk-N7-VYd" id="0e0-5v-5BP"/>
                 <outlet property="textView2" destination="c0b-Uh-VKB" id="deu-1E-L9w"/>
+                <outlet property="textView3" destination="fZ5-7l-esh" id="8Xw-TJ-S9h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,29 +61,21 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWk-N7-VYd">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="暂无项目详情" translatesAutoresizingMaskIntoConstraints="NO" id="JWk-N7-VYd">
                             <rect key="frame" x="22" y="367" width="475" height="128"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" identifier="textView1Height" id="7Hl-xZ-cv1"/>
                             </constraints>
-                            <string key="text">上市确定性高：公司拟2017年申报上市材料，在资本市场实施“主板挂牌-整体注入”整体策略。
-保障明确，有效控制风险：大股东承诺如未能在2017年单独上报上市材料将回购投资人持有股权。同时大股东承诺2015-2017年净利润分别为7000万，1亿，1.26亿，完不成将以现金或股权方式进行对赌补偿。
-团队稳健务实：公司高管团队合作10年以上，分工明确，配合默契。管理团队稳健务实，是企业高效运转的保障。
-集团实力雄厚：集团目前有五家制药企业，综合实力稳居国内医药行业前60名。
-治疗品种优势明显：碳酸氢钠注射液、硝酸异山梨酯氯化钠注射液，均是临床用量大基本药物，公司拥有独家包装或独家品规优势，能确保中标及定价优势。储备品种集中于抗肿瘤治疗领域，拳头品种枸橼酸托烷司琼全国独家，是医药领域大市场品种中极具竞争力的优势品种。
-预期收益较高：项目预期复合年化收益率不低于45%。</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-Uh-VKB">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="暂无投资建议书" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-Uh-VKB">
                             <rect key="frame" x="22" y="557" width="475" height="128"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" identifier="textView2Height" id="Fc3-Pu-PXV"/>
                             </constraints>
-                            <string key="text">实际控制人实力强：实际控制人军队药剂师出身，为人襟怀坦荡，做事雷厉风行，行业地位及口碑高！熟谙医药行业发展规律，用20年时间将一频临倒闭地方小药厂发展成为综合实力国内排名50多位大型医药集团。
-团队稳健务实：集团高管团队基本都跟随董事长10年以上，且均是从基层逐步培养起来，分工明确，配合默契。管理团队稳健务实特色明显，是企业高效运转的保障。</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -158,23 +152,12 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fZ5-7l-esh">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="暂无融资方案" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fZ5-7l-esh">
                             <rect key="frame" x="22" y="747" width="475" height="128"/>
                             <animations/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="128" id="UMK-wn-NbY"/>
+                                <constraint firstAttribute="height" constant="128" identifier="textView3Height" id="UMK-wn-NbY"/>
                             </constraints>
-                            <string key="text">A轮-- 300万美元/ 1000万美元的投前估值
-
-2014募集资金的使用：
-设计、工程、加工
-销售、市场营销
-运营
-合作关系维护
-国际市场运营
-
-市场规模：164亿美元
-</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>

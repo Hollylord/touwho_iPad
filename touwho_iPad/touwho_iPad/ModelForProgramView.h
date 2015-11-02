@@ -38,6 +38,5 @@
 //项目类型
 @property (copy,nonatomic) NSString *mType;
 
-//@property (copy, nonatomic) NSString *totalAmount;
-//@property (strong,nonatomic) UIImage *backIMG;
+
 @end
