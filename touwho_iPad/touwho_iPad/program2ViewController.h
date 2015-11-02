@@ -14,4 +14,5 @@
 ///给programView的model
 @property (strong,nonatomic) ModelForProgramView *model1;
 
+@property (copy,nonatomic) NSString *userID;
 @end

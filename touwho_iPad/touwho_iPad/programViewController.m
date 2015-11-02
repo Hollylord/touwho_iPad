@@ -382,9 +382,23 @@
 
 #pragma mark - 点击项目跳转页面
 - (void)turn2DetailOfProgramsWithModel:(ModelForProgramView *)model{
-    program2ViewController *viewController = [[program2ViewController alloc]initWithNibName:@"program2ViewController" bundle:nil];
-    viewController.model1 = model;
-    [self.navigationController pushViewController:viewController animated:YES];
+    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    NSString  *userID = [user objectForKey:@"userID"];
+    if (userID) {
+        //已登录
+        program2ViewController *viewController = [[program2ViewController alloc]initWithNibName:@"program2ViewController" bundle:nil];
+        viewController.model1 = model;
+        viewController.userID = userID;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"您尚未登录，请登陆后查看详情！";
+        [hud hide:YES afterDelay:1];
+        hud.dimBackground = YES;
+    }
+    
 }
 
 #pragma mark - 刷新页面获取网络数据

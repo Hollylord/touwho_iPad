@@ -26,22 +26,22 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 @property (weak, nonatomic) IBOutlet UITextView *textView1;
 @property (weak, nonatomic) IBOutlet UITextView *textView2;
 @property (weak, nonatomic) IBOutlet UITextView *textView3;
-//发起人头像
+///发起人头像
 @property (weak, nonatomic) IBOutlet UIImageView *initiatorheadIcon;
-//发起人名字
+///发起人名字
 @property (weak, nonatomic) IBOutlet UILabel *initiatorName;
-//发起人二维码
+///发起人二维码
 @property (weak, nonatomic) IBOutlet UIImageView *initiatorQR;
-//关注按钮
+///关注按钮
 @property (weak, nonatomic) IBOutlet UIButton *followBtn;
 
 //@property (strong,nonatomic) ModelProgramDetails *modelDetail;
 
-//用来装所有LP投资人Cell的模型的数组
+///用来装所有LP投资人Cell的模型的数组
 @property (strong,nonatomic) NSMutableArray *LPArray;
-//用来装所有GP投资人Cell的模型的数组
+///用来装所有GP投资人Cell的模型的数组
 @property (strong,nonatomic) NSMutableArray *GPArray;
-//用来装发起人Cell的模型的数组
+///用来装发起人Cell的模型的数组
 @property (strong,nonatomic) NSMutableArray *initiatorsArray;
 
 
@@ -57,8 +57,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     CGFloat height2;//textView2高度
     CGFloat height3;//textView3高度
     AFHTTPRequestOperationManager *mgr;
-    //是否用户已经登录
-    NSString *userID;
+    
 }
 
 #pragma mark - 懒加载
@@ -95,9 +94,6 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-    //用来判断用户是否已经登录
-    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-    userID = [user objectForKey:@"userID"];
     
     
 }
@@ -177,15 +173,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 #pragma mark - 获取数据
 - (void)getData:(dataBlock)completionBlock{
     //设置参数
-    NSDictionary *para;
-
-    if (userID) {
-        //用户已登录
-        para = @{@"method":@"getDetailProject",@"user_id":userID,@"project_id":self.model1.mID};
-    }
-    else{
-        para = @{@"method":@"getDetailProject",@"project_id":self.model1.mID};
-    }
+    NSDictionary *para = @{@"method":@"getDetailProject",@"user_id":self.userID,@"project_id":self.model1.mID};
+    
     
     //获取数据
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -281,6 +270,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 }
 
 #pragma mark - 按钮点击
+///意向领投
 - (IBAction)lingtouClick:(UIButton *)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"领投" message:@"请在个人中心页面申请领头人资格" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
@@ -289,6 +279,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     
 }
 
+///意向跟投
 - (IBAction)gentouClick:(UIButton *)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"跟投" message:@"请在个人中心页面申请跟投人资格" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
@@ -328,22 +319,13 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
                                        delegate:nil];
     
     
-
+    
 }
 
 #pragma mark - 关注
-
 - (IBAction)followTheProgram:(UIButton *)sender {
-    //1. 判断是否登录
-    if (!userID) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"请您登录";
-        [hud hide:YES afterDelay:1];
-        return ;
-    }
     
-    //2. 加关注/取消关注
+    // 加关注/取消关注
     if (sender.selected) {
         //取消关注
         [self cancelFollowedProject:^{
@@ -363,7 +345,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 - (void)cancelFollowedProject:(void(^)())completionBlock{
     
     //参数
-    NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":userID,@"project_id":self.model1.mID};
+    NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":self.userID,@"project_id":self.model1.mID};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         NSLog(@"%@",responseObject);
@@ -374,7 +356,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 }
 - (void)followProject:(void(^)())completionBlock{
     //参数
-    NSDictionary *para = @{@"method":@"followProject",@"user_id":userID,@"project_id":self.model1.mID};
+    NSDictionary *para = @{@"method":@"followProject",@"user_id":self.userID,@"project_id":self.model1.mID};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         NSLog(@"%@",responseObject);
