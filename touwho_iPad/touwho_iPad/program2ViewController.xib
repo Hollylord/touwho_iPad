@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="program2ViewController">
             <connections>
+                <outlet property="followBtn" destination="S2m-T3-nn8" id="Gp6-Oa-vE0"/>
                 <outlet property="initiatorName" destination="3a0-Yj-l07" id="AVI-t0-ezV"/>
                 <outlet property="initiatorQR" destination="p3m-PO-IuX" id="GqR-Ni-Vye"/>
                 <outlet property="initiatorheadIcon" destination="SkM-oH-Vyz" id="0di-yh-uxU"/>
@@ -183,7 +184,7 @@
                             <rect key="frame" x="842" y="15" width="61" height="23"/>
                             <animations/>
                             <state key="normal" title="关注" image="guanzhu1"/>
-                            <state key="selected" image="guanzhu2"/>
+                            <state key="selected" title="已关注" image="guanzhu2"/>
                             <connections>
                                 <action selector="followTheProgram:" destination="-1" eventType="touchUpInside" id="9nz-iQ-AaN"/>
                             </connections>
@@ -266,7 +267,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="228.5" y="356"/>
+            <point key="canvasLocation" x="-24.5" y="352"/>
         </view>
     </objects>
     <resources>

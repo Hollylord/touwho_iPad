@@ -21,7 +21,7 @@
 //项目简介
 @property (copy, nonatomic) NSString *mDestrible;
 //是否关注
-@property (copy, nonatomic) NSString *mFollowStatus;
+//@property (copy, nonatomic) NSString *mFollowStatus;
 //大图片
 @property (copy, nonatomic) NSString *mFullImageUrl;
 //小图片

@@ -42,7 +42,7 @@
     NSString *lastNewsID;
     
 }
-
+#pragma mark - 懒加载
 - (NSMutableArray *)allNewsArr{
     if (!_allNewsArr) {
         _allNewsArr = [NSMutableArray array];
@@ -56,7 +56,7 @@
     }
     return _allNewsViewArr;
 }
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     //创建加载数据的AFN
@@ -70,6 +70,10 @@
     
     //先把它隐藏起来
     self.bottomView.hidden = YES;
+    
+    //小菊花
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self getNewDataWithFresh:nil];
 }
 
 
@@ -80,9 +84,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    //小菊花
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self getNewDataWithFresh:nil];
+    
     
 }
 

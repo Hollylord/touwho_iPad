@@ -161,6 +161,11 @@
     [refresh addTarget:self action:@selector(pullRefresh:) forControlEvents:UIControlEventValueChanged];
     fresh = refresh;
     [self.scrollView addSubview:refresh];
+    
+    //小菊花
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.dimBackground = YES;
+    
     //第一次触发刷新
     [self pullRefresh:refresh];
 
@@ -171,9 +176,7 @@
     //去除导航栏
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-    //小菊花
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.dimBackground = YES;
+    
 }
 
 

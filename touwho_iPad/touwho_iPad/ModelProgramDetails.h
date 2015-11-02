@@ -17,6 +17,8 @@
 @property (strong,nonatomic) NSMutableArray *mLeaderInvestor;
 //二维码url
 @property (copy,nonatomic) NSString *mQRUrl;
+//是否关注项目
+@property (copy,nonatomic) NSString *mFollowStatus;
 
 //项目详情
 @property (copy,nonatomic) NSString *mSummary;

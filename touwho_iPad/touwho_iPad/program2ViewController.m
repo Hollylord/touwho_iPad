@@ -32,6 +32,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 @property (weak, nonatomic) IBOutlet UILabel *initiatorName;
 //发起人二维码
 @property (weak, nonatomic) IBOutlet UIImageView *initiatorQR;
+//关注按钮
+@property (weak, nonatomic) IBOutlet UIButton *followBtn;
 
 //@property (strong,nonatomic) ModelProgramDetails *modelDetail;
 
@@ -55,6 +57,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     CGFloat height2;//textView2高度
     CGFloat height3;//textView3高度
     AFHTTPRequestOperationManager *mgr;
+    //是否用户已经登录
+    NSString *userID;
 }
 
 #pragma mark - 懒加载
@@ -91,6 +95,10 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
+    //用来判断用户是否已经登录
+    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    userID = [user objectForKey:@"userID"];
+    
     
 }
 
@@ -112,6 +120,14 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         self.textView2.text = model.mSuggest;
         self.textView3.text = model.mScheme;
         
+        if ([model.mFollowStatus isEqualToString:@"0"]) {
+            //未关注
+            self.followBtn.selected = NO;
+            
+        }
+        else{
+            self.followBtn.selected = YES;
+        }
         
         //显示发起人
         ModelSponsors *initiator = [self.initiatorsArray firstObject];
@@ -162,7 +178,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 - (void)getData:(dataBlock)completionBlock{
     //设置参数
     NSDictionary *para;
-    NSString *userID = [[[NSUserDefaults standardUserDefaults] objectForKey:@"user"] objectForKey:@"userID"];
+
     if (userID) {
         //用户已登录
         para = @{@"method":@"getDetailProject",@"user_id":userID,@"project_id":self.model1.mID};
@@ -176,6 +192,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         //去掉菊花
         [MBProgressHUD hideHUDForView:self.view animated:YES];
 //        NSLog(@"%@",responseObject);
+        
         //json --> model
         NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
         ModelProgramDetails *model = [ModelProgramDetails objectWithKeyValues:dic];
@@ -317,18 +334,55 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 #pragma mark - 关注
 
 - (IBAction)followTheProgram:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    //加关注
-    if (sender.selected) {
-        
-        NSString *title = @"已关注";
-        [sender setTitle:title forState:!sender.state];
+    //1. 判断是否登录
+    if (!userID) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请您登录";
+        [hud hide:YES afterDelay:1];
+        return ;
     }
-    //取消关注
-    else{
+    
+    //2. 加关注/取消关注
+    if (sender.selected) {
+        //取消关注
+        [self cancelFollowedProject:^{
+            sender.selected = !sender.selected;
+        }];
+
         
-        NSString *title = @"关注";
-        [sender setTitle:title forState:!sender.state];
+    }
+    //加关注
+    else{
+        [self followProject:^{
+            sender.selected = !sender.selected;
+        }];
+       
     }
 }
+- (void)cancelFollowedProject:(void(^)())completionBlock{
+    
+    //参数
+    NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":userID,@"project_id":self.model1.mID};
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+        completionBlock();
+        
+    } failure:NULL];
+}
+- (void)followProject:(void(^)())completionBlock{
+    //参数
+    NSDictionary *para = @{@"method":@"followProject",@"user_id":userID,@"project_id":self.model1.mID};
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+        completionBlock();
+        
+    } failure:NULL];
+}
+#pragma mark - 判断用户是否登录
+
 @end
