@@ -57,6 +57,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     CGFloat height2;//textView2高度
     CGFloat height3;//textView3高度
     AFHTTPRequestOperationManager *mgr;
+    BOOL isFirstInvestor;
+    BOOL isInvestor;
     
 }
 
@@ -94,7 +96,10 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-    
+    //判断是否有资格为GP，LP
+    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+     isFirstInvestor = [[user objectForKey:@"isFirstInvestor"] boolValue];
+     isInvestor = [[user objectForKey:@"isInvestor"] boolValue];
     
 }
 
@@ -127,6 +132,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         
         //显示发起人
         ModelSponsors *initiator = [self.initiatorsArray firstObject];
+        NSLog(@"%@",initiator.mAvatar);
         [self.initiatorheadIcon sd_setImageWithURL:[NSURL URLWithString:initiator.mAvatar] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         [self.initiatorQR sd_setImageWithURL:[NSURL URLWithString:model.mQRUrl] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         self.initiatorName.text = initiator.mName;
@@ -192,6 +198,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         
         completionBlock(model);
     } failure:NULL];
+    
     
 
 }
@@ -272,25 +279,39 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 #pragma mark - 按钮点击
 ///意向领投
 - (IBAction)lingtouClick:(UIButton *)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"领投" message:@"请在个人中心页面申请领头人资格" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
-    [alert addAction:OK];
-    [self presentViewController:alert animated:YES completion:NULL];
+    if (!isFirstInvestor) {
+        //不是GP
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请在个人中心页面申请领头人资格";
+        [hud hide:YES afterDelay:1];
+        return ;
+    }
+    
+    //跳转 领投页面
+    LingTouViewController *lingVC = [[LingTouViewController alloc] initWithNibName:@"LingTouViewController" bundle:nil];
+    lingVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:lingVC animated:YES completion:NULL];
     
 }
 
 ///意向跟投
 - (IBAction)gentouClick:(UIButton *)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"跟投" message:@"请在个人中心页面申请跟投人资格" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
-    [alert addAction:OK];
-    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"已申请" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        LingTouViewController *lingVC = [[LingTouViewController alloc] initWithNibName:@"LingTouViewController" bundle:nil];
-        lingVC.modalPresentationStyle = UIModalPresentationFormSheet;
-        [self presentViewController:lingVC animated:YES completion:NULL];
-    }];
-    [alert addAction:action2];
-    [self presentViewController:alert animated:YES completion:NULL];
+    if (!isInvestor) {
+        //没有LP资格
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请在个人中心页面申请跟投人资格";
+        [hud hide:YES afterDelay:1];
+        return ;
+    }
+    
+    //跳转跟头页面
+    LingTouViewController *lingVC = [[LingTouViewController alloc] initWithNibName:@"LingTouViewController" bundle:nil];
+    lingVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:lingVC animated:YES completion:NULL];
+
+    
 }
 
 #pragma mark - 分享
@@ -347,8 +368,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     //参数
     NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":self.userID,@"project_id":self.model1.mID};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        
-        NSLog(@"%@",responseObject);
+    
         
         completionBlock();
         
@@ -358,8 +378,6 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     //参数
     NSDictionary *para = @{@"method":@"followProject",@"user_id":self.userID,@"project_id":self.model1.mID};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        
-        NSLog(@"%@",responseObject);
         
         completionBlock();
         

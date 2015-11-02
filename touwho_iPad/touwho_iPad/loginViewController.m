@@ -160,40 +160,7 @@
 
 }
 
-- (void)quickLogin:(NSString *)token withIcon:(NSString *)iconURL withNickName:(NSString *)nickName withChannel:(NSString *)channel{
-    
-    //设置参数
-    NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
-    //请求
-    [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSDictionary *result = responseObject;
-        NSLog(@"%@",[[result objectForKey:@"value"] objectForKey:@"resValue"]);
-        //验证成功
-        if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]) {
-            
-            NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
-            
-            //保存用户信息
-            NSDictionary *dic = @{@"userName":nickName,@"userID":userID,@"iconURL":iconURL};
-            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-            [userDefault setObject:dic forKey:@"user"];
-            [userDefault synchronize];
-            
-            //跳转个人中心
-            [self dismissViewControllerAnimated:YES completion:NULL];
-            profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
-            viewcontroller.model.nickName = nickName;
-            viewcontroller.model.iconURL = iconURL;
-            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
-            splitViewController *split = (splitViewController *)self.presentingViewController;
-            [split showDetailViewController:navigationController sender:nil];
-        }
-        
-        
-    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        NSLog(@"%@",error);
-    }];
-}
+
 
 //微信登录
 - (IBAction)wechatLogin:(UIButton *)sender {
@@ -251,6 +218,65 @@
     
     
     
+}
+
+- (void)quickLogin:(NSString *)token withIcon:(NSString *)iconURL withNickName:(NSString *)nickName withChannel:(NSString *)channel{
+    
+    //设置参数
+    NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
+    //请求
+    [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *result = responseObject;
+        //验证成功
+        if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]) {
+            
+            NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
+            
+            //获取个人信息，并保存
+            [self getPersonalInfoWithUserID:userID];
+            
+            //跳转个人中心
+            [self dismissViewControllerAnimated:YES completion:NULL];
+            profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+            viewcontroller.model.nickName = nickName;
+            viewcontroller.model.iconURL = iconURL;
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
+            splitViewController *split = (splitViewController *)self.presentingViewController;
+            [split showDetailViewController:navigationController sender:nil];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+#pragma mark - 获取个人信息
+- (void)getPersonalInfoWithUserID:(NSString *)userID{
+    //参数
+    NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":userID};
+    
+    //获取个人信息
+    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+        //json --> model
+        NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
+        [ModelForUser setupReplacedKeyFromPropertyName:^NSDictionary *{
+            return @{@"userID":@"mID",@"iconURL":@"mAvatar",@"nickName":@"mNickName"};
+        }];
+        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+        BOOL temp1 = [model.mIsFirstInvestor boolValue];
+        BOOL temp2 = [model.mIsInvestor boolValue];
+        
+        //保存用户信息
+        NSDictionary *dic = @{@"userName":model.nickName,@"userID":userID,@"iconURL":model.iconURL,@"isFirstInvestor":@(temp1),@"isInvestor":@(temp2)};
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        [userDefault setObject:dic forKey:@"user"];
+        [userDefault synchronize];
+        
+    } failure:NULL];
 }
 
 @end
