@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="program2ViewController">
             <connections>
+                <outlet property="initiatorName" destination="3a0-Yj-l07" id="AVI-t0-ezV"/>
+                <outlet property="initiatorQR" destination="p3m-PO-IuX" id="GqR-Ni-Vye"/>
+                <outlet property="initiatorheadIcon" destination="SkM-oH-Vyz" id="0di-yh-uxU"/>
                 <outlet property="program" destination="JNX-L7-OdP" id="W3X-Bs-8Ho"/>
                 <outlet property="scrollView" destination="gE3-Ch-hKL" id="G5E-oV-a7x"/>
                 <outlet property="tableView" destination="p9k-By-vdy" id="wY6-Nj-0ZF"/>

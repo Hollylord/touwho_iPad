@@ -170,6 +170,10 @@
     [super viewWillAppear:animated];
     //去除导航栏
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    //小菊花
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.dimBackground = YES;
 }
 
 
@@ -413,7 +417,12 @@
         [self getDataForPreparingProgramsWithType:type andUserID:userID withCompletionBlock:^{
             //获取已结束的数据
             [self getDataForFinishedProgramsWithType:type andUserID:userID withCompletionBlock:^{
+                //显示数据并重新布局
+                self.title1.hidden = NO;
                 [self layoutProgramViewsAfterGetData];
+                //去除小菊花
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
             }];
         }];
     }];

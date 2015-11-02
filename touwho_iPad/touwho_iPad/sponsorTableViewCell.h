@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ModelForSponsor.h"
+#import "ModelSponsors.h"
 
 @interface sponsorTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headIconIMG;
@@ -16,5 +16,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *label3;
 @property (weak, nonatomic) IBOutlet UIImageView *identityIMG;
 
-@property (strong,nonatomic) ModelForSponsor *model;
+@property (strong,nonatomic) ModelSponsors *model;
 @end

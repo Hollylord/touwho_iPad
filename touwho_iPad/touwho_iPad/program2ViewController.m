@@ -9,10 +9,11 @@
 #import "program2ViewController.h"
 #import "programView.h"
 #import "sponsorTableViewCell.h"
-#import "ModelForSponsor.h"
 #import "LingTouViewController.h"
 #import "OtherCenterViewController.h"
+
 #import "ModelProgramDetails.h"
+#import "ModelSponsors.h"
 
 typedef void(^dataBlock)(ModelProgramDetails *model);
 
@@ -25,6 +26,12 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 @property (weak, nonatomic) IBOutlet UITextView *textView1;
 @property (weak, nonatomic) IBOutlet UITextView *textView2;
 @property (weak, nonatomic) IBOutlet UITextView *textView3;
+//发起人头像
+@property (weak, nonatomic) IBOutlet UIImageView *initiatorheadIcon;
+//发起人名字
+@property (weak, nonatomic) IBOutlet UILabel *initiatorName;
+//发起人二维码
+@property (weak, nonatomic) IBOutlet UIImageView *initiatorQR;
 
 //@property (strong,nonatomic) ModelProgramDetails *modelDetail;
 
@@ -32,7 +39,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 @property (strong,nonatomic) NSMutableArray *LPArray;
 //用来装所有GP投资人Cell的模型的数组
 @property (strong,nonatomic) NSMutableArray *GPArray;
-
+//用来装发起人Cell的模型的数组
+@property (strong,nonatomic) NSMutableArray *initiatorsArray;
 
 
 //按钮点击
@@ -104,6 +112,16 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         self.textView2.text = model.mSuggest;
         self.textView3.text = model.mScheme;
         
+        
+        //显示发起人
+        ModelSponsors *initiator = [self.initiatorsArray firstObject];
+        [self.initiatorheadIcon sd_setImageWithURL:[NSURL URLWithString:initiator.mAvatar] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.initiatorQR sd_setImageWithURL:[NSURL URLWithString:model.mQRUrl] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        self.initiatorName.text = initiator.mName;
+        
+        //显示LP GP
+        [self.tableView reloadData];
+        
         //4. 调整布局
         //计算textView高度
         NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
@@ -124,12 +142,10 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 
     
 }
-//控制器的子视图更新约束(添加一些新视图的约束)
+
 - (void)updateViewConstraints{
     
     [super updateViewConstraints];
-
-    
 
 }
 
@@ -159,10 +175,14 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //去掉菊花
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
+//        NSLog(@"%@",responseObject);
         //json --> model
         NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
         ModelProgramDetails *model = [ModelProgramDetails objectWithKeyValues:dic];
+        
+        self.initiatorsArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mLeaderInvestor];
+        self.LPArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mFollowInvestor];
+        self.GPArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mFirstInvestor];
         
         completionBlock(model);
     } failure:NULL];
@@ -183,6 +203,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         }
     }
 }
+
 #pragma mark - tableView代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -191,8 +212,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-//        return self.GPArray.count;
-        return 2;
+        return self.GPArray.count;
+//        return 2;
     }
     else{
         return self.LPArray.count;
@@ -213,7 +234,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     //GP
     if (indexPath.section == 0) {
         cell.identityIMG.hidden = NO;
-//        cell.model = self.GPArray[indexPath.row];
+        cell.model = self.GPArray[indexPath.row];
         return cell;
     }
     //LP
@@ -231,13 +252,11 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     
     OtherCenterViewController *sponsor = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
     //传递数据
-    ModelForSponsor *model = self.LPArray[indexPath.row];
-    //没有创建model会使得指针指向nil，数据传递不过去
-    sponsor.model = [[modelForOtherVC alloc] init];
-    sponsor.model.nickName = model.name;
-    sponsor.model.image = model.image;
     
-    [self.navigationController pushViewController:sponsor animated:YES];
+    //没有创建model会使得指针指向nil，数据传递不过去
+    
+    
+//    [self.navigationController pushViewController:sponsor animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

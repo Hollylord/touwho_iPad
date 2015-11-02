@@ -19,14 +19,13 @@
 
     // Configure the view for the selected state
 }
-- (void)setModel:(ModelForSponsor *)model{
+- (void)setModel:(ModelSponsors *)model{
     if (_model != model) {
         _model = model;
         
-        self.headIconIMG.image = model.image;
-        self.label1.text = model.name;
-        self.label2.text = model.amount;
-        self.label3.text = model.time;
+        [self.headIconIMG sd_setImageWithURL:[NSURL URLWithString:model.mAvatar] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        self.label1.text = model.mName;
+        self.label3.text = model.mInvestMoney;
     }
 
 }
