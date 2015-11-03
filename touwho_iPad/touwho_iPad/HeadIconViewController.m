@@ -57,14 +57,45 @@
 }
 
 - (IBAction)OK:(UIBarButtonItem *)sender {
+    if (!imageForHead) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        return ;
+    }
+    
     //传递图片给个人中心left的头像
     if (self.passImage) {
         self.passImage(imageForHead);
     }
     //传头像给左菜单的头像
     [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self userInfo:@{@"headIcon":imageForHead}];
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+//    mgr.requestSerializer = [AFHTTPRequestSerializer serializer];
+    [mgr.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
     
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    //上传头像给服务器
+  
+    NSDictionary *para = @{@"method":@"alterAvatar",@"user_id":USER_ID};
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+
+    [mgr POST:SERVER_API_URL parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSData *compressed = UIImageJPEGRepresentation(imageForHead, 0.5);
+        //上传数据 必须指明mimeType
+        [formData appendPartWithFileData:compressed name:@"123" fileName:@"headImage" mimeType:@"image/png"];
+        
+    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        NSLog(@"%@",[[responseObject objectForKey:@"value"] objectForKey:@"resValue"]);
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+        NSLog(@"%@",error);
+    }];
+    
+    
 }
 
 #pragma mark - UIImagePicker代理

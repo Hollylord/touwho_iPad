@@ -169,9 +169,9 @@
     NSString *identiCode = self.IDView.text;
     NSString *nickName = self.nickNameView.text;
     NSString *email = self.eMailVIew.text;
-    NSString *userID = [BTNetWorking getUserInfoWithKey:@"userID"];
+//    NSString *userID = [BTNetWorking getUserInfoWithKey:@"userID"];
     //参数
-    NSDictionary *para = @{@"method":@"setMyInfo",@"user_id":userID,@"sex":sex,@"name":name,@"phone":phone,@"id_code":identiCode,@"nick_name":nickName,@"email":email};
+    NSDictionary *para = @{@"method":@"setMyInfo",@"user_id":USER_ID,@"sex":sex,@"name":name,@"phone":phone,@"id_code":identiCode,@"nick_name":nickName,@"email":email};
     //上传
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

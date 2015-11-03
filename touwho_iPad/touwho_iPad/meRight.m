@@ -79,6 +79,7 @@
         [view removeFromSuperview];
     }
     apply *view = [[[NSBundle mainBundle] loadNibNamed:@"apply" owner:nil options:nil]firstObject];
+    view.isLingtou = YES;
     [self addSubview:view];
     [self layoutForSubview:view];
     
@@ -95,6 +96,7 @@
         [view removeFromSuperview];
     }
     apply *view = [[[NSBundle mainBundle] loadNibNamed:@"apply" owner:nil options:nil]firstObject];
+    view.isLingtou = NO;
     [self addSubview:view];
     [self layoutForSubview:view];
     

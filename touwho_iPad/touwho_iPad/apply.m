@@ -46,4 +46,7 @@
     return nil;
 }
 
+//向服务器传数据
+- (IBAction)sendInfoToServer:(UIButton *)sender {
+}
 @end

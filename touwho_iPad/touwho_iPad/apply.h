@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *enterpriseIdentify;
 @property (weak, nonatomic) IBOutlet UILabel *protocolLabel;
 @property (weak, nonatomic) IBOutlet UITextView *serviceContentView;
-
+///用来标识是申请领头还是跟投资格的
+@property (assign,nonatomic) BOOL isLingtou;
 @end

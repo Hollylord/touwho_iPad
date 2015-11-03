@@ -15,15 +15,6 @@
     UINib *nib = [UINib nibWithNibName:@"meLeftCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"meLeftCell"];
     
-//    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"headIcon"];
-//    if (filePath) {
-//        NSData *data = [NSData dataWithContentsOfFile:filePath];
-//        UIImage *icon = [UIImage imageWithData:data];
-//        UIImage *newImage = [UIImage imageClipsWithHeadIcon:icon sideWidth:0];
-//        self.headImageView.image = newImage;
-//    }
-    
-    
 }
 #pragma mark - tableview代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -54,7 +54,7 @@
             
             //获得头像后显示出来
             headVC.passImage = ^(UIImage *image){
-                meLeft *view = self.view.subviews[0];
+                meLeft *view = self.view.subviews[1];
                 UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
                 view.headImageView.image = newImage;
             };

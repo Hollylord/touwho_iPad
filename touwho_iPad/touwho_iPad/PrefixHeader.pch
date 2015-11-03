@@ -30,4 +30,6 @@
 
 #define SERVER_API_URL @"http://120.25.215.53:8099/api.aspx"
 #define SERVER_URL @"http://120.25.215.53:8099"
+#define USER_ID [BTNetWorking getUserInfoWithKey:@"userID"]
+
 #endif

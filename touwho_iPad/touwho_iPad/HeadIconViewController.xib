@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadIconViewController">
@@ -17,6 +17,7 @@
             <subviews>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAF-kf-Vy4">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="1Pg-tA-9q8"/>
                     </constraints>
@@ -35,30 +36,32 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EKP-sf-B4k">
-                    <rect key="frame" x="100" y="59" width="400" height="250"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="250" id="8Cy-zL-JSF"/>
-                        <constraint firstAttribute="width" constant="400" id="sAi-2G-awk"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPQ-SN-f2l">
                     <rect key="frame" x="100" y="331" width="400" height="30"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="本地头像"/>
+                    <animations/>
+                    <state key="normal" title="本地头像" backgroundImage="anniuYellow"/>
                     <connections>
                         <action selector="localIconClick:" destination="-1" eventType="touchUpInside" id="4s0-oT-85n"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-3v-1Kg">
                     <rect key="frame" x="100" y="381" width="400" height="30"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="上传"/>
+                    <animations/>
+                    <state key="normal" title="上传" backgroundImage="anniuYellow"/>
                     <connections>
                         <action selector="uploadClick:" destination="-1" eventType="touchUpInside" id="dc0-vU-yPA"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EKP-sf-B4k">
+                    <rect key="frame" x="100" y="59" width="400" height="250"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="8Cy-zL-JSF"/>
+                        <constraint firstAttribute="width" constant="400" id="sAi-2G-awk"/>
+                    </constraints>
+                </imageView>
             </subviews>
+            <animations/>
             <constraints>
                 <constraint firstItem="EKP-sf-B4k" firstAttribute="top" secondItem="IAF-kf-Vy4" secondAttribute="bottom" constant="15" id="6hA-jn-Wrv"/>
                 <constraint firstItem="IAF-kf-Vy4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7yO-jd-aKC"/>
@@ -77,4 +80,7 @@
             <point key="canvasLocation" x="139" y="344"/>
         </view>
     </objects>
+    <resources>
+        <image name="anniuYellow" width="110" height="30"/>
+    </resources>
 </document>
