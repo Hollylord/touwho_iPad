@@ -12,7 +12,7 @@
 //小图
 @property (copy,nonatomic) NSString *smallImageURL;
 //大图
-@property (copy,nonatomic) NSString *bigImageURL;
+//@property (copy,nonatomic) NSString *bigImageURL;
 
 @property (copy,nonatomic) NSString *title;
 @property (copy,nonatomic) NSString *time;

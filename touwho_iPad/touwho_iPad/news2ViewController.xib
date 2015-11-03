@@ -14,6 +14,7 @@
                 <outlet property="scrollView" destination="3Sl-QO-mbG" id="5jv-6n-HNZ"/>
                 <outlet property="timeLabel" destination="8cu-km-mwi" id="cdl-Io-2Rm"/>
                 <outlet property="titleLabel" destination="Fpb-TA-Vsh" id="Bfr-Bt-H6b"/>
+                <outlet property="topImageView" destination="ymA-S8-oXz" id="eFK-N6-MwE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,8 +40,41 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
+                            <rect key="frame" x="857" y="25" width="25" height="25"/>
+                            <animations/>
+                            <state key="normal" image="zan1"/>
+                            <state key="selected" image="zan2"/>
+                            <connections>
+                                <action selector="dianZan:" destination="-1" eventType="touchUpInside" id="Ns2-3U-trg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlK-Kv-bck">
+                            <rect key="frame" x="804" y="24" width="23" height="27"/>
+                            <animations/>
+                            <state key="normal" backgroundImage="newsLect"/>
+                            <connections>
+                                <action selector="playBtn:" destination="-1" eventType="touchUpInside" id="Nlc-XT-0te"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTp-0t-cbr">
+                            <rect key="frame" x="804" y="24" width="23" height="27"/>
+                            <animations/>
+                            <state key="normal" backgroundImage="newsLectClose"/>
+                            <connections>
+                                <action selector="newsLect:" destination="-1" eventType="touchUpInside" id="hSF-p1-OPl"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-S8-oXz">
+                            <rect key="frame" x="341" y="139" width="240" height="128"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="9W5-sY-GuQ"/>
+                                <constraint firstAttribute="height" constant="128" id="xol-8t-ohz"/>
+                            </constraints>
+                        </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcE-Cw-69Y">
-                            <rect key="frame" x="62" y="138" width="800" height="15"/>
+                            <rect key="frame" x="61" y="287" width="800" height="15"/>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -50,31 +84,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-kJ-sP3">
-                            <rect key="frame" x="858" y="25" width="25" height="25"/>
-                            <animations/>
-                            <state key="normal" image="zan1"/>
-                            <state key="selected" image="zan2"/>
-                            <connections>
-                                <action selector="dianZan:" destination="-1" eventType="touchUpInside" id="Ns2-3U-trg"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlK-Kv-bck">
-                            <rect key="frame" x="805" y="24" width="23" height="27"/>
-                            <animations/>
-                            <state key="normal" backgroundImage="newsLect"/>
-                            <connections>
-                                <action selector="playBtn:" destination="-1" eventType="touchUpInside" id="Nlc-XT-0te"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTp-0t-cbr">
-                            <rect key="frame" x="805" y="24" width="23" height="27"/>
-                            <animations/>
-                            <state key="normal" backgroundImage="newsLectClose"/>
-                            <connections>
-                                <action selector="newsLect:" destination="-1" eventType="touchUpInside" id="hSF-p1-OPl"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <animations/>
                     <constraints>
@@ -84,15 +93,18 @@
                         <constraint firstItem="HTp-0t-cbr" firstAttribute="leading" secondItem="SlK-Kv-bck" secondAttribute="leading" id="46t-aU-05O"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="44" id="7cE-TH-WFH"/>
                         <constraint firstItem="NcE-Cw-69Y" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="8aO-qs-zSd"/>
+                        <constraint firstItem="ymA-S8-oXz" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="AMj-VE-1Yh"/>
                         <constraint firstItem="4HO-kJ-sP3" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="25" id="GmT-Nc-pet"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="centerX" secondItem="3Sl-QO-mbG" secondAttribute="centerX" id="KM7-Zp-HaR"/>
+                        <constraint firstItem="NcE-Cw-69Y" firstAttribute="top" secondItem="ymA-S8-oXz" secondAttribute="bottom" constant="20" id="QwJ-9n-rhE"/>
                         <constraint firstItem="HTp-0t-cbr" firstAttribute="bottom" secondItem="SlK-Kv-bck" secondAttribute="bottom" id="Uou-o6-Bnl"/>
+                        <constraint firstItem="ymA-S8-oXz" firstAttribute="top" secondItem="Fpb-TA-Vsh" secondAttribute="bottom" constant="22" id="Vzf-aj-If1"/>
                         <constraint firstItem="4HO-kJ-sP3" firstAttribute="leading" secondItem="SlK-Kv-bck" secondAttribute="trailing" constant="30" id="Wcf-cW-c35"/>
+                        <constraint firstItem="NcE-Cw-69Y" firstAttribute="top" secondItem="Fpb-TA-Vsh" secondAttribute="bottom" priority="750" constant="20" id="btN-AT-b6q"/>
                         <constraint firstAttribute="trailing" secondItem="4HO-kJ-sP3" secondAttribute="trailing" constant="29" id="iNX-dx-OLI"/>
                         <constraint firstItem="HTp-0t-cbr" firstAttribute="top" secondItem="SlK-Kv-bck" secondAttribute="top" id="j70-EH-aCv"/>
                         <constraint firstItem="8cu-km-mwi" firstAttribute="leading" secondItem="3Sl-QO-mbG" secondAttribute="leading" constant="105" id="mZ3-dO-4wN"/>
                         <constraint firstItem="Fpb-TA-Vsh" firstAttribute="top" secondItem="3Sl-QO-mbG" secondAttribute="top" constant="87" id="ogj-tV-7vV"/>
-                        <constraint firstItem="NcE-Cw-69Y" firstAttribute="top" secondItem="Fpb-TA-Vsh" secondAttribute="bottom" constant="21" id="wEJ-bD-1g3"/>
                         <constraint firstAttribute="trailing" secondItem="NcE-Cw-69Y" secondAttribute="trailing" constant="50" id="wGv-Z7-N4J" userLabel="水平范围"/>
                     </constraints>
                 </scrollView>
@@ -109,7 +121,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="180.5" y="136"/>
+            <point key="canvasLocation" x="264.5" y="0.0"/>
         </view>
     </objects>
     <resources>

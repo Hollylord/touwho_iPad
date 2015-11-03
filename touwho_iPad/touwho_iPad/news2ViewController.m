@@ -16,7 +16,7 @@
 #define KreadLength 300
 
 //定义了一个block类型 叫completionBlock
-typedef void(^completionBlock)(NSString *content,NSString *ispraised);
+typedef void(^completionBlock)(NSString *content,NSString *ispraised,NSString *largeImageUrl,NSString *bottomImageUrl);
 
 @interface news2ViewController () <BDTTSSynthesizerDelegate>
 
@@ -31,6 +31,8 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 //点赞按钮
 @property (weak, nonatomic) IBOutlet UIButton *followBtn;
+///上图
+@property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property (weak, nonatomic) IBOutlet UIButton *LectBtn;
@@ -99,7 +101,17 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     self.titleLabel.text = self.model.title;
     
     //加载网络新闻内容
-    [self getData:^(NSString *content, NSString *ispraised) {
+    [self getData:^(NSString *content, NSString *ispraised, NSString *largeImageUrl, NSString *bottomImageUrl) {
+        
+        if (!largeImageUrl) {
+            //没有上图
+            [self.topImageView removeFromSuperview];
+        }
+        else{
+            NSString *top = [NSString stringWithFormat:@"%@%@",SERVER_URL,largeImageUrl];
+            [self.topImageView sd_setImageWithURL:[NSURL URLWithString:top] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        }
+        
         
         //拿到获取的网络数据
         self.contentView.text = content;
@@ -127,19 +139,25 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
             self.followBtn.selected = YES;
         }
         
+        
+        
+        //增加一张图片放在底部
+        imageView = [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        NSString *bottom = [NSString stringWithFormat:@"%@%@",SERVER_URL,bottomImageUrl];
+        NSURL *url = [NSURL URLWithString:bottom];
+        [imageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            //image.size是以像素为单位的所以要换算成点
+            imageSize = CGSizeMake(image.size.width, image.size.height);
+            [self.scrollView addSubview:imageView];
+            [self.scrollView setNeedsUpdateConstraints];
+        }];
+        
+        
     }];
     
     
-    //增加一张图片放在底部
-    imageView = [[UIImageView alloc] init];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    NSURL *url = [NSURL URLWithString:self.model.bigImageURL];
-    [imageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        //image.size是以像素为单位的所以要换算成点
-        imageSize = CGSizeMake(image.size.width/2, image.size.height/2);
-        [self.scrollView addSubview:imageView];
-        [self.scrollView setNeedsUpdateConstraints];
-    }];
+    
     
     
 }
@@ -155,7 +173,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     
 }
 
-
+//如果往控制的view上添加了子控件，那么setNeeds回来这里。如果只是改变原来子控件的约束，则不会来。
 - (void)updateViewConstraints{
     
     [super updateViewConstraints];
@@ -167,7 +185,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
         //修改滚动范围
         for (NSLayoutConstraint *constraint in self.scrollView.constraints) {
             if ([constraint.identifier isEqualToString:@"contentSizeHeight"]) {
-                constraint.constant = constraint.constant + imageSize.height/2;
+                constraint.constant = constraint.constant + imageSize.height;
             }
         }
         
@@ -236,13 +254,15 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised);
     
     //加载数据
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         NSArray *temp = [responseObject objectForKey:@"value"];
         NSDictionary *dic = [temp firstObject];
         NSString *content = [dic objectForKey:@"mContent"];
         NSString *isPraised = [dic objectForKey:@"mIsPraise"];
-        
-        complete(content,isPraised);
+        NSString *mBottomImageUrl = [dic objectForKey:@"mBottomImageUrl"];
+        NSString *mLargeImageUrl = [dic objectForKey:@"mLargeImageUrl"];
+
+        complete(content,isPraised,mLargeImageUrl,mBottomImageUrl);
         
     } failure:NULL];
 }

@@ -15,4 +15,5 @@
                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 ///获取用户信息
 + (id)getUserInfoWithKey:(NSString *)key;
+
 @end

@@ -149,7 +149,7 @@
     NSDictionary *para = @{@"method":@"getNewsTitle_Pre",@"news_id":@"0"};
     //网络请求
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
     
         
         //关闭小菊花
@@ -181,7 +181,7 @@
             //用字典创建模型
            ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
 
-            model.bigImageURL =[NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mLargeImageUrl"]];
+            
             model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
 
             
@@ -272,7 +272,7 @@
                 
                 //用字典创建模型
                 ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
-                model.bigImageURL =[NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mLargeImageUrl"]];
+               
                 model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
             
                 

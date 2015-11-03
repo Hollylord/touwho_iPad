@@ -914,8 +914,7 @@
 				A193F6D21BB9244E007A697F /* BTPickerVC */,
 				A1211E761BB240EC00B25AA4 /* 私信工具 */,
 				A1CF1E201BAFEBA90065EF77 /* 项目和人model */,
-				A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */,
-				A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */,
+				A1CB0BDD1BE85D64009BE9FA /* 网络数据类 */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -1461,6 +1460,15 @@
 				A1B88CF71BA179C7008FA7C9 /* UUMessage.m */,
 			);
 			name = "聊天";
+			sourceTree = "<group>";
+		};
+		A1CB0BDD1BE85D64009BE9FA /* 网络数据类 */ = {
+			isa = PBXGroup;
+			children = (
+				A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */,
+				A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */,
+			);
+			name = "网络数据类";
 			sourceTree = "<group>";
 		};
 		A1CF1E201BAFEBA90065EF77 /* 项目和人model */ = {
