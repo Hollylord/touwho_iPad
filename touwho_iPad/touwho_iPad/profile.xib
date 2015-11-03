@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="profileViewController"/>
@@ -49,16 +49,6 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-Y1-KxZ">
-                            <rect key="frame" x="259" y="75" width="190" height="30"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="nyn-3N-wVh"/>
-                                <constraint firstAttribute="width" constant="190" id="vRE-eg-igF"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCp-aB-Jp4">
                             <rect key="frame" x="259" y="125" width="190" height="30"/>
                             <animations/>
@@ -183,6 +173,9 @@
                                     </fragment>
                                 </attributedString>
                             </state>
+                            <connections>
+                                <action selector="saveInforToServer:" destination="a2i-yt-wSD" eventType="touchUpInside" id="Ljw-sP-EhF"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-9S-WP9">
                             <rect key="frame" x="50" y="535" width="60" height="30"/>
@@ -314,6 +307,16 @@
                                 <action selector="pickGender:" destination="a2i-yt-wSD" eventType="touchUpInside" id="geP-nE-snb"/>
                             </connections>
                         </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-Y1-KxZ">
+                            <rect key="frame" x="259" y="75" width="190" height="30"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="nyn-3N-wVh"/>
+                                <constraint firstAttribute="width" constant="190" id="vRE-eg-igF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <animations/>
                     <constraints>
@@ -387,7 +390,6 @@
                         <mask key="subviews">
                             <exclude reference="Hxz-IA-twR"/>
                             <exclude reference="WLi-RY-fZo"/>
-                            <exclude reference="zNT-Y1-KxZ"/>
                             <exclude reference="eCp-aB-Jp4"/>
                             <exclude reference="b1X-QN-hP6"/>
                             <exclude reference="kUa-g5-ewl"/>
@@ -397,6 +399,7 @@
                             <exclude reference="vEq-sP-jUm"/>
                             <exclude reference="n3e-Ea-Qak"/>
                             <exclude reference="90e-Cg-PlC"/>
+                            <exclude reference="zNT-Y1-KxZ"/>
                         </mask>
                     </variation>
                 </scrollView>
@@ -418,8 +421,18 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="IDView" destination="i2s-aI-mCu" id="pWm-7X-fHS"/>
+                <outlet property="age" destination="13C-u5-BCa" id="DvR-xM-7hA"/>
+                <outlet property="atIndustry" destination="CQc-AC-O7C" id="YQw-na-X1A"/>
                 <outlet property="businessCard" destination="y7N-OR-rmX" id="HgK-82-xmo"/>
+                <outlet property="eMailVIew" destination="n3e-Ea-Qak" id="X5F-xn-Uwm"/>
+                <outlet property="interestingIndustry" destination="0rU-ZX-bZ0" id="cMe-p3-Nw6"/>
+                <outlet property="nickNameView" destination="zNT-Y1-KxZ" id="Uuz-FB-NSs"/>
+                <outlet property="phoneNumberView" destination="eCp-aB-Jp4" id="yuq-Z0-ZTh"/>
+                <outlet property="riskPereference" destination="r9V-pR-kUZ" id="5M9-TZ-HMK"/>
+                <outlet property="sexBtn" destination="fsy-oK-Yi6" id="Sjs-Kw-vT3"/>
                 <outlet property="takePhotoBtn" destination="OjR-9S-WP9" id="97F-pi-OSU"/>
+                <outlet property="trueNameView" destination="1BR-n1-2VU" id="aRp-1V-qff"/>
             </connections>
             <point key="canvasLocation" x="550" y="482"/>
         </view>

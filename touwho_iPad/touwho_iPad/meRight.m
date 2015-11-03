@@ -59,6 +59,7 @@
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
+    
     profile *view = [[[NSBundle mainBundle] loadNibNamed:@"profile" owner:nil options:nil]firstObject];
     [self addSubview:view];
     [self layoutForSubview:view];

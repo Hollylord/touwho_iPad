@@ -161,4 +161,26 @@
     [[self viewController] presentViewController:btPicker animated:YES completion:NULL];
 }
 
+#pragma mark - 保存
+- (IBAction)saveInforToServer:(UIButton *)sender {
+    NSString *sex = [self.sexBtn.titleLabel.text isEqualToString:@"女士"]?@"1":@"2";
+    NSString *name = self.trueNameView.text;
+    NSString *phone = self.phoneNumberView.text;
+    NSString *identiCode = self.IDView.text;
+    NSString *nickName = self.nickNameView.text;
+    NSString *email = self.eMailVIew.text;
+    NSString *userID = [BTNetWorking getUserInfoWithKey:@"userID"];
+    //参数
+    NSDictionary *para = @{@"method":@"setMyInfo",@"user_id":userID,@"sex":sex,@"name":name,@"phone":phone,@"id_code":identiCode,@"nick_name":nickName,@"email":email};
+    //上传
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+    } failure:NULL];
+    
+    
+}
+
+
+
 @end
