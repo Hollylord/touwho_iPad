@@ -180,6 +180,7 @@
 		A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDDC1B9EB7050023AB6E /* replyViewController.xib */; };
 		A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */; };
 		A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */; };
+		A1CB0BDC1BE84DFB009BE9FA /* BTNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */; };
 		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; };
 		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; };
 		A1CF1E231BAFF6190065EF77 /* ProgramsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E221BAFF6190065EF77 /* ProgramsModel.m */; };
@@ -519,6 +520,8 @@
 		A1C3EDE21B9EBB640023AB6E /* sixinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sixinViewController.h; sourceTree = "<group>"; };
 		A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sixinViewController.m; sourceTree = "<group>"; };
 		A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixinViewController.xib; sourceTree = "<group>"; };
+		A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNetWorking.h; sourceTree = "<group>"; };
+		A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNetWorking.m; sourceTree = "<group>"; };
 		A1CC0C6A1BAC167700168536 /* UIImage+UIimage_HeadIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIimage_HeadIcon.h"; sourceTree = "<group>"; };
 		A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIimage_HeadIcon.m"; sourceTree = "<group>"; };
 		A1CF1E1D1BAFEB670065EF77 /* ProgramsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewCell.h; sourceTree = "<group>"; };
@@ -911,6 +914,8 @@
 				A193F6D21BB9244E007A697F /* BTPickerVC */,
 				A1211E761BB240EC00B25AA4 /* 私信工具 */,
 				A1CF1E201BAFEBA90065EF77 /* 项目和人model */,
+				A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */,
+				A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -2030,6 +2035,7 @@
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1B88CEB1BA17843008FA7C9 /* MJRefreshConst.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
+				A1CB0BDC1BE84DFB009BE9FA /* BTNetWorking.m in Sources */,
 				A193F6D61BB924CB007A697F /* BTPickerViewController.m in Sources */,
 				A1B88CD21BA16A91008FA7C9 /* UUProgressHUD.m in Sources */,
 				A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */,

@@ -132,9 +132,10 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         
         //显示发起人
         ModelSponsors *initiator = [self.initiatorsArray firstObject];
-        NSLog(@"%@",initiator.mAvatar);
-        [self.initiatorheadIcon sd_setImageWithURL:[NSURL URLWithString:initiator.mAvatar] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-        [self.initiatorQR sd_setImageWithURL:[NSURL URLWithString:model.mQRUrl] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,initiator.mAvatar];
+        [self.initiatorheadIcon sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        NSString *QRURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mQRUrl];
+        [self.initiatorQR sd_setImageWithURL:[NSURL URLWithString:QRURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         self.initiatorName.text = initiator.mName;
         
         //显示LP GP
@@ -290,6 +291,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     
     //跳转 领投页面
     LingTouViewController *lingVC = [[LingTouViewController alloc] initWithNibName:@"LingTouViewController" bundle:nil];
+    lingVC.isLingtou = YES;
+    lingVC.projectID = self.model1.mID;
     lingVC.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:lingVC animated:YES completion:NULL];
     
@@ -308,6 +311,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     
     //跳转跟头页面
     LingTouViewController *lingVC = [[LingTouViewController alloc] initWithNibName:@"LingTouViewController" bundle:nil];
+    lingVC.isLingtou = NO;
+    lingVC.projectID = self.model1.mID;
     lingVC.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:lingVC animated:YES completion:NULL];
 

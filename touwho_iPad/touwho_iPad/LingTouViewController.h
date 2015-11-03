@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface LingTouViewController : UIViewController
+///是否为领头
+@property (assign,nonatomic) BOOL isLingtou;
 
+///项目id
+@property (copy,nonatomic) NSString *projectID;
 @end

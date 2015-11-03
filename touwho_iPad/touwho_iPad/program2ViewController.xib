@@ -43,9 +43,9 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVR-B8-CXa">
-                            <rect key="frame" x="717" y="128" width="60" height="30"/>
+                            <rect key="frame" x="717" y="128" width="110" height="30"/>
                             <animations/>
-                            <state key="normal" title="意向跟投"/>
+                            <state key="normal" title="意向跟投" backgroundImage="anniuYellow"/>
                             <connections>
                                 <action selector="gentouClick:" destination="-1" eventType="touchUpInside" id="yoi-Jg-fRf"/>
                             </connections>
@@ -115,9 +115,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpz-73-mV8">
-                            <rect key="frame" x="717" y="50" width="60" height="30"/>
+                            <rect key="frame" x="717" y="50" width="110" height="30"/>
                             <animations/>
-                            <state key="normal" title="意向领投"/>
+                            <state key="normal" title="意向领投" backgroundImage="anniuYellow"/>
                             <connections>
                                 <action selector="lingtouClick:" destination="-1" eventType="touchUpInside" id="O6h-PM-odo"/>
                             </connections>
@@ -271,6 +271,7 @@
         </view>
     </objects>
     <resources>
+        <image name="anniuYellow" width="110" height="30"/>
         <image name="guanzhu1" width="25" height="23"/>
         <image name="guanzhu2" width="25" height="23"/>
         <image name="kh" width="70" height="93"/>

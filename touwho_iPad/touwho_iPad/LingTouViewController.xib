@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LingTouViewController">
             <connections>
+                <outlet property="inputView" destination="XQd-yG-1G0" id="Cbd-mP-FGO"/>
+                <outlet property="topTitle" destination="COQ-Kw-y0n" id="VNp-bo-Yc9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
