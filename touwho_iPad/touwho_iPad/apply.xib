@@ -42,7 +42,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="领投人服务协议内容" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-9Y-7dG">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="领投人服务协议内容" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-9Y-7dG">
                             <rect key="frame" x="55" y="10" width="490" height="309"/>
                             <animations/>
                             <constraints>
@@ -51,7 +51,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-xM-4np">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-xM-4np">
                             <rect key="frame" x="55" y="327" width="115" height="16"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -60,7 +60,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-IJ-9FX">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-IJ-9FX">
                             <rect key="frame" x="173" y="326" width="117" height="19"/>
                             <animations/>
                             <attributedString key="attributedText">
@@ -74,16 +74,22 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2U-Zo-Vp4">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X2U-Zo-Vp4">
                             <rect key="frame" x="125" y="519" width="350" height="50"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="G4B-yp-fPU"/>
                                 <constraint firstAttribute="width" constant="350" id="iEo-em-fTE"/>
                             </constraints>
-                            <state key="normal" title="申请" backgroundImage="anniu">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" backgroundImage="anniu">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="申请">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="23" name="PingFangSC-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                             </state>
                             <connections>
                                 <action selector="sendInfoToServer:" destination="nqK-Oe-dt7" eventType="touchUpInside" id="lq3-hD-Hup"/>
@@ -164,6 +170,8 @@
             <connections>
                 <outlet property="enterpriseIdentify" destination="gk6-0J-rUb" id="0uW-TX-nEj"/>
                 <outlet property="protocolLabel" destination="jwL-IJ-9FX" id="dOo-oU-blH"/>
+                <outlet property="reasonView" destination="l8m-vD-J59" id="6pw-Kl-WN0"/>
+                <outlet property="scrollView" destination="R1g-0k-GSQ" id="xTT-4a-shu"/>
                 <outlet property="serviceContentView" destination="FtZ-9Y-7dG" id="Htd-En-JEp"/>
             </connections>
             <point key="canvasLocation" x="303" y="283"/>

@@ -14,4 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *serviceContentView;
 ///用来标识是申请领头还是跟投资格的
 @property (assign,nonatomic) BOOL isLingtou;
+@property (weak, nonatomic) IBOutlet UITextField *reasonView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end

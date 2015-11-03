@@ -10,7 +10,9 @@
 #import "BTPickerViewController.h"
 
 @implementation apply
-
+- (void)awakeFromNib{
+    self.scrollView.delaysContentTouches = NO;
+}
 
 - (IBAction)enterprisePick:(UIButton *)sender {
     //创建popVC
@@ -48,5 +50,35 @@
 
 //向服务器传数据
 - (IBAction)sendInfoToServer:(UIButton *)sender {
+    //理由内容
+    NSString *reason = self.reasonView.text;
+    
+    //1 。判断
+    if (self.isLingtou) {
+        //申请领投资格
+        NSDictionary *para = @{@"method":@"applicateFirstInvestor",@"user_id":USER_ID,@"destrible":reason};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+            hud.mode = MBProgressHUDModeCustomView;
+            hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Checkmark"]];
+            hud.labelText = @"您的审核已提交成功！";
+            [hud hide:YES afterDelay:1];
+            
+        } failure:NULL];
+    }else{
+        //申请跟投资格
+        NSDictionary *para = @{@"method":@"applicateInvestor",@"user_id":USER_ID,@"destrible":reason};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+            hud.mode = MBProgressHUDModeCustomView;
+            hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Checkmark"]];
+            hud.labelText = @"您的审核已提交成功！";
+            [hud hide:YES afterDelay:1];
+            
+        } failure:NULL];
+    }
+    
 }
 @end
