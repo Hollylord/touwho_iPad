@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SponsorModel.h"
+
 
 
 @interface modelForOtherVC : NSObject

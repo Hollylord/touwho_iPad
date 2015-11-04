@@ -55,7 +55,6 @@
 		A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */; };
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */; };
-		A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE901BBBC6B500571817 /* SponsorModel.m */; };
 		A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE931BBBD51900571817 /* JiGouUnit.m */; };
 		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; };
 		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; };
@@ -330,8 +329,6 @@
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17FAE8C1BBBC64700571817 /* FollowedSponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowedSponsorTableViewCell.h; sourceTree = "<group>"; };
 		A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowedSponsorTableViewCell.m; sourceTree = "<group>"; };
-		A17FAE8F1BBBC6B500571817 /* SponsorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorModel.h; sourceTree = "<group>"; };
-		A17FAE901BBBC6B500571817 /* SponsorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorModel.m; sourceTree = "<group>"; };
 		A17FAE921BBBD51900571817 /* JiGouUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiGouUnit.h; sourceTree = "<group>"; };
 		A17FAE931BBBD51900571817 /* JiGouUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiGouUnit.m; sourceTree = "<group>"; };
 		A17FAE971BBBD5EE00571817 /* ModelForJiGouUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForJiGouUnit.h; sourceTree = "<group>"; };
@@ -1478,8 +1475,6 @@
 		A1CF1E201BAFEBA90065EF77 /* 项目和人model */ = {
 			isa = PBXGroup;
 			children = (
-				A17FAE8F1BBBC6B500571817 /* SponsorModel.h */,
-				A17FAE901BBBC6B500571817 /* SponsorModel.m */,
 				A18338511BC6693C000866EB /* ModelForUser.h */,
 				A18338521BC6693C000866EB /* ModelForUser.m */,
 			);
@@ -2104,7 +2099,6 @@
 				A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */,
 				A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
-				A17FAE911BBBC6B500571817 /* SponsorModel.m in Sources */,
 				A1F6BBF31BE704040039CD37 /* ModelProgramDetails.m in Sources */,
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B88CDB1BA177E5008FA7C9 /* UUMessageFrame.m in Sources */,

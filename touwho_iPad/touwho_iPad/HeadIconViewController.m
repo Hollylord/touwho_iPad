@@ -80,9 +80,10 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
 
-    [mgr POST:SERVER_API_URL parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [mgr POST:@"http://192.168.199.114:8082/api.aspx" parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSData *compressed = UIImageJPEGRepresentation(imageForHead, 0.5);
         //上传数据 必须指明mimeType
+        //name是：服务器收到的文件名字
         [formData appendPartWithFileData:compressed name:@"123" fileName:@"headImage" mimeType:@"image/png"];
         
     } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

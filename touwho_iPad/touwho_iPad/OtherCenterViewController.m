@@ -4,7 +4,7 @@
 //
 //  Created by apple on 15/9/10.
 //  Copyright © 2015年 touhu.com. All rights reserved.
-//
+
 
 #import "OtherCenterViewController.h"
 #import "FollowedSponsorTableViewCell.h"
@@ -48,16 +48,6 @@
     //生成model 设置假数据
     //关注的项目model
     //关注的人model
-    NSArray *name = @[@"杨伟鹏",@"郑慧文",@"袁泽平",@"赵妍昱",@"吴迪",@"吴萌",@"江泽民",];
-    arrayForSponsorModel = [NSMutableArray array];
-    for (int i = 0 ; i < 7; i ++) {
-        SponsorModel *model = [[SponsorModel alloc] init];
-        NSString *imageName = [NSString stringWithFormat:@"jigou%d",i];
-        model.image = [UIImage imageNamed:imageName];
-        model.name = name[i];
-        
-        [arrayForSponsorModel addObject:model];
-    }
     
     
 }
@@ -127,7 +117,7 @@
         //关注的投资人的tableview
         if (tableView == followedSponsorTableview) {
             FollowedSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
-            cell.model = arrayForSponsorModel[indexPath.row];
+            
             return cell;
         }
         //项目的tableview

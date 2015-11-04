@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SponsorModel.h"
+
 
 @interface FollowedSponsorTableViewCell : UITableViewCell
 
-@property (strong,nonatomic) SponsorModel *model;
+
 @property (weak, nonatomic) IBOutlet UIImageView *headIconIMG;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 

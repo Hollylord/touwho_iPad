@@ -19,11 +19,5 @@
 
 }
 
-- (void)setModel:(SponsorModel *)model{
-    if (_model != model) {
-        _model = model;
-    }
-    self.headIconIMG.image = model.image;
-    self.nameLabel.text = model.name;
-}
+
 @end

@@ -13,7 +13,7 @@
 #import "ProgramsTableViewCell.h"
 #import "FollowedSponsorTableViewCell.h"
 #import "ModelMyProgram.h"
-#import "SponsorModel.h"
+
 #import "apply.h"
 #import "program2ViewController.h"
 #import "ModelMyInstitution.h"
