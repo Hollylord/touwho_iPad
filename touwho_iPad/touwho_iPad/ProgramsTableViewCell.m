@@ -30,5 +30,15 @@
     [self.IMGView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
 }
 
+- (void)setModel_b:(ModelMyInstitution *)model_b{
+    if (_model_b != model_b) {
+        _model_b = model_b;
+    }
+    self.titleLabel.text = model_b.mName;
+    self.contentTextView.text = model_b.mDestrible;
+    NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model_b.mLogo];
+    NSURL *url = [NSURL URLWithString:imageURL];
+    [self.IMGView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+}
 
 @end

@@ -464,7 +464,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSArray *programs = [responseObject objectForKey:@"value"];
         
         //json数组-->模型数组

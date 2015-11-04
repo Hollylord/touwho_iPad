@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ModelMyProgram.h"
+#import "ModelMyInstitution.h"
 
 @interface ProgramsTableViewCell : UITableViewCell
 
@@ -16,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
 @property (strong,nonatomic) ModelMyProgram *model;
+@property (strong,nonatomic) ModelMyInstitution *model_b;
 
 @end

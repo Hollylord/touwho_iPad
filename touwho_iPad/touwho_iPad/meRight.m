@@ -16,17 +16,20 @@
 #import "SponsorModel.h"
 #import "apply.h"
 #import "program2ViewController.h"
+#import "ModelMyInstitution.h"
 
 @interface meRight ()
 ///存放投资人的model数组
 @property (strong,nonatomic) NSMutableArray *modelsSponsor;
 ///存放项目model数组
 @property (strong,nonatomic) NSMutableArray *modelsPrograms;
+///存放models的数组
+@property (strong,nonatomic) NSMutableArray *models;
 @end
 
 @implementation meRight
 {
-//    UITableView *institutionTableView;
+    UITableView *institutionTableView;
 //    UITableView *investedProgramsTableView;
 //    UITableView *publishedProgramsTableView;
 //    UITableView *followedProgramsTableView;
@@ -177,17 +180,22 @@
 
 #pragma mark 关注的机构
 - (void)presentFollowedInstitution{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
     
-    UITableView *institution = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-
-    institution.delegate = self;
-    institution.dataSource = self;
-    [institution registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-    [self addSubview:institution];
-    [self layoutForSubview:institution];
+    [self retriveInstitustionDataFromServerWithCompletionBlock:^{
+        
+        for (UIView *view in self.subviews) {
+            [view removeFromSuperview];
+        }
+        
+        UITableView *institution = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+        institutionTableView = institution;
+        institution.delegate = self;
+        institution.dataSource = self;
+        [institution registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+        [self addSubview:institution];
+        [self layoutForSubview:institution];
+    }];
+    
     
 }
 
@@ -239,7 +247,11 @@
     //关注的投资人
     if (tableView == followedSponsorTableview) {
         return 2;
-    } else {
+    }
+    else if (tableView == institutionTableView){
+        return self.models.count;
+    }
+    else {
         //我的项目
         return self.modelsPrograms.count;
     }
@@ -254,7 +266,14 @@
         
         return cell;
     }
-    //项目tableview 4个
+    //机构
+    else if ([tableView isEqual:institutionTableView]){
+        ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
+        cell.model_b = self.models[indexPath.row];
+        
+        return cell;
+    }
+    //项目tableview 3个
     else{
         ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
         cell.model = self.modelsPrograms[indexPath.row];
@@ -271,7 +290,10 @@
     if ([tableView isEqual:followedSponsorTableview]) {
         
     }
-    //项目tableview 4个
+    else if ([tableView isEqual:institutionTableView]){
+        
+    }
+    //项目tableview 3个
     else{
         UIViewController *VC = [self viewController];
         program2ViewController *programVC = [[program2ViewController alloc] initWithNibName:@"program2ViewController" bundle:nil];
@@ -303,6 +325,7 @@
 }
 
 #pragma mark - 获取网络数据
+///获取项目数据
 - (void)retriveDataFromServerWithMethod:(NSString *)method andCompletionBlock:(void(^)())block {
     //参数
     NSDictionary *para = @{@"method":method,@"user_id":USER_ID};
@@ -321,5 +344,25 @@
         NSLog(@"%@",error);
     }];
     
+}
+///获取机构数据
+- (void) retriveInstitustionDataFromServerWithCompletionBlock:(void(^)())block{
+    //参数
+    NSDictionary *para = @{@"method":@"myFollowOrganization",@"user_id":USER_ID};
+    
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        NSArray *programs = [responseObject objectForKey:@"value"];
+
+        //json数组 --> model数组
+        self.models = [ModelMyInstitution objectArrayWithKeyValuesArray:programs];
+        
+        block();
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+
 }
 @end

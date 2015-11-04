@@ -184,6 +184,7 @@
 		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; };
 		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; };
 		A1D288031BE9ADA5007A0D41 /* ModelMyProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D288021BE9ADA5007A0D41 /* ModelMyProgram.m */; };
+		A1D288071BE9B75F007A0D41 /* ModelMyInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D288061BE9B75F007A0D41 /* ModelMyInstitution.m */; };
 		A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */; };
 		A1D61FFE1BA66AFD009FCA1F /* SpecificGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */; };
 		A1D620021BA6AEA9009FCA1F /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620011BA6AEA9009FCA1F /* TopicCell.xib */; };
@@ -528,6 +529,8 @@
 		A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewCell.m; sourceTree = "<group>"; };
 		A1D288011BE9ADA5007A0D41 /* ModelMyProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMyProgram.h; sourceTree = "<group>"; };
 		A1D288021BE9ADA5007A0D41 /* ModelMyProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMyProgram.m; sourceTree = "<group>"; };
+		A1D288051BE9B75F007A0D41 /* ModelMyInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMyInstitution.h; sourceTree = "<group>"; };
+		A1D288061BE9B75F007A0D41 /* ModelMyInstitution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMyInstitution.m; sourceTree = "<group>"; };
 		A1D61FFA1BA66AFD009FCA1F /* SpecificGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecificGroupViewController.h; sourceTree = "<group>"; };
 		A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificGroupViewController.m; sourceTree = "<group>"; };
 		A1D61FFC1BA66AFD009FCA1F /* SpecificGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificGroupViewController.xib; sourceTree = "<group>"; };
@@ -1488,6 +1491,8 @@
 			children = (
 				A1D288011BE9ADA5007A0D41 /* ModelMyProgram.h */,
 				A1D288021BE9ADA5007A0D41 /* ModelMyProgram.m */,
+				A1D288051BE9B75F007A0D41 /* ModelMyInstitution.h */,
+				A1D288061BE9B75F007A0D41 /* ModelMyInstitution.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -2104,6 +2109,7 @@
 				A13259261B82C35A00A327C6 /* programView.m in Sources */,
 				A1B88CDB1BA177E5008FA7C9 /* UUMessageFrame.m in Sources */,
 				A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */,
+				A1D288071BE9B75F007A0D41 /* ModelMyInstitution.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
 				A1D78E221B9D96BB00C136C3 /* message.m in Sources */,
 				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
