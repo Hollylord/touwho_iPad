@@ -94,4 +94,32 @@
     }
     return nil;
 }
+
+#pragma mark - 上传数据
+- (IBAction)sendInfoToServer:(UIButton *)sender {
+    NSString *companyName = self.companyName.text;
+    NSString *industry = self.industry.titleLabel.text;
+    NSString *programName = self.programName.text;
+    NSString *amount = self.amount.text;
+    NSString *place = self.place.titleLabel.text;
+    NSString *programStatus = self.programStatus.titleLabel.text;
+    NSString *introduction = self.introduction.text;
+    
+    //参数
+    NSDictionary *para = @{@"method":@"addProject",@"user_id":USER_ID,@"company":companyName,@"industry_name":industry,@"project_name":programName,@"goal_money":amount,@"province":place,@"invest_step":programStatus,@"destrible":introduction};
+    
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"申请已提交！";
+        [hud hide:YES afterDelay:1];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+    
+}
+
 @end

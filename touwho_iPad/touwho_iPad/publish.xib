@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -208,24 +208,6 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-XM-VNG">
-                    <rect key="frame" x="137" y="397" width="350" height="50"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="NEo-0z-7Am"/>
-                        <constraint firstAttribute="width" constant="350" id="aN1-02-XhW"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="anniu">
-                        <attributedString key="attributedTitle">
-                            <fragment content="保存">
-                                <attributes>
-                                    <font key="NSFont" size="19" name="STHeitiSC-Light"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSD-EE-wFC">
                     <rect key="frame" x="233" y="61" width="300" height="30"/>
                     <animations/>
@@ -321,6 +303,27 @@
                         <constraint firstAttribute="height" constant="1" id="biB-4J-4kI"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAP-XM-VNG">
+                    <rect key="frame" x="136" y="397" width="350" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="NEo-0z-7Am"/>
+                        <constraint firstAttribute="width" constant="350" id="aN1-02-XhW"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="anniu">
+                        <attributedString key="attributedTitle">
+                            <fragment content="保存">
+                                <attributes>
+                                    <font key="NSFont" size="19" name="STHeitiSC-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="sendInfoToServer:" destination="NuR-KF-EqN" eventType="touchUpInside" id="zvY-z9-8qU"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -404,10 +407,19 @@
                     <include reference="ugI-l5-rS6"/>
                     <include reference="0Ad-vc-2EE"/>
                     <include reference="Lrk-dF-fjK"/>
-                    <include reference="bAP-XM-VNG"/>
                     <include reference="j9W-oL-ev0"/>
+                    <include reference="bAP-XM-VNG"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="amount" destination="rBc-H9-AoQ" id="AWm-vq-Pyg"/>
+                <outlet property="companyName" destination="SDY-Sm-I7P" id="YGl-i4-Mek"/>
+                <outlet property="industry" destination="PSD-EE-wFC" id="1s0-Rg-8GO"/>
+                <outlet property="introduction" destination="j9W-oL-ev0" id="IAd-wA-40C"/>
+                <outlet property="place" destination="0Jo-94-I58" id="E77-oO-BPy"/>
+                <outlet property="programName" destination="jLU-fQ-o9j" id="Oo1-ee-7Uf"/>
+                <outlet property="programStatus" destination="zia-x1-CVG" id="Ilj-Gc-Ml9"/>
+            </connections>
             <point key="canvasLocation" x="130.5" y="-495.5"/>
         </view>
     </objects>
