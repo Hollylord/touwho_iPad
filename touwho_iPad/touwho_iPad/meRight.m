@@ -115,17 +115,22 @@
 
 #pragma mark 已投资的项目
 - (void)presentPrograms{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
+    [self retriveDataFromServerWithMethod:@"myInvesteProject" andCompletionBlock:^{
+        
+        for (UIView *view in self.subviews) {
+            [view removeFromSuperview];
+        }
+        
+        UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+        programs.delegate = self;
+        programs.dataSource = self;
+        
+        [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+        [self addSubview:programs];
+        [self layoutForSubview:programs];
+
+    }];
     
-    UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-    programs.delegate = self;
-    programs.dataSource = self;
-    
-    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-    [self addSubview:programs];
-    [self layoutForSubview:programs];
     
 }
 
@@ -298,7 +303,7 @@
     NSDictionary *para = @{@"method":method,@"user_id":USER_ID};
     
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSArray *programs = [responseObject objectForKey:@"value"];
         
         //json数组 --> model数组
