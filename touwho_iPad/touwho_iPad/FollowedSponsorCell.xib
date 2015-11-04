@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,6 +15,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5W0-rr-kfb">
                         <rect key="frame" x="8" y="23" width="100" height="100"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="28W-XD-0Lc"/>
                             <constraint firstAttribute="height" constant="100" id="ufv-Ed-S75"/>
@@ -22,11 +23,13 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RF2-I5-QZE">
                         <rect key="frame" x="131" y="63" width="34" height="21"/>
+                        <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="RF2-I5-QZE" firstAttribute="centerY" secondItem="5W0-rr-kfb" secondAttribute="centerY" id="2sd-cW-1X7"/>
                     <constraint firstItem="5W0-rr-kfb" firstAttribute="leading" secondItem="qcy-rd-4UY" secondAttribute="leading" constant="8" id="JBQ-Tn-oc7"/>
@@ -34,6 +37,7 @@
                     <constraint firstItem="5W0-rr-kfb" firstAttribute="centerY" secondItem="qcy-rd-4UY" secondAttribute="centerY" id="Wp4-RF-9ha"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="headIconIMG" destination="5W0-rr-kfb" id="YF4-VH-Tfh"/>
                 <outlet property="nameLabel" destination="RF2-I5-QZE" id="pdl-XD-ldQ"/>

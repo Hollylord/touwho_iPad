@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SponsorModel.h"
-#import "ProgramsModel.h"
+
 
 @interface modelForOtherVC : NSObject
 //头像

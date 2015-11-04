@@ -19,15 +19,16 @@
    
 }
 
-
-- (void)setModel:(ProgramsModel *)model{
+- (void)setModel:(ModelMyProgram *)model{
     if (_model != model) {
         _model = model;
     }
-    
-    self.IMGView.image = model.image;
-//    self.titleLabel.text = model.title;
-//    self.contentTextView.text = model.content;
+    self.titleLabel.text = model.mTitle;
+    self.contentTextView.text = model.mDestrible;
+    NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mSmallImageUrl];
+    NSURL *url = [NSURL URLWithString:imageURL];
+    [self.IMGView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
 }
+
 
 @end

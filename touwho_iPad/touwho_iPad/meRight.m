@@ -12,49 +12,43 @@
 #import "profile.h"
 #import "ProgramsTableViewCell.h"
 #import "FollowedSponsorTableViewCell.h"
-#import "ProgramsModel.h"
+#import "ModelMyProgram.h"
 #import "SponsorModel.h"
 #import "apply.h"
 #import "program2ViewController.h"
 
+@interface meRight ()
+///存放投资人的model数组
+@property (strong,nonatomic) NSMutableArray *modelsSponsor;
+///存放项目model数组
+@property (strong,nonatomic) NSMutableArray *modelsPrograms;
+@end
 
 @implementation meRight
 {
-    UITableView *institutionTableView;
-    UITableView *investedProgramsTableView;
-    UITableView *publishedProgramsTableView;
-    UITableView *followedProgramsTableView;
+//    UITableView *institutionTableView;
+//    UITableView *investedProgramsTableView;
+//    UITableView *publishedProgramsTableView;
+//    UITableView *followedProgramsTableView;
     UITableView *followedSponsorTableview;
-    ProgramsModel *modelForProgram;
-    
-    //用来存放模型的数组，这个数组的模型最后要给cell，所以要用全局变量
-    NSMutableArray *arrayForSponsorModel;
-    
+ 
 }
-
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        modelForProgram = [[ProgramsModel alloc] init];
-        modelForProgram.image = [UIImage imageNamed:@"logo"];
-        
-        NSArray *name = @[@"杨伟鹏",@"郑慧文",@"袁泽平",@"赵妍昱",@"吴迪",@"吴萌",@"江泽民",];
-        arrayForSponsorModel = [NSMutableArray array];
-        for (int i = 0 ; i < 7; i ++) {
-            SponsorModel *model = [[SponsorModel alloc] init];
-            NSString *imageName = [NSString stringWithFormat:@"jigou%d",i];
-            model.image = [UIImage imageNamed:imageName];
-            model.name = name[i];
-    
-            [arrayForSponsorModel addObject:model];
-        }
+#pragma mark - 懒加载
+- (NSMutableArray *)modelsSponsor{
+    if (!_modelsSponsor) {
+        _modelsSponsor = [NSMutableArray array];
     }
-    return self;
+    return _modelsSponsor;
 }
-
+- (NSMutableArray *)modelsPrograms{
+    if (!_modelsPrograms) {
+        _modelsPrograms = [NSMutableArray array];
+    }
+    return _modelsPrograms;
+}
 
 #pragma mark - meleft代理
-//编辑个人信息页面的设置
+#pragma mark 编辑个人信息页面的设置
 - (void)presentProfile{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -73,7 +67,7 @@
     
 }
 
-//申请为领投人
+#pragma mark 申请为领投人
 - (void)presentApply{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -90,7 +84,7 @@
     view.serviceContentView.text = [dic objectForKey:@"lingtourenxieyi"];
 }
 
-//申请为投资人
+#pragma mark 申请为投资人
 - (void)presentSponsor{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -107,7 +101,7 @@
     view.serviceContentView.text = [dic objectForKey:@"gentourenxieyi"];
 }
 
-//发布项目
+#pragma mark 发布项目
 - (void)presentPublish{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -119,7 +113,7 @@
     
 }
 
-//已投资的项目
+#pragma mark 已投资的项目
 - (void)presentPrograms{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -135,21 +129,28 @@
     
 }
 
-//已发布的项目
+#pragma mark 已发布的项目
 - (void)presentPublished{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
+    [self retriveDataFromServerWithMethod:@"myBuildProject" andCompletionBlock:^{
+        
+        for (UIView *view in self.subviews) {
+            [view removeFromSuperview];
+        }
+        
+        UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+        programs.delegate = self;
+        programs.dataSource = self;
+        [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+        [self addSubview:programs];
+        [self layoutForSubview:programs];
+        
+    }];
     
-    UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-    programs.delegate = self;
-    programs.dataSource = self;
-    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-    [self addSubview:programs];
-    [self layoutForSubview:programs];
+    
+    
 }
 
-//关注的项目
+#pragma mark 关注的项目
 - (void)presentFollowedProgram{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -164,7 +165,7 @@
     [self layoutForSubview:programs];
 }
 
-//关注的机构
+#pragma mark 关注的机构
 - (void)presentFollowedInstitution{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -180,7 +181,7 @@
     
 }
 
-//关注的投资人
+#pragma mark 关注的投资人
 - (void)presentFollowedSponsor{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -195,7 +196,7 @@
     [self layoutForSubview:followedSponsor];
 }
 
-//消息
+#pragma mark 消息
 - (void)presentMessage{
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -227,9 +228,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //关注的投资人
     if (tableView == followedSponsorTableview) {
-        return arrayForSponsorModel.count;
+        return 2;
     } else {
-        return 10;
+        //我的项目
+        return self.modelsPrograms.count;
     }
     
 }
@@ -239,13 +241,13 @@
     //投资人tableview
     if ([tableView isEqual:followedSponsorTableview]) {
         FollowedSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
-        cell.model = arrayForSponsorModel[indexPath.row];
+        
         return cell;
     }
     //项目tableview 4个
     else{
         ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
-        cell.model = modelForProgram;
+        cell.model = self.modelsPrograms[indexPath.row];
         
         return cell;
     }
@@ -286,5 +288,26 @@
         }
     }
     return nil;
+}
+
+#pragma mark - 获取网络数据
+- (void)retriveDataFromServerWithMethod:(NSString *)method andCompletionBlock:(void(^)())block {
+    //参数
+    NSDictionary *para = @{@"method":method,@"user_id":USER_ID};
+    
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        NSArray *programs = [responseObject objectForKey:@"value"];
+        
+        //json数组 --> model数组
+        self.modelsPrograms = [ModelMyProgram objectArrayWithKeyValuesArray:programs];
+        
+        block();
+   
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+    
 }
 @end

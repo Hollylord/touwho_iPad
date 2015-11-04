@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProgramsModel.h"
+#import "ModelMyProgram.h"
 
 @interface ProgramsTableViewCell : UITableViewCell
 
-@property (strong,nonatomic) ProgramsModel *model;
 @property (weak, nonatomic) IBOutlet UIImageView *IMGView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 
+@property (strong,nonatomic) ModelMyProgram *model;
 
 @end

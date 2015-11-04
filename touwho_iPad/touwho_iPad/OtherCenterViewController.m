@@ -22,7 +22,7 @@
 @implementation OtherCenterViewController
 {
     UITableView *followedSponsorTableview;
-    ProgramsModel *modelForProgram;
+ 
     
     //用来存放模型的数组，这个数组的模型最后要给cell，所以要用全局变量
     NSMutableArray *arrayForSponsorModel;
@@ -47,8 +47,6 @@
     
     //生成model 设置假数据
     //关注的项目model
-    modelForProgram = [[ProgramsModel alloc] init];
-    modelForProgram.image = [UIImage imageNamed:@"logo"];
     //关注的人model
     NSArray *name = @[@"杨伟鹏",@"郑慧文",@"袁泽平",@"赵妍昱",@"吴迪",@"吴萌",@"江泽民",];
     arrayForSponsorModel = [NSMutableArray array];
@@ -135,7 +133,7 @@
         //项目的tableview
         else {
             ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
-            cell.model = modelForProgram;
+         
             return cell;
         }
         
