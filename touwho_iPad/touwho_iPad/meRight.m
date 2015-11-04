@@ -157,17 +157,22 @@
 
 #pragma mark 关注的项目
 - (void)presentFollowedProgram{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
+    [self retriveDataFromServerWithMethod:@"myFollowProject" andCompletionBlock:^{
+        
+        for (UIView *view in self.subviews) {
+            [view removeFromSuperview];
+        }
+        
+        UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+        
+        programs.delegate = self;
+        programs.dataSource = self;
+        [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+        [self addSubview:programs];
+        [self layoutForSubview:programs];
+    }];
     
-    UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
     
-    programs.delegate = self;
-    programs.dataSource = self;
-    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-    [self addSubview:programs];
-    [self layoutForSubview:programs];
 }
 
 #pragma mark 关注的机构
