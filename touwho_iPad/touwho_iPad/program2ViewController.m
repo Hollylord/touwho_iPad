@@ -180,7 +180,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 #pragma mark - 获取数据
 - (void)getData:(dataBlock)completionBlock{
     //设置参数
-    NSDictionary *para = @{@"method":@"getDetailProject",@"user_id":self.userID,@"project_id":self.model1.mID};
+    NSDictionary *para = @{@"method":@"getDetailProject",@"user_id":USER_ID,@"project_id":self.model1.mID};
     
     
     //获取数据
@@ -371,7 +371,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 - (void)cancelFollowedProject:(void(^)())completionBlock{
     
     //参数
-    NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":self.userID,@"project_id":self.model1.mID};
+    NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":USER_ID,@"project_id":self.model1.mID};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
     
         
@@ -381,7 +381,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 }
 - (void)followProject:(void(^)())completionBlock{
     //参数
-    NSDictionary *para = @{@"method":@"followProject",@"user_id":self.userID,@"project_id":self.model1.mID};
+    NSDictionary *para = @{@"method":@"followProject",@"user_id":USER_ID,@"project_id":self.model1.mID};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         completionBlock();

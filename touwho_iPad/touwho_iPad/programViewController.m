@@ -388,7 +388,7 @@
         //已登录
         program2ViewController *viewController = [[program2ViewController alloc]initWithNibName:@"program2ViewController" bundle:nil];
         viewController.model1 = model;
-        viewController.userID = userID;
+        
         [self.navigationController pushViewController:viewController animated:YES];
     }
     else {
@@ -464,7 +464,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        //        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         NSArray *programs = [responseObject objectForKey:@"value"];
         
         //json数组-->模型数组

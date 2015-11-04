@@ -266,6 +266,8 @@
         UIViewController *VC = [self viewController];
         program2ViewController *programVC = [[program2ViewController alloc] initWithNibName:@"program2ViewController" bundle:nil];
         //缺少传递数据工作
+        NSDictionary *model = [[self.modelsPrograms objectAtIndex:indexPath.row] keyValues];
+        programVC.model1 = [ModelForProgramView objectWithKeyValues:model];
         [VC.navigationController pushViewController:programVC animated:YES];
     }
 }
