@@ -53,7 +53,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
     
     //添加数据
-    self.groupNameLabel.text = self.model.group.name;
+    
     self.iconWriter.image = self.model.publisher.icon;
     self.titleLabel.text = self.model.title;
     self.timeLabel.text = self.model.time;

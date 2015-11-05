@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine1;
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine2;
 
-
-
+///装热门小组model的数组
+@property (strong,nonatomic) NSMutableArray *hotModels;
+///装我加入的小组model的数组
+@property (strong,nonatomic) NSMutableArray *myModels;
 @end

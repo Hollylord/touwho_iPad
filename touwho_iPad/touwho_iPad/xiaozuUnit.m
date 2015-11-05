@@ -14,8 +14,7 @@
     if (_model != model) {
         _model = model;
     }
-    self.iconView.image = model.icon;
-    self.nameLabel.text = model.name;
+    
 }
 
 - (IBAction)turn2SpecificGroupController:(UITapGestureRecognizer *)sender {

@@ -10,5 +10,6 @@
 
 @interface circle : UIView
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segement;
+///装3个子视图
 @property (strong,nonatomic) NSMutableArray *views;
 @end

@@ -39,11 +39,7 @@
     //设置分享按钮
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
-    
-    //添加数据
-    self.groupIcon.image = self.model.icon;
-    self.groupName.text = self.model.name;
-//    self.groupIntroduction.text = self.model.introduction;
+ 
     
     //添加话题数据
     self.modelTopic.publisher.icon = [UIImage imageNamed:@"jingwang"];

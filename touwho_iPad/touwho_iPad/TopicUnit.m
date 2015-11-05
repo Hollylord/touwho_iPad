@@ -17,7 +17,7 @@
     }
     self.iconView.image = model.publisher.icon;
     self.topicNameLabel.text = model.title;
-    self.groupNameLabel.text = model.group.name;
+    
     self.timeLabel.text = model.time;
 }
 

@@ -45,7 +45,7 @@
             NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i + 1];
             model.publisher.icon = [UIImage imageNamed:imageName];
             model.title = topicNamesArr1[i];
-            model.group.name = groupNamesArr1[i];
+            
             model.time = @"2015-10-9";
             [hotModelArr addObject:model];
         }
@@ -58,7 +58,7 @@
             NSString *imageName = [NSString stringWithFormat:@"touxiang%d",i];
             model.publisher.icon = [UIImage imageNamed:imageName];
             model.title = topicNamesArr2[i-4];
-            model.group.name = groupNamesArr2[i-4];
+            
             model.time = @"2015-10-9";
             [iInvoModelArr addObject:model];
         }
