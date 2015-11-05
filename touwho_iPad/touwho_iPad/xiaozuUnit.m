@@ -14,6 +14,7 @@
     if (_model != model) {
         _model = model;
     }
+    self.nameLabel.text = model.mName;
     
 }
 

@@ -15,7 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splitLine2;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong,nonatomic) ModelForTopic *model;
+
+///装热门话题model的数组
+@property (strong,nonatomic) NSMutableArray *hotModels;
+///装我加入的话题model的数组
+@property (strong,nonatomic) NSMutableArray *myModels;
 
 
 

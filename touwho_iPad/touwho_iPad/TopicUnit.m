@@ -15,10 +15,10 @@
         _model = model;
         
     }
-    self.iconView.image = model.publisher.icon;
-    self.topicNameLabel.text = model.title;
     
-    self.timeLabel.text = model.time;
+    self.topicNameLabel.text = model.mTitle;
+    
+    self.timeLabel.text = model.mCreateTime;
 }
 
 #pragma mark - 话题点击控制器跳转

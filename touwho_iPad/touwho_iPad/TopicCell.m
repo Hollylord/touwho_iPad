@@ -26,8 +26,6 @@
     }
     self.writerIcon.image = model.publisher.icon;
     self.writerNickName.text = model.publisher.nickName;
-    self.timeLabel.text = model.time;
-    self.titleLabel.text = model.title;
-    self.contentLabel.text = model.content;
+    
 }
 @end

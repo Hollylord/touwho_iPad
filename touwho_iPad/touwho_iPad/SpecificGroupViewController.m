@@ -44,9 +44,7 @@
     //添加话题数据
     self.modelTopic.publisher.icon = [UIImage imageNamed:@"jingwang"];
     self.modelTopic.publisher.nickName = @"悬镜司首尊夏江";
-    self.modelTopic.title = @"江左盟宗主的真正目的";
-    self.modelTopic.time = @"2015-10-10";
-    self.modelTopic.content = @"遥映人间冰雪样，暗香幽浮曲临江，遍识天下英雄路，俯首江左有梅郎";
+    
 }
 
 - (void)didReceiveMemoryWarning {

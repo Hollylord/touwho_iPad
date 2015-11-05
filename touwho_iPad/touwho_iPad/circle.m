@@ -10,6 +10,8 @@
 #import "JiGouMenuView.h"
 #import "xiaozu.h"
 #import "ModelForGroup.h"
+#import "topics.h"
+#import "ModelForTopic.h"
 
 @implementation circle
 - (NSMutableArray *)views{
@@ -27,7 +29,7 @@
         xiaozu *view = [[[NSBundle mainBundle] loadNibNamed:@"xiaozu" owner:nil options:nil]firstObject];
         [self.views addObject:view];
        
-        UIView *view2 = [[[NSBundle mainBundle] loadNibNamed:@"topics" owner:nil options:nil]firstObject];
+        topics *view2 = [[[NSBundle mainBundle] loadNibNamed:@"topics" owner:nil options:nil]firstObject];
         [self.views addObject:view2];
         
         JiGouMenuView *view3 = [[JiGouMenuView alloc] init];
@@ -71,7 +73,7 @@
         //菊花
         [MBProgressHUD showHUDAddedTo:self animated:YES];
         
-        [self pullDataToView:view withCompletion:^{
+        [self pullGroupDataToView:view withCompletion:^{
             
             [MBProgressHUD hideHUDForView:self animated:YES];
             
@@ -88,9 +90,23 @@
         [self.views[0] removeFromSuperview];
         [self.views[2] removeFromSuperview];
         
-        UIView *view = self.views[1];
-        [self addSubview:view];
-        [self setNeedsUpdateConstraints];
+        topics *view = self.views[1];
+        
+        
+        view.myModels = nil;
+        view.hotModels = nil;
+        
+        //菊花
+        [MBProgressHUD showHUDAddedTo:self animated:YES];
+        
+        [self pullTopicsDataToView:view withCompletion:^{
+            
+            [MBProgressHUD hideHUDForView:self animated:YES];
+            
+            [self addSubview:view];
+            [self setNeedsUpdateConstraints];
+        }];
+
         
     }
     //机构专题
@@ -106,12 +122,10 @@
     
 }
 #pragma mark - 拉取数据
-- (void) pullDataToView:(xiaozu *)customView withCompletion:(void (^)())block{
-    
-    //自定义一个并行队列
-    dispatch_queue_t myQ = dispatch_queue_create("myQueue", DISPATCH_QUEUE_CONCURRENT);
-    
-    //获取数据
+///拉取小组数据
+- (void) pullGroupDataToView:(xiaozu *)customView withCompletion:(void (^)())block{
+
+    //获取全部小组
     NSDictionary *para = @{@"method":@"getGroups"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@",responseObject);
@@ -121,39 +135,61 @@
         
         customView.hotModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
         
+        if (USER_ID) {
+            //获取我参与的小组
+            NSDictionary *dic = @{@"method":@"getMyGroups",@"user_id":USER_ID};
+            [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                //            NSLog(@"%@",responseObject);
+                //json --> models
+                customView.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"%@",error);
+            }];
+        }
+        
+    
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+
+    block();
+    
+}
+
+///拉取话题数据
+- (void) pullTopicsDataToView:(topics *)customView withCompletion:(void (^)())block{
+    
+    //获取全部小组
+    NSDictionary *para = @{@"method":@"getTalks"};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
         
         
-       
+        //json --> models
+        
+        customView.hotModels = [ModelForTopic objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+        
+        if (USER_ID) {
+            //获取我参与的小组
+            NSDictionary *dic = @{@"method":@"getMyTalks",@"user_id":USER_ID};
+            [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                //            NSLog(@"%@",responseObject);
+                
+                //json --> models
+                customView.myModels = [ModelForTopic objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"%@",error);
+            }];
+        }
+        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error);
     }];
     
-    
-    
-    dispatch_async(myQ, ^{
-        if (!USER_ID) {
-            return ;
-        }
-        //获取数据
-        NSDictionary *para = @{@"method":@"getMyGroups",@"user_id":USER_ID};
-        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSLog(@"%@",responseObject);
-            //json --> models
-            customView.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"%@",error);
-        }];
-        
-    });
-    
-    dispatch_barrier_async(myQ, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            block();
-        });
-        
-    });
+    block();
     
 }
 @end

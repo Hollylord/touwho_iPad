@@ -55,8 +55,7 @@
     //添加数据
     
     self.iconWriter.image = self.model.publisher.icon;
-    self.titleLabel.text = self.model.title;
-    self.timeLabel.text = self.model.time;
+    
     self.writerNameLabel.text = self.model.publisher.nickName;
     
     //添加评论数据

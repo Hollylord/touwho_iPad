@@ -15,9 +15,15 @@
 @property (strong,nonatomic) ModelForUser *publisher;
 @property (strong,nonatomic) ModelForGroup *group;
 
-@property (copy,nonatomic) NSString *title;
-@property (copy,nonatomic) NSString *content;
-@property (copy,nonatomic) NSString *time;
-//存放所有评论
-@property (strong,nonatomic) NSMutableArray *commentArr;
+///话题的logo
+@property (copy,nonatomic) NSString *mLogo;
+///话题的名称
+@property (copy,nonatomic) NSString *mTitle;
+///话题缩写
+@property (copy,nonatomic) NSString *mShortTitle;
+@property (copy,nonatomic) NSString *mCreateTime;
+@property (copy,nonatomic) NSString *mDestribel;
+@property (copy,nonatomic) NSString *mIsHot;
+@property (copy,nonatomic) NSString *mGroupName;
+
 @end
