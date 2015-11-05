@@ -8,7 +8,7 @@
 
 #import "shipinMenuView.h"
 #import "shipinView.h"
-#import "shipinViewController.h"
+#import "ShiPinDetailViewController.h"
 #import "ModelForFootage.h"
 
 #define MarginSide 30
@@ -123,10 +123,12 @@
     scrollView.translatesAutoresizingMaskIntoConstraints = NO;
 
 }
+
+#pragma mark - 跳转
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
     UIViewController *VC = [self viewController];
-    shipinViewController *shipinVC = [[shipinViewController alloc] initWithNibName:@"shipinViewController" bundle:nil];
-    [VC.navigationController pushViewController:shipinVC animated:YES];
+    ShiPinDetailViewController *nextVC = [[ShiPinDetailViewController alloc] initWithNibName:@"ShiPinDetailViewController" bundle:nil];
+    [VC.navigationController pushViewController:nextVC animated:YES];
 }
 //获得当前view的控制器
 - (UIViewController*)viewController {
