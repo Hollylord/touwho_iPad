@@ -22,4 +22,12 @@
     }
     return nil;
 }
+- (void)setModel:(ModelForFootage *)model{
+    if (_model != model) {
+        _model = model;
+    }
+    self.nameLabel.text = model.mName;
+    self.timeLabel.text = model.mCreateTime;
+}
+
 @end

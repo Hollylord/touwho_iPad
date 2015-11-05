@@ -70,7 +70,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self userInfo:@{@"headIcon":imageForHead}];
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-//    mgr.requestSerializer = [AFHTTPRequestSerializer serializer];
+
     [mgr.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
     
     //上传头像给服务器

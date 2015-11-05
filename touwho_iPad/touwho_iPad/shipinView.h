@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelForFootage.h"
 
 @interface shipinView : UIView
+@property (strong,nonatomic) ModelForFootage *model;
+
+@property (weak, nonatomic) IBOutlet UIImageView *smallImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
