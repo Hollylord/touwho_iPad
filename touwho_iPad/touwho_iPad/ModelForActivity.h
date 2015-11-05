@@ -9,10 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelForActivity : NSObject
-
-@property (assign,nonatomic) BOOL status;
-@property (strong,nonatomic) UIImage *icon;
-@property (copy,nonatomic) NSString *name;
-@property (copy,nonatomic) NSString *time;
+///活动状态
+@property (copy,nonatomic) NSString *mStatus;
+///活动id
+@property (copy,nonatomic) NSString *mID;
+///活动标题
+@property (copy,nonatomic) NSString *mTitle;
+///活动地址
+@property (copy,nonatomic) NSString *mAddress;
+///活动时间
+@property (copy,nonatomic) NSString *mTime;
+///简介
 @property (copy,nonatomic) NSString *introduction;
 @end
