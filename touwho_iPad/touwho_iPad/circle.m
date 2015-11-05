@@ -64,6 +64,10 @@
 
         xiaozu *view = self.views[0];
         
+        
+        view.myModels = nil;
+        view.hotModels = nil;
+        
         //菊花
         [MBProgressHUD showHUDAddedTo:self animated:YES];
         
@@ -102,24 +106,31 @@
     
 }
 #pragma mark - 拉取数据
-- (void) pullDataToView:(UIView *)customView withCompletion:(void (^)())block{
-    
-    xiaozu *view = (xiaozu *)customView;
+- (void) pullDataToView:(xiaozu *)customView withCompletion:(void (^)())block{
     
     //自定义一个并行队列
     dispatch_queue_t myQ = dispatch_queue_create("myQueue", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_async(myQ, ^{
-        //获取数据
-        NSDictionary *para = @{@"method":@"getGroups"};
-        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@",responseObject);
-            //json --> models
-            view.hotModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"%@",error);
-        }];
-    });
+    
+    //获取数据
+    NSDictionary *para = @{@"method":@"getGroups"};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+       
+        //json --> models
+        
+        customView.hotModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+        
+        
+        
+       
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
+    
+    
     dispatch_async(myQ, ^{
         if (!USER_ID) {
             return ;
@@ -127,18 +138,21 @@
         //获取数据
         NSDictionary *para = @{@"method":@"getMyGroups",@"user_id":USER_ID};
         [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@",responseObject);
+//            NSLog(@"%@",responseObject);
             //json --> models
-            view.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+            customView.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@",error);
         }];
         
     });
-    dispatch_barrier_sync(myQ, ^{
+    
+    dispatch_barrier_async(myQ, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            block();
+        });
         
-        block();
     });
     
 }
