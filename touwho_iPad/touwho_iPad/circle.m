@@ -12,6 +12,7 @@
 #import "ModelForGroup.h"
 #import "topics.h"
 #import "ModelForTopic.h"
+#import "ModelForJiGouUnit.h"
 
 @implementation circle
 - (NSMutableArray *)views{
@@ -114,9 +115,16 @@
         [self.views[0] removeFromSuperview];
         [self.views[1] removeFromSuperview];
         
-        UIView *view = self.views[2];
-        [self addSubview:view];
-        [self setNeedsUpdateConstraints];
+        JiGouMenuView *view = self.views[2];
+        view.models = nil;
+        //菊花
+        [MBProgressHUD showHUDAddedTo:self animated:YES];
+        [self pullJigouDataToView:view withCompletion:^{
+            [MBProgressHUD hideHUDForView:self animated:YES];
+            
+            [self addSubview:view];
+            [self setNeedsUpdateConstraints];
+        }];
         
     }
     
@@ -128,18 +136,26 @@
     //获取全部小组
     NSDictionary *para = @{@"method":@"getGroups"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
+        NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
+        if ([result objectForKey:@"resCode"]) {
+            return ;
+        }
        
         //json --> models
-        
         customView.hotModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
         
         if (USER_ID) {
             //获取我参与的小组
             NSDictionary *dic = @{@"method":@"getMyGroups",@"user_id":USER_ID};
             [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                //            NSLog(@"%@",responseObject);
+                NSLog(@"%@",responseObject);
+                NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
+                if ([result objectForKey:@"resCode"]) {
+                    return ;
+                }
+                
                 //json --> models
                 customView.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
                 
@@ -163,8 +179,12 @@
     //获取全部小组
     NSDictionary *para = @{@"method":@"getTalks"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
+        NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
+        if ([result objectForKey:@"resCode"]) {
+            return ;
+        }
         
         //json --> models
         
@@ -175,6 +195,11 @@
             NSDictionary *dic = @{@"method":@"getMyTalks",@"user_id":USER_ID};
             [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 //            NSLog(@"%@",responseObject);
+                
+                NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
+                if ([result objectForKey:@"resCode"]) {
+                    return ;
+                }
                 
                 //json --> models
                 customView.myModels = [ModelForTopic objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
@@ -191,5 +216,28 @@
     
     block();
     
+}
+///获取机构数据
+- (void) pullJigouDataToView:(JiGouMenuView *)customView withCompletion:(void (^)())block{
+    
+    //获取全部小组
+    NSDictionary *para = @{@"method":@"getOrganizations"};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
+        if ([result objectForKey:@"resCode"]) {
+            return ;
+        }
+        
+        //json --> models
+        customView.models = [ModelForJiGouUnit objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
+    block();
 }
 @end

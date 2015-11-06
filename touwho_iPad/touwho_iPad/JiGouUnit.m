@@ -15,10 +15,7 @@
         _model = model;
     }
     
-    self.IMGView.image = model.image;
-    self.label1.text = model.title1;
-    self.label2.text = model.time;
-    self.label3.text = model.title2;
+    
 }
 
 @end

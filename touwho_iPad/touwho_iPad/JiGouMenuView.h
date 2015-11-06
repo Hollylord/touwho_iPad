@@ -10,7 +10,8 @@
 
 @interface JiGouMenuView : UIView
 
-
+///用来装model的数组
+@property (strong,nonatomic) NSMutableArray *models;
 
 - (IBAction)turn2JiGouVC:(UITapGestureRecognizer *)sender;
 - (IBAction)follow:(UIButton *)sender;

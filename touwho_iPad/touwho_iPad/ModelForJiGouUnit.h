@@ -9,8 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface ModelForJiGouUnit : NSObject
-@property (strong,nonatomic) UIImage *image;
-@property (copy,nonatomic) NSString *title1;
-@property (copy,nonatomic) NSString *time;
-@property (copy,nonatomic) NSString *title2;
+
+///机构缩写
+@property (copy,nonatomic) NSString *mShortName;
+///机构名称
+@property (copy,nonatomic) NSString *mName;
+///机构logo
+@property (copy,nonatomic) NSString *mLogo;
+///机构创建时间
+@property (copy,nonatomic) NSString *mCreateTime;
+///机构简介
+@property (copy,nonatomic) NSString *mDestrible;
+///机构顺序
+@property (copy,nonatomic) NSString *mOrder;
 @end
