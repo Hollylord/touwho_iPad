@@ -22,4 +22,7 @@
 @property (copy,nonatomic) NSString *mDestrible;
 ///机构顺序
 @property (copy,nonatomic) NSString *mOrder;
+///机构id
+@property (copy,nonatomic) NSString *mID;
+
 @end

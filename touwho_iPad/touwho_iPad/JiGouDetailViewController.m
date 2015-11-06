@@ -14,9 +14,16 @@
 @end
 
 @implementation JiGouDetailViewController
-{
-    CGFloat heightContentView;
+
+
+- (ModelForJiGouUnit *)model{
+    if (!_model) {
+        _model = [[ModelForJiGouUnit alloc] init];
+    }
+    return _model;
 }
+
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -24,36 +31,62 @@
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-    //设置内容假数据
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
-    self.contentView.text = [[NSDictionary dictionaryWithContentsOfFile:path] objectForKey:@"shunfeng"];
-    self.contentView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:18];
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineBreakMode:NSLineBreakByCharWrapping];
-    [style setParagraphSpacing:2];
     
-    NSDictionary *attr = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:18],NSParagraphStyleAttributeName:style};
-    CGSize contentSize = [self.contentView.text boundingRectWithSize:CGSizeMake(578, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attr context:nil].size;
-    heightContentView = contentSize.height + 20;
     
 }
+
 - (void)updateViewConstraints{
     [super updateViewConstraints];
     
-    //设置contentView的高度
-    for (NSLayoutConstraint *constraint in self.contentView.constraints) {
-        if ([constraint.identifier isEqualToString:@"heightOfContentView"]) {
-            constraint.constant = heightContentView;
-        }
-    }
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    //1. 获取数据
+    NSDictionary *para = @{@"method":@"getOrganizationDetail",@"user_id":USER_ID,@"org_id":self.model.mID};
+    
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
+        if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
+            return ;
+        }
+        NSDictionary *dic = [[result objectForKey:@"jsonArr"] firstObject];
+        NSString *content = [dic objectForKey:@"mContent"];
+        NSString *isFollow = [dic objectForKey:@"mIsFollow"];
+        
+        //2. 设置内容
+        self.contentView.text = content;
+        self.contentView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:18];
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        [style setLineBreakMode:NSLineBreakByCharWrapping];
+        [style setParagraphSpacing:2];
+    
+        NSDictionary *attr = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:18],NSParagraphStyleAttributeName:style};
+        CGSize contentSize = [self.contentView.text boundingRectWithSize:CGSizeMake(578, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attr context:nil].size;
+        
+        //3. 修改约束
+        for (NSLayoutConstraint *constraint in self.contentView.constraints) {
+            if ([constraint.identifier isEqualToString:@"heightOfContentView"]) {
+                constraint.constant = contentSize.height + 20;
+            }
+        }
+        [self.contentView setNeedsUpdateConstraints];
+    
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+   
+    
+    
 }
 
 #pragma mark - 分享
@@ -75,8 +108,11 @@
     
     
 }
+
 #pragma mark - 关注
 - (IBAction)focus:(UIButton *)sender {
+    
+    
 }
 
 @end

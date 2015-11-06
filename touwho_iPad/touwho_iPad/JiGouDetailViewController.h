@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelForJiGouUnit.h"
 
 @interface JiGouDetailViewController : UIViewController
-
+///机构概要模型
+@property (strong,nonatomic) ModelForJiGouUnit *model;
 @end

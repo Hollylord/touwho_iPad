@@ -139,12 +139,12 @@
 //        NSLog(@"%@",responseObject);
         
         NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
-        if ([result objectForKey:@"resCode"]) {
+        if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
             return ;
         }
        
         //json --> models
-        customView.hotModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+        customView.hotModels = [ModelForGroup objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
         
         if (USER_ID) {
             //获取我参与的小组
@@ -152,12 +152,12 @@
             [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSLog(@"%@",responseObject);
                 NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
-                if ([result objectForKey:@"resCode"]) {
+                if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
                     return ;
                 }
                 
                 //json --> models
-                customView.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+                customView.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"%@",error);
@@ -181,14 +181,15 @@
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //        NSLog(@"%@",responseObject);
         
+        
         NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
-        if ([result objectForKey:@"resCode"]) {
+        if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
             return ;
         }
         
         //json --> models
         
-        customView.hotModels = [ModelForTopic objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+        customView.hotModels = [ModelForTopic objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
         
         if (USER_ID) {
             //获取我参与的小组
@@ -197,12 +198,12 @@
                 //            NSLog(@"%@",responseObject);
                 
                 NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
-                if ([result objectForKey:@"resCode"]) {
+                if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
                     return ;
                 }
                 
                 //json --> models
-                customView.myModels = [ModelForTopic objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+                customView.myModels = [ModelForTopic objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"%@",error);
@@ -217,21 +218,22 @@
     block();
     
 }
+
 ///获取机构数据
 - (void) pullJigouDataToView:(JiGouMenuView *)customView withCompletion:(void (^)())block{
     
     //获取全部小组
     NSDictionary *para = @{@"method":@"getOrganizations"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
-        if ([result objectForKey:@"resCode"]) {
+        if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
             return ;
         }
         
         //json --> models
-        customView.models = [ModelForJiGouUnit objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+        customView.models = [ModelForJiGouUnit objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

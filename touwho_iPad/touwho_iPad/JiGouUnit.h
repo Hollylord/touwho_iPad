@@ -11,8 +11,11 @@
 
 @interface JiGouUnit : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *IMGView;
+///机构缩写
 @property (weak, nonatomic) IBOutlet UILabel *label1;
+///时间
 @property (weak, nonatomic) IBOutlet UILabel *label2;
+///机构名称
 @property (weak, nonatomic) IBOutlet UILabel *label3;
 
 @property (strong,nonatomic) ModelForJiGouUnit *model;

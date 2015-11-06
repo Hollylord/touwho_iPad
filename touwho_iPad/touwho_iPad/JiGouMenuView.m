@@ -11,7 +11,7 @@
 #define Height 150
 
 #import "JiGouMenuView.h"
-#import "JiGouDetailViewController.h"
+
 #import "JiGouUnit.h"
 #import "ModelForJiGouUnit.h"
 
@@ -107,26 +107,7 @@
 }
 
 
-#pragma mark - 跳转
-- (IBAction)turn2JiGouVC:(UITapGestureRecognizer *)sender {
-    UIViewController *VC = [self viewController];
-    JiGouDetailViewController *jiGouVC = [[JiGouDetailViewController alloc] initWithNibName:@"JiGouDetailViewController" bundle:nil];
-    [VC.navigationController pushViewController:jiGouVC animated:YES];
-}
 
-#pragma mark - 关注
-- (IBAction)follow:(UIButton *)sender {
-    NSLog(@"关注");
-}
 
-//获得当前view的控制器
-- (UIViewController*)viewController {
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
-        }
-    }
-    return nil;
-}
+
 @end

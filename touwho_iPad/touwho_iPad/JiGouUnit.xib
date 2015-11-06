@@ -24,15 +24,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqe-ul-vLr">
-                    <rect key="frame" x="357" y="11" width="25" height="23"/>
-                    <animations/>
-                    <state key="normal" image="guanzhu1"/>
-                    <state key="selected" image="guanzhu2"/>
-                    <connections>
-                        <action selector="follow:" destination="-1" eventType="touchUpInside" id="fFs-9N-pm7"/>
-                    </connections>
-                </button>
                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="副标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-mb-MJu">
                     <rect key="frame" x="136" y="92" width="60" height="24"/>
                     <animations/>
@@ -52,8 +43,6 @@
             <animations/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="tqe-ul-vLr" secondAttribute="trailing" constant="18" id="1rH-tm-nkm"/>
-                <constraint firstItem="tqe-ul-vLr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="7VI-kW-05G"/>
                 <constraint firstItem="cNU-Vg-M8b" firstAttribute="leading" secondItem="d6R-RD-SdP" secondAttribute="trailing" constant="8" id="9rV-BY-4F4"/>
                 <constraint firstItem="dcM-mb-MJu" firstAttribute="top" secondItem="Qkf-2Z-D7U" secondAttribute="bottom" constant="16" id="Ico-4g-B6i"/>
                 <constraint firstAttribute="bottom" secondItem="d6R-RD-SdP" secondAttribute="bottom" constant="8" id="KwR-na-4zL"/>
@@ -80,16 +69,12 @@
                 <outlet property="label3" destination="dcM-mb-MJu" id="hw6-8t-0QW"/>
                 <outletCollection property="gestureRecognizers" destination="cGa-5c-1m6" appends="YES" id="Yyg-xC-QbV"/>
             </connections>
-            <point key="canvasLocation" x="265" y="135"/>
+            <point key="canvasLocation" x="225" y="119"/>
         </view>
         <tapGestureRecognizer id="cGa-5c-1m6">
             <connections>
-                <action selector="turn2JiGouVC:" destination="-1" id="2Ib-lD-W36"/>
+                <action selector="turnToNextVC:" destination="iN0-l3-epB" id="HfR-4c-Reh"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
-    <resources>
-        <image name="guanzhu1" width="25" height="23"/>
-        <image name="guanzhu2" width="25" height="23"/>
-    </resources>
 </document>
