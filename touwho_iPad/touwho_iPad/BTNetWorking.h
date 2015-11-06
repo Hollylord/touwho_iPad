@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 @interface BTNetWorking : NSObject
 
 ///获取网络内容
@@ -16,4 +17,6 @@
 ///获取用户信息
 + (id)getUserInfoWithKey:(NSString *)key;
 
+///获取jsonArr
++ (void)analyzeResponseObject:(id)responseObject andCompletionBlock:(completion)block;
 @end

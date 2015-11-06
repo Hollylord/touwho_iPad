@@ -53,6 +53,7 @@
 		A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA901B8EFC710052C2A7 /* newsMenu.m */; };
 		A13EEA951B8F0F580052C2A7 /* news2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A13EEA931B8F0F580052C2A7 /* news2ViewController.m */; };
 		A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */; };
+		A15920E51BEC9E89005BAB17 /* ModelPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = A15920E41BEC9E89005BAB17 /* ModelPhotos.m */; };
 		A17C9A7E1B8C6FCC00F5677C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */; };
 		A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE8D1BBBC64700571817 /* FollowedSponsorTableViewCell.m */; };
 		A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE931BBBD51900571817 /* JiGouUnit.m */; };
@@ -327,6 +328,8 @@
 		A13EEA921B8F0F580052C2A7 /* news2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = news2ViewController.h; sourceTree = "<group>"; };
 		A13EEA931B8F0F580052C2A7 /* news2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = news2ViewController.m; sourceTree = "<group>"; };
 		A13EEA941B8F0F580052C2A7 /* news2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = news2ViewController.xib; sourceTree = "<group>"; };
+		A15920E31BEC9E89005BAB17 /* ModelPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelPhotos.h; sourceTree = "<group>"; };
+		A15920E41BEC9E89005BAB17 /* ModelPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelPhotos.m; sourceTree = "<group>"; };
 		A17C9A7C1B8C6FCC00F5677C /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		A17C9A7D1B8C6FCC00F5677C /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		A17FAE8C1BBBC64700571817 /* FollowedSponsorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowedSponsorTableViewCell.h; sourceTree = "<group>"; };
@@ -1044,6 +1047,8 @@
 			children = (
 				A1987DFC1BB0FE1800CC4130 /* ModelForProgramView.h */,
 				A1987DFD1BB0FE1800CC4130 /* ModelForProgramView.m */,
+				A15920E31BEC9E89005BAB17 /* ModelPhotos.h */,
+				A15920E41BEC9E89005BAB17 /* ModelPhotos.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -2100,6 +2105,7 @@
 				A193F68F1BB90CD9007A697F /* publish.m in Sources */,
 				A10076BE1BA91D780097987B /* profile.m in Sources */,
 				A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */,
+				A15920E51BEC9E89005BAB17 /* ModelPhotos.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,
 				A11413C31BD9E4A600F11012 /* ModelForFootage.m in Sources */,
 				A1E6EB411BA13463005D4E6F /* OtherCenterViewController.m in Sources */,

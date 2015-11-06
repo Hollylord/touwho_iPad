@@ -31,4 +31,13 @@
     id value = [user objectForKey:key];
     return value;
 }
+
++ (void)analyzeResponseObject:(id)responseObject andCompletionBlock:(completion)block{
+    NSArray *value = [responseObject objectForKey:@"value"];
+    NSDictionary *result = [value firstObject];
+    NSArray *jsonArr = [result objectForKey:@"jsonArr"];
+    NSString *resCode = [result objectForKey:@"resCode"];
+    
+    block(jsonArr,resCode);
+}
 @end
