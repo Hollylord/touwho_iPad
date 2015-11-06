@@ -371,10 +371,18 @@
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
 //        NSLog(@"%@",responseObject);
-        NSArray *programs = [responseObject objectForKey:@"value"];
         
-        //json数组-->模型数组
-        self.modelsOngoing = [ModelForProgramView objectArrayWithKeyValuesArray:programs];
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            if (![resCode isEqualToString:@"0"]) {
+                return ;
+            }
+            
+            //json数组-->模型数组
+            self.modelsOngoing = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+        }];
+        
+        
         
         block();
         
@@ -397,10 +405,17 @@
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //        NSLog(@"%@",responseObject);
-        NSArray *programs = [responseObject objectForKey:@"value"];
         
-        //json数组-->模型数组
-        self.modelsPreparing = [ModelForProgramView objectArrayWithKeyValuesArray:programs];
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            if (![resCode isEqualToString:@"0"]) {
+                return ;
+            }
+            
+            //json数组-->模型数组
+            self.modelsPreparing = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+        }];
+        
         
         block();
         
@@ -421,10 +436,17 @@
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //        NSLog(@"%@",responseObject);
-        NSArray *programs = [responseObject objectForKey:@"value"];
         
-        //json数组-->模型数组
-        self.modelsFinished = [ModelForProgramView objectArrayWithKeyValuesArray:programs];
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            if (![resCode isEqualToString:@"0"]) {
+                return ;
+            }
+            
+            //json数组-->模型数组
+            self.modelsFinished = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+        }];
+        
         
         block();
         
@@ -634,14 +656,14 @@
 - (void)pullImage{
     NSDictionary *para = @{@"method":@"getBanner"};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
             if (![resCode isEqualToString:@"0"]) {
                 return ;
             }
-            
+            //json -- >model
             self.modelsPhoto = [ModelPhotos objectArrayWithKeyValuesArray:jsonArr];
             
             //刷新数据
