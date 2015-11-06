@@ -10,6 +10,12 @@
 
 @interface JiGouDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *contentView;
+@property (weak, nonatomic) IBOutlet UIButton *followBtn;
+@property (weak, nonatomic) IBOutlet UITextView *introduction;
+@property (weak, nonatomic) IBOutlet UILabel *name1;
+@property (weak, nonatomic) IBOutlet UIImageView *logo1;
+@property (weak, nonatomic) IBOutlet UIImageView *logo2;
+@property (weak, nonatomic) IBOutlet UILabel *name2;
 
 @end
 
@@ -31,7 +37,14 @@
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-    
+    //设置内容
+    self.introduction.text = self.model.mDestrible;
+    self.name1.text = self.model.mName;
+    self.name2.text = self.model.mName;
+    NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mLogo];
+    NSURL *url = [NSURL URLWithString:logo];
+    [self.logo1 sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.logo2 sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
     
 }
 
@@ -64,6 +77,10 @@
         NSString *isFollow = [dic objectForKey:@"mIsFollow"];
         
         //2. 设置内容
+        if ([isFollow isEqualToString:@"0"]) {
+            self.followBtn.selected = NO;
+        }
+        
         self.contentView.text = content;
         self.contentView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:18];
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
@@ -111,8 +128,58 @@
 
 #pragma mark - 关注
 - (IBAction)focus:(UIButton *)sender {
+    //1 没有登录提示登录
+    if (!USER_ID) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请您登录后再试";
+        [hud hide:YES afterDelay:1];
+        return ;
+    }
     
+    // 取消关注
+    if (sender.selected) {
+        
+        [self cancelFollowedProject:^{
+            sender.selected = !sender.selected;
+        }];
+        
+        
+    }
+    // 加关注
+    else{
+        [self followProject:^{
+            sender.selected = !sender.selected;
+        }];
+        
+    }
     
 }
+
+- (void)cancelFollowedProject:(void(^)())completionBlock{
+    
+    //参数
+    NSDictionary *para = @{@"method":@"followOrganization",@"user_id":USER_ID,@"org_id":self.model.mID};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        completionBlock();
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void)followProject:(void(^)())completionBlock{
+    //参数
+    NSDictionary *para = @{@"method":@"cancelFollowOrganization",@"user_id":USER_ID,@"org_id":self.model.mID};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        completionBlock();
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+}
+
 
 @end

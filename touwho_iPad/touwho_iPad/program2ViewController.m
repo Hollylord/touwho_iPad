@@ -388,6 +388,6 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         
     } failure:NULL];
 }
-#pragma mark - 判断用户是否登录
+
 
 @end

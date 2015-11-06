@@ -7,6 +7,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JiGouDetailViewController">
             <connections>
                 <outlet property="contentView" destination="4Sp-29-ggx" id="wcT-r4-ap4"/>
+                <outlet property="followBtn" destination="aJZ-w3-RxE" id="FZy-yg-3NP"/>
+                <outlet property="introduction" destination="278-zb-65z" id="7g3-Ay-Yga"/>
+                <outlet property="logo1" destination="stF-R2-H1q" id="Wag-tb-wUZ"/>
+                <outlet property="logo2" destination="qHy-ov-Usd" id="FTk-8l-seI"/>
+                <outlet property="name1" destination="VQl-WC-cCE" id="Jj1-X6-WNj"/>
+                <outlet property="name2" destination="ep4-MI-fv9" id="Rki-Ef-INL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -102,6 +108,16 @@
                             </fragment>
                         </attributedString>
                     </state>
+                    <state key="selected" image="guanzhu2">
+                        <attributedString key="attributedTitle">
+                            <fragment content="已关注">
+                                <attributes>
+                                    <font key="NSFont" size="11" name="HiraginoSansGB-W3"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
                     <connections>
                         <action selector="focus:" destination="-1" eventType="touchUpInside" id="Fmr-30-ZLS"/>
                     </connections>
@@ -135,6 +151,7 @@
     </objects>
     <resources>
         <image name="guanzhu1" width="25" height="23"/>
+        <image name="guanzhu2" width="25" height="23"/>
         <image name="jigou0" width="120" height="48"/>
     </resources>
 </document>
