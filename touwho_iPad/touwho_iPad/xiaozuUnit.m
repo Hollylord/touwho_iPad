@@ -18,6 +18,7 @@
     
 }
 
+#pragma mark - 跳转
 - (IBAction)turn2SpecificGroupController:(UITapGestureRecognizer *)sender {
     UIViewController *viewController = [self viewController];
     SpecificGroupViewController *speVC = [[SpecificGroupViewController alloc] initWithNibName:@"SpecificGroupViewController" bundle:nil];

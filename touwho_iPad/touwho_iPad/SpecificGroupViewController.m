@@ -16,20 +16,24 @@
 @property (strong,nonatomic) NSMutableArray *topicsArr;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (weak, nonatomic) IBOutlet UIImageView *groupIcon;
-@property (weak, nonatomic) IBOutlet UILabel *groupName;
-@property (weak, nonatomic) IBOutlet UILabel *groupIntroduction;
 
-@property (strong,nonatomic) ModelForTopic *modelTopic;
+///小组icon
+@property (weak, nonatomic) IBOutlet UIImageView *groupIcon;
+///小组名称
+@property (weak, nonatomic) IBOutlet UILabel *groupName;
+///小组简介
+@property (weak, nonatomic) IBOutlet UILabel *groupIntroduction;
+///组长昵称
+@property (weak, nonatomic) IBOutlet UILabel *leaderName;
+///成员个数
+@property (weak, nonatomic) IBOutlet UILabel *memberCount;
+
+
+
 @end
 
 @implementation SpecificGroupViewController
-- (ModelForTopic *)modelTopic{
-    if (!_modelTopic) {
-        _modelTopic = [[ModelForTopic alloc] init];
-    }
-    return _modelTopic;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,9 +45,18 @@
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
  
     
-    //添加话题数据
-    self.modelTopic.publisher.icon = [UIImage imageNamed:@"jingwang"];
-    self.modelTopic.publisher.nickName = @"悬镜司首尊夏江";
+    //添加已有的数据数据
+    NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mLogo];
+    [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    self.groupName.text = self.model.mName;
+    self.leaderName.text = self.model.mGroupLeader;
+    self.memberCount.text = self.model.mMemberCount;
+    self.groupIntroduction.text = self.model.mDestrible;
+    
+    //获取数据
+    [self pullGroupData];
+    
+    
     
 }
 
@@ -71,7 +84,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopicCell" forIndexPath:indexPath];
     
-    cell.model = self.modelTopic;
+    
     
     return cell;
 }
@@ -81,7 +94,7 @@
     
     //跳转到话题详情页面
     SpecificTopicViewController *topicVC = [[SpecificTopicViewController alloc] initWithNibName:@"SpecificTopicViewController" bundle:nil];
-    topicVC.model = self.modelTopic;
+   
     [self.navigationController pushViewController:topicVC animated:YES];
 }
 
@@ -108,4 +121,49 @@
     
     
 }
+
+#pragma mark - 获取数据
+- (void)pullGroupData{
+    //参数
+    NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.model.mID};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+#pragma mark - 加入/退出小组
+- (IBAction)joinOrQuit:(UIButton *)sender {
+    //没有登录则提示登录
+    if (!USER_ID) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请登录后再试";
+        [hud hide:YES afterDelay:1];
+        return ;
+    }
+    
+    //加入
+    if (!sender.selected) {
+        NSDictionary *para = @{@"method":@"addGroup",@"group_id":self.model.mID,@"user_id":USER_ID};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            sender.selected = !sender.selected;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+        }];
+    }
+    //退出
+    else{
+        NSDictionary *para = @{@"method":@"exitGroup",@"group_id":self.model.mID,@"user_id":USER_ID};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            sender.selected = !sender.selected;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+        }];
+    }
+}
+
 @end

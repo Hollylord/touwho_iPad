@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -10,6 +10,8 @@
                 <outlet property="groupIcon" destination="w3v-41-X3Y" id="Ggj-Za-TCh"/>
                 <outlet property="groupIntroduction" destination="98Q-VG-eDN" id="dhZ-F4-xV9"/>
                 <outlet property="groupName" destination="xkt-zm-FLq" id="LmA-gp-E8V"/>
+                <outlet property="leaderName" destination="jWp-La-GPt" id="22H-Na-RRO"/>
+                <outlet property="memberCount" destination="3u2-w7-RZX" id="3iz-XK-Su5"/>
                 <outlet property="tableview" destination="IEh-MP-P9Y" id="TAD-RD-4ao"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -47,10 +49,9 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-VG-eDN">
-                    <rect key="frame" x="50" y="324" width="250" height="285"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简介" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-VG-eDN">
+                    <rect key="frame" x="50" y="324" width="250" height="21"/>
                     <animations/>
-                    <string key="text">梅长苏，海宴小说《琅琊榜》主人公，全书灵魂人物。琅琊榜首，江左梅郎，天下第一大帮江左盟宗主，前为赤焰军少帅林殊，才华无双，后因梅岭惨案，身中火寒之毒，改名换面，蛰伏江湖。虽缠绵病体，但容颜灵秀，气质清雅，心怀赤子，精通音律，才冠绝伦，蝉居琅琊公子榜榜首。为平多年冤案，他以一介白衣之身，化名苏哲回到金陵帝都，以病弱之躯涉入种种纷争，成为朝堂多方争相招揽的对象，走上了雪冤与复仇之路。</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -64,17 +65,16 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="CqL-TC-1wC">
-                    <rect key="frame" x="95" y="272" width="160" height="30"/>
+                    <rect key="frame" x="120" y="272" width="110" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-Wr-2lZ">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
                             <animations/>
-                            <state key="normal" title="加入小组"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui7-n6-Yxx">
-                            <rect key="frame" x="100" y="0.0" width="60" height="30"/>
-                            <animations/>
-                            <state key="normal" title="我要发帖"/>
+                            <state key="normal" title="加入小组" backgroundImage="anniuYellow"/>
+                            <state key="selected" title="退出小组" backgroundImage="anniuBlue"/>
+                            <connections>
+                                <action selector="joinOrQuit:" destination="-1" eventType="touchUpInside" id="e5f-ho-qiJ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <animations/>
@@ -119,4 +119,8 @@
             <point key="canvasLocation" x="328.5" y="357"/>
         </view>
     </objects>
+    <resources>
+        <image name="anniuBlue" width="110" height="30"/>
+        <image name="anniuYellow" width="110" height="30"/>
+    </resources>
 </document>
