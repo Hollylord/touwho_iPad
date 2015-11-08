@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
 
+@property (copy ,nonatomic) NSString *friendIconURL;
+@property (copy ,nonatomic) NSString *friendId;
+
 - (instancetype)initWithConversation:(AVIMConversation*)conversation;
 
 - (void)loadOldMessageItemsWithBlock:(void (^)(NSInteger count))block;

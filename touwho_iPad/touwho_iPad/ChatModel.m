@@ -106,9 +106,11 @@
     return messageFrame;
 }
 
+///根据接收的消息，来计算消息的frame
 -(UUMessageFrame*)messageFrameByTypedMessage:(AVIMTypedMessage*)typedMessage{
     return [self messageFrameByDictionary:[self messageDictionaryByAVIMTypedMessage:typedMessage]];
 }
+
 /** 加载消息**/
 -(void)loadMessagesWhenInitWithBlock:(dispatch_block_t)block{
     WEAKSELF
@@ -148,7 +150,8 @@
     }
     return path;
 }
-//由typedMessage 生成一个字典 存放frame
+
+//由typedMessage 生成一个字典存放frame
 -(NSDictionary*)messageDictionaryByAVIMTypedMessage:(AVIMTypedMessage*)typedMessage{
     AVIMMessageMediaType msgType = typedMessage.mediaType;
     NSDate* timestamp=[NSDate dateWithTimeIntervalSince1970:typedMessage.sendTimestamp/1000];
@@ -245,7 +248,10 @@
  * 配置头像
  */
 - (NSString*)avatarUrlByClientId:(NSString*)clientId{
-    NSDictionary *urls=@{kMichaelClientID:@"http://www.120ask.com/static/upload/clinic/article/org/201311/201311061651418413.jpg",kBettyClientID:@"http://p1.qqyou.com/touxiang/uploadpic/2011-3/20113212244659712.jpg",kLindaClientID:@"http://www.qqzhi.com/uploadpic/2014-09-14/004638238.jpg"};
+   NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    NSString *iconURL = [user objectForKey:@"iconURL"];
+    NSDictionary *urls=@{USER_ID:[NSString stringWithFormat:@"%@%@",SERVER_URL,iconURL],self.friendId:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.friendIconURL]};
+//    NSDictionary *urls=@{kMichaelClientID:@"http://www.120ask.com/static/upload/clinic/article/org/201311/201311061651418413.jpg",kBettyClientID:@"http://p1.qqyou.com/touxiang/uploadpic/2011-3/20113212244659712.jpg",kLindaClientID:@"http://www.qqzhi.com/uploadpic/2014-09-14/004638238.jpg"};
     return urls[clientId];
 }
 

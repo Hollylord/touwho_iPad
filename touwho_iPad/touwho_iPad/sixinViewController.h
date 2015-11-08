@@ -11,4 +11,6 @@
 
 @interface sixinViewController : UIViewController
 - (instancetype)initWithConversation:(AVIMConversation*)conversation;
+///存放朋友id
+@property (copy,nonatomic) NSString *friendId;
 @end

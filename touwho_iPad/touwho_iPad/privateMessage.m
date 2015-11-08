@@ -39,7 +39,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [self openSessionByClientId:kMichaelClientID navigationToIMWithTargetClientIDs:@[kLindaClientID]];
+    
+    //创建长连接和会话: 将自己的id和朋友的id赋值
+    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[@"22"]];
+//    [self openSessionByClientId:kMichaelClientID navigationToIMWithTargetClientIDs:@[kLindaClientID]];
     
     
 }
@@ -61,7 +64,8 @@
                 if(error){
                     NSLog(@"error=%@",error);
                 }else{
-                    sixinViewController *vc=[[sixinViewController alloc] initWithConversation:conversation];
+                    sixinViewController *vc = [[sixinViewController alloc] initWithConversation:conversation];
+                    vc.friendId = [clientIDs firstObject];
                     vc.modalPresentationStyle = UIModalPresentationFormSheet;
                     //利用响应者链条获得这个view的控制器
                     UIViewController* controller = [self viewController];

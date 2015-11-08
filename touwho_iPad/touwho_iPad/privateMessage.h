@@ -11,4 +11,6 @@
 @interface privateMessage : UIView <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+///存放朋友id
+@property (strong,nonatomic) NSMutableArray *friendsId;
 @end

@@ -14,8 +14,9 @@
 #import "ChatModel.h"
 #import "UUMessageFrame.h"
 #import "UUMessage.h"
+#import "ModelForUser.h"
 
-
+typedef void(^personInfo)(NSString *iconURL,NSString *nickName);
 
 @interface sixinViewController () <UUInputFunctionViewDelegate,UUMessageCellDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -48,17 +49,31 @@
     [super viewDidLoad];
     
     [self initBar];
-    [self addRefreshViews];//添加下拉刷新
+    
+    //添加下拉刷新
+    [self addRefreshViews];
+    
+    //添加输入框
     IFView = [[UUInputFunctionView alloc]initWithSuperVC:self];
     IFView.delegate = self;
-    [self.view addSubview:IFView];//添加输入框
+    [self.view addSubview:IFView];
     
-    self.chatModel = [[ChatModel alloc] initWithConversation:_conversation];
-    WEAKSELF
-    [self.chatModel loadMessagesWhenInitWithBlock:^{
-        [weakSelf.chatTableView reloadData];
-        [weakSelf tableViewScrollToBottom];
+    //根据朋友id 获取他的数据
+    [self pullFriendDataWithPersonId:self.friendId andPersonInfoBlock:^(NSString *iconURL, NSString *nickName) {
+        
+        //创建聊天模型，负责拉取数据
+        self.chatModel = [[ChatModel alloc] initWithConversation:_conversation];
+        self.chatModel.friendId = self.friendId;
+        self.chatModel.friendIconURL = iconURL;
+        WEAKSELF
+        [self.chatModel loadMessagesWhenInitWithBlock:^{
+            [weakSelf.chatTableView reloadData];
+            [weakSelf tableViewScrollToBottom];
+        }];
+        
     }];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -84,7 +99,7 @@
 
 - (void)initBar
 {
-    self.title=@"Chat";
+    self.title=@"私信";
     
     self.navigationController.navigationBar.tintColor = [UIColor grayColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:nil];
@@ -281,4 +296,21 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+#pragma mark - 获取朋友数据
+- (void)pullFriendDataWithPersonId:(NSString *)personId andPersonInfoBlock:(personInfo)block{
+    NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":personId};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
+        [ModelForUser setupReplacedKeyFromPropertyName:^NSDictionary *{
+            return @{@"userID":@"mID",@"iconURL":@"mAvatar",@"nickName":@"mNickName"};
+        }];
+        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+        
+        block(model.iconURL,model.nickName);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
 @end

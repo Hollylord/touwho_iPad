@@ -39,9 +39,11 @@ typedef void(^DidReceiveTypedMessageBlock)(AVIMConversation *conversation, AVIMT
 
 - (void)setupDidReceiveTypedMessageCompletion:(DidReceiveTypedMessageBlock)didReceiveTypedMessageCompletion;
 
+///建立与leanCloud客户端的长连接
 - (void)openSessionWithClientID:(NSString *)clientID
                      completion:(void (^)(BOOL succeeded, NSError *error))completion;
 
+///创建或者查询已有对话
 - (void)createConversationsWithClientIDs:(NSArray *)clientIDs
                         conversationType:(ConversationType)conversationType
                               completion:(AVIMConversationResultBlock)completion;
