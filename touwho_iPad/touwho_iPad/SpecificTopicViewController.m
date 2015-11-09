@@ -52,17 +52,7 @@
     //评论cell
     [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
     
-    //添加数据
     
-    self.iconWriter.image = self.model.publisher.icon;
-    
-    self.writerNameLabel.text = self.model.publisher.nickName;
-    
-    //添加评论数据
-    self.modelComment.user.icon = [UIImage imageNamed:@"jingwang"];
-    self.modelComment.user.nickName = @"萧景琰";
-    self.modelComment.content = @"等我死后见了林殊，如果他问我为什么不救他的副将，难道我能回答他说不值得吗？";
-    self.modelComment.time = @"2015-10-10";
 
 }
 
@@ -81,17 +71,10 @@
     
     //根据内容设置新闻的高度
     self.contentTextView.text = content;
-    
     self.contentTextView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineBreakMode:NSLineBreakByCharWrapping];
     
-    NSDictionary *attribute = @{NSFontAttributeName:[UIFont fontWithName:@"Arial-BoldItalicMT" size:20],NSParagraphStyleAttributeName:style};
-    NSStringDrawingOptions opts = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    heightTextView = [BTNetWorking calcutateHeightForTextviewWithFont:self.contentTextView.font andContent:content andWidth:516];
     
-    CGSize textSize = [self.contentTextView.text boundingRectWithSize:CGSizeMake(519, MAXFLOAT) options:opts attributes:attribute context:nil].size;
-    
-    heightTextView = textSize.height + 20;
 }
 
 - (void)updateViewConstraints{

@@ -19,4 +19,7 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 
 ///获取jsonArr
 + (void)analyzeResponseObject:(id)responseObject andCompletionBlock:(completion)block;
+
+///根据字体和内容计算高度
++ (CGFloat)calcutateHeightForTextviewWithFont:(UIFont *)font andContent:(NSString *)content andWidth:(CGFloat)width;
 @end

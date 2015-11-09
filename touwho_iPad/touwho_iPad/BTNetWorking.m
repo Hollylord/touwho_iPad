@@ -40,4 +40,16 @@
     
     block(jsonArr,resCode);
 }
+
++ (CGFloat)calcutateHeightForTextviewWithFont:(UIFont *)font andContent:(NSString *)content andWidth:(CGFloat)width{
+
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineBreakMode:NSLineBreakByCharWrapping];
+    
+    NSDictionary *attribute = @{NSFontAttributeName:font,NSParagraphStyleAttributeName:style};
+    NSStringDrawingOptions opts = NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    
+    CGSize textSize = [content boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:opts attributes:attribute context:nil].size;
+    return textSize.height + font.lineHeight;
+}
 @end

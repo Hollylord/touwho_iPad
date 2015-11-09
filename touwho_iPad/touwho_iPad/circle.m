@@ -150,7 +150,7 @@
             //获取我参与的小组
             NSDictionary *dic = @{@"method":@"getMyGroups",@"user_id":USER_ID};
             [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSLog(@"%@",responseObject);
+//                NSLog(@"%@",responseObject);
                 NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
                 if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
                     return ;
@@ -179,7 +179,7 @@
     //获取全部小组
     NSDictionary *para = @{@"method":@"getTalks"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         
         
         NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];

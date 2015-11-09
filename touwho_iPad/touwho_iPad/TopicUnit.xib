@@ -19,35 +19,35 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="话题名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2c-Gc-JDX">
-                    <rect key="frame" x="115" y="25" width="68" height="21"/>
+                    <rect key="frame" x="100" y="25" width="60" height="18"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小组名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWx-3d-qaw">
-                    <rect key="frame" x="115" y="54" width="51" height="21"/>
+                    <rect key="frame" x="100" y="51" width="39" height="16"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUM-oX-jg5">
-                    <rect key="frame" x="115" y="83" width="34" height="21"/>
+                    <rect key="frame" x="100" y="75" width="26" height="16"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.13725490200000001" green="0.63137254899999995" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="cZr-wX-Ob5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="By7-Rh-cMb"/>
-                <constraint firstItem="aWx-3d-qaw" firstAttribute="leading" secondItem="cZr-wX-Ob5" secondAttribute="trailing" constant="25" id="NI0-rh-kFO"/>
-                <constraint firstItem="lUM-oX-jg5" firstAttribute="leading" secondItem="cZr-wX-Ob5" secondAttribute="trailing" constant="25" id="Sns-Gp-6pd"/>
+                <constraint firstItem="aWx-3d-qaw" firstAttribute="leading" secondItem="cZr-wX-Ob5" secondAttribute="trailing" constant="10" id="NI0-rh-kFO"/>
+                <constraint firstItem="lUM-oX-jg5" firstAttribute="leading" secondItem="cZr-wX-Ob5" secondAttribute="trailing" constant="10" id="Sns-Gp-6pd"/>
                 <constraint firstItem="V2c-Gc-JDX" firstAttribute="top" secondItem="cZr-wX-Ob5" secondAttribute="top" id="bGP-To-Imb"/>
-                <constraint firstItem="V2c-Gc-JDX" firstAttribute="leading" secondItem="cZr-wX-Ob5" secondAttribute="trailing" constant="25" id="udy-FA-mks"/>
+                <constraint firstItem="V2c-Gc-JDX" firstAttribute="leading" secondItem="cZr-wX-Ob5" secondAttribute="trailing" constant="10" id="udy-FA-mks"/>
                 <constraint firstItem="cZr-wX-Ob5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="vcp-Vi-CwK"/>
                 <constraint firstItem="lUM-oX-jg5" firstAttribute="top" secondItem="aWx-3d-qaw" secondAttribute="bottom" constant="8" id="wQx-KP-HBe"/>
                 <constraint firstItem="aWx-3d-qaw" firstAttribute="top" secondItem="V2c-Gc-JDX" secondAttribute="bottom" constant="8" id="yfX-ew-ZXw"/>

@@ -24,10 +24,12 @@
 ///话题创建时间
 @property (copy,nonatomic) NSString *mCreateTime;
 ///话题内容
-@property (copy,nonatomic) NSString *mDestribel;
+@property (copy,nonatomic) NSString *mDestrible;
 ///是否为热门话题
 @property (copy,nonatomic) NSString *mIsHot;
 ///小组的名字
 @property (copy,nonatomic) NSString *mGroupName;
+///话题id
+@property (copy,nonatomic) NSString *mID;
 
 @end
