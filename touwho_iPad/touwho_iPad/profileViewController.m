@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
     self.model.nickName = [user objectForKey:@"userName"];
     self.model.userID = [user objectForKey:@"userID"];
     NSString *iconUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,[user objectForKey:@"iconURL"]];

@@ -94,8 +94,13 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         NSString *icon = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"resValue"];
-
-        [[[NSUserDefaults standardUserDefaults] objectForKey:@"user"] setObject:icon forKey:@"iconURL"];
+        
+        //nsuserDefaults 不支持NSMutableDictionary
+        NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+        NSMutableDictionary *user2 = [[NSMutableDictionary alloc] initWithDictionary:user];
+        [user2 setValue:icon forKey:@"iconURL"];
+        [[NSUserDefaults standardUserDefaults] setObject:user2 forKey:@"user"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
         [self dismissViewControllerAnimated:YES completion:NULL];
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {

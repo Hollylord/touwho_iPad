@@ -104,8 +104,9 @@
             
             //保存用户信息
             NSDictionary *dic = @{@"userName":phoneNumber,@"userID":userID};
+            NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-            [userDefault setObject:dic forKey:@"user"];
+            [userDefault setObject:user forKey:@"user"];
             [userDefault synchronize];
             
             //跳转个人中心
@@ -276,9 +277,11 @@
         
         //保存用户信息
         NSDictionary *dic = @{@"userName":model.nickName,@"userID":userID,@"iconURL":model.iconURL,@"isFirstInvestor":@(temp1),@"isInvestor":@(temp2)};
+        NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-        [userDefault setObject:dic forKey:@"user"];
+        [userDefault setObject:user forKey:@"user"];
         [userDefault synchronize];
+      
         
         block();
         

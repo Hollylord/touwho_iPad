@@ -288,7 +288,7 @@
 
 #pragma mark - 点击项目跳转页面
 - (void)turn2DetailOfProgramsWithModel:(ModelForProgramView *)model{
-    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
     NSString  *userID = [user objectForKey:@"userID"];
     if (userID) {
         //已登录

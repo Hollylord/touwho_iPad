@@ -97,7 +97,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
     //判断是否有资格为GP，LP
-    NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
      isFirstInvestor = [[user objectForKey:@"isFirstInvestor"] boolValue];
      isInvestor = [[user objectForKey:@"isInvestor"] boolValue];
     
