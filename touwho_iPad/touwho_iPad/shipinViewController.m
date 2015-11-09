@@ -23,8 +23,9 @@
     //设置分享按钮
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
+//    @"http://pl.youku.com/playlist/m3u8?vid=321514956&type=flv&ts=1439366893&keyframe=0&ep=dCaXE0qLUMYJ5ifaiz8bMyW0ISQOXP0I9xqEhdtnBtQlTuC2&sid=643936689345312d9fec1&token=1689&ctype=12&ev=1&oip=3071127905"
     
-    _player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://pl.youku.com/playlist/m3u8?vid=321514956&type=flv&ts=1439366893&keyframe=0&ep=dCaXE0qLUMYJ5ifaiz8bMyW0ISQOXP0I9xqEhdtnBtQlTuC2&sid=643936689345312d9fec1&token=1689&ctype=12&ev=1&oip=3071127905"]];
+    _player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:self.footageURL]];
     _player.view.frame = CGRectMake(0, 64, 923, 768 - 64);
     _player.scalingMode = MPMovieScalingModeAspectFit;
     //全屏显示

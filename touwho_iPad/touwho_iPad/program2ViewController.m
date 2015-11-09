@@ -11,6 +11,7 @@
 #import "sponsorTableViewCell.h"
 #import "LingTouViewController.h"
 #import "OtherCenterViewController.h"
+#import "shipinViewController.h"
 
 #import "ModelProgramDetails.h"
 #import "ModelSponsors.h"
@@ -34,8 +35,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 @property (weak, nonatomic) IBOutlet UIImageView *initiatorQR;
 ///关注按钮
 @property (weak, nonatomic) IBOutlet UIButton *followBtn;
-
-//@property (strong,nonatomic) ModelProgramDetails *modelDetail;
+///详情model
+@property (strong,nonatomic) ModelProgramDetails *modelDetail;
 
 ///用来装所有LP投资人Cell的模型的数组
 @property (strong,nonatomic) NSMutableArray *LPArray;
@@ -187,11 +188,12 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //去掉菊花
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         
         //json --> model
         NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
         ModelProgramDetails *model = [ModelProgramDetails objectWithKeyValues:dic];
+        self.modelDetail = model;
         
         self.initiatorsArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mLeaderInvestor];
         self.LPArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mFollowInvestor];
@@ -316,6 +318,14 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     lingVC.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:lingVC animated:YES completion:NULL];
 
+    
+}
+
+#pragma mark - 观看路演视频
+- (IBAction)watchVideo:(UIButton *)sender {
+    shipinViewController *shipinVC = [[shipinViewController alloc] initWithNibName:@"shipinViewController" bundle:nil];
+    shipinVC.footageURL = self.modelDetail.mVideo;
+    [self.navigationController pushViewController:shipinVC animated:YES];
     
 }
 

@@ -176,7 +176,7 @@
     //上传
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
     } failure:NULL];
     
     

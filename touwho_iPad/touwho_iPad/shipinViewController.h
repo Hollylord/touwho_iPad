@@ -10,4 +10,6 @@
 
 @interface shipinViewController : UIViewController
 
+///视频url
+@property (copy,nonatomic) NSString *footageURL;
 @end

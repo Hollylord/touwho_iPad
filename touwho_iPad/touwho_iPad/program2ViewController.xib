@@ -91,7 +91,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yt6-dM-j8d">
-                            <rect key="frame" x="512" y="0.0" width="2" height="1037"/>
+                            <rect key="frame" x="512" y="0.0" width="2" height="1017"/>
                             <animations/>
                             <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -141,7 +141,7 @@
                             </constraints>
                         </imageView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p9k-By-vdy">
-                            <rect key="frame" x="531" y="384" width="372" height="653"/>
+                            <rect key="frame" x="531" y="384" width="372" height="633"/>
                             <animations/>
                             <color key="backgroundColor" red="0.83921568627450982" green="0.82745098039215681" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -172,13 +172,24 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-Ob-COG">
-                            <rect key="frame" x="22" y="937" width="475" height="100"/>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-Ob-COG">
+                            <rect key="frame" x="72" y="937" width="390" height="80"/>
                             <animations/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="IWZ-Qz-Xhk"/>
+                                <constraint firstAttribute="height" constant="80" id="IWZ-Qz-Xhk"/>
                             </constraints>
-                            <state key="normal" image="shipin"/>
+                            <state key="normal" backgroundImage="anniuYellow">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="点击观看路演视频">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                            <connections>
+                                <action selector="watchVideo:" destination="-1" eventType="touchUpInside" id="zm9-Ht-ddf"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-T3-nn8">
                             <rect key="frame" x="842" y="15" width="61" height="23"/>
@@ -213,10 +224,10 @@
                         <constraint firstItem="hw9-qA-2xz" firstAttribute="centerX" secondItem="SkM-oH-Vyz" secondAttribute="centerX" id="D30-iU-0tM"/>
                         <constraint firstItem="p3m-PO-IuX" firstAttribute="leading" secondItem="x5H-1J-xy9" secondAttribute="trailing" constant="95" id="D6M-0U-CQX"/>
                         <constraint firstAttribute="trailing" secondItem="p9k-By-vdy" secondAttribute="trailing" constant="20" id="IFQ-p5-3Gm"/>
-                        <constraint firstItem="hsX-Ob-COG" firstAttribute="width" secondItem="fZ5-7l-esh" secondAttribute="width" id="JaK-7p-LAq"/>
                         <constraint firstItem="fZ5-7l-esh" firstAttribute="top" secondItem="ZVh-1f-lbv" secondAttribute="bottom" constant="8" id="KVm-nE-CFF"/>
                         <constraint firstItem="3a0-Yj-l07" firstAttribute="top" secondItem="SkM-oH-Vyz" secondAttribute="bottom" constant="12" id="LWn-as-iI6"/>
                         <constraint firstItem="c0b-Uh-VKB" firstAttribute="width" secondItem="JWk-N7-VYd" secondAttribute="width" id="MQP-G4-Ngp"/>
+                        <constraint firstItem="Yt6-dM-j8d" firstAttribute="leading" secondItem="hsX-Ob-COG" secondAttribute="trailing" constant="50" id="MVU-wN-7wm"/>
                         <constraint firstItem="JWk-N7-VYd" firstAttribute="leading" secondItem="JNX-L7-OdP" secondAttribute="leading" id="Mwp-ci-cn4"/>
                         <constraint firstItem="JNX-L7-OdP" firstAttribute="top" secondItem="gE3-Ch-hKL" secondAttribute="top" constant="25" id="OMz-YU-LbX"/>
                         <constraint firstItem="rQc-oG-GjV" firstAttribute="top" secondItem="fZ5-7l-esh" secondAttribute="bottom" constant="33" id="Off-8c-X5f"/>
@@ -229,7 +240,7 @@
                         <constraint firstItem="p9k-By-vdy" firstAttribute="leading" secondItem="Yt6-dM-j8d" secondAttribute="trailing" constant="17" id="Ujt-tY-6CU"/>
                         <constraint firstItem="QB9-Aa-AG3" firstAttribute="top" secondItem="JNX-L7-OdP" secondAttribute="bottom" constant="31" id="V7e-Bo-2ip"/>
                         <constraint firstItem="hsX-Ob-COG" firstAttribute="bottom" secondItem="Yt6-dM-j8d" secondAttribute="bottom" id="W0c-ZD-rLM"/>
-                        <constraint firstItem="hsX-Ob-COG" firstAttribute="leading" secondItem="rQc-oG-GjV" secondAttribute="leading" id="Z4s-tf-PoG"/>
+                        <constraint firstItem="hsX-Ob-COG" firstAttribute="leading" secondItem="rQc-oG-GjV" secondAttribute="leading" constant="50" id="Z4s-tf-PoG"/>
                         <constraint firstItem="JNX-L7-OdP" firstAttribute="leading" secondItem="gE3-Ch-hKL" secondAttribute="leading" constant="22" id="bn4-TY-gUe"/>
                         <constraint firstItem="JWk-N7-VYd" firstAttribute="width" secondItem="JNX-L7-OdP" secondAttribute="width" id="cHI-Xg-Zeu"/>
                         <constraint firstItem="Yt6-dM-j8d" firstAttribute="top" secondItem="gE3-Ch-hKL" secondAttribute="top" id="dFB-uQ-udO"/>
@@ -275,7 +286,6 @@
         <image name="guanzhu1" width="25" height="23"/>
         <image name="guanzhu2" width="25" height="23"/>
         <image name="kh" width="70" height="93"/>
-        <image name="shipin" width="200" height="133"/>
         <image name="xiaohu" width="147" height="147"/>
     </resources>
 </document>

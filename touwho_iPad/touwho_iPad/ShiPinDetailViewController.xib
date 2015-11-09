@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="activityContent" destination="TfS-DE-53Y" id="cOj-KW-jrA"/>
                 <outlet property="activityName" destination="Sdn-x9-Mtd" id="Trn-jE-MnL"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

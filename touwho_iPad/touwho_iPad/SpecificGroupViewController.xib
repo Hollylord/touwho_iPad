@@ -49,7 +49,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简介" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-VG-eDN">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="简介" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-VG-eDN">
                     <rect key="frame" x="50" y="324" width="250" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -64,11 +64,11 @@
                         <constraint firstAttribute="width" constant="2" id="AyN-8e-wOB"/>
                     </constraints>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="CqL-TC-1wC">
-                    <rect key="frame" x="120" y="272" width="110" height="30"/>
+                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalCentering" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="CqL-TC-1wC">
+                    <rect key="frame" x="120" y="272" width="60" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-Wr-2lZ">
-                            <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPw-Wr-2lZ">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                             <animations/>
                             <state key="normal" title="加入小组" backgroundImage="anniuYellow"/>
                             <state key="selected" title="退出小组" backgroundImage="anniuBlue"/>

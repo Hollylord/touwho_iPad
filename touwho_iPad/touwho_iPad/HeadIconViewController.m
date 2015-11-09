@@ -89,7 +89,7 @@
         [formData appendPartWithFileData:compressed name:@"123" fileName:@"headImage" mimeType:@"image/png"];
         
     } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
