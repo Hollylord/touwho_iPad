@@ -48,11 +48,11 @@
     
     //搜索设置
     _searchAPI = [[AMapSearchAPI alloc] init];
-//    [[AMapSearchAPI alloc] initWithSearchKey:@"a50e4a2d762f64b6a67ff794fc76c67e" Delegate:self];
     _searchAPI.delegate = self;
     AMapGeocodeSearchRequest *request = [[AMapGeocodeSearchRequest alloc] init];
     request.city = @"深圳";
-    request.address = @"宝安区龙华街道奋进路64";
+    request.address = self.model.mAddress;
+    NSLog(@"%@",self.model.mAddress);
     [_searchAPI AMapGeocodeSearch:request];
     
     
@@ -77,8 +77,8 @@
     //配置annotation
     _annotation = [[MAPointAnnotation alloc] init];
     _annotation.coordinate = CLLocationCoordinate2DMake(geoCode.location.latitude, geoCode.location.longitude);
-    _annotation.title = @"工作地点";
-    _annotation.subtitle = @"卫东龙商务大厦";
+    _annotation.title = @"活动地点";
+    _annotation.subtitle = self.model.mAddress;
     [_map addAnnotation:_annotation];
     
 }
@@ -100,7 +100,7 @@
             annotationView = [[customAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reusedID];
             
         }
-        annotationView.image = [UIImage imageNamed:@"touhu"];
+        annotationView.image = [UIImage imageNamed:@"zuobiao"];
        
         
         return annotationView;

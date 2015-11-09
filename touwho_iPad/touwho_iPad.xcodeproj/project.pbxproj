@@ -71,8 +71,6 @@
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; };
 		A189BF321BD4997700E5CA37 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A189BF301BD4997700E5CA37 /* libSocialSina.a */; };
-		A18F47BE1BEB013E00273563 /* ShiPinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18F47BC1BEB013E00273563 /* ShiPinDetailViewController.m */; };
-		A18F47BF1BEB013E00273563 /* ShiPinDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18F47BD1BEB013E00273563 /* ShiPinDetailViewController.xib */; };
 		A192348C1BB14A9C0073A1C6 /* LingTouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */; };
 		A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */; };
 		A193F68F1BB90CD9007A697F /* publish.m in Sources */ = {isa = PBXBuildFile; fileRef = A193F68E1BB90CD9007A697F /* publish.m */; };
@@ -222,6 +220,8 @@
 		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
 		A1EB96701BC8B17200C15A39 /* ModelForNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB966F1BC8B17200C15A39 /* ModelForNews.m */; };
 		A1EB96751BC8C41D00C15A39 /* ModelForActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */; };
+		A1ED80EB1BF08607007D8F4C /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ED80E91BF08607007D8F4C /* ActivityDetailViewController.m */; };
+		A1ED80EC1BF08607007D8F4C /* ActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1ED80EA1BF08607007D8F4C /* ActivityDetailViewController.xib */; };
 		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; };
 		A1F6BBF31BE704040039CD37 /* ModelProgramDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BBF21BE704040039CD37 /* ModelProgramDetails.m */; };
 		A1F6BBF61BE741440039CD37 /* ModelSponsors.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BBF51BE741440039CD37 /* ModelSponsors.m */; };
@@ -360,9 +360,6 @@
 		A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RiskTestViewController.xib; sourceTree = "<group>"; };
 		A189BF301BD4997700E5CA37 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
 		A189BF311BD4997700E5CA37 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
-		A18F47BB1BEB013E00273563 /* ShiPinDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShiPinDetailViewController.h; sourceTree = "<group>"; };
-		A18F47BC1BEB013E00273563 /* ShiPinDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShiPinDetailViewController.m; sourceTree = "<group>"; };
-		A18F47BD1BEB013E00273563 /* ShiPinDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShiPinDetailViewController.xib; sourceTree = "<group>"; };
 		A19234891BB14A9C0073A1C6 /* LingTouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LingTouViewController.h; sourceTree = "<group>"; };
 		A192348A1BB14A9C0073A1C6 /* LingTouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LingTouViewController.m; sourceTree = "<group>"; };
 		A192348B1BB14A9C0073A1C6 /* LingTouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingTouViewController.xib; sourceTree = "<group>"; };
@@ -588,6 +585,9 @@
 		A1EB966F1BC8B17200C15A39 /* ModelForNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForNews.m; sourceTree = "<group>"; };
 		A1EB96731BC8C41D00C15A39 /* ModelForActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForActivity.h; sourceTree = "<group>"; };
 		A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForActivity.m; sourceTree = "<group>"; };
+		A1ED80E81BF08607007D8F4C /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
+		A1ED80E91BF08607007D8F4C /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
+		A1ED80EA1BF08607007D8F4C /* ActivityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityDetailViewController.xib; sourceTree = "<group>"; };
 		A1F0E5271BABAB5F00BA0BDD /* MarsTransToEarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarsTransToEarth.h; sourceTree = "<group>"; };
 		A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsTransToEarth.m; sourceTree = "<group>"; };
 		A1F6BBF11BE704040039CD37 /* ModelProgramDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelProgramDetails.h; sourceTree = "<group>"; };
@@ -995,16 +995,6 @@
 			path = Sina;
 			sourceTree = "<group>";
 		};
-		A18F47C01BEB014600273563 /* 视频详细信息 */ = {
-			isa = PBXGroup;
-			children = (
-				A18F47BB1BEB013E00273563 /* ShiPinDetailViewController.h */,
-				A18F47BC1BEB013E00273563 /* ShiPinDetailViewController.m */,
-				A18F47BD1BEB013E00273563 /* ShiPinDetailViewController.xib */,
-			);
-			name = "视频详细信息";
-			sourceTree = "<group>";
-		};
 		A19234871BB14A220073A1C6 /* 跟头金额选择 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1248,9 +1238,9 @@
 				A1D61FF91BA66A34009FCA1F /* 小组详情 */,
 				A1D620051BA6BF6B009FCA1F /* 话题详情 */,
 				A1E9BE911BA7CD3500876186 /* 机构专题详情 */,
-				A1B8684C1B848A4C005C4A6F /* 活动详情 */,
+				A1ED80ED1BF0860B007D8F4C /* 活动详细信息 */,
+				A1B8684C1B848A4C005C4A6F /* 活动地点 */,
 				A1B88C9A1BA15BB6008FA7C9 /* 视频播放 */,
-				A18F47C01BEB014600273563 /* 视频详细信息 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -1275,13 +1265,13 @@
 			name = view;
 			sourceTree = "<group>";
 		};
-		A1B8684C1B848A4C005C4A6F /* 活动详情 */ = {
+		A1B8684C1B848A4C005C4A6F /* 活动地点 */ = {
 			isa = PBXGroup;
 			children = (
 				A1B8683A1B842C00005C4A6F /* view */,
 				A1B868391B842BFA005C4A6F /* controller */,
 			);
-			name = "活动详情";
+			name = "活动地点";
 			sourceTree = "<group>";
 		};
 		A1B88C9A1BA15BB6008FA7C9 /* 视频播放 */ = {
@@ -1743,6 +1733,16 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
+		A1ED80ED1BF0860B007D8F4C /* 活动详细信息 */ = {
+			isa = PBXGroup;
+			children = (
+				A1ED80E81BF08607007D8F4C /* ActivityDetailViewController.h */,
+				A1ED80E91BF08607007D8F4C /* ActivityDetailViewController.m */,
+				A1ED80EA1BF08607007D8F4C /* ActivityDetailViewController.xib */,
+			);
+			name = "活动详细信息";
+			sourceTree = "<group>";
+		};
 		A1F0E5261BABAAFA00BA0BDD /* 火星坐标转国际坐标 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1947,6 +1947,7 @@
 				A1E9BE901BA7B66C00876186 /* JiGouUnit.xib in Resources */,
 				A1AC16CD1BBA88F2002A8F70 /* interestIndustry.plist in Resources */,
 				A1AC16D31BBA914F002A8F70 /* gender.plist in Resources */,
+				A1ED80EC1BF08607007D8F4C /* ActivityDetailViewController.xib in Resources */,
 				A192348D1BB14A9C0073A1C6 /* LingTouViewController.xib in Resources */,
 				A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */,
 				A13EEA961B8F0F580052C2A7 /* news2ViewController.xib in Resources */,
@@ -1967,7 +1968,6 @@
 				A1E6EB421BA13463005D4E6F /* OtherCenterViewController.xib in Resources */,
 				A1B88CBA1BA16A55008FA7C9 /* chat_animation_white1.png in Resources */,
 				A19D094B1B7C2DF100094B81 /* Assets.xcassets in Resources */,
-				A18F47BF1BEB013E00273563 /* ShiPinDetailViewController.xib in Resources */,
 				A1033BD31B8C487000FC8921 /* topics.xib in Resources */,
 				A1E9BE9B1BA802C700876186 /* shipinViewController.xib in Resources */,
 				A1DB9AB91BA2BB2A00EC97D6 /* xiaozuUnit.xib in Resources */,
@@ -2070,7 +2070,6 @@
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */,
-				A18F47BE1BEB013E00273563 /* ShiPinDetailViewController.m in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1B88CEB1BA17843008FA7C9 /* MJRefreshConst.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
@@ -2082,6 +2081,7 @@
 				A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */,
 				A1987E051BB1361700CC4130 /* sponsorTableViewCell.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
+				A1ED80EB1BF08607007D8F4C /* ActivityDetailViewController.m in Sources */,
 				A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */,
 				A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */,
 				A1B88CFC1BA17B75008FA7C9 /* UUAVAudioPlayer.m in Sources */,

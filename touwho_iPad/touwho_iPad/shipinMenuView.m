@@ -8,7 +8,7 @@
 
 #import "shipinMenuView.h"
 #import "shipinView.h"
-#import "ShiPinDetailViewController.h"
+
 #import "ModelForFootage.h"
 
 #define MarginSide 30
@@ -124,20 +124,5 @@
 
 }
 
-#pragma mark - 跳转
-- (IBAction)tap:(UITapGestureRecognizer *)sender {
-    UIViewController *VC = [self viewController];
-    ShiPinDetailViewController *nextVC = [[ShiPinDetailViewController alloc] initWithNibName:@"ShiPinDetailViewController" bundle:nil];
-    [VC.navigationController pushViewController:nextVC animated:YES];
-}
-//获得当前view的控制器
-- (UIViewController*)viewController {
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
-        }
-    }
-    return nil;
-}
+
 @end

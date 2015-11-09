@@ -54,7 +54,7 @@
         </view>
         <tapGestureRecognizer id="Gcs-SR-C5g">
             <connections>
-                <action selector="tap:" destination="-1" id="ogT-Df-HoM"/>
+                <action selector="turnToNextVC:" destination="iN0-l3-epB" id="6EJ-nU-gGG"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

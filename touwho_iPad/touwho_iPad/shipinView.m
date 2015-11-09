@@ -7,7 +7,7 @@
 //
 
 #import "shipinView.h"
-
+#import "shipinViewController.h"
 
 @implementation shipinView
 
@@ -29,5 +29,14 @@
     self.nameLabel.text = model.mName;
     self.timeLabel.text = model.mCreateTime;
 }
+
+#pragma mark - 跳转
+- (IBAction)turnToNextVC:(UITapGestureRecognizer *)sender {
+    UIViewController *VC = [self viewController];
+    shipinViewController *nextVC = [[shipinViewController alloc] initWithNibName:@"shipinViewController" bundle:nil];
+    nextVC.footageURL = self.model.mVideoUrl;
+    [VC.navigationController pushViewController:nextVC animated:YES];
+}
+
 
 @end

@@ -7,14 +7,16 @@
 //
 
 #import "activityUnit.h"
-#import "huodongViewController.h"
+#import "ActivityDetailViewController.h"
 
 @implementation activityUnit
 
+#pragma mark - 跳转
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
     UIViewController *VC = [self viewController];
-    huodongViewController *huodongVC = [[huodongViewController alloc]init];
-    [VC.navigationController pushViewController:huodongVC animated:YES];
+    ActivityDetailViewController *nextVC = [[ActivityDetailViewController alloc]initWithNibName:@"ActivityDetailViewController" bundle:nil];
+    nextVC.model = self.model;
+    [VC.navigationController pushViewController:nextVC animated:YES];
 }
 
 //获得当前view的控制器
