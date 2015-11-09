@@ -66,7 +66,6 @@
 		A18338531BC6693C000866EB /* ModelForUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338521BC6693C000866EB /* ModelForUser.m */; };
 		A18338561BC66C5A000866EB /* ModelForComment.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338551BC66C5A000866EB /* ModelForComment.m */; };
 		A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A18338581BC673A3000866EB /* xiaozuUnit.m */; };
-		A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */; };
 		A18723351BB3C98A00CD3630 /* FollowedSponsorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */; };
 		A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A187233A1BB3D94700CD3630 /* RiskTestViewController.m */; };
 		A187233D1BB3D94700CD3630 /* RiskTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A187233B1BB3D94700CD3630 /* RiskTestViewController.xib */; };
@@ -352,8 +351,6 @@
 		A18338551BC66C5A000866EB /* ModelForComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForComment.m; sourceTree = "<group>"; };
 		A18338571BC673A3000866EB /* xiaozuUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xiaozuUnit.h; sourceTree = "<group>"; };
 		A18338581BC673A3000866EB /* xiaozuUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xiaozuUnit.m; sourceTree = "<group>"; };
-		A1837AC11BBF63E9000D29BF /* modelForOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modelForOtherVC.h; sourceTree = "<group>"; };
-		A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = modelForOtherVC.m; sourceTree = "<group>"; };
 		A18723341BB3C98A00CD3630 /* FollowedSponsorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowedSponsorCell.xib; sourceTree = "<group>"; };
 		A18723391BB3D94700CD3630 /* RiskTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiskTestViewController.h; sourceTree = "<group>"; };
 		A187233A1BB3D94700CD3630 /* RiskTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiskTestViewController.m; sourceTree = "<group>"; };
@@ -935,15 +932,6 @@
 				A1E6EB401BA13463005D4E6F /* OtherCenterViewController.xib */,
 			);
 			name = controller;
-			sourceTree = "<group>";
-		};
-		A1837AC01BBF63C8000D29BF /* model */ = {
-			isa = PBXGroup;
-			children = (
-				A1837AC11BBF63E9000D29BF /* modelForOtherVC.h */,
-				A1837AC21BBF63E9000D29BF /* modelForOtherVC.m */,
-			);
-			name = model;
 			sourceTree = "<group>";
 		};
 		A18723381BB3D87500CD3630 /* 风险评估测试 */ = {
@@ -1677,7 +1665,6 @@
 		A1E6EB381BA13404005D4E6F /* 他人中心 */ = {
 			isa = PBXGroup;
 			children = (
-				A1837AC01BBF63C8000D29BF /* model */,
 				A1837ABF1BBF63C0000D29BF /* controller */,
 			);
 			name = "他人中心";
@@ -2083,7 +2070,6 @@
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,
 				A1ED80EB1BF08607007D8F4C /* ActivityDetailViewController.m in Sources */,
 				A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */,
-				A1837AC31BBF63E9000D29BF /* modelForOtherVC.m in Sources */,
 				A1B88CFC1BA17B75008FA7C9 /* UUAVAudioPlayer.m in Sources */,
 				A18338531BC6693C000866EB /* ModelForUser.m in Sources */,
 				A1002B201B85B682007520AA /* shipinMenuView.m in Sources */,

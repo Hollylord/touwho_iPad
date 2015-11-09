@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "modelForOtherVC.h"
+#import "ModelSponsors.h"
 
 @interface OtherCenterViewController : UIViewController
 
-@property (strong,nonatomic) modelForOtherVC *model;
+@property (strong,nonatomic) ModelSponsors *model;
 @end

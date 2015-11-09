@@ -22,11 +22,12 @@
 - (void)setModel:(ModelSponsors *)model{
     if (_model != model) {
         _model = model;
-        
-        [self.headIconIMG sd_setImageWithURL:[NSURL URLWithString:model.mAvatar] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mAvatar];
+        [self.headIconIMG sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         self.label1.text = model.mName;
-        self.label3.text = model.mInvestMoney;
+        self.label3.text = [NSString stringWithFormat:@"投资%@万",model.mInvestMoney];
     }
 
 }
+
 @end

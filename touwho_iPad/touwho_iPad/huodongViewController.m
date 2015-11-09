@@ -56,8 +56,6 @@
     [_searchAPI AMapGeocodeSearch:request];
     
     
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

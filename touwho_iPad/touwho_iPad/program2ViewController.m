@@ -125,7 +125,6 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         if ([model.mFollowStatus isEqualToString:@"0"]) {
             //未关注
             self.followBtn.selected = NO;
-            
         }
         else{
             self.followBtn.selected = YES;
@@ -188,7 +187,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //去掉菊花
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         //json --> model
         NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
@@ -268,11 +267,16 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     
     OtherCenterViewController *sponsor = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
     //传递数据
+    //领投人
+    if (indexPath.section == 0) {
+        sponsor.model = self.GPArray[indexPath.row];
+    }
+    //跟投人
+    else{
+        sponsor.model = self.LPArray[indexPath.row];
+    }
     
-    //没有创建model会使得指针指向nil，数据传递不过去
-    
-    
-//    [self.navigationController pushViewController:sponsor animated:YES];
+    [self.navigationController pushViewController:sponsor animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

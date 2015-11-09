@@ -45,10 +45,11 @@
     [self.view addSubview:rightView];
     [self layoutForSubview:rightView];
     
-    //生成model 设置假数据
-    //关注的项目model
-    //关注的人model
+    //显示数据
+    NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mAvatar];
+    [self.headIconView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
     
+    self.nickNameLabel.text = self.model.mName;
     
 }
 
@@ -59,8 +60,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
-    self.headIconView.image = self.model.image;
-    self.nickNameLabel.text = self.model.nickName;
+    
 }
 
 #pragma mark - tableView代理
@@ -133,7 +133,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    
     switch (indexPath.row) {
         case 0:
             [self presentPrograms];
