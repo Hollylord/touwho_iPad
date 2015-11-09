@@ -56,6 +56,7 @@
     
 }
 
+//点击确定
 - (IBAction)OK:(UIBarButtonItem *)sender {
     if (!imageForHead) {
         [self dismissViewControllerAnimated:YES completion:NULL];
@@ -66,15 +67,16 @@
     if (self.passImage) {
         self.passImage(imageForHead);
     }
+    
     //传头像给左菜单的头像
     [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self userInfo:@{@"headIcon":imageForHead}];
+    
+    //上传头像给服务器
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
 
     [mgr.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
     
-    //上传头像给服务器
-  
     NSDictionary *para = @{@"method":@"alterAvatar",@"user_id":USER_ID};
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -87,9 +89,14 @@
         [formData appendPartWithFileData:compressed name:@"123" fileName:@"headImage" mimeType:@"image/png"];
         
     } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"%@",responseObject);
+        
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-        NSLog(@"%@",[[responseObject objectForKey:@"value"] objectForKey:@"resValue"]);
+        NSString *icon = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"resValue"];
+
+        [[[NSUserDefaults standardUserDefaults] objectForKey:@"user"] setObject:icon forKey:@"iconURL"];
+        
         [self dismissViewControllerAnimated:YES completion:NULL];
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         

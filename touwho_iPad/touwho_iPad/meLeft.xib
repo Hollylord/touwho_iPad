@@ -89,7 +89,7 @@
                 <outlet property="nickNameLabel" destination="g80-7g-bQS" id="JVu-78-O4U"/>
                 <outlet property="tableView" destination="KFX-fE-VOB" id="ODh-Fh-SKJ"/>
             </connections>
-            <point key="canvasLocation" x="105" y="-15"/>
+            <point key="canvasLocation" x="145" y="-110"/>
         </view>
         <tapGestureRecognizer id="HcU-ud-IIh">
             <connections>

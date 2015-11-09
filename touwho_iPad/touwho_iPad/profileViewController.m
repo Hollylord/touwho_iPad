@@ -37,7 +37,8 @@
     NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
     self.model.nickName = [user objectForKey:@"userName"];
     self.model.userID = [user objectForKey:@"userID"];
-    self.model.iconURL = [user objectForKey:@"iconURL"];
+    NSString *iconUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,[user objectForKey:@"iconURL"]];
+    self.model.iconURL = iconUrl;
     
     //添加左边view
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];

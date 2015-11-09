@@ -224,25 +224,29 @@
     
     //设置参数
     NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
-    //请求
+    //上传个人信息
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//        NSLog(@"%@",responseObject);
+        
         NSDictionary *result = responseObject;
         //验证成功
-        if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]) {
+        if ([[[[result objectForKey:@"value"] firstObject]objectForKey:@"resCode"] isEqualToString:@"0"]) {
             
-            NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
+            NSString *userID = [[[result objectForKey:@"value"] firstObject] objectForKey:@"mID"];
             
             //获取个人信息，并保存
-            [self getPersonalInfoWithUserID:userID];
+            [self getPersonalInfoWithUserID:userID withCompletionBlock:^{
+                
+                //跳转个人中心
+                [self dismissViewControllerAnimated:YES completion:NULL];
+                profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+                
+                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
+                splitViewController *split = (splitViewController *)self.presentingViewController;
+                [split showDetailViewController:navigationController sender:nil];
+            }];
             
-            //跳转个人中心
-            [self dismissViewControllerAnimated:YES completion:NULL];
-            profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
-            viewcontroller.model.nickName = nickName;
-            viewcontroller.model.iconURL = iconURL;
-            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
-            splitViewController *split = (splitViewController *)self.presentingViewController;
-            [split showDetailViewController:navigationController sender:nil];
+            
         }
         
         
@@ -252,14 +256,14 @@
 }
 
 #pragma mark - 获取个人信息
-- (void)getPersonalInfoWithUserID:(NSString *)userID{
+- (void)getPersonalInfoWithUserID:(NSString *)userID withCompletionBlock:(dispatch_block_t)block{
     //参数
     NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":userID};
     
     //获取个人信息
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         //json --> model
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
@@ -276,7 +280,12 @@
         [userDefault setObject:dic forKey:@"user"];
         [userDefault synchronize];
         
-    } failure:NULL];
+        block();
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+        NSLog(@"%@",error);
+    }];
 }
 
 @end
