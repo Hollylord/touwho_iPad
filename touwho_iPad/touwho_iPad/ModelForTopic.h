@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ModelForUser.h"
-#import "ModelForGroup.h"
+
+
 
 @interface ModelForTopic : NSObject
-
-@property (strong,nonatomic) ModelForUser *publisher;
-@property (strong,nonatomic) ModelForGroup *group;
+///小组名
+@property (copy,nonatomic) NSString *mGroupName;
 
 ///话题的logo
 @property (copy,nonatomic) NSString *mLogo;
@@ -27,8 +26,6 @@
 @property (copy,nonatomic) NSString *mDestrible;
 ///是否为热门话题
 @property (copy,nonatomic) NSString *mIsHot;
-///小组的名字
-@property (copy,nonatomic) NSString *mGroupName;
 ///话题id
 @property (copy,nonatomic) NSString *mID;
 

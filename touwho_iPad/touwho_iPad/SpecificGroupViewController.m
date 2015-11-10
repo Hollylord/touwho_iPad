@@ -9,11 +9,11 @@
 #import "SpecificGroupViewController.h"
 #import "SpecificTopicViewController.h"
 #import "TopicCell.h"
+#import "ModelGroupDetail.h"
 
 @interface SpecificGroupViewController () <UITableViewDataSource,UITableViewDelegate>
 
-//存放所有话题model
-@property (strong,nonatomic) NSMutableArray *topicsArr;
+
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
@@ -28,13 +28,22 @@
 ///成员个数
 @property (weak, nonatomic) IBOutlet UILabel *memberCount;
 
+@property (strong,nonatomic) ModelGroupDetail *modelDetail;
 
-
+///存放话题model的数组
+@property (strong,nonatomic) NSMutableArray *modelsTopic;
 @end
 
 @implementation SpecificGroupViewController
 
+- (ModelGroupDetail *)modelDetail{
+    if (!_modelDetail) {
+        _modelDetail = [[ModelGroupDetail alloc] init];
+    }
+    return _modelDetail;
+}
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -45,16 +54,22 @@
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
  
     
-    //添加已有的数据数据
-    NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mLogo];
-    [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-    self.groupName.text = self.model.mName;
-    self.leaderName.text = self.model.mGroupLeader;
-    self.memberCount.text = self.model.mMemberCount;
-    self.groupIntroduction.text = self.model.mDestrible;
+    
     
     //获取数据
-    [self pullGroupData];
+    [self pullGroupData:^{
+        //添加已有的数据数据
+        NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
+        [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        self.groupName.text = self.modelDetail.mName;
+        self.leaderName.text = self.modelDetail.mGroupLeader;
+        self.memberCount.text = self.modelDetail.mMemberCount;
+        self.groupIntroduction.text = self.modelDetail.mDestrible;
+        
+        //刷新话题内容
+        [self.tableview reloadData];
+        
+    }];
     
     
     
@@ -77,14 +92,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 4;
+    return self.modelDetail.mTalks.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopicCell" forIndexPath:indexPath];
     
-    
+    cell.model = self.modelsTopic[indexPath.row];
     
     return cell;
 }
@@ -123,13 +138,19 @@
 }
 
 #pragma mark - 获取数据
-- (void)pullGroupData{
-    NSLog(@"%@",self.model.mID);
+- (void)pullGroupData:(dispatch_block_t)block{
+    
     //参数
     NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.model.mID};
     
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
+        self.modelDetail = [ModelGroupDetail objectWithKeyValues:dic];
+        
+        self.modelsTopic = [ModelForTopic objectArrayWithKeyValuesArray:self.modelDetail.mTalks];
+        
+        block();
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error);
     }];

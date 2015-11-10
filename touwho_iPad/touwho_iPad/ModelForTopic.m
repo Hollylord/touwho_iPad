@@ -9,16 +9,5 @@
 #import "ModelForTopic.h"
 
 @implementation ModelForTopic
-- (ModelForUser *)publisher{
-    if (!_publisher) {
-        _publisher = [[ModelForUser alloc] init];
-    }
-    return _publisher;
-}
-- (ModelForGroup *)group{
-    if (!_group) {
-        _group = [[ModelForGroup alloc] init];
-    }
-    return _group;
-}
+
 @end

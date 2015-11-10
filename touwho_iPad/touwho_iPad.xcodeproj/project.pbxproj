@@ -92,6 +92,7 @@
 		A19D09761B7C306900094B81 /* programViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D09751B7C306900094B81 /* programViewController.m */; };
 		A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D097C1B7C835C00094B81 /* myFlowLayout.m */; };
 		A19FCA221BF1C2CD009F2C33 /* ModelTopicDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FCA211BF1C2CD009F2C33 /* ModelTopicDetail.m */; };
+		A19FCA261BF1E3C7009F2C33 /* ModelGroupDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FCA251BF1E3C7009F2C33 /* ModelGroupDetail.m */; };
 		A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */; };
 		A1A01AAC1BAA61AA009EF690 /* HeadIconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */; };
 		A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A01AAE1BAA6CFF009EF690 /* MyImagePickerViewController.m */; };
@@ -397,6 +398,8 @@
 		A19D097C1B7C835C00094B81 /* myFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFlowLayout.m; sourceTree = "<group>"; };
 		A19FCA201BF1C2CD009F2C33 /* ModelTopicDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTopicDetail.h; sourceTree = "<group>"; };
 		A19FCA211BF1C2CD009F2C33 /* ModelTopicDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTopicDetail.m; sourceTree = "<group>"; };
+		A19FCA241BF1E3C7009F2C33 /* ModelGroupDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelGroupDetail.h; sourceTree = "<group>"; };
+		A19FCA251BF1E3C7009F2C33 /* ModelGroupDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelGroupDetail.m; sourceTree = "<group>"; };
 		A1A01AA81BAA61AA009EF690 /* HeadIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadIconViewController.h; sourceTree = "<group>"; };
 		A1A01AA91BAA61AA009EF690 /* HeadIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadIconViewController.m; sourceTree = "<group>"; };
 		A1A01AAA1BAA61AA009EF690 /* HeadIconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadIconViewController.xib; sourceTree = "<group>"; };
@@ -1202,6 +1205,15 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		A19FCA271BF1E3CD009F2C33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A19FCA241BF1E3C7009F2C33 /* ModelGroupDetail.h */,
+				A19FCA251BF1E3C7009F2C33 /* ModelGroupDetail.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		A1A01AA71BAA6158009EF690 /* 头像 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1506,6 +1518,7 @@
 		A1D61FF91BA66A34009FCA1F /* 小组详情 */ = {
 			isa = PBXGroup;
 			children = (
+				A19FCA271BF1E3CD009F2C33 /* Model */,
 				A1FD81481BC7B00000F269E3 /* controller */,
 				A1FD81491BC7B00600F269E3 /* view */,
 			);
@@ -2144,6 +2157,7 @@
 				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,
 				A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
+				A19FCA261BF1E3C7009F2C33 /* ModelGroupDetail.m in Sources */,
 				A1D9FB4C1BD8C6E800321F7E /* SettingViewController.m in Sources */,
 				A13EEA911B8EFC710052C2A7 /* newsMenu.m in Sources */,
 				A1E9BE951BA7CD7400876186 /* JiGouDetailViewController.m in Sources */,

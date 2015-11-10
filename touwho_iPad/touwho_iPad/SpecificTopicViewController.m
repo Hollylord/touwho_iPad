@@ -57,11 +57,10 @@
     //显示数据
     NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mLogo];
     [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-    self.groupNameLabel.text = self.model.mGroupName;
     self.introductionLabel.text = self.model.mDestrible;
     self.timeLabel.text = self.model.mCreateTime;
     self.titleLabel.text = self.model.mTitle;
-    
+    self.groupNameLabel.text = self.model.mGroupName;
     //获取详情
     [self pullData:^{
         

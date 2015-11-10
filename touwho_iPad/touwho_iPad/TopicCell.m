@@ -24,8 +24,11 @@
     if (_model != model) {
         _model = model;
     }
-    self.writerIcon.image = model.publisher.icon;
-    self.writerNickName.text = model.publisher.nickName;
+    NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mLogo];
     
+    [self.writerIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    self.timeLabel.text = model.mCreateTime;
+    self.titleLabel.text = model.mTitle;
+    self.contentLabel.text = model.mDestrible;
 }
 @end
