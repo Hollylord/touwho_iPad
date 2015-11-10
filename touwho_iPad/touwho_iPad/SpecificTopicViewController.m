@@ -149,7 +149,38 @@
 }
 #pragma mark - 点赞
 - (IBAction)thumbUp:(UIButton *)sender {
-    sender.selected = !sender.selected;
+    
+    if (![BTNetWorking isUserAlreadyLoginWithAlertView:self.view]) {
+        return ;
+    }
+    
+    //点赞
+    if (!sender.selected) {
+        NSDictionary *para = @{@"method":@"followTalk",@"user_id":USER_ID,@"talk_id":self.model.mID};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"%@",responseObject);
+            sender.selected = !sender.selected;
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            NSLog(@"%@",error);
+        }];
+    }
+    //取消点赞
+    else{
+        NSDictionary *para = @{@"method":@"cancelFollowTalk",@"user_id":USER_ID,@"talk_id":self.model.mID};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"%@",responseObject);
+            sender.selected = !sender.selected;
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            NSLog(@"%@",error);
+        }];
+    }
+    
 }
 
 #pragma mark - 私信
@@ -159,8 +190,11 @@
 
 #pragma mark - 获取data
 - (void)pullData:(dispatch_block_t)block{
-    NSDictionary *para = @{@"method":@"getDetailTalk",@"talk_id":self.model.mID,@"user_id":USER_ID};
-    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSDictionary *para = @{@"method":@"getDetailTalk",@"talk_id":self.model.mID};
+    NSMutableDictionary *para2 = [NSMutableDictionary dictionaryWithDictionary:para];
+    [para2 setValue:USER_ID forKey:@"user_id"];
+
+    [BTNetWorking getDataWithPara:para2 success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];

@@ -53,4 +53,16 @@
     return textSize.height + font.lineHeight;
 }
 
++ (BOOL)isUserAlreadyLoginWithAlertView:(UIView *)view{
+    if (USER_ID) {
+        return  YES;
+    }
+    else{
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"请登录后再试";
+        [hud hide:YES afterDelay:1];
+        return NO;
+    }
+}
 @end
