@@ -109,7 +109,8 @@
     
     //跳转到话题详情页面
     SpecificTopicViewController *topicVC = [[SpecificTopicViewController alloc] initWithNibName:@"SpecificTopicViewController" bundle:nil];
-   
+    ModelForTopic *model = self.modelsTopic[indexPath.row];
+    topicVC.model = model;
     [self.navigationController pushViewController:topicVC animated:YES];
 }
 

@@ -29,14 +29,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4Y-vL-wHw">
-                        <rect key="frame" x="250" y="22" width="51" height="21"/>
+                        <rect key="frame" x="250" y="50" width="51" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容开头部分。。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-Pe-fPY">
-                        <rect key="frame" x="16" y="66" width="518" height="42"/>
+                        <rect key="frame" x="16" y="79" width="518" height="42"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="42" id="M3g-th-0J3"/>
@@ -48,14 +48,14 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="s4Y-vL-wHw" firstAttribute="top" secondItem="X5L-Ky-zoL" secondAttribute="top" constant="22" id="AlT-Fh-PDR"/>
+                    <constraint firstItem="s4Y-vL-wHw" firstAttribute="top" secondItem="X5L-Ky-zoL" secondAttribute="top" constant="50" id="AlT-Fh-PDR"/>
                     <constraint firstAttribute="trailing" secondItem="iJZ-Pe-fPY" secondAttribute="trailing" constant="16" id="HlL-Um-6aZ"/>
                     <constraint firstItem="iJZ-Pe-fPY" firstAttribute="leading" secondItem="X5L-Ky-zoL" secondAttribute="leading" constant="16" id="JCw-H5-2lE"/>
                     <constraint firstItem="s4Y-vL-wHw" firstAttribute="centerX" secondItem="X5L-Ky-zoL" secondAttribute="centerX" id="Jvb-ZX-y5t"/>
                     <constraint firstItem="Pey-Fp-jSy" firstAttribute="top" secondItem="X5L-Ky-zoL" secondAttribute="top" constant="8" id="QRm-sO-dBW"/>
                     <constraint firstAttribute="trailing" secondItem="ydO-SE-Gp1" secondAttribute="trailing" constant="16" id="T1G-FR-taL"/>
+                    <constraint firstItem="iJZ-Pe-fPY" firstAttribute="top" secondItem="s4Y-vL-wHw" secondAttribute="bottom" constant="8" id="j3E-QA-y9k"/>
                     <constraint firstItem="Pey-Fp-jSy" firstAttribute="leading" secondItem="X5L-Ky-zoL" secondAttribute="leading" constant="16" id="jjn-lE-fAA"/>
-                    <constraint firstItem="iJZ-Pe-fPY" firstAttribute="top" secondItem="Pey-Fp-jSy" secondAttribute="bottom" constant="8" id="vOh-8i-Da3"/>
                     <constraint firstItem="ydO-SE-Gp1" firstAttribute="top" secondItem="X5L-Ky-zoL" secondAttribute="top" constant="8" id="xR0-ce-o70"/>
                 </constraints>
             </tableViewCellContentView>
