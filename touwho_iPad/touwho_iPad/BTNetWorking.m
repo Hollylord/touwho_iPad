@@ -52,4 +52,5 @@
     CGSize textSize = [content boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:opts attributes:attribute context:nil].size;
     return textSize.height + font.lineHeight;
 }
+
 @end

@@ -81,7 +81,7 @@
     [self layoutForSubview:view];
     
     //修改数据
-    [view.enterpriseIdentify removeFromSuperview];
+    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     view.serviceContentView.text = [dic objectForKey:@"lingtourenxieyi"];
@@ -98,6 +98,7 @@
     [self layoutForSubview:view];
     
     //修改数据
+    [view.enterpriseIdentify removeFromSuperview];
     [view.protocolLabel setText:@"《跟投人服务协议》"];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];

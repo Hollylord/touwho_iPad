@@ -24,9 +24,6 @@
     if (_model != model) {
         _model = model;
     }
-    self.iconView.image = model.user.icon;
-    self.userNameLabel.text = model.user.nickName;
-    self.contentLabel.text = model.content;
-    self.timeLabel.text = model.time;
+    
 }
 @end

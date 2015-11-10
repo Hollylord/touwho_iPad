@@ -129,6 +129,7 @@
     }
     
 }
+
 #pragma mark - 拉取数据
 ///拉取小组数据
 - (void) pullGroupDataToView:(xiaozu *)customView withCompletion:(void (^)())block{
@@ -136,7 +137,7 @@
     //获取全部小组
     NSDictionary *para = @{@"method":@"getGroups"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         
         NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
         if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
@@ -179,7 +180,7 @@
     //获取全部小组
     NSDictionary *para = @{@"method":@"getTalks"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         
         NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];

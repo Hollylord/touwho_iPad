@@ -9,10 +9,5 @@
 #import "ModelForComment.h"
 
 @implementation ModelForComment
-- (ModelForUser *)user{
-    if (!_user) {
-        _user = [[ModelForUser alloc]init];
-    }
-    return _user;
-}
+
 @end

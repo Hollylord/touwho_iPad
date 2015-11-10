@@ -124,13 +124,16 @@
 
 #pragma mark - 获取数据
 - (void)pullGroupData{
+    NSLog(@"%@",self.model.mID);
     //参数
     NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.model.mID};
+    
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error);
     }];
+    
 }
 
 #pragma mark - 加入/退出小组

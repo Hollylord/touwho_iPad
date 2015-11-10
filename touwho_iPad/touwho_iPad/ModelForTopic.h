@@ -23,7 +23,7 @@
 @property (copy,nonatomic) NSString *mShortTitle;
 ///话题创建时间
 @property (copy,nonatomic) NSString *mCreateTime;
-///话题内容
+///话题简介
 @property (copy,nonatomic) NSString *mDestrible;
 ///是否为热门话题
 @property (copy,nonatomic) NSString *mIsHot;

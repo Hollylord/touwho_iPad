@@ -11,7 +11,16 @@
 
 @interface ModelForComment : NSObject
 
-@property (strong,nonatomic) ModelForUser *user;
-@property (copy,nonatomic) NSString *content;
-@property (copy,nonatomic) NSString *time;
+///评论的内容
+@property (copy,nonatomic) NSString *mTalkContent;
+///评论的时间
+@property (copy,nonatomic) NSString *mCreateTime;
+///评论者的头像
+@property (copy,nonatomic) NSString *mAvatar;
+///评论的名称
+@property (copy,nonatomic) NSString *mName;
+///该评论是否点赞 0未点赞 1已点赞
+@property (copy,nonatomic) NSString *mIsPraise;
+///评论点赞人数
+@property (copy,nonatomic) NSString *mTalkCommentPraizeCount;
 @end

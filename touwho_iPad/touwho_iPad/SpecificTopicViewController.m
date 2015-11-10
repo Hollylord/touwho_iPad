@@ -9,6 +9,7 @@
 #import "SpecificTopicViewController.h"
 #import "replyViewController.h"
 #import "CommentCell.h"
+#import "ModelTopicDetail.h"
 
 @interface SpecificTopicViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -21,15 +22,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *introductionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *writerNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *leader;
+@property (weak, nonatomic) IBOutlet UILabel *memberCount;
 
-@property (strong,nonatomic) ModelForComment *modelComment;
+///存放话题详情的model
+@property (strong,nonatomic)ModelTopicDetail *modelDetail;
 
 @end
 
 @implementation SpecificTopicViewController
-{
-    CGFloat heightTextView;
-}
+
 #pragma mark - 懒加载
 - (ModelForTopic *)model{
     if (!_model) {
@@ -37,13 +39,13 @@
     }
     return _model;
 }
-
-- (ModelForComment *)modelComment{
-    if (!_modelComment) {
-        _modelComment = [[ModelForComment alloc] init];
+- (ModelTopicDetail *)modelDetail{
+    if (!_modelDetail) {
+        _modelDetail = [[ModelTopicDetail alloc]init];
     }
-    return _modelComment;
+    return _modelDetail;
 }
+
 
 #pragma mark - 生命周期
 - (void)viewDidLoad {
@@ -52,6 +54,28 @@
     //评论cell
     [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
     
+    //显示数据
+    NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mLogo];
+    [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    self.groupNameLabel.text = self.model.mGroupName;
+    self.introductionLabel.text = self.model.mDestrible;
+    self.timeLabel.text = self.model.mCreateTime;
+    self.titleLabel.text = self.model.mTitle;
+    
+    //获取详情
+    [self pullData:^{
+        
+        self.contentTextView.text = self.modelDetail.mTalkContent;
+        self.contentTextView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
+        
+        //更新约束
+        for (NSLayoutConstraint *constraint in self.contentTextView.constraints) {
+            if ([constraint.identifier isEqualToString:@"heightTextView"]) {
+                constraint.constant = [BTNetWorking calcutateHeightForTextviewWithFont:self.contentTextView.font andContent:self.modelDetail.mTalkContent andWidth:516];
+            }
+        }
+        
+    }];
     
 
 }
@@ -63,29 +87,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
-    //新闻内容
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"xinwen" ofType:@"plist"];
-    NSDictionary *newsDic = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSString *content = [newsDic objectForKey:@"topic"];
-    
-    //根据内容设置新闻的高度
-    self.contentTextView.text = content;
-    self.contentTextView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
-    
-    heightTextView = [BTNetWorking calcutateHeightForTextviewWithFont:self.contentTextView.font andContent:content andWidth:516];
+
     
 }
 
-- (void)updateViewConstraints{
-    [super updateViewConstraints];
-    
-    for (NSLayoutConstraint *constraint in self.contentTextView.constraints) {
-        if ([constraint.identifier isEqualToString:@"heightTextView"]) {
-            constraint.constant = heightTextView;
-        }
-    }
-}
 
 #pragma mark - tableView代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -103,7 +108,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
     
-    cell.model = self.modelComment;
+    
     
     return cell;
 }
@@ -150,6 +155,34 @@
 #pragma mark - 私信
 - (IBAction)sendMessage:(UIButton *)sender {
     
+}
+
+#pragma mark - 获取data
+- (void)pullData:(dispatch_block_t)block{
+    NSDictionary *para = @{@"method":@"getDetailTalk",@"talk_id":self.model.mID,@"user_id":USER_ID};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
+        self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
+        //缺少获取小组
+        
+        
+//        //参数
+//        NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};
+//        
+//        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+////            NSLog(@"%@",responseObject);
+//            
+//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            NSLog(@"%@",error);
+//        }];
+        
+        block();
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
 }
 
 @end
