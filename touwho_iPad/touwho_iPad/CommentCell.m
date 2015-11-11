@@ -24,6 +24,46 @@
     if (_model != model) {
         _model = model;
     }
+    NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mAvatar];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    self.userNameLabel.text = model.mName;
+    self.contentLabel.text = model.mTalkContent;
+    self.timeLabel.text = model.mCreateTime;
     
+}
+
+#pragma mark - 点赞
+- (IBAction)thumbUp:(UIButton *)sender {
+    if (![BTNetWorking isUserAlreadyLoginWithAlertView:self]) {
+        return ;
+    }
+   
+//    //点赞 缺少评论id
+//    if (!sender.selected) {
+//        NSDictionary *para = @{@"method":@"praiseTalkComment",@"user_id":USER_ID,@"talk_comment_id":self.model.m};
+//        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            
+//            
+//            
+//            sender.selected = !sender.selected;
+//            
+//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            
+//            NSLog(@"%@",error);
+//        }];
+//    }
+//    //取消点赞
+//    else{
+//        NSDictionary *para = @{@"method":@"cancelFollowTalk",@"user_id":USER_ID,@"talk_id":self.model.mID};
+//        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            
+//            
+//            sender.selected = !sender.selected;
+//            
+//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            
+//            NSLog(@"%@",error);
+//        }];
+//    }
 }
 @end

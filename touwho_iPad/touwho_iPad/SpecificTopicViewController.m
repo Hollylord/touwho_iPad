@@ -32,6 +32,8 @@
 ///存放小组详情的model
 @property (strong,nonatomic) ModelGroupDetail *modelGroup;
 
+///存放评论models
+@property (strong,nonatomic) NSMutableArray *modelsComment;
 @end
 
 @implementation SpecificTopicViewController
@@ -83,6 +85,9 @@
             }
         }
         
+        //刷新评论
+        [self.tableView reloadData];
+        
     }];
     
 
@@ -109,14 +114,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 4;
+    return self.modelsComment.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
     
-    
+    cell.model = self.modelsComment[indexPath.row];
     
     return cell;
 }
@@ -156,6 +161,7 @@
     [self presentViewController:replyVC animated:YES completion:NULL];
 
 }
+
 #pragma mark - 点赞
 - (IBAction)thumbUp:(UIButton *)sender {
     
@@ -210,7 +216,9 @@
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
-        
+
+        self.modelsComment = [ModelForComment objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
+
         
         //获取小组
         NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};

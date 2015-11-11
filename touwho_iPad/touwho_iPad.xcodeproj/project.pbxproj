@@ -897,8 +897,6 @@
 				A183384C1BC66333000866EB /* ModelForGroup.m */,
 				A183384E1BC665AB000866EB /* ModelForTopic.h */,
 				A183384F1BC665AB000866EB /* ModelForTopic.m */,
-				A18338541BC66C5A000866EB /* ModelForComment.h */,
-				A18338551BC66C5A000866EB /* ModelForComment.m */,
 				A1EB96731BC8C41D00C15A39 /* ModelForActivity.h */,
 				A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */,
 				A11413C11BD9E4A600F11012 /* ModelForFootage.h */,
@@ -1201,6 +1199,8 @@
 			children = (
 				A19FCA201BF1C2CD009F2C33 /* ModelTopicDetail.h */,
 				A19FCA211BF1C2CD009F2C33 /* ModelTopicDetail.m */,
+				A18338541BC66C5A000866EB /* ModelForComment.h */,
+				A18338551BC66C5A000866EB /* ModelForComment.m */,
 			);
 			name = model;
 			sourceTree = "<group>";

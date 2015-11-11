@@ -29,25 +29,28 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viE-vR-fC5">
+                        <rect key="frame" x="417" y="7" width="24" height="15"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkm-hc-0rv">
+                        <rect key="frame" x="372" y="8" width="25" height="25"/>
+                        <animations/>
+                        <state key="normal" image="zan1"/>
+                        <connections>
+                            <action selector="thumbUp:" destination="jX7-fI-CiS" eventType="touchUpInside" id="ZCg-er-14D"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOy-CQ-aii">
-                        <rect key="frame" x="105" y="31" width="336" height="21"/>
+                        <rect key="frame" x="105" y="37" width="336" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viE-vR-fC5">
-                        <rect key="frame" x="411" y="5" width="30" height="18"/>
-                        <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkm-hc-0rv">
-                        <rect key="frame" x="366" y="2" width="25" height="25"/>
-                        <animations/>
-                        <state key="normal" image="zan1"/>
-                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -56,10 +59,10 @@
                     <constraint firstItem="viE-vR-fC5" firstAttribute="centerY" secondItem="UDK-mF-YgK" secondAttribute="centerY" id="Lbg-VR-HD2"/>
                     <constraint firstItem="viE-vR-fC5" firstAttribute="leading" secondItem="dkm-hc-0rv" secondAttribute="trailing" constant="20" id="Mfd-do-8Yc"/>
                     <constraint firstAttribute="trailing" secondItem="fOy-CQ-aii" secondAttribute="trailing" constant="8" id="Qm9-NN-B8k"/>
-                    <constraint firstItem="fOy-CQ-aii" firstAttribute="top" secondItem="viE-vR-fC5" secondAttribute="bottom" constant="8" id="SYy-Kk-vRg"/>
+                    <constraint firstItem="fOy-CQ-aii" firstAttribute="top" secondItem="viE-vR-fC5" secondAttribute="bottom" constant="15" id="SYy-Kk-vRg"/>
                     <constraint firstItem="VAs-3E-Dhd" firstAttribute="centerY" secondItem="uky-8C-Wxs" secondAttribute="centerY" id="fyw-xc-41m"/>
                     <constraint firstItem="UDK-mF-YgK" firstAttribute="leading" secondItem="VAs-3E-Dhd" secondAttribute="trailing" constant="17" id="lpm-L1-4fU"/>
-                    <constraint firstItem="viE-vR-fC5" firstAttribute="centerY" secondItem="dkm-hc-0rv" secondAttribute="centerY" id="mYR-Yc-luH"/>
+                    <constraint firstItem="viE-vR-fC5" firstAttribute="centerY" secondItem="dkm-hc-0rv" secondAttribute="centerY" constant="-6.5" id="mYR-Yc-luH"/>
                     <constraint firstItem="VAs-3E-Dhd" firstAttribute="leading" secondItem="uky-8C-Wxs" secondAttribute="leadingMargin" id="oQ6-TR-Zif"/>
                     <constraint firstItem="UDK-mF-YgK" firstAttribute="top" secondItem="VAs-3E-Dhd" secondAttribute="top" constant="-5" id="p3K-Zm-sXL"/>
                 </constraints>
