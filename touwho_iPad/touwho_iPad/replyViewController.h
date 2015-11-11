@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface replyViewController : UIViewController
-
+///话题id
+@property (copy,nonatomic) NSString *topic_id;
 @end

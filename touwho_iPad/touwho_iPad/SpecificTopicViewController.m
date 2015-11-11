@@ -150,6 +150,7 @@
 - (IBAction)remark:(id)sender {
     
     replyViewController *replyVC = [[replyViewController alloc] initWithNibName:@"replyViewController" bundle:nil];
+    replyVC.topic_id = self.modelDetail.mID;
     replyVC.modalPresentationStyle = UIModalPresentationFormSheet;
     //弹出回复控制器 界面
     [self presentViewController:replyVC animated:YES completion:NULL];
@@ -209,7 +210,6 @@
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
-       
         
         
         //获取小组
@@ -222,6 +222,7 @@
             self.modelGroup = [ModelGroupDetail objectWithKeyValues:dic];
             
             block();
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"%@",error);
         }];

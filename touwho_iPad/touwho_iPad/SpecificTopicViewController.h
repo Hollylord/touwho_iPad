@@ -10,6 +10,7 @@
 #import "ModelForTopic.h"
 
 @interface SpecificTopicViewController : UIViewController
+///话题列表
 @property (strong,nonatomic) ModelForTopic *model;
 
 @end
