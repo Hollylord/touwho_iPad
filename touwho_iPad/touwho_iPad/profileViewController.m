@@ -35,10 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-    self.model.nickName = [user objectForKey:@"userName"];
-    self.model.userID = [user objectForKey:@"userID"];
+    self.model.mNickName = [user objectForKey:@"userName"];
+    self.model.mID = [user objectForKey:@"userID"];
     NSString *iconUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,[user objectForKey:@"iconURL"]];
-    self.model.iconURL = iconUrl;
+    self.model.mAvatar = iconUrl;
     
     //添加左边view
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];

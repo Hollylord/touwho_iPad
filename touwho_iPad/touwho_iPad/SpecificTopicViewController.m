@@ -11,6 +11,7 @@
 #import "CommentCell.h"
 #import "ModelTopicDetail.h"
 #import "ModelGroupDetail.h"
+#import "ModelForUser.h"
 
 
 @interface SpecificTopicViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -31,7 +32,8 @@
 @property (strong,nonatomic)ModelTopicDetail *modelDetail;
 ///存放小组详情的model
 @property (strong,nonatomic) ModelGroupDetail *modelGroup;
-
+///发话题的user的model
+@property (strong,nonatomic) ModelForUser *modelUser;
 ///存放评论models
 @property (strong,nonatomic) NSMutableArray *modelsComment;
 @end
@@ -73,7 +75,9 @@
         
         self.timeLabel.text = self.model.mCreateTime;
         self.titleLabel.text = self.model.mTitle;
-        
+        NSString *writerIcon = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelUser.mAvatar];
+        [self.iconWriter sd_setImageWithURL:[NSURL URLWithString:writerIcon] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        self.writerNameLabel.text = self.modelUser.mNickName;
         
         self.contentTextView.text = self.modelDetail.mTalkContent;
         self.contentTextView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
@@ -213,27 +217,42 @@
 
     [BTNetWorking getDataWithPara:para2 success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
-
+        
         self.modelsComment = [ModelForComment objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
 
-        
-        //获取小组
-        NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};
-        
-        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            NSLog(@"%@",responseObject);
+        //获取发话题的用户信息
+        NSDictionary *temp = @{@"method":@"getMyInfo",@"user_id":@"38"};
+        [BTNetWorking getDataWithPara:temp success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@",responseObject);
             NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
             
-            self.modelGroup = [ModelGroupDetail objectWithKeyValues:dic];
+            self.modelUser = [ModelForUser objectWithKeyValues:dic];
             
-            block();
+            //获取小组
+            NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};
+            
+            [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                //            NSLog(@"%@",responseObject);
+                NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
+                
+                self.modelGroup = [ModelGroupDetail objectWithKeyValues:dic];
+                
+                block();
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"%@",error);
+            }];
+            
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
             NSLog(@"%@",error);
         }];
+        
+        
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

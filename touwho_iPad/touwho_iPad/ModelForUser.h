@@ -10,9 +10,12 @@
 
 @interface ModelForUser : NSObject
 @property (strong,nonatomic) UIImage *icon;
-@property (copy,nonatomic) NSString *nickName;
-@property (copy,nonatomic) NSString *iconURL;
-@property (copy,nonatomic) NSString *userID;
+///昵称
+@property (copy,nonatomic) NSString *mNickName;
+///头像url
+@property (copy,nonatomic) NSString *mAvatar;
+///用户id
+@property (copy,nonatomic) NSString *mID;
 @property (copy,nonatomic) NSString *mEmail;
 ///身份证号
 @property (copy,nonatomic) NSString *mIDCardCode;

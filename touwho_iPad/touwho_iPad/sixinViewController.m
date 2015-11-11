@@ -302,12 +302,10 @@ typedef void(^personInfo)(NSString *iconURL,NSString *nickName);
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
-        [ModelForUser setupReplacedKeyFromPropertyName:^NSDictionary *{
-            return @{@"userID":@"mID",@"iconURL":@"mAvatar",@"nickName":@"mNickName"};
-        }];
+        
         ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
         
-        block(model.iconURL,model.nickName);
+        block(model.mAvatar,model.mNickName);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

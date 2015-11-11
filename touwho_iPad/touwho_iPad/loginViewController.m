@@ -268,15 +268,13 @@
         
         //json --> model
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
-        [ModelForUser setupReplacedKeyFromPropertyName:^NSDictionary *{
-            return @{@"userID":@"mID",@"iconURL":@"mAvatar",@"nickName":@"mNickName"};
-        }];
+        
         ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
         BOOL temp1 = [model.mIsFirstInvestor boolValue];
         BOOL temp2 = [model.mIsInvestor boolValue];
         
         //保存用户信息
-        NSDictionary *dic = @{@"userName":model.nickName,@"userID":userID,@"iconURL":model.iconURL,@"isFirstInvestor":@(temp1),@"isInvestor":@(temp2)};
+        NSDictionary *dic = @{@"userName":model.mNickName,@"userID":userID,@"iconURL":model.mAvatar,@"isFirstInvestor":@(temp1),@"isInvestor":@(temp2)};
         NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         [userDefault setObject:user forKey:@"user"];

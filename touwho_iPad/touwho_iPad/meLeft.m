@@ -157,9 +157,9 @@
     if (_model != model) {
         _model = model;
     }
-    self.nickNameLabel.text = model.nickName;
+    self.nickNameLabel.text = model.mNickName;
     
-    NSURL *url = [NSURL URLWithString:model.iconURL];
+    NSURL *url = [NSURL URLWithString:model.mAvatar];
     if (url) {
         SDWebImageManager *mgr = [SDWebImageManager sharedManager];
         [mgr downloadImageWithURL:url options:0 progress:NULL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
