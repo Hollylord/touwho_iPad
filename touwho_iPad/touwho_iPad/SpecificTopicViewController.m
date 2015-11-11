@@ -10,6 +10,8 @@
 #import "replyViewController.h"
 #import "CommentCell.h"
 #import "ModelTopicDetail.h"
+#import "ModelGroupDetail.h"
+
 
 @interface SpecificTopicViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -27,6 +29,8 @@
 
 ///存放话题详情的model
 @property (strong,nonatomic)ModelTopicDetail *modelDetail;
+///存放小组详情的model
+@property (strong,nonatomic) ModelGroupDetail *modelGroup;
 
 @end
 
@@ -54,15 +58,20 @@
     //评论cell
     [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
     
-    //显示数据
-    NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mLogo];
-    [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-    self.introductionLabel.text = self.model.mDestrible;
-    self.timeLabel.text = self.model.mCreateTime;
-    self.titleLabel.text = self.model.mTitle;
-    self.groupNameLabel.text = self.model.mGroupName;
+    
     //获取详情
     [self pullData:^{
+        //显示数据
+        NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelGroup.mLogo];
+        [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        self.introductionLabel.text = self.modelGroup.mDestrible;
+        self.groupNameLabel.text = self.modelGroup.mName;
+        self.leader.text = self.modelGroup.mGroupLeader;
+        self.memberCount.text = self.modelGroup.mMemberCount;
+        
+        self.timeLabel.text = self.model.mCreateTime;
+        self.titleLabel.text = self.model.mTitle;
+        
         
         self.contentTextView.text = self.modelDetail.mTalkContent;
         self.contentTextView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
@@ -158,7 +167,8 @@
         NSDictionary *para = @{@"method":@"followTalk",@"user_id":USER_ID,@"talk_id":self.model.mID};
         [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
-            NSLog(@"%@",responseObject);
+          
+            
             sender.selected = !sender.selected;
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -171,7 +181,7 @@
         NSDictionary *para = @{@"method":@"cancelFollowTalk",@"user_id":USER_ID,@"talk_id":self.model.mID};
         [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
-            NSLog(@"%@",responseObject);
+            
             sender.selected = !sender.selected;
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -189,6 +199,7 @@
 
 #pragma mark - 获取data
 - (void)pullData:(dispatch_block_t)block{
+    //获取项目详情
     NSDictionary *para = @{@"method":@"getDetailTalk",@"talk_id":self.model.mID};
     NSMutableDictionary *para2 = [NSMutableDictionary dictionaryWithDictionary:para];
     [para2 setValue:USER_ID forKey:@"user_id"];
@@ -198,20 +209,24 @@
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
-        //缺少获取小组
+       
         
         
-//        //参数
-//        NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};
-//        
-//        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-////            NSLog(@"%@",responseObject);
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            NSLog(@"%@",error);
-//        }];
+        //获取小组
+        NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};
         
-        block();
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            NSLog(@"%@",responseObject);
+            NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
+            
+            self.modelGroup = [ModelGroupDetail objectWithKeyValues:dic];
+            
+            block();
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+        }];
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"%@",error);

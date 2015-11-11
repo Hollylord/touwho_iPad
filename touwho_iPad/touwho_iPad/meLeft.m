@@ -25,7 +25,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 10;
+    return 6;
 }
 
 
@@ -52,18 +52,18 @@
         case 5:
             label.text = @"已发布的项目";
             break;
-        case 6:
-            label.text = @"关注的项目";
-            break;
-        case 7:
-            label.text = @"关注的机构";
-            break;
-        case 8:
-            label.text = @"关注的投资人";
-            break;
-        case 9:
-            label.text = @"风险评估测试";
-            break;
+//        case 6:
+//            label.text = @"关注的项目";
+//            break;
+//        case 7:
+//            label.text = @"关注的机构";
+//            break;
+//        case 8:
+//            label.text = @"关注的投资人";
+//            break;
+//        case 9:
+//            label.text = @"风险评估测试";
+//            break;
         default:
             break;
     }

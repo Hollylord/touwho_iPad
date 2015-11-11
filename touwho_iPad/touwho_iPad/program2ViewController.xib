@@ -191,7 +191,7 @@
                                 <action selector="watchVideo:" destination="-1" eventType="touchUpInside" id="zm9-Ht-ddf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-T3-nn8">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2m-T3-nn8">
                             <rect key="frame" x="842" y="15" width="61" height="23"/>
                             <animations/>
                             <state key="normal" title="关注" image="guanzhu1"/>

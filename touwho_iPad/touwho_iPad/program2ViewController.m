@@ -363,45 +363,45 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 }
 
 #pragma mark - 关注
-- (IBAction)followTheProgram:(UIButton *)sender {
-    
-    // 加关注/取消关注
-    if (sender.selected) {
-        //取消关注
-        [self cancelFollowedProject:^{
-            sender.selected = !sender.selected;
-        }];
-
-        
-    }
-    //加关注
-    else{
-        [self followProject:^{
-            sender.selected = !sender.selected;
-        }];
-       
-    }
-}
-- (void)cancelFollowedProject:(void(^)())completionBlock{
-    
-    //参数
-    NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":USER_ID,@"project_id":self.model1.mID};
-    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-    
-        
-        completionBlock();
-        
-    } failure:NULL];
-}
-- (void)followProject:(void(^)())completionBlock{
-    //参数
-    NSDictionary *para = @{@"method":@"followProject",@"user_id":USER_ID,@"project_id":self.model1.mID};
-    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        
-        completionBlock();
-        
-    } failure:NULL];
-}
+//- (IBAction)followTheProgram:(UIButton *)sender {
+//    
+//    // 加关注/取消关注
+//    if (sender.selected) {
+//        //取消关注
+//        [self cancelFollowedProject:^{
+//            sender.selected = !sender.selected;
+//        }];
+//
+//        
+//    }
+//    //加关注
+//    else{
+//        [self followProject:^{
+//            sender.selected = !sender.selected;
+//        }];
+//       
+//    }
+//}
+//- (void)cancelFollowedProject:(void(^)())completionBlock{
+//    
+//    //参数
+//    NSDictionary *para = @{@"method":@"cancelFollowProject",@"user_id":USER_ID,@"project_id":self.model1.mID};
+//    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//    
+//        
+//        completionBlock();
+//        
+//    } failure:NULL];
+//}
+//- (void)followProject:(void(^)())completionBlock{
+//    //参数
+//    NSDictionary *para = @{@"method":@"followProject",@"user_id":USER_ID,@"project_id":self.model1.mID};
+//    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//        
+//        completionBlock();
+//        
+//    } failure:NULL];
+//}
 
 
 @end

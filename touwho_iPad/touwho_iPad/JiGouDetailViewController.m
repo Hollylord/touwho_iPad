@@ -127,59 +127,59 @@
 }
 
 #pragma mark - 关注
-- (IBAction)focus:(UIButton *)sender {
-    //1 没有登录提示登录
-    if (!USER_ID) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"请您登录后再试";
-        [hud hide:YES afterDelay:1];
-        return ;
-    }
-    
-    // 取消关注
-    if (sender.selected) {
-        
-        [self cancelFollowedProject:^{
-            sender.selected = !sender.selected;
-        }];
-        
-        
-    }
-    // 加关注
-    else{
-        [self followProject:^{
-            sender.selected = !sender.selected;
-        }];
-        
-    }
-    
-}
-
-- (void)cancelFollowedProject:(void(^)())completionBlock{
-    
-    //参数
-    NSDictionary *para = @{@"method":@"followOrganization",@"user_id":USER_ID,@"org_id":self.model.mID};
-    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        completionBlock();
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@",error);
-    }];
-}
-
-- (void)followProject:(void(^)())completionBlock{
-    //参数
-    NSDictionary *para = @{@"method":@"cancelFollowOrganization",@"user_id":USER_ID,@"org_id":self.model.mID};
-    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        completionBlock();
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@",error);
-    }];
-}
+//- (IBAction)focus:(UIButton *)sender {
+//    //1 没有登录提示登录
+//    if (!USER_ID) {
+//        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//        hud.mode = MBProgressHUDModeText;
+//        hud.labelText = @"请您登录后再试";
+//        [hud hide:YES afterDelay:1];
+//        return ;
+//    }
+//    
+//    // 取消关注
+//    if (sender.selected) {
+//        
+//        [self cancelFollowedProject:^{
+//            sender.selected = !sender.selected;
+//        }];
+//        
+//        
+//    }
+//    // 加关注
+//    else{
+//        [self followProject:^{
+//            sender.selected = !sender.selected;
+//        }];
+//        
+//    }
+//    
+//}
+//
+//- (void)cancelFollowedProject:(void(^)())completionBlock{
+//    
+//    //参数
+//    NSDictionary *para = @{@"method":@"followOrganization",@"user_id":USER_ID,@"org_id":self.model.mID};
+//    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        completionBlock();
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        NSLog(@"%@",error);
+//    }];
+//}
+//
+//- (void)followProject:(void(^)())completionBlock{
+//    //参数
+//    NSDictionary *para = @{@"method":@"cancelFollowOrganization",@"user_id":USER_ID,@"org_id":self.model.mID};
+//    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        completionBlock();
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        NSLog(@"%@",error);
+//    }];
+//}
 
 
 @end

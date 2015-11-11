@@ -72,11 +72,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oI-qK-PfX">
-                    <rect key="frame" x="278" y="84" width="25" height="25"/>
-                    <animations/>
-                    <state key="normal" image="zan1"/>
-                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D3B-Br-doA">
                     <rect key="frame" x="18" y="259" width="300" height="494"/>
                     <animations/>
@@ -104,7 +99,6 @@
                 <constraint firstItem="xga-VI-mfX" firstAttribute="centerY" secondItem="1ua-D3-YlH" secondAttribute="centerY" id="GzP-a0-m4C"/>
                 <constraint firstItem="9c8-op-RTx" firstAttribute="leading" secondItem="Ugu-mO-YM1" secondAttribute="trailing" constant="8" id="ItQ-32-Duh"/>
                 <constraint firstItem="Ugu-mO-YM1" firstAttribute="centerY" secondItem="p1X-13-BTl" secondAttribute="centerY" id="YPn-eu-sht"/>
-                <constraint firstItem="5oI-qK-PfX" firstAttribute="leading" secondItem="2Rr-98-PMi" secondAttribute="trailing" constant="35" id="b4V-hJ-5t6"/>
                 <constraint firstItem="2Rr-98-PMi" firstAttribute="leading" secondItem="xga-VI-mfX" secondAttribute="trailing" constant="103" id="fL8-aT-Anm"/>
                 <constraint firstItem="t1F-ba-aPT" firstAttribute="top" secondItem="1ua-D3-YlH" secondAttribute="bottom" constant="15" id="gHg-pv-Muw"/>
                 <constraint firstItem="t1F-ba-aPT" firstAttribute="leading" secondItem="1ua-D3-YlH" secondAttribute="leading" id="hvd-Le-2YS"/>
@@ -113,14 +107,10 @@
                 <constraint firstItem="D3B-Br-doA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="kgs-4Y-Kep"/>
                 <constraint firstItem="p1X-13-BTl" firstAttribute="top" secondItem="t1F-ba-aPT" secondAttribute="bottom" constant="8" id="mCe-4p-qGB"/>
                 <constraint firstItem="1ua-D3-YlH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="71" id="sqD-ho-oB1"/>
-                <constraint firstItem="5oI-qK-PfX" firstAttribute="centerY" secondItem="2Rr-98-PMi" secondAttribute="centerY" id="tV1-LW-H8t"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="110.5" y="216"/>
         </view>
     </objects>
-    <resources>
-        <image name="zan1" width="25" height="25"/>
-    </resources>
 </document>
