@@ -23,4 +23,6 @@
 @property (copy,nonatomic) NSString *mIsPraise;
 ///评论点赞人数
 @property (copy,nonatomic) NSString *mTalkCommentPraizeCount;
+///评论id
+@property (copy,nonatomic) NSString *mTalkCommentID;
 @end

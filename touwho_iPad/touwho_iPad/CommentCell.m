@@ -29,6 +29,13 @@
     self.userNameLabel.text = model.mName;
     self.contentLabel.text = model.mTalkContent;
     self.timeLabel.text = model.mCreateTime;
+    //设置点赞按钮的状态
+    if ([model.mIsPraise isEqualToString:@"0"]) {
+        self.thumb.selected = NO;
+    }
+    else{
+        self.thumb.selected = YES;
+    }
     
 }
 
@@ -38,32 +45,32 @@
         return ;
     }
    
-//    //点赞 缺少评论id
-//    if (!sender.selected) {
-//        NSDictionary *para = @{@"method":@"praiseTalkComment",@"user_id":USER_ID,@"talk_comment_id":self.model.m};
-//        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            
-//            
-//            
-//            sender.selected = !sender.selected;
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            
-//            NSLog(@"%@",error);
-//        }];
-//    }
-//    //取消点赞
-//    else{
-//        NSDictionary *para = @{@"method":@"cancelFollowTalk",@"user_id":USER_ID,@"talk_id":self.model.mID};
-//        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            
-//            
-//            sender.selected = !sender.selected;
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            
-//            NSLog(@"%@",error);
-//        }];
-//    }
+    //点赞
+    if (!sender.selected) {
+        NSDictionary *para = @{@"method":@"praiseTalkComment",@"user_id":USER_ID,@"talk_comment_id":self.model.mTalkCommentID};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"%@",responseObject);
+            
+            sender.selected = !sender.selected;
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            NSLog(@"%@",error);
+        }];
+    }
+    //取消点赞
+    else{
+        NSDictionary *para = @{@"method":@"cancelPriaseTalkComment",@"user_id":USER_ID,@"talk_comment_id":self.model.mTalkCommentID};
+        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            
+            sender.selected = !sender.selected;
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            NSLog(@"%@",error);
+        }];
+    }
 }
 @end

@@ -217,7 +217,7 @@
 
     [BTNetWorking getDataWithPara:para2 success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
         
@@ -226,7 +226,7 @@
         //获取发话题的用户信息
         NSDictionary *temp = @{@"method":@"getMyInfo",@"user_id":@"38"};
         [BTNetWorking getDataWithPara:temp success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@",responseObject);
+//            NSLog(@"%@",responseObject);
             NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
             
             self.modelUser = [ModelForUser objectWithKeyValues:dic];

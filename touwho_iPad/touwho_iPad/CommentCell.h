@@ -10,6 +10,8 @@
 #import "ModelForComment.h"
 
 @interface CommentCell : UITableViewCell
+///点赞按钮
+@property (weak, nonatomic) IBOutlet UIButton *thumb;
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;

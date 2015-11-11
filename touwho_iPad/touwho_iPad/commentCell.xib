@@ -40,6 +40,7 @@
                         <rect key="frame" x="372" y="8" width="25" height="25"/>
                         <animations/>
                         <state key="normal" image="zan1"/>
+                        <state key="selected" image="zan2"/>
                         <connections>
                             <action selector="thumbUp:" destination="jX7-fI-CiS" eventType="touchUpInside" id="ZCg-er-14D"/>
                         </connections>
@@ -71,6 +72,7 @@
             <connections>
                 <outlet property="contentLabel" destination="fOy-CQ-aii" id="nMi-gv-gt6"/>
                 <outlet property="iconView" destination="VAs-3E-Dhd" id="BZ9-US-vbV"/>
+                <outlet property="thumb" destination="dkm-hc-0rv" id="Cap-r4-ttb"/>
                 <outlet property="timeLabel" destination="viE-vR-fC5" id="9FJ-N4-0yY"/>
                 <outlet property="userNameLabel" destination="UDK-mF-YgK" id="Clw-pw-VLe"/>
             </connections>
@@ -79,5 +81,6 @@
     </objects>
     <resources>
         <image name="zan1" width="25" height="25"/>
+        <image name="zan2" width="25" height="25"/>
     </resources>
 </document>
