@@ -19,6 +19,7 @@
 @property (copy,nonatomic) NSString *mAddress;
 ///活动时间
 @property (copy,nonatomic) NSString *mTime;
-///简介
-@property (copy,nonatomic) NSString *introduction;
+///活动小图标
+@property (copy,nonatomic) NSString *mSmallImageUrl;
+
 @end

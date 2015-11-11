@@ -20,7 +20,7 @@
 //导航栏
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
-- (IBAction)uploadCard:(UIButton *)sender;//点击上传名片
+
 
 @end
 

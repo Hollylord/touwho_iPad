@@ -50,60 +50,7 @@
         
         //菊花
         [MBProgressHUD showHUDAddedTo:self animated:YES];
-        
-        //1. 获取数据
-        NSDictionary *para = @{@"method":@"getActivity"};
-        [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@",responseObject);
-            
-            [MBProgressHUD hideHUDForView:self animated:YES];
-            
-            //json --> model
-            self.models = [ModelForActivity objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
-            
-            //2 显示数据
-            for (int i = 0; i < self.models.count; i ++) {
-                activityUnit *view = [[[NSBundle mainBundle] loadNibNamed:@"activityUnit" owner:nil options:nil] firstObject];
-                
-                [self.customViews addObject:view];
-                //传递数据
-                view.model = self.models[i];
-                //只能在self的基础上添加，不能在self的子视图上添加子控件
-                [scrollView addSubview:view];
-            }
-            
-            //3 更新约束
-            // 给activityUnit添加约束
-            for (int i = 0 ; i < self.customViews.count; i ++) {
-                UIView *view = self.customViews[i];
-                int column = i % 2;//列数
-                int line = (int) i / 2;//行数
-        
-                NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1 constant: MarginSide + column * (MarginSide + Width)];
-                NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTop multiplier:1 constant:MarginTop + line *(MarginTop + Height)];
-                NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Width];
-                NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Height];
-        
-                [view.superview addConstraints:@[leading,top]];
-                [view addConstraints:@[width,height]];
-                view.translatesAutoresizingMaskIntoConstraints = NO;
-            }
-        
-            //        设置scrollview的滚动范围
-            if (self.customViews.count > 0) {
-                UIView *view = self.customViews.lastObject;
-                NSLayoutConstraint *trailing2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
-                
-                NSLayoutConstraint *bottom2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-                [view.superview addConstraints:@[trailing2,bottom2]];
-            }
-            
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
-            NSLog(@"%@",error);
-        }];
-        
+        [self pullData];
 
     }
     return  self;
@@ -127,6 +74,65 @@
     
 }
 
-
+#pragma mark - 获取数据
+- (void)pullData{
+    
+    //1. 获取数据
+    NSDictionary *para = @{@"method":@"getActivity"};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        [MBProgressHUD hideHUDForView:self animated:YES];
+        
+        //json --> model
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            self.models = [ModelForActivity objectArrayWithKeyValuesArray:jsonArr];
+        }];
+        
+        
+        //2 显示数据
+        for (int i = 0; i < self.models.count; i ++) {
+            activityUnit *view = [[[NSBundle mainBundle] loadNibNamed:@"activityUnit" owner:nil options:nil] firstObject];
+            
+            [self.customViews addObject:view];
+            //传递数据
+            view.model = self.models[i];
+            //只能在self的基础上添加，不能在self的子视图上添加子控件
+            [scrollView addSubview:view];
+        }
+        
+        //3 更新约束
+        // 给activityUnit添加约束
+        for (int i = 0 ; i < self.customViews.count; i ++) {
+            UIView *view = self.customViews[i];
+            int column = i % 2;//列数
+            int line = (int) i / 2;//行数
+            
+            NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1 constant: MarginSide + column * (MarginSide + Width)];
+            NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTop multiplier:1 constant:MarginTop + line *(MarginTop + Height)];
+            NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Width];
+            NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:Height];
+            
+            [view.superview addConstraints:@[leading,top]];
+            [view addConstraints:@[width,height]];
+            view.translatesAutoresizingMaskIntoConstraints = NO;
+        }
+        
+        //        设置scrollview的滚动范围
+        if (self.customViews.count > 0) {
+            UIView *view = self.customViews.lastObject;
+            NSLayoutConstraint *trailing2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+            
+            NSLayoutConstraint *bottom2 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+            [view.superview addConstraints:@[trailing2,bottom2]];
+        }
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+}
 
 @end

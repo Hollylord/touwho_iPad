@@ -30,22 +30,22 @@
                         <constraint firstAttribute="width" constant="130" id="r6H-ev-I6K"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="独角兽路演活动" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-48-X54">
-                    <rect key="frame" x="214" y="23" width="119" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="活动名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-48-X54">
+                    <rect key="frame" x="240" y="23" width="68" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-8-27" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Th-kX-m00">
-                    <rect key="frame" x="161" y="64" width="83" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Th-kX-m00">
+                    <rect key="frame" x="161" y="64" width="68" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投壶网举办的关于独角兽项目的路演活动。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-cZ-aZD">
-                    <rect key="frame" x="161" y="93" width="222" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动地址" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-cZ-aZD">
+                    <rect key="frame" x="161" y="93" width="222" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,8 +70,8 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="address" destination="smh-cZ-aZD" id="kq2-CK-EDI"/>
                 <outlet property="iconView" destination="L2E-2Q-cL3" id="Mcl-0e-L51"/>
-                <outlet property="introductionLabel" destination="smh-cZ-aZD" id="7Ie-Sp-8uQ"/>
                 <outlet property="nameLabel" destination="YZZ-48-X54" id="UMG-It-VZL"/>
                 <outlet property="statusLabel" destination="ybl-FU-e3K" id="KzX-Li-NNf"/>
                 <outlet property="timeLabel" destination="5Th-kX-m00" id="lJH-IT-Ya2"/>

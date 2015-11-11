@@ -54,7 +54,9 @@
 
     self.nameLabel.text = model.mTitle;
     self.timeLabel.text = model.mTime;
-//    self.introductionLabel.text = model.introduction;
+    self.address.text = model.mAddress;
+    NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mSmallImageUrl];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
     
 }
 

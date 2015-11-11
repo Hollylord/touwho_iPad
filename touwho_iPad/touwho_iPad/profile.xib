@@ -182,7 +182,7 @@
                             <animations/>
                             <state key="normal" title="上传名片"/>
                             <connections>
-                                <action selector="uploadCard:" destination="-1" eventType="touchUpInside" id="zqL-2r-SXb"/>
+                                <action selector="uploadCard:" destination="-1" eventType="touchUpInside" id="22p-aA-861"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-OR-rmX" userLabel="名片">
