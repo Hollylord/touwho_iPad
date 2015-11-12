@@ -9,6 +9,7 @@
 #import "OtherCenterViewController.h"
 #import "FollowedSponsorTableViewCell.h"
 #import "ProgramsTableViewCell.h"
+#import "ModelMyProgram.h"
 
 
 @interface OtherCenterViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -16,16 +17,19 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UIImageView *headIconView;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+///已发布的项目models
+@property (strong,nonatomic) NSMutableArray *modelsPublished;
+///已投资的项目models
+@property (strong,nonatomic) NSMutableArray *modelsInvested;
 
 @end
 
 @implementation OtherCenterViewController
 {
-    UITableView *followedSponsorTableview;
- 
-    
-    //用来存放模型的数组，这个数组的模型最后要给cell，所以要用全局变量
-    NSMutableArray *arrayForSponsorModel;
+    UITableView *publishedTableView;
+    UITableView *investedTableView;
+    BOOL isAlreadyPullPublishedData;
+    BOOL isAlreadyPullInvestedData;
 }
 
 - (void)viewDidLoad {
@@ -40,15 +44,19 @@
     UINib *nib = [UINib nibWithNibName:@"meLeftCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"meLeftCell"];
     
-    //添加lastView
+    //添加rightView
     UIView *rightView = [[UIView alloc] init];
     [self.view addSubview:rightView];
     [self layoutForSubview:rightView];
     
-    //显示数据
+    //标志还没有获取数据
+    isAlreadyPullInvestedData = NO;
+    isAlreadyPullPublishedData = NO;
+    
+    
+    
     NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mAvatar];
     [self.headIconView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-    
     self.nickNameLabel.text = self.model.mName;
     
 }
@@ -57,10 +65,72 @@
     [super didReceiveMemoryWarning];
     
 }
+
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     
+}
+
+#pragma mark - 获取项目信息
+- (void)pullInvestedData{
+    if (isAlreadyPullInvestedData) {
+        [self presentPrograms];
+        return ;
+    }
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    //获取以投资的项目
+    NSDictionary *para2 = @{@"method":@"myInvesteProject",@"user_id":self.model.mID};
+    [BTNetWorking getDataWithPara:para2 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        //json --> models
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            self.modelsInvested = [ModelMyProgram objectArrayWithKeyValuesArray:jsonArr];
+        }];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        isAlreadyPullInvestedData = YES;
+        //显示数据
+        [self presentPrograms];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+    
+}
+
+- (void)pullPublishedData{
+    if (isAlreadyPullPublishedData) {
+       [self presentPublished];
+        return ;
+    }
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    //获取已发布的项目
+    NSDictionary *para = @{@"method":@"myBuildProject",@"user_id":self.model.mID};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //        NSLog(@"%@",responseObject);
+        
+        //json --> models
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            self.modelsPublished = [ModelMyProgram objectArrayWithKeyValuesArray:jsonArr];
+        }];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        isAlreadyPullPublishedData = YES;
+        
+        [self presentPublished];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
 }
 
 #pragma mark - tableView代理
@@ -70,16 +140,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //左边的tableview
     if ([tableView isEqual:self.tableview]) {
-        return 5;
+        return 2;
     }
+    //右边
     else{
-        if (tableView == followedSponsorTableview) {
+        //已发布的项目
+        if (tableView == publishedTableView) {
             
-            return arrayForSponsorModel.count;
+            return self.modelsPublished.count;
         }
+        //以投资的项目
         else{
-            return 10;
+            return self.modelsInvested.count;
         }
     }
 }
@@ -98,15 +172,6 @@
             case 1:
                 label.text = @"已发布的项目";
                 break;
-            case 2:
-                label.text = @"关注的项目";
-                break;
-            case 3:
-                label.text = @"关注的机构";
-                break;
-            case 4:
-                label.text = @"关注的投资人";
-                break;
             default:
                 break;
         }
@@ -114,20 +179,15 @@
     }
     //右边tableView
     else{
-        //关注的投资人的tableview
-        if (tableView == followedSponsorTableview) {
-            FollowedSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
-            
-            return cell;
+        ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
+        //已投资的项目
+        if ([tableView isEqual:investedTableView]) {
+            cell.model = self.modelsInvested[indexPath.row];
         }
-        //项目的tableview
-        else {
-            ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
-         
-            return cell;
+        else{
+            cell.model = self.modelsPublished[indexPath.row];
         }
-        
-        
+        return cell;
     }
 }
 
@@ -135,20 +195,29 @@
 
     switch (indexPath.row) {
         case 0:
-            [self presentPrograms];
+            //已投资的项目
+            
+            //获取这个用户的数据
+            [self pullInvestedData];
+            
             break;
         case 1:
-            [self presentPublished];
+            //已发布的项目
+            
+            //获取这个用户的数据
+            [self pullPublishedData];
+            
+            
             break;
-        case 2:
-            [self presentFollowedProgram];
-            break;
-        case 3:
-            [self presentFollowedInstitution];
-            break;
-        case 4:
-            [self presentFollowedSponsor];
-            break;
+//        case 2:
+//            [self presentFollowedProgram];
+//            break;
+//        case 3:
+//            [self presentFollowedInstitution];
+//            break;
+//        case 4:
+//            [self presentFollowedSponsor];
+//            break;
         default:
             break;
     }
@@ -156,7 +225,13 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    if ([tableView isEqual:self.tableview]) {
+        return 80;
+    }
+    else{
+        return 150;
+    }
+    
 }
 
 #pragma mark - 分享
@@ -195,6 +270,7 @@
     [lastSub removeFromSuperview];
     
     UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 605, self.view.bounds.size.height) style:UITableViewStylePlain];
+    investedTableView = programs;
     programs.delegate = self;
     programs.dataSource = self;
     
@@ -209,53 +285,54 @@
     [lastSub removeFromSuperview];
     
     UITableView *programs = [[UITableView alloc] init];
+    publishedTableView = programs;
     programs.delegate = self;
     programs.dataSource = self;
     [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
     [self.view addSubview:programs];
     [self layoutForSubview:programs];
 }
-//关注的项目
-- (void)presentFollowedProgram{
-    UIView *lastSub = [self.view.subviews lastObject];
-    [lastSub removeFromSuperview];
-    
-    UITableView *programs = [[UITableView alloc] init];
-    
-    programs.delegate = self;
-    programs.dataSource = self;
-    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-    [self.view addSubview:programs];
-    [self layoutForSubview:programs];
-}
-//关注的机构
-- (void)presentFollowedInstitution{
-    UIView *lastSub = [self.view.subviews lastObject];
-    [lastSub removeFromSuperview];
-    
-    UITableView *institution = [[UITableView alloc] init];
-    
-    institution.delegate = self;
-    institution.dataSource = self;
-    [institution registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-    [self.view addSubview:institution];
-    [self layoutForSubview:institution];
-    
-}
-
-//关注的投资人
-- (void)presentFollowedSponsor{
-    UIView *lastSub = [self.view.subviews lastObject];
-    [lastSub removeFromSuperview];
-    
-    UITableView *followedSponsor = [[UITableView alloc] init];
-    followedSponsorTableview = followedSponsor;
-    followedSponsor.delegate = self;
-    followedSponsor.dataSource = self;
-    [followedSponsor registerNib:[UINib nibWithNibName:@"FollowedSponsorCell" bundle:nil] forCellReuseIdentifier:@"FollowedSponsorCell"];
-    [self.view addSubview:followedSponsor];
-    [self layoutForSubview:followedSponsor];
-}
+////关注的项目
+//- (void)presentFollowedProgram{
+//    UIView *lastSub = [self.view.subviews lastObject];
+//    [lastSub removeFromSuperview];
+//    
+//    UITableView *programs = [[UITableView alloc] init];
+//    
+//    programs.delegate = self;
+//    programs.dataSource = self;
+//    [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+//    [self.view addSubview:programs];
+//    [self layoutForSubview:programs];
+//}
+////关注的机构
+//- (void)presentFollowedInstitution{
+//    UIView *lastSub = [self.view.subviews lastObject];
+//    [lastSub removeFromSuperview];
+//    
+//    UITableView *institution = [[UITableView alloc] init];
+//    
+//    institution.delegate = self;
+//    institution.dataSource = self;
+//    [institution registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+//    [self.view addSubview:institution];
+//    [self layoutForSubview:institution];
+//    
+//}
+//
+////关注的投资人
+//- (void)presentFollowedSponsor{
+//    UIView *lastSub = [self.view.subviews lastObject];
+//    [lastSub removeFromSuperview];
+//    
+//    UITableView *followedSponsor = [[UITableView alloc] init];
+//    followedSponsorTableview = followedSponsor;
+//    followedSponsor.delegate = self;
+//    followedSponsor.dataSource = self;
+//    [followedSponsor registerNib:[UINib nibWithNibName:@"FollowedSponsorCell" bundle:nil] forCellReuseIdentifier:@"FollowedSponsorCell"];
+//    [self.view addSubview:followedSponsor];
+//    [self layoutForSubview:followedSponsor];
+//}
 
 - (void)layoutForSubview:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.tableview attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];

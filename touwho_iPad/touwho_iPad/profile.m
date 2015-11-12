@@ -170,13 +170,21 @@
     NSString *nickName = self.nickNameView.text;
     NSString *email = self.eMailVIew.text;
     
-//    NSString *userID = [BTNetWorking getUserInfoWithKey:@"userID"];
+    [MBProgressHUD showHUDAddedTo:self animated:YES];
     //参数
     NSDictionary *para = @{@"method":@"setMyInfo",@"user_id":USER_ID,@"sex":sex,@"name":name,@"phone":phone,@"id_code":identiCode,@"nick_name":nickName,@"email":email};
     //上传
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
 //        NSLog(@"%@",responseObject);
+        [MBProgressHUD hideHUDForView:self animated:YES];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hud.mode = MBProgressHUDModeCustomView;
+        hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Checkmark"]];
+        hud.labelText = @"保存用户信息成功";
+        [hud hide:YES afterDelay:0.5];
+        
     } failure:NULL];
     
     

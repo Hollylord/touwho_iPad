@@ -187,7 +187,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         //去掉菊花
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         
         //json --> model
         NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
@@ -362,7 +362,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     
 }
 
-#pragma mark - 关注
+//#pragma mark - 关注
 //- (IBAction)followTheProgram:(UIButton *)sender {
 //    
 //    // 加关注/取消关注

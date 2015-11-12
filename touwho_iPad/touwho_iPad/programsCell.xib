@@ -13,8 +13,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="495" height="205"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="“独角兽”--心脑血管类医药" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5u-jm-gAG">
-                        <rect key="frame" x="201" y="8" width="201" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="“独角兽”--心脑血管类医药" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5u-jm-gAG">
+                        <rect key="frame" x="200" y="10" width="201" height="21"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,7 +28,7 @@
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="医药集团在工业和信息化部“2013年度中国医药工业百强榜” 中排名前60位，是医药工业百强中少数未上市的优秀医药公司，旗下药企上市确定性高，上市拟整体注入，易获较高估值溢价，是稀缺的投资标的。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wzS-UE-9aX">
-                        <rect key="frame" x="116" y="31" width="369" height="166"/>
+                        <rect key="frame" x="116" y="41" width="369" height="156"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -36,13 +36,13 @@
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="wzS-UE-9aX" firstAttribute="top" secondItem="o5u-jm-gAG" secondAttribute="bottom" constant="2" id="1MB-gK-lba"/>
+                    <constraint firstItem="wzS-UE-9aX" firstAttribute="top" secondItem="o5u-jm-gAG" secondAttribute="bottom" constant="10" id="1MB-gK-lba"/>
                     <constraint firstItem="NUe-ID-tit" firstAttribute="top" secondItem="YTE-iH-div" secondAttribute="top" constant="40" id="BrL-MZ-qfz"/>
                     <constraint firstItem="NUe-ID-tit" firstAttribute="leading" secondItem="YTE-iH-div" secondAttribute="leading" constant="8" id="KNB-xt-TL3"/>
                     <constraint firstAttribute="trailing" secondItem="wzS-UE-9aX" secondAttribute="trailing" constant="10" id="MBG-Z3-fR2"/>
                     <constraint firstAttribute="bottom" secondItem="wzS-UE-9aX" secondAttribute="bottom" constant="8" id="TGn-3Q-29H"/>
                     <constraint firstItem="o5u-jm-gAG" firstAttribute="centerX" secondItem="wzS-UE-9aX" secondAttribute="centerX" id="Vda-UH-rBc"/>
-                    <constraint firstItem="o5u-jm-gAG" firstAttribute="top" secondItem="YTE-iH-div" secondAttribute="top" constant="8" id="Ycz-sa-NFI"/>
+                    <constraint firstItem="o5u-jm-gAG" firstAttribute="top" secondItem="YTE-iH-div" secondAttribute="top" constant="10" id="Ycz-sa-NFI"/>
                     <constraint firstItem="NUe-ID-tit" firstAttribute="centerY" secondItem="YTE-iH-div" secondAttribute="centerY" id="env-gA-mvI"/>
                     <constraint firstItem="wzS-UE-9aX" firstAttribute="leading" secondItem="NUe-ID-tit" secondAttribute="trailing" constant="8" id="koI-gE-GZn"/>
                 </constraints>

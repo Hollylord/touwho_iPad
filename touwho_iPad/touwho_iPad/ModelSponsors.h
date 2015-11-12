@@ -15,4 +15,6 @@
 @property (copy,nonatomic) NSString *mAvatar;
 //投资金额
 @property (copy,nonatomic) NSString *mInvestMoney;
+///投资人的id
+@property (copy,nonatomic) NSString *mID;
 @end

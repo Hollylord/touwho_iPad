@@ -62,13 +62,14 @@
         [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"%@",responseObject);
             
-            NSString *res = [[responseObject objectForKey:@"value"] objectForKey:@"resCode"];
+            NSString *res = [[[responseObject objectForKey:@"value"]firstObject] objectForKey:@"resCode"];
             if ([res isEqualToString:@"0"]) {
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 hud.mode = MBProgressHUDModeText;
                 hud.labelText = @"保存数据成功，等待后台审核！";
                 [hud hide:YES afterDelay:1];
                 hud.completionBlock = ^(){
+                    [self.view endEditing:YES];
                     [self dismissViewControllerAnimated:YES completion:NULL];
                 };
             }
