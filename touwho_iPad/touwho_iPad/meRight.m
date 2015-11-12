@@ -30,7 +30,7 @@
 @implementation meRight
 {
     UITableView *institutionTableView;
-//    UITableView *investedProgramsTableView;
+    UITableView *investedProgramsTableView;
 //    UITableView *publishedProgramsTableView;
 //    UITableView *followedProgramsTableView;
     UITableView *followedSponsorTableview;
@@ -127,6 +127,7 @@
         }
         
         UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+        investedProgramsTableView = programs;
         programs.delegate = self;
         programs.dataSource = self;
         
@@ -297,7 +298,7 @@
         
     }
     //项目tableview 3个
-    else{
+    else if ([tableView isEqual:investedProgramsTableView]){
         UIViewController *VC = [self viewController];
         program2ViewController *programVC = [[program2ViewController alloc] initWithNibName:@"program2ViewController" bundle:nil];
         //传递数据
