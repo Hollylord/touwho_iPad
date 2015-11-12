@@ -49,12 +49,18 @@
     
     //监听通知：获取最新头像
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(headImage:) name:@"setHeadImageView" object:nil];
+    //监听通知：删除头像
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteHeadIcon) name:@"changeHeadIcon" object:nil];
     
     //取出本地头像
     UIImage *image = [self searchImageFromCacheWithFileName:@"headIcon"];
     if (image) {
         UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
         self.headImageView.image = newImage;
+    }
+    else{
+        UIImage *head = [UIImage imageNamed:@"zhanweitu"];
+        self.headImageView.image = [UIImage imageClipsWithHeadIcon:head sideWidth:0];
     }
     
     
@@ -152,6 +158,15 @@
         self.me.selected = YES;
     }
     
+}
+#pragma mark - 收到通知
+- (void)deleteHeadIcon{
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"headIcon"];
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    [mgr removeItemAtPath:filePath error:nil];
+    
+    UIImage *head = [UIImage imageNamed:@"zhanweitu"];
+    self.headImageView.image = [UIImage imageClipsWithHeadIcon:head sideWidth:0];
 }
 
 //接到通知换头像

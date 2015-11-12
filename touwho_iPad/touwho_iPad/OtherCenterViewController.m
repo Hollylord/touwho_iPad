@@ -353,6 +353,7 @@
     [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[self.model.mID]];
     
 }
+
 - (void)openSessionByClientId:(NSString*)clientId navigationToIMWithTargetClientIDs:(NSArray *)clientIDs {
     [[LeanMessageManager manager] openSessionWithClientID:clientId completion:^(BOOL succeeded, NSError *error) {
         if(!error){

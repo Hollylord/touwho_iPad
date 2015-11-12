@@ -69,6 +69,8 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user"];
         
         [self dismissViewControllerAnimated:YES completion:^{
+            //修改头像的通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeHeadIcon" object:nil];
             //发送点击了项目按钮的通知
             [[NSNotificationCenter defaultCenter] postNotificationName:@"programNotification" object:nil];
         }];
