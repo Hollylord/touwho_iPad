@@ -17,6 +17,7 @@
 
 @property (copy ,nonatomic) NSString *friendIconURL;
 @property (copy ,nonatomic) NSString *friendId;
+@property (copy,nonatomic) NSString *friendNickName;
 
 - (instancetype)initWithConversation:(AVIMConversation*)conversation;
 

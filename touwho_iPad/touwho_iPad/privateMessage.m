@@ -41,7 +41,7 @@
     
     
     //创建长连接和会话: 将自己的id和朋友的id赋值
-    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[@"22"]];
+    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[@"38"]];
 //    [self openSessionByClientId:kMichaelClientID navigationToIMWithTargetClientIDs:@[kLindaClientID]];
     
     

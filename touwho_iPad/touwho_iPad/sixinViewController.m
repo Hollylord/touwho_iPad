@@ -65,6 +65,7 @@ typedef void(^personInfo)(NSString *iconURL,NSString *nickName);
         self.chatModel = [[ChatModel alloc] initWithConversation:_conversation];
         self.chatModel.friendId = self.friendId;
         self.chatModel.friendIconURL = iconURL;
+        self.chatModel.friendNickName = nickName;
         WEAKSELF
         [self.chatModel loadMessagesWhenInitWithBlock:^{
             [weakSelf.chatTableView reloadData];
@@ -300,7 +301,7 @@ typedef void(^personInfo)(NSString *iconURL,NSString *nickName);
 - (void)pullFriendDataWithPersonId:(NSString *)personId andPersonInfoBlock:(personInfo)block{
     NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":personId};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+        NSLog(@"%@",responseObject);
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
         
         ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];

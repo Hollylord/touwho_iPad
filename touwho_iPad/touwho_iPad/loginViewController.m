@@ -94,13 +94,14 @@
     
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"%@",responseObject);
         NSDictionary *result = responseObject;
         //验证成功
-        if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]) {
+        if ([[[[result objectForKey:@"value"] firstObject] objectForKey:@"resCode"] isEqualToString:@"0"]) {
             //去除小菊花
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             
-            NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
+            NSString *userID = [[[result objectForKey:@"value"]firstObject] objectForKey:@"mID"];
             
             //保存用户信息
             NSDictionary *dic = @{@"userName":phoneNumber,@"userID":userID};

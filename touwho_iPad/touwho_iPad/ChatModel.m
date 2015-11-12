@@ -162,6 +162,8 @@
         [dict setObject:@(UUMessageFromOther) forKey:@"from"];
     }
     [dict setObject:[timestamp description] forKey:@"strTime"];
+    
+    
     [dict setObject:[self displayNameByClientId:typedMessage.clientId] forKey:@"strName"];
     [dict setObject:[self avatarUrlByClientId:typedMessage.clientId] forKey:@"strIcon"];
     switch (msgType) {
@@ -259,7 +261,16 @@
  * 配置用户名
  */
 - (NSString*)displayNameByClientId:(NSString*)clientId{
-    return clientId;
+    if (clientId == USER_ID) {
+        NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+        NSString *userName = [user objectForKey:@"userName"];
+        return userName;
+    }
+    //朋友的nickName
+    else{
+        return self.friendNickName;
+    }
+    
 }
 
 @end
