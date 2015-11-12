@@ -39,18 +39,18 @@
  *  已发起的项目
  */
 - (void)presentPublished;
-/**
- *  关注的项目
- */
-- (void)presentFollowedProgram;
-/**
- *  关注的机构
- */
-- (void)presentFollowedInstitution;
-/**
- *  关注的投资人
- */
-- (void)presentFollowedSponsor;
+///**
+// *  关注的项目
+// */
+//- (void)presentFollowedProgram;
+///**
+// *  关注的机构
+// */
+//- (void)presentFollowedInstitution;
+///**
+// *  关注的投资人
+// */
+//- (void)presentFollowedSponsor;
 @end
 
 

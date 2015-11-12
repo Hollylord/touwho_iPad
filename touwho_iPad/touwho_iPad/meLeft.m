@@ -101,29 +101,29 @@
         [self.delegate presentPublished];
         
     }
-    else if (indexPath.row == 6)
-    {
-        [self.delegate presentFollowedProgram];
-        
-    }
-    else if (indexPath.row == 7)
-    {
-        [self.delegate presentFollowedInstitution];
-        
-    }
-    else if (indexPath.row == 8)
-    {
-        [self.delegate presentFollowedSponsor];
-        
-    }
-    else if (indexPath.row == 9)
-    {
-        UIViewController *VC = [self viewController];
-        RiskTestViewController *riskVC = [[RiskTestViewController alloc]initWithNibName:@"RiskTestViewController" bundle:nil];
-        riskVC.modalPresentationStyle = UIModalPresentationFormSheet;
-        [VC presentViewController:riskVC animated:YES completion:NULL];
-        
-    }
+//    else if (indexPath.row == 6)
+//    {
+//        [self.delegate presentFollowedProgram];
+//        
+//    }
+//    else if (indexPath.row == 7)
+//    {
+//        [self.delegate presentFollowedInstitution];
+//        
+//    }
+//    else if (indexPath.row == 8)
+//    {
+//        [self.delegate presentFollowedSponsor];
+//        
+//    }
+//    else if (indexPath.row == 9)
+//    {
+//        UIViewController *VC = [self viewController];
+//        RiskTestViewController *riskVC = [[RiskTestViewController alloc]initWithNibName:@"RiskTestViewController" bundle:nil];
+//        riskVC.modalPresentationStyle = UIModalPresentationFormSheet;
+//        [VC presentViewController:riskVC animated:YES completion:NULL];
+//        
+//    }
 }
 
 #pragma mark - 按钮点击

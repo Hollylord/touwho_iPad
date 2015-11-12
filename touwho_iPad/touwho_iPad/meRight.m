@@ -119,6 +119,7 @@
 
 #pragma mark 已投资的项目
 - (void)presentPrograms{
+    //获取以投资的项目数据
     [self retriveDataFromServerWithMethod:@"myInvesteProject" andCompletionBlock:^{
         
         for (UIView *view in self.subviews) {
@@ -140,6 +141,7 @@
 
 #pragma mark 已发布的项目
 - (void)presentPublished{
+    //获取已发布的项目的数据
     [self retriveDataFromServerWithMethod:@"myBuildProject" andCompletionBlock:^{
         
         for (UIView *view in self.subviews) {
@@ -159,61 +161,61 @@
     
 }
 
-#pragma mark 关注的项目
-- (void)presentFollowedProgram{
-    [self retriveDataFromServerWithMethod:@"myFollowProject" andCompletionBlock:^{
-        
-        for (UIView *view in self.subviews) {
-            [view removeFromSuperview];
-        }
-        
-        UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-        
-        programs.delegate = self;
-        programs.dataSource = self;
-        [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-        [self addSubview:programs];
-        [self layoutForSubview:programs];
-    }];
-    
-    
-}
-
-#pragma mark 关注的机构
-- (void)presentFollowedInstitution{
-    
-    [self retriveInstitustionDataFromServerWithCompletionBlock:^{
-        
-        for (UIView *view in self.subviews) {
-            [view removeFromSuperview];
-        }
-        
-        UITableView *institution = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-        institutionTableView = institution;
-        institution.delegate = self;
-        institution.dataSource = self;
-        [institution registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
-        [self addSubview:institution];
-        [self layoutForSubview:institution];
-    }];
-    
-    
-}
-
-#pragma mark 关注的投资人
-- (void)presentFollowedSponsor{
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    UITableView *followedSponsor = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
-    followedSponsorTableview = followedSponsor;
-    followedSponsor.delegate = self;
-    followedSponsor.dataSource = self;
-    [followedSponsor registerNib:[UINib nibWithNibName:@"FollowedSponsorCell" bundle:nil] forCellReuseIdentifier:@"FollowedSponsorCell"];
-    [self addSubview:followedSponsor];
-    [self layoutForSubview:followedSponsor];
-}
+//#pragma mark 关注的项目
+//- (void)presentFollowedProgram{
+//    [self retriveDataFromServerWithMethod:@"myFollowProject" andCompletionBlock:^{
+//        
+//        for (UIView *view in self.subviews) {
+//            [view removeFromSuperview];
+//        }
+//        
+//        UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+//        
+//        programs.delegate = self;
+//        programs.dataSource = self;
+//        [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+//        [self addSubview:programs];
+//        [self layoutForSubview:programs];
+//    }];
+//    
+//    
+//}
+//
+//#pragma mark 关注的机构
+//- (void)presentFollowedInstitution{
+//    
+//    [self retriveInstitustionDataFromServerWithCompletionBlock:^{
+//        
+//        for (UIView *view in self.subviews) {
+//            [view removeFromSuperview];
+//        }
+//        
+//        UITableView *institution = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+//        institutionTableView = institution;
+//        institution.delegate = self;
+//        institution.dataSource = self;
+//        [institution registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
+//        [self addSubview:institution];
+//        [self layoutForSubview:institution];
+//    }];
+//    
+//    
+//}
+//
+//#pragma mark 关注的投资人
+//- (void)presentFollowedSponsor{
+//    for (UIView *view in self.subviews) {
+//        [view removeFromSuperview];
+//    }
+//    
+//    UITableView *followedSponsor = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+//    followedSponsorTableview = followedSponsor;
+//    followedSponsor.delegate = self;
+//    followedSponsor.dataSource = self;
+//    [followedSponsor registerNib:[UINib nibWithNibName:@"FollowedSponsorCell" bundle:nil] forCellReuseIdentifier:@"FollowedSponsorCell"];
+//    [self addSubview:followedSponsor];
+//    [self layoutForSubview:followedSponsor];
+//}
 
 #pragma mark 消息
 - (void)presentMessage{
@@ -261,13 +263,13 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //投资人tableview
+    //关注的投资人tableview
     if ([tableView isEqual:followedSponsorTableview]) {
         FollowedSponsorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FollowedSponsorCell" forIndexPath:indexPath];
         
         return cell;
     }
-    //机构
+    //关注的机构机构
     else if ([tableView isEqual:institutionTableView]){
         ProgramsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell" forIndexPath:indexPath];
         cell.model_b = self.models[indexPath.row];
@@ -298,7 +300,7 @@
     else{
         UIViewController *VC = [self viewController];
         program2ViewController *programVC = [[program2ViewController alloc] initWithNibName:@"program2ViewController" bundle:nil];
-        //缺少传递数据工作
+        //传递数据
         NSDictionary *model = [[self.modelsPrograms objectAtIndex:indexPath.row] keyValues];
         programVC.model1 = [ModelForProgramView objectWithKeyValues:model];
         [VC.navigationController pushViewController:programVC animated:YES];
@@ -332,11 +334,15 @@
     NSDictionary *para = @{@"method":method,@"user_id":USER_ID};
     
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
-        NSArray *programs = [responseObject objectForKey:@"value"];
+        NSLog(@"%@",responseObject);
         
-        //json数组 --> model数组
-        self.modelsPrograms = [ModelMyProgram objectArrayWithKeyValuesArray:programs];
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            //json数组 --> model数组
+            self.modelsPrograms = [ModelMyProgram objectArrayWithKeyValuesArray:jsonArr];
+            
+        }];
+        
+        
         
         block();
    
@@ -346,24 +352,25 @@
     }];
     
 }
+
 ///获取机构数据
-- (void) retriveInstitustionDataFromServerWithCompletionBlock:(void(^)())block{
-    //参数
-    NSDictionary *para = @{@"method":@"myFollowOrganization",@"user_id":USER_ID};
-    
-    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
-        NSArray *programs = [responseObject objectForKey:@"value"];
-
-        //json数组 --> model数组
-        self.models = [ModelMyInstitution objectArrayWithKeyValuesArray:programs];
-        
-        block();
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@",error);
-    }];
-
-}
+//- (void) retriveInstitustionDataFromServerWithCompletionBlock:(void(^)())block{
+//    //参数
+//    NSDictionary *para = @{@"method":@"myFollowOrganization",@"user_id":USER_ID};
+//    
+//    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"%@",responseObject);
+//        NSArray *programs = [responseObject objectForKey:@"value"];
+//
+//        //json数组 --> model数组
+//        self.models = [ModelMyInstitution objectArrayWithKeyValuesArray:programs];
+//        
+//        block();
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        NSLog(@"%@",error);
+//    }];
+//
+//}
 @end
