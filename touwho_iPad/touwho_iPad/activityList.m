@@ -81,7 +81,7 @@
     NSDictionary *para = @{@"method":@"getActivity"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@",responseObject);
-        
+        //关闭菊花
         [MBProgressHUD hideHUDForView:self animated:YES];
         
         //json --> model

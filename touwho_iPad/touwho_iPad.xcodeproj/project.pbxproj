@@ -181,6 +181,7 @@
 		A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDDC1B9EB7050023AB6E /* replyViewController.xib */; };
 		A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */; };
 		A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */; };
+		A1C7B0AA1BF42FF1008E3C27 /* ModelActivityDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7B0A91BF42FF1008E3C27 /* ModelActivityDetail.m */; };
 		A1CB0BDC1BE84DFB009BE9FA /* BTNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */; };
 		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; };
 		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; };
@@ -526,6 +527,8 @@
 		A1C3EDE21B9EBB640023AB6E /* sixinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sixinViewController.h; sourceTree = "<group>"; };
 		A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sixinViewController.m; sourceTree = "<group>"; };
 		A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixinViewController.xib; sourceTree = "<group>"; };
+		A1C7B0A81BF42FF1008E3C27 /* ModelActivityDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelActivityDetail.h; sourceTree = "<group>"; };
+		A1C7B0A91BF42FF1008E3C27 /* ModelActivityDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelActivityDetail.m; sourceTree = "<group>"; };
 		A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNetWorking.h; sourceTree = "<group>"; };
 		A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNetWorking.m; sourceTree = "<group>"; };
 		A1CC0C6A1BAC167700168536 /* UIImage+UIimage_HeadIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIimage_HeadIcon.h"; sourceTree = "<group>"; };
@@ -1486,6 +1489,25 @@
 			name = "聊天";
 			sourceTree = "<group>";
 		};
+		A1C7B0AB1BF43003008E3C27 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7B0A81BF42FF1008E3C27 /* ModelActivityDetail.h */,
+				A1C7B0A91BF42FF1008E3C27 /* ModelActivityDetail.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A1C7B0AD1BF43013008E3C27 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1ED80E81BF08607007D8F4C /* ActivityDetailViewController.h */,
+				A1ED80E91BF08607007D8F4C /* ActivityDetailViewController.m */,
+				A1ED80EA1BF08607007D8F4C /* ActivityDetailViewController.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		A1CB0BDD1BE85D64009BE9FA /* 网络数据类 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1749,9 +1771,8 @@
 		A1ED80ED1BF0860B007D8F4C /* 活动详细信息 */ = {
 			isa = PBXGroup;
 			children = (
-				A1ED80E81BF08607007D8F4C /* ActivityDetailViewController.h */,
-				A1ED80E91BF08607007D8F4C /* ActivityDetailViewController.m */,
-				A1ED80EA1BF08607007D8F4C /* ActivityDetailViewController.xib */,
+				A1C7B0AB1BF43003008E3C27 /* model */,
+				A1C7B0AD1BF43013008E3C27 /* controller */,
 			);
 			name = "活动详细信息";
 			sourceTree = "<group>";
@@ -2116,6 +2137,7 @@
 				A18338501BC665AB000866EB /* ModelForTopic.m in Sources */,
 				A193F68F1BB90CD9007A697F /* publish.m in Sources */,
 				A10076BE1BA91D780097987B /* profile.m in Sources */,
+				A1C7B0AA1BF42FF1008E3C27 /* ModelActivityDetail.m in Sources */,
 				A187233C1BB3D94700CD3630 /* RiskTestViewController.m in Sources */,
 				A15920E51BEC9E89005BAB17 /* ModelPhotos.m in Sources */,
 				A1B88CDA1BA177E5008FA7C9 /* UUMessageContentButton.m in Sources */,
