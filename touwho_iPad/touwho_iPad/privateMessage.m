@@ -11,7 +11,7 @@
 
 @implementation privateMessage
 - (void)awakeFromNib{
-    [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"ChatTableViewCell"];
     
 }
 
@@ -29,7 +29,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatTableViewCell" forIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -42,9 +42,7 @@
     
     //创建长连接和会话: 将自己的id和朋友的id赋值
     [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[@"38"]];
-//    [self openSessionByClientId:kMichaelClientID navigationToIMWithTargetClientIDs:@[kLindaClientID]];
-    
-    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

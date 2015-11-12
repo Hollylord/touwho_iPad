@@ -182,6 +182,8 @@
 		A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */; };
 		A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */; };
 		A1C7B0AA1BF42FF1008E3C27 /* ModelActivityDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7B0A91BF42FF1008E3C27 /* ModelActivityDetail.m */; };
+		A1C7B0B11BF48778008E3C27 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7B0AF1BF48778008E3C27 /* ChatTableViewCell.m */; };
+		A1C7B0B21BF48778008E3C27 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C7B0B01BF48778008E3C27 /* ChatTableViewCell.xib */; };
 		A1CB0BDC1BE84DFB009BE9FA /* BTNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */; };
 		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; };
 		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; };
@@ -529,6 +531,9 @@
 		A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixinViewController.xib; sourceTree = "<group>"; };
 		A1C7B0A81BF42FF1008E3C27 /* ModelActivityDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelActivityDetail.h; sourceTree = "<group>"; };
 		A1C7B0A91BF42FF1008E3C27 /* ModelActivityDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelActivityDetail.m; sourceTree = "<group>"; };
+		A1C7B0AE1BF48778008E3C27 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
+		A1C7B0AF1BF48778008E3C27 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
+		A1C7B0B01BF48778008E3C27 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNetWorking.h; sourceTree = "<group>"; };
 		A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNetWorking.m; sourceTree = "<group>"; };
 		A1CC0C6A1BAC167700168536 /* UIImage+UIimage_HeadIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIimage_HeadIcon.h"; sourceTree = "<group>"; };
@@ -957,6 +962,9 @@
 				A1C3EDD11B9E8D140023AB6E /* privateMessage.h */,
 				A1C3EDD21B9E8D140023AB6E /* privateMessage.m */,
 				A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */,
+				A1C7B0AE1BF48778008E3C27 /* ChatTableViewCell.h */,
+				A1C7B0AF1BF48778008E3C27 /* ChatTableViewCell.m */,
+				A1C7B0B01BF48778008E3C27 /* ChatTableViewCell.xib */,
 			);
 			name = "私信列表";
 			sourceTree = "<group>";
@@ -1968,6 +1976,7 @@
 				A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */,
 				A1E03BD01BD8E414008247E0 /* AboutViewController.xib in Resources */,
 				A1211E9B1BB2413500B25AA4 /* UMSShareListController.xib in Resources */,
+				A1C7B0B21BF48778008E3C27 /* ChatTableViewCell.xib in Resources */,
 				A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */,
 				A1B88CC61BA16A55008FA7C9 /* 0.jpeg in Resources */,
 				A1AC16CF1BBA8986002A8F70 /* riskPreference.plist in Resources */,
@@ -2151,6 +2160,7 @@
 				A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */,
 				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
 				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
+				A1C7B0B11BF48778008E3C27 /* ChatTableViewCell.m in Sources */,
 				A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */,
 				A18338561BC66C5A000866EB /* ModelForComment.m in Sources */,
 				A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */,

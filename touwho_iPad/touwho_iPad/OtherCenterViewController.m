@@ -10,6 +10,7 @@
 #import "FollowedSponsorTableViewCell.h"
 #import "ProgramsTableViewCell.h"
 #import "ModelMyProgram.h"
+#import "sixinViewController.h"
 
 
 @interface OtherCenterViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -344,4 +345,39 @@
     [view.superview layoutIfNeeded];
     
 }
+
+#pragma mark - 私信
+- (IBAction)chatWithSomeone:(UIButton *)sender {
+    
+    //创建长连接和会话: 将自己的id和朋友的id赋值
+    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[self.model.mID]];
+    
+}
+- (void)openSessionByClientId:(NSString*)clientId navigationToIMWithTargetClientIDs:(NSArray *)clientIDs {
+    [[LeanMessageManager manager] openSessionWithClientID:clientId completion:^(BOOL succeeded, NSError *error) {
+        if(!error){
+            ConversationType type;
+            if(clientIDs.count>1){
+                type=ConversationTypeGroup;
+            }else{
+                type=ConversationTypeOneToOne;
+            }
+            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:type completion:^(AVIMConversation *conversation, NSError *error) {
+                if(error){
+                    NSLog(@"error=%@",error);
+                }else{
+                    sixinViewController *vc = [[sixinViewController alloc] initWithConversation:conversation];
+                    vc.friendId = [clientIDs firstObject];
+                    vc.modalPresentationStyle = UIModalPresentationFormSheet;
+                    
+                    //弹出回复控制器 界面
+                    [self presentViewController:vc animated:YES completion:NULL];
+                }
+            }];
+        }else{
+            NSLog(@"error=%@",error);
+        }
+    }];
+}
+
 @end

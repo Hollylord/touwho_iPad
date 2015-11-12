@@ -40,6 +40,9 @@
                         <constraint firstAttribute="height" constant="25" id="rwx-a2-OAJ"/>
                     </constraints>
                     <state key="normal" title="私信" backgroundImage="anniuHei"/>
+                    <connections>
+                        <action selector="chatWithSomeone:" destination="-1" eventType="touchUpInside" id="5zb-cR-dz3"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D3B-Br-doA">
                     <rect key="frame" x="18" y="259" width="300" height="494"/>
