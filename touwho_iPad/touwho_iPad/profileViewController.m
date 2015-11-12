@@ -117,8 +117,7 @@
 }
 
 
-#pragma mark - 按钮点击
-//上传名片
+#pragma mark 名片拍照
 - (IBAction)uploadCard:(UIButton *)sender {
     NSString *title = [sender titleForState:UIControlStateNormal];
     if ([title isEqualToString:@"上传名片"]) {
@@ -135,7 +134,7 @@
     
 }
 
-//设置
+#pragma mark 点击设置
 - (IBAction)setting:(UIBarButtonItem *)sender {
     SettingViewController *setVC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:setVC];
@@ -168,6 +167,7 @@
     }
     
     
+    
     //将拍得的照片显示到个人信息页面上的名片上
     if (self.presentBusinessCard) {
         self.presentBusinessCard(image);
@@ -178,11 +178,45 @@
     //拼接文件目录
     NSString *filePath = [cachePath stringByAppendingPathComponent:@"businessCard"];
     //图片转NSData
-    NSData * imageData = UIImagePNGRepresentation(image);
+    NSData * imageData = UIImageJPEGRepresentation(image, 1);
     //保存图片
     [imageData writeToFile:filePath atomically:YES];
+    //上传给服务器
+    [self sendPostCardToServer:imageData];
     
+}
+
+#pragma mark - 上传图片
+- (void) sendPostCardToServer:(NSData *)data{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    
+    [mgr.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *para = @{@"method":@"uploadCard",@"user_id":USER_ID};
+    
+    [mgr POST:SERVER_API_URL parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        //上传数据 必须指明mimeType
+        //name是：服务器收到的文件名字
+        [formData appendPartWithFileData:data name:@"postCard" fileName:@"postCard" mimeType:@"image/png"];
+        
+    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSLog(@"%@",responseObject);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeCustomView;
+        hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Checkmark"]];
+        hud.labelText = @"上传名片成功";
+        [hud hide:YES afterDelay:0.5];
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        
+        NSLog(@"%@",error);
+    }];
 }
 
 @end
