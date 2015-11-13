@@ -8,10 +8,25 @@
 
 #import "privateMessage.h"
 #import "sixinViewController.h"
+#import "profileViewController.h"
+#import "ChatTableViewCell.h"
+
+
+@interface privateMessage ()
+
+@end
 
 @implementation privateMessage
+
 - (void)awakeFromNib{
     [self.tableView registerNib:[UINib nibWithNibName:@"ChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"ChatTableViewCell"];
+    
+    profileViewController *superVC = (profileViewController *)[self viewController];
+    superVC.didReceiveBlock = ^(NSMutableArray *array){
+        self.conversations = array;
+        
+        [self.tableView reloadData];
+    };
     
 }
 
@@ -23,14 +38,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return self.conversations.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatTableViewCell" forIndexPath:indexPath];
+    ChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatTableViewCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.model = self.conversations[indexPath.row];
     
     return cell;
 }
@@ -38,9 +53,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    ModelChating *model = self.conversations[indexPath.row];
     //创建长连接和会话: 将自己的id和朋友的id赋值
-    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[@"38"]];
+    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[[model.members firstObject]]];
 
 }
 

@@ -26,6 +26,9 @@
     
     //设置leanCloud
     [AVOSCloud setApplicationId:@"9vyUjfA3OLiQeVD3P0TojM5Y" clientKey:@"QDSFGoFRxgDzohuf4JYRFvmD"];
+    [AVIMClient setUserOptions:@{
+                                 AVIMUserOptionUseUnread: @(YES)
+                                 }];
     
     //设置友盟分享
     [UMSocialData setAppKey:@"5602081a67e58ec377001b17"];
@@ -49,6 +52,10 @@
     
     //设置app的bage为0
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+    
+    
+    
     return YES;
 }
 
@@ -138,4 +145,6 @@
     completionHandler(UIBackgroundFetchResultNewData);
     
 }
+
+
 @end

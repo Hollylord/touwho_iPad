@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "meLeft.h"
+#import "privateMessage.h"
 
 @interface meRight : UIView <meLeftDelegate,UITableViewDataSource,UITableViewDelegate>
 
+///私信页面
+@property (strong,nonatomic) privateMessage *messageView;
+///存放对话的数组
+@property (strong,nonatomic) NSMutableArray *conversations;
 @end

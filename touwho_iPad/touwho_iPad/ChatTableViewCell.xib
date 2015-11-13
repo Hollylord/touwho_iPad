@@ -12,9 +12,36 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="490" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsK-G6-khC" userLabel="头像">
+                        <rect key="frame" x="20" y="29" width="70" height="70"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="PUY-uS-sma"/>
+                            <constraint firstAttribute="height" constant="70" id="UM5-0M-YGF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBn-3a-9RX" userLabel="昵称">
+                        <rect key="frame" x="120" y="53" width="42" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <animations/>
+                <constraints>
+                    <constraint firstItem="dBn-3a-9RX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5tZ-fb-ZPJ"/>
+                    <constraint firstItem="dBn-3a-9RX" firstAttribute="leading" secondItem="hsK-G6-khC" secondAttribute="trailing" constant="30" id="Ig6-yq-hny"/>
+                    <constraint firstItem="hsK-G6-khC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Yna-4y-BoF"/>
+                    <constraint firstItem="hsK-G6-khC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fBn-u1-43s"/>
+                </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="headIcon" destination="hsK-G6-khC" id="BuA-LC-ypJ"/>
+                <outlet property="nickName" destination="dBn-3a-9RX" id="DGd-6U-Wko"/>
+            </connections>
             <point key="canvasLocation" x="341" y="240.5"/>
         </tableViewCell>
     </objects>

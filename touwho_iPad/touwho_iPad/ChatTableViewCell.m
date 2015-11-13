@@ -11,7 +11,9 @@
 @implementation ChatTableViewCell
 
 - (void)awakeFromNib {
+    
     // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,4 +22,20 @@
     // Configure the view for the selected state
 }
 
+- (void)setModel:(ModelChating *)model{
+    if (_model != model) {
+        _model = model;
+    }
+    
+    NSString *userID = [model.members firstObject];
+    if (!userID) {
+        return ;
+    }
+    [BTNetWorking pullUserInfoFromServerWith:userID andBlock:^(ModelForUser *user) {
+        NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,user.mAvatar];
+        [self.headIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        self.nickName.text = user.mNickName;
+        
+    }];
+}
 @end

@@ -14,4 +14,6 @@
 @property (copy,nonatomic) void (^presentBusinessCard)(UIImage *);
 @property (strong,nonatomic) ModelForUser *model;
 
+///收到消息后的block
+@property (strong,nonatomic) void(^didReceiveBlock)(NSMutableArray *models);
 @end

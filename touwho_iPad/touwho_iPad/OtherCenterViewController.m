@@ -357,6 +357,8 @@
 - (void)openSessionByClientId:(NSString*)clientId navigationToIMWithTargetClientIDs:(NSArray *)clientIDs {
     [[LeanMessageManager manager] openSessionWithClientID:clientId completion:^(BOOL succeeded, NSError *error) {
         if(!error){
+            
+            
             ConversationType type;
             if(clientIDs.count>1){
                 type=ConversationTypeGroup;
@@ -367,6 +369,9 @@
                 if(error){
                     NSLog(@"error=%@",error);
                 }else{
+                    //保存数据coreData
+                    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
+                    
                     sixinViewController *vc = [[sixinViewController alloc] initWithConversation:conversation];
                     vc.friendId = [clientIDs firstObject];
                     vc.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -380,5 +385,7 @@
         }
     }];
 }
+
+//存入coreData
 
 @end

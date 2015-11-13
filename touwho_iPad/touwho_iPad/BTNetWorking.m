@@ -10,6 +10,7 @@
 
 
 
+
 @implementation BTNetWorking
 
 + (void)getDataWithPara:(NSDictionary *)para success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
@@ -64,5 +65,111 @@
         [hud hide:YES afterDelay:1];
         return NO;
     }
+}
+
+
+
++ (void)setupCoreDataAndSaveConversation:(AVIMConversation *)conversation{
+    
+    //1.  从应用程序包中加载模型文件
+    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
+    //2. 传入模型对象，初始化NSPersistentStoreCoordinator
+    NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
+    //3. 构建SQLite数据库文件的路径
+    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"conversation.data"]];
+    //4.  添加持久化存储库，这里使用SQLite作为存储库
+    NSError *error = nil;
+    NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
+    if (store == nil) { // 直接抛异常
+        [NSException raise:@"添加数据库错误" format:@"%@", [error localizedDescription]];
+    }
+    //5 初始化上下文，设置persistentStoreCoordinator属性
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    context.persistentStoreCoordinator = psc;
+    
+    //6.从数据库中查询数据
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Conversation"];
+    request.predicate = [NSPredicate predicateWithFormat:@"conversationId CONTAINS %@",conversation.conversationId];
+    NSArray *objs = [context executeFetchRequest:request error:nil];
+    
+    //数据库中没有这个conversationId
+    if (objs.count == 0) {
+        
+        //7. 存入对象
+        NSManagedObject *talk = [NSEntityDescription insertNewObjectForEntityForName:@"Conversation" inManagedObjectContext:context];
+        [talk setValue:conversation.conversationId forKey:@"conversationId"];
+        [talk setValue:conversation.name forKey:@"name"];
+        [talk setValue:conversation.lastMessageAt forKey:@"lastMessageAt"];
+        [talk setValue:conversation.members forKey:@"members"];
+        
+        BOOL success = [context save:nil];
+        if (success) {
+            NSLog(@"成功保存");
+        }
+        
+    }
+    //数据库有这个对话就更新它
+    else{
+        [objs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSManagedObject *temp = obj;
+            [temp setValue:conversation.name forKey:@"name"];
+            [temp setValue:conversation.lastMessageAt forKey:@"lastMessageAt"];
+            [temp setValue:conversation.members forKey:@"members"];
+            
+            
+        }];
+        
+        BOOL success = [context save:nil];
+        if (success) {
+            NSLog(@"更新成功");
+        }
+    }
+
+    
+}
+    
+
++ (NSArray *)withDrawAllConversationFromDatabase{
+    
+    //1.  从应用程序包中加载模型文件
+    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
+    //2. 传入模型对象，初始化NSPersistentStoreCoordinator
+    NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
+    //3. 构建SQLite数据库文件的路径
+    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"conversation.data"]];
+    //4.  添加持久化存储库，这里使用SQLite作为存储库
+    NSError *error = nil;
+    NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
+    if (store == nil) { // 直接抛异常
+        [NSException raise:@"添加数据库错误" format:@"%@", [error localizedDescription]];
+    }
+    //5 初始化上下文，设置persistentStoreCoordinator属性
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    context.persistentStoreCoordinator = psc;
+
+    //6.从数据库中查询数据
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Conversation"];
+
+    NSArray *results = [context executeFetchRequest:request error:nil];
+    
+    return results;
+}
+
++ (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void (^)(ModelForUser *))block{
+    NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":user_id};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        //json --> model
+        NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
+        
+        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+        
+        block(model);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
+    }];
 }
 @end

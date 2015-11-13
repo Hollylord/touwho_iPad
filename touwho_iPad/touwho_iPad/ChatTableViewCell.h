@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelChating.h"
 
 @interface ChatTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *headIcon;
+@property (weak, nonatomic) IBOutlet UILabel *nickName;
+@property (strong,nonatomic) ModelChating *model;
 @end

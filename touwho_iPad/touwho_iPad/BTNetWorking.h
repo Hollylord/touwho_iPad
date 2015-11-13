@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVOSCloudIM.h>
+#import "ModelForUser.h"
+
 
 typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 @interface BTNetWorking : NSObject
@@ -22,6 +25,15 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 
 ///根据字体和内容计算高度
 + (CGFloat)calcutateHeightForTextviewWithFont:(UIFont *)font andContent:(NSString *)content andWidth:(CGFloat)width;
-
+///判断用户是否已登录
 + (BOOL)isUserAlreadyLoginWithAlertView:(UIView *)view;
+
+///保存对话数据到数据库
++ (void)setupCoreDataAndSaveConversation:(AVIMConversation *)conversation;
+
+///查询所有的对话
++ (NSArray *)withDrawAllConversationFromDatabase;
+
+///获取用户信息接口
++ (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void(^)(ModelForUser *user))block;
 @end

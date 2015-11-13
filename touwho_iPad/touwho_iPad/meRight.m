@@ -12,7 +12,7 @@
 #import "ProgramsTableViewCell.h"
 #import "FollowedSponsorTableViewCell.h"
 #import "ModelMyProgram.h"
-#import "privateMessage.h"
+
 
 #import "apply.h"
 #import "program2ViewController.h"
@@ -224,6 +224,9 @@
         [view removeFromSuperview];
     }
     privateMessage *view = [[[NSBundle mainBundle] loadNibNamed:@"privateMessage" owner:nil options:nil]firstObject];
+    self.messageView = view;
+    //传递数据
+    view.conversations = self.conversations;
     [self addSubview:view];
     [self layoutForSubview:view];
     

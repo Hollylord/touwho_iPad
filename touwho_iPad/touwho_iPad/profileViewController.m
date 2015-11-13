@@ -13,13 +13,17 @@
 #import "HeadIconViewController.h"
 #import "UIImage+UIimage_HeadIcon.h"
 #import "SettingViewController.h"
+#import <AVOSCloudIM.h>
+#import "ModelChating.h"
 
-@interface profileViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface profileViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVIMClientDelegate>
+
 @property (strong, nonatomic) IBOutlet meLeft *meLeftView;
-@property (strong,nonatomic) UIView *meRightView;
+@property (strong,nonatomic) meRight *meRightView;
 //导航栏
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-
+///leanCloud客户端
+@property (strong,nonatomic) AVIMClient *client;
 
 
 @end
@@ -74,8 +78,14 @@
     //设置右边为左边代理
     me.delegate          = meRightView;
     
-   
-
+    //建立与leanCloud的长连接
+    
+    self.client = [[AVIMClient alloc]init];
+    self.client.delegate = self;
+    [self buildConnectWithLeanCloud];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,6 +94,20 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+#pragma mark - 建立LeanCloud
+- (void)buildConnectWithLeanCloud{
+    //建立长连接
+    [self.client openWithClientId:USER_ID callback:^(BOOL succeeded, NSError *error) {
+        if (!succeeded) {
+            [self buildConnectWithLeanCloud];
+        }
+        else{
+            [self updateConversations];
+        }
+    }];
+
 }
 
 #pragma mark - 布局
@@ -219,4 +243,39 @@
     }];
 }
 
+#pragma mark - LeanCloud代理
+- (void)conversation:(AVIMConversation *)conversation didReceiveUnread:(NSInteger)unread{
+    //存储收消息的conversation
+    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
+    
+    [self updateConversations];
+    
+    
+}
+
+- (void) updateConversations{
+    
+    //将所有存储的conversation取出来
+    NSArray *results = [BTNetWorking withDrawAllConversationFromDatabase];
+    
+    NSMutableArray *models = [NSMutableArray array];
+    
+    
+    //数组转models
+    for (NSManagedObject *obj in results) {
+        ModelChating *model = [[ModelChating alloc] init];
+        model.name = [obj valueForKey:@"name"];
+        model.members = [obj valueForKey:@"members"];
+        model.lastMessageAt = [obj valueForKey:@"lastMessageAt"];
+        [models addObject:model];
+    }
+    
+    
+    if (self.didReceiveBlock) {
+        self.didReceiveBlock(models);
+    }
+    else{
+        self.meRightView.conversations = models;
+    }
+}
 @end
