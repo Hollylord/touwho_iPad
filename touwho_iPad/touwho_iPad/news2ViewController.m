@@ -103,7 +103,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised,NSString *l
     //加载网络新闻内容
     [self getData:^(NSString *content, NSString *ispraised, NSString *largeImageUrl, NSString *bottomImageUrl) {
         
-        if (!largeImageUrl) {
+        if ([largeImageUrl isEqualToString:@""]) {
             //没有上图
             [self.topImageView removeFromSuperview];
         }
@@ -254,7 +254,8 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised,NSString *l
     
     //加载数据
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
+        
         NSArray *temp = [responseObject objectForKey:@"value"];
         NSDictionary *dic = [temp firstObject];
         NSString *content = [dic objectForKey:@"mContent"];

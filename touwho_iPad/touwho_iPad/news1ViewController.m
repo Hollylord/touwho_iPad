@@ -163,31 +163,35 @@
         }
         self.allNewsViewArr = nil;
         
-        //获得新闻数组
-        NSArray *newsList = [responseObject objectForKey:@"value"];
-        //获得最老的新闻id
-        lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
- 
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            //获得新闻数组
+            NSArray *newsList = jsonArr;
+            //获得最老的新闻id
+            lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
+            
+            
+            for (NSDictionary *dic in newsList) {
+                
+                //转化为model
+                [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+                    //设置json和模型名称对应:
+                    //key:模型名，value：json名
+                    return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
+                }];
+                
+                //用字典创建模型
+                ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
+                
+                
+                model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
+                
+                
+                //存入模型
+                [self.allNewsArr addObject:model];
+            }
+        }];
         
-        for (NSDictionary *dic in newsList) {
-            
-            //转化为model
-            [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
-                //设置json和模型名称对应:
-                //key:模型名，value：json名
-                return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
-            }];
-
-            //用字典创建模型
-           ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
-
-            
-            model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
-
-            
-            //存入模型
-            [self.allNewsArr addObject:model];
-        }
         
         currentCountsOfModel = self.allNewsArr.count;
 
@@ -206,11 +210,7 @@
             [self.allNewsViewArr addObject:view];
         }
         
-//        测试使用
-//        newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];
-//        [self.scrollView addSubview:view];
-//        [self layoutForNewsMenu:view index:6];
-//        [self.allNewsViewArr addObject:view];
+
         
         [self.scrollView setNeedsUpdateConstraints];
         
@@ -246,40 +246,46 @@
         //设置参数
         NSDictionary *para = @{@"method":@"getNewsTitle_Next",@"news_id":lastNewsID};
         [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//            NSLog(@"%@",responseObject);
-            
-            //获得新闻数组
-            NSArray *newsList = [responseObject objectForKey:@"value"];
-            
-            //判断有没有错误
-            if ([[responseObject objectForKey:@"value"] objectForKey:@"resValue"]) {
-                //没有更多的数据
-                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                hud.mode = MBProgressHUDModeText;
-                hud.labelText = [[responseObject objectForKey:@"value"] objectForKey:@"resValue"];
-                [hud hide:YES afterDelay:0.5];
-                return ;
-            }
-            
-            for (NSDictionary *dic in newsList) {
+            NSLog(@"%@",responseObject);
+            [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
                 
-                //转化为model
-                [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
-                    //设置json和模型名称对应:
-                    //key:模型名，value：json名
-                    return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
-                }];
+                //判断有没有错误
+                if ([[responseObject objectForKey:@"value"] objectForKey:@"resValue"]) {
+                    //没有更多的数据
+                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.mode = MBProgressHUDModeText;
+                    hud.labelText = [[responseObject objectForKey:@"value"] objectForKey:@"resValue"];
+                    [hud hide:YES afterDelay:0.5];
+                    return ;
+                }
                 
-                //用字典创建模型
-                ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
-               
-                model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
-            
+                //获得新闻数组
+                NSArray *newsList = jsonArr;
+                //获得最老的新闻id
+                lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
                 
-                //存入模型
-                [self.allNewsArr addObject:model];
-            }
-           
+                
+                for (NSDictionary *dic in newsList) {
+                    
+                    //转化为model
+                    [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+                        //设置json和模型名称对应:
+                        //key:模型名，value：json名
+                        return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
+                    }];
+                    
+                    //用字典创建模型
+                    ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
+                    
+                    
+                    model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
+                    
+                    
+                    //存入模型
+                    [self.allNewsArr addObject:model];
+                }
+            }];
+   
         } failure:NULL];
     }
 }
