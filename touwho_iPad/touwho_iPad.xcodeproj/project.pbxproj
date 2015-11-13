@@ -174,7 +174,6 @@
 		A1C07CDF1B9C3D8200A2F1CB /* zhuce.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C07CDE1B9C3D8200A2F1CB /* zhuce.xib */; };
 		A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C07CE11B9C41C800A2F1CB /* zhuce.m */; };
 		A1C239FE1B81BC41004E6DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C239FC1B81BC41004E6DAC /* Main.storyboard */; };
-		A1C3EDD01B9E84510023AB6E /* notification.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDCF1B9E84510023AB6E /* notification.m */; };
 		A1C3EDD31B9E8D140023AB6E /* privateMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDD21B9E8D140023AB6E /* privateMessage.m */; };
 		A1C3EDD51B9E8D250023AB6E /* privateMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */; };
 		A1C3EDDD1B9EB7050023AB6E /* replyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDDB1B9EB7050023AB6E /* replyViewController.m */; };
@@ -197,10 +196,7 @@
 		A1D6200A1BA6C0D2009FCA1F /* SpecificTopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D620081BA6C0D2009FCA1F /* SpecificTopicViewController.xib */; };
 		A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78DD31B9D341D00C136C3 /* forgetPassword.m */; };
 		A1D78DD61B9D342700C136C3 /* forgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD51B9D342700C136C3 /* forgetPassword.xib */; };
-		A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78DD81B9D5D4B00C136C3 /* message.xib */; };
-		A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78E1C1B9D943200C136C3 /* notification.xib */; };
 		A1D78E1F1B9D945F00C136C3 /* commentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D78E1E1B9D945F00C136C3 /* commentCell.xib */; };
-		A1D78E221B9D96BB00C136C3 /* message.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D78E211B9D96BB00C136C3 /* message.m */; };
 		A1D9FB4C1BD8C6E800321F7E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */; };
 		A1D9FB4D1BD8C6E800321F7E /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */; };
 		A1DAFAB41B8C1A4300189680 /* circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DAFAB31B8C1A4300189680 /* circle.xib */; };
@@ -518,8 +514,6 @@
 		A1C07CE01B9C41C800A2F1CB /* zhuce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zhuce.h; sourceTree = "<group>"; };
 		A1C07CE11B9C41C800A2F1CB /* zhuce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zhuce.m; sourceTree = "<group>"; };
 		A1C239FD1B81BC41004E6DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A1C3EDCE1B9E84510023AB6E /* notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notification.h; sourceTree = "<group>"; };
-		A1C3EDCF1B9E84510023AB6E /* notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notification.m; sourceTree = "<group>"; };
 		A1C3EDD11B9E8D140023AB6E /* privateMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateMessage.h; sourceTree = "<group>"; };
 		A1C3EDD21B9E8D140023AB6E /* privateMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = privateMessage.m; sourceTree = "<group>"; };
 		A1C3EDD41B9E8D250023AB6E /* privateMessage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = privateMessage.xib; sourceTree = "<group>"; };
@@ -555,11 +549,7 @@
 		A1D78DD21B9D341D00C136C3 /* forgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPassword.h; sourceTree = "<group>"; };
 		A1D78DD31B9D341D00C136C3 /* forgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPassword.m; sourceTree = "<group>"; };
 		A1D78DD51B9D342700C136C3 /* forgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = forgetPassword.xib; sourceTree = "<group>"; };
-		A1D78DD81B9D5D4B00C136C3 /* message.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = message.xib; sourceTree = "<group>"; };
-		A1D78E1C1B9D943200C136C3 /* notification.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = notification.xib; sourceTree = "<group>"; };
 		A1D78E1E1B9D945F00C136C3 /* commentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = commentCell.xib; sourceTree = "<group>"; };
-		A1D78E201B9D96BB00C136C3 /* message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message.h; sourceTree = "<group>"; };
-		A1D78E211B9D96BB00C136C3 /* message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = message.m; sourceTree = "<group>"; };
 		A1D9FB491BD8C6E800321F7E /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		A1D9FB4A1BD8C6E800321F7E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		A1D9FB4B1BD8C6E800321F7E /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -967,26 +957,6 @@
 				A1C7B0B01BF48778008E3C27 /* ChatTableViewCell.xib */,
 			);
 			name = "私信列表";
-			sourceTree = "<group>";
-		};
-		A187AD671B9FFE6500BBA856 /* 通知列表 */ = {
-			isa = PBXGroup;
-			children = (
-				A1C3EDCE1B9E84510023AB6E /* notification.h */,
-				A1C3EDCF1B9E84510023AB6E /* notification.m */,
-				A1D78E1C1B9D943200C136C3 /* notification.xib */,
-			);
-			name = "通知列表";
-			sourceTree = "<group>";
-		};
-		A187AD681B9FFE6C00BBA856 /* 消息界面 */ = {
-			isa = PBXGroup;
-			children = (
-				A1D78E201B9D96BB00C136C3 /* message.h */,
-				A1D78E211B9D96BB00C136C3 /* message.m */,
-				A1D78DD81B9D5D4B00C136C3 /* message.xib */,
-			);
-			name = "消息界面";
 			sourceTree = "<group>";
 		};
 		A189BF2F1BD4997700E5CA37 /* Sina */ = {
@@ -1406,19 +1376,9 @@
 				A1BE7F4B1B8DB2AC00E76711 /* meRight.h */,
 				A1BE7F4C1B8DB2AC00E76711 /* meRight.m */,
 				A1C3EDD91B9EB61C0023AB6E /* 个人详情 */,
-				A1C3EDD81B9EB60D0023AB6E /* 消息 */,
-			);
-			name = "个人中心右边";
-			sourceTree = "<group>";
-		};
-		A1C3EDD81B9EB60D0023AB6E /* 消息 */ = {
-			isa = PBXGroup;
-			children = (
-				A187AD681B9FFE6C00BBA856 /* 消息界面 */,
-				A187AD671B9FFE6500BBA856 /* 通知列表 */,
 				A187AD661B9FFE5800BBA856 /* 私信列表 */,
 			);
-			name = "消息";
+			name = "个人中心右边";
 			sourceTree = "<group>";
 		};
 		A1C3EDD91B9EB61C0023AB6E /* 个人详情 */ = {
@@ -1985,8 +1945,6 @@
 				A183384A1BC65665000866EB /* xinwen.plist in Resources */,
 				A1211E9C1BB2413500B25AA4 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				A11451C41B8DC47700E45381 /* apply.xib in Resources */,
-				A1D78E1D1B9D943200C136C3 /* notification.xib in Resources */,
-				A1D78DD91B9D5D4B00C136C3 /* message.xib in Resources */,
 				A1E9BE901BA7B66C00876186 /* JiGouUnit.xib in Resources */,
 				A1AC16CD1BBA88F2002A8F70 /* interestIndustry.plist in Resources */,
 				A1AC16D31BBA914F002A8F70 /* gender.plist in Resources */,
@@ -2105,7 +2063,6 @@
 				A1B88CEC1BA17843008FA7C9 /* MJRefreshFooterView.m in Sources */,
 				A1F6BBF61BE741440039CD37 /* ModelSponsors.m in Sources */,
 				A19D09431B7C2DF100094B81 /* AppDelegate.m in Sources */,
-				A1C3EDD01B9E84510023AB6E /* notification.m in Sources */,
 				A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */,
 				A1B88CF51BA179B0008FA7C9 /* ChatModel.m in Sources */,
 				A1B88CEE1BA17843008FA7C9 /* NSDate+Utils.m in Sources */,
@@ -2174,7 +2131,6 @@
 				A1AB1F1D1BB4F4C50069818F /* RiskPrompt.m in Sources */,
 				A1D288071BE9B75F007A0D41 /* ModelMyInstitution.m in Sources */,
 				A1B2CF441B7D7D9D001B25CE /* CATransform3DPerspect.m in Sources */,
-				A1D78E221B9D96BB00C136C3 /* message.m in Sources */,
 				A13EEA8C1B8EF90E0052C2A7 /* news1ViewController.m in Sources */,
 				A1B88CF81BA179C7008FA7C9 /* UUMessage.m in Sources */,
 				A1EB96751BC8C41D00C15A39 /* ModelForActivity.m in Sources */,

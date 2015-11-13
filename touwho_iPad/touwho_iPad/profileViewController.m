@@ -9,7 +9,7 @@
 #import "profileViewController.h"
 #import "meRight.h"
 #import "meLeft.h"
-#import "notification.h"
+
 #import "HeadIconViewController.h"
 #import "UIImage+UIimage_HeadIcon.h"
 #import "SettingViewController.h"

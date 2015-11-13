@@ -7,12 +7,12 @@
 //
 
 #import "meRight.h"
-#import "message.h"
 #import "profileViewController.h"
 #import "profile.h"
 #import "ProgramsTableViewCell.h"
 #import "FollowedSponsorTableViewCell.h"
 #import "ModelMyProgram.h"
+#import "privateMessage.h"
 
 #import "apply.h"
 #import "program2ViewController.h"
@@ -223,7 +223,7 @@
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
-    message *view = [[[NSBundle mainBundle] loadNibNamed:@"message" owner:nil options:nil]firstObject];
+    privateMessage *view = [[[NSBundle mainBundle] loadNibNamed:@"privateMessage" owner:nil options:nil]firstObject];
     [self addSubview:view];
     [self layoutForSubview:view];
     
