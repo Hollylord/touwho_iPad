@@ -41,7 +41,8 @@
 - (IBAction)cancelClick:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
-//点击本地头像
+
+//点击选择本地头像
 - (IBAction)localIconClick:(UIButton *)sender {
     MyImagePickerViewController *headIconPicker = [[MyImagePickerViewController alloc] init];
     headIconPicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
@@ -51,10 +52,7 @@
     [self presentViewController:headIconPicker animated:YES completion:NULL];
 }
 
-//点击上传
-- (IBAction)uploadClick:(UIButton *)sender {
-    
-}
+
 
 //点击确定
 - (IBAction)OK:(UIBarButtonItem *)sender {
@@ -68,8 +66,7 @@
         self.passImage(imageForHead);
     }
     
-    //传头像给左菜单的头像
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self userInfo:@{@"headIcon":imageForHead}];
+    
     
     //上传头像给服务器
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
@@ -102,6 +99,9 @@
         [[NSUserDefaults standardUserDefaults] setObject:user2 forKey:@"user"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
+        //给做菜单头像发通知，要它换头像
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:self];
+        
         [self dismissViewControllerAnimated:YES completion:NULL];
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         
@@ -121,13 +121,6 @@
     //显示图片在imageView上
     self.headImage.image = image;
     imageForHead = image;
-    
-    //图片压缩成NSData 可以适合上传
-    NSData *compressed = UIImageJPEGRepresentation(image, 0.5);
-    //存储图片
-    NSString *cache = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *filePath = [cache stringByAppendingPathComponent:@"headIcon"];
-    [compressed writeToFile:filePath atomically:YES];
     
 }
 

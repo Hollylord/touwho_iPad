@@ -98,6 +98,7 @@
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[[result objectForKey:@"value"] firstObject] objectForKey:@"resCode"] isEqualToString:@"0"]) {
+            
             //去除小菊花
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             

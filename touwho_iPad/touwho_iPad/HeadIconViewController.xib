@@ -44,14 +44,6 @@
                         <action selector="localIconClick:" destination="-1" eventType="touchUpInside" id="4s0-oT-85n"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-3v-1Kg">
-                    <rect key="frame" x="100" y="381" width="400" height="30"/>
-                    <animations/>
-                    <state key="normal" title="上传" backgroundImage="anniuYellow"/>
-                    <connections>
-                        <action selector="uploadClick:" destination="-1" eventType="touchUpInside" id="dc0-vU-yPA"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EKP-sf-B4k">
                     <rect key="frame" x="100" y="59" width="400" height="250"/>
                     <animations/>
@@ -70,10 +62,7 @@
                 <constraint firstItem="hPQ-SN-f2l" firstAttribute="width" secondItem="EKP-sf-B4k" secondAttribute="width" id="NyO-OY-ar3"/>
                 <constraint firstItem="hPQ-SN-f2l" firstAttribute="top" secondItem="EKP-sf-B4k" secondAttribute="bottom" constant="22" id="Qb3-VK-5UB"/>
                 <constraint firstItem="EKP-sf-B4k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WT1-wr-Acn"/>
-                <constraint firstItem="6w8-3v-1Kg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f4O-vY-gEj"/>
                 <constraint firstItem="IAF-kf-Vy4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="klw-Xi-OQ0"/>
-                <constraint firstItem="6w8-3v-1Kg" firstAttribute="top" secondItem="hPQ-SN-f2l" secondAttribute="bottom" constant="20" id="ndN-FI-59y"/>
-                <constraint firstItem="6w8-3v-1Kg" firstAttribute="width" secondItem="EKP-sf-B4k" secondAttribute="width" id="zMV-Jb-CZY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
