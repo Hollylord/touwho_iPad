@@ -202,4 +202,18 @@
     }];
 }
 
++ (void)sendUserInfoToServerWith:(NSDictionary *)dic andBlock:(void (^)(BOOL))block{
+    NSMutableDictionary *para = [NSMutableDictionary dictionaryWithObject:@"method" forKey:@"setMyInfo"];
+    //添加其他参数
+    [para addEntriesFromDictionary:dic];
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        block(YES);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        block(NO);
+    }];
+}
+
 @end

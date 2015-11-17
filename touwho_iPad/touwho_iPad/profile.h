@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface profile : UIView
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 ///名片照片
 @property (weak, nonatomic) IBOutlet UIImageView *businessCard;
 @property (weak, nonatomic) IBOutlet UIButton *takePhotoBtn;

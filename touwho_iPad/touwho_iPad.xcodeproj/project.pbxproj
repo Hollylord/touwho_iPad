@@ -225,6 +225,7 @@
 		A1ED80EB1BF08607007D8F4C /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ED80E91BF08607007D8F4C /* ActivityDetailViewController.m */; };
 		A1ED80EC1BF08607007D8F4C /* ActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1ED80EA1BF08607007D8F4C /* ActivityDetailViewController.xib */; };
 		A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */; };
+		A1F6B0731BFB10550098CC59 /* BTIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6B0721BFB10550098CC59 /* BTIndicator.m */; };
 		A1F6BBF31BE704040039CD37 /* ModelProgramDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BBF21BE704040039CD37 /* ModelProgramDetails.m */; };
 		A1F6BBF61BE741440039CD37 /* ModelSponsors.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BBF51BE741440039CD37 /* ModelSponsors.m */; };
 		A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD81451BC79DA800F269E3 /* CommentCell.m */; };
@@ -596,6 +597,8 @@
 		A1ED80EA1BF08607007D8F4C /* ActivityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityDetailViewController.xib; sourceTree = "<group>"; };
 		A1F0E5271BABAB5F00BA0BDD /* MarsTransToEarth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarsTransToEarth.h; sourceTree = "<group>"; };
 		A1F0E5281BABAB5F00BA0BDD /* MarsTransToEarth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsTransToEarth.m; sourceTree = "<group>"; };
+		A1F6B0711BFB10550098CC59 /* BTIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTIndicator.h; sourceTree = "<group>"; };
+		A1F6B0721BFB10550098CC59 /* BTIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTIndicator.m; sourceTree = "<group>"; };
 		A1F6BBF11BE704040039CD37 /* ModelProgramDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelProgramDetails.h; sourceTree = "<group>"; };
 		A1F6BBF21BE704040039CD37 /* ModelProgramDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelProgramDetails.m; sourceTree = "<group>"; };
 		A1F6BBF41BE741440039CD37 /* ModelSponsors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSponsors.h; sourceTree = "<group>"; };
@@ -1489,6 +1492,8 @@
 			children = (
 				A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */,
 				A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */,
+				A1F6B0711BFB10550098CC59 /* BTIndicator.h */,
+				A1F6B0721BFB10550098CC59 /* BTIndicator.m */,
 			);
 			name = BTNetworking;
 			sourceTree = "<group>";
@@ -2086,6 +2091,7 @@
 				A1B88CD21BA16A91008FA7C9 /* UUProgressHUD.m in Sources */,
 				A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */,
 				A1C07CE21B9C41C800A2F1CB /* zhuce.m in Sources */,
+				A1F6B0731BFB10550098CC59 /* BTIndicator.m in Sources */,
 				A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */,
 				A1987E051BB1361700CC4130 /* sponsorTableViewCell.m in Sources */,
 				A132592E1B82C65000A327C6 /* ASProgressPopUpView.m in Sources */,

@@ -198,12 +198,19 @@
                             <animations/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELD-bj-ihu">
-                            <rect key="frame" x="152" y="330" width="56" height="20"/>
+                            <rect key="frame" x="152" y="330" width="63" height="20"/>
                             <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="所处行业">
                                     <attributes>
                                         <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <font key="NSFont" size="14" name="STHeitiSC-Light"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="*">
+                                    <attributes>
+                                        <color key="NSColor" red="0.97254901960784312" green="0.074509803921568626" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -222,12 +229,19 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43V-dk-KeX">
-                            <rect key="frame" x="152" y="380" width="28" height="20"/>
+                            <rect key="frame" x="152" y="380" width="35" height="20"/>
                             <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="年龄">
                                     <attributes>
                                         <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <font key="NSFont" size="14" name="STHeitiSC-Light"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="*">
+                                    <attributes>
+                                        <color key="NSColor" red="0.97254901960784312" green="0.074509803921568626" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -246,12 +260,19 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oR-91-ssX">
-                            <rect key="frame" x="152" y="430" width="84" height="20"/>
+                            <rect key="frame" x="152" y="430" width="91" height="20"/>
                             <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="感兴趣的行业">
                                     <attributes>
                                         <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <font key="NSFont" size="14" name="STHeitiSC-Light"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="*">
+                                    <attributes>
+                                        <color key="NSColor" red="0.97254901960784312" green="0.074509803921568626" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -270,12 +291,19 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzL-k6-7mD">
-                            <rect key="frame" x="152" y="480" width="56" height="20"/>
+                            <rect key="frame" x="152" y="480" width="63" height="20"/>
                             <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="风险偏好">
                                     <attributes>
                                         <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <font key="NSFont" size="14" name="STHeitiSC-Light"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="*">
+                                    <attributes>
+                                        <color key="NSColor" red="0.97254901960784312" green="0.074509803921568626" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -430,6 +458,7 @@
                 <outlet property="nickNameView" destination="zNT-Y1-KxZ" id="Uuz-FB-NSs"/>
                 <outlet property="phoneNumberView" destination="eCp-aB-Jp4" id="yuq-Z0-ZTh"/>
                 <outlet property="riskPereference" destination="r9V-pR-kUZ" id="5M9-TZ-HMK"/>
+                <outlet property="scrollView" destination="beV-X1-81z" id="fKR-bq-6Lr"/>
                 <outlet property="sexBtn" destination="fsy-oK-Yi6" id="Sjs-Kw-vT3"/>
                 <outlet property="takePhotoBtn" destination="OjR-9S-WP9" id="97F-pi-OSU"/>
                 <outlet property="trueNameView" destination="1BR-n1-2VU" id="aRp-1V-qff"/>

@@ -14,7 +14,8 @@
 
 
 - (void)awakeFromNib{
-  
+    self.scrollView.delaysContentTouches = NO;
+    
     //显示名片
     if (!self.businessCard.image) {
         //cache文件夹目录
@@ -30,6 +31,8 @@
     else {
         [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
     }
+    
+    
     
 }
 
@@ -161,7 +164,7 @@
     [[self viewController] presentViewController:btPicker animated:YES completion:NULL];
 }
 
-#pragma mark - 保存
+#pragma mark - 上传个人信息
 - (IBAction)saveInforToServer:(UIButton *)sender {
     NSString *sex = [self.sexBtn.titleLabel.text isEqualToString:@"女士"]?@"1":@"2";
     NSString *name = self.trueNameView.text;
@@ -169,23 +172,45 @@
     NSString *identiCode = self.IDView.text;
     NSString *nickName = self.nickNameView.text;
     NSString *email = self.eMailVIew.text;
+    NSString *atIndustry = self.atIndustry.titleLabel.text;
+    NSString *age = self.age.titleLabel.text;
+    NSString *interestingIndus = self.interestingIndustry.titleLabel.text;
+    NSString *risk = self.riskPereference.titleLabel.text;
+    //判断输入信息是否填完整
+    NSArray *results = [NSArray arrayWithObjects:sex,name,phone,identiCode,email,atIndustry,age,interestingIndus,risk, nil];
+    __block BOOL isInfoFull;
+    [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([obj isEqualToString:@""]) {
+            [BTIndicator showTextOnView:self withText:@"请填写完整信息" withDelay:0.5];
+            isInfoFull = NO;
+            *stop = YES;
+        }
     
-    [MBProgressHUD showHUDAddedTo:self animated:YES];
+
+    }];
+    
+    if (!isInfoFull) {
+        return ;
+    }
+    
     //参数
-    NSDictionary *para = @{@"method":@"setMyInfo",@"user_id":USER_ID,@"sex":sex,@"name":name,@"phone":phone,@"id_code":identiCode,@"nick_name":nickName,@"email":email};
-    //上传
-    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-//        NSLog(@"%@",responseObject);
-        [MBProgressHUD hideHUDForView:self animated:YES];
-        
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
-        hud.mode = MBProgressHUDModeCustomView;
-        hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Checkmark"]];
-        hud.labelText = @"保存用户信息成功";
-        [hud hide:YES afterDelay:0.5];
-        
-    } failure:NULL];
+    NSDictionary *para = @{@"method":@"setMyInfo",@"user_id":USER_ID,@"sex":sex,@"name":name,@"phone":phone,@"id_code":identiCode,@"nick_name":nickName,@"email":email,@"industry":atIndustry,@"age":age,@"favIndustry":interestingIndus,@"fav":risk};
+    [MBProgressHUD showHUDAddedTo:self animated:YES];
+    
+    [BTNetWorking sendUserInfoToServerWith:para andBlock:^(BOOL isSuccess) {
+        if (isSuccess) {
+            [MBProgressHUD hideHUDForView:self animated:YES];
+            
+            [BTIndicator showCheckMarkOnView:self withText:@"保存用户信息成功" withDelay:0.5];
+        }
+        else{
+            [MBProgressHUD hideHUDForView:self animated:YES];
+            
+            [BTIndicator showForkMarkOnView:self withText:@"保存用户信息失败" withDelay:0.5];
+        }
+    }];
+   
     
     
 }

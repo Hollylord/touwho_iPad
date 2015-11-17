@@ -34,8 +34,13 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 ///查询所有的对话
 + (NSArray *)withDrawAllConversationFromDatabase;
 
-///获取用户信息接口
-+ (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void(^)(ModelForUser *user))block;
+
 ///判断是否为领投人
 + (void) isQualifiedWithUserID:(NSString *)user_id withResults:(void(^)(BOOL isFirstInvestor,BOOL isInvestor))Block;
+
+///获取用户信息接口
++ (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void(^)(ModelForUser *user))block;
+
+///上传个人信息到server接口
++ (void) sendUserInfoToServerWith:(NSDictionary *)dic andBlock:(void(^)(BOOL isSuccess))block;
 @end
