@@ -341,7 +341,6 @@
             //获取已结束的数据
             [self getDataForFinishedProgramsWithType:type andUserID:userID withCompletionBlock:^{
                 //显示数据并重新布局
-                self.title1.hidden = NO;
                 [self layoutProgramViewsAfterGetData];
                 //去除小菊花
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -353,8 +352,6 @@
     
     //获取数据成功后停止刷新
     [refresh endRefreshing];
-
-    
 }
 
 //获取正在进行中的项目
@@ -457,6 +454,10 @@
 - (void)layoutProgramViewsAfterGetData{
     
     if (self.modelsOngoing.count > 0) {
+        
+        self.title1.hidden = NO;
+        [self layoutForTitle1:self.title1];
+        
         //添加进行中项目视图
         for (int i = 0; i < self.modelsOngoing.count; i ++) {
             programView *program = [[[NSBundle mainBundle] loadNibNamed:@"programView" owner:nil options:nil] firstObject];
@@ -530,6 +531,14 @@
     [self.scrollView addConstraint:bottom];
 }
 
+- (void)layoutForTitle1:(UIView *)view{
+    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
+    NSLayoutConstraint *top1 = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.pictureCollection attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    
+    
+    [self.scrollView addConstraints:@[leading,top1]];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+}
 
 //进行中的项目 布局
 - (void)layoutForProgramView:(programView *)programView index:(int )indexPath{
@@ -562,7 +571,15 @@
 
 - (void)layoutForTitle2:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:[self.programs lastObject] attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    NSLayoutConstraint *top;
+    if (self.programs.count > 0) {
+        top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:[self.programs lastObject] attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    }
+    else{
+        top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.pictureCollection attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    }
+  
+    
     [self.scrollView addConstraints:@[leading,top]];
     view.translatesAutoresizingMaskIntoConstraints = NO;
 }
@@ -598,7 +615,16 @@
 
 - (void)layoutForTitle3:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeading multiplier:1 constant:30];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:[self.programsForPreparing lastObject] attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    NSLayoutConstraint *top;
+    if (self.programsForPreparing.count > 0) {
+        top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:[self.programsForPreparing lastObject] attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    }
+    else if (self.programs > 0){
+        top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:[self.programs lastObject] attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    }
+    else{
+        top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.pictureCollection attribute:NSLayoutAttributeBottom multiplier:1 constant:30];
+    }
     [self.scrollView addConstraints:@[leading,top]];
     view.translatesAutoresizingMaskIntoConstraints = NO;
 }

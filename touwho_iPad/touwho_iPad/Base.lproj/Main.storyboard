@@ -157,12 +157,10 @@
                                 <animations/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="otW-o1-mnx" firstAttribute="leading" secondItem="5oI-Iy-8Jl" secondAttribute="leading" constant="30" id="7QO-pM-C9B"/>
                                     <constraint firstAttribute="trailing" secondItem="hhD-dH-dEa" secondAttribute="trailing" constant="28" id="LeH-kX-AYp" userLabel="scrollview水平滚动范围"/>
                                     <constraint firstItem="hhD-dH-dEa" firstAttribute="top" secondItem="5oI-Iy-8Jl" secondAttribute="top" constant="30" id="Xo4-NG-ZjF"/>
                                     <constraint firstItem="hhD-dH-dEa" firstAttribute="leading" secondItem="5oI-Iy-8Jl" secondAttribute="leading" constant="30" id="bwS-b6-2kt"/>
                                     <constraint firstAttribute="bottom" secondItem="hhD-dH-dEa" secondAttribute="bottom" priority="250" constant="498" id="f5h-DK-PEe" userLabel="scrollview竖直滚动范围"/>
-                                    <constraint firstItem="otW-o1-mnx" firstAttribute="top" secondItem="hhD-dH-dEa" secondAttribute="bottom" constant="41" id="r0O-yb-Enq"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -179,8 +177,6 @@
                                         <include reference="rib-3t-6Wu"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="7QO-pM-C9B"/>
-                                        <include reference="r0O-yb-Enq"/>
                                         <include reference="LeH-kX-AYp"/>
                                         <include reference="Xo4-NG-ZjF"/>
                                         <include reference="bwS-b6-2kt"/>
