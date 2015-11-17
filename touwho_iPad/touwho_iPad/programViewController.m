@@ -31,11 +31,11 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * yOfScrollView;
 
 //进行中
-@property (weak, nonatomic) IBOutlet UILabel *title1;
+@property (strong, nonatomic)  UILabel *title1;
 //预热中
-@property (weak, nonatomic) IBOutlet UILabel *title2;
+@property (strong, nonatomic)  UILabel *title2;
 //已结束
-@property (weak, nonatomic) IBOutlet UILabel *title3;
+@property (strong, nonatomic)  UILabel *title3;
 
 //保存进行中的programView
 @property (strong,nonatomic) NSMutableArray* programs;
@@ -314,6 +314,23 @@
     self.modelsFinished = nil;
     self.modelsOngoing = nil;
     self.modelsPreparing = nil;
+    [self.title1 removeFromSuperview];
+    [self.title2 removeFromSuperview];
+    [self.title3 removeFromSuperview];
+    
+    [self.programs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+        
+    }];
+    [self.programsForFinished enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+        
+    }];
+    [self.programsForPreparing enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+        
+    }];
+    
     self.programs = nil;
     self.programsForFinished = nil;
     self.programsForPreparing = nil;
@@ -345,13 +362,14 @@
                 //去除小菊花
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 
+                //获取数据成功后停止刷新
+                [refresh endRefreshing];
             }];
         }];
     }];
     
     
-    //获取数据成功后停止刷新
-    [refresh endRefreshing];
+    
 }
 
 //获取正在进行中的项目
@@ -454,8 +472,9 @@
 - (void)layoutProgramViewsAfterGetData{
     
     if (self.modelsOngoing.count > 0) {
-        
-        self.title1.hidden = NO;
+        self.title1 = [[UILabel alloc] init];
+        [self.title1 setText:@"进行中"];
+        [self.scrollView addSubview:self.title1];
         [self layoutForTitle1:self.title1];
         
         //添加进行中项目视图
@@ -478,7 +497,9 @@
     }
     if (self.modelsPreparing.count > 0){
         //布局 title2
-        [self.title2 setHidden:NO];
+        self.title2 = [[UILabel alloc] init];
+        [self.title2 setText:@"预热中"];
+        [self.scrollView addSubview:self.title2];
         [self layoutForTitle2:self.title2];
         
         //添加进行中项目视图
@@ -499,7 +520,10 @@
     }
     if (self.modelsFinished.count > 0){
         //布局 title3
-        [self.title3 setHidden:NO];
+        self.title3 = [[UILabel alloc] init];
+        [self.title3 setText:@"已结束"];
+        [self.scrollView addSubview:self.title3];
+      
         [self layoutForTitle3:self.title3];
         
         //添加已结束中项目视图

@@ -126,33 +126,6 @@
                                             <outletCollection property="gestureRecognizers" destination="3zV-ZB-DV7" appends="YES" id="z5k-i2-9nW"/>
                                         </connections>
                                     </collectionView>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进行中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otW-o1-mnx">
-                                        <rect key="frame" x="30" y="289" width="51" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预热中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jw9-si-OI0">
-                                        <rect key="frame" x="30" y="352" width="51" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="30" y="412" width="51" height="21"/>
-                                        </variation>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已结束" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rib-3t-6Wu">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="29" y="487" width="52" height="21"/>
-                                        </variation>
-                                    </label>
                                 </subviews>
                                 <animations/>
                                 <gestureRecognizers/>
@@ -162,19 +135,9 @@
                                     <constraint firstItem="hhD-dH-dEa" firstAttribute="leading" secondItem="5oI-Iy-8Jl" secondAttribute="leading" constant="30" id="bwS-b6-2kt"/>
                                     <constraint firstAttribute="bottom" secondItem="hhD-dH-dEa" secondAttribute="bottom" priority="250" constant="498" id="f5h-DK-PEe" userLabel="scrollview竖直滚动范围"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="otW-o1-mnx"/>
-                                        <exclude reference="jw9-si-OI0"/>
-                                        <exclude reference="rib-3t-6Wu"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <include reference="hhD-dH-dEa"/>
-                                        <include reference="otW-o1-mnx"/>
-                                        <include reference="jw9-si-OI0"/>
-                                        <include reference="rib-3t-6Wu"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="LeH-kX-AYp"/>
@@ -230,9 +193,6 @@
                         <outlet property="flowLayoutForCollectionView" destination="HlU-G7-qEw" id="cZR-xm-Vbc"/>
                         <outlet property="pictureCollection" destination="hhD-dH-dEa" id="YpH-n6-P1P"/>
                         <outlet property="scrollView" destination="5oI-Iy-8Jl" id="0Ol-Xx-HPF"/>
-                        <outlet property="title1" destination="otW-o1-mnx" id="IiX-ks-EGQ"/>
-                        <outlet property="title2" destination="jw9-si-OI0" id="dKI-UI-t8g"/>
-                        <outlet property="title3" destination="rib-3t-6Wu" id="iKl-Wj-f6p"/>
                         <outlet property="topBtn1" destination="JLN-vT-Hsb" id="lfE-kM-6Kf"/>
                         <outlet property="topBtn2" destination="hpc-8w-d2z" id="14W-YS-id9"/>
                         <outlet property="topBtn3" destination="hMg-Lh-D7A" id="1Db-3M-4mv"/>
