@@ -12,4 +12,5 @@
 
 ///视频url
 @property (copy,nonatomic) NSString *footageURL;
+
 @end

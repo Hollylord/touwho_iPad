@@ -9,10 +9,10 @@
 #import "shipinViewController.h"
 #import  <MediaPlayer/MediaPlayer.h>
 
-@interface shipinViewController ()
-{
-    MPMoviePlayerController *_player;
-}
+@interface shipinViewController () <UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *web;
+
+
 @end
 
 @implementation shipinViewController
@@ -23,19 +23,17 @@
     //设置分享按钮
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
-//    @"http://pl.youku.com/playlist/m3u8?vid=321514956&type=flv&ts=1439366893&keyframe=0&ep=dCaXE0qLUMYJ5ifaiz8bMyW0ISQOXP0I9xqEhdtnBtQlTuC2&sid=643936689345312d9fec1&token=1689&ctype=12&ev=1&oip=3071127905"
     
-    _player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:self.footageURL]];
-    _player.view.frame = CGRectMake(0, 64, 923, 768 - 64);
-    _player.scalingMode = MPMovieScalingModeAspectFit;
-    //全屏显示
-    //    [_play setFullscreen:YES animated:YES];
+    //设置webView
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.footageURL]];
+    [self.web loadRequest:request];
     
-    [self.view addSubview:_player.view];
-    [_player play];
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,8 +41,9 @@
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [_player stop];
+   
 }
+
 #pragma mark - 分享
 - (void)share{
     //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行

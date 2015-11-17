@@ -7,14 +7,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="shipinViewController">
             <connections>
                 <outlet property="view" destination="iN0-l3-epB" id="rih-73-8Dc"/>
+                <outlet property="web" destination="Zhp-Fb-PfD" id="djJ-tZ-Cra"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhp-Fb-PfD">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="v5l-Ic-3P1"/>
+                    </connections>
+                </webView>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Zhp-Fb-PfD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="6X6-RL-nLB"/>
+                <constraint firstAttribute="trailing" secondItem="Zhp-Fb-PfD" secondAttribute="trailing" id="9dd-65-AmJ"/>
+                <constraint firstAttribute="bottom" secondItem="Zhp-Fb-PfD" secondAttribute="bottom" id="CLh-U9-et7"/>
+                <constraint firstItem="Zhp-Fb-PfD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bq0-sF-iJV"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
 </document>
