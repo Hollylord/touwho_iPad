@@ -145,12 +145,8 @@
 }
 //获取新数据
 - (void)getNewDataWithFresh:(UIRefreshControl *)refresh{
-    //设置参数
-    NSDictionary *para = @{@"method":@"getNewsTitle_Pre",@"news_id":@"0"};
-    //网络请求
-    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
     
+    [BTNetWorkingAPI pullNewsListInRecentWithBlock:^(NSArray *jsonArr, NSString *resCode) {
         
         //关闭小菊花
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -163,44 +159,40 @@
         }
         self.allNewsViewArr = nil;
         
-        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
-            
-            //获得新闻数组
-            NSArray *newsList = jsonArr;
-            //获得最老的新闻id
-            lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
-            
-            
-            for (NSDictionary *dic in newsList) {
-                
-                //转化为model
-                [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
-                    //设置json和模型名称对应:
-                    //key:模型名，value：json名
-                    return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
-                }];
-                
-                //用字典创建模型
-                ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
-                
-                
-                model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
-                
-                
-                //存入模型
-                [self.allNewsArr addObject:model];
-            }
-        }];
+        //获得新闻数组
+        NSArray *newsList = jsonArr;
+        //获得最老的新闻id
+        lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
         
         
+        for (NSDictionary *dic in newsList) {
+            
+            //转化为model
+            [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+                //设置json和模型名称对应:
+                //key:模型名，value：json名
+                return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
+            }];
+            
+            //用字典创建模型
+            ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
+            model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
+            
+            //存入模型数组
+            [self.allNewsArr addObject:model];
+        }
+        
+        
+        
+        //        是否显示上拉刷新的底部view
         currentCountsOfModel = self.allNewsArr.count;
-
+    
         if (currentCountsOfModel > 6) {
             //显示刷新view
             self.bottomView.hidden = NO;
         }
         
-        //view显示
+        //显示新闻列表
         for (int i = 0; i < self.allNewsArr.count; i ++) {
             newsMenu *view = [[[NSBundle mainBundle]loadNibNamed:@"newsMenu" owner:nil options:nil]firstObject];
             view.delegate = self;
@@ -209,18 +201,13 @@
             [self layoutForNewsMenu:view index:i];
             [self.allNewsViewArr addObject:view];
         }
-        
-
-        
         [self.scrollView setNeedsUpdateConstraints];
         
         //获取数据成功后停止刷新
         [refresh endRefreshing];
         
-        
-    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        NSLog(@"%@",error);
     }];
+
 }
 
 #pragma mark - scrollView代理 上拉刷新
@@ -239,60 +226,52 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     CGFloat triggerPointA = scrollView.contentSize.height;
     CGFloat triggerPointB = scrollView.contentOffset.y + scrollView.bounds.size.height;
+ 
     if (triggerPointB > triggerPointA+100 && currentCountsOfModel>6) {
         
         //加载网络数据
-    
-        //设置参数
-        NSDictionary *para = @{@"method":@"getNewsTitle_Next",@"news_id":lastNewsID};
-        [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-            NSLog(@"%@",responseObject);
-            [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+        [BTNetWorkingAPI pullNewsListAtOldTimeWithLastNews_id:lastNewsID andBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            //判断有没有错误
+            if (![resCode isEqualToString:@"0"]) {
+                //没有更多的数据
+                [BTIndicator showForkMarkOnView:self.view withText:@"没有更多数据" withDelay:0.5];
+                return ;
+            }
+            
+            //获得新闻数组
+            NSArray *newsList = jsonArr;
+            //获得最老的新闻id
+            lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
+            
+            
+            for (NSDictionary *dic in newsList) {
                 
-                //判断有没有错误
-                if ([[responseObject objectForKey:@"value"] objectForKey:@"resValue"]) {
-                    //没有更多的数据
-                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                    hud.mode = MBProgressHUDModeText;
-                    hud.labelText = [[responseObject objectForKey:@"value"] objectForKey:@"resValue"];
-                    [hud hide:YES afterDelay:0.5];
-                    return ;
-                }
+                //转化为model
+                [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+                    //设置json和模型名称对应:
+                    //key:模型名，value：json名
+                    return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
+                }];
                 
-                //获得新闻数组
-                NSArray *newsList = jsonArr;
-                //获得最老的新闻id
-                lastNewsID = [[newsList lastObject] objectForKey:@"mID"];
+                //用字典创建模型
+                ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
+                model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
                 
                 
-                for (NSDictionary *dic in newsList) {
-                    
-                    //转化为model
-                    [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
-                        //设置json和模型名称对应:
-                        //key:模型名，value：json名
-                        return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
-                    }];
-                    
-                    //用字典创建模型
-                    ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
-                    
-                    
-                    model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
-                    
-                    
-                    //存入模型
-                    [self.allNewsArr addObject:model];
-                }
-            }];
-   
-        } failure:NULL];
+                //存入模型
+                [self.allNewsArr addObject:model];
+            }
+        }];
+        
+       
     }
 }
 
 //当scrollview完全停止调用
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
+    //添加新的新闻列表view
     int temp = (int)currentCountsOfModel;
     currentCountsOfModel = self.allNewsArr.count;
     for (int i = temp; i < self.allNewsArr.count; i ++) {

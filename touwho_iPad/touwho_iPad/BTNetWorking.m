@@ -157,21 +157,7 @@
     return results;
 }
 
-+ (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void (^)(ModelForUser *))block{
-    NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":user_id};
-    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        //json --> model
-        NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
-        
-        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
-        
-        block(model);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        
-    }];
-}
+
 + (void)isQualifiedWithUserID:(NSString *)user_id withResults:(void (^)(BOOL, BOOL))Block{
     NSDictionary *para = @{@"method":@"getMyStatus",@"user_id":user_id};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -202,6 +188,28 @@
     }];
 }
 
+
+
+@end
+
+@implementation BTNetWorkingAPI
+
++ (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void (^)(ModelForUser *))block{
+    NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":user_id};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        //json --> model
+        NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
+        
+        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+        
+        block(model);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        
+    }];
+}
+
 + (void)sendUserInfoToServerWith:(NSDictionary *)dic andBlock:(void (^)(BOOL))block{
     NSMutableDictionary *para = [NSMutableDictionary dictionaryWithObject:@"method" forKey:@"setMyInfo"];
     //添加其他参数
@@ -216,4 +224,29 @@
     }];
 }
 
++ (void)pullNewsListInRecentWithBlock:(void (^)(NSArray *, NSString *))block{
+    //设置参数
+    NSDictionary *para = @{@"method":@"getNewsTitle_Pre",@"news_id":@"0"};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"%@",responseObject);
+        
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            block(jsonArr,resCode);
+        }];
+    } failure:NULL];
+}
+
++ (void)pullNewsListAtOldTimeWithLastNews_id:(NSString *)news_id andBlock:(void (^)(NSArray *, NSString *))block{
+    //设置参数
+    NSDictionary *para = @{@"method":@"getNewsTitle_Next",@"news_id":news_id};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+            
+            block(jsonArr,resCode);
+        }];
+    } failure:NULL];
+}
 @end

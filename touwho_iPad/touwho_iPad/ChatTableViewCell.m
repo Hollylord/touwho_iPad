@@ -31,7 +31,7 @@
     if (!userID) {
         return ;
     }
-    [BTNetWorking pullUserInfoFromServerWith:userID andBlock:^(ModelForUser *user) {
+    [BTNetWorkingAPI pullUserInfoFromServerWith:userID andBlock:^(ModelForUser *user) {
         NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,user.mAvatar];
         [self.headIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         self.nickName.text = user.mNickName;

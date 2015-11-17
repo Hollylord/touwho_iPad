@@ -198,7 +198,7 @@
     NSDictionary *para = @{@"method":@"setMyInfo",@"user_id":USER_ID,@"sex":sex,@"name":name,@"phone":phone,@"id_code":identiCode,@"nick_name":nickName,@"email":email,@"industry":atIndustry,@"age":age,@"favIndustry":interestingIndus,@"fav":risk};
     [MBProgressHUD showHUDAddedTo:self animated:YES];
     
-    [BTNetWorking sendUserInfoToServerWith:para andBlock:^(BOOL isSuccess) {
+    [BTNetWorkingAPI sendUserInfoToServerWith:para andBlock:^(BOOL isSuccess) {
         if (isSuccess) {
             [MBProgressHUD hideHUDForView:self animated:YES];
             

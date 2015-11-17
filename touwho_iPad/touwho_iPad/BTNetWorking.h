@@ -38,9 +38,23 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 ///判断是否为领投人
 + (void) isQualifiedWithUserID:(NSString *)user_id withResults:(void(^)(BOOL isFirstInvestor,BOOL isInvestor))Block;
 
+
+
+@end
+
+///这个类专门用来管理网络接口的，对接后台服务器的
+@interface BTNetWorkingAPI : NSObject
+
 ///获取用户信息接口
 + (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void(^)(ModelForUser *user))block;
 
 ///上传个人信息到server接口
 + (void) sendUserInfoToServerWith:(NSDictionary *)dic andBlock:(void(^)(BOOL isSuccess))block;
+
+///获取最新新闻的接口
++ (void)pullNewsListInRecentWithBlock:(void(^)(NSArray *jsonArr,NSString *resCode))block;
+
+///获取老新闻接口
++ (void)pullNewsListAtOldTimeWithLastNews_id:(NSString *)news_id andBlock:(void(^)(NSArray *jsonArr,NSString *resCode))block;
+
 @end
