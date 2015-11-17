@@ -21,10 +21,6 @@
 @property (copy,nonatomic) NSString *mIDCardCode;
 ///个人简介
 @property (copy,nonatomic) NSString *mIntro;
-///是否为领投人GP
-@property (copy,nonatomic) NSString *mIsFirstInvestor;
-///是否为跟头人LP
-@property (copy,nonatomic) NSString *mIsInvestor;
 ///真是姓名
 @property (copy,nonatomic) NSString *mName;
 ///手机号

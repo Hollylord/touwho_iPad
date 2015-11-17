@@ -926,7 +926,7 @@
 				A193F6D21BB9244E007A697F /* BTPickerVC */,
 				A1211E761BB240EC00B25AA4 /* 私信工具 */,
 				A1CF1E201BAFEBA90065EF77 /* 项目和人model */,
-				A1CB0BDD1BE85D64009BE9FA /* 网络数据类 */,
+				A1CB0BDD1BE85D64009BE9FA /* BTNetworking */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -1484,13 +1484,13 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
-		A1CB0BDD1BE85D64009BE9FA /* 网络数据类 */ = {
+		A1CB0BDD1BE85D64009BE9FA /* BTNetworking */ = {
 			isa = PBXGroup;
 			children = (
 				A1CB0BDA1BE84DFB009BE9FA /* BTNetWorking.h */,
 				A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */,
 			);
-			name = "网络数据类";
+			name = BTNetworking;
 			sourceTree = "<group>";
 		};
 		A1CF1E201BAFEBA90065EF77 /* 项目和人model */ = {
@@ -2348,7 +2348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f40398fc-aa01-4610-af1d-dac7ef2a3b6a";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -2382,7 +2382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f40398fc-aa01-4610-af1d-dac7ef2a3b6a";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

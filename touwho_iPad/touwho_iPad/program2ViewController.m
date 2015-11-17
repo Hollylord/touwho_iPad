@@ -44,6 +44,10 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 @property (strong,nonatomic) NSMutableArray *GPArray;
 ///用来装发起人Cell的模型的数组
 @property (strong,nonatomic) NSMutableArray *initiatorsArray;
+///是否为GP
+@property (assign,nonatomic) BOOL isGP;
+///是否为LP
+@property (assign,nonatomic) BOOL isLP;
 
 
 //按钮点击
@@ -58,8 +62,6 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     CGFloat height2;//textView2高度
     CGFloat height3;//textView3高度
     AFHTTPRequestOperationManager *mgr;
-    BOOL isFirstInvestor;
-    BOOL isInvestor;
     
 }
 
@@ -97,11 +99,12 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
-    //判断是否有资格为GP，LP
-    NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-     isFirstInvestor = [[user objectForKey:@"isFirstInvestor"] boolValue];
-     isInvestor = [[user objectForKey:@"isInvestor"] boolValue];
-    
+    //判断用户是否有领投，跟投资格
+    [BTNetWorking isQualifiedWithUserID:USER_ID withResults:^(BOOL isFirstInvestor, BOOL isInvestor) {
+        self.isGP = isFirstInvestor;
+        self.isLP = isInvestor;
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -283,10 +286,11 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     return 110;
 }
 
-#pragma mark - 按钮点击
+#pragma mark - 领投/跟投
 ///意向领投
 - (IBAction)lingtouClick:(UIButton *)sender {
-    if (!isFirstInvestor) {
+    
+    if (!self.isGP) {
         //不是GP
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;
@@ -306,7 +310,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 
 ///意向跟投
 - (IBAction)gentouClick:(UIButton *)sender {
-    if (!isInvestor) {
+    if (!self.isLP) {
         //没有LP资格
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;

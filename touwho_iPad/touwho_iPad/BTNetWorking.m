@@ -172,4 +172,34 @@
         
     }];
 }
++ (void)isQualifiedWithUserID:(NSString *)user_id withResults:(void (^)(BOOL, BOOL))Block{
+    NSDictionary *para = @{@"method":@"getMyStatus",@"user_id":user_id};
+    [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *isFirstInvestor = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"mIsFirstInvestor"];
+        NSString *isInvestor = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"mIsInvestor"];
+        
+        BOOL islingtou;
+        BOOL isGentou;
+        
+        if ([isFirstInvestor isEqualToString:@"0"]) {
+            islingtou = NO;
+        }
+        else{
+            islingtou = YES;
+        }
+        
+        if ([isInvestor isEqualToString:@"0"]) {
+            isGentou = NO;
+        }
+        else{
+            isGentou = YES;
+        }
+        
+        Block(islingtou,isGentou);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+}
+
 @end

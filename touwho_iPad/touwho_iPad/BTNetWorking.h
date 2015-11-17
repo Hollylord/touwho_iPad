@@ -36,4 +36,6 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 
 ///获取用户信息接口
 + (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void(^)(ModelForUser *user))block;
+///判断是否为领投人
++ (void) isQualifiedWithUserID:(NSString *)user_id withResults:(void(^)(BOOL isFirstInvestor,BOOL isInvestor))Block;
 @end
