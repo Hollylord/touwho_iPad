@@ -9,9 +9,9 @@
 
 #import "huodongViewController.h"
 #import <AMap2DMap/MAMapKit/MAMapKit.h>
-#import <AMapSearch/AMapSearchKit/AMapSearchAPI.h>
 #import "customAnnotationView.h"
 #import "popUpView.h"
+#import <AMapSearchKit/AMapSearchKit.h>
 
 
 #define MAPAPIKEY @"a50e4a2d762f64b6a67ff794fc76c67e";
@@ -47,10 +47,11 @@
     
     
     //搜索设置
+    [AMapSearchServices sharedServices].apiKey = MAPAPIKEY;
     _searchAPI = [[AMapSearchAPI alloc] init];
     _searchAPI.delegate = self;
     AMapGeocodeSearchRequest *request = [[AMapGeocodeSearchRequest alloc] init];
-    request.city = @"深圳";
+ 
     request.address = self.model.mAddress;
     NSLog(@"%@",self.model.mAddress);
     [_searchAPI AMapGeocodeSearch:request];
@@ -70,7 +71,17 @@
 #pragma mark -  搜索回调
 //搜地址回调
 - (void)onGeocodeSearchDone:(AMapGeocodeSearchRequest *)request response:(AMapGeocodeSearchResponse *)response{
+    
     AMapGeocode *geoCode = response.geocodes[0];
+    
+    //通过AMapGeocodeSearchResponse对象处理搜索结果
+    NSString *strCount = [NSString stringWithFormat:@"count: %ld", (long)response.count];
+    NSString *strGeocodes = @"";
+    for (AMapTip *p in response.geocodes) {
+        strGeocodes = [NSString stringWithFormat:@"%@\ngeocode: %@", strGeocodes, p.description];
+    }
+    NSString *result = [NSString stringWithFormat:@"%@ \n %@", strCount, strGeocodes];
+    NSLog(@"Geocode: %@", result);
     
     //配置annotation
     _annotation = [[MAPointAnnotation alloc] init];

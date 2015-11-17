@@ -183,14 +183,14 @@
         }
         
         
-        
+        self.bottomView.hidden = NO;
         //        是否显示上拉刷新的底部view
-        currentCountsOfModel = self.allNewsArr.count;
-    
-        if (currentCountsOfModel > 6) {
-            //显示刷新view
-            self.bottomView.hidden = NO;
-        }
+//        currentCountsOfModel = self.allNewsArr.count;
+//    
+//        if (currentCountsOfModel > 6) {
+//            //显示刷新view
+//            self.bottomView.hidden = NO;
+//        }
         
         //显示新闻列表
         for (int i = 0; i < self.allNewsArr.count; i ++) {
@@ -226,8 +226,8 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     CGFloat triggerPointA = scrollView.contentSize.height;
     CGFloat triggerPointB = scrollView.contentOffset.y + scrollView.bounds.size.height;
- 
-    if (triggerPointB > triggerPointA+100 && currentCountsOfModel>6) {
+ //&& currentCountsOfModel>6
+    if (triggerPointB > triggerPointA+100 ) {
         
         //加载网络数据
         [BTNetWorkingAPI pullNewsListAtOldTimeWithLastNews_id:lastNewsID andBlock:^(NSArray *jsonArr, NSString *resCode) {

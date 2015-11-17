@@ -31,8 +31,6 @@
         
     }];
     
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +45,7 @@
 - (void) pullData:(dispatch_block_t)block{
     NSDictionary *para = @{@"method":@"getActivityDetail",@"activity_id":self.model.mID};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         //json --> model
         self.modelDetail = [ModelActivityDetail objectWithKeyValues:dic];

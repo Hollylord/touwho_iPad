@@ -1243,7 +1243,7 @@
 				A1D620051BA6BF6B009FCA1F /* 话题详情 */,
 				A1E9BE911BA7CD3500876186 /* 机构专题详情 */,
 				A1ED80ED1BF0860B007D8F4C /* 活动详细信息 */,
-				A1B8684C1B848A4C005C4A6F /* 活动地点 */,
+				A1B8684C1B848A4C005C4A6F /* 活动地图 */,
 				A1B88C9A1BA15BB6008FA7C9 /* 视频播放 */,
 			);
 			name = "发现";
@@ -1269,13 +1269,13 @@
 			name = view;
 			sourceTree = "<group>";
 		};
-		A1B8684C1B848A4C005C4A6F /* 活动地点 */ = {
+		A1B8684C1B848A4C005C4A6F /* 活动地图 */ = {
 			isa = PBXGroup;
 			children = (
 				A1B8683A1B842C00005C4A6F /* view */,
 				A1B868391B842BFA005C4A6F /* controller */,
 			);
-			name = "活动地点";
+			name = "活动地图";
 			sourceTree = "<group>";
 		};
 		A1B88C9A1BA15BB6008FA7C9 /* 视频播放 */ = {
