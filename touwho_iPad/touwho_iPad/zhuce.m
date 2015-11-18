@@ -102,7 +102,8 @@
 - (IBAction)confirmProtocol:(UIButton *)sender {
     sender.selected = !sender.selected;
 }
-//获取验证码
+
+#pragma mark - 获取验证码
 - (IBAction)getVerCode:(UIButton *)sender {
     
     //设定参数
@@ -148,7 +149,7 @@
         [self.vercodeBtn setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
         int i = [sec intValue];
         UILabel *label = [self.vercodeBtn.subviews lastObject];
-        [label setText:[NSString stringWithFormat:@"(%i)秒后重发",i]];
+        [label setText:[NSString stringWithFormat:@"    (%i)秒后重发",i]];
         [self performSelector:@selector(reflashGetKeyBt:) withObject:[NSNumber numberWithInt:i-1] afterDelay:1];
     }
     

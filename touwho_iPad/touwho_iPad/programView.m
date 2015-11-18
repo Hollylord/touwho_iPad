@@ -31,10 +31,7 @@
    
     self.progressView.font = [UIFont fontWithName:@"Futura-CondensedExtraBold" size:20];
     self.progressView.dataSource = self;
-    self.progressView.popUpViewColor = [UIColor grayColor];
-    
-    
-    
+    self.progressView.popUpViewColor = [UIColor colorWithRed:(CGFloat)27/255 green:(CGFloat)169/255 blue:(CGFloat)122/255 alpha:0.8];
     
     
 }

@@ -23,7 +23,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eci-cz-P7d">
                             <rect key="frame" x="20" y="70" width="827" height="4"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.1058823529" green="0.66274509800000003" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="827" id="KHH-FM-ONz"/>
                                 <constraint firstAttribute="height" constant="4" id="al7-Bg-dFC"/>
@@ -39,7 +39,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Azx-gE-ecU">
                             <rect key="frame" x="20" y="203" width="827" height="4"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.1058823529" green="0.66274509800000003" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                     </subviews>
                     <animations/>

@@ -61,7 +61,7 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-//退出当前账号
+#pragma mark - 退出当前账号
 - (IBAction)quitAccount:(UIButton *)sender {
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"退出" message:@"确定退出当前账号吗？" preferredStyle:UIAlertControllerStyleAlert];

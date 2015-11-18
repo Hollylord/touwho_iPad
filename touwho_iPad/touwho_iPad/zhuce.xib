@@ -147,11 +147,11 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm6-nS-Ax2">
-                    <rect key="frame" x="379" y="266" width="130" height="50"/>
+                    <rect key="frame" x="368" y="266" width="140" height="50"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="RjR-sl-lsc"/>
-                        <constraint firstAttribute="width" constant="130" id="tWb-Xk-2sA"/>
+                        <constraint firstAttribute="width" constant="140" id="tWb-Xk-2sA"/>
                     </constraints>
                     <state key="normal" title="获取验证码" backgroundImage="anniuHei"/>
                     <connections>
@@ -293,7 +293,7 @@
                 <constraint firstItem="Q5h-wV-IGs" firstAttribute="leading" secondItem="866-fN-UBe" secondAttribute="leading" id="X8t-cl-ckg"/>
                 <constraint firstItem="qgq-hs-uIA" firstAttribute="top" secondItem="866-fN-UBe" secondAttribute="top" id="Zih-ie-lrn"/>
                 <constraint firstItem="qgq-hs-uIA" firstAttribute="trailing" secondItem="866-fN-UBe" secondAttribute="trailing" id="Zko-0N-bDg"/>
-                <constraint firstItem="bm6-nS-Ax2" firstAttribute="leading" secondItem="qgq-hs-uIA" secondAttribute="trailing" constant="21" id="add-H0-Ll2"/>
+                <constraint firstItem="bm6-nS-Ax2" firstAttribute="leading" secondItem="qgq-hs-uIA" secondAttribute="trailing" constant="10" id="add-H0-Ll2"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="leading" secondItem="V6w-VY-s05" secondAttribute="leading" constant="150" id="d5Z-ZE-Ubq"/>
                 <constraint firstItem="3CD-yz-ytf" firstAttribute="top" secondItem="VAi-p6-rrW" secondAttribute="bottom" constant="10" id="dQ1-Ne-96e"/>
                 <constraint firstItem="JbL-ej-lpG" firstAttribute="trailing" secondItem="Pbx-eD-a1N" secondAttribute="trailing" id="dmz-xb-dn1"/>

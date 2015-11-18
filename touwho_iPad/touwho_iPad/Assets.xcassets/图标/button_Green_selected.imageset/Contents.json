@@ -1,10 +1,6 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
       "resizing" : {
         "mode" : "9-part",
         "center" : {
@@ -13,14 +9,18 @@
           "height" : 1
         },
         "cap-insets" : {
-          "bottom" : 15,
-          "top" : 14,
-          "right" : 22,
-          "left" : 29
+          "bottom" : 19,
+          "top" : 17,
+          "right" : 15,
+          "left" : 18
         }
       },
       "idiom" : "universal",
-      "filename" : "button.png",
+      "filename" : "button_pre.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
