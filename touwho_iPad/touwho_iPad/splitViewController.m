@@ -27,6 +27,7 @@
     
     self.minimumPrimaryColumnWidth = 100;
     self.maximumPrimaryColumnWidth = 100;
+    self.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
     
@@ -81,14 +82,19 @@
     }
 }
 
+#pragma mark - 旋转
 - (BOOL)shouldAutorotate{
     return YES;
 }
+
+//支持哪些方向，如果info禁止了，那些方向也不支持
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return (UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight);
+    return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
 }
 
-//添加广告页
+
+
+#pragma mark - 广告页
 -(void)showADScrollView{
     CGRect imageFrame = CGRectMake(0, 0, 1024, 768);
     NSLog(@"%@",NSStringFromCGRect(imageFrame));
@@ -206,7 +212,7 @@
     self.pageControl.currentPage = i;
 }
 
-#pragma mark - 点击按钮
+#pragma mark - 跳转
 - (void)turnToHomeViewController{
     [self.scrollView removeFromSuperview];
     

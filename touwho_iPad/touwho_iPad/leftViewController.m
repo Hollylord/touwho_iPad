@@ -214,4 +214,17 @@
     UIImage *image = [UIImage imageWithContentsOfFile:filePath];
     return image;
 }
+
+- (BOOL)shouldAutorotate{
+    
+    return NO;
+    
+}
+//支持哪些方向，如果info禁止了，那些方向也不支持
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
+}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationLandscapeLeft;
+}
 @end

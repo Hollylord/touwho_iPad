@@ -164,9 +164,7 @@
     fresh = refresh;
     [self.scrollView addSubview:refresh];
     
-    //小菊花
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.dimBackground = YES;
+    
     
     //第一次触发刷新
     [self pullRefresh:refresh];
@@ -235,27 +233,6 @@
         [image sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
     }
     
-    
-//    if (indexPath.item%5 == 0) {
-//        
-//        image.image = [UIImage imageNamed:imageName];
-//    }
-//    else if (indexPath.item%5 == 1)
-//    {
-//        image.image = [UIImage imageNamed:imageName];
-//    }
-//    else if (indexPath.item%5 == 2)
-//    {
-//        image.image = [UIImage imageNamed:imageName];
-//    }
-//    else if (indexPath.item%5 == 3)
-//    {
-//        image.image = [UIImage imageNamed:imageName];
-//    }
-//    else if (indexPath.item%5 == 4)
-//    {
-//        image.image = [UIImage imageNamed:imageName];
-//    }
     
     return cell;
 }
@@ -350,6 +327,10 @@
     else if (self.topBtn4.selected){
         type = @"3";
     }
+    
+    //小菊花
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.dimBackground = YES;
     
     //获取正在进行的数据
     [self getDataForOngoingProgramsWithType:type andUserID:userID withCompletionBlock:^{
@@ -726,4 +707,18 @@
         NSLog(@"%@",error);
     }];
 }
+
+- (BOOL)shouldAutorotate{
+    
+        return NO;
+    
+}
+//支持哪些方向，如果info禁止了，那些方向也不支持
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
+}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationLandscapeLeft;
+}
+
 @end

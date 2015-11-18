@@ -52,8 +52,7 @@
     
     //设置app的bage为0
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    
-    
+
     
     
     return YES;
@@ -145,6 +144,7 @@
     completionHandler(UIBackgroundFetchResultNewData);
     
 }
+
 
 
 @end
