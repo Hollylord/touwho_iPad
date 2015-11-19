@@ -60,7 +60,7 @@
     [self pullGroupData:^{
         //添加已有的数据数据
         NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
-        [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"logo_background"]];
         self.groupName.text = self.modelDetail.mName;
         self.leaderName.text = self.modelDetail.mGroupLeader;
         self.memberCount.text = self.modelDetail.mMemberCount;

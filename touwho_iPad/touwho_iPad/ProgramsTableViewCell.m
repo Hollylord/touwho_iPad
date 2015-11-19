@@ -27,7 +27,7 @@
     self.contentTextView.text = model.mDestrible;
     NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mSmallImageUrl];
     NSURL *url = [NSURL URLWithString:imageURL];
-    [self.IMGView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.IMGView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logo_background"]];
 }
 
 - (void)setModel_b:(ModelMyInstitution *)model_b{
@@ -38,7 +38,7 @@
     self.contentTextView.text = model_b.mDestrible;
     NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model_b.mLogo];
     NSURL *url = [NSURL URLWithString:imageURL];
-    [self.IMGView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.IMGView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logo_background"]];
 }
 
 @end

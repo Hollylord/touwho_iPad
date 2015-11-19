@@ -109,7 +109,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised,NSString *l
         }
         else{
             NSString *top = [NSString stringWithFormat:@"%@%@",SERVER_URL,largeImageUrl];
-            [self.topImageView sd_setImageWithURL:[NSURL URLWithString:top] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+            [self.topImageView sd_setImageWithURL:[NSURL URLWithString:top] placeholderImage:[UIImage imageNamed:@"logo_background"]];
         }
         
         

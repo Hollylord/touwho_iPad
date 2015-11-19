@@ -43,8 +43,8 @@
     self.name2.text = self.model.mName;
     NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mLogo];
     NSURL *url = [NSURL URLWithString:logo];
-    [self.logo1 sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-    [self.logo2 sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.logo1 sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logo_background"]];
+    [self.logo2 sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logo_background"]];
     
 }
 
