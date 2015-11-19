@@ -188,6 +188,10 @@
     }];
 }
 
++ (BOOL)isTheStringContainedHttpWithString:(NSString *)string{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",@"http"];
+    return [predicate evaluateWithObject:string];
+}
 
 
 @end

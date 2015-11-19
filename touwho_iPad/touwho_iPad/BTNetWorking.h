@@ -38,6 +38,8 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 ///判断是否为领投人
 + (void) isQualifiedWithUserID:(NSString *)user_id withResults:(void(^)(BOOL isFirstInvestor,BOOL isInvestor))Block;
 
+///判断url字符串是否包含http
++ (BOOL) isTheStringContainedHttpWithString:(NSString *)string;
 
 
 @end

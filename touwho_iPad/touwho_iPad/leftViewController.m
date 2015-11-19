@@ -53,15 +53,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteHeadIcon) name:@"changeHeadIcon" object:nil];
     
     
-//    UIImage *image = [self searchImageFromCacheWithFileName:@"headIcon"];
-//    if (image) {
-//        UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
-//        self.headImageView.image = newImage;
-//    }
-//    else{
-//        UIImage *head = [UIImage imageNamed:@"zhanweitu"];
-//        self.headImageView.image = [UIImage imageClipsWithHeadIcon:head sideWidth:0];
-//    }
+
     
     //取出本地头像
     if (USER_ID) {
@@ -182,15 +174,29 @@
 //接到通知换头像
 - (void)headImage{
     NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-    NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[user objectForKey:@"iconURL"]];
-    SDWebImageManager *mgr = [SDWebImageManager sharedManager];
-    [mgr downloadImageWithURL:[NSURL URLWithString:iconURL] options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        
-        UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
-        self.headImageView.image = newImage;
-        
-    }];
+    NSString *url = [user objectForKey:@"iconURL"];
     
+    //如果url包含http
+    if ([BTNetWorking isTheStringContainedHttpWithString:url]) {
+        SDWebImageManager *mgr = [SDWebImageManager sharedManager];
+        [mgr downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            
+            UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
+            self.headImageView.image = newImage;
+            
+        }];
+    }
+    else{
+        NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,url];
+        SDWebImageManager *mgr = [SDWebImageManager sharedManager];
+        [mgr downloadImageWithURL:[NSURL URLWithString:iconURL] options:SDWebImageRetryFailed progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            
+            UIImage *newImage = [UIImage imageClipsWithHeadIcon:image sideWidth:0];
+            self.headImageView.image = newImage;
+            
+        }];
+    }
+   
     
     
 }

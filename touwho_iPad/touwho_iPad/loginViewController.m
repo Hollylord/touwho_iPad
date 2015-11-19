@@ -133,8 +133,7 @@
 - (IBAction)weiboLogin:(UIButton *)sender {
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
     
-    //判断是否需要授权
-    if (snsPlatform.needLogin) {
+
         
         //弹出授权处理页面
         snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
@@ -150,16 +149,16 @@
                 //跳转到个人中心页面
                 [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"3"];
             }});
-    }
+    
     //已经授权了，就不用弹出授权处理页面了. 当然微博是不会来这个方法的
-    else{
-        //在授权完成后调用获取用户信息的方法
-        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
-            NSLog(@"SnsInformation is %@",response.data);
-            
-            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
-        }];
-    }
+//    else{
+//        //在授权完成后调用获取用户信息的方法
+//        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
+//            NSLog(@"SnsInformation is %@",response.data);
+//            
+//            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
+//        }];
+//    }
 
 }
 
@@ -190,10 +189,12 @@
 }
 //QQ登录
 - (IBAction)QQlogin:(UIButton *)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
 
     //判断是否需要授权
-    if (snsPlatform.needLogin) {
+    
         
         //弹出授权处理页面
         snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
@@ -208,48 +209,64 @@
                 //跳转到个人中心页面
                 [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"2"];
             }});
-    }
-    //已经授权了，就不用弹出授权处理页面了 
-    else{
-        //在授权完成后调用获取用户信息的方法
-        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
-            NSLog(@"SnsInformation is %@",response.data);
-            
-            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
-        }];
-    }
+//    //已经授权了，就不用弹出授权处理页面了 
+//    else{
+//        //在授权完成后调用获取用户信息的方法
+//        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
+//            NSLog(@"SnsInformation is %@",response.data);
+//            
+//            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
+//        }];
+//    }
     
     
     
 }
 
 - (void)quickLogin:(NSString *)token withIcon:(NSString *)iconURL withNickName:(NSString *)nickName withChannel:(NSString *)channel{
-    
+    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
     //设置参数
     NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
     //上传个人信息
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[[result objectForKey:@"value"] firstObject]objectForKey:@"resCode"] isEqualToString:@"0"]) {
             
-            NSString *userID = [[[result objectForKey:@"value"] firstObject] objectForKey:@"mID"];
-            
-            //获取个人信息，并保存
-            [self getPersonalInfoWithUserID:userID withCompletionBlock:^{
-                
-                //跳转个人中心
-                [self dismissViewControllerAnimated:YES completion:NULL];
-                profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
-                
-                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
-                splitViewController *split = (splitViewController *)self.presentingViewController;
-                [split showDetailViewController:navigationController sender:nil];
-            }];
+            //json --> model
+            NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
+            ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
             
             
+            //保存用户信息
+            NSDictionary *dic = @{@"userName":model.mNickName,@"userID":model.mID,@"iconURL":model.mAvatar};
+            NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:user forKey:@"user"];
+            [userDefault synchronize];
+            
+            //发送更换头像的通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:nil];
+            
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            //跳转个人中心
+            [self dismissViewControllerAnimated:YES completion:NULL];
+            profileViewController *viewcontroller = [[profileViewController alloc] initWithNibName:@"profileViewController" bundle:nil];
+            
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
+            splitViewController *split = (splitViewController *)self.presentingViewController;
+            [split showDetailViewController:navigationController sender:nil];
+
+
+            
+        }
+        else{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [BTIndicator showForkMarkOnView:self.view withText:@"登录失败请重新登录！" withDelay:1];
         }
         
         
@@ -258,36 +275,5 @@
     }];
 }
 
-#pragma mark - 获取个人信息
-- (void)getPersonalInfoWithUserID:(NSString *)userID withCompletionBlock:(dispatch_block_t)block{
-    //参数
-    NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":userID};
-    
-    //获取个人信息
-    [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        
-//        NSLog(@"%@",responseObject);
-        
-        //json --> model
-        NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
-        
-        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
-        
-        
-        //保存用户信息
-        NSDictionary *dic = @{@"userName":model.mNickName,@"userID":userID,@"iconURL":model.mAvatar};
-        NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
-        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-        [userDefault setObject:user forKey:@"user"];
-        [userDefault synchronize];
-      
-        
-        block();
-        
-    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-        
-        NSLog(@"%@",error);
-    }];
-}
 
 @end

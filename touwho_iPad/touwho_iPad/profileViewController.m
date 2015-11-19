@@ -41,8 +41,15 @@
     NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
     self.model.mNickName = [user objectForKey:@"userName"];
     self.model.mID = [user objectForKey:@"userID"];
-    NSString *iconUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,[user objectForKey:@"iconURL"]];
-    self.model.mAvatar = iconUrl;
+    if ([BTNetWorking isTheStringContainedHttpWithString:[user objectForKey:@"iconURL"]]) {
+        self.model.mAvatar = [user objectForKey:@"iconURL"];
+    }
+    else{
+        NSString *iconUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,[user objectForKey:@"iconURL"]];
+        self.model.mAvatar = iconUrl;
+    }
+    
+    
     
     //添加左边view
     meLeft *me         = [[[NSBundle mainBundle] loadNibNamed:@"meLeft" owner:self options:nil]firstObject];
