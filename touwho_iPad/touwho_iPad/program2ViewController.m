@@ -138,7 +138,7 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,initiator.mAvatar];
         [self.initiatorheadIcon sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         NSString *QRURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mQRUrl];
-        [self.initiatorQR sd_setImageWithURL:[NSURL URLWithString:QRURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.initiatorQR sd_setImageWithURL:[NSURL URLWithString:QRURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
         self.initiatorName.text = initiator.mName;
         
         //显示LP GP

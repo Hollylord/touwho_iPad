@@ -82,7 +82,7 @@
         
         self.title.text = model.mTitle;
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",SERVER_URL,model.mFullImageUrl]];
-        [self.backgroundImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.backgroundImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logo_background"]];
         percent = [model.mCurMoney floatValue]/[model.mGoalMoney floatValue];
         [self setProgressWithProgress];
         self.label1.text = model.mCurMoney;

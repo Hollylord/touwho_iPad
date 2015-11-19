@@ -77,19 +77,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUa-g5-ewl">
-                            <rect key="frame" x="152" y="180" width="82" height="20"/>
+                            <rect key="frame" x="152" y="180" width="75" height="20"/>
                             <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="身份证号码 ">
                                     <attributes>
                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <font key="NSFont" size="14" name="STHeitiSC-Light"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="*">
-                                    <attributes>
-                                        <color key="NSColor" red="0.97395833330000003" green="0.076032881519999998" blue="0.1137865084" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>

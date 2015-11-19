@@ -56,7 +56,7 @@
     self.timeLabel.text = model.mTime;
     self.address.text = model.mAddress;
     NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mSmallImageUrl];
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
     
 }
 

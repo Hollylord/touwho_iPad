@@ -69,7 +69,7 @@
     [self pullData:^{
         //显示小组数据
         NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelGroup.mLogo];
-        [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
         self.introductionLabel.text = self.modelGroup.mDestrible;
         self.groupNameLabel.text = self.modelGroup.mName;
         self.leader.text = self.modelGroup.mGroupLeader;
