@@ -36,7 +36,12 @@
     }
     
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [TalkingData trackPageBegin:@"投资金额选择"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"投资金额选择"];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

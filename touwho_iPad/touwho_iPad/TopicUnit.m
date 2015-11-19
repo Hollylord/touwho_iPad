@@ -25,6 +25,8 @@
 
 #pragma mark - 话题点击控制器跳转
 - (IBAction)turn2SpecifiTopicVC:(UITapGestureRecognizer *)sender {
+    [TalkingData trackEvent:@"查看话题详情"];
+    
     UIViewController *viewController = [self viewController];
     SpecificTopicViewController *spe = [[SpecificTopicViewController alloc] initWithNibName:@"SpecificTopicViewController" bundle:nil];
     spe.model = self.model;

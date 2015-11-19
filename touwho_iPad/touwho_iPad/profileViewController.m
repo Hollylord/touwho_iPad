@@ -101,6 +101,10 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [TalkingData trackPageBegin:@"个人中心页"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"个人中心页"];
 }
 
 #pragma mark - 建立LeanCloud
@@ -150,6 +154,8 @@
 
 #pragma mark 名片拍照
 - (IBAction)uploadCard:(UIButton *)sender {
+    [TalkingData trackEvent:@"上传名片"];
+    
     NSString *title = [sender titleForState:UIControlStateNormal];
     if ([title isEqualToString:@"上传名片"]) {
         [sender setTitle:@"重新上传" forState:UIControlStateNormal];//修改按钮的文字
@@ -167,6 +173,8 @@
 
 #pragma mark 点击设置
 - (IBAction)setting:(UIBarButtonItem *)sender {
+    [TalkingData trackEvent:@"点击设置"];
+    
     SettingViewController *setVC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:setVC];
     navi.modalPresentationStyle = UIModalPresentationFormSheet;

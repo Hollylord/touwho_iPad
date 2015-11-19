@@ -69,10 +69,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
+    [TalkingData trackPageBegin:@"他人详情页"];
     
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"他人详情页"];
+}
 #pragma mark - 获取项目信息
 - (void)pullInvestedData{
     if (isAlreadyPullInvestedData) {

@@ -66,6 +66,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [TalkingData trackPageBegin:@"地图页"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"地图页"];
 }
 
 #pragma mark -  搜索回调

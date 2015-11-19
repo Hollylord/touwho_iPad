@@ -29,6 +29,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.contentView becomeFirstResponder];
+    [TalkingData trackPageBegin:@"回复页"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"回复页"];
 }
 #pragma mark - 按钮点击
 - (IBAction)cancel:(UIBarButtonItem *)sender {

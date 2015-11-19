@@ -20,6 +20,9 @@
 
 #pragma mark - 跳转
 - (IBAction)turn2SpecificGroupController:(UITapGestureRecognizer *)sender {
+    
+    [TalkingData trackEvent:@"查看小组详情"];
+    
     UIViewController *viewController = [self viewController];
     SpecificGroupViewController *speVC = [[SpecificGroupViewController alloc] initWithNibName:@"SpecificGroupViewController" bundle:nil];
     speVC.model = self.model;

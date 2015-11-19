@@ -80,6 +80,7 @@ typedef void(^personInfo)(NSString *iconURL,NSString *nickName);
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [TalkingData trackPageBegin:@"私信聊天页"];
     
     //add notification
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillShowNotification object:nil];
@@ -96,6 +97,7 @@ typedef void(^personInfo)(NSString *iconURL,NSString *nickName);
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
     [self.chatModel cancelListenForNewMessage];
+    [TalkingData trackPageEnd:@"私信聊天页"];
 }
 
 - (void)initBar

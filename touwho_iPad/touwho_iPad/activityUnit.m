@@ -13,6 +13,8 @@
 
 #pragma mark - 跳转
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
+    [TalkingData trackEvent:@"查看活动详情"];
+    
     UIViewController *VC = [self viewController];
     ActivityDetailViewController *nextVC = [[ActivityDetailViewController alloc]initWithNibName:@"ActivityDetailViewController" bundle:nil];
     nextVC.model = self.model;

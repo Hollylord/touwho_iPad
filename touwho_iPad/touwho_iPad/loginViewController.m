@@ -42,9 +42,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
+    [TalkingData trackPageBegin:@"登录注册页"];
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"登录注册页"];
+}
 #pragma mark - 点击按钮
 //退出
 - (IBAction)quit:(UIButton *)sender {
@@ -56,6 +58,8 @@
 
 //点击注册
 - (IBAction)zhuce:(UIButton *)sender {
+    [TalkingData trackEvent:@"点击注册"];
+    
     zhuce *view = [[[NSBundle mainBundle] loadNibNamed:@"zhuce" owner:nil options:nil]firstObject];
     [self.view addSubview:view];
     view.frame = self.view.frame;
@@ -75,6 +79,8 @@
 
 //点击忘记密码
 - (IBAction)forgetPassword:(UIButton *)sender {
+    [TalkingData trackEvent:@"点击忘记密码"];
+    
     forgetPassword *view = [[[NSBundle mainBundle] loadNibNamed:@"forgetPassword" owner:nil options:nil]firstObject];
     [self.view addSubview:view];
     view.frame = self.view.frame;
@@ -84,6 +90,8 @@
 
 //点击登录按钮 跳转个人中心控制器
 - (IBAction)login:(UIButton *)sender {
+    [TalkingData trackEvent:@"点击登录"];
+    
     //小菊花loading
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
@@ -131,6 +139,8 @@
 
 //微博登录
 - (IBAction)weiboLogin:(UIButton *)sender {
+    [TalkingData trackEvent:@"微博登录"];
+    
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
     
 
@@ -166,6 +176,8 @@
 
 //微信登录
 - (IBAction)wechatLogin:(UIButton *)sender {
+    [TalkingData trackEvent:@"微信登录"];
+    
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
     
     snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
@@ -189,6 +201,8 @@
 }
 //QQ登录
 - (IBAction)QQlogin:(UIButton *)sender {
+    [TalkingData trackEvent:@"QQ登录"];
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];

@@ -16,7 +16,6 @@
 
 - (IBAction)cancelClick:(UIBarButtonItem *)sender;
 - (IBAction)localIconClick:(UIButton *)sender;
-- (IBAction)uploadClick:(UIButton *)sender;
 - (IBAction)OK:(UIBarButtonItem *)sender;
 
 @end
@@ -29,7 +28,12 @@
     [super viewDidLoad];
     
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [TalkingData trackPageBegin:@"设置头像页"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"设置头像页"];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
