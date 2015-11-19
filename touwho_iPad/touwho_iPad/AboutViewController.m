@@ -29,8 +29,11 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setHidden:YES];
+    [TalkingData trackPageBegin:@"关于页"];
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"关于页"];
+}
 - (IBAction)returnBack:(UIBarButtonItem *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
