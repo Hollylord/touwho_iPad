@@ -108,7 +108,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系项目负责人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-1J-xy9">
-                            <rect key="frame" x="531" y="199" width="119" height="21"/>
+                            <rect key="frame" x="531" y="266" width="119" height="21"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -143,7 +143,7 @@
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p9k-By-vdy">
                             <rect key="frame" x="531" y="384" width="372" height="633"/>
                             <animations/>
-                            <color key="backgroundColor" red="0.83921568627450982" green="0.82745098039215681" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="lSS-Nc-QSW"/>
                                 <outlet property="delegate" destination="-1" id="EVr-S2-YYD"/>
@@ -220,7 +220,7 @@
                         <constraint firstAttribute="trailing" secondItem="S2m-T3-nn8" secondAttribute="trailing" constant="20" id="6MA-qM-ZHI"/>
                         <constraint firstItem="c0b-Uh-VKB" firstAttribute="leading" secondItem="JWk-N7-VYd" secondAttribute="leading" id="9ZC-vX-YCn"/>
                         <constraint firstAttribute="trailing" secondItem="rCY-RK-wgW" secondAttribute="trailing" constant="20" id="AeT-Ap-FpA" userLabel="水平范围"/>
-                        <constraint firstItem="x5H-1J-xy9" firstAttribute="top" secondItem="rCY-RK-wgW" secondAttribute="bottom" constant="5" id="C7c-W5-xUT"/>
+                        <constraint firstItem="x5H-1J-xy9" firstAttribute="top" secondItem="rCY-RK-wgW" secondAttribute="bottom" constant="72" id="C7c-W5-xUT"/>
                         <constraint firstItem="hw9-qA-2xz" firstAttribute="centerX" secondItem="SkM-oH-Vyz" secondAttribute="centerX" id="D30-iU-0tM"/>
                         <constraint firstItem="p3m-PO-IuX" firstAttribute="leading" secondItem="x5H-1J-xy9" secondAttribute="trailing" constant="95" id="D6M-0U-CQX"/>
                         <constraint firstAttribute="trailing" secondItem="p9k-By-vdy" secondAttribute="trailing" constant="20" id="IFQ-p5-3Gm"/>

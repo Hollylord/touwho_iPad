@@ -26,6 +26,11 @@
 #pragma mark - 跳转
 - (IBAction)turnToNextVC:(UITapGestureRecognizer *)sender {
     UIViewController *VC = [self viewController];
+    if (!USER_ID) {
+        [BTIndicator showTextOnView:VC.view withText:@"请登录后再试！" withDelay:1];
+        return ;
+    }
+    
     JiGouDetailViewController *jiGouVC = [[JiGouDetailViewController alloc] initWithNibName:@"JiGouDetailViewController" bundle:nil];
     //传递数据
     jiGouVC.model = self.model;

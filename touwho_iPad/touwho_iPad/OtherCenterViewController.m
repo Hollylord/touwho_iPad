@@ -348,7 +348,10 @@
 
 #pragma mark - 私信
 - (IBAction)chatWithSomeone:(UIButton *)sender {
-    
+    if (!USER_ID) {
+        [BTIndicator showForkMarkOnView:self.view withText:@"请登录后再试" withDelay:1];
+        return ;
+    }
     //创建长连接和会话: 将自己的id和朋友的id赋值
     [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[self.model.mID]];
     
