@@ -177,7 +177,7 @@
     NSString *interestingIndus = self.interestingIndustry.titleLabel.text;
     NSString *risk = self.riskPereference.titleLabel.text;
     //判断输入信息是否填完整
-    NSArray *results = [NSArray arrayWithObjects:sex,name,phone,identiCode,email,atIndustry,age,interestingIndus,risk, nil];
+    NSArray *results = [NSArray arrayWithObjects:sex,name,phone,email,atIndustry,age,interestingIndus,risk, nil];
     __block BOOL isInfoFull;
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
