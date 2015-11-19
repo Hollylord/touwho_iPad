@@ -186,6 +186,9 @@
 		A1CB0BDC1BE84DFB009BE9FA /* BTNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */; };
 		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; };
 		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; };
+		A1D267C81BFDC026000EEE6A /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D267C61BFDC026000EEE6A /* libTalkingData.a */; };
+		A1D267CB1BFDC0AA000EEE6A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D267CA1BFDC0AA000EEE6A /* AdSupport.framework */; };
+		A1D267CD1BFDC0DE000EEE6A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D267CC1BFDC0DE000EEE6A /* CoreMotion.framework */; };
 		A1D288031BE9ADA5007A0D41 /* ModelMyProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D288021BE9ADA5007A0D41 /* ModelMyProgram.m */; };
 		A1D288071BE9B75F007A0D41 /* ModelMyInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D288061BE9B75F007A0D41 /* ModelMyInstitution.m */; };
 		A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */; };
@@ -537,6 +540,10 @@
 		A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIimage_HeadIcon.m"; sourceTree = "<group>"; };
 		A1CF1E1D1BAFEB670065EF77 /* ProgramsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewCell.h; sourceTree = "<group>"; };
 		A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewCell.m; sourceTree = "<group>"; };
+		A1D267C61BFDC026000EEE6A /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
+		A1D267C71BFDC026000EEE6A /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		A1D267CA1BFDC0AA000EEE6A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		A1D267CC1BFDC0DE000EEE6A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A1D288011BE9ADA5007A0D41 /* ModelMyProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMyProgram.h; sourceTree = "<group>"; };
 		A1D288021BE9ADA5007A0D41 /* ModelMyProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMyProgram.m; sourceTree = "<group>"; };
 		A1D288051BE9B75F007A0D41 /* ModelMyInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMyInstitution.h; sourceTree = "<group>"; };
@@ -614,8 +621,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D267CD1BFDC0DE000EEE6A /* CoreMotion.framework in Frameworks */,
+				A1D267CB1BFDC0AA000EEE6A /* AdSupport.framework in Frameworks */,
 				A1211EB71BB242F800B25AA4 /* libz.tbd in Frameworks */,
 				A1211EB51BB242ED00B25AA4 /* libstdc++.tbd in Frameworks */,
+				A1D267C81BFDC026000EEE6A /* libTalkingData.a in Frameworks */,
 				A1211EB31BB242DF00B25AA4 /* libiconv.tbd in Frameworks */,
 				A1211EB11BB242D400B25AA4 /* libsqlite3.tbd in Frameworks */,
 				A1211EAF1BB242B300B25AA4 /* CoreTelephony.framework in Frameworks */,
@@ -676,6 +686,8 @@
 		73AC23966CB8C0D034DD33F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1D267CC1BFDC0DE000EEE6A /* CoreMotion.framework */,
+				A1D267CA1BFDC0AA000EEE6A /* AdSupport.framework */,
 				A1211EB61BB242F800B25AA4 /* libz.tbd */,
 				A1211EB41BB242ED00B25AA4 /* libstdc++.tbd */,
 				A1211EB21BB242DF00B25AA4 /* libiconv.tbd */,
@@ -882,6 +894,7 @@
 		A17C9A7B1B8C6FBA00F5677C /* library */ = {
 			isa = PBXGroup;
 			children = (
+				A1D267C91BFDC02F000EEE6A /* Talkingdata */,
 				A1B13D2B1BB554D200A8AC29 /* 极光推送 */,
 				A1211E9D1BB2421700B25AA4 /* UMSocial_Sdk_Extra_Frameworks */,
 				A1211E771BB2413500B25AA4 /* UMSocial_Sdk_4.2.3 */,
@@ -1505,6 +1518,15 @@
 				A18338521BC6693C000866EB /* ModelForUser.m */,
 			);
 			name = "项目和人model";
+			sourceTree = "<group>";
+		};
+		A1D267C91BFDC02F000EEE6A /* Talkingdata */ = {
+			isa = PBXGroup;
+			children = (
+				A1D267C61BFDC026000EEE6A /* libTalkingData.a */,
+				A1D267C71BFDC026000EEE6A /* TalkingData.h */,
+			);
+			name = Talkingdata;
 			sourceTree = "<group>";
 		};
 		A1D288041BE9ADAF007A0D41 /* Model */ = {
