@@ -22,6 +22,9 @@
 @property (copy,nonatomic) NSString *mGroupID;
 ///发话题的用户id
 @property (copy,nonatomic) NSString *mUserID;
-
+///发话题的用户昵称
+@property (copy,nonatomic) NSString *mUserName;
+///发话题人的头像
+@property (copy,nonatomic) NSString *mLogo;
 
 @end

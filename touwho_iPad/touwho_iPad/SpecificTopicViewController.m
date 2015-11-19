@@ -8,6 +8,7 @@
 
 #import "SpecificTopicViewController.h"
 #import "replyViewController.h"
+#import "sixinViewController.h"
 #import "CommentCell.h"
 #import "ModelTopicDetail.h"
 #import "ModelGroupDetail.h"
@@ -27,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *writerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *leader;
 @property (weak, nonatomic) IBOutlet UILabel *memberCount;
+@property (weak, nonatomic) IBOutlet UIButton *thumb;
 
 ///存放话题详情的model
 @property (strong,nonatomic)ModelTopicDetail *modelDetail;
@@ -63,9 +65,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"commentCell" bundle:nil] forCellReuseIdentifier:@"commentCell"];
     
     
-    //获取详情
+    //获取话题详情详情
     [self pullData:^{
-        //显示数据
+        //显示小组数据
         NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelGroup.mLogo];
         [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         self.introductionLabel.text = self.modelGroup.mDestrible;
@@ -73,15 +75,21 @@
         self.leader.text = self.modelGroup.mGroupLeader;
         self.memberCount.text = self.modelGroup.mMemberCount;
         
+        //显示话题详情数据
         self.timeLabel.text = self.model.mCreateTime;
         self.titleLabel.text = self.model.mTitle;
-        NSString *writerIcon = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelUser.mAvatar];
+        NSString *writerIcon = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
         [self.iconWriter sd_setImageWithURL:[NSURL URLWithString:writerIcon] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-        self.writerNameLabel.text = self.modelUser.mNickName;
+        self.writerNameLabel.text = self.modelDetail.mUserName;
         
         self.contentTextView.text = self.modelDetail.mTalkContent;
         self.contentTextView.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
-        
+        if ([self.modelDetail.mIsPraise isEqualToString:@"0"]) {
+            self.thumb.selected = NO;
+        }
+        else{
+            self.thumb.selected = YES;
+        }
         //更新约束
         for (NSLayoutConstraint *constraint in self.contentTextView.constraints) {
             if ([constraint.identifier isEqualToString:@"heightTextView"]) {
@@ -205,10 +213,46 @@
 
 #pragma mark - 私信
 - (IBAction)sendMessage:(UIButton *)sender {
-    
+    if (!USER_ID) {
+        [BTIndicator showForkMarkOnView:self.view withText:@"请登录后再试" withDelay:1];
+        return ;
+    }
+    //创建长连接和会话: 将自己的id和朋友的id赋值
+    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[self.modelDetail.mUserID]];
+}
+- (void)openSessionByClientId:(NSString*)clientId navigationToIMWithTargetClientIDs:(NSArray *)clientIDs {
+    [[LeanMessageManager manager] openSessionWithClientID:clientId completion:^(BOOL succeeded, NSError *error) {
+        if(!error){
+            
+            
+            ConversationType type;
+            if(clientIDs.count>1){
+                type=ConversationTypeGroup;
+            }else{
+                type=ConversationTypeOneToOne;
+            }
+            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:type completion:^(AVIMConversation *conversation, NSError *error) {
+                if(error){
+                    NSLog(@"error=%@",error);
+                }else{
+                    //保存数据coreData
+                    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
+                    
+                    sixinViewController *vc = [[sixinViewController alloc] initWithConversation:conversation];
+                    vc.friendId = [clientIDs firstObject];
+                    vc.modalPresentationStyle = UIModalPresentationFormSheet;
+                    
+                    //弹出回复控制器 界面
+                    [self presentViewController:vc animated:YES completion:NULL];
+                }
+            }];
+        }else{
+            NSLog(@"error=%@",error);
+        }
+    }];
 }
 
-#pragma mark - 获取data
+#pragma mark - 获取话题详情数据
 - (void)pullData:(dispatch_block_t)block{
     //获取项目详情
     NSDictionary *para = @{@"method":@"getDetailTalk",@"talk_id":self.model.mID};
@@ -224,7 +268,7 @@
         self.modelsComment = [ModelForComment objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
 
         //获取发话题的用户信息
-        NSDictionary *temp = @{@"method":@"getMyInfo",@"user_id":@"38"};
+        NSDictionary *temp = @{@"method":@"getMyInfo",@"user_id":self.modelDetail.mUserID};
         [BTNetWorking getDataWithPara:temp success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //            NSLog(@"%@",responseObject);
             NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];

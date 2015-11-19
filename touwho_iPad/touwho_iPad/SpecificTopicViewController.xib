@@ -16,6 +16,7 @@
                 <outlet property="leader" destination="PIV-dm-FH1" id="eyy-Xf-dkS"/>
                 <outlet property="memberCount" destination="nKx-Ec-ye7" id="BWh-QY-Yz0"/>
                 <outlet property="tableView" destination="Kuh-U1-vhN" id="9q0-b7-oPl"/>
+                <outlet property="thumb" destination="5VW-Sb-L2g" id="7gA-Hh-KBt"/>
                 <outlet property="timeLabel" destination="jQr-gZ-lMc" id="p63-To-ZVe"/>
                 <outlet property="titleLabel" destination="i1d-DC-OPK" id="w9Y-8F-4kS"/>
                 <outlet property="view" destination="x4f-4Z-Jao" id="P9W-5j-tx9"/>
@@ -57,14 +58,7 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="G8X-C6-rj8">
-                    <rect key="frame" x="145" y="272" width="60" height="30"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUa-b2-j9n">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
-                            <animations/>
-                            <state key="normal" title="加入小组"/>
-                        </button>
-                    </subviews>
+                    <rect key="frame" x="175" y="272" width="0.0" height="0.0"/>
                     <animations/>
                 </stackView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTh-sa-b2Q">
@@ -205,7 +199,7 @@
                         <constraint firstItem="FtO-LD-vTi" firstAttribute="centerX" secondItem="i1d-DC-OPK" secondAttribute="centerX" id="wv6-In-A1I"/>
                     </constraints>
                 </scrollView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="863-UY-Kgn">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="863-UY-Kgn">
                     <rect key="frame" x="35" y="322" width="280" height="404"/>
                     <animations/>
                     <constraints>

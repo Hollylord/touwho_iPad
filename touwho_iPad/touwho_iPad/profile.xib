@@ -203,7 +203,7 @@
                             <attributedString key="attributedText">
                                 <fragment content="所处行业">
                                     <attributes>
-                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -234,7 +234,7 @@
                             <attributedString key="attributedText">
                                 <fragment content="年龄">
                                     <attributes>
-                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -265,7 +265,7 @@
                             <attributedString key="attributedText">
                                 <fragment content="感兴趣的行业">
                                     <attributes>
-                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -296,7 +296,7 @@
                             <attributedString key="attributedText">
                                 <fragment content="风险偏好">
                                     <attributes>
-                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="14" name="STHeitiSC-Light"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
