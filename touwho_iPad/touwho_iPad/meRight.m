@@ -127,6 +127,7 @@
         }
         
         UITableView *programs = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
+        
         investedProgramsTableView = programs;
         programs.delegate = self;
         programs.dataSource = self;
@@ -134,7 +135,13 @@
         [programs registerNib:[UINib nibWithNibName:@"programsCell" bundle:nil] forCellReuseIdentifier:@"programsCell"];
         [self addSubview:programs];
         [self layoutForSubview:programs];
-
+        
+        //添加一个白色的遮盖
+        UIView *whiteView = [[UIView alloc] init];
+        whiteView.backgroundColor = [UIColor whiteColor];
+        [self addSubview:whiteView];
+        [self layoutForWhiteView:whiteView andTopDistance:self.modelsPrograms.count * 200];
+        
     }];
     
     
@@ -156,7 +163,14 @@
         [self addSubview:programs];
         [self layoutForSubview:programs];
         
+        //添加一个白色的遮盖
+        UIView *whiteView = [[UIView alloc] init];
+        whiteView.backgroundColor = [UIColor whiteColor];
+        [self addSubview:whiteView];
+        [self layoutForWhiteView:whiteView andTopDistance:self.modelsPrograms.count * 200];
+        
     }];
+    
     
     
     
@@ -232,7 +246,7 @@
     
 }
 
-
+#pragma mark 布局
 - (void)layoutForSubview:(UIView *)view{
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
     NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
@@ -242,6 +256,15 @@
     view.translatesAutoresizingMaskIntoConstraints = NO;
     [view.superview layoutIfNeeded];
 
+}
+- (void) layoutForWhiteView:(UIView *)view andTopDistance:(CGFloat)dis{
+    NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
+    NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTop multiplier:1 constant:20 + dis];
+    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    [view.superview addConstraints:@[leading,trailing,top,bottom]];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [view.superview layoutIfNeeded];
 }
 
 #pragma mark - tableview代理

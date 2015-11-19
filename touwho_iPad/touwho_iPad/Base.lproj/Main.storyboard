@@ -33,8 +33,8 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-bS-wmy">
                                 <rect key="frame" x="30" y="64" width="634" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
-                                        <rect key="frame" x="0.0" y="17" width="159" height="30"/>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="股权投资" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
@@ -45,8 +45,8 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="mhN-Hl-y6u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
-                                        <rect key="frame" x="159" y="17" width="158" height="30"/>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
+                                        <rect key="frame" x="171" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="海外专区" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
@@ -57,8 +57,8 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="yXA-0l-KB6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
-                                        <rect key="frame" x="317" y="17" width="159" height="30"/>
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
+                                        <rect key="frame" x="342" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="商品众筹" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
@@ -69,8 +69,8 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="TFy-bW-pKm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
-                                        <rect key="frame" x="476" y="17" width="158" height="30"/>
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
+                                        <rect key="frame" x="513" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="公益活动" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
@@ -797,29 +797,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="r1g-ca-zyV">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="r1g-ca-zyV">
                                 <rect key="frame" x="100" y="0.0" width="400" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
                                         <rect key="frame" x="0.0" y="70" width="30" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="社群"/>
+                                        <state key="normal" title="社群" backgroundImage="anniuGreen"/>
+                                        <state key="selected" backgroundImage="button_Green_selected"/>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
                                         <rect key="frame" x="163" y="70" width="60" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="路演活动"/>
+                                        <state key="normal" title="路演活动" backgroundImage="anniuGreen"/>
+                                        <state key="selected" backgroundImage="button_Green_selected"/>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="4IE-lB-gXT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
                                         <rect key="frame" x="340" y="70" width="60" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="影音资料"/>
+                                        <state key="normal" title="影音资料" backgroundImage="anniuGreen"/>
+                                        <state key="selected" backgroundImage="button_Green_selected"/>
                                         <connections>
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="yKX-2j-tkZ"/>
                                         </connections>
@@ -827,7 +830,9 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="7aO-Ts-mB9"/>
+                                    <constraint firstAttribute="height" constant="100" id="7aO-Ts-mB9">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="36"/>
+                                    </constraint>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S61-Ex-FFa" userLabel="横线">
@@ -844,7 +849,9 @@
                         <constraints>
                             <constraint firstItem="S61-Ex-FFa" firstAttribute="leading" secondItem="Hy2-pZ-C2H" secondAttribute="leading" id="7U7-Xz-LvC"/>
                             <constraint firstAttribute="trailing" secondItem="r1g-ca-zyV" secondAttribute="trailing" constant="100" id="YKw-8O-v0T"/>
-                            <constraint firstItem="r1g-ca-zyV" firstAttribute="top" secondItem="Hy2-pZ-C2H" secondAttribute="top" id="axD-sG-lFa"/>
+                            <constraint firstItem="r1g-ca-zyV" firstAttribute="top" secondItem="Hy2-pZ-C2H" secondAttribute="top" id="axD-sG-lFa">
+                                <variation key="heightClass=regular-widthClass=regular" constant="64"/>
+                            </constraint>
                             <constraint firstItem="S61-Ex-FFa" firstAttribute="top" secondItem="r1g-ca-zyV" secondAttribute="bottom" id="dky-NQ-Lu3"/>
                             <constraint firstItem="r1g-ca-zyV" firstAttribute="leading" secondItem="Hy2-pZ-C2H" secondAttribute="leading" constant="100" id="wWz-1z-wGz"/>
                             <constraint firstAttribute="trailing" secondItem="S61-Ex-FFa" secondAttribute="trailing" id="xz0-fz-5JD"/>

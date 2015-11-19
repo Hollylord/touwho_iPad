@@ -44,9 +44,15 @@
     return NO;
 }
 
+///设置气泡的文字
 - (NSString *)progressView:(ASProgressPopUpView *)progressView stringForProgress:(float)progress{
+    if (progress == 1) {
+        return @"打款中";
+    }
+    else{
+        return nil;
+    }
     
-    return nil;
     
 }
 
