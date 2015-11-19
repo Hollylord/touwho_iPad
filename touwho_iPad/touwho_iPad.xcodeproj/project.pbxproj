@@ -186,6 +186,7 @@
 		A1CB0BDC1BE84DFB009BE9FA /* BTNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */; };
 		A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */; };
 		A1CF1E1F1BAFEB670065EF77 /* ProgramsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */; };
+		A1D267C51BFDB692000EEE6A /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D267C41BFDB692000EEE6A /* test.m */; };
 		A1D288031BE9ADA5007A0D41 /* ModelMyProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D288021BE9ADA5007A0D41 /* ModelMyProgram.m */; };
 		A1D288071BE9B75F007A0D41 /* ModelMyInstitution.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D288061BE9B75F007A0D41 /* ModelMyInstitution.m */; };
 		A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D61FFB1BA66AFD009FCA1F /* SpecificGroupViewController.m */; };
@@ -537,6 +538,8 @@
 		A1CC0C6B1BAC167700168536 /* UIImage+UIimage_HeadIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIimage_HeadIcon.m"; sourceTree = "<group>"; };
 		A1CF1E1D1BAFEB670065EF77 /* ProgramsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTableViewCell.h; sourceTree = "<group>"; };
 		A1CF1E1E1BAFEB670065EF77 /* ProgramsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTableViewCell.m; sourceTree = "<group>"; };
+		A1D267C31BFDB692000EEE6A /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		A1D267C41BFDB692000EEE6A /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		A1D288011BE9ADA5007A0D41 /* ModelMyProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMyProgram.h; sourceTree = "<group>"; };
 		A1D288021BE9ADA5007A0D41 /* ModelMyProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMyProgram.m; sourceTree = "<group>"; };
 		A1D288051BE9B75F007A0D41 /* ModelMyInstitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMyInstitution.h; sourceTree = "<group>"; };
@@ -1494,6 +1497,8 @@
 				A1CB0BDB1BE84DFB009BE9FA /* BTNetWorking.m */,
 				A1F6B0711BFB10550098CC59 /* BTIndicator.h */,
 				A1F6B0721BFB10550098CC59 /* BTIndicator.m */,
+				A1D267C31BFDB692000EEE6A /* test.h */,
+				A1D267C41BFDB692000EEE6A /* test.m */,
 			);
 			name = BTNetworking;
 			sourceTree = "<group>";
@@ -2137,6 +2142,7 @@
 				A18338561BC66C5A000866EB /* ModelForComment.m in Sources */,
 				A1D61FFD1BA66AFD009FCA1F /* SpecificGroupViewController.m in Sources */,
 				A1E03BCF1BD8E414008247E0 /* AboutViewController.m in Sources */,
+				A1D267C51BFDB692000EEE6A /* test.m in Sources */,
 				A1AB1F201BB4F5220069818F /* ServiceAgreement.m in Sources */,
 				A18338591BC673A3000866EB /* xiaozuUnit.m in Sources */,
 				A1DAFABB1B8C37BE00189680 /* circle.m in Sources */,
