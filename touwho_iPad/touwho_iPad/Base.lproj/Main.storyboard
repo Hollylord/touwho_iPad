@@ -33,7 +33,7 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-bS-wmy">
                                 <rect key="frame" x="30" y="64" width="634" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="股权投资" backgroundImage="anniuGreen"/>
@@ -45,7 +45,7 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="mhN-Hl-y6u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="11" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
                                         <rect key="frame" x="171" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="海外专区" backgroundImage="anniuGreen"/>
@@ -57,7 +57,7 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="yXA-0l-KB6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="12" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
                                         <rect key="frame" x="342" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="商品众筹" backgroundImage="anniuGreen"/>
@@ -69,7 +69,7 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="TFy-bW-pKm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="13" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eK-BDU">
                                         <rect key="frame" x="513" y="0.0" width="121" height="64"/>
                                         <animations/>
                                         <state key="normal" title="公益活动" backgroundImage="anniuGreen"/>
@@ -800,8 +800,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="r1g-ca-zyV">
                                 <rect key="frame" x="100" y="0.0" width="400" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
-                                        <rect key="frame" x="0.0" y="70" width="30" height="30"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-wC-daW">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="100"/>
                                         <animations/>
                                         <state key="normal" title="社群" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
@@ -809,8 +809,8 @@
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="i7n-GU-hIN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
-                                        <rect key="frame" x="163" y="70" width="60" height="30"/>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-yg-lN0">
+                                        <rect key="frame" x="167" y="0.0" width="66" height="100"/>
                                         <animations/>
                                         <state key="normal" title="路演活动" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
@@ -818,8 +818,8 @@
                                             <action selector="buttonClick:" destination="Va9-lJ-VSV" eventType="touchUpInside" id="4IE-lB-gXT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
-                                        <rect key="frame" x="340" y="70" width="60" height="30"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdF-cn-FPy">
+                                        <rect key="frame" x="333" y="0.0" width="67" height="100"/>
                                         <animations/>
                                         <state key="normal" title="影音资料" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
