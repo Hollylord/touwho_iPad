@@ -38,19 +38,21 @@
     }
     //状态：未开始
     if ([model.mStatus isEqualToString:@"0"]) {
-        self.statusLabel.text = @"未开始";
-        [self.statusLabel setBackgroundColor:[UIColor colorWithRed:255/255.0 green:98/255.0 blue:77/255.0 alpha:1.0f]];
+       
+        [self.status setTitle:@"未开始" forState:UIControlStateNormal];
+        
+        [self.status setBackgroundImage:[UIImage imageNamed:@"label_imminent"] forState:UIControlStateNormal];
     }
     //状态：正在进行
     else if ([model.mStatus isEqualToString:@"1"]){
-        self.statusLabel.text = @"正在进行";
-        [self.statusLabel setBackgroundColor:[UIColor colorWithRed:255/255.0 green:98/255.0 blue:77/255.0 alpha:1.0f]];
+        [self.status setTitle:@"正在进行" forState:UIControlStateNormal];
+        [self.status setBackgroundImage:[UIImage imageNamed:@"label_onStage"] forState:UIControlStateNormal];
     
     }
     //状态：已结束
     else{
-        self.statusLabel.text = @"已结束";
-        [self.statusLabel setBackgroundColor:[UIColor blueColor]];
+        [self.status setTitle:@"已结束" forState:UIControlStateNormal];
+        [self.status setBackgroundImage:[UIImage imageNamed:@"label_finished"] forState:UIControlStateNormal];
     }
     
 

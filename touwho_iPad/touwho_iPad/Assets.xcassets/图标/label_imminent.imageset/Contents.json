@@ -5,19 +5,8 @@
       "scale" : "1x"
     },
     {
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "tile",
-          "width" : 1
-        },
-        "cap-insets" : {
-          "right" : 347,
-          "left" : 72
-        }
-      },
       "idiom" : "universal",
-      "filename" : "预热中.png",
+      "filename" : "预热中(1).png",
       "scale" : "2x"
     },
     {

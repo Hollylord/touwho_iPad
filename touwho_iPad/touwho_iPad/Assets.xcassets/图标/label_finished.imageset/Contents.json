@@ -5,19 +5,8 @@
       "scale" : "1x"
     },
     {
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "tile",
-          "width" : 1
-        },
-        "cap-insets" : {
-          "right" : 391,
-          "left" : 75
-        }
-      },
       "idiom" : "universal",
-      "filename" : "已完成.png",
+      "filename" : "已完成(1).png",
       "scale" : "2x"
     },
     {

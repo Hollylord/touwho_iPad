@@ -39,14 +39,17 @@
                         <constraint firstAttribute="width" constant="130" id="r6H-ev-I6K"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nU-0U-zAk">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nU-0U-zAk" userLabel="状态">
                     <rect key="frame" x="8" y="8" width="93" height="30"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="AMH-7z-0zY"/>
                         <constraint firstAttribute="width" constant="93" id="aNj-SV-b26"/>
                     </constraints>
-                    <state key="normal" backgroundImage="label_finished"/>
+                    <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                 </button>
             </subviews>
             <animations/>
@@ -70,6 +73,7 @@
                 <outlet property="address" destination="smh-cZ-aZD" id="kq2-CK-EDI"/>
                 <outlet property="iconView" destination="L2E-2Q-cL3" id="Mcl-0e-L51"/>
                 <outlet property="nameLabel" destination="YZZ-48-X54" id="UMG-It-VZL"/>
+                <outlet property="status" destination="9nU-0U-zAk" id="Dpa-Nr-PeG"/>
                 <outlet property="timeLabel" destination="5Th-kX-m00" id="lJH-IT-Ya2"/>
                 <outletCollection property="gestureRecognizers" destination="FEY-hk-iCX" appends="YES" id="z5D-fu-CG6"/>
             </connections>
@@ -81,7 +85,4 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
-    <resources>
-        <image name="label_finished" width="233" height="324"/>
-    </resources>
 </document>
