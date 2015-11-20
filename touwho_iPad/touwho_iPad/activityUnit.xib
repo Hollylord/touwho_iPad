@@ -10,17 +10,6 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未开始" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-FU-e3K">
-                    <rect key="frame" x="8" y="8" width="51" height="30"/>
-                    <animations/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="sPm-1k-qTI"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-48-X54">
                     <rect key="frame" x="239" y="23" width="68" height="21"/>
                     <animations/>
@@ -50,21 +39,30 @@
                         <constraint firstAttribute="width" constant="130" id="r6H-ev-I6K"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nU-0U-zAk">
+                    <rect key="frame" x="8" y="8" width="93" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="AMH-7z-0zY"/>
+                        <constraint firstAttribute="width" constant="93" id="aNj-SV-b26"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="label_finished"/>
+                </button>
             </subviews>
             <animations/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstItem="L2E-2Q-cL3" firstAttribute="top" secondItem="9nU-0U-zAk" secondAttribute="bottom" constant="2" id="Bvi-6o-2ve"/>
+                <constraint firstItem="9nU-0U-zAk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Fp2-0b-zOh"/>
                 <constraint firstItem="5Th-kX-m00" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="Hia-uO-Vzo"/>
                 <constraint firstItem="5Th-kX-m00" firstAttribute="leading" secondItem="L2E-2Q-cL3" secondAttribute="trailing" constant="23" id="Mjc-dk-dgd"/>
-                <constraint firstItem="ybl-FU-e3K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OtY-Jl-mqa"/>
-                <constraint firstItem="ybl-FU-e3K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="cKW-z0-gB3"/>
                 <constraint firstItem="YZZ-48-X54" firstAttribute="centerX" secondItem="L2E-2Q-cL3" secondAttribute="centerX" constant="200" id="cef-sN-vHj"/>
                 <constraint firstItem="L2E-2Q-cL3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="dRV-6a-hLa"/>
                 <constraint firstItem="smh-cZ-aZD" firstAttribute="leading" secondItem="L2E-2Q-cL3" secondAttribute="trailing" constant="23" id="dWm-T5-d5o"/>
                 <constraint firstAttribute="trailing" secondItem="smh-cZ-aZD" secondAttribute="trailing" constant="17" id="fk1-Jg-rAV"/>
                 <constraint firstItem="YZZ-48-X54" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="23" id="he5-2c-TaY"/>
-                <constraint firstItem="L2E-2Q-cL3" firstAttribute="top" secondItem="ybl-FU-e3K" secondAttribute="bottom" constant="2" id="mCn-zH-6L3"/>
                 <constraint firstItem="smh-cZ-aZD" firstAttribute="top" secondItem="5Th-kX-m00" secondAttribute="bottom" constant="8" id="nth-HO-xkY"/>
+                <constraint firstItem="9nU-0U-zAk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="p5j-CK-a8v"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -72,7 +70,6 @@
                 <outlet property="address" destination="smh-cZ-aZD" id="kq2-CK-EDI"/>
                 <outlet property="iconView" destination="L2E-2Q-cL3" id="Mcl-0e-L51"/>
                 <outlet property="nameLabel" destination="YZZ-48-X54" id="UMG-It-VZL"/>
-                <outlet property="statusLabel" destination="ybl-FU-e3K" id="KzX-Li-NNf"/>
                 <outlet property="timeLabel" destination="5Th-kX-m00" id="lJH-IT-Ya2"/>
                 <outletCollection property="gestureRecognizers" destination="FEY-hk-iCX" appends="YES" id="z5D-fu-CG6"/>
             </connections>
@@ -84,4 +81,7 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="label_finished" width="233" height="324"/>
+    </resources>
 </document>

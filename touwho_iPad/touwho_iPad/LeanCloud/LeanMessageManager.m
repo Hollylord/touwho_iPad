@@ -109,6 +109,7 @@
                                                 options:AVIMConversationOptionNone
                                                callback:completion];
         } else {
+           
             // 已经有一个对话存在，继续在这一对话中聊天
             AVIMConversation *conversation = [objects lastObject];
             completion(conversation,nil);

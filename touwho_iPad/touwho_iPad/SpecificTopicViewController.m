@@ -231,12 +231,12 @@
             }else{
                 type=ConversationTypeOneToOne;
             }
-            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:type completion:^(AVIMConversation *conversation, NSError *error) {
+            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:1 completion:^(AVIMConversation *conversation, NSError *error) {
                 if(error){
                     NSLog(@"error=%@",error);
                 }else{
                     //保存数据coreData
-                    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
+//                    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
                     
                     sixinViewController *vc = [[sixinViewController alloc] initWithConversation:conversation];
                     vc.friendId = [clientIDs firstObject];

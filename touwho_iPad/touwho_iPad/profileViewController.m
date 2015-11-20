@@ -112,10 +112,30 @@
     //建立长连接
     [self.client openWithClientId:USER_ID callback:^(BOOL succeeded, NSError *error) {
         if (!succeeded) {
+            NSLog(@"%@",error);
             [self buildConnectWithLeanCloud];
+            
         }
         else{
-            [self updateConversations];
+            //查询会话
+            AVIMConversationQuery *query = [self.client conversationQuery];
+            [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
+//                NSLog(@"%@",objects);
+                //保存所有会话
+                [objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    
+                    AVIMConversation *conver = obj;
+                    NSLog(@"%@",conver.conversationId);
+                    NSLog(@"%@",conver.members);
+                    [BTNetWorking setupCoreDataAndSaveConversation:conver];
+                }];
+                
+                //会话转models
+                [self updateConversations];
+                
+            }];
+            
+            
         }
     }];
 
@@ -259,14 +279,7 @@
 }
 
 #pragma mark - LeanCloud代理
-- (void)conversation:(AVIMConversation *)conversation didReceiveUnread:(NSInteger)unread{
-    //存储收消息的conversation
-    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
-    
-    [self updateConversations];
-    
-    
-}
+
 
 - (void) updateConversations{
     

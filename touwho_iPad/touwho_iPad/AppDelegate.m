@@ -26,7 +26,7 @@
     
     
     //设置leanCloud
-    [AVOSCloud setApplicationId:@"9vyUjfA3OLiQeVD3P0TojM5Y" clientKey:@"QDSFGoFRxgDzohuf4JYRFvmD"];
+    [AVOSCloud setApplicationId:@"H4Dbn5GzKyxSj4BzPKplslEe" clientKey:@"WYSFew5AuFPzcWqauhjVivue"];
     [AVIMClient setUserOptions:@{
                                  AVIMUserOptionUseUnread: @(YES)
                                  }];

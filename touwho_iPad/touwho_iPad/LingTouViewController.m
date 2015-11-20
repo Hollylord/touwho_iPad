@@ -89,7 +89,7 @@
         [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"%@",responseObject);
             
-            NSString *res = [[responseObject objectForKey:@"value"] objectForKey:@"resCode"];
+            NSString *res = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"resCode"];
             if ([res isEqualToString:@"0"]) {
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 hud.mode = MBProgressHUDModeText;

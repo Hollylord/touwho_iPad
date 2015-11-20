@@ -102,7 +102,7 @@
     
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[[result objectForKey:@"value"] firstObject] objectForKey:@"resCode"] isEqualToString:@"0"]) {
@@ -126,7 +126,12 @@
             splitViewController *split = (splitViewController *)self.presentingViewController;
             [split showDetailViewController:navigationController sender:nil];
         }
-        
+        else{
+            //去除小菊花
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            [BTIndicator showForkMarkOnView:self.view withText:@"登录失败" withDelay:1];
+        }
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -148,14 +153,15 @@
         //弹出授权处理页面
         snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
             
-            NSLog(@"%@",response);
+//            NSLog(@"%@",response);
             
             //          获取微博用户名、uid、token等
             if (response.responseCode == UMSResponseCodeSuccess) {
                 
                 UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
                 
-                NSLog(@"%@",snsAccount);
+//                NSLog(@"%@",snsAccount);
+                
                 //跳转到个人中心页面
                 [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"3"];
             }});
@@ -186,7 +192,7 @@
             
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];
             
-            NSLog(@"%@",snsAccount);
+//            NSLog(@"%@",snsAccount);
             //跳转到个人中心页面
             [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"1"];
         }
@@ -194,7 +200,7 @@
     });
     
     [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToWechatSession  completion:^(UMSocialResponseEntity *response){
-        NSLog(@"SnsInformation is %@",response.data);
+//        NSLog(@"SnsInformation is %@",response.data);
         
     }];
     
@@ -213,7 +219,7 @@
         //弹出授权处理页面
         snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
             
-            NSLog(@"%@",response);
+//            NSLog(@"%@",response);
             
             //          获取微博用户名、uid、token等
             if (response.responseCode == UMSResponseCodeSuccess) {
@@ -238,12 +244,12 @@
 }
 
 - (void)quickLogin:(NSString *)token withIcon:(NSString *)iconURL withNickName:(NSString *)nickName withChannel:(NSString *)channel{
-    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
+//    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
     //设置参数
     NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
     //上传个人信息
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         NSDictionary *result = responseObject;
         //验证成功
