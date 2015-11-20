@@ -60,6 +60,7 @@
 		A17FAE991BBBD5EE00571817 /* ModelForJiGouUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE981BBBD5EE00571817 /* ModelForJiGouUnit.m */; };
 		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; };
 		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; };
+		A1802AF51BFF158D0082199A /* ModelMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A1802AF41BFF158D0082199A /* ModelMap.m */; };
 		A183384A1BC65665000866EB /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18338491BC65665000866EB /* xinwen.plist */; };
 		A183384D1BC66333000866EB /* ModelForGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384C1BC66333000866EB /* ModelForGroup.m */; };
 		A18338501BC665AB000866EB /* ModelForTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384F1BC665AB000866EB /* ModelForTopic.m */; };
@@ -347,6 +348,8 @@
 		A17FAE9A1BBBDE0A00571817 /* apply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apply.h; sourceTree = "<group>"; };
 		A17FAE9B1BBBDE0A00571817 /* apply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = apply.m; sourceTree = "<group>"; };
 		A17FAE9D1BBBDEDF00571817 /* enterprise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
+		A1802AF31BFF158D0082199A /* ModelMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMap.h; sourceTree = "<group>"; };
+		A1802AF41BFF158D0082199A /* ModelMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMap.m; sourceTree = "<group>"; };
 		A18338491BC65665000866EB /* xinwen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xinwen.plist; sourceTree = "<group>"; };
 		A183384B1BC66333000866EB /* ModelForGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForGroup.h; sourceTree = "<group>"; };
 		A183384C1BC66333000866EB /* ModelForGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForGroup.m; sourceTree = "<group>"; };
@@ -1285,6 +1288,8 @@
 		A1B8684C1B848A4C005C4A6F /* 活动地图 */ = {
 			isa = PBXGroup;
 			children = (
+				A1802AF31BFF158D0082199A /* ModelMap.h */,
+				A1802AF41BFF158D0082199A /* ModelMap.m */,
 				A1B8683A1B842C00005C4A6F /* view */,
 				A1B868391B842BFA005C4A6F /* controller */,
 			);
@@ -2154,6 +2159,7 @@
 				A17FAE941BBBD51A00571817 /* JiGouUnit.m in Sources */,
 				A1A01AAF1BAA6CFF009EF690 /* MyImagePickerViewController.m in Sources */,
 				A1B88CF21BA1785B008FA7C9 /* LeanMessageManager.m in Sources */,
+				A1802AF51BFF158D0082199A /* ModelMap.m in Sources */,
 				A1C7B0B11BF48778008E3C27 /* ChatTableViewCell.m in Sources */,
 				A17FAE8E1BBBC64700571817 /* FollowedSponsorTableViewCell.m in Sources */,
 				A18338561BC66C5A000866EB /* ModelForComment.m in Sources */,

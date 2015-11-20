@@ -247,9 +247,9 @@
 //    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
     //设置参数
     NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
-    //上传个人信息
+    //登录
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         
         NSDictionary *result = responseObject;
         //验证成功
@@ -260,18 +260,20 @@
             ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
             
             
-            //保存用户信息
+            //保存用户信息到本地
             NSDictionary *dic = @{@"userName":model.mNickName,@"userID":model.mID,@"iconURL":model.mAvatar};
             NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
             [userDefault setObject:user forKey:@"user"];
             [userDefault synchronize];
             
+            
             //发送更换头像的通知
             [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:nil];
             
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
             
             //跳转个人中心
             [self dismissViewControllerAnimated:YES completion:NULL];
@@ -281,7 +283,7 @@
             splitViewController *split = (splitViewController *)self.presentingViewController;
             [split showDetailViewController:navigationController sender:nil];
 
-
+            
             
         }
         else{

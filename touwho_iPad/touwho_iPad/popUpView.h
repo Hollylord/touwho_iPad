@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelMap.h"
 
 @interface popUpView : UIView
+
+@property (strong,nonatomic) UILabel *activityName;
+@property (strong,nonatomic) UILabel *time;
+@property (strong,nonatomic) UILabel *place;
+
+@property (strong,nonatomic)ModelMap *model;
 
 @end

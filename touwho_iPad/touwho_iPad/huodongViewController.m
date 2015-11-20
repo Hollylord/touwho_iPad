@@ -114,7 +114,9 @@
             
         }
         annotationView.image = [UIImage imageNamed:@"zuobiao"];
-       
+        annotationView.activtyName = self.model.mTitle;
+        annotationView.time = self.model.mTime;
+        annotationView.place = self.model.mAddress;
         
         return annotationView;
     }
