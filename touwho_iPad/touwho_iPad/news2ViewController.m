@@ -110,7 +110,17 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised,NSString *l
         }
         else{
             NSString *top = [NSString stringWithFormat:@"%@%@",SERVER_URL,largeImageUrl];
-            [self.topImageView sd_setImageWithURL:[NSURL URLWithString:top] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+            
+            SDWebImageManager *manager = [SDWebImageManager sharedManager];
+            [manager downloadImageWithURL:[NSURL URLWithString:top] options:SDWebImageRetryFailed progress:NULL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                self.topImageView.image = image;
+                
+                NSLayoutConstraint *imageHeight = [NSLayoutConstraint constraintWithItem:self.topImageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:image.size.height];
+                NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.topImageView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:image.size.width];
+                [self.topImageView addConstraints:@[imageHeight,width]];
+                
+                
+            }];
         }
         
         
