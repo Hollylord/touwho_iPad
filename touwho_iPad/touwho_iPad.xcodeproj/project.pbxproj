@@ -936,6 +936,15 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
+		A1802AF61BFF1EF20082199A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1802AF31BFF158D0082199A /* ModelMap.h */,
+				A1802AF41BFF158D0082199A /* ModelMap.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		A1837ABE1BBF5FA2000D29BF /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1288,8 +1297,7 @@
 		A1B8684C1B848A4C005C4A6F /* 活动地图 */ = {
 			isa = PBXGroup;
 			children = (
-				A1802AF31BFF158D0082199A /* ModelMap.h */,
-				A1802AF41BFF158D0082199A /* ModelMap.m */,
+				A1802AF61BFF1EF20082199A /* Model */,
 				A1B8683A1B842C00005C4A6F /* view */,
 				A1B868391B842BFA005C4A6F /* controller */,
 			);

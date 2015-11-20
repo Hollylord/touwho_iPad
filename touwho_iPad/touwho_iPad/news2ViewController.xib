@@ -65,16 +65,8 @@
                                 <action selector="newsLect:" destination="-1" eventType="touchUpInside" id="hSF-p1-OPl"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-S8-oXz">
-                            <rect key="frame" x="341" y="139" width="240" height="128"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="240" id="9W5-sY-GuQ"/>
-                                <constraint firstAttribute="height" constant="128" id="xol-8t-ohz"/>
-                            </constraints>
-                        </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcE-Cw-69Y">
-                            <rect key="frame" x="61" y="287" width="800" height="15"/>
+                            <rect key="frame" x="61" y="159" width="800" height="15"/>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -84,6 +76,14 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-S8-oXz">
+                            <rect key="frame" x="341" y="139" width="240" height="0.0"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="500" constant="128" id="MaR-fO-TNZ"/>
+                                <constraint firstAttribute="width" priority="500" constant="240" id="Mpu-in-hm8"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <animations/>
                     <constraints>
