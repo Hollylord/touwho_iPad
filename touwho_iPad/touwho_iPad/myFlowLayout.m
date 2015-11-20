@@ -21,7 +21,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         //-20
-        self.minimumLineSpacing = -20.0;
+        self.minimumLineSpacing = -45.0;
         self.itemSize = CGSizeMake(400, 148);
         
     }
@@ -76,7 +76,7 @@
                     //                    旋转的角度控制(1-zoom)*M_PI/6
                     CATransform3D rotate = CATransform3DMakeRotation((CGFloat)(1-zoom)*M_PI/6, 0, 1, 0);
           
-                    CGFloat zoom2 = (CGFloat)zoom/2+0.8 ;
+                    CGFloat zoom2 = (CGFloat)zoom/2+0.6 ;
                     if (zoom2 < 1) {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1);
                     }
@@ -93,7 +93,7 @@
                     CATransform3D rotate = CATransform3DMakeRotation((CGFloat)(zoom-1)*M_PI/6, 0, 1, 0);
     
 
-                    CGFloat zoom2 = (CGFloat)zoom/2+0.8;
+                    CGFloat zoom2 = (CGFloat)zoom/2+0.6;
                     if (zoom2 < 1) {
                         attributes.transform3D = CATransform3DPerspect(rotate, CGPointMake(0,0.5), CELL_DISTANCE,1);
                     }

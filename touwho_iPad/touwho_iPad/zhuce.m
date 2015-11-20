@@ -44,11 +44,15 @@
 }
 
 - (IBAction)riskPrompt:(UIButton *)sender {
+    [TalkingData trackEvent:@"阅读风险提示"];
+    
     UIView *riskView = [[[NSBundle mainBundle] loadNibNamed:@"RiskPrompt" owner:nil options:nil] firstObject];
     [self addSubview:riskView];
     riskView.frame = self.frame;
 }
 - (IBAction)serviceAgreement:(UIButton *)sender {
+    [TalkingData trackEvent:@"阅读服务协议"];
+    
     UIView *ServiceAgreement = [[[NSBundle mainBundle] loadNibNamed:@"ServiceAgreement" owner:nil options:nil] firstObject];
     [self addSubview:ServiceAgreement];
     ServiceAgreement.frame = self.frame;
@@ -105,6 +109,7 @@
 
 #pragma mark - 获取验证码
 - (IBAction)getVerCode:(UIButton *)sender {
+    [TalkingData trackEvent:@"获取验证码"];
     
     //设定参数
     //如果不是11位手机号

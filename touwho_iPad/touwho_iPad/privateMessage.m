@@ -54,6 +54,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     ModelChating *model = self.conversations[indexPath.row];
+    NSLog(@"%@",USER_ID);
     //创建长连接和会话: 将自己的id和朋友的id赋值
     [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[[model.members firstObject]]];
 
@@ -72,7 +73,8 @@
             }else{
                 type=ConversationTypeOneToOne;
             }
-            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:type completion:^(AVIMConversation *conversation, NSError *error) {
+            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:1 completion:^(AVIMConversation *conversation, NSError *error) {
+                NSLog(@"%@",conversation.conversationId);
                 if(error){
                     NSLog(@"error=%@",error);
                 }else{

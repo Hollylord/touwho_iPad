@@ -95,6 +95,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised,NSString *l
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [TalkingData trackPageBegin:@"新闻详情"];
     
     //添加时间和title
     self.timeLabel.text = self.model.time;
@@ -171,6 +172,7 @@ typedef void(^completionBlock)(NSString *content,NSString *ispraised,NSString *l
     
     [[BDTTSSynthesizer sharedInstance] cancel];
     
+    [TalkingData trackPageEnd:@"新闻详情"];
 }
 
 //如果往控制的view上添加了子控件，那么setNeeds回来这里。如果只是改变原来子控件的约束，则不会来。

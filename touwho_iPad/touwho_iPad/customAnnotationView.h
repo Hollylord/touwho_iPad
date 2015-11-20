@@ -11,4 +11,7 @@
 
 @interface customAnnotationView : MAAnnotationView
 @property (strong,nonatomic) popUpView *popView;
+@property (copy,nonatomic) NSString *activtyName;
+@property (copy,nonatomic) NSString *time;
+@property (copy,nonatomic) NSString *place;
 @end

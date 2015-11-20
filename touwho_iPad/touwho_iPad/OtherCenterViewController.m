@@ -69,10 +69,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
+    [TalkingData trackPageBegin:@"他人详情页"];
     
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"他人详情页"];
+}
 #pragma mark - 获取项目信息
 - (void)pullInvestedData{
     if (isAlreadyPullInvestedData) {
@@ -368,12 +370,12 @@
             }else{
                 type=ConversationTypeOneToOne;
             }
-            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:type completion:^(AVIMConversation *conversation, NSError *error) {
+            [[LeanMessageManager manager] createConversationsWithClientIDs:clientIDs conversationType:1 completion:^(AVIMConversation *conversation, NSError *error) {
                 if(error){
                     NSLog(@"error=%@",error);
                 }else{
                     //保存数据coreData
-                    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
+//                    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
                     
                     sixinViewController *vc = [[sixinViewController alloc] initWithConversation:conversation];
                     vc.friendId = [clientIDs firstObject];

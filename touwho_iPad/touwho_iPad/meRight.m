@@ -53,6 +53,8 @@
 #pragma mark - meleft代理
 #pragma mark 编辑个人信息页面的设置
 - (void)presentProfile{
+    [TalkingData trackEvent:@"编辑个人信息"];
+    
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
@@ -72,6 +74,8 @@
 
 #pragma mark 申请为领投人
 - (void)presentApply{
+    [TalkingData trackEvent:@"申请领头资格"];
+    
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
@@ -89,6 +93,8 @@
 
 #pragma mark 申请为投资人
 - (void)presentSponsor{
+    [TalkingData trackEvent:@"申请跟投资格"];
+    
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
@@ -107,6 +113,8 @@
 
 #pragma mark 发布项目
 - (void)presentPublish{
+    [TalkingData trackEvent:@"发布项目"];
+    
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
@@ -119,6 +127,8 @@
 
 #pragma mark 已投资的项目
 - (void)presentPrograms{
+    [TalkingData trackEvent:@"查看已投资的项目"];
+    
     //获取以投资的项目数据
     [self retriveDataFromServerWithMethod:@"myInvesteProject" andCompletionBlock:^{
         
@@ -149,6 +159,8 @@
 
 #pragma mark 已发布的项目
 - (void)presentPublished{
+    [TalkingData trackEvent:@"查看已发布的项目"];
+    
     //获取已发布的项目的数据
     [self retriveDataFromServerWithMethod:@"myBuildProject" andCompletionBlock:^{
         
@@ -234,6 +246,8 @@
 
 #pragma mark 消息
 - (void)presentMessage{
+    [TalkingData trackEvent:@"查看消息"];
+    
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }

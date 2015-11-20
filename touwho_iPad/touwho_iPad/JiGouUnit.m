@@ -25,6 +25,8 @@
 
 #pragma mark - 跳转
 - (IBAction)turnToNextVC:(UITapGestureRecognizer *)sender {
+    [TalkingData trackEvent:@"查看机构详情"];
+    
     UIViewController *VC = [self viewController];
     if (!USER_ID) {
         [BTIndicator showTextOnView:VC.view withText:@"请登录后再试！" withDelay:1];

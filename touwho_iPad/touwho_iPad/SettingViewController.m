@@ -35,8 +35,11 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = YES;
+    [TalkingData trackPageBegin:@"设置页"];
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"设置页"];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,6 +66,7 @@
 
 #pragma mark - 退出当前账号
 - (IBAction)quitAccount:(UIButton *)sender {
+    [TalkingData trackEvent:@"退出当前账号"];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"退出" message:@"确定退出当前账号吗？" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {

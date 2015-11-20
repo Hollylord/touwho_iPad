@@ -162,9 +162,12 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         
     }];
 
-    
+    [TalkingData trackPageBegin:@"项目详情"];
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"项目列表"];
+}
 - (void)updateViewConstraints{
     
     [super updateViewConstraints];

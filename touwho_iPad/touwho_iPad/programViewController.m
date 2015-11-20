@@ -179,6 +179,7 @@
     //去除导航栏
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    [TalkingData trackPageBegin:@"项目列表"];
     
 }
 
@@ -191,6 +192,9 @@
     [self.pictureCollection scrollToItemAtIndexPath:goalIndex atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     
     
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"项目列表"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -366,7 +370,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             

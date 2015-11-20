@@ -113,9 +113,13 @@
 
 /** 加载消息**/
 -(void)loadMessagesWhenInitWithBlock:(dispatch_block_t)block{
+    NSLog(@"%@",self.conversation.conversationId);
+    NSLog(@"%@",self.conversation.imClient.clientId);
+    NSLog(@"%@",self.conversation.creator);
     WEAKSELF
     //查询以前的消息
     [self.conversation queryMessagesBeforeId:nil timestamp:0 limit:10 callback:^(NSArray *typedMessages, NSError *error) {
+        NSLog(@"%@",typedMessages);
         //NSArray *typedMessages 参数是返回的消息
         /**
          *  获取消息用子线程

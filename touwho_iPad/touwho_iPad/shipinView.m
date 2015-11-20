@@ -32,6 +32,8 @@
 
 #pragma mark - 跳转
 - (IBAction)turnToNextVC:(UITapGestureRecognizer *)sender {
+    [TalkingData trackEvent:@"点击播放视频"];
+    
     UIViewController *VC = [self viewController];
     shipinViewController *nextVC = [[shipinViewController alloc] initWithNibName:@"shipinViewController" bundle:nil];
     nextVC.footageURL = self.model.mVideoUrl;

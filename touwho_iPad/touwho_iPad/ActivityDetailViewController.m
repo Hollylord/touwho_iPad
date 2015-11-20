@@ -39,8 +39,12 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = NO;
+    [TalkingData trackPageBegin:@"活动详情页"];
+    
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"活动详情页"];
+}
 #pragma mark - 获取数据
 - (void) pullData:(dispatch_block_t)block{
     NSDictionary *para = @{@"method":@"getActivityDetail",@"activity_id":self.model.mID};

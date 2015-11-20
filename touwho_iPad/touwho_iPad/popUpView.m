@@ -20,36 +20,44 @@
         UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"biaoqian"]];
         [self addSubview:background];
         
-        UILabel *activityName = [[UILabel alloc] init];
-        activityName.frame = CGRectMake(30, 10, 250, 20);
-        activityName.textAlignment = NSTextAlignmentCenter;
-//        activityName.backgroundColor = [UIColor redColor];
-        activityName.text = @"活动名称";
-        [self addSubview:activityName];
+        self.activityName = [[UILabel alloc] init];
+        self.activityName.frame = CGRectMake(30, 10, 250, 20);
+        self.activityName.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.activityName];
         
-        UILabel *time = [[UILabel alloc] init];
-//        time.backgroundColor = [UIColor orangeColor];
-        time.numberOfLines = 0;
-        time.textAlignment = NSTextAlignmentNatural;
-        time.font = [UIFont fontWithName:@"Arial-BoldMT" size:20];
-        time.text = @"时间：14：00-16：00PM";
-        //通过字体动态计算高度
-        NSDictionary *attributes = [NSDictionary dictionaryWithObject:time.font forKey:NSFontAttributeName];
-        CGSize timeSize = [time.text boundingRectWithSize:CGSizeMake(150, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
-        time.frame = CGRectMake(30, 50, 250, timeSize.height);
-        [self addSubview:time];
+        self.time = [[UILabel alloc] init];
+        self.time.numberOfLines = 0;
+        self.time.textAlignment = NSTextAlignmentNatural;
+        self.time.font = [UIFont fontWithName:@"Arial-BoldMT" size:20];
+        [self addSubview:self.time];
         
-        UILabel *place = [[UILabel alloc] init];
-//        place.backgroundColor = [UIColor blueColor];
-        place.text = @"活动地点：五洲宾馆";
-        //通过字体计算label高度
-        NSDictionary *attribute = [NSDictionary dictionaryWithObject:place.font forKey:NSFontAttributeName];
-        CGSize placeSize = [place.text boundingRectWithSize:CGSizeMake(250, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
-        place.frame = CGRectMake(30, 120, 250, placeSize.height);
-        [self addSubview:place];
+        
+        
+        
+        self.place = [[UILabel alloc] init];
+        [self addSubview:self.place];
         
     }
     return self;
+}
+- (void)setModel:(ModelMap *)model{
+    if (_model != model) {
+        _model = model;
+        
+    }
+    self.activityName.text = model.activtyName;
+    self.time.text = model.time;
+    //通过字体动态计算高度
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:self.time.font forKey:NSFontAttributeName];
+    CGSize timeSize = [self.time.text boundingRectWithSize:CGSizeMake(150, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+    self.time.frame = CGRectMake(30, 50, 250, timeSize.height);
+    
+    self.place.text = model.place;
+    //通过字体计算label高度
+    NSDictionary *attribute = [NSDictionary dictionaryWithObject:self.place.font forKey:NSFontAttributeName];
+    CGSize placeSize = [self.place.text boundingRectWithSize:CGSizeMake(250, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+    self.place.frame = CGRectMake(30, 120, 250, placeSize.height);
+    
 }
 
 //#pragma mark - draw rect

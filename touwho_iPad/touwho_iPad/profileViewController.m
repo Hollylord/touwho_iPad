@@ -101,6 +101,10 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [TalkingData trackPageBegin:@"个人中心页"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"个人中心页"];
 }
 
 #pragma mark - 建立LeanCloud
@@ -108,10 +112,30 @@
     //建立长连接
     [self.client openWithClientId:USER_ID callback:^(BOOL succeeded, NSError *error) {
         if (!succeeded) {
+            NSLog(@"%@",error);
             [self buildConnectWithLeanCloud];
+            
         }
         else{
-            [self updateConversations];
+            //查询会话
+            AVIMConversationQuery *query = [self.client conversationQuery];
+            [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
+//                NSLog(@"%@",objects);
+                //保存所有会话
+                [objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    
+                    AVIMConversation *conver = obj;
+                    NSLog(@"%@",conver.conversationId);
+                    NSLog(@"%@",conver.members);
+                    [BTNetWorking setupCoreDataAndSaveConversation:conver];
+                }];
+                
+                //会话转models
+                [self updateConversations];
+                
+            }];
+            
+            
         }
     }];
 
@@ -150,6 +174,8 @@
 
 #pragma mark 名片拍照
 - (IBAction)uploadCard:(UIButton *)sender {
+    [TalkingData trackEvent:@"上传名片"];
+    
     NSString *title = [sender titleForState:UIControlStateNormal];
     if ([title isEqualToString:@"上传名片"]) {
         [sender setTitle:@"重新上传" forState:UIControlStateNormal];//修改按钮的文字
@@ -167,6 +193,8 @@
 
 #pragma mark 点击设置
 - (IBAction)setting:(UIBarButtonItem *)sender {
+    [TalkingData trackEvent:@"点击设置"];
+    
     SettingViewController *setVC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:setVC];
     navi.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -251,14 +279,7 @@
 }
 
 #pragma mark - LeanCloud代理
-- (void)conversation:(AVIMConversation *)conversation didReceiveUnread:(NSInteger)unread{
-    //存储收消息的conversation
-    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
-    
-    [self updateConversations];
-    
-    
-}
+
 
 - (void) updateConversations{
     

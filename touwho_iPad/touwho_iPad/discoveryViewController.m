@@ -53,12 +53,16 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    [TalkingData trackPageBegin:@"社群页面"];
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"社群页面"];
+}
 #pragma mark - 内容页面懒加载
 - (UIView *)contentView{
     if (!_contentView)
@@ -80,13 +84,13 @@
     return _contentView;
 }
 
-#pragma mark - 按钮点击
+#pragma mark - 顶部按钮点击
 
-
-//上面5个按钮
 - (IBAction)buttonClick:(UIButton *)sender {
     //点击路演按钮
     if (sender.tag == 1 && sender.selected == NO) {
+        [TalkingData trackEvent:@"查看视频列表"];
+        
         sender.selected = YES;
         self.discussion.selected = NO;
         self.activity.selected = NO;
@@ -102,6 +106,8 @@
     //圈子
     else if (sender.tag == 2 && sender.selected == NO)
     {
+        [TalkingData trackEvent:@"查看社群列表"];
+        
         sender.selected = YES;
         self.footage.selected = NO;
         self.activity.selected = NO;
@@ -115,6 +121,8 @@
     //活动
     else if (sender.tag == 3 && sender.selected == NO)
     {
+        [TalkingData trackEvent:@"查看活动列表"];
+        
         sender.selected = YES;
         self.footage.selected = NO;
         self.discussion.selected = NO;

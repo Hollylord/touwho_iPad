@@ -82,8 +82,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [TalkingData trackPageBegin:@"小组详情页"];
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"小组详情页"];
+}
 #pragma mark - tableView代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     

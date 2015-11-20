@@ -24,7 +24,14 @@
     if (_model != model) {
         _model = model;
     }
-    NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mAvatar];
+    NSString *iconURL;
+    if ([BTNetWorking isTheStringContainedHttpWithString:model.mAvatar]) {
+        iconURL = model.mAvatar;
+    }
+    else{
+        iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mAvatar];
+    }
+    
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
     self.userNameLabel.text = model.mName;
     self.contentLabel.text = model.mTalkContent;

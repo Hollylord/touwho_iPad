@@ -94,9 +94,9 @@
                             completion:(AVIMConversationResultBlock)completion {
     AVIMConversationQuery *query = [self.leanClient conversationQuery];
     NSMutableArray *queryClientIDs = [[NSMutableArray alloc] initWithArray:clientIDs];
-    [queryClientIDs insertObject:self.selfClientID atIndex:0];
+//    [queryClientIDs insertObject:self.selfClientID atIndex:0];
     [query whereKey:kAVIMKeyMember containsAllObjectsInArray:queryClientIDs];
-    [query whereKey:AVIMAttr(@"type") equalTo:[NSNumber numberWithInt:conversationType]];
+    [query whereKey:AVIMAttr(@"customConversationType") equalTo:[NSNumber numberWithInt:conversationType]];
     [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
         if (error) {
             // 出错了，请稍候重试
@@ -105,10 +105,11 @@
             // 新建一个对话
             [self.leanClient createConversationWithName:nil
                                               clientIds:queryClientIDs
-                                             attributes:@{@"type":[NSNumber numberWithInt:conversationType]}
+                                             attributes:@{@"customConversationType":[NSNumber numberWithInt:conversationType]}
                                                 options:AVIMConversationOptionNone
                                                callback:completion];
         } else {
+           
             // 已经有一个对话存在，继续在这一对话中聊天
             AVIMConversation *conversation = [objects lastObject];
             completion(conversation,nil);

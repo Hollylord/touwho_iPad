@@ -18,7 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [TalkingData trackPageBegin:@"公司介绍页"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"公司介绍页"];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

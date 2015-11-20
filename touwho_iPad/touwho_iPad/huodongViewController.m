@@ -66,6 +66,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [TalkingData trackPageBegin:@"地图页"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"地图页"];
 }
 
 #pragma mark -  搜索回调
@@ -110,7 +114,9 @@
             
         }
         annotationView.image = [UIImage imageNamed:@"zuobiao"];
-       
+        annotationView.activtyName = self.model.mTitle;
+        annotationView.time = self.model.mTime;
+        annotationView.place = self.model.mAddress;
         
         return annotationView;
     }

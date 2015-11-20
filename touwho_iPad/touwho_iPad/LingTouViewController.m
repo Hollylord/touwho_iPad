@@ -36,7 +36,12 @@
     }
     
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [TalkingData trackPageBegin:@"投资金额选择"];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"投资金额选择"];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -84,7 +89,7 @@
         [BTNetWorking getDataWithPara:dic success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"%@",responseObject);
             
-            NSString *res = [[responseObject objectForKey:@"value"] objectForKey:@"resCode"];
+            NSString *res = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"resCode"];
             if ([res isEqualToString:@"0"]) {
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 hud.mode = MBProgressHUDModeText;

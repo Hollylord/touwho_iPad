@@ -85,9 +85,12 @@
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    [TalkingData trackPageBegin:@"新闻列表"];
     
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"新闻列表"];
+}
 
 - (void)layoutForNewsMenu:(newsMenu *)view index:(int)i{
     //行数

@@ -48,12 +48,7 @@
     
 }
 
-- (void)updateViewConstraints{
-    [super updateViewConstraints];
-    
-    
-    
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
@@ -61,6 +56,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [TalkingData trackPageBegin:@"机构详情页"];
     
     //1. 获取数据
     NSDictionary *para = @{@"method":@"getOrganizationDetail",@"user_id":USER_ID,@"org_id":self.model.mID};
@@ -106,6 +102,9 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [TalkingData trackPageEnd:@"机构详情页"];
+}
 #pragma mark - 分享
 - (void)share{
     //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行

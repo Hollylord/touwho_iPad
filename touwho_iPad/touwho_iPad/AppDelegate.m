@@ -14,6 +14,7 @@
 #import "UMSocialSinaHandler.h"
 #import "APService.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -29,6 +30,9 @@
     [AVIMClient setUserOptions:@{
                                  AVIMUserOptionUseUnread: @(YES)
                                  }];
+    
+    //设置talkingdata
+    [TalkingData sessionStarted:@"D2DF7F18AEFA071E7F9A3FF9AC4B4409" withChannelId:@"ipad"];
     
     //设置友盟分享
     [UMSocialData setAppKey:@"5602081a67e58ec377001b17"];

@@ -62,6 +62,8 @@
     
      //小组
     if (self.segement.selectedSegmentIndex == 0) {
+        [TalkingData trackEvent:@"查看小组列表"];
+        
         [self.views[1] removeFromSuperview];
         [self.views[2] removeFromSuperview];
 
@@ -88,6 +90,8 @@
     //    最新话题
     else if (self.segement.selectedSegmentIndex == 1)
     {
+        [TalkingData trackEvent:@"查看话题列表"];
+        
         [self.views[0] removeFromSuperview];
         [self.views[2] removeFromSuperview];
         
@@ -112,6 +116,9 @@
     }
     //机构专题
     else{
+        
+        [TalkingData trackEvent:@"查看机构列表"];
+        
         [self.views[0] removeFromSuperview];
         [self.views[1] removeFromSuperview];
         
