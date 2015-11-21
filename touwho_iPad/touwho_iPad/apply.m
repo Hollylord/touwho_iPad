@@ -58,8 +58,13 @@
     //理由内容
     NSString *reason = self.reasonView.text;
     
-    //1 。判断
+    //1 。判断是领头的申请页面
     if (self.isLingtou) {
+        //没选行业类型则提示
+        if (!industryType) {
+            [BTIndicator showForkMarkOnView:self withText:@"请选择行业类型" withDelay:1];
+            return ;
+        }
         //申请领投资格
         NSDictionary *para = @{@"method":@"applicateFirstInvestor",@"user_id":USER_ID,@"destrible":reason,@"field1":industryType};
         [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
