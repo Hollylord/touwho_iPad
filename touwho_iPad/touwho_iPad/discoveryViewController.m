@@ -87,7 +87,7 @@
 #pragma mark - 顶部按钮点击
 
 - (IBAction)buttonClick:(UIButton *)sender {
-    //点击路演按钮
+    //视频
     if (sender.tag == 1 && sender.selected == NO) {
         [TalkingData trackEvent:@"查看视频列表"];
         
@@ -103,7 +103,7 @@
         
         
     }
-    //圈子
+    //社群
     else if (sender.tag == 2 && sender.selected == NO)
     {
         [TalkingData trackEvent:@"查看社群列表"];

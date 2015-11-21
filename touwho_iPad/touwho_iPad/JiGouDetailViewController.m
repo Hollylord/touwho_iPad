@@ -68,9 +68,9 @@
         if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
             return ;
         }
-        NSDictionary *dic = [[result objectForKey:@"jsonArr"] firstObject];
-        NSString *content = [dic objectForKey:@"mContent"];
-        NSString *isFollow = [dic objectForKey:@"mIsFollow"];
+        
+        NSString *content = [result objectForKey:@"mContent"];
+        NSString *isFollow = [result objectForKey:@"mIsFollow"];
         
         //2. 设置内容
         if ([isFollow isEqualToString:@"0"]) {

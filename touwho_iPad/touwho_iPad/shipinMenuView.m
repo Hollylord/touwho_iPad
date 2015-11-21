@@ -11,9 +11,10 @@
 
 #import "ModelForFootage.h"
 
+#define COLUMN 3
 #define MarginSide 30
 #define MarginTop 30
-#define Width 200
+#define Width 266
 #define Height 200
 
 @interface shipinMenuView ()
@@ -54,14 +55,18 @@
         [MBProgressHUD showHUDAddedTo:self animated:YES];
         
         //1. 获取数据
-        NSDictionary *para = @{@"method":@"getActivity"};
+        NSDictionary *para = @{@"method":@"getInformationVideo"};
         [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"%@",responseObject);
             
             [MBProgressHUD hideHUDForView:self animated:YES];
             
-            //json --> model
-            self.models = [ModelForFootage objectArrayWithKeyValuesArray:[responseObject objectForKey:@"value"]];
+            [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
+                //json --> model
+                self.models = [ModelForFootage objectArrayWithKeyValuesArray:jsonArr];
+                
+            }];
+            
             
             //2 显示数据
             for (int i = 0; i < self.models.count; i ++) {
@@ -77,8 +82,8 @@
             // 给activityUnit添加约束
             for (int i = 0 ; i < self.customViews.count; i ++) {
                 UIView *view = self.customViews[i];
-                int column = i % 2;//列数
-                int line = (int) i / 2;//行数
+                int column = i % COLUMN;//列数
+                int line = (int) i / COLUMN;//行数
                 
                 NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1 constant: MarginSide + column * (MarginSide + Width)];
                 NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTop multiplier:1 constant:MarginTop + line *(MarginTop + Height)];
