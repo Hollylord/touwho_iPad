@@ -32,7 +32,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-xM-4np">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-xM-4np">
                             <rect key="frame" x="55" y="327" width="115" height="16"/>
                             <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -41,7 +41,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-IJ-9FX">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-IJ-9FX">
                             <rect key="frame" x="173" y="326" width="117" height="19"/>
                             <animations/>
                             <attributedString key="attributedText">
@@ -112,6 +112,7 @@
                         <constraint firstItem="X2U-Zo-Vp4" firstAttribute="top" secondItem="l8m-vD-J59" secondAttribute="bottom" constant="15" id="Cfx-FO-nHO"/>
                         <constraint firstItem="l8m-vD-J59" firstAttribute="leading" secondItem="FtZ-9Y-7dG" secondAttribute="leading" id="Fty-mE-o14"/>
                         <constraint firstItem="X2U-Zo-Vp4" firstAttribute="centerX" secondItem="R1g-0k-GSQ" secondAttribute="centerX" id="Nzp-hN-GWl"/>
+                        <constraint firstItem="1Nh-7E-BZ3" firstAttribute="top" secondItem="jwL-IJ-9FX" secondAttribute="top" priority="700" constant="71" id="Pb5-6w-e0D"/>
                         <constraint firstItem="1Nh-7E-BZ3" firstAttribute="centerX" secondItem="R1g-0k-GSQ" secondAttribute="centerX" id="Ra0-wt-9AW"/>
                         <constraint firstItem="FtZ-9Y-7dG" firstAttribute="top" secondItem="R1g-0k-GSQ" secondAttribute="top" constant="10" id="SZu-x7-WlL"/>
                         <constraint firstItem="l8m-vD-J59" firstAttribute="top" secondItem="1Nh-7E-BZ3" secondAttribute="bottom" constant="16" id="SrK-Mp-5h6"/>
