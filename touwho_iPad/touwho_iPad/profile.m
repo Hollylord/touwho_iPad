@@ -203,6 +203,9 @@
             [MBProgressHUD hideHUDForView:self animated:YES];
             
             [BTIndicator showCheckMarkOnView:self withText:@"保存用户信息成功" withDelay:0.5];
+            
+            
+            
         }
         else{
             [MBProgressHUD hideHUDForView:self animated:YES];

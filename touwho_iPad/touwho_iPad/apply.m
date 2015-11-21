@@ -8,6 +8,7 @@
 
 #import "apply.h"
 #import "BTPickerViewController.h"
+#import "ModelForUser.h"
 
 @implementation apply
 {
@@ -55,6 +56,28 @@
 
 #pragma  mark - 申请
 - (IBAction)sendInfoToServer:(UIButton *)sender {
+   
+    
+    //0 判断个人信息是否完善
+    __block BOOL isPersonalInfoFul;
+    [BTNetWorkingAPI pullUserInfoFromServerWith:USER_ID andBlock:^(ModelForUser *user) {
+        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:user.mSex,user.mPhone,user.mName,user.mEmail,user.mIndustry,user.mAge,user.mFavIndustry,user.mFav, nil];
+        
+        for (NSString *str in temp) {
+            if ([str isEqualToString:@""] ) {
+                //提示提交完整信息
+                [BTIndicator showForkMarkOnView:self withText:@"请提交完整个人信息" withDelay:1];
+                isPersonalInfoFul = NO;
+            }
+        }
+        
+        isPersonalInfoFul = YES;
+    }];
+    
+    if (!isPersonalInfoFul) {
+        return ;
+    }
+    
     //理由内容
     NSString *reason = self.reasonView.text;
     

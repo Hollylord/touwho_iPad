@@ -125,8 +125,6 @@
                 [objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     
                     AVIMConversation *conver = obj;
-                    NSLog(@"%@",conver.conversationId);
-                    NSLog(@"%@",conver.members);
                     [BTNetWorking setupCoreDataAndSaveConversation:conver];
                 }];
                 

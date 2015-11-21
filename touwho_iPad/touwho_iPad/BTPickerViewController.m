@@ -299,14 +299,20 @@
     
     if (components > 1) {
         NSInteger row2 = [picker selectedRowInComponent:1];
-        p2 = city[row2];
-        title = [NSString stringWithFormat:@"%@,%@",p,p2];
+        if (row2 > 0) {
+            p2 = city[row2];
+            title = [NSString stringWithFormat:@"%@,%@",p,p2];
+        }
+        
     }
     
     if (components > 2) {
         NSInteger row3 = [picker selectedRowInComponent:2];
-        p3 = district[row3];
-        title = [NSString stringWithFormat:@"%@,%@,%@",p,p2,p3];
+        if (row3 > 0) {
+            p3 = district[row3];
+            title = [NSString stringWithFormat:@"%@,%@,%@",p,p2,p3];
+        }
+        
     }
     
     
