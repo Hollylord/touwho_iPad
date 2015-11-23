@@ -72,8 +72,8 @@
         [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
         self.introductionLabel.text = self.modelGroup.mDestrible;
         self.groupNameLabel.text = self.modelGroup.mName;
-        self.leader.text = self.modelGroup.mGroupLeader;
-        self.memberCount.text = self.modelGroup.mMemberCount;
+        self.leader.text = [NSString stringWithFormat:@"组长：%@",self.modelGroup.mGroupLeader];
+        self.memberCount.text = [NSString stringWithFormat:@"小组成员：%@",self.modelGroup.mMemberCount];
         
         //显示话题详情数据
         self.timeLabel.text = self.model.mCreateTime;

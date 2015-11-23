@@ -55,8 +55,8 @@
         NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
         [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"logo_background"]];
         self.groupName.text = self.modelDetail.mName;
-        self.leaderName.text = self.modelDetail.mGroupLeader;
-        self.memberCount.text = self.modelDetail.mMemberCount;
+        self.leaderName.text = [NSString stringWithFormat:@"组长：%@",self.modelDetail.mGroupLeader];
+        self.memberCount.text = [NSString stringWithFormat:@"小组成员：%@",self.modelDetail.mMemberCount];
         self.groupIntroduction.text = self.modelDetail.mDestrible;
         
         //刷新话题内容

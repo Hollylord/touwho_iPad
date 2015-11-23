@@ -342,26 +342,30 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 
 #pragma mark - 分享
 - (void)share{
-    //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
-    [UMSocialData defaultData].urlResource.url = @"http://www.baidu.com" ;
+//    //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
+//    [UMSocialData defaultData].urlResource.url = @"http://www.touwho.com" ;
     
     //设置分享的左边的图片
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:@"http://img0.bdstatic.com/img/image/1f9ca4f74197091d203ca0edd6c4eee01410240322.jpg"];
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.model1.mSmallImageUrl]];
     
+
     //设置分享的 title
-    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"回音必项目分享";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"回音必项目分享";
-    [UMSocialData defaultData].extConfig.qqData.title = @"回音必项目分享";
-    [UMSocialData defaultData].extConfig.qqData.url = @"www.baidu.com";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"www.baidu.com";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"www.baidu.com";
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = self.model1.mTitle;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = self.model1.mTitle;
+    //如果qq没有title则不能分享qq
+    [UMSocialData defaultData].extConfig.qqData.title = self.model1.mTitle;
+    
+    //设置分享的跳转url
+    [UMSocialData defaultData].extConfig.qqData.url = @"www.touwho.com";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"www.touwho.com";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"www.touwho.com";
     
     
     //调用快速分享接口
     [UMSocialSnsService presentSnsIconSheetView:self.splitViewController
                                          appKey:@"5602081a67e58ec377001b17"
-                                      shareText:@""
-                                     shareImage:[UIImage imageNamed:@"logo"]
+                                      shareText:@"我是shareText"
+                                     shareImage:nil
                                 shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
                                        delegate:nil];
     

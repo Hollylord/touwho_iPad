@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     self.minimumPrimaryColumnWidth = 100;
     self.maximumPrimaryColumnWidth = 100;
@@ -88,9 +89,9 @@
 }
 
 ////支持哪些方向，如果info禁止了，那些方向也不支持
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-//    return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
-//}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
+}
 
 
 
