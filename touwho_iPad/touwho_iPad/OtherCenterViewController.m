@@ -35,11 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //设置分享按钮
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
-    [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
-    
+
     
     //注册cell
     UINib *nib = [UINib nibWithNibName:@"meLeftCell" bundle:nil];
@@ -237,34 +233,6 @@
     
 }
 
-#pragma mark - 分享
-- (void)share{
-    //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
-    [UMSocialData defaultData].urlResource.url = @"http://www.baidu.com" ;
-    
-    //设置分享的左边的图片
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:@"http://img0.bdstatic.com/img/image/1f9ca4f74197091d203ca0edd6c4eee01410240322.jpg"];
-    
-    //设置分享的 title
-    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"回音必项目分享";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"回音必项目分享";
-    [UMSocialData defaultData].extConfig.qqData.title = @"回音必项目分享";
-    [UMSocialData defaultData].extConfig.qqData.url = @"www.baidu.com";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"www.baidu.com";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"www.baidu.com";
-    
-    
-    //调用快速分享接口
-    [UMSocialSnsService presentSnsIconSheetView:self.splitViewController
-                                         appKey:@"5602081a67e58ec377001b17"
-                                      shareText:@""
-                                     shareImage:[UIImage imageNamed:@"logo"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
-                                       delegate:nil];
-    
-    
-    
-}
 
 #pragma mark - 点击tableViewCell
 //已投资的项目
