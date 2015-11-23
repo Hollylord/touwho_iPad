@@ -87,10 +87,10 @@
     return YES;
 }
 
-//支持哪些方向，如果info禁止了，那些方向也不支持
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
-}
+////支持哪些方向，如果info禁止了，那些方向也不支持
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
+//}
 
 
 

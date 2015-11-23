@@ -235,8 +235,6 @@
                 if(error){
                     NSLog(@"error=%@",error);
                 }else{
-                    //保存数据coreData
-//                    [BTNetWorking setupCoreDataAndSaveConversation:conversation];
                     
                     sixinViewController *vc = [[sixinViewController alloc] initWithConversation:conversation];
                     vc.friendId = [clientIDs firstObject];
@@ -296,8 +294,7 @@
             NSLog(@"%@",error);
         }];
         
-        
-        
+
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

@@ -205,6 +205,7 @@
     }];
     
 }
+
 //QQ登录
 - (IBAction)QQlogin:(UIButton *)sender {
     [TalkingData trackEvent:@"QQ登录"];
@@ -213,9 +214,7 @@
     
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
 
-    //判断是否需要授权
-    
-        
+
         //弹出授权处理页面
         snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
             
@@ -229,17 +228,7 @@
                 //跳转到个人中心页面
                 [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"2"];
             }});
-//    //已经授权了，就不用弹出授权处理页面了 
-//    else{
-//        //在授权完成后调用获取用户信息的方法
-//        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
-//            NSLog(@"SnsInformation is %@",response.data);
-//            
-//            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
-//        }];
-//    }
-    
-    
+
     
 }
 
