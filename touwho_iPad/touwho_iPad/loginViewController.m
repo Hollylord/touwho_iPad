@@ -166,15 +166,7 @@
                 [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"3"];
             }});
     
-    //已经授权了，就不用弹出授权处理页面了. 当然微博是不会来这个方法的
-//    else{
-//        //在授权完成后调用获取用户信息的方法
-//        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
-//            NSLog(@"SnsInformation is %@",response.data);
-//            
-//            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
-//        }];
-//    }
+
 
 }
 
@@ -271,8 +263,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
             splitViewController *split = (splitViewController *)self.presentingViewController;
             [split showDetailViewController:navigationController sender:nil];
-
-            
+ 
             
         }
         else{

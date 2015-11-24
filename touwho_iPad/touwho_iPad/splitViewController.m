@@ -168,10 +168,7 @@
 
 #pragma mark - scrollView delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{  // 滑动完毕后的scrollView可以拿到里面的位移；
-    
-    
-    
-    
+
     CGPoint contentOffset = scrollView.contentOffset;
     
     
