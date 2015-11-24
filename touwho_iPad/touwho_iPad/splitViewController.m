@@ -32,8 +32,20 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
     
+    NSString *buildVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSLog(@"buildVersion  = %@",buildVersion);
+    NSLog(@"nsdefault = %@",[[NSUserDefaults standardUserDefaults] valueForKey:@"version"]);
+    //如果没有记录版本号，就存储版本号，并现实广告页
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
-//        [self showADScrollView];
+        [self showADScrollView];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:buildVersion forKey:@"version"];
+        
+    }
+    else if (![[[NSUserDefaults standardUserDefaults] valueForKey:@"version"] isEqualToString:buildVersion]) {
+        [self showADScrollView];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:buildVersion forKey:@"version"];
     }
     
     
@@ -104,10 +116,6 @@
     [self.view addSubview:image];
     self.image = image;
     
-    
-    
-    
-    
     //创建1个scrollview
     self.scrollView  = [[UIScrollView alloc] initWithFrame:CGRectMake(imageFrame.origin.x, imageFrame.origin.y, imageFrame.size.width, imageFrame.size.height)];
     self.scrollView.contentSize = CGSizeMake(imageFrame.size.width * 5, imageFrame.size.height);
@@ -147,11 +155,7 @@
     //一定要把按钮添加到scrollview上面
     [self.scrollView addSubview:self.advertButton];
     
-    
-    
-    
-    
-    
+ 
     //创建pagecontrol
     self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.frame = CGRectMake(100, imageFrame.size.height - 50, 100, 30);
@@ -162,6 +166,8 @@
     self.pageControl.numberOfPages = 5;
     self.pageControl.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.pageControl];
+    
+    
     
 }
 
@@ -186,10 +192,7 @@
         self.image.alpha = 0.5f;
     }
     
-    
-    
-    
-    
+
     if (contentOffset.x > currentWidth*4+50) {
         [self.scrollView removeFromSuperview];
         [self.pageControl removeFromSuperview];
