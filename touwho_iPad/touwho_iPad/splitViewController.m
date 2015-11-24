@@ -9,6 +9,7 @@
 #import "splitViewController.h"
 #import "loginViewController.h"
 #import "profileViewController.h"
+#import "UMCheckUpdate.h"
 
 
 @interface splitViewController () <UIScrollViewDelegate>
@@ -24,7 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    //检查版本更新
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+    [UMCheckUpdate checkUpdate:[NSString stringWithFormat:@"发现新版本:%@.",version] cancelButtonTitle:@"下次再说" otherButtonTitles:@"现在升级" appkey:@"5602081a67e58ec377001b17" channel:nil];
     
     self.minimumPrimaryColumnWidth = 100;
     self.maximumPrimaryColumnWidth = 100;
