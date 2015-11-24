@@ -105,7 +105,7 @@
         
         BOOL success = [context save:nil];
         if (success) {
-            NSLog(@"成功保存");
+//            NSLog(@"成功保存");
         }
         
     }
@@ -122,7 +122,7 @@
         
         BOOL success = [context save:nil];
         if (success) {
-            NSLog(@"更新成功");
+//            NSLog(@"更新成功");
         }
     }
 
@@ -201,6 +201,7 @@
 + (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void (^)(ModelForUser *))block{
     NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":user_id};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"%@",responseObject);
         
         //json --> model
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];

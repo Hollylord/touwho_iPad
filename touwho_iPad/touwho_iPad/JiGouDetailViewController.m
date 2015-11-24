@@ -34,8 +34,8 @@
     [super viewDidLoad];
     
     //设置分享按钮
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
-    [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
+//    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
+//    [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
     
     //设置内容
     self.introduction.text = self.model.mDestrible;
@@ -68,9 +68,9 @@
         if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
             return ;
         }
-        NSDictionary *dic = [[result objectForKey:@"jsonArr"] firstObject];
-        NSString *content = [dic objectForKey:@"mContent"];
-        NSString *isFollow = [dic objectForKey:@"mIsFollow"];
+        
+        NSString *content = [result objectForKey:@"mContent"];
+        NSString *isFollow = [result objectForKey:@"mIsFollow"];
         
         //2. 设置内容
         if ([isFollow isEqualToString:@"0"]) {
@@ -105,27 +105,27 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [TalkingData trackPageEnd:@"机构详情页"];
 }
-#pragma mark - 分享
-- (void)share{
-    //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault url:@"http://www.baidu.com"];
-    //设置分享的 title
-    [UMSocialData defaultData].title = @"回音必项目分享";
-    
-    
-    //调用快速分享接口
-    [UMSocialSnsService presentSnsIconSheetView:self.splitViewController
-                                         appKey:@"5602081a67e58ec377001b17"
-                                      shareText:@""
-                                     shareImage:[UIImage imageNamed:@"logo"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
-                                       delegate:nil];
-    
-    
-    
-}
+//#pragma mark - 分享
+//- (void)share{
+//    //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
+//    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault url:@"http://www.baidu.com"];
+//    //设置分享的 title
+//    [UMSocialData defaultData].title = @"回音必项目分享";
+//    
+//    
+//    //调用快速分享接口
+//    [UMSocialSnsService presentSnsIconSheetView:self.splitViewController
+//                                         appKey:@"5602081a67e58ec377001b17"
+//                                      shareText:@""
+//                                     shareImage:[UIImage imageNamed:@"logo"]
+//                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
+//                                       delegate:nil];
+//    
+//    
+//    
+//}
 
-#pragma mark - 关注
+//#pragma mark - 关注
 //- (IBAction)focus:(UIButton *)sender {
 //    //1 没有登录提示登录
 //    if (!USER_ID) {

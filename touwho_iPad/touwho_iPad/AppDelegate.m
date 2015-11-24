@@ -13,6 +13,7 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaHandler.h"
 #import "APService.h"
+#import "UMCheckUpdate.h"
 
 
 @interface AppDelegate ()
@@ -34,7 +35,11 @@
     //设置talkingdata
     [TalkingData sessionStarted:@"D2DF7F18AEFA071E7F9A3FF9AC4B4409" withChannelId:@"ipad"];
     
-    //设置友盟分享
+    //友盟自动更新
+    [UMCheckUpdate checkUpdateWithAppkey:@"5602081a67e58ec377001b17" channel:nil];
+    
+    
+    //设置友盟
     [UMSocialData setAppKey:@"5602081a67e58ec377001b17"];
     
     //设置微信分享

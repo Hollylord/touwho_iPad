@@ -102,7 +102,7 @@
     
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[[result objectForKey:@"value"] firstObject] objectForKey:@"resCode"] isEqualToString:@"0"]) {
@@ -166,15 +166,7 @@
                 [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"3"];
             }});
     
-    //已经授权了，就不用弹出授权处理页面了. 当然微博是不会来这个方法的
-//    else{
-//        //在授权完成后调用获取用户信息的方法
-//        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
-//            NSLog(@"SnsInformation is %@",response.data);
-//            
-//            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
-//        }];
-//    }
+
 
 }
 
@@ -205,6 +197,7 @@
     }];
     
 }
+
 //QQ登录
 - (IBAction)QQlogin:(UIButton *)sender {
     [TalkingData trackEvent:@"QQ登录"];
@@ -213,9 +206,7 @@
     
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToQQ];
 
-    //判断是否需要授权
-    
-        
+
         //弹出授权处理页面
         snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
             
@@ -229,22 +220,12 @@
                 //跳转到个人中心页面
                 [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"2"];
             }});
-//    //已经授权了，就不用弹出授权处理页面了 
-//    else{
-//        //在授权完成后调用获取用户信息的方法
-//        [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToQQ  completion:^(UMSocialResponseEntity *response){
-//            NSLog(@"SnsInformation is %@",response.data);
-//            
-//            [self quickLogin:[response.data objectForKey:@"openid"] withIcon:[response.data objectForKey:@"profile_image_url"] withNickName:[response.data objectForKey:@"screen_name"] withChannel:@"2"];
-//        }];
-//    }
-    
-    
+
     
 }
 
 - (void)quickLogin:(NSString *)token withIcon:(NSString *)iconURL withNickName:(NSString *)nickName withChannel:(NSString *)channel{
-//    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
+    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
     //设置参数
     NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
     //登录
@@ -282,8 +263,7 @@
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewcontroller];
             splitViewController *split = (splitViewController *)self.presentingViewController;
             [split showDetailViewController:navigationController sender:nil];
-
-            
+ 
             
         }
         else{

@@ -259,8 +259,10 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
+        //打开照相机
         [self addCarema];
     }else if (buttonIndex == 1){
+        //打开相册
         [self openPicLibrary];
     }
 }
@@ -284,6 +286,7 @@
         picker.delegate = self;
         picker.allowsEditing = YES;
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//        self.superVC = [self viewController];
         [self.superVC presentViewController:picker animated:YES completion:^{
         }];
     }
@@ -303,6 +306,17 @@
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+//获得当前view的控制器
+- (UIViewController*)viewController {
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
 }
 
 @end

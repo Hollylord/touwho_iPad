@@ -49,21 +49,14 @@
     
     [self.tableview registerNib:[UINib nibWithNibName:@"TopicCell" bundle:nil] forCellReuseIdentifier:@"TopicCell"];
     
-    //设置分享按钮
-    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"share1"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
-    [self.navigationItem setRightBarButtonItem:shareItem animated:YES];
- 
-    
-    
-    
     //获取数据
     [self pullGroupData:^{
         //添加已有的数据数据
         NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
         [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"logo_background"]];
         self.groupName.text = self.modelDetail.mName;
-        self.leaderName.text = self.modelDetail.mGroupLeader;
-        self.memberCount.text = self.modelDetail.mMemberCount;
+        self.leaderName.text = [NSString stringWithFormat:@"组长：%@",self.modelDetail.mGroupLeader];
+        self.memberCount.text = [NSString stringWithFormat:@"小组成员：%@",self.modelDetail.mMemberCount];
         self.groupIntroduction.text = self.modelDetail.mDestrible;
         
         //刷新话题内容
@@ -122,25 +115,7 @@
     return 180;
 }
 
-#pragma mark - 分享
-- (void)share{
-    //用这个方法设置url跳转的网页，若是用自定义分享界面则设置全部url不行
-    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeDefault url:@"http://www.baidu.com"];
-    //设置分享的 title
-    [UMSocialData defaultData].title = @"回音必项目分享";
-    
-    
-    //调用快速分享接口
-    [UMSocialSnsService presentSnsIconSheetView:self.splitViewController
-                                         appKey:@"5602081a67e58ec377001b17"
-                                      shareText:@""
-                                     shareImage:[UIImage imageNamed:@"logo"]
-                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
-                                       delegate:nil];
-    
-    
-    
-}
+
 
 #pragma mark - 获取数据
 - (void)pullGroupData:(dispatch_block_t)block{

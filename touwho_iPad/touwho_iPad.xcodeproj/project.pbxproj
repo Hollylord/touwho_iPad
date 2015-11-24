@@ -18,6 +18,7 @@
 		A11413C31BD9E4A600F11012 /* ModelForFootage.m in Sources */ = {isa = PBXBuildFile; fileRef = A11413C21BD9E4A600F11012 /* ModelForFootage.m */; };
 		A11451C21B8DC31400E45381 /* programsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11451C11B8DC31400E45381 /* programsCell.xib */; };
 		A11451C41B8DC47700E45381 /* apply.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11451C31B8DC47700E45381 /* apply.xib */; };
+		A11790BA1C0306510071270F /* libUMCheckUpdate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A11790B81C0306500071270F /* libUMCheckUpdate.a */; };
 		A1211E921BB2413500B25AA4 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1211E781BB2413500B25AA4 /* UMSocialLocalizable.strings */; };
 		A1211E931BB2413500B25AA4 /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1211E861BB2413500B25AA4 /* libUMSocial_Sdk_4.2.3.a */; };
 		A1211E941BB2413500B25AA4 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1211E881BB2413500B25AA4 /* UMSCommentDetailController.xib */; };
@@ -274,6 +275,8 @@
 		A11413C21BD9E4A600F11012 /* ModelForFootage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForFootage.m; sourceTree = "<group>"; };
 		A11451C11B8DC31400E45381 /* programsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = programsCell.xib; sourceTree = "<group>"; };
 		A11451C31B8DC47700E45381 /* apply.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = apply.xib; sourceTree = "<group>"; };
+		A11790B81C0306500071270F /* libUMCheckUpdate.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMCheckUpdate.a; sourceTree = "<group>"; };
+		A11790B91C0306500071270F /* UMCheckUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMCheckUpdate.h; sourceTree = "<group>"; };
 		A1211E791BB2413500B25AA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		A1211E7B1BB2413500B25AA4 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		A1211E7C1BB2413500B25AA4 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -653,6 +656,7 @@
 				A1BE7F001B8D552B00E76711 /* CoreLocation.framework in Frameworks */,
 				A1BE7EFE1B8D552400E76711 /* CFNetwork.framework in Frameworks */,
 				A1DDDE891BD6477C0045A659 /* libbdtts.a in Frameworks */,
+				A11790BA1C0306510071270F /* libUMCheckUpdate.a in Frameworks */,
 				A1BE7EFC1B8D551C00E76711 /* CoreGraphics.framework in Frameworks */,
 				A1B13D2E1BB554D200A8AC29 /* libPushSDK-1.8.5.a in Frameworks */,
 				A1211EAA1BB2421700B25AA4 /* TencentOpenAPI.framework in Frameworks */,
@@ -773,6 +777,15 @@
 				A1C07CD61B9C229B00A2F1CB /* profileViewController.xib */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		A11790BB1C0306550071270F /* 友盟自动更新 */ = {
+			isa = PBXGroup;
+			children = (
+				A11790B81C0306500071270F /* libUMCheckUpdate.a */,
+				A11790B91C0306500071270F /* UMCheckUpdate.h */,
+			);
+			name = "友盟自动更新";
 			sourceTree = "<group>";
 		};
 		A1211E761BB240EC00B25AA4 /* 私信工具 */ = {
@@ -897,6 +910,7 @@
 		A17C9A7B1B8C6FBA00F5677C /* library */ = {
 			isa = PBXGroup;
 			children = (
+				A11790BB1C0306550071270F /* 友盟自动更新 */,
 				A1D267C91BFDC02F000EEE6A /* Talkingdata */,
 				A1B13D2B1BB554D200A8AC29 /* 极光推送 */,
 				A1211E9D1BB2421700B25AA4 /* UMSocial_Sdk_Extra_Frameworks */,
@@ -2390,7 +2404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f40398fc-aa01-4610-af1d-dac7ef2a3b6a";
 			};
 			name = Debug;
 		};
@@ -2424,7 +2438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f40398fc-aa01-4610-af1d-dac7ef2a3b6a";
 			};
 			name = Release;
 		};

@@ -9,6 +9,7 @@
 #import "splitViewController.h"
 #import "loginViewController.h"
 #import "profileViewController.h"
+#import "UMCheckUpdate.h"
 
 
 @interface splitViewController () <UIScrollViewDelegate>
@@ -24,6 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //检查版本更新
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+    [UMCheckUpdate checkUpdate:[NSString stringWithFormat:@"发现新版本:%@.",version] cancelButtonTitle:@"下次再说" otherButtonTitles:@"现在升级" appkey:@"5602081a67e58ec377001b17" channel:nil];
     
     self.minimumPrimaryColumnWidth = 100;
     self.maximumPrimaryColumnWidth = 100;
@@ -31,8 +35,20 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:nil object:nil];
     
+    NSString *buildVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSLog(@"buildVersion  = %@",buildVersion);
+    NSLog(@"nsdefault = %@",[[NSUserDefaults standardUserDefaults] valueForKey:@"version"]);
+    //如果没有记录版本号，就存储版本号，并现实广告页
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"version"] == nil) {
-//        [self showADScrollView];
+        [self showADScrollView];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:buildVersion forKey:@"version"];
+        
+    }
+    else if (![[[NSUserDefaults standardUserDefaults] valueForKey:@"version"] isEqualToString:buildVersion]) {
+        [self showADScrollView];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:buildVersion forKey:@"version"];
     }
     
     
@@ -87,7 +103,7 @@
     return YES;
 }
 
-//支持哪些方向，如果info禁止了，那些方向也不支持
+////支持哪些方向，如果info禁止了，那些方向也不支持
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;
 }
@@ -102,10 +118,6 @@
     image.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:image];
     self.image = image;
-    
-    
-    
-    
     
     //创建1个scrollview
     self.scrollView  = [[UIScrollView alloc] initWithFrame:CGRectMake(imageFrame.origin.x, imageFrame.origin.y, imageFrame.size.width, imageFrame.size.height)];
@@ -146,11 +158,7 @@
     //一定要把按钮添加到scrollview上面
     [self.scrollView addSubview:self.advertButton];
     
-    
-    
-    
-    
-    
+ 
     //创建pagecontrol
     self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.frame = CGRectMake(100, imageFrame.size.height - 50, 100, 30);
@@ -162,15 +170,14 @@
     self.pageControl.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.pageControl];
     
+    
+    
 }
 
 
 #pragma mark - scrollView delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{  // 滑动完毕后的scrollView可以拿到里面的位移；
-    
-    
-    
-    
+
     CGPoint contentOffset = scrollView.contentOffset;
     
     
@@ -188,10 +195,7 @@
         self.image.alpha = 0.5f;
     }
     
-    
-    
-    
-    
+
     if (contentOffset.x > currentWidth*4+50) {
         [self.scrollView removeFromSuperview];
         [self.pageControl removeFromSuperview];

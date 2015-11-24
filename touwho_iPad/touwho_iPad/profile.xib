@@ -150,7 +150,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90e-Cg-PlC">
-                            <rect key="frame" x="125" y="808" width="350" height="50"/>
+                            <rect key="frame" x="125" y="863" width="350" height="50"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Kot-uQ-gvf"/>
@@ -170,16 +170,8 @@
                                 <action selector="saveInforToServer:" destination="a2i-yt-wSD" eventType="touchUpInside" id="Ljw-sP-EhF"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-9S-WP9">
-                            <rect key="frame" x="50" y="535" width="60" height="30"/>
-                            <animations/>
-                            <state key="normal" title="上传名片"/>
-                            <connections>
-                                <action selector="uploadCard:" destination="-1" eventType="touchUpInside" id="22p-aA-861"/>
-                            </connections>
-                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-OR-rmX" userLabel="名片">
-                            <rect key="frame" x="125" y="535" width="442" height="243"/>
+                            <rect key="frame" x="125" y="590" width="442" height="243"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="442" id="L99-89-3Ao"/>
@@ -338,16 +330,23 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-9S-WP9">
+                            <rect key="frame" x="152" y="525" width="60" height="30"/>
+                            <animations/>
+                            <state key="normal" title="上传名片"/>
+                            <connections>
+                                <action selector="uploadCard:" destination="-1" eventType="touchUpInside" id="22p-aA-861"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <animations/>
                     <constraints>
-                        <constraint firstItem="y7N-OR-rmX" firstAttribute="top" secondItem="OjR-9S-WP9" secondAttribute="top" id="0Io-ru-qdF"/>
                         <constraint firstItem="13C-u5-BCa" firstAttribute="leading" secondItem="CQc-AC-O7C" secondAttribute="leading" id="1gc-9Z-fPd"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="centerY" secondItem="kUa-g5-ewl" secondAttribute="centerY" id="2iD-Ad-Fjo"/>
                         <constraint firstItem="13C-u5-BCa" firstAttribute="centerY" secondItem="43V-dk-KeX" secondAttribute="centerY" id="4HD-5B-aFw"/>
                         <constraint firstItem="ELD-bj-ihu" firstAttribute="top" secondItem="vEq-sP-jUm" secondAttribute="bottom" constant="30" id="5B4-M1-GgW"/>
                         <constraint firstItem="0rU-ZX-bZ0" firstAttribute="height" secondItem="13C-u5-BCa" secondAttribute="height" id="5pM-hT-Ug8"/>
-                        <constraint firstAttribute="trailing" secondItem="90e-Cg-PlC" secondAttribute="trailing" id="6hP-ml-Hx4" userLabel="水平"/>
+                        <constraint firstAttribute="trailing" secondItem="90e-Cg-PlC" secondAttribute="trailing" constant="125" id="6hP-ml-Hx4" userLabel="水平"/>
                         <constraint firstItem="0rU-ZX-bZ0" firstAttribute="centerY" secondItem="6oR-91-ssX" secondAttribute="centerY" id="6zS-Ke-W8V"/>
                         <constraint firstItem="Hxz-IA-twR" firstAttribute="leading" secondItem="beV-X1-81z" secondAttribute="leading" constant="152" id="8sA-fZ-rgv"/>
                         <constraint firstItem="zNT-Y1-KxZ" firstAttribute="centerY" secondItem="WLi-RY-fZo" secondAttribute="centerY" id="94p-MG-4nY"/>
@@ -358,13 +357,12 @@
                         <constraint firstItem="Mbt-Xj-vkb" firstAttribute="leading" secondItem="WLi-RY-fZo" secondAttribute="leading" id="Ckp-9V-sp9"/>
                         <constraint firstItem="CQc-AC-O7C" firstAttribute="trailing" secondItem="n3e-Ea-Qak" secondAttribute="trailing" id="DFz-J1-Spa"/>
                         <constraint firstItem="CQc-AC-O7C" firstAttribute="leading" secondItem="n3e-Ea-Qak" secondAttribute="leading" id="DYA-bx-WZU"/>
-                        <constraint firstItem="y7N-OR-rmX" firstAttribute="leading" secondItem="OjR-9S-WP9" secondAttribute="trailing" constant="15" id="E0s-oF-6fe"/>
                         <constraint firstItem="zNT-Y1-KxZ" firstAttribute="leading" secondItem="fsy-oK-Yi6" secondAttribute="leading" id="EyO-DL-izK"/>
                         <constraint firstItem="CQc-AC-O7C" firstAttribute="centerY" secondItem="ELD-bj-ihu" secondAttribute="centerY" id="GFz-ho-WJw"/>
                         <constraint firstItem="0rU-ZX-bZ0" firstAttribute="leading" secondItem="13C-u5-BCa" secondAttribute="leading" id="HZZ-uB-aVa"/>
-                        <constraint firstAttribute="bottom" secondItem="90e-Cg-PlC" secondAttribute="bottom" constant="58" id="HbL-Tp-Jvq" userLabel="竖直"/>
+                        <constraint firstAttribute="bottom" secondItem="90e-Cg-PlC" secondAttribute="bottom" constant="119" id="HbL-Tp-Jvq" userLabel="竖直"/>
                         <constraint firstItem="n3e-Ea-Qak" firstAttribute="height" secondItem="zNT-Y1-KxZ" secondAttribute="height" id="J46-rT-EWD"/>
-                        <constraint firstItem="y7N-OR-rmX" firstAttribute="top" secondItem="r9V-pR-kUZ" secondAttribute="bottom" constant="30" id="Jp4-Ig-X2r"/>
+                        <constraint firstItem="y7N-OR-rmX" firstAttribute="top" secondItem="r9V-pR-kUZ" secondAttribute="bottom" constant="85" id="Jp4-Ig-X2r"/>
                         <constraint firstItem="n3e-Ea-Qak" firstAttribute="width" secondItem="zNT-Y1-KxZ" secondAttribute="width" id="KJE-J4-dwO"/>
                         <constraint firstItem="CQc-AC-O7C" firstAttribute="height" secondItem="n3e-Ea-Qak" secondAttribute="height" id="Lmi-Vn-FbK"/>
                         <constraint firstItem="0rU-ZX-bZ0" firstAttribute="trailing" secondItem="13C-u5-BCa" secondAttribute="trailing" id="P96-Vj-B6Q"/>
@@ -374,19 +372,21 @@
                         <constraint firstItem="kUa-g5-ewl" firstAttribute="top" secondItem="b1X-QN-hP6" secondAttribute="bottom" constant="30" id="VhL-uR-mYV"/>
                         <constraint firstItem="b1X-QN-hP6" firstAttribute="leading" secondItem="WLi-RY-fZo" secondAttribute="leading" id="Vp9-C7-eDH"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="height" secondItem="zNT-Y1-KxZ" secondAttribute="height" id="Wu3-D4-cSV"/>
-                        <constraint firstItem="OjR-9S-WP9" firstAttribute="leading" secondItem="beV-X1-81z" secondAttribute="leading" constant="50" id="Xzw-pd-vrH"/>
                         <constraint firstItem="90e-Cg-PlC" firstAttribute="centerX" secondItem="beV-X1-81z" secondAttribute="centerX" id="Y98-EZ-mbn"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="leading" secondItem="eCp-aB-Jp4" secondAttribute="leading" id="a6B-iP-zHX"/>
                         <constraint firstItem="1BR-n1-2VU" firstAttribute="height" secondItem="zNT-Y1-KxZ" secondAttribute="height" id="cn7-Ut-wfl"/>
                         <constraint firstItem="vEq-sP-jUm" firstAttribute="leading" secondItem="WLi-RY-fZo" secondAttribute="leading" id="cug-q9-bGX"/>
                         <constraint firstItem="r9V-pR-kUZ" firstAttribute="leading" secondItem="0rU-ZX-bZ0" secondAttribute="leading" id="d0D-Vn-as1"/>
+                        <constraint firstItem="OjR-9S-WP9" firstAttribute="leading" secondItem="vzL-k6-7mD" secondAttribute="leading" id="eyc-1z-Yh8"/>
                         <constraint firstItem="vzL-k6-7mD" firstAttribute="leading" secondItem="6oR-91-ssX" secondAttribute="leading" id="flJ-y2-zvH"/>
                         <constraint firstItem="ELD-bj-ihu" firstAttribute="leading" secondItem="vEq-sP-jUm" secondAttribute="leading" id="gZf-cM-gyF"/>
                         <constraint firstItem="1BR-n1-2VU" firstAttribute="centerY" secondItem="Mbt-Xj-vkb" secondAttribute="centerY" id="iVJ-HB-stf"/>
                         <constraint firstItem="90e-Cg-PlC" firstAttribute="top" secondItem="y7N-OR-rmX" secondAttribute="bottom" constant="30" id="juK-1Z-fYQ"/>
                         <constraint firstItem="fsy-oK-Yi6" firstAttribute="leading" secondItem="Hxz-IA-twR" secondAttribute="trailing" constant="67" id="kV1-aI-YI1"/>
                         <constraint firstItem="43V-dk-KeX" firstAttribute="leading" secondItem="ELD-bj-ihu" secondAttribute="leading" id="m0R-De-wQQ"/>
+                        <constraint firstItem="OjR-9S-WP9" firstAttribute="top" secondItem="vzL-k6-7mD" secondAttribute="bottom" constant="25" id="m1f-Ob-ahd"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="width" secondItem="zNT-Y1-KxZ" secondAttribute="width" id="nK2-sg-G6h"/>
+                        <constraint firstItem="y7N-OR-rmX" firstAttribute="leading" secondItem="beV-X1-81z" secondAttribute="leading" constant="125" id="nx6-MV-wvp"/>
                         <constraint firstItem="eCp-aB-Jp4" firstAttribute="leading" secondItem="zNT-Y1-KxZ" secondAttribute="leading" id="okj-Xh-fsc"/>
                         <constraint firstItem="vzL-k6-7mD" firstAttribute="top" secondItem="6oR-91-ssX" secondAttribute="bottom" constant="30" id="ozO-qV-UhX"/>
                         <constraint firstItem="r9V-pR-kUZ" firstAttribute="height" secondItem="0rU-ZX-bZ0" secondAttribute="height" id="p5M-ez-5l3"/>
