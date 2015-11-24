@@ -111,13 +111,16 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             
             NSString *userID = [[[result objectForKey:@"value"]firstObject] objectForKey:@"mID"];
+            NSString *iconUrl = [[[result objectForKey:@"value"]firstObject] objectForKey:@"mAvatar"];
             
             //保存用户信息
-            NSDictionary *dic = @{@"userName":phoneNumber,@"userID":userID};
-            NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
+            NSDictionary *user = @{@"userName":phoneNumber,@"userID":userID,@"iconURL":iconUrl};
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
             [userDefault setObject:user forKey:@"user"];
             [userDefault synchronize];
+            
+            //发送通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:nil];
             
             //跳转个人中心
             [self dismissViewControllerAnimated:YES completion:NULL];
