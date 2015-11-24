@@ -15,6 +15,8 @@
         _model = model;
     }
     self.nameLabel.text = model.mName;
+    NSString *url = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mLogo];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"logo_background"]];
     
 }
 

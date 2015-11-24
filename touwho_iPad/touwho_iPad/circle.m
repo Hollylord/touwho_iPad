@@ -144,7 +144,7 @@
     //获取全部小组
     NSDictionary *para = @{@"method":@"getGroups"};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         
         NSDictionary *result = [[responseObject objectForKey:@"value"] firstObject];
         if (![[result objectForKey:@"resCode"] isEqualToString:@"0"]) {
