@@ -364,8 +364,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
     //调用快速分享接口
     [UMSocialSnsService presentSnsIconSheetView:self.splitViewController
                                          appKey:@"5602081a67e58ec377001b17"
-                                      shareText:@"我是shareText"
-                                     shareImage:nil
+                                      shareText:self.model1.mDestrible
+                                     shareImage:[UIImage imageNamed:@"logo"]
                                 shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToSina]
                                        delegate:nil];
     

@@ -105,7 +105,7 @@
         
         BOOL success = [context save:nil];
         if (success) {
-            NSLog(@"成功保存");
+//            NSLog(@"成功保存");
         }
         
     }
@@ -122,7 +122,7 @@
         
         BOOL success = [context save:nil];
         if (success) {
-            NSLog(@"更新成功");
+//            NSLog(@"更新成功");
         }
     }
 

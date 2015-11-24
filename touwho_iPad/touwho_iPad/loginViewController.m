@@ -102,7 +102,7 @@
     
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"%@",responseObject);
         NSDictionary *result = responseObject;
         //验证成功
         if ([[[[result objectForKey:@"value"] firstObject] objectForKey:@"resCode"] isEqualToString:@"0"]) {
@@ -233,7 +233,7 @@
 }
 
 - (void)quickLogin:(NSString *)token withIcon:(NSString *)iconURL withNickName:(NSString *)nickName withChannel:(NSString *)channel{
-//    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
+    NSLog(@"%@,%@,%@,%@",token,iconURL,nickName,channel);
     //设置参数
     NSDictionary *dic = @{@"method":@"login",@"openid":token,@"avatar_url":iconURL,@"nick_name":nickName,@"channel":channel};
     //登录

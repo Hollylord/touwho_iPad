@@ -124,6 +124,13 @@
     //发送请求
     NSDictionary *para = @{@"method":@"getVercode",@"phone":phoneNumber};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString *resCode  = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"resCode"];
+        NSString *resValue  = [[[responseObject objectForKey:@"value"] firstObject] objectForKey:@"resValue"];
+        if (![resCode isEqualToString:@"0"]) {
+            [BTIndicator showTextOnView:self withText:resValue withDelay:0.5];
+            return ;
+        }
+        
         //添加一个倒计时的label
         UILabel *timerLabel = [[UILabel alloc] initWithFrame:self.vercodeBtn.bounds];
         [self.vercodeBtn addSubview:timerLabel];

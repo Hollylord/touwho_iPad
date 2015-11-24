@@ -51,7 +51,7 @@
     //给whiteView约束
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
     NSLayoutConstraint *trailing = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeTop multiplier:1 constant:2*50];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeTop multiplier:1 constant:3*50];
     NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:whiteView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.tableView attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
     
     [whiteView.superview addConstraints:@[leading,trailing,top,bottom]];
@@ -101,7 +101,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 2;
+    return 3;
 }
 
 
@@ -116,17 +116,23 @@
         cell.textLabel.text = @"关于";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-
+    else if (indexPath.row == 2){
+        cell.textLabel.text = @"公司介绍";
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //公司简介
+    //清空缓存
     if (indexPath.row == 0) {
-        CorporationViewController *firmVC = [[CorporationViewController alloc] initWithNibName:@"CorporationViewController" bundle:nil];
-        [self.navigationController pushViewController:firmVC animated:YES];
+        SDImageCache *cache = [SDWebImageManager sharedManager].imageCache;
+        [cache cleanDiskWithCompletionBlock:^{
+            
+            [BTIndicator showCheckMarkOnView:self.view withText:@"缓存已清空" withDelay:0.5];
+        }];
     }
     //关于
     else if (indexPath.row == 1)
@@ -134,6 +140,11 @@
         AboutViewController *aboutVC = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
 
         [self.navigationController pushViewController:aboutVC animated:YES];
+    }
+    //公司介绍
+    else if (indexPath.row == 2) {
+        CorporationViewController *firmVC = [[CorporationViewController alloc] initWithNibName:@"CorporationViewController" bundle:nil];
+        [self.navigationController pushViewController:firmVC animated:YES];
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

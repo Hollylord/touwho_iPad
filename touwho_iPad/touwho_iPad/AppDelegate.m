@@ -38,7 +38,7 @@
     //友盟自动更新
     [UMCheckUpdate checkUpdateWithAppkey:@"5602081a67e58ec377001b17" channel:nil];
     
-    [UMCheckUpdate checkUpdate:@"有新版本更新" cancelButtonTitle:@"下次再说" otherButtonTitles:@"去App Store下载" appkey:@"5602081a67e58ec377001b17" channel:nil];
+    [UMCheckUpdate checkUpdate:@"更新新版本" cancelButtonTitle:@"下次再说" otherButtonTitles:@"去App Store下载" appkey:@"5602081a67e58ec377001b17" channel:nil];
     
     //设置友盟
     [UMSocialData setAppKey:@"5602081a67e58ec377001b17"];
