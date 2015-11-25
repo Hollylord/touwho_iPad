@@ -97,7 +97,8 @@
     
     //设置参数
     NSString *phoneNumber = self.phoneNumberView.text;
-    NSString *password = self.passwordView.text;
+    NSString *password = [BTNetWorkingAPI md5:self.passwordView.text];
+ 
     NSDictionary *dic = @{@"method":@"login",@"account":phoneNumber,@"password":password};
     
     //请求
