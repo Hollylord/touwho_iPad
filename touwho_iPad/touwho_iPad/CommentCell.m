@@ -33,7 +33,7 @@
     }
     
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-    self.userNameLabel.text = model.mName;
+    self.userNameLabel.text = model.mNickName;
     self.contentLabel.text = model.mTalkContent;
     self.timeLabel.text = model.mCreateTime;
     //设置点赞按钮的状态

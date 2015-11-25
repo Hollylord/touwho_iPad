@@ -13,6 +13,7 @@
 #import "ModelTopicDetail.h"
 #import "ModelGroupDetail.h"
 #import "ModelForUser.h"
+#import "OtherCenterViewController.h"
 
 
 @interface SpecificTopicViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -38,6 +39,8 @@
 @property (strong,nonatomic) ModelForUser *modelUser;
 ///存放评论models
 @property (strong,nonatomic) NSMutableArray *modelsComment;
+///存放评论人models
+@property (strong,nonatomic) NSMutableArray *modelsReviewers;
 @end
 
 @implementation SpecificTopicViewController
@@ -138,8 +141,13 @@
     return cell;
 }
 
+//跳转到他人中心
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    OtherCenterViewController *sponsor = [[OtherCenterViewController alloc] initWithNibName:@"OtherCenterViewController" bundle:nil];
+    sponsor.model = self.modelsReviewers[indexPath.row];
+    [self.navigationController pushViewController:sponsor animated:YES];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -261,10 +269,17 @@
         
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
+        //存放话题作者model
         self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
-        
+        //存放评论models
         self.modelsComment = [ModelForComment objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
-
+        //存放评论人models
+        [ModelSponsors setupReplacedKeyFromPropertyName:^NSDictionary *{
+            
+            return @{@"mID":@"mUserID",@"mName":@"mNickName"};
+        }];
+        self.modelsReviewers = [ModelSponsors objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
+        
         //获取发话题的用户信息
         NSDictionary *temp = @{@"method":@"getMyInfo",@"user_id":self.modelDetail.mUserID};
         [BTNetWorking getDataWithPara:temp success:^(AFHTTPRequestOperation *operation, id responseObject) {

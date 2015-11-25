@@ -17,12 +17,14 @@
 @property (copy,nonatomic) NSString *mCreateTime;
 ///评论者的头像
 @property (copy,nonatomic) NSString *mAvatar;
-///评论的名称
-@property (copy,nonatomic) NSString *mName;
+///评论人的昵称
+@property (copy,nonatomic) NSString *mNickName;
 ///该评论是否点赞 0未点赞 1已点赞
 @property (copy,nonatomic) NSString *mIsPraise;
 ///评论点赞人数
 @property (copy,nonatomic) NSString *mTalkCommentPraizeCount;
 ///评论id
 @property (copy,nonatomic) NSString *mTalkCommentID;
+///评论人的userID
+@property (copy,nonatomic) NSString *mUserID;
 @end
