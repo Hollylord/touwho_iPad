@@ -224,7 +224,6 @@
 		A1E9BEA01BA8077F00876186 /* activityList.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BE9F1BA8077F00876186 /* activityList.m */; };
 		A1E9BEA31BA808A000876186 /* activityUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9BEA21BA808A000876186 /* activityUnit.m */; };
 		A1EAA56C1BF5893D003C9B19 /* ModelChating.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA56B1BF5893D003C9B19 /* ModelChating.m */; };
-		A1EAA56F1BF58D0D003C9B19 /* ModelConversation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1EAA56D1BF58D0D003C9B19 /* ModelConversation.xcdatamodeld */; };
 		A1EB96701BC8B17200C15A39 /* ModelForNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB966F1BC8B17200C15A39 /* ModelForNews.m */; };
 		A1EB96751BC8C41D00C15A39 /* ModelForActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB96741BC8C41D00C15A39 /* ModelForActivity.m */; };
 		A1ED80EB1BF08607007D8F4C /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ED80E91BF08607007D8F4C /* ActivityDetailViewController.m */; };
@@ -600,7 +599,6 @@
 		A1E9BEA21BA808A000876186 /* activityUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activityUnit.m; sourceTree = "<group>"; };
 		A1EAA56A1BF5893D003C9B19 /* ModelChating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelChating.h; sourceTree = "<group>"; };
 		A1EAA56B1BF5893D003C9B19 /* ModelChating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelChating.m; sourceTree = "<group>"; };
-		A1EAA56E1BF58D0D003C9B19 /* ModelConversation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelConversation.xcdatamodel; sourceTree = "<group>"; };
 		A1EB966E1BC8B17200C15A39 /* ModelForNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForNews.h; sourceTree = "<group>"; };
 		A1EB966F1BC8B17200C15A39 /* ModelForNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForNews.m; sourceTree = "<group>"; };
 		A1EB96731BC8C41D00C15A39 /* ModelForActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForActivity.h; sourceTree = "<group>"; };
@@ -1188,7 +1186,6 @@
 		A19D09711B7C2F5B00094B81 /* other */ = {
 			isa = PBXGroup;
 			children = (
-				A1EAA56D1BF58D0D003C9B19 /* ModelConversation.xcdatamodeld */,
 				A19D09411B7C2DF100094B81 /* AppDelegate.h */,
 				A19D09421B7C2DF100094B81 /* AppDelegate.m */,
 				A1DB9AA31BA269A900EC97D6 /* 根控制器 */,
@@ -2209,7 +2206,6 @@
 				A19929151BDA087100B155A5 /* CorporationViewController.m in Sources */,
 				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,
 				A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */,
-				A1EAA56F1BF58D0D003C9B19 /* ModelConversation.xcdatamodeld in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
 				A19FCA261BF1E3C7009F2C33 /* ModelGroupDetail.m in Sources */,
 				A1D9FB4C1BD8C6E800321F7E /* SettingViewController.m in Sources */,
@@ -2530,19 +2526,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A1EAA56D1BF58D0D003C9B19 /* ModelConversation.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A1EAA56E1BF58D0D003C9B19 /* ModelConversation.xcdatamodel */,
-			);
-			currentVersion = A1EAA56E1BF58D0D003C9B19 /* ModelConversation.xcdatamodel */;
-			path = ModelConversation.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A19D09331B7C2DF100094B81 /* Project object */;
 }

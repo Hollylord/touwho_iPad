@@ -86,7 +86,6 @@
     me.delegate          = meRightView;
     
     //建立与leanCloud的长连接
-    
     self.client = [[AVIMClient alloc]init];
     self.client.delegate = self;
     [self buildConnectWithLeanCloud];
@@ -119,17 +118,13 @@
         else{
             //查询会话
             AVIMConversationQuery *query = [self.client conversationQuery];
+            //设置搜索会话条件：只要包涵本人的会话
+            [query whereKey:kAVIMKeyMember containsString:USER_ID];
             [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
 //                NSLog(@"%@",objects);
-                //保存所有会话
-                [objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    
-                    AVIMConversation *conver = obj;
-                    [BTNetWorking setupCoreDataAndSaveConversation:conver];
-                }];
-                
+
                 //会话转models
-                [self updateConversations];
+                [self updateConversations:objects];
                 
             }];
             
@@ -279,20 +274,16 @@
 #pragma mark - LeanCloud代理
 
 
-- (void) updateConversations{
-    
-    //将所有存储的conversation取出来
-    NSArray *results = [BTNetWorking withDrawAllConversationFromDatabase];
+- (void) updateConversations:(NSArray *)conversations{
     
     NSMutableArray *models = [NSMutableArray array];
     
-    
     //数组转models
-    for (NSManagedObject *obj in results) {
+    for (AVIMConversation *obj in conversations) {
         ModelChating *model = [[ModelChating alloc] init];
-        model.name = [obj valueForKey:@"name"];
-        model.members = [obj valueForKey:@"members"];
-        model.lastMessageAt = [obj valueForKey:@"lastMessageAt"];
+        model.name = obj.name;
+        model.members = obj.members;
+        model.lastMessageAt = obj.lastMessageAt;
         [models addObject:model];
     }
     

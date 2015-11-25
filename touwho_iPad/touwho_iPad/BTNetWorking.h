@@ -29,10 +29,10 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 + (BOOL)isUserAlreadyLoginWithAlertView:(UIView *)view;
 
 ///保存对话数据到数据库
-+ (void)setupCoreDataAndSaveConversation:(AVIMConversation *)conversation;
+//+ (void)setupCoreDataAndSaveConversation:(AVIMConversation *)conversation;
 
 ///查询所有的对话
-+ (NSArray *)withDrawAllConversationFromDatabase;
+//+ (NSArray *)withDrawAllConversationFromDatabase;
 
 
 ///判断是否为领投人
