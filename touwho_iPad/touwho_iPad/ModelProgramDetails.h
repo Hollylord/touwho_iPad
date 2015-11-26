@@ -28,5 +28,7 @@
 @property (copy,nonatomic) NSString *mScheme;
 //视频url
 @property (copy,nonatomic) NSString *mVideo;
+///项目分享的url
+@property (copy,nonatomic) NSString *mProjectUrl;
 
 @end

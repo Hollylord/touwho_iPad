@@ -188,7 +188,8 @@
             
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];
             
-            NSLog(@"%@",snsAccount);
+//            NSLog(@"%@",snsAccount);
+            
             //跳转到个人中心页面
             [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"1"];
         }
