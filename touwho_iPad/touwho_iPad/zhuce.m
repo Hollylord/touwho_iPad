@@ -81,8 +81,9 @@
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *result = responseObject;
+        NSLog(@"zhuce = %@",responseObject);
         //验证成功
-        if ([[[result objectForKey:@"value"] objectForKey:@"resCode"] isEqualToString:@"0"]){
+        if ([[[[result objectForKey:@"value"] firstObject] objectForKey:@"resCode"] isEqualToString:@"0"]){
             NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
             
             //保存用户信息
@@ -95,6 +96,10 @@
             if (self.nextStepBlock) {
                 self.nextStepBlock();
             }
+            
+        }
+        else{
+            [BTIndicator showForkMarkOnView:self withText:[[[result objectForKey:@"value"] firstObject] objectForKey:@"resValue"] withDelay:1];
         }
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
