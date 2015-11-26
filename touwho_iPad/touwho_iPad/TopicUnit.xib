@@ -41,7 +41,6 @@
                 </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.13725490200000001" green="0.63137254899999995" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="cZr-wX-Ob5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="By7-Rh-cMb"/>
                 <constraint firstItem="aWx-3d-qaw" firstAttribute="leading" secondItem="cZr-wX-Ob5" secondAttribute="trailing" constant="10" id="NI0-rh-kFO"/>

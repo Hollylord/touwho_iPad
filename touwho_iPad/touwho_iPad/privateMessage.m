@@ -54,9 +54,16 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     ModelChating *model = self.conversations[indexPath.row];
-    NSLog(@"%@",USER_ID);
-    //创建长连接和会话: 将自己的id和朋友的id赋值
-    [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[[model.members firstObject]]];
+    NSLog(@"%@",model.members);
+    if (![[model.members firstObject] isEqualToString:USER_ID]) {
+        //创建长连接和会话: 将自己的id和朋友的id赋值
+        [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[[model.members firstObject]]];
+    }
+    else{
+        //创建长连接和会话: 将自己的id和朋友的id赋值
+        [self openSessionByClientId:USER_ID navigationToIMWithTargetClientIDs:@[[model.members lastObject]]];
+    }
+    
 
 }
 

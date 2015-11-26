@@ -75,7 +75,7 @@
     
 }
 
-//点击修改密码确定
+#pragma mark - 修改密码
 - (IBAction)confirm:(UIButton *)sender {
     //判断2个密码是否一致
     if (self.password1View.text != self.password2View.text) {
@@ -94,7 +94,7 @@
     }
     
     //设置参数
-    NSString *newPassword = self.password2View.text;
+    NSString *newPassword = [BTNetWorkingAPI md5:self.password2View.text];
     NSDictionary *para = @{@"method":@"checkVerCode_find",@"phone":self.phoneNumberView.text,@"ver_code":self.vercodeInputView.text,@"password":newPassword};
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];

@@ -126,7 +126,7 @@
 //    }
 }
 
-#pragma mark - 按钮点击
+#pragma mark - 点击消息按钮
 - (IBAction)message:(UIButton *)sender {
     [self.delegate presentMessage];
     

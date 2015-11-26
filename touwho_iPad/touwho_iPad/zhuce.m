@@ -63,12 +63,12 @@
     [self removeFromSuperview];
 }
 
-//点击注册
+#pragma mark - 点击注册
 - (IBAction)nextStep:(UIButton *)sender {
     //设置参数
     NSString *phoneNumber = self.phoneNumberView.text;
     NSString *vercode = self.vercodeView.text;
-    NSString *password = self.passwordView.text;
+    NSString *password = [BTNetWorkingAPI md5:self.passwordView.text];
     NSString *userType;
     if (self.btn1.selected) {
         userType = @"1";

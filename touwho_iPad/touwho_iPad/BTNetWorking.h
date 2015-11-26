@@ -29,10 +29,10 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 + (BOOL)isUserAlreadyLoginWithAlertView:(UIView *)view;
 
 ///保存对话数据到数据库
-+ (void)setupCoreDataAndSaveConversation:(AVIMConversation *)conversation;
+//+ (void)setupCoreDataAndSaveConversation:(AVIMConversation *)conversation;
 
 ///查询所有的对话
-+ (NSArray *)withDrawAllConversationFromDatabase;
+//+ (NSArray *)withDrawAllConversationFromDatabase;
 
 
 ///判断是否为领投人
@@ -46,6 +46,8 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 
 ///这个类专门用来管理网络接口的，对接后台服务器的
 @interface BTNetWorkingAPI : NSObject
+///给密码md5加密
++(NSString *) md5: (NSString *) inPutText ;
 
 ///获取用户信息接口
 + (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void(^)(ModelForUser *user))block;

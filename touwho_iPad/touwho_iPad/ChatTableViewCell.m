@@ -26,12 +26,15 @@
     if (_model != model) {
         _model = model;
     }
-    
-    NSString *userID = [model.members firstObject];
-    if (!userID) {
-        return ;
+    NSString *friendID;
+    if ([[model.members firstObject] isEqualToString:USER_ID]) {
+        friendID = [model.members lastObject];
     }
-    [BTNetWorkingAPI pullUserInfoFromServerWith:userID andBlock:^(ModelForUser *user) {
+    else{
+        friendID = [model.members firstObject];
+    }
+    
+    [BTNetWorkingAPI pullUserInfoFromServerWith:friendID andBlock:^(ModelForUser *user) {
         NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,user.mAvatar];
         [self.headIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
         self.nickName.text = user.mNickName;

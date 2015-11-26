@@ -39,13 +39,17 @@
     }else{
         AVIMTypedMessage *typedMessage=self.typedMessages[0];
         WEAKSELF
+        //在当前会话中查询历史信息
         [self.conversation queryMessagesBeforeId:nil timestamp:typedMessage.sendTimestamp limit:20 callback:^(NSArray *typedMessages, NSError *error) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                //用来存储对应message的view
                 NSMutableArray *oldMessageFrames=[NSMutableArray array];
                 for(AVIMTypedMessage* typedMessage in typedMessages){
+                    
                     [oldMessageFrames addObject:[weakSelf messageFrameByTypedMessage:typedMessage]];
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    //用来存储message的model
                     NSMutableArray *messages=[NSMutableArray arrayWithArray:typedMessages];
                     [messages addObjectsFromArray:weakSelf.typedMessages];
                     weakSelf.typedMessages=messages;
