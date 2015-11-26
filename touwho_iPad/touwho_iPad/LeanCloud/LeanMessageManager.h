@@ -47,7 +47,7 @@ typedef void(^DidReceiveTypedMessageBlock)(AVIMConversation *conversation, AVIMT
 - (void)createConversationsWithClientIDs:(NSArray *)clientIDs
                         conversationType:(ConversationType)conversationType
                               completion:(AVIMConversationResultBlock)completion;
-
+///只查询所有与自己相关的会话
 -(void)findRecentConversationsWithBlock:(AVIMArrayResultBlock)block;
 
 @end

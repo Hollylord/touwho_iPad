@@ -15,6 +15,7 @@
 #import "SettingViewController.h"
 #import <AVOSCloudIM.h>
 #import "ModelChating.h"
+#import "LeanMessageManager.h"
 
 @interface profileViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVIMClientDelegate>
 
@@ -22,9 +23,6 @@
 @property (strong,nonatomic) meRight *meRightView;
 //导航栏
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-///leanCloud客户端
-@property (strong,nonatomic) AVIMClient *client;
-
 
 @end
 
@@ -86,8 +84,6 @@
     me.delegate          = meRightView;
     
     //建立与leanCloud的长连接
-    self.client = [[AVIMClient alloc]init];
-    self.client.delegate = self;
     [self buildConnectWithLeanCloud];
     
     
@@ -108,8 +104,8 @@
 
 #pragma mark - 建立LeanCloud
 - (void)buildConnectWithLeanCloud{
-    //建立长连接
-    [self.client openWithClientId:USER_ID callback:^(BOOL succeeded, NSError *error) {
+    LeanMessageManager *mgr = [LeanMessageManager manager];
+    [mgr openSessionWithClientID:USER_ID completion:^(BOOL succeeded, NSError *error) {
         if (!succeeded) {
             NSLog(@"%@",error);
             [self buildConnectWithLeanCloud];
@@ -117,20 +113,16 @@
         }
         else{
             //查询会话
-            AVIMConversationQuery *query = [self.client conversationQuery];
-            //设置搜索会话条件：只要包涵本人的会话
-            [query whereKey:kAVIMKeyMember containsString:USER_ID];
-            [query findConversationsWithCallback:^(NSArray *objects, NSError *error) {
-//                NSLog(@"%@",objects);
-
+            [mgr findRecentConversationsWithBlock:^(NSArray *objects, NSError *error) {
                 //会话转models
                 [self updateConversations:objects];
                 
             }];
-            
-            
+
         }
+        
     }];
+    
 
 }
 
