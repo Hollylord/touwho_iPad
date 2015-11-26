@@ -189,16 +189,13 @@
             UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];
             
 //            NSLog(@"%@",snsAccount);
+            
             //跳转到个人中心页面
             [self quickLogin:snsAccount.accessToken withIcon:snsAccount.iconURL withNickName:snsAccount.userName withChannel:@"1"];
         }
         
     });
     
-    [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToWechatSession  completion:^(UMSocialResponseEntity *response){
-//        NSLog(@"SnsInformation is %@",response.data);
-        
-    }];
     
 }
 

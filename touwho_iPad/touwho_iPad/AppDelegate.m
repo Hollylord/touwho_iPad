@@ -43,7 +43,7 @@
     [UMSocialData setAppKey:@"5602081a67e58ec377001b17"];
     
     //设置微信分享
-    [UMSocialWechatHandler setWXAppId:@"wx43b8499d08842d8a" appSecret:@"80e470d7cc365cea2e677a87fb84e2bb" url:@"http://www.umeng.com/social"];
+    [UMSocialWechatHandler setWXAppId:@"wxaf4c01a34d15a51c" appSecret:@"d4624c36b6795d1d99dcf0547af5443d" url:@"http://www.umeng.com/social"];
     
     //设置qq分享SSO
     [UMSocialQQHandler setQQWithAppId:@"1104734143" appKey:@"otFu8s5Dv6u8sFBm" url:@"http://www.umeng.com/social"];
