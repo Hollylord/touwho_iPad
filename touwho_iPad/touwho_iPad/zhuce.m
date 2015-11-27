@@ -78,20 +78,26 @@
     }
     NSString *invitator = self.invitationView.text;
     NSDictionary *dic = @{@"method":@"checkVerCode",@"phone":phoneNumber,@"ver_code":vercode,@"password":password,@"user_type":userType,@"invester":invitator};
+    
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary *result = responseObject;
         NSLog(@"zhuce = %@",responseObject);
         //验证成功
         if ([[[[result objectForKey:@"value"] firstObject] objectForKey:@"resCode"] isEqualToString:@"0"]){
-            NSString *userID = [[result objectForKey:@"value"] objectForKey:@"resValue"];
+            
+            NSString *userID = [[[result objectForKey:@"value"] firstObject] objectForKey:@"mID"];
+            NSString *iconUrl = [[[result objectForKey:@"value"] firstObject] objectForKey:@"mAvatar"];
             
             //保存用户信息
-            NSDictionary *dic = @{@"userName":phoneNumber,@"userID":userID};
+            NSDictionary *dic = @{@"userName":phoneNumber,@"userID":userID,@"iconURL":iconUrl};
             NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithDictionary:dic];
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
             [userDefault setObject:user forKey:@"user"];
             [userDefault synchronize];
+            
+            //发送更换头像的通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"setHeadImageView" object:nil];
             
             if (self.nextStepBlock) {
                 self.nextStepBlock();
