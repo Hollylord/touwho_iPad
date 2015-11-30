@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
@@ -261,7 +261,6 @@
                 <constraint firstItem="rxn-yS-Aa3" firstAttribute="leading" secondItem="IhP-K2-KJh" secondAttribute="leading" id="2zU-dF-PT7"/>
                 <constraint firstItem="cP7-j9-4YY" firstAttribute="top" secondItem="Pbx-eD-a1N" secondAttribute="bottom" constant="20" id="4ap-e2-EzN"/>
                 <constraint firstItem="bm6-nS-Ax2" firstAttribute="centerY" secondItem="qgq-hs-uIA" secondAttribute="centerY" id="4po-MD-i4v"/>
-                <constraint firstItem="dkH-qt-cEv" firstAttribute="leading" secondItem="Pbx-eD-a1N" secondAttribute="leading" id="5d7-S2-BFy"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="top" secondItem="rxn-yS-Aa3" secondAttribute="bottom" constant="8" id="6F0-PL-jbs"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="height" secondItem="IhP-K2-KJh" secondAttribute="height" id="6Wo-qs-bwn"/>
                 <constraint firstAttribute="trailing" secondItem="gqe-lb-gX5" secondAttribute="trailing" id="74l-rR-PqW"/>
@@ -296,8 +295,6 @@
                 <constraint firstItem="bm6-nS-Ax2" firstAttribute="leading" secondItem="qgq-hs-uIA" secondAttribute="trailing" constant="10" id="add-H0-Ll2"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="leading" secondItem="V6w-VY-s05" secondAttribute="leading" constant="150" id="d5Z-ZE-Ubq"/>
                 <constraint firstItem="3CD-yz-ytf" firstAttribute="top" secondItem="VAi-p6-rrW" secondAttribute="bottom" constant="10" id="dQ1-Ne-96e"/>
-                <constraint firstItem="JbL-ej-lpG" firstAttribute="trailing" secondItem="Pbx-eD-a1N" secondAttribute="trailing" id="dmz-xb-dn1"/>
-                <constraint firstItem="866-fN-UBe" firstAttribute="width" secondItem="IhP-K2-KJh" secondAttribute="width" id="efW-Hb-wi8"/>
                 <constraint firstItem="VAi-p6-rrW" firstAttribute="trailing" secondItem="Q5h-wV-IGs" secondAttribute="trailing" id="gB1-bZ-rIq"/>
                 <constraint firstItem="j1k-L2-gec" firstAttribute="leading" secondItem="Vgg-f7-XN6" secondAttribute="leading" id="hYw-0L-iE0"/>
                 <constraint firstItem="Vgg-f7-XN6" firstAttribute="top" secondItem="gqe-lb-gX5" secondAttribute="bottom" constant="79" id="iIs-ze-M07"/>
@@ -320,13 +317,6 @@
                 <constraint firstItem="qgq-hs-uIA" firstAttribute="bottom" secondItem="866-fN-UBe" secondAttribute="bottom" id="zox-XX-p8n"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="efW-Hb-wi8"/>
-                    <exclude reference="dmz-xb-dn1"/>
-                    <exclude reference="5d7-S2-BFy"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="btn1" destination="bbY-8c-AwR" id="FH6-7I-els"/>
                 <outlet property="btn2" destination="pW2-Ek-rcS" id="1Fu-Om-xTL"/>
