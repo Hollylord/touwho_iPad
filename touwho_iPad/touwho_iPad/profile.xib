@@ -170,7 +170,7 @@
                                 <action selector="saveInforToServer:" destination="a2i-yt-wSD" eventType="touchUpInside" id="Ljw-sP-EhF"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-OR-rmX" userLabel="名片">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_background" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-OR-rmX" userLabel="名片">
                             <rect key="frame" x="125" y="590" width="442" height="243"/>
                             <animations/>
                             <constraints>
@@ -461,5 +461,6 @@
     </objects>
     <resources>
         <image name="anniu" width="41" height="52"/>
+        <image name="logo_background" width="50" height="50"/>
     </resources>
 </document>
