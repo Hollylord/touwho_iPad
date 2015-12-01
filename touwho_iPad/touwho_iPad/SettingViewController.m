@@ -73,11 +73,19 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"user"];
         
         [self dismissViewControllerAnimated:YES completion:^{
-            //删除数据库
-            NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"personInfo.data"]];
             NSFileManager *mgr = [NSFileManager defaultManager];
+            //删除数据库
+            NSString *filePath1 = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+            NSURL *url = [NSURL fileURLWithPath:[filePath1 stringByAppendingPathComponent:@"personInfo.data"]];
             [mgr removeItemAtURL:url error:nil];
+            
+            //删除名片文件
+            NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+            //拼接文件目录
+            NSString *filePath2 = [cachePath stringByAppendingPathComponent:@"businessCard"];
+            [mgr removeItemAtPath:filePath2 error:nil];
+            
+            
             
             //修改头像的通知
             [[NSNotificationCenter defaultCenter] postNotificationName:@"changeHeadIcon" object:nil];

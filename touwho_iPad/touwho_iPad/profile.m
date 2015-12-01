@@ -19,17 +19,18 @@
     self.scrollView.delaysContentTouches = NO;
     
     //显示名片
-    if (!self.businessCard.image) {
+    //cache文件夹目录
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+    //拼接文件目录
+    NSString *filePath = [cachePath stringByAppendingPathComponent:@"businessCard"];
+    //取出图片
+    NSData *imageData = [NSData dataWithContentsOfFile:filePath];
+    
+    if (!imageData) {
         [self.takePhotoBtn setTitle:@"上传名片" forState:UIControlStateNormal];
     }
     else {
         [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
-        //cache文件夹目录
-        NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-        //拼接文件目录
-        NSString *filePath = [cachePath stringByAppendingPathComponent:@"businessCard"];
-        //取出图片
-        NSData *imageData = [NSData dataWithContentsOfFile:filePath];
         UIImage *image = [UIImage imageWithData:imageData];
         //显示图片
         self.businessCard.image = image;
