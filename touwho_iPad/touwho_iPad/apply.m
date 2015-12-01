@@ -59,7 +59,7 @@
    
     
     //0 判断个人信息是否完善
-    __block BOOL isPersonalInfoFul;
+    __block BOOL isPersonalInfoFul = YES;
     [BTNetWorkingAPI pullUserInfoFromServerWith:USER_ID andBlock:^(ModelForUser *user) {
         NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:user.mSex,user.mPhone,user.mName,user.mEmail,user.mIndustry,user.mAge,user.mFavIndustry,user.mFav, nil];
         
@@ -71,7 +71,6 @@
             }
         }
         
-        isPersonalInfoFul = YES;
     }];
     
     if (!isPersonalInfoFul) {
@@ -93,6 +92,7 @@
         [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
             [BTIndicator showCheckMarkOnView:self withText:@"您的审核已提交成功！" withDelay:1];
+            sender.enabled = NO;
             
         } failure:NULL];
     }else{
@@ -105,7 +105,9 @@
             hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Checkmark"]];
             hud.labelText = @"您的审核已提交成功！";
             [hud hide:YES afterDelay:1];
-            
+            hud.completionBlock = ^(){
+                sender.enabled = NO;
+            };
         } failure:NULL];
     }
     

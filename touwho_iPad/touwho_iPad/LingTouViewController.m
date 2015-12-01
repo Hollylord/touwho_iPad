@@ -14,12 +14,12 @@
 ///输入框
 @property (weak, nonatomic) IBOutlet UITextField *inputView;
 
+///投资金额
+@property (strong,nonatomic) NSString *amountInvestment;
 
 
 
 
-- (IBAction)quit:(UIBarButtonItem *)sender;
-- (IBAction)OK:(UIBarButtonItem *)sender;
 @end
 
 @implementation LingTouViewController
@@ -35,6 +35,8 @@
         self.topTitle.title = @"跟头金额";
     }
     
+    
+    
 }
 - (void)viewWillAppear:(BOOL)animated{
     [TalkingData trackPageBegin:@"投资金额选择"];
@@ -47,14 +49,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 退出，确定
 - (IBAction)quit:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)OK:(UIBarButtonItem *)sender {
-    
-    
     //1. 判断输入金额是否符合要求
+    BOOL isApproval = [self isTheAmountOfInvestmentApprovalWithMoney:self.inputView.text];
+    if (!isApproval) {
+        return ;
+    }
     
     //2 判断跟投还是领头
     if (self.isLingtou) {
@@ -104,4 +109,38 @@
     }
     
 }
+
+#pragma mark - 判断金额
+- (BOOL)isTheAmountOfInvestmentApprovalWithMoney:(NSString *)money{
+    NSNumber *max = [NSNumber numberWithInt:500];
+    NSNumber *min = [NSNumber numberWithInt:100];
+    NSNumber *number = [NSNumber numberWithInteger:[money integerValue]];
+   
+        if (!(number > min)) {
+            //没有大于最小值
+            [BTIndicator showForkMarkOnView:self.view withText:@"投资金额不能低于最低金额" withDelay:1];
+            return NO;
+        }
+        else if (!(number < max))
+        {
+            //没有小雨最大值
+            [BTIndicator showForkMarkOnView:self.view withText:@"投资金额不能高于最高金额" withDelay:1];
+            return NO;
+        }
+        else if ([number intValue]  % [min intValue] != 0)
+        {
+            //不是n的整数倍
+            [BTIndicator showForkMarkOnView:self.view withText:@"投资金额必须为最低金额整数倍" withDelay:1];
+            return NO;
+        }
+        else {
+            return YES;
+        }
+    
+    
+        
+}
+
 @end
+
+

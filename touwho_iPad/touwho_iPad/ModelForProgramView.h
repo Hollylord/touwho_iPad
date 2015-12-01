@@ -37,6 +37,8 @@
 @property (copy,nonatomic) NSString *mProvince;
 //项目类型
 @property (copy,nonatomic) NSString *mType;
+///是否允许投资
+@property (assign,nonatomic) BOOL isAccessedInvest;
 
 
 @end

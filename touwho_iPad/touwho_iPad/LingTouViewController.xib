@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LingTouViewController">
@@ -26,12 +26,12 @@
                         <navigationItem title="跟投金额" id="COQ-Kw-y0n">
                             <barButtonItem key="leftBarButtonItem" systemItem="stop" id="tF4-uF-XiQ">
                                 <connections>
-                                    <action selector="quit:" destination="-1" id="cRB-kl-VRs"/>
+                                    <action selector="quit:" destination="-1" id="nLD-zE-tUM"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" title="确定" id="Bbk-hj-miE">
                                 <connections>
-                                    <action selector="OK:" destination="-1" id="xpW-Jl-pvB"/>
+                                    <action selector="OK:" destination="-1" id="yug-Qr-tpG"/>
                                 </connections>
                             </barButtonItem>
                         </navigationItem>

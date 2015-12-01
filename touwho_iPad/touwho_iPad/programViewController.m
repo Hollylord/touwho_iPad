@@ -370,7 +370,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@" 进行中 ＝ %@",responseObject);
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
@@ -380,6 +380,11 @@
             
             //json数组-->模型数组
             self.modelsOngoing = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+            [self.modelsOngoing enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                ModelForProgramView *model = (ModelForProgramView *)obj;
+                model.isAccessedInvest = YES;
+            }];
+            
         }];
         
         
@@ -404,7 +409,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        //        NSLog(@"%@",responseObject);
+                NSLog(@" 预热中 ＝ %@",responseObject);
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
@@ -414,6 +419,10 @@
             
             //json数组-->模型数组
             self.modelsPreparing = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+            [self.modelsPreparing enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                ModelForProgramView *model = (ModelForProgramView *)obj;
+                model.isAccessedInvest = NO;
+            }];
         }];
         
         
@@ -435,7 +444,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        //        NSLog(@"%@",responseObject);
+        //        NSLog(@" 已完成 ＝ %@",responseObject);
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
@@ -445,6 +454,10 @@
             
             //json数组-->模型数组
             self.modelsFinished = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+            [self.modelsFinished enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                ModelForProgramView *model = (ModelForProgramView *)obj;
+                model.isAccessedInvest = NO;
+            }];
         }];
         
         

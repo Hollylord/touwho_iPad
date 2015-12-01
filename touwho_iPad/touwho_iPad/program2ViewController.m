@@ -292,8 +292,11 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 #pragma mark - 领投/跟投
 ///意向领投
 - (IBAction)lingtouClick:(UIButton *)sender {
-    
-    if (!self.isGP) {
+    if (!self.model1.isAccessedInvest) {
+        [BTIndicator showForkMarkOnView:self.view withText:@"暂不能领投" withDelay:0.5];
+        return ;
+    }
+    else if (!self.isGP) {
         //不是GP
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;
@@ -313,7 +316,11 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
 
 ///意向跟投
 - (IBAction)gentouClick:(UIButton *)sender {
-    if (!self.isLP) {
+    if (!self.model1.isAccessedInvest) {
+        [BTIndicator showForkMarkOnView:self.view withText:@"暂不能跟投" withDelay:0.5];
+        return ;
+    }
+    else if (!self.isLP) {
         //没有LP资格
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeText;
