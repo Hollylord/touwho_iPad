@@ -20,6 +20,10 @@
     
     //显示名片
     if (!self.businessCard.image) {
+        [self.takePhotoBtn setTitle:@"上传名片" forState:UIControlStateNormal];
+    }
+    else {
+        [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
         //cache文件夹目录
         NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
         //拼接文件目录
@@ -29,9 +33,6 @@
         UIImage *image = [UIImage imageWithData:imageData];
         //显示图片
         self.businessCard.image = image;
-    }
-    else {
-        [self.takePhotoBtn setTitle:@"重新上传" forState:UIControlStateNormal];
     }
     
     //初始化子试图
@@ -70,12 +71,12 @@
     [self.interestingIndustry setTitleColor:[BTIndicator greenColor] forState:UIControlStateNormal ];
     [self.riskPereference setTitle:person.risk forState:UIControlStateNormal];
     [self.riskPereference setTitleColor:[BTIndicator greenColor] forState:UIControlStateNormal];
-    if (person.nameCard == nil) {
-        self.businessCard.image = [UIImage imageNamed:@"logo_background"];
-    }
-    else {
-        self.businessCard.image = [UIImage imageWithData:person.nameCard];
-    }
+//    if (person.nameCard == nil) {
+//        self.businessCard.image = [UIImage imageNamed:@"logo_background"];
+//    }
+//    else {
+//        self.businessCard.image = [UIImage imageWithData:person.nameCard];
+//    }
 
     
     

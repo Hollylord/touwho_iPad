@@ -114,6 +114,7 @@
             NSString *userID = [[[result objectForKey:@"value"]firstObject] objectForKey:@"mID"];
             NSString *iconUrl = [[[result objectForKey:@"value"]firstObject] objectForKey:@"mAvatar"];
             NSString *nickName = [[[result objectForKey:@"value"] firstObject] objectForKey:@"mNickName"];
+            
             //保存用户信息
             NSDictionary *user = @{@"userName":nickName,@"userID":userID,@"iconURL":iconUrl};
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
