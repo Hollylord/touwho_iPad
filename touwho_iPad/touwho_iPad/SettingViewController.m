@@ -75,7 +75,7 @@
         [self dismissViewControllerAnimated:YES completion:^{
             //删除数据库
             NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"conversation.data"]];
+            NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"personInfo.data"]];
             NSFileManager *mgr = [NSFileManager defaultManager];
             [mgr removeItemAtURL:url error:nil];
             

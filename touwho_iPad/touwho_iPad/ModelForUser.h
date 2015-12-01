@@ -31,7 +31,7 @@
 @property (copy,nonatomic) NSString *mDes;
 
 #pragma mark - 必填
-///真是姓名
+///真实姓名
 @property (copy,nonatomic) NSString *mName;
 ///手机号
 @property (copy,nonatomic) NSString *mPhone;

@@ -182,6 +182,9 @@
 		A1C3EDDE1B9EB7050023AB6E /* replyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDDC1B9EB7050023AB6E /* replyViewController.xib */; };
 		A1C3EDE51B9EBB640023AB6E /* sixinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */; };
 		A1C3EDE61B9EBB640023AB6E /* sixinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */; };
+		A1C52E741C0C3A0200C63C41 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1C52E721C0C3A0200C63C41 /* Model.xcdatamodeld */; };
+		A1C52E7A1C0C3F5D00C63C41 /* PersonalInfo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C52E771C0C3F5D00C63C41 /* PersonalInfo+CoreDataProperties.m */; };
+		A1C52E7B1C0C3F5D00C63C41 /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C52E791C0C3F5D00C63C41 /* PersonalInfo.m */; };
 		A1C7B0AA1BF42FF1008E3C27 /* ModelActivityDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7B0A91BF42FF1008E3C27 /* ModelActivityDetail.m */; };
 		A1C7B0B11BF48778008E3C27 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C7B0AF1BF48778008E3C27 /* ChatTableViewCell.m */; };
 		A1C7B0B21BF48778008E3C27 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C7B0B01BF48778008E3C27 /* ChatTableViewCell.xib */; };
@@ -534,6 +537,11 @@
 		A1C3EDE21B9EBB640023AB6E /* sixinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sixinViewController.h; sourceTree = "<group>"; };
 		A1C3EDE31B9EBB640023AB6E /* sixinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sixinViewController.m; sourceTree = "<group>"; };
 		A1C3EDE41B9EBB640023AB6E /* sixinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sixinViewController.xib; sourceTree = "<group>"; };
+		A1C52E731C0C3A0200C63C41 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A1C52E761C0C3F5D00C63C41 /* PersonalInfo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PersonalInfo+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A1C52E771C0C3F5D00C63C41 /* PersonalInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PersonalInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A1C52E781C0C3F5D00C63C41 /* PersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfo.h; sourceTree = "<group>"; };
+		A1C52E791C0C3F5D00C63C41 /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
 		A1C7B0A81BF42FF1008E3C27 /* ModelActivityDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelActivityDetail.h; sourceTree = "<group>"; };
 		A1C7B0A91BF42FF1008E3C27 /* ModelActivityDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelActivityDetail.m; sourceTree = "<group>"; };
 		A1C7B0AE1BF48778008E3C27 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
@@ -967,6 +975,7 @@
 				A1211E761BB240EC00B25AA4 /* 私信工具 */,
 				A1CF1E201BAFEBA90065EF77 /* 项目和人model */,
 				A1CB0BDD1BE85D64009BE9FA /* BTNetworking */,
+				A1C52E751C0C3A0B00C63C41 /* CoreData */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -1503,6 +1512,18 @@
 				A1B88CF71BA179C7008FA7C9 /* UUMessage.m */,
 			);
 			name = "聊天";
+			sourceTree = "<group>";
+		};
+		A1C52E751C0C3A0B00C63C41 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A1C52E721C0C3A0200C63C41 /* Model.xcdatamodeld */,
+				A1C52E761C0C3F5D00C63C41 /* PersonalInfo+CoreDataProperties.h */,
+				A1C52E771C0C3F5D00C63C41 /* PersonalInfo+CoreDataProperties.m */,
+				A1C52E781C0C3F5D00C63C41 /* PersonalInfo.h */,
+				A1C52E791C0C3F5D00C63C41 /* PersonalInfo.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		A1C7B0AB1BF43003008E3C27 /* model */ = {
@@ -2127,8 +2148,10 @@
 				A1B88CEE1BA17843008FA7C9 /* NSDate+Utils.m in Sources */,
 				A1B868451B84768F005C4A6F /* huodongViewController.m in Sources */,
 				A1002B171B8570D5007520AA /* shipinViewController.m in Sources */,
+				A1C52E7B1C0C3F5D00C63C41 /* PersonalInfo.m in Sources */,
 				A1002B1A1B857570007520AA /* shipinView.m in Sources */,
 				A1987DFE1BB0FE1800CC4130 /* ModelForProgramView.m in Sources */,
+				A1C52E741C0C3A0200C63C41 /* Model.xcdatamodeld in Sources */,
 				A1B8684B1B848112005C4A6F /* customAnnotationView.m in Sources */,
 				A1B88CEB1BA17843008FA7C9 /* MJRefreshConst.m in Sources */,
 				A1033BD81B8C513800FC8921 /* xiaozu.m in Sources */,
@@ -2202,6 +2225,7 @@
 				A1B88CFF1BA17D32008FA7C9 /* UUImageAvatarBrowser.m in Sources */,
 				A12492521BC757070042324D /* TopicUnit.m in Sources */,
 				A19D097D1B7C835C00094B81 /* myFlowLayout.m in Sources */,
+				A1C52E7A1C0C3F5D00C63C41 /* PersonalInfo+CoreDataProperties.m in Sources */,
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
 				A19929151BDA087100B155A5 /* CorporationViewController.m in Sources */,
 				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,
@@ -2400,7 +2424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7617c0f8-895d-4fee-8cd7-b593c455d3ba";
+				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
 			};
 			name = Debug;
 		};
@@ -2434,7 +2458,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7617c0f8-895d-4fee-8cd7-b593c455d3ba";
+				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
 			};
 			name = Release;
 		};
@@ -2526,6 +2550,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1C52E721C0C3A0200C63C41 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1C52E731C0C3A0200C63C41 /* Model.xcdatamodel */,
+			);
+			currentVersion = A1C52E731C0C3A0200C63C41 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A19D09331B7C2DF100094B81 /* Project object */;
 }

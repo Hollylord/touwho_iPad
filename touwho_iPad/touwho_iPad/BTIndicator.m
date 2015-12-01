@@ -31,4 +31,10 @@
     hud.labelText = text;
     [hud hide:YES afterDelay:delay];
 }
+
++ (UIColor *)greenColor{
+    return  [UIColor colorWithHue:0.6 saturation:0.6 brightness:0.5 alpha:0.8];
+}
 @end
+
+

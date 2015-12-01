@@ -8,6 +8,7 @@
 
 #import "BTNetWorking.h"
 #import "CommonCrypto/CommonDigest.h"
+#import "PersonalInfo.h"
 
 
 
@@ -70,7 +71,7 @@
 
 
 
-+ (void)setupCoreDataAndSaveConversation:(AVIMConversation *)conversation{
++ (void)saveToCoreDataWithPersonalInfo:(NSDictionary *)person{
     
     //1.  从应用程序包中加载模型文件
     NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
@@ -78,7 +79,7 @@
     NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
     //3. 构建SQLite数据库文件的路径
     NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"conversation.data"]];
+    NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"personInfo.data"]];
     //4.  添加持久化存储库，这里使用SQLite作为存储库
     NSError *error = nil;
     NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
@@ -90,48 +91,46 @@
     context.persistentStoreCoordinator = psc;
     
     //6.从数据库中查询数据
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Conversation"];
-    request.predicate = [NSPredicate predicateWithFormat:@"conversationId CONTAINS %@",conversation.conversationId];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"PersonalInfo"];
+
     NSArray *objs = [context executeFetchRequest:request error:nil];
     
     //数据库中没有这个conversationId
     if (objs.count == 0) {
         
         //7. 存入对象
-        NSManagedObject *talk = [NSEntityDescription insertNewObjectForEntityForName:@"Conversation" inManagedObjectContext:context];
-        [talk setValue:conversation.conversationId forKey:@"conversationId"];
-        [talk setValue:conversation.name forKey:@"name"];
-        [talk setValue:conversation.lastMessageAt forKey:@"lastMessageAt"];
-        [talk setValue:conversation.members forKey:@"members"];
+      
+      PersonalInfo * model =  [PersonalInfo objectWithKeyValues:person context:context];
         
         BOOL success = [context save:nil];
         if (success) {
 //            NSLog(@"成功保存");
+            NSLog(@"person = %@ %@",model.age,model.sex);
         }
         
     }
-    //数据库有这个对话就更新它
+    //数据库把原来的删掉，把新的存起来
     else{
-        [objs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSManagedObject *temp = obj;
-            [temp setValue:conversation.name forKey:@"name"];
-            [temp setValue:conversation.lastMessageAt forKey:@"lastMessageAt"];
-            [temp setValue:conversation.members forKey:@"members"];
-            
-            
-        }];
+        PersonalInfo * p = [objs lastObject];
+        [context deleteObject:p];
+
+
+        PersonalInfo * model =  [PersonalInfo objectWithKeyValues:person context:context];
         
         BOOL success = [context save:nil];
         if (success) {
-//            NSLog(@"更新成功");
+            NSLog(@"删除成功");
+            NSLog(@"person = %@ %@",model.age,model.sex);
         }
+
+        
     }
 
     
 }
     
 
-+ (NSArray *)withDrawAllConversationFromDatabase{
++ (NSManagedObject *)withDrawPersonInfoFromDatabase{
     
     //1.  从应用程序包中加载模型文件
     NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
@@ -139,7 +138,7 @@
     NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
     //3. 构建SQLite数据库文件的路径
     NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"conversation.data"]];
+    NSURL *url = [NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:@"personInfo.data"]];
     //4.  添加持久化存储库，这里使用SQLite作为存储库
     NSError *error = nil;
     NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
@@ -151,11 +150,16 @@
     context.persistentStoreCoordinator = psc;
 
     //6.从数据库中查询数据
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Conversation"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"PersonalInfo"];
 
     NSArray *results = [context executeFetchRequest:request error:nil];
+    if (results.count == 0) {
+        return nil;
+    }
+    else{
+        return [results lastObject];
+    }
     
-    return results;
 }
 
 

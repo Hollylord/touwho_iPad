@@ -17,3 +17,8 @@
 + (void)showForkMarkOnView:(UIView *)view withText:(NSString *)text withDelay:(NSTimeInterval)delay;
 
 @end
+
+@interface BTIndicator ()
++ (UIColor *)greenColor;
+
+@end
