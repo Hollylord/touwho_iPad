@@ -34,10 +34,10 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 ///判断用户是否已登录
 + (BOOL)isUserAlreadyLoginWithAlertView:(UIView *)view;
 
-///保存对话数据到数据库
+///保存个人信息数据到数据库
 + (void)saveToCoreDataWithPersonalInfo:(NSDictionary *)person;
 
-///查询所有的对话
+///取个人信息
 + (NSManagedObject *)withDrawPersonInfoFromDatabase;
 
 

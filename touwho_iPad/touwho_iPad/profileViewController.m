@@ -37,8 +37,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-    self.model.mNickName = [user objectForKey:@"userName"];
-    self.model.mID = [user objectForKey:@"userID"];
+    NSManagedObject *person = [BTNetWorking withDrawPersonInfoFromDatabase];
+    NSString *nickName = [person valueForKey:@"nickName"];
+    if ([nickName isEqualToString:@""]||nickName == nil) {
+        self.model.mNickName = [user objectForKey:@"userName"];
+    }
+    else {
+        self.model.mNickName = nickName;
+    }
+    
+    self.model.mID = USER_ID;
     if ([BTNetWorking isTheStringContainedHttpWithString:[user objectForKey:@"iconURL"]]) {
         self.model.mAvatar = [user objectForKey:@"iconURL"];
     }

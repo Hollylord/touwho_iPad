@@ -74,7 +74,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.row == 0) {
-        [self.delegate presentProfile];
+        [self.delegate presentProfileWithSender:self];
     }
     else if (indexPath.row == 1)
     {

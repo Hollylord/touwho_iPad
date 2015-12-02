@@ -52,7 +52,7 @@
 
 #pragma mark - meleft代理
 #pragma mark 编辑个人信息页面的设置
-- (void)presentProfile{
+- (void)presentProfileWithSender:(meLeft *)sender{
     [TalkingData trackEvent:@"编辑个人信息"];
     
     for (UIView *view in self.subviews) {
@@ -60,6 +60,7 @@
     }
     
     profile *view = [[[NSBundle mainBundle] loadNibNamed:@"profile" owner:nil options:nil]firstObject];
+    view.leftView = sender;
     [self addSubview:view];
     [self layoutForSubview:view];
     
