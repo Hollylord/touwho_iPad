@@ -53,7 +53,7 @@
     [self pullGroupData:^{
         //添加已有的数据数据
         NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
-        [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+        [self.groupIcon sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
         self.groupName.text = self.modelDetail.mName;
         self.leaderName.text = [NSString stringWithFormat:@"组长：%@",self.modelDetail.mGroupLeader];
         self.memberCount.text = [NSString stringWithFormat:@"小组成员：%@",self.modelDetail.mMemberCount];

@@ -72,7 +72,7 @@
     [self pullData:^{
         //显示小组数据
         NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelGroup.mLogo];
-        [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+        [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
         self.introductionLabel.text = self.modelGroup.mDestrible;
         self.groupNameLabel.text = self.modelGroup.mName;
         self.leader.text = [NSString stringWithFormat:@"组长：%@",self.modelGroup.mGroupLeader];
@@ -82,7 +82,7 @@
         self.timeLabel.text = self.model.mCreateTime;
         self.titleLabel.text = self.model.mTitle;
         NSString *writerIcon = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
-        [self.iconWriter sd_setImageWithURL:[NSURL URLWithString:writerIcon] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.iconWriter sd_setImageWithURL:[NSURL URLWithString:writerIcon] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
         self.writerNameLabel.text = self.modelDetail.mUserName;
         
         self.contentTextView.text = self.modelDetail.mTalkContent;

@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     NSMutableDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
     NSManagedObject *person = [BTNetWorking withDrawPersonInfoFromDatabase];
     NSString *nickName = [person valueForKey:@"nickName"];

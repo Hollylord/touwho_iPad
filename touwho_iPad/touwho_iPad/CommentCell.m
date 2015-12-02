@@ -32,7 +32,7 @@
         iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mAvatar];
     }
     
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
     self.userNameLabel.text = model.mNickName;
     self.contentLabel.text = model.mTalkContent;
     self.timeLabel.text = model.mCreateTime;

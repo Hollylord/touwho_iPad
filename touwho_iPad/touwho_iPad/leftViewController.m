@@ -60,8 +60,8 @@
         [self headImage];
     }
     else{
-        UIImage *zhanweitu = [UIImage imageNamed:@"zhanweitu"];
-        UIImage *temp = [UIImage imageClipsWithHeadIcon:zhanweitu sideWidth:0];
+        
+        UIImage *temp = [UIImage imageClipsWithHeadIcon:[BTNetWorking chooseLocalResourcePhoto:HEAD] sideWidth:0];
         self.headImageView.image = temp;
     }
     
@@ -167,8 +167,8 @@
     NSFileManager *mgr = [NSFileManager defaultManager];
     [mgr removeItemAtPath:filePath error:nil];
     
-    UIImage *head = [UIImage imageNamed:@"zhanweitu"];
-    self.headImageView.image = [UIImage imageClipsWithHeadIcon:head sideWidth:0];
+   
+    self.headImageView.image = [UIImage imageClipsWithHeadIcon:[BTNetWorking chooseLocalResourcePhoto:HEAD] sideWidth:0];
 }
 
 //接到通知换头像

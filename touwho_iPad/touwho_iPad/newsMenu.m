@@ -21,7 +21,7 @@
         _model = model;
     }
     NSURL *url = [NSURL URLWithString:model.smallImageURL];
-    [self.newsIconView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logo_background"]];
+    [self.newsIconView sd_setImageWithURL:url placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
     self.titleLabel.text = model.title;
     self.timeLabel.text = model.time;
     NSString *source = model.source;

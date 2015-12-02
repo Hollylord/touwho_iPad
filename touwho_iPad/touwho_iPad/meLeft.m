@@ -168,7 +168,7 @@
         }];
     }
     else{
-        self.headImageView.image = [UIImage imageClipsWithHeadIcon:[UIImage imageNamed:@"zhanweitu"] sideWidth:0];
+        self.headImageView.image = [UIImage imageClipsWithHeadIcon:[BTNetWorking chooseLocalResourcePhoto:HEAD] sideWidth:0];
     }
     
     

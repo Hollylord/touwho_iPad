@@ -53,7 +53,7 @@
     
     
     NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mAvatar];
-    [self.headIconView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.headIconView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
     self.nickNameLabel.text = self.model.mName;
     
 }

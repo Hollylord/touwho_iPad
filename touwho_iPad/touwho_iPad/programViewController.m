@@ -234,7 +234,7 @@
         NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mImageUrl];
         NSURL *url = [NSURL URLWithString:imageURL];
         
-        [image sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"logo_background"]];
+        [image sd_setImageWithURL:url placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
     }
     
     
