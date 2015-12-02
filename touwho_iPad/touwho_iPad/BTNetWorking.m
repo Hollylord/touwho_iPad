@@ -33,6 +33,7 @@
     NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
     id value = [user objectForKey:key];
     return value;
+    
 }
 
 + (void)analyzeResponseObject:(id)responseObject andCompletionBlock:(completion)block{
@@ -198,7 +199,17 @@
     return [predicate evaluateWithObject:string];
 }
 
-
++ (UIImage *)chooseLocalResourcePhoto:(ResourcePhoto)photo{
+    switch (photo) {
+        case HEAD:
+            return [UIImage imageNamed:@"zhanweitu"];
+            break;
+            
+        default:
+            return [UIImage imageNamed:@"logo_background"];
+            break;
+    }
+}
 @end
 
 

@@ -10,9 +10,15 @@
 #import <AVOSCloudIM.h>
 #import "ModelForUser.h"
 
+typedef enum : NSUInteger {
+    HEAD,
+    BODY
+}ResourcePhoto;
 
 typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 @interface BTNetWorking : NSObject
+
+
 
 ///获取网络内容
 + (void)getDataWithPara:(NSDictionary *)para success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
@@ -41,6 +47,8 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 ///判断url字符串是否包含http
 + (BOOL) isTheStringContainedHttpWithString:(NSString *)string;
 
+///获取本地图片资源
++ (UIImage *)chooseLocalResourcePhoto:(ResourcePhoto)photo;
 
 @end
 
