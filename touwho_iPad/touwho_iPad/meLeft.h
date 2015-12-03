@@ -61,6 +61,7 @@
 @property (weak,nonatomic) id <meLeftDelegate>delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *symbolView;
 
 @property (strong,nonatomic) ModelForUser *model;
 

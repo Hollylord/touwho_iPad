@@ -370,7 +370,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSLog(@" 进行中 ＝ %@",responseObject);
+//        NSLog(@" 进行中 ＝ %@",responseObject);
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
@@ -409,7 +409,7 @@
     }
     
     [mgr GET:SERVER_API_URL parameters:para success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-                NSLog(@" 预热中 ＝ %@",responseObject);
+//                NSLog(@" 预热中 ＝ %@",responseObject);
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             

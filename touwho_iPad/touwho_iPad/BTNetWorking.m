@@ -204,10 +204,16 @@
         case HEAD:
             return [UIImage imageNamed:@"zhanweitu"];
             break;
-            
-        default:
+        case BODY:
             return [UIImage imageNamed:@"logo_background"];
             break;
+        case QualifiedFirstInvestor:
+            return [UIImage imageNamed:@"QualifiedFirstInvestor"];
+            break;
+        case QualifiedInvestor:
+            return [UIImage imageNamed:@"QualifiedInvestor"];
+            break;
+        
     }
 }
 @end
@@ -231,7 +237,7 @@
 + (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void (^)(ModelForUser *))block{
     NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":user_id};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"个人信息 ＝ %@",responseObject);
         
         //json --> model
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];

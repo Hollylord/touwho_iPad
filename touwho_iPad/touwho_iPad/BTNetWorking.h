@@ -12,7 +12,9 @@
 
 typedef enum : NSUInteger {
     HEAD,
-    BODY
+    BODY,
+    QualifiedInvestor,
+    QualifiedFirstInvestor
 }ResourcePhoto;
 
 typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
@@ -31,17 +33,18 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 
 ///根据字体和内容计算高度
 + (CGFloat)calcutateHeightForTextviewWithFont:(UIFont *)font andContent:(NSString *)content andWidth:(CGFloat)width;
+
 ///判断用户是否已登录
 + (BOOL)isUserAlreadyLoginWithAlertView:(UIView *)view;
 
 ///保存个人信息数据到数据库
 + (void)saveToCoreDataWithPersonalInfo:(NSDictionary *)person;
 
-///取个人信息
+///从本地取个人信息
 + (NSManagedObject *)withDrawPersonInfoFromDatabase;
 
 
-///判断是否为领投人
+///判断用户是否有领投跟投资格
 + (void) isQualifiedWithUserID:(NSString *)user_id withResults:(void(^)(BOOL isFirstInvestor,BOOL isInvestor))Block;
 
 ///判断url字符串是否包含http
