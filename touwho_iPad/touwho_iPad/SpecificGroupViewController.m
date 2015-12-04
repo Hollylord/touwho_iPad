@@ -126,9 +126,9 @@
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
-        self.modelDetail = [ModelGroupDetail objectWithKeyValues:dic];
+        self.modelDetail = [ModelGroupDetail mj_objectWithKeyValues:dic];
         
-        self.modelsTopic = [ModelForTopic objectArrayWithKeyValuesArray:self.modelDetail.mTalks];
+        self.modelsTopic = [ModelForTopic mj_objectArrayWithKeyValuesArray:self.modelDetail.mTalks];
         
         block();
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

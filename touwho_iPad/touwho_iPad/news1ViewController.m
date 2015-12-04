@@ -171,14 +171,14 @@
         for (NSDictionary *dic in newsList) {
             
             //转化为model
-            [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+            [ModelForNews mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
                 //设置json和模型名称对应:
                 //key:模型名，value：json名
                 return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
             }];
             
             //用字典创建模型
-            ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
+            ModelForNews *model = [ModelForNews mj_objectWithKeyValues:dic];
             model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
             
             //存入模型数组
@@ -251,14 +251,14 @@
             for (NSDictionary *dic in newsList) {
                 
                 //转化为model
-                [ModelForNews setupReplacedKeyFromPropertyName:^NSDictionary *{
+                [ModelForNews mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
                     //设置json和模型名称对应:
                     //key:模型名，value：json名
                     return @{@"time":@"mCreateTime",@"title":@"mTitle",@"source":@"mSrc",@"mId":@"mID"};
                 }];
                 
                 //用字典创建模型
-                ModelForNews *model = [ModelForNews objectWithKeyValues:dic];
+                ModelForNews *model = [ModelForNews mj_objectWithKeyValues:dic];
                 model.smallImageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,[dic objectForKey:@"mSmallImageUrl"]];
                 
                 

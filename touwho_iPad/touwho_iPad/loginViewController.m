@@ -240,7 +240,7 @@
             
             //json --> model
             NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
-            ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+            ModelForUser *model = [ModelForUser mj_objectWithKeyValues:dicModel];
             
             
             //保存用户信息到本地

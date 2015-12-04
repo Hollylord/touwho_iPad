@@ -306,7 +306,7 @@ typedef void(^personInfo)(NSString *iconURL,NSString *nickName);
         NSLog(@"%@",responseObject);
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
         
-        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+        ModelForUser *model = [ModelForUser mj_objectWithKeyValues:dicModel];
         
         block(model.mAvatar,model.mNickName);
         

@@ -344,7 +344,7 @@
         program2ViewController *programVC = [[program2ViewController alloc] initWithNibName:@"program2ViewController" bundle:nil];
         //传递数据
         NSDictionary *model = [[self.modelsPrograms objectAtIndex:indexPath.row] keyValues];
-        programVC.model1 = [ModelForProgramView objectWithKeyValues:model];
+        programVC.model1 = [ModelForProgramView mj_objectWithKeyValues:model];
         [VC.navigationController pushViewController:programVC animated:YES];
     }
 }
@@ -380,7 +380,7 @@
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             //json数组 --> model数组
-            self.modelsPrograms = [ModelMyProgram objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsPrograms = [ModelMyProgram mj_objectArrayWithKeyValuesArray:jsonArr];
             
         }];
         
@@ -405,7 +405,7 @@
 //        NSArray *programs = [responseObject objectForKey:@"value"];
 //
 //        //json数组 --> model数组
-//        self.models = [ModelMyInstitution objectArrayWithKeyValuesArray:programs];
+//        self.models = [ModelMyInstitution mj_objectArrayWithKeyValuesArray:programs];
 //        
 //        block();
 //        

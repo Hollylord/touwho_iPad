@@ -87,7 +87,7 @@
         //json --> model
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
-            self.models = [ModelForActivity objectArrayWithKeyValuesArray:jsonArr];
+            self.models = [ModelForActivity mj_objectArrayWithKeyValuesArray:jsonArr];
         }];
         
         

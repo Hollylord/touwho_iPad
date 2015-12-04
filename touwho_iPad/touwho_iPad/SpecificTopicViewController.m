@@ -270,15 +270,15 @@
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         //存放话题作者model
-        self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
+        self.modelDetail = [ModelTopicDetail mj_objectWithKeyValues:dic];
         //存放评论models
-        self.modelsComment = [ModelForComment objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
+        self.modelsComment = [ModelForComment mj_objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
         //存放评论人models
-        [ModelSponsors setupReplacedKeyFromPropertyName:^NSDictionary *{
+        [ModelSponsors mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
             
             return @{@"mID":@"mUserID",@"mName":@"mNickName"};
         }];
-        self.modelsReviewers = [ModelSponsors objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
+        self.modelsReviewers = [ModelSponsors mj_objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
         
         //获取发话题的用户信息
         NSDictionary *temp = @{@"method":@"getMyInfo",@"user_id":self.modelDetail.mUserID};
@@ -286,7 +286,7 @@
 //            NSLog(@"%@",responseObject);
             NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
             
-            self.modelUser = [ModelForUser objectWithKeyValues:dic];
+            self.modelUser = [ModelForUser mj_objectWithKeyValues:dic];
             
             //获取小组
             NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};
@@ -295,7 +295,7 @@
                 //            NSLog(@"%@",responseObject);
                 NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
                 
-                self.modelGroup = [ModelGroupDetail objectWithKeyValues:dic];
+                self.modelGroup = [ModelGroupDetail mj_objectWithKeyValues:dic];
                 
                 block();
                 

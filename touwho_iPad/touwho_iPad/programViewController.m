@@ -379,7 +379,7 @@
             }
             
             //json数组-->模型数组
-            self.modelsOngoing = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsOngoing = [ModelForProgramView mj_objectArrayWithKeyValuesArray:jsonArr];
             [self.modelsOngoing enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 ModelForProgramView *model = (ModelForProgramView *)obj;
                 model.isAccessedInvest = YES;
@@ -418,7 +418,7 @@
             }
             
             //json数组-->模型数组
-            self.modelsPreparing = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsPreparing = [ModelForProgramView mj_objectArrayWithKeyValuesArray:jsonArr];
             [self.modelsPreparing enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 ModelForProgramView *model = (ModelForProgramView *)obj;
                 model.isAccessedInvest = NO;
@@ -453,7 +453,7 @@
             }
             
             //json数组-->模型数组
-            self.modelsFinished = [ModelForProgramView objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsFinished = [ModelForProgramView mj_objectArrayWithKeyValuesArray:jsonArr];
             [self.modelsFinished enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 ModelForProgramView *model = (ModelForProgramView *)obj;
                 model.isAccessedInvest = NO;
@@ -713,7 +713,7 @@
             }
             
             //json -- >model
-            self.modelsPhoto = [ModelPhotos objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsPhoto = [ModelPhotos mj_objectArrayWithKeyValuesArray:jsonArr];
             
             //刷新数据
             [self.pictureCollection reloadData];

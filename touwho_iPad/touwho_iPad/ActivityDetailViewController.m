@@ -52,7 +52,7 @@
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         //json --> model
-        self.modelDetail = [ModelActivityDetail objectWithKeyValues:dic];
+        self.modelDetail = [ModelActivityDetail mj_objectWithKeyValues:dic];
         
         block();
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

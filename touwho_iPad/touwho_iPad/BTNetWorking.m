@@ -101,7 +101,7 @@
         
         //7. 存入对象
       
-      PersonalInfo * model =  [PersonalInfo objectWithKeyValues:person context:context];
+      PersonalInfo * model =  [PersonalInfo mj_objectWithKeyValues:person context:context];
         
         BOOL success = [context save:nil];
         if (success) {
@@ -116,7 +116,7 @@
         [context deleteObject:p];
 
 
-        PersonalInfo * model =  [PersonalInfo objectWithKeyValues:person context:context];
+        PersonalInfo * model =  [PersonalInfo mj_objectWithKeyValues:person context:context];
         
         BOOL success = [context save:nil];
         if (success) {
@@ -242,7 +242,7 @@
         //json --> model
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
         
-        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+        ModelForUser *model = [ModelForUser mj_objectWithKeyValues:dicModel];
         
         block(model);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

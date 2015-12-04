@@ -196,12 +196,12 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         
         //json --> model
         NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
-        ModelProgramDetails *model = [ModelProgramDetails objectWithKeyValues:dic];
+        ModelProgramDetails *model = [ModelProgramDetails mj_objectWithKeyValues:dic];
         self.modelDetail = model;
         
-        self.initiatorsArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mLeaderInvestor];
-        self.LPArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mFollowInvestor];
-        self.GPArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mFirstInvestor];
+        self.initiatorsArray = [ModelSponsors mj_objectArrayWithKeyValuesArray:model.mLeaderInvestor];
+        self.LPArray = [ModelSponsors mj_objectArrayWithKeyValuesArray:model.mFollowInvestor];
+        self.GPArray = [ModelSponsors mj_objectArrayWithKeyValuesArray:model.mFirstInvestor];
         
         completionBlock(model);
     } failure:NULL];

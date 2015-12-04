@@ -63,7 +63,7 @@
             
             [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
                 //json --> model
-                self.models = [ModelForFootage objectArrayWithKeyValuesArray:jsonArr];
+                self.models = [ModelForFootage mj_objectArrayWithKeyValuesArray:jsonArr];
                 
             }];
             

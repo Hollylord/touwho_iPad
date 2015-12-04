@@ -152,7 +152,7 @@
         }
        
         //json --> models
-        customView.hotModels = [ModelForGroup objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
+        customView.hotModels = [ModelForGroup mj_objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
         
         if (USER_ID) {
             //获取我参与的小组
@@ -165,7 +165,7 @@
                 }
                 
                 //json --> models
-                customView.myModels = [ModelForGroup objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
+                customView.myModels = [ModelForGroup mj_objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"%@",error);
@@ -197,7 +197,7 @@
         
         //json --> models
         
-        customView.hotModels = [ModelForTopic objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
+        customView.hotModels = [ModelForTopic mj_objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
         
         if (USER_ID) {
             //获取我参与的小组
@@ -211,7 +211,7 @@
                 }
                 
                 //json --> models
-                customView.myModels = [ModelForTopic objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
+                customView.myModels = [ModelForTopic mj_objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"%@",error);
@@ -241,7 +241,7 @@
         }
         
         //json --> models
-        customView.models = [ModelForJiGouUnit objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
+        customView.models = [ModelForJiGouUnit mj_objectArrayWithKeyValuesArray:[result objectForKey:@"jsonArr"]];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
