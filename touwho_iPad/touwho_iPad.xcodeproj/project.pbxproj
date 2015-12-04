@@ -218,6 +218,7 @@
 		A1F6B0731BFB10550098CC59 /* BTIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6B0721BFB10550098CC59 /* BTIndicator.m */; };
 		A1F6BBF31BE704040039CD37 /* ModelProgramDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BBF21BE704040039CD37 /* ModelProgramDetails.m */; };
 		A1F6BBF61BE741440039CD37 /* ModelSponsors.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F6BBF51BE741440039CD37 /* ModelSponsors.m */; };
+		A1F7165A1C1185EE00528D2B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F716591C1185EE00528D2B /* Test.swift */; };
 		A1FD81461BC79DA800F269E3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD81451BC79DA800F269E3 /* CommentCell.m */; };
 		A1FD814C1BC7B3B100F269E3 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FD814B1BC7B3B100F269E3 /* TopicCell.m */; };
 /* End PBXBuildFile section */
@@ -571,6 +572,8 @@
 		A1F6BBF21BE704040039CD37 /* ModelProgramDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelProgramDetails.m; sourceTree = "<group>"; };
 		A1F6BBF41BE741440039CD37 /* ModelSponsors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSponsors.h; sourceTree = "<group>"; };
 		A1F6BBF51BE741440039CD37 /* ModelSponsors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelSponsors.m; sourceTree = "<group>"; };
+		A1F716581C1185EE00528D2B /* touwho_iPad-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "touwho_iPad-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1F716591C1185EE00528D2B /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		A1FD81441BC79DA800F269E3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		A1FD81451BC79DA800F269E3 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		A1FD814A1BC7B3B100F269E3 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
@@ -1003,6 +1006,8 @@
 				A19D09711B7C2F5B00094B81 /* other */,
 				A17C9A7B1B8C6FBA00F5677C /* library */,
 				A19D093E1B7C2DF100094B81 /* Supporting Files */,
+				A1F716591C1185EE00528D2B /* Test.swift */,
+				A1F716581C1185EE00528D2B /* touwho_iPad-Bridging-Header.h */,
 			);
 			path = touwho_iPad;
 			sourceTree = "<group>";
@@ -1782,6 +1787,7 @@
 		A19D09331B7C2DF100094B81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = touhu.com;
 				TargetAttributes = {
@@ -2072,6 +2078,7 @@
 				A13259341B83071200A327C6 /* loginViewController.m in Sources */,
 				A19929151BDA087100B155A5 /* CorporationViewController.m in Sources */,
 				A1F0E5291BABAB5F00BA0BDD /* MarsTransToEarth.m in Sources */,
+				A1F7165A1C1185EE00528D2B /* Test.swift in Sources */,
 				A1A01AAB1BAA61AA009EF690 /* HeadIconViewController.m in Sources */,
 				A1D78DD41B9D341D00C136C3 /* forgetPassword.m in Sources */,
 				A19FCA261BF1E3C7009F2C33 /* ModelGroupDetail.m in Sources */,
@@ -2163,6 +2170,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2209,6 +2217,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Touhu Funding Co.,Ltd (GRGPBN7QSU)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2233,8 +2242,10 @@
 			baseConfigurationReference = 8C84536996CF0BF9A214368E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2257,8 +2268,11 @@
 					"$(PROJECT_DIR)/touwho_iPad/Headers",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
+				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
+				SWIFT_OBJC_BRIDGING_HEADER = "touwho_iPad/touwho_iPad-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -2267,8 +2281,10 @@
 			baseConfigurationReference = 767A21CB34EA456EF48D831C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Touhu Funding Co.,Ltd (GRGPBN7QSU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Touhu Funding Co.,Ltd (GRGPBN7QSU)";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2291,8 +2307,10 @@
 					"$(PROJECT_DIR)/touwho_iPad/Headers",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
+				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
+				SWIFT_OBJC_BRIDGING_HEADER = "touwho_iPad/touwho_iPad-Bridging-Header.h";
 			};
 			name = Release;
 		};
