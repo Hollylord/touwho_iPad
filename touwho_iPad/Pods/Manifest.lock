@@ -1,35 +1,36 @@
 PODS:
-  - AFNetworking (2.6.1):
-    - AFNetworking/NSURLConnection (= 2.6.1)
-    - AFNetworking/NSURLSession (= 2.6.1)
-    - AFNetworking/Reachability (= 2.6.1)
-    - AFNetworking/Security (= 2.6.1)
-    - AFNetworking/Serialization (= 2.6.1)
-    - AFNetworking/UIKit (= 2.6.1)
-  - AFNetworking/NSURLConnection (2.6.1):
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.1):
+  - AFNetworking/NSURLSession (2.6.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.1)
-  - AFNetworking/Security (2.6.1)
-  - AFNetworking/Serialization (2.6.1)
-  - AFNetworking/UIKit (2.6.1):
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AMap2DMap (3.1.0)
-  - AMapSearch (3.0.0)
-  - AVOSCloud (3.1.5.2)
-  - AVOSCloudIM (3.1.5.2):
+  - AMap2DMap (3.2.0)
+  - AMapSearch (3.1.0)
+  - AVOSCloud (3.1.6.7)
+  - AVOSCloudIM (3.1.6.7):
     - AVOSCloud
   - MBProgressHUD (0.9.1)
-  - MJExtension (2.5.15)
+  - MJExtension (3.0.7)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - UMengSocial (4.4)
   - XXNibBridge (2.2.3)
 
 DEPENDENCIES:
@@ -41,17 +42,19 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.1)
   - MJExtension
   - SDWebImage (~> 3.7)
+  - UMengSocial (~> 4.3)
   - XXNibBridge (~> 2.2)
 
 SPEC CHECKSUMS:
-  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
-  AMap2DMap: a6741139dd16d237713c4fd6cae9a0399ca1fe25
-  AMapSearch: fd1ed96353f8a0f5c2e2463dac6a145bb3e6970f
-  AVOSCloud: 7b1305f61ac6cd3367c683deab3fc0700982f1c1
-  AVOSCloudIM: 8ce17375162a1b1831917267fd229d224aa96cfb
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AMap2DMap: 02c73a3e55ac033e3b0b8ec35d3d21ffcac5aae3
+  AMapSearch: aa7621ae8aec9cb8df116710b26e3fe3d09dc0ff
+  AVOSCloud: 7af6267747894eadfd14560db08ea99a51b57fc0
+  AVOSCloudIM: 0d907059ae770b50ff0e424a4d7cb8f01171b319
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MJExtension: 76967711f6ac61b1dc60ea5e148f88e12cfc8427
+  MJExtension: 290cc966f0f849b12b6391a38e296e0004ae8e5e
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  UMengSocial: aba7296602310385114d82c255539a7bef3b7ab0
   XXNibBridge: 70adcf1e85a2b5500d9de5f12781944dc51b0521
 
 COCOAPODS: 0.39.0
