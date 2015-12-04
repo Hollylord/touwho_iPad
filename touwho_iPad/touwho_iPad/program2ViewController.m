@@ -136,9 +136,8 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         //显示发起人
         ModelSponsors *initiator = [self.initiatorsArray firstObject];
         NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,initiator.mAvatar];
-        [self.initiatorheadIcon sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
-//        NSString *QRURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mQRUrl];
-//        [self.initiatorQR sd_setImageWithURL:[NSURL URLWithString:QRURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+        [self.initiatorheadIcon sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
+
         self.initiatorName.text = initiator.mName;
         
         //显示LP GP
@@ -197,12 +196,12 @@ typedef void(^dataBlock)(ModelProgramDetails *model);
         
         //json --> model
         NSDictionary *dic = [[responseObject objectForKey:@"value"] objectAtIndex:0];
-        ModelProgramDetails *model = [ModelProgramDetails objectWithKeyValues:dic];
+        ModelProgramDetails *model = [ModelProgramDetails mj_objectWithKeyValues:dic];
         self.modelDetail = model;
         
-        self.initiatorsArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mLeaderInvestor];
-        self.LPArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mFollowInvestor];
-        self.GPArray = [ModelSponsors objectArrayWithKeyValuesArray:model.mFirstInvestor];
+        self.initiatorsArray = [ModelSponsors mj_objectArrayWithKeyValuesArray:model.mLeaderInvestor];
+        self.LPArray = [ModelSponsors mj_objectArrayWithKeyValuesArray:model.mFollowInvestor];
+        self.GPArray = [ModelSponsors mj_objectArrayWithKeyValuesArray:model.mFirstInvestor];
         
         completionBlock(model);
     } failure:NULL];

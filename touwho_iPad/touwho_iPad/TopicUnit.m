@@ -20,7 +20,7 @@
     self.groupNameLabel.text = model.mGroupName;
     self.timeLabel.text = model.mCreateTime;
     NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mLogo];
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
 }
 
 #pragma mark - 话题点击控制器跳转

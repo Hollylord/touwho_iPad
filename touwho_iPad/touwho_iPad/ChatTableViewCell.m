@@ -36,7 +36,7 @@
     
     [BTNetWorkingAPI pullUserInfoFromServerWith:friendID andBlock:^(ModelForUser *user) {
         NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,user.mAvatar];
-        [self.headIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.headIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
         self.nickName.text = user.mNickName;
         
     }];

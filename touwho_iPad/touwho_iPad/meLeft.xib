@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -36,7 +36,7 @@
                         <outletCollection property="gestureRecognizers" destination="HcU-ud-IIh" appends="YES" id="8UB-18-kT6"/>
                     </connections>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hege" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-e0-y1J" userLabel="投资人标志">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-e0-y1J" userLabel="投资人标志">
                     <rect key="frame" x="102" y="133" width="33" height="33"/>
                     <animations/>
                     <constraints>
@@ -87,6 +87,7 @@
             <connections>
                 <outlet property="headImageView" destination="Lao-TQ-mu3" id="J50-LP-Csb"/>
                 <outlet property="nickNameLabel" destination="g80-7g-bQS" id="JVu-78-O4U"/>
+                <outlet property="symbolView" destination="ZHI-e0-y1J" id="cnF-wb-1pT"/>
                 <outlet property="tableView" destination="KFX-fE-VOB" id="ODh-Fh-SKJ"/>
             </connections>
             <point key="canvasLocation" x="145" y="-110"/>
@@ -99,7 +100,6 @@
     </objects>
     <resources>
         <image name="anniuHei" width="100" height="50"/>
-        <image name="hege" width="13" height="13"/>
         <image name="zhanweitu" width="50" height="50"/>
     </resources>
 </document>

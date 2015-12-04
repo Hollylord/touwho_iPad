@@ -33,6 +33,7 @@
     NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
     id value = [user objectForKey:key];
     return value;
+    
 }
 
 + (void)analyzeResponseObject:(id)responseObject andCompletionBlock:(completion)block{
@@ -100,7 +101,7 @@
         
         //7. 存入对象
       
-      PersonalInfo * model =  [PersonalInfo objectWithKeyValues:person context:context];
+      PersonalInfo * model =  [PersonalInfo mj_objectWithKeyValues:person context:context];
         
         BOOL success = [context save:nil];
         if (success) {
@@ -115,7 +116,7 @@
         [context deleteObject:p];
 
 
-        PersonalInfo * model =  [PersonalInfo objectWithKeyValues:person context:context];
+        PersonalInfo * model =  [PersonalInfo mj_objectWithKeyValues:person context:context];
         
         BOOL success = [context save:nil];
         if (success) {
@@ -198,7 +199,23 @@
     return [predicate evaluateWithObject:string];
 }
 
-
++ (UIImage *)chooseLocalResourcePhoto:(ResourcePhoto)photo{
+    switch (photo) {
+        case HEAD:
+            return [UIImage imageNamed:@"zhanweitu"];
+            break;
+        case BODY:
+            return [UIImage imageNamed:@"logo_background"];
+            break;
+        case QualifiedFirstInvestor:
+            return [UIImage imageNamed:@"QualifiedFirstInvestor"];
+            break;
+        case QualifiedInvestor:
+            return [UIImage imageNamed:@"QualifiedInvestor"];
+            break;
+        
+    }
+}
 @end
 
 
@@ -220,12 +237,12 @@
 + (void)pullUserInfoFromServerWith:(NSString *)user_id andBlock:(void (^)(ModelForUser *))block{
     NSDictionary *para = @{@"method":@"getMyInfo",@"user_id":user_id};
     [BTNetWorking getDataWithPara:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"%@",responseObject);
+        NSLog(@"个人信息 ＝ %@",responseObject);
         
         //json --> model
         NSDictionary *dicModel = [[responseObject objectForKey:@"value"] firstObject];
         
-        ModelForUser *model = [ModelForUser objectWithKeyValues:dicModel];
+        ModelForUser *model = [ModelForUser mj_objectWithKeyValues:dicModel];
         
         block(model);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "meLeft.h"
 
 @interface profile : UIView
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -29,6 +30,6 @@
 ///风险偏好
 @property (weak, nonatomic) IBOutlet UIButton *riskPereference;
 
-
+@property (strong,nonatomic) meLeft *leftView;
 
 @end

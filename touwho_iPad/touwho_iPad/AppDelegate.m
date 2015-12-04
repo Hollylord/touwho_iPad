@@ -46,7 +46,7 @@
     [UMSocialWechatHandler setWXAppId:@"wxaf4c01a34d15a51c" appSecret:@"d4624c36b6795d1d99dcf0547af5443d" url:@"http://www.umeng.com/social"];
     
     //设置qq分享SSO
-    [UMSocialQQHandler setQQWithAppId:@"1104734143" appKey:@"otFu8s5Dv6u8sFBm" url:@"http://www.umeng.com/social"];
+    [UMSocialQQHandler setQQWithAppId:@"1104418305" appKey:@"foM35jqFXzDe1uOj" url:@"http://www.umeng.com/social"];
     
     //微博SSO
     [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];

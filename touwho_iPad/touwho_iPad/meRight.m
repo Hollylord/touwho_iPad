@@ -52,7 +52,7 @@
 
 #pragma mark - meleft代理
 #pragma mark 编辑个人信息页面的设置
-- (void)presentProfile{
+- (void)presentProfileWithSender:(meLeft *)sender{
     [TalkingData trackEvent:@"编辑个人信息"];
     
     for (UIView *view in self.subviews) {
@@ -60,6 +60,7 @@
     }
     
     profile *view = [[[NSBundle mainBundle] loadNibNamed:@"profile" owner:nil options:nil]firstObject];
+    view.leftView = sender;
     [self addSubview:view];
     [self layoutForSubview:view];
     
@@ -343,7 +344,7 @@
         program2ViewController *programVC = [[program2ViewController alloc] initWithNibName:@"program2ViewController" bundle:nil];
         //传递数据
         NSDictionary *model = [[self.modelsPrograms objectAtIndex:indexPath.row] keyValues];
-        programVC.model1 = [ModelForProgramView objectWithKeyValues:model];
+        programVC.model1 = [ModelForProgramView mj_objectWithKeyValues:model];
         [VC.navigationController pushViewController:programVC animated:YES];
     }
 }
@@ -379,7 +380,7 @@
         
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             //json数组 --> model数组
-            self.modelsPrograms = [ModelMyProgram objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsPrograms = [ModelMyProgram mj_objectArrayWithKeyValuesArray:jsonArr];
             
         }];
         
@@ -404,7 +405,7 @@
 //        NSArray *programs = [responseObject objectForKey:@"value"];
 //
 //        //json数组 --> model数组
-//        self.models = [ModelMyInstitution objectArrayWithKeyValuesArray:programs];
+//        self.models = [ModelMyInstitution mj_objectArrayWithKeyValuesArray:programs];
 //        
 //        block();
 //        

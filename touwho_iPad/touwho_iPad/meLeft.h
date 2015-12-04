@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ModelForUser.h"
 
+@class meLeft;
 @protocol meLeftDelegate
 /**
  *  跳转消息界面
@@ -34,7 +35,7 @@
 /**
  *  编辑个人信息
  */
-- (void)presentProfile;
+- (void)presentProfileWithSender:(meLeft *)sender;
 /**
  *  已发起的项目
  */
@@ -60,6 +61,7 @@
 @property (weak,nonatomic) id <meLeftDelegate>delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *symbolView;
 
 @property (strong,nonatomic) ModelForUser *model;
 
@@ -76,3 +78,5 @@
 @property (copy,nonatomic) void (^headClick)();
 
 @end
+
+

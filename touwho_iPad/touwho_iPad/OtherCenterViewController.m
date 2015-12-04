@@ -53,7 +53,7 @@
     
     
     NSString *imageURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.model.mAvatar];
-    [self.headIconView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+    [self.headIconView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
     self.nickNameLabel.text = self.model.mName;
     
 }
@@ -87,7 +87,7 @@
         //json --> models
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
-            self.modelsInvested = [ModelMyProgram objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsInvested = [ModelMyProgram mj_objectArrayWithKeyValuesArray:jsonArr];
         }];
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -118,7 +118,7 @@
         //json --> models
         [BTNetWorking analyzeResponseObject:responseObject andCompletionBlock:^(NSArray *jsonArr, NSString *resCode) {
             
-            self.modelsPublished = [ModelMyProgram objectArrayWithKeyValuesArray:jsonArr];
+            self.modelsPublished = [ModelMyProgram mj_objectArrayWithKeyValuesArray:jsonArr];
         }];
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];

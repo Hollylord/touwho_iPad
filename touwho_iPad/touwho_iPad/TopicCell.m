@@ -26,7 +26,7 @@
     }
     NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mLogo];
     
-    [self.writerIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+    [self.writerIcon sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
     self.timeLabel.text = model.mCreateTime;
     self.titleLabel.text = model.mTitle;
     self.contentLabel.text = model.mDestrible;

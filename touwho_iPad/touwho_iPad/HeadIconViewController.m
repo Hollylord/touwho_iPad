@@ -27,6 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([BTNetWorking isTheStringContainedHttpWithString:USER_IconUrl]) {
+        [self.headImage sd_setImageWithURL:[NSURL URLWithString:USER_IconUrl] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
+    }
+    else {
+        NSString *iconUrl = [NSString stringWithFormat:@"%@%@",SERVER_URL,USER_IconUrl];
+        [self.headImage sd_setImageWithURL:[NSURL URLWithString:iconUrl] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
+    }
+
+    
+    
 }
 - (void)viewWillAppear:(BOOL)animated{
     [TalkingData trackPageBegin:@"设置头像页"];

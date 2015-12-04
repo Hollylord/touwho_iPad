@@ -16,7 +16,7 @@
         _model = model;
     }
     NSString *logo = [NSString stringWithFormat:@"%@%@",SERVER_URL,model.mLogo];
-    [self.IMGView sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+    [self.IMGView sd_setImageWithURL:[NSURL URLWithString:logo] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
     self.label1.text = model.mShortName;
     self.label2.text = model.mCreateTime;
     self.label3.text = model.mName;

@@ -259,6 +259,11 @@
             
             [BTIndicator showCheckMarkOnView:self withText:@"保存用户信息成功" withDelay:0.5];
             
+            //显示新昵称
+            if (![self.nickNameView.text isEqualToString:@""]) {
+                self.leftView.nickNameLabel.text = self.nickNameView.text;
+            }
+            
             //保存数据到本地数据库
             NSDictionary *dic = @{@"sex":sex,@"trueName":name,@"phoneNumber":phone,@"email":email,@"atIndustry":atIndustry,@"age":age,@"interstIndustry":interestingIndus,@"risk":risk,@"nickName":nickName,@"identiCoder":identiCode};
             NSMutableDictionary *dicMutable = [NSMutableDictionary dictionaryWithDictionary:dic];

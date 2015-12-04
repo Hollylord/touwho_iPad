@@ -72,7 +72,7 @@
     [self pullData:^{
         //显示小组数据
         NSString *iconURL = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelGroup.mLogo];
-        [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[UIImage imageNamed:@"logo_background"]];
+        [self.iconGroup sd_setImageWithURL:[NSURL URLWithString:iconURL] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:BODY]];
         self.introductionLabel.text = self.modelGroup.mDestrible;
         self.groupNameLabel.text = self.modelGroup.mName;
         self.leader.text = [NSString stringWithFormat:@"组长：%@",self.modelGroup.mGroupLeader];
@@ -82,7 +82,7 @@
         self.timeLabel.text = self.model.mCreateTime;
         self.titleLabel.text = self.model.mTitle;
         NSString *writerIcon = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.modelDetail.mLogo];
-        [self.iconWriter sd_setImageWithURL:[NSURL URLWithString:writerIcon] placeholderImage:[UIImage imageNamed:@"zhanweitu"]];
+        [self.iconWriter sd_setImageWithURL:[NSURL URLWithString:writerIcon] placeholderImage:[BTNetWorking chooseLocalResourcePhoto:HEAD]];
         self.writerNameLabel.text = self.modelDetail.mUserName;
         
         self.contentTextView.text = self.modelDetail.mTalkContent;
@@ -270,15 +270,15 @@
         NSLog(@"%@",responseObject);
         NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
         //存放话题作者model
-        self.modelDetail = [ModelTopicDetail objectWithKeyValues:dic];
+        self.modelDetail = [ModelTopicDetail mj_objectWithKeyValues:dic];
         //存放评论models
-        self.modelsComment = [ModelForComment objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
+        self.modelsComment = [ModelForComment mj_objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
         //存放评论人models
-        [ModelSponsors setupReplacedKeyFromPropertyName:^NSDictionary *{
+        [ModelSponsors mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
             
             return @{@"mID":@"mUserID",@"mName":@"mNickName"};
         }];
-        self.modelsReviewers = [ModelSponsors objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
+        self.modelsReviewers = [ModelSponsors mj_objectArrayWithKeyValuesArray:[dic objectForKey:@"mTalkComments"]];
         
         //获取发话题的用户信息
         NSDictionary *temp = @{@"method":@"getMyInfo",@"user_id":self.modelDetail.mUserID};
@@ -286,7 +286,7 @@
 //            NSLog(@"%@",responseObject);
             NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
             
-            self.modelUser = [ModelForUser objectWithKeyValues:dic];
+            self.modelUser = [ModelForUser mj_objectWithKeyValues:dic];
             
             //获取小组
             NSDictionary *para = @{@"method":@"getDetailGroup",@"group_id":self.modelDetail.mGroupID};
@@ -295,7 +295,7 @@
                 //            NSLog(@"%@",responseObject);
                 NSDictionary *dic = [[responseObject objectForKey:@"value"] firstObject];
                 
-                self.modelGroup = [ModelGroupDetail objectWithKeyValues:dic];
+                self.modelGroup = [ModelGroupDetail mj_objectWithKeyValues:dic];
                 
                 block();
                 

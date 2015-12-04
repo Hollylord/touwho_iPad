@@ -11,10 +11,21 @@
 #import "RiskTestViewController.h"
 
 @implementation meLeft
+{
+    BOOL isGP;
+    BOOL isLP;
+}
 - (void)awakeFromNib{
     UINib *nib = [UINib nibWithNibName:@"meLeftCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"meLeftCell"];
     
+    //判断用户是否为投资人、领投人
+    [BTNetWorking isQualifiedWithUserID:USER_ID withResults:^(BOOL isFirstInvestor, BOOL isInvestor) {
+        
+        isGP = isFirstInvestor;
+        isLP = isInvestor;
+        
+    }];
 }
 #pragma mark - tableview代理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -74,7 +85,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.row == 0) {
-        [self.delegate presentProfile];
+        [self.delegate presentProfileWithSender:self];
     }
     else if (indexPath.row == 1)
     {
@@ -168,9 +179,19 @@
         }];
     }
     else{
-        self.headImageView.image = [UIImage imageClipsWithHeadIcon:[UIImage imageNamed:@"zhanweitu"] sideWidth:0];
+        self.headImageView.image = [UIImage imageClipsWithHeadIcon:[BTNetWorking chooseLocalResourcePhoto:HEAD] sideWidth:0];
     }
     
+    //设置标志
+    if (isGP) {
+        self.symbolView.image = [BTNetWorking chooseLocalResourcePhoto:QualifiedFirstInvestor];
+    }
+    else if (isLP) {
+        self.symbolView.image = [BTNetWorking chooseLocalResourcePhoto:QualifiedInvestor];
+    }
+    else {
+        self.symbolView.image = nil;
+    }
     
 }
 @end

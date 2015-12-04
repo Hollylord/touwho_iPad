@@ -258,9 +258,8 @@
  * 配置头像
  */
 - (NSString*)avatarUrlByClientId:(NSString*)clientId{
-   NSDictionary *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
-    NSString *iconURL = [user objectForKey:@"iconURL"];
-    NSDictionary *urls=@{USER_ID:[NSString stringWithFormat:@"%@%@",SERVER_URL,iconURL],self.friendId:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.friendIconURL]};
+   
+    NSDictionary *urls=@{USER_ID:[NSString stringWithFormat:@"%@%@",SERVER_URL,USER_IconUrl],self.friendId:[NSString stringWithFormat:@"%@%@",SERVER_URL,self.friendIconURL]};
 //    NSDictionary *urls=@{kMichaelClientID:@"http://www.120ask.com/static/upload/clinic/article/org/201311/201311061651418413.jpg",kBettyClientID:@"http://p1.qqyou.com/touxiang/uploadpic/2011-3/20113212244659712.jpg",kLindaClientID:@"http://www.qqzhi.com/uploadpic/2014-09-14/004638238.jpg"};
     return urls[clientId];
 }

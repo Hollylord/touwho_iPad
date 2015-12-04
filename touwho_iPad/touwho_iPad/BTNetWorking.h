@@ -10,9 +10,17 @@
 #import <AVOSCloudIM.h>
 #import "ModelForUser.h"
 
+typedef enum : NSUInteger {
+    HEAD,
+    BODY,
+    QualifiedInvestor,
+    QualifiedFirstInvestor
+}ResourcePhoto;
 
 typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 @interface BTNetWorking : NSObject
+
+
 
 ///获取网络内容
 + (void)getDataWithPara:(NSDictionary *)para success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
@@ -25,22 +33,25 @@ typedef void(^completion)(NSArray *jsonArr,NSString *resCode);
 
 ///根据字体和内容计算高度
 + (CGFloat)calcutateHeightForTextviewWithFont:(UIFont *)font andContent:(NSString *)content andWidth:(CGFloat)width;
+
 ///判断用户是否已登录
 + (BOOL)isUserAlreadyLoginWithAlertView:(UIView *)view;
 
-///保存对话数据到数据库
+///保存个人信息数据到数据库
 + (void)saveToCoreDataWithPersonalInfo:(NSDictionary *)person;
 
-///查询所有的对话
+///从本地取个人信息
 + (NSManagedObject *)withDrawPersonInfoFromDatabase;
 
 
-///判断是否为领投人
+///判断用户是否有领投跟投资格
 + (void) isQualifiedWithUserID:(NSString *)user_id withResults:(void(^)(BOOL isFirstInvestor,BOOL isInvestor))Block;
 
 ///判断url字符串是否包含http
 + (BOOL) isTheStringContainedHttpWithString:(NSString *)string;
 
+///获取本地图片资源
++ (UIImage *)chooseLocalResourcePhoto:(ResourcePhoto)photo;
 
 @end
 
