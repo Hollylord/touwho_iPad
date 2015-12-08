@@ -101,6 +101,8 @@
  
     NSDictionary *dic = @{@"method":@"login",@"account":phoneNumber,@"password":password};
     
+    
+    
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@"%@",responseObject);

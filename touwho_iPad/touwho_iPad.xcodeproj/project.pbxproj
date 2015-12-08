@@ -1007,7 +1007,6 @@
 				A17C9A7B1B8C6FBA00F5677C /* library */,
 				A19D093E1B7C2DF100094B81 /* Supporting Files */,
 				A1F716591C1185EE00528D2B /* Test.swift */,
-				A1F716581C1185EE00528D2B /* touwho_iPad-Bridging-Header.h */,
 			);
 			path = touwho_iPad;
 			sourceTree = "<group>";
@@ -1021,7 +1020,6 @@
 				A1B13D291BB5544B00A8AC29 /* PushConfig.plist */,
 				A19D094F1B7C2DF100094B81 /* Info.plist */,
 				A19D093F1B7C2DF100094B81 /* main.m */,
-				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
 				A1AC16C81BBA3B9A002A8F70 /* stateOfProgram.plist */,
 				A1AC16CA1BBA3C65002A8F70 /* firms.plist */,
 				A1AC16CC1BBA88F2002A8F70 /* interestIndustry.plist */,
@@ -1029,6 +1027,8 @@
 				A1AC16D21BBA914F002A8F70 /* gender.plist */,
 				A17FAE9D1BBBDEDF00571817 /* enterprise.plist */,
 				A18338491BC65665000866EB /* xinwen.plist */,
+				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
+				A1F716581C1185EE00528D2B /* touwho_iPad-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2271,7 +2271,7 @@
 				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
-				SWIFT_OBJC_BRIDGING_HEADER = "touwho_iPad/touwho_iPad-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/inc/Desktop/touwho_iPad/touwho_iPad/touwho_iPad/touwho_iPad-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -2310,7 +2310,7 @@
 				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
-				SWIFT_OBJC_BRIDGING_HEADER = "touwho_iPad/touwho_iPad-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/inc/Desktop/touwho_iPad/touwho_iPad/touwho_iPad/touwho_iPad-Bridging-Header.h";
 			};
 			name = Release;
 		};
