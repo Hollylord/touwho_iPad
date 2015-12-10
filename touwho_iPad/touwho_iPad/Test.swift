@@ -12,8 +12,11 @@ import UIKit
 class Test: NSObject {
     let mgr = BTNetWorking.isTheStringContainedHttpWithString("www.baidu.com")
     func pint() {
+       
         print((mgr))
     }
+    
+    
     
 }
 
