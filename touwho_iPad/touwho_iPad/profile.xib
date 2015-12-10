@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="profileViewController"/>
@@ -15,7 +15,6 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxz-IA-twR">
                             <rect key="frame" x="152" y="30" width="40" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="性别 ">
                                     <attributes>
@@ -38,7 +37,6 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLi-RY-fZo">
                             <rect key="frame" x="152" y="80" width="28" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="昵称">
                                     <attributes>
@@ -51,13 +49,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCp-aB-Jp4">
                             <rect key="frame" x="259" y="125" width="190" height="30"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1X-QN-hP6">
                             <rect key="frame" x="152" y="130" width="68" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="手机号码 ">
                                     <attributes>
@@ -78,7 +74,6 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUa-g5-ewl">
                             <rect key="frame" x="152" y="180" width="75" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="身份证号码 ">
                                     <attributes>
@@ -92,13 +87,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2s-aI-mCu">
                             <rect key="frame" x="259" y="175" width="190" height="30"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbt-Xj-vkb">
                             <rect key="frame" x="152" y="230" width="68" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="真实姓名 ">
                                     <attributes>
@@ -118,13 +111,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1BR-n1-2VU">
                             <rect key="frame" x="259" y="225" width="190" height="30"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEq-sP-jUm">
                             <rect key="frame" x="152" y="280" width="63" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="邮箱地址">
                                     <attributes>
@@ -145,13 +136,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-Ea-Qak">
                             <rect key="frame" x="259" y="275" width="190" height="30"/>
-                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90e-Cg-PlC">
-                            <rect key="frame" x="125" y="863" width="350" height="50"/>
-                            <animations/>
+                            <rect key="frame" x="155" y="863" width="350" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Kot-uQ-gvf"/>
                                 <constraint firstAttribute="width" constant="350" id="ckM-XW-zHk"/>
@@ -172,7 +161,6 @@
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_background" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-OR-rmX" userLabel="名片">
                             <rect key="frame" x="125" y="590" width="442" height="243"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="442" id="L99-89-3Ao"/>
                                 <constraint firstAttribute="height" constant="243" id="pmY-nC-jcN"/>
@@ -180,11 +168,9 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtV-KQ-E2M">
                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                            <animations/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELD-bj-ihu">
                             <rect key="frame" x="152" y="330" width="63" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="所处行业">
                                     <attributes>
@@ -205,7 +191,6 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQc-AC-O7C">
                             <rect key="frame" x="259" y="325" width="190" height="30"/>
-                            <animations/>
                             <state key="normal" title="请选择">
                                 <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -215,7 +200,6 @@
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43V-dk-KeX">
                             <rect key="frame" x="152" y="380" width="35" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="年龄">
                                     <attributes>
@@ -236,7 +220,6 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13C-u5-BCa">
                             <rect key="frame" x="259" y="375" width="190" height="30"/>
-                            <animations/>
                             <state key="normal" title="请选择">
                                 <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -246,7 +229,6 @@
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oR-91-ssX">
                             <rect key="frame" x="152" y="430" width="91" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="感兴趣的行业">
                                     <attributes>
@@ -267,7 +249,6 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rU-ZX-bZ0">
                             <rect key="frame" x="259" y="425" width="190" height="30"/>
-                            <animations/>
                             <state key="normal" title="请选择">
                                 <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -277,7 +258,6 @@
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzL-k6-7mD">
                             <rect key="frame" x="152" y="480" width="63" height="20"/>
-                            <animations/>
                             <attributedString key="attributedText">
                                 <fragment content="风险偏好">
                                     <attributes>
@@ -298,7 +278,6 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9V-pR-kUZ">
                             <rect key="frame" x="259" y="475" width="190" height="30"/>
-                            <animations/>
                             <state key="normal" title="请选择">
                                 <color key="titleColor" red="0.83921568629999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -308,7 +287,6 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsy-oK-Yi6">
                             <rect key="frame" x="259" y="25" width="190" height="30"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="jUT-m2-v2i"/>
                                 <constraint firstAttribute="width" constant="190" id="m8Q-l1-UGC"/>
@@ -322,7 +300,6 @@
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-Y1-KxZ">
                             <rect key="frame" x="259" y="75" width="190" height="30"/>
-                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="nyn-3N-wVh"/>
                                 <constraint firstAttribute="width" constant="190" id="vRE-eg-igF"/>
@@ -332,21 +309,19 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjR-9S-WP9">
                             <rect key="frame" x="152" y="525" width="60" height="30"/>
-                            <animations/>
                             <state key="normal" title="上传名片"/>
                             <connections>
                                 <action selector="uploadCard:" destination="-1" eventType="touchUpInside" id="22p-aA-861"/>
                             </connections>
                         </button>
                     </subviews>
-                    <animations/>
                     <constraints>
                         <constraint firstItem="13C-u5-BCa" firstAttribute="leading" secondItem="CQc-AC-O7C" secondAttribute="leading" id="1gc-9Z-fPd"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="centerY" secondItem="kUa-g5-ewl" secondAttribute="centerY" id="2iD-Ad-Fjo"/>
                         <constraint firstItem="13C-u5-BCa" firstAttribute="centerY" secondItem="43V-dk-KeX" secondAttribute="centerY" id="4HD-5B-aFw"/>
                         <constraint firstItem="ELD-bj-ihu" firstAttribute="top" secondItem="vEq-sP-jUm" secondAttribute="bottom" constant="30" id="5B4-M1-GgW"/>
                         <constraint firstItem="0rU-ZX-bZ0" firstAttribute="height" secondItem="13C-u5-BCa" secondAttribute="height" id="5pM-hT-Ug8"/>
-                        <constraint firstAttribute="trailing" secondItem="90e-Cg-PlC" secondAttribute="trailing" constant="125" id="6hP-ml-Hx4" userLabel="水平"/>
+                        <constraint firstAttribute="trailing" secondItem="90e-Cg-PlC" secondAttribute="trailing" constant="20" symbolic="YES" id="6hP-ml-Hx4" userLabel="水平"/>
                         <constraint firstItem="0rU-ZX-bZ0" firstAttribute="centerY" secondItem="6oR-91-ssX" secondAttribute="centerY" id="6zS-Ke-W8V"/>
                         <constraint firstItem="Hxz-IA-twR" firstAttribute="leading" secondItem="beV-X1-81z" secondAttribute="leading" constant="152" id="8sA-fZ-rgv"/>
                         <constraint firstItem="zNT-Y1-KxZ" firstAttribute="centerY" secondItem="WLi-RY-fZo" secondAttribute="centerY" id="94p-MG-4nY"/>
@@ -372,7 +347,7 @@
                         <constraint firstItem="kUa-g5-ewl" firstAttribute="top" secondItem="b1X-QN-hP6" secondAttribute="bottom" constant="30" id="VhL-uR-mYV"/>
                         <constraint firstItem="b1X-QN-hP6" firstAttribute="leading" secondItem="WLi-RY-fZo" secondAttribute="leading" id="Vp9-C7-eDH"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="height" secondItem="zNT-Y1-KxZ" secondAttribute="height" id="Wu3-D4-cSV"/>
-                        <constraint firstItem="90e-Cg-PlC" firstAttribute="centerX" secondItem="beV-X1-81z" secondAttribute="centerX" id="Y98-EZ-mbn"/>
+                        <constraint firstItem="90e-Cg-PlC" firstAttribute="centerX" secondItem="beV-X1-81z" secondAttribute="centerX" constant="30" id="Y98-EZ-mbn"/>
                         <constraint firstItem="i2s-aI-mCu" firstAttribute="leading" secondItem="eCp-aB-Jp4" secondAttribute="leading" id="a6B-iP-zHX"/>
                         <constraint firstItem="1BR-n1-2VU" firstAttribute="height" secondItem="zNT-Y1-KxZ" secondAttribute="height" id="cn7-Ut-wfl"/>
                         <constraint firstItem="vEq-sP-jUm" firstAttribute="leading" secondItem="WLi-RY-fZo" secondAttribute="leading" id="cug-q9-bGX"/>
@@ -425,7 +400,6 @@
                     </variation>
                 </scrollView>
             </subviews>
-            <animations/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="beV-X1-81z" secondAttribute="trailing" id="1Bh-l3-B8g"/>
                 <constraint firstItem="beV-X1-81z" firstAttribute="top" secondItem="a2i-yt-wSD" secondAttribute="top" id="93g-Re-Mhg"/>
