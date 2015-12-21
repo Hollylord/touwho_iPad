@@ -19,8 +19,7 @@
 //顶部四个按钮
 @property (weak, nonatomic) IBOutlet UIButton *topBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *topBtn2;
-@property (weak, nonatomic) IBOutlet UIButton *topBtn3;
-@property (weak, nonatomic) IBOutlet UIButton *topBtn4;
+
 
 
 
@@ -124,20 +123,20 @@
         self.topBtn1.selected = NO;
         [self pullRefresh:fresh];
     }
-    //商品众筹
-    else if (sender.tag == 12){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"商品众筹" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
-        [alert addAction:OK];
-        [self presentViewController:alert animated:YES completion:NULL];
-    }
-    //公益活动
-    else if (sender.tag == 13){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"公益活动" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
-        [alert addAction:OK];
-        [self presentViewController:alert animated:YES completion:NULL];
-    }
+//    //商品众筹
+//    else if (sender.tag == 12){
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"商品众筹" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
+//        [alert addAction:OK];
+//        [self presentViewController:alert animated:YES completion:NULL];
+//    }
+//    //公益活动
+//    else if (sender.tag == 13){
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"公益活动" message:@"敬请期待" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *OK = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:NULL];
+//        [alert addAction:OK];
+//        [self presentViewController:alert animated:YES completion:NULL];
+//    }
     
 }
 
@@ -325,12 +324,12 @@
     else if (self.topBtn2.selected){
         type = @"4";
     }
-    else if (self.topBtn3.selected){
-        type = @"2";
-    }
-    else if (self.topBtn4.selected){
-        type = @"3";
-    }
+//    else if (self.topBtn3.selected){
+//        type = @"2";
+//    }
+//    else if (self.topBtn4.selected){
+//        type = @"3";
+//    }
     
     //小菊花
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

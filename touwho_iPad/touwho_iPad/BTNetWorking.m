@@ -10,9 +10,6 @@
 #import "CommonCrypto/CommonDigest.h"
 #import "PersonalInfo.h"
 
-
-
-
 @implementation BTNetWorking
 
 + (void)getDataWithPara:(NSDictionary *)para success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success

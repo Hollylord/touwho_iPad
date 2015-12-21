@@ -11,6 +11,9 @@
 #import "splitViewController.h"
 #import "zhuce.h"
 #import "forgetPassword.h"
+#import <WXApi.h>
+
+
 
 @interface loginViewController ()
 - (IBAction)login:(UIButton *)sender;
@@ -20,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordView;
+@property (weak, nonatomic) IBOutlet UIButton *wechatButton;
 
 
 @end
@@ -34,6 +38,12 @@
     mgr = [AFHTTPRequestOperationManager manager];
     //新增可接受contentType
     mgr.responseSerializer.acceptableContentTypes= [NSSet setWithObject:@"text/html"];
+    
+    //如果没有安装微信则把微信按钮藏起来
+    if (![WXApi isWXAppInstalled]) {
+        self.wechatButton.hidden = YES;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +110,8 @@
     NSString *password = [BTNetWorkingAPI md5:self.passwordView.text];
  
     NSDictionary *dic = @{@"method":@"login",@"account":phoneNumber,@"password":password};
+    
+    
     
     //请求
     [mgr GET:SERVER_API_URL parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -179,6 +191,8 @@
 
 //微信登录
 - (IBAction)wechatLogin:(UIButton *)sender {
+    
+    
     [TalkingData trackEvent:@"微信登录"];
     
     UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];

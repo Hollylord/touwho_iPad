@@ -29,11 +29,15 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-bS-wmy">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-bS-wmy">
                                 <rect key="frame" x="30" y="64" width="634" height="64"/>
                                 <subviews>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-vT-Hsb">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="0.0" width="121" height="64"/>
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="217" height="64"/>
+>>>>>>> version
                                         <state key="normal" title="股权投资" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
@@ -44,7 +48,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-8w-d2z">
+<<<<<<< HEAD
                                         <rect key="frame" x="171" y="0.0" width="121" height="64"/>
+=======
+                                        <rect key="frame" x="417" y="0.0" width="217" height="64"/>
+>>>>>>> version
                                         <state key="normal" title="海外专区" backgroundImage="anniuGreen"/>
                                         <state key="selected" backgroundImage="button_Green_selected"/>
                                         <variation key="heightClass=regular" fixedFrame="YES">
@@ -54,6 +62,7 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="yXA-0l-KB6"/>
                                         </connections>
                                     </button>
+<<<<<<< HEAD
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-Lh-D7A">
                                         <rect key="frame" x="342" y="0.0" width="121" height="64"/>
                                         <state key="normal" title="商品众筹" backgroundImage="anniuGreen"/>
@@ -73,6 +82,8 @@
                                             <action selector="buttonClick:" destination="4hH-uE-Vy4" eventType="touchUpInside" id="7Ma-JU-T5u"/>
                                         </connections>
                                     </button>
+=======
+>>>>>>> version
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="7BT-Kf-l34">
@@ -190,8 +201,6 @@
                         <outlet property="scrollView" destination="5oI-Iy-8Jl" id="0Ol-Xx-HPF"/>
                         <outlet property="topBtn1" destination="JLN-vT-Hsb" id="lfE-kM-6Kf"/>
                         <outlet property="topBtn2" destination="hpc-8w-d2z" id="14W-YS-id9"/>
-                        <outlet property="topBtn3" destination="hMg-Lh-D7A" id="1Db-3M-4mv"/>
-                        <outlet property="topBtn4" destination="ffC-eK-BDU" id="TRo-CT-GJZ"/>
                         <outlet property="yOfScrollView" destination="f5h-DK-PEe" id="6Ge-Zv-fOb"/>
                     </connections>
                 </viewController>
@@ -737,6 +746,7 @@
                     <connections>
                         <outlet property="passwordView" destination="ydl-uv-Rty" id="XvQ-L2-AY7"/>
                         <outlet property="phoneNumberView" destination="UcD-cL-bmW" id="2Ev-sV-gR9"/>
+                        <outlet property="wechatButton" destination="inK-KU-Ii8" id="KO1-Wj-vGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGI-xc-1c2" userLabel="First Responder" sceneMemberID="firstResponder"/>

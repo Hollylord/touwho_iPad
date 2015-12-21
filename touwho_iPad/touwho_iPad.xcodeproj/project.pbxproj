@@ -46,6 +46,7 @@
 		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; };
 		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; };
 		A1802AF51BFF158D0082199A /* ModelMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A1802AF41BFF158D0082199A /* ModelMap.m */; };
+		A1817BCD1C1AB17F005DADB5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1817BCC1C1AB17F005DADB5 /* File.swift */; };
 		A183384A1BC65665000866EB /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18338491BC65665000866EB /* xinwen.plist */; };
 		A183384D1BC66333000866EB /* ModelForGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384C1BC66333000866EB /* ModelForGroup.m */; };
 		A18338501BC665AB000866EB /* ModelForTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384F1BC665AB000866EB /* ModelForTopic.m */; };
@@ -306,6 +307,7 @@
 		A17FAE9D1BBBDEDF00571817 /* enterprise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
 		A1802AF31BFF158D0082199A /* ModelMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMap.h; sourceTree = "<group>"; };
 		A1802AF41BFF158D0082199A /* ModelMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMap.m; sourceTree = "<group>"; };
+		A1817BCC1C1AB17F005DADB5 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A18338491BC65665000866EB /* xinwen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xinwen.plist; sourceTree = "<group>"; };
 		A183384B1BC66333000866EB /* ModelForGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForGroup.h; sourceTree = "<group>"; };
 		A183384C1BC66333000866EB /* ModelForGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForGroup.m; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 		A1F6BBF21BE704040039CD37 /* ModelProgramDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelProgramDetails.m; sourceTree = "<group>"; };
 		A1F6BBF41BE741440039CD37 /* ModelSponsors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSponsors.h; sourceTree = "<group>"; };
 		A1F6BBF51BE741440039CD37 /* ModelSponsors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelSponsors.m; sourceTree = "<group>"; };
+		A1F716581C1185EE00528D2B /* touwho_iPad-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "touwho_iPad-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1FD81441BC79DA800F269E3 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		A1FD81451BC79DA800F269E3 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		A1FD814A1BC7B3B100F269E3 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
@@ -1016,7 +1019,6 @@
 				A1B13D291BB5544B00A8AC29 /* PushConfig.plist */,
 				A19D094F1B7C2DF100094B81 /* Info.plist */,
 				A19D093F1B7C2DF100094B81 /* main.m */,
-				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
 				A1AC16C81BBA3B9A002A8F70 /* stateOfProgram.plist */,
 				A1AC16CA1BBA3C65002A8F70 /* firms.plist */,
 				A1AC16CC1BBA88F2002A8F70 /* interestIndustry.plist */,
@@ -1024,6 +1026,9 @@
 				A1AC16D21BBA914F002A8F70 /* gender.plist */,
 				A17FAE9D1BBBDEDF00571817 /* enterprise.plist */,
 				A18338491BC65665000866EB /* xinwen.plist */,
+				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
+				A1F716581C1185EE00528D2B /* touwho_iPad-Bridging-Header.h */,
+				A1817BCC1C1AB17F005DADB5 /* File.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1782,6 +1787,7 @@
 		A19D09331B7C2DF100094B81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = touhu.com;
 				TargetAttributes = {
@@ -2023,6 +2029,7 @@
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
+				A1817BCD1C1AB17F005DADB5 /* File.swift in Sources */,
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
@@ -2163,6 +2170,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2209,6 +2217,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Touhu Funding Co.,Ltd (GRGPBN7QSU)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2233,8 +2242,10 @@
 			baseConfigurationReference = 8C84536996CF0BF9A214368E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2257,8 +2268,11 @@
 					"$(PROJECT_DIR)/touwho_iPad/Headers",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
+				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/inc/Desktop/touwho_iPad/touwho_iPad/touwho_iPad/touwho_iPad-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -2267,8 +2281,10 @@
 			baseConfigurationReference = 767A21CB34EA456EF48D831C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Touhu Funding Co.,Ltd (GRGPBN7QSU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Touhu Funding Co.,Ltd (GRGPBN7QSU)";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2291,8 +2307,10 @@
 					"$(PROJECT_DIR)/touwho_iPad/Headers",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
+				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/inc/Desktop/touwho_iPad/touwho_iPad/touwho_iPad/touwho_iPad-Bridging-Header.h";
 			};
 			name = Release;
 		};

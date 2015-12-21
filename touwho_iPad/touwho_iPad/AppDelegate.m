@@ -48,6 +48,8 @@
     //设置qq分享SSO
     [UMSocialQQHandler setQQWithAppId:@"1104418305" appKey:@"foM35jqFXzDe1uOj" url:@"http://www.umeng.com/social"];
     
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
+    
     //微博SSO
     [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
