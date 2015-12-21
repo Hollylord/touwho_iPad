@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -17,7 +17,6 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KFX-fE-VOB">
                     <rect key="frame" x="0.0" y="174" width="300" height="441"/>
-                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="iN0-l3-epB" id="cCl-yl-f3X"/>
@@ -26,7 +25,6 @@
                 </tableView>
                 <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhanweitu" translatesAutoresizingMaskIntoConstraints="NO" id="Lao-TQ-mu3">
                     <rect key="frame" x="14" y="58" width="108" height="108"/>
-                    <animations/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" constant="108" id="1OJ-gz-VEM"/>
@@ -38,7 +36,6 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-e0-y1J" userLabel="投资人标志">
                     <rect key="frame" x="102" y="133" width="33" height="33"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="8Fn-xo-aBz"/>
                         <constraint firstAttribute="width" constant="33" id="UGc-dl-coi"/>
@@ -46,14 +43,12 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g80-7g-bQS">
                     <rect key="frame" x="137" y="58" width="34" height="21"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-pI-xNw">
                     <rect key="frame" x="240" y="135" width="50" height="25"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="pwx-pI-xNw" secondAttribute="height" multiplier="2:1" id="83G-Jc-nMo"/>
                         <constraint firstAttribute="width" constant="50" id="GFh-yI-AM2"/>
@@ -64,7 +59,6 @@
                     </connections>
                 </button>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="KFX-fE-VOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1YF-aL-Fyq"/>

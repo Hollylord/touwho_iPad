@@ -46,6 +46,7 @@
 		A17FAE9C1BBBDE0A00571817 /* apply.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FAE9B1BBBDE0A00571817 /* apply.m */; };
 		A17FAE9E1BBBDEDF00571817 /* enterprise.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17FAE9D1BBBDEDF00571817 /* enterprise.plist */; };
 		A1802AF51BFF158D0082199A /* ModelMap.m in Sources */ = {isa = PBXBuildFile; fileRef = A1802AF41BFF158D0082199A /* ModelMap.m */; };
+		A1817BCD1C1AB17F005DADB5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1817BCC1C1AB17F005DADB5 /* File.swift */; };
 		A183384A1BC65665000866EB /* xinwen.plist in Resources */ = {isa = PBXBuildFile; fileRef = A18338491BC65665000866EB /* xinwen.plist */; };
 		A183384D1BC66333000866EB /* ModelForGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384C1BC66333000866EB /* ModelForGroup.m */; };
 		A18338501BC665AB000866EB /* ModelForTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A183384F1BC665AB000866EB /* ModelForTopic.m */; };
@@ -306,6 +307,7 @@
 		A17FAE9D1BBBDEDF00571817 /* enterprise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = enterprise.plist; sourceTree = "<group>"; };
 		A1802AF31BFF158D0082199A /* ModelMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMap.h; sourceTree = "<group>"; };
 		A1802AF41BFF158D0082199A /* ModelMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelMap.m; sourceTree = "<group>"; };
+		A1817BCC1C1AB17F005DADB5 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A18338491BC65665000866EB /* xinwen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xinwen.plist; sourceTree = "<group>"; };
 		A183384B1BC66333000866EB /* ModelForGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForGroup.h; sourceTree = "<group>"; };
 		A183384C1BC66333000866EB /* ModelForGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForGroup.m; sourceTree = "<group>"; };
@@ -1026,6 +1028,7 @@
 				A18338491BC65665000866EB /* xinwen.plist */,
 				A1B88CF91BA17A2A008FA7C9 /* PrefixHeader.pch */,
 				A1F716581C1185EE00528D2B /* touwho_iPad-Bridging-Header.h */,
+				A1817BCC1C1AB17F005DADB5 /* File.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2026,6 +2029,7 @@
 				A1B868421B842D02005C4A6F /* discoveryViewController.m in Sources */,
 				A1E9BE8E1BA7B60D00876186 /* JiGouMenuView.m in Sources */,
 				A1033BE11B8C59CD00FC8921 /* topics.m in Sources */,
+				A1817BCD1C1AB17F005DADB5 /* File.swift in Sources */,
 				A1B88CEA1BA17843008FA7C9 /* MJRefreshBaseView.m in Sources */,
 				A1CC0C6C1BAC167700168536 /* UIImage+UIimage_HeadIcon.m in Sources */,
 				A1B88CA11BA165AD008FA7C9 /* UUInputFunctionView.m in Sources */,
@@ -2266,7 +2270,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f40398fc-aa01-4610-af1d-dac7ef2a3b6a";
+				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/inc/Desktop/touwho_iPad/touwho_iPad/touwho_iPad/touwho_iPad-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -2305,7 +2309,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.touwho.touwho-iPad";
 				PRODUCT_MODULE_NAME = BTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f40398fc-aa01-4610-af1d-dac7ef2a3b6a";
+				PROVISIONING_PROFILE = "1d785bea-cac2-4aa7-a2ba-82f87cd1e67b";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/inc/Desktop/touwho_iPad/touwho_iPad/touwho_iPad/touwho_iPad-Bridging-Header.h";
 			};
 			name = Release;
